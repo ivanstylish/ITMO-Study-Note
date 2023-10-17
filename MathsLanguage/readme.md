@@ -1,2 +1,2 @@
 ## [主页](../README.md)/Maths Language
-- [ ] [重点知识点](./program.md)
+- [ ] [重点知识点](./keyknowledge.md)
