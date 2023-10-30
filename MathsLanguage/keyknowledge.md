@@ -236,3 +236,33 @@
 x:y=2 значит икс кратен игреку
 若x:y=2.5 значит икс не кратен игреку不整除
 назовите числа,кратные числу=какие числа кратны числу
+
+## 专有名词
+![Alt text](0001.jpg)
+![Alt text](0002.jpg)
+![Alt text](0003.jpg)
+![Alt text](0004.jpg)
+![Alt text](0005.jpg)
+![Alt text](0006.jpg)
+![Alt text](0007.jpg)
+![Alt text](0008.jpg)
+![Alt text](0009.jpg)
+![Alt text](0010.jpg)
+![Alt text](0011.jpg)
+![Alt text](0012.jpg)
+![Alt text](0013.jpg)
+![Alt text](0014.jpg)
+![Alt text](0015.jpg)
+![Alt text](0016.jpg)
+![Alt text](0017.jpg)
+![Alt text](0018.jpg)
+![Alt text](0019.jpg)
+![Alt text](0020.jpg)
+![Alt text](0021.jpg)
+![Alt text](0022.jpg)
+![Alt text](0023.jpg)
+![Alt text](0024.jpg)
+![Alt text](0025.jpg)
+![Alt text](0026.jpg)
+![Alt text](0027.jpg)
+![Alt text](0028.jpg)
