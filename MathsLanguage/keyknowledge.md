@@ -228,6 +228,45 @@
 |чётные числа|偶数|
 |нечётные числа|奇数|
 |противоположные числа|相反数|
+|обыкновенная(простая)дробь|普通分数|
+|числитель|分子|
+|знаменатель|分母|
+|основное свойство дроби|分数的主要性质|
+|сократить дробь|约分|
+|обший знаменатель|公分母|
+|привести к общему знаменателю|通分|
+|правильная дробь|真分数|
+|неправильная дробь|假分数|
+|смешанное число|带分数|
+|целая часть|整数部分|
+|дробная часть|分数部分|
+|остаток|余数|
+|десятичная дробь|小数分数|
+|десятичные знаки|小数符号|
+|обратное число|倒数|
+|противоположные числа|相反数|
+|период|循环,周期|
+|периодическая дробь|周期分数(小数)|
+|непериодическая дробь|非周期性分数|
+|рациональное число|有理数|
+|иррациональное число|无理数|
+|действительные числа|实数|
+|вещественные числа|实数|
+|прямая|直线|
+|числовая ось|实数直线|
+|числовая прямая|实数直线|
+|начало отсчета|原点|
+|единичный отрезок|单位线段|
+|положительное направление|正方向|
+|отрицательное направление|负方向|
+|отрезок|线段|
+|точка|点|
+|блина|长度|
+|координата|坐标|
+|числовые интервалы|数值区间|
+|интервалы|区间|
+|полуинтервал|半区间|
+
 
 ## 学案
 множество(集合)состоит из чего(元素)=содержить что(4)什么由什么组成
@@ -237,33 +276,37 @@ x:y=2 значит икс кратен игреку
 若x:y=2.5 значит икс не кратен игреку不整除
 назовите числа,кратные числу=какие числа кратны числу
 
+
+
 ## 专有名词
-![Alt text](0001.jpg)
-![Alt text](0002.jpg)
-![Alt text](0003.jpg)
-![Alt text](0004.jpg)
-![Alt text](0005.jpg)
-![Alt text](0006.jpg)
-![Alt text](0007.jpg)
-![Alt text](0008.jpg)
-![Alt text](0009.jpg)
-![Alt text](0010.jpg)
-![Alt text](0011.jpg)
-![Alt text](0012.jpg)
-![Alt text](0013.jpg)
-![Alt text](0014.jpg)
-![Alt text](0015.jpg)
-![Alt text](0016.jpg)
-![Alt text](0017.jpg)
-![Alt text](0018.jpg)
-![Alt text](0019.jpg)
-![Alt text](0020.jpg)
-![Alt text](0021.jpg)
-![Alt text](0022.jpg)
-![Alt text](0023.jpg)
-![Alt text](0024.jpg)
-![Alt text](0025.jpg)
-![Alt text](0026.jpg)
-![Alt text](0027.jpg)
-![Alt text](0028.jpg)
+![](/MathsLanguage/pic/0001.jpg)
+![](/MathsLanguage/pic/0002.jpg)
+![](/MathsLanguage/pic/0003.jpg)
+![](/MathsLanguage/pic/0004.jpg)
+![](/MathsLanguage/pic/0005.jpg)
+![](/MathsLanguage/pic/0006.jpg)
+![](/MathsLanguage/pic/0007.jpg)
+![](/MathsLanguage/pic/0008.jpg)
+![](/MathsLanguage/pic/0009.jpg)
+![](/MathsLanguage/pic/0010.jpg)
+![](/MathsLanguage/pic/0011.jpg)
+![](/MathsLanguage/pic/0012.jpg)
+![](/MathsLanguage/pic/0013.jpg)
+![](/MathsLanguage/pic/0014.jpg)
+![](/MathsLanguage/pic/0015.jpg)
+![](/MathsLanguage/pic/0016.jpg)
+![](/MathsLanguage/pic/0017.jpg)
+![](/MathsLanguage/pic/0018.jpg)
+![](/MathsLanguage/pic/0019.jpg)
+![](/MathsLanguage/pic/0020.jpg)
+![](/MathsLanguage/pic/0021.jpg)
+![](/MathsLanguage/pic/0022.jpg)
+![](/MathsLanguage/pic/0023.jpg)
+![](/MathsLanguage/pic/0024.jpg)
+![](/MathsLanguage/pic/0025.jpg)
+![](/MathsLanguage/pic/0026.jpg)
+![](/MathsLanguage/pic/0027.jpg)
+![](/MathsLanguage/pic/0028.jpg)
+
+
 
