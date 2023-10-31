@@ -266,3 +266,4 @@ x:y=2 значит икс кратен игреку
 ![Alt text](0026.jpg)
 ![Alt text](0027.jpg)
 ![Alt text](0028.jpg)
+
