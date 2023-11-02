@@ -9,6 +9,7 @@ note for study
 
 [俄语](RussianLanguage/readme.md)  
 [数学语言](MathsLanguage/readme.md)
+[作业](Homework1/readme.md)
 
 
 ## 大一
