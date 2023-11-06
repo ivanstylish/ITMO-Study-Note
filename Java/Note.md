@@ -203,3 +203,136 @@ int age ; //定义int型变量用于保存年龄信息
 声明等）之前时，会被Javadoc文档工具读取作为Javadoc文档内容。文档注释的格
 式与多行注释的格式相同。
 ### 流程控制
+- #### 复合语句
+  - Java语言的复合语句是以整个块区为单位的语句，所以又称**块语句**。复合语句由开括号“{”开始，闭括号“}”结束
+  - 类体就是以“{ }”作为开始与结束的标记，方法体同样也是以“{ }”作为标记。
+复合语句中的每个语句都是从上到下被执行。复合语句以整个块为单位，能够用在任何一个单独语句可以用到的地方，并且在复合语句中还可以嵌套复合语句。
+- 实例代码
+```
+public class Compound {
+    public static void main(String[] args) {
+        int x=20;
+        {
+            int y=40;
+            System.out.println(y);
+            int z=245;
+            boolean b;
+            {
+                b=y>z;
+                System.out.println(b);
+            }
+        }
+        String word="hello java";
+        System.out.println(word);
+    }
+}
+```
+- #### 条件语句
+  - 条件语句可根据不同的条件执行不同的语句。条件语句包括**if条件语句**与
+**switch多分支语句**。
+- ##### if条件语句
+  - 使用if条件语句，可选择是否要执行紧跟在条件之后的那个语句。关键字if之后是作为条件的“布尔表达式”，如果该表达式返回的结果为true，则执行其后的语句；若为false，则不执行if条件之后的语句。if条件语句可分为简单的**if条件语句、if…else语句和if…else if多分支语句**。
+1. **简单的if条件语句**
+   1. 布尔表达式：必要参数，表示最后返回的结果必须是一个布尔值。它可以是一个单纯的布尔变量或常量，也可以是使用关系或布尔运算符的表达式。
+   2. 语句序列：可选参数。可以是一条或多条语句，当表达式的值为true时执行这些语句。若语句序列中仅有一条语句，则可以省略条件语句中的“{ } 
+- 实例代码
+```
+public class Getif {
+    public static void main(String[] args) {
+       int x=40;
+       int y=20;
+       boolean b=x>y;
+       if (b){
+           System.out.println("x>y");
+       }
+       else {
+           System.out.println("x<y");
+       }
+    }
+ }  
+```
+2. **if…else语句**
+   1. if后面“()”内的表达式的值必须是boolean型的。如果表达式的值为true，则执行紧跟if语句的复合语句；如果表达式的值为false，则执行else后面的复合语句。 
+- 实例代码
+```
+public class Getifelse {
+    public static void main(String[] args) {
+        int math=100;
+        int Russian=50;
+        if (math>60){
+            System.out.println("数学及格啦");
+        }
+        else{
+            System.out.println("数学寄啦");
+        }
+        if (Russian>60){
+            System.out.println("俄语及格啦");
+        }
+        else{
+            System.out.println("俄语寄啦");
+        }
+    }
+}
+```
+**if…else语句可以使用三元运算符进行简化。如下面的代码：**
+```
+if(a > 0) b = a;
+ else b = -a;
+```
+3. **if…else if多分支语句**
+   1. if…else if多分支语句用于针对某一事件的多种情况进行处理。通常表现
+为“如果满足某种条件，就进行某种处理，否则如果满足另一种条件则执行另一种
+处理”。
+![](/Java/pic/java10.png)
+- 实例代码
+```
+public class GetTerm {
+    public static void main(String[] args) {
+        int x=20;
+        if (x>30){
+            System.out.println("a的值大于30");
+        }
+        else if (x>10) {
+            System.out.println("a的值大于10但小于30");
+        }
+        else if (x>0){
+            System.out.println("a的值大于0但小于10");
+        }
+        else{
+            System.out.println("a的值小于0");
+        }
+    }
+}
+```
+- ##### switch多分支语句
+  - 在编程中一个常见的问题就是检测一个变量是否符合某个条件，如果不符合，再用另一个值来检测，依此类推。当然，这种问题使用if条件语句也可以完成。
+  - switch语句中表达式的值必须是**整型、字符型或字符串类型**，常量值1~n必须也是整型、字符型或字符串类型。**switch语句首先计算表达式的值，如果表达式的值和某个case后面的常量值相同，则执行该case语句后的若干个语句直到遇到break语句为止**。此时如果该case语句中没有break语句，将继续执行后面case中的若干个语句，直到遇到break语句为止。若没有一个常量的值与表达式的值相同，则执行default后面的语句。default语句为可选的，如果它不存在，且switch语句中表达式的值不与任何case的常量值相同，switch则不做任何处理。
+- 实例代码
+```
+public class GetSwitch {
+    public static void main(String[] args) {
+        int week=3;
+        switch (week){
+            case 1:
+                System.out.println("Monday");
+            case 2:
+                System.out.println("Tuesday");
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+        }
+    }
+}
+```
+![](/Java/java11.png)
+- #### 循环语句
+  - 循环语句就是在满足一定条件的情况下反复执行某一个操作。在Java中提供了3
+种常用的循环语句，分别是**while循环语句、do…while循环语句和for循环语句**
+- ##### while循环语句
+  - while语句也称条件判断语句，它的循环方式为利用一个条件来控制是否要继续
+反复执行这个语句。
+
+
+ 
