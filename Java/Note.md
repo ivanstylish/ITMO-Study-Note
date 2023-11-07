@@ -333,6 +333,146 @@ public class GetSwitch {
 - ##### while循环语句
   - while语句也称条件判断语句，它的循环方式为利用一个条件来控制是否要继续
 反复执行这个语句。
+  - 当条件表达式的返回值为真时，则执行“{}”中的语句，当执行完“{}”中的语句后，重新判断条件表达式的返回值，直到表达式返回的结果为假时，退出循环。
+- 实例代码
+```
+public class GetSum {
+    public static void main(String[] args) {
+        int x=1;
+        int sum=0;
+        while (x<=10){
+            sum=sum+x;
+            ++x;
+            System.out.println("sum="+sum);
+        }
+    }
+}
+```
+![](/Java/pic/java12.png)
+- #### do…while循环语句
+  - do…while循环语句与while循环语句类似，它们之间的区别是**while语句为先判断条件是否成立再执行循环体**，而**循环语句则先执行一次循环后，再判断条件是否成立**。也就是说，do…while循环语句中“{}”中的程序段至少要被执行一次。
+ - 实例代码
+```
+  public class Cycle {
+    public static void main(String[] args) {
+        int a=100;
+        while (a==60){
+            System.out.println("ok1");
+            a--;
+        }
+        int b=100;
+        do {
+            System.out.println("ok2");
+            b--;
+        }while (b==60);
 
+    }
+}
+```
+![](/Java/pic/java13.png)
+- #### for循环语句
+1. **for语句**
+- 语法如下
+```
+for(表达式1;表达式2;表达式3){
+  语句序列
+}
+```
+其中：表达式1：初始化表达式，负责完成**变量的初始化**。
+表达式2：循环条件表达式，**值为boolean型的表达式，指定循环条件**。
+表达式3：循环后操作表达式，**负责修整变量，改变循环条件**。
+- 实例代码
+```
+public class Circulate {
+    public static void main(String[] args) {
+        int sum=1;
+        for (int i=1;i<=300;i+=2){
+            if (i>=100)
+                sum=sum+i;
+        }
+        System.out.println("100到300之间的所有偶数之和为："+sum);
+    }
+}
+```
+![](/Java/pic/java14.png)
+2. **foreach语句**
+foreach语句是for语句的特殊简化版本，不能完全取代for语句，但任何foreach语句都可以改写为for语句版本。foreach并不是一个关键字，习惯上将这种特殊的for语句格式称为foreach语句。
+foreach语句中的元素变量x，不必对其进行初始化。下面通过简单的例子来介绍foreach语句是如何遍历一维数组的。
+- 实例代码
+```
+public class Repetition {
+    public static void main(String[] args) {
+        int d[]={16,14,12,10,8,6,4};  //声明一维数组
+        System.out.println("从16到4的偶数降序为：");  //输出信息
+        for (int x:d){  //foreach语句，int x引用的变量，d指定要循环遍历的数组，最后将x输出
+            System.out.println(x);
+        }
+    }
+}
+```
+- #### 循环控制
+- 循环控制包含两方面的内容，一方面是控制循环变量的变化方式，另一方面是控制循环的跳转。控制循环的跳转需要用到`break`和`continue`两个关键字，这两条跳转语句的跳转效果不同，break是**中断循环**，continue是**执行下一次循环**。
+1. **break语句**
+- 使用break语句可以跳出switch结构。在循环结构中，同样也可用break语句跳出当前循环体，从而中断当前循环。
+- 实例代码
+```
+public class BreakTast {
+    public static void main(String[] args) {
+        for (int i=0;i<=10;i++){
+            System.out.println(i);
+            if (i==8){
+                break;
+            }
+        }
+        System.out.println("end");
+    }
+}
+```
+注意：**循环嵌套情况下**，break语句将只会使程序流程跳出包含它的最内层的循环结构，即**只跳出一层循环**。
+- 实例代码
+```
+public class BreakInsideNested {
+    public static void main(String[] args) {
+        for (int i=0;i<3;i++){  //外部循环
+            for (int j=0;j<6;j++){  //内部循环
+                if (j==4){
+                    break;
+                }
+                System.out.println("i="+i+"j="+j);
+            }
+        }
+    }
+}
+```
+外层循环不受任何影响，i最大值达2
+- **如果想让break跳出外层循环，Java提供了“标签”的功能，语法如下：**
+```
+public static void main(String[] args) {
+        Loop:for (int i=0;i<3;i++){
+             for (int j=0;j<6;j++){
+                 if (j==4){
+                     break Loop;
+                 }
+                 System.out.println("i="+i+"j="+j);
+             }
+        }
+    }
+```
+2. **continue语句**
+- continue语句是针对break语句的补充。continue不是立即跳出循环体，而是跳过本次循环结束前的语句，回到循环的条件测试部分，重新开始执行循环。在for循环语句中遇到continue后，首先执行循环的增量部分，然后进行条件测试。在while和do…while循环中，continue语句使控制直接回到条件测试部分。
+- 实例代码(输出1～20之间的奇数，使用continue跳出循环。)
+```
+public class ContinueTest {
+    public static void main(String[] args) {
+        for (int x=1;x<=20;x++){
+            if (x%2==0){       //如果x是偶数
+                continue;      //跳到下一循环
+            }
+            System.out.println(x); //输出i的值
+        }
+    }
+}
+```
+### 字符串
+- 字符串是Java程序中经常处理的对象，如果字符串运用得不好，将影响到程序运行的效率。在Java中字符串作为`String`类的实例来处理。
 
- 
