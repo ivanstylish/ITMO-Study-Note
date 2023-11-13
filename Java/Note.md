@@ -535,3 +535,179 @@ int x[]={123,324,435};
 - 填充替换数组元素
   - 数组中的元素定义完成后，可通过`Arrays`类的静态方法`fill()`来对数组中的元素进行替换。该方法通过各种重载形式可完成对任意类型的数组元素的替换。
 - fill()方法有两种参数类型，下面以int型数组为例介绍fill()方法的使用方法。 
+1. **fill(int[] a,int value)**
+该方法可将指定的int值分配给int型数组的每个元素。
+- 语法如下：
+  - fill(int[] a,int value)
+  - a：要进行元素替换的数组。
+  - value：要存储数组中所有元素的值。
+2. **fill(int[] a,int fromIndex,int toIndex,int value)**
+该方法将指定的int值分配给int型数组指定范围中的每个元素。填充的范围从索fromIndex（包括）一直到索引toIndex（不包括）。如果fromIndex ==
+toIndex，则填充范围为空。
+- 语法如下：
+- fill(int[] a,int fromIndex,int toIndex,int value)
+  - a：要进行填充的数组。
+  - fromIndex：要使用指定值填充的第一个元素的索引（包括）。
+  - toIndex：要使用指定值填充的最后一个元素的索引（不包括）。
+  - value：要存储在数组所有元素中的值。
+- #### 对数组进行排序
+  - 通过`Arrays`类的静态`sort()`方法可以实现对数组的排序。sort()方法提供了多种重载形式，可对任意类型的数组进行升序排序。
+- #### 复制数组
+  - `Arrays`类的`copyOf()`方法与`copyOfRange()`方法可以实现对数组的复制。`copyOf()`方法是**复制数组至指定长度**，`copyOfRange()`方法则将**指定数组的指定长度复制到一个新数组中**。
+1. `copyOf()`方法
+该方法提供了多种重载形式，用于满足不同类型数组的复制。
+- 语法如下：
+- copyOf(arr,int newlength)
+  - arr：要进行复制的数组。
+  - newlength：int型常量，指复制后的新数组的长度。**如果新数组的长度大于数组arr的长度，则用0填充**（根据复制数组的类型来决定填充的值，**整型数组用0填充，char型数组则使用null来填充**）；**如果复制后的数组长度小于数组arr的长度，则会从数组arr的第一个元素开始截取至满足新数组长度为止**。
+2. `copyOfRange()`方法
+该方法同样提供了多种重载形式。
+- 语法如下：
+- copyOfRange(arr,int formIndex,int toIndex)
+  - arr：要进行复制的数组对象。
+  - formIndex：指定开始复制数组的索引位置。formIndex必须在0至整个数组的长度之间。新数组包括索引是formIndex的元素。
+  - toIndex：要复制范围的最后索引位置。可大于数组arr的长度。新数组不包括索引是toIndex的元素。
+- #### 数组查询
+  - `Arrays`类的`binarySearch()`方法，可使用二分搜索法来搜索指定数组，以获得指定对象。该方法返回要搜索元素的索引值。binarySearch()方法提供了多种重载形式，用于满足各种类型数组的查找需要。binarySearch()方法有两种参数类型。
+1. `binarySearch(Object[],Object key)`
+- 语法如下：
+- binarySearch(Object[] a,Object key)
+  - a：要搜索的数组。
+  - key：要搜索的值。
+- 实例代码:
+```
+import java.util.Arrays;
+public class Reference {
+    public static void main(String[] args) {
+        int ia[]=new int[]{1,8,9,4,5};
+        Arrays.sort(ia);
+        int index=Arrays.binarySearch(ia,4);
+        System.out.println("4的索引位置是:"+index);
+    }
+}
+```
+2. `binarySearch(Object[],int fromIndex,int toIndex,Object
+key)`该方法在指定的范围内检索某一元素。
+- 语法如下：
+- binarySearch(Object[] a,int fromIndex,int toIndex,Object key)
+  - a：要进行检索的数组。
+  - fromIndex：指定范围的开始处索引（包含）。
+  - toIndex：指定范围的结束处索引（不包含）。
+  - key：要搜索的元素。
+在使用该方法之前同样要对数组进行排序，来获得准确的索引值。如果要搜索的元素key在指定的范围内，则返回搜索键的索引；否则返回-1或“-”（插入点）。如果范围中的所有元素都小于指定的键，则为toIndex（注意，这保证了当且仅当此键被找到时，返回的值将大于等于0）。
+- 实例代码:
+```
+import java.util.Arrays;
+
+public class Rakel {
+    public static void main(String[] args) {
+        String b[]=new String[]{"ab","cd","ef","yz"};
+        Arrays.sort(b);
+        int x=Arrays.binarySearch(b,0,2,"cd");
+        System.out.println("cd的索引位置为:"+x);
+    }
+}
+```
+- ### 数组排序算法
+- #### 冒泡排序
+  - 冒泡排序的基本思想是**对比相邻的元素值**，如果满足条件就交换元素值，**把较小的元素移动到数组前面，把大的元素移动到数组后面**（也就是交换两个元素的位置），这样较小的元素就像气泡一样从底部上升到顶部。
+- 冒泡算法由**双层循环**实现，其中**外层循环用于控制排序轮数**，一般为要排序的
+数组长度减1次，因为最后一次循环只剩下一个数组元素，不需要对比，同时数组已
+经完成排序了。而**内层循环主要用于对比数组中每个邻近元素的大小**，以确定是否
+交换位置，对比和交换次数随排序轮数而减少。
+![](/Java/pic/java16.png)
+- 实例代码:
+```
+public class BubbleSort {
+    public static void main(String[] args) {
+        //创建一个乱序的数组元素
+        int[] array={34,45,89,12,23,54,75};
+        //创建冒泡排序类的对象
+        BubbleSort sorter=new BubbleSort();
+        //调用排序方法将数组排序
+        sorter.sort(array);
+    }
+    /**
+     *
+     * @param array//要排序的数组
+     *
+     */
+    public void sort(int[]array){
+        for (int i=1;i<array.length;i++){
+            //比较相邻两个元素，较大的数往后冒泡
+            for (int j=0;j<array.length-i;j++){
+                if (array[j] > array[j+1]){
+                    int temp=array[j];//把第一个元素值保存到临时变量中
+                    array[j]=array[j+1];//把第二个元素值保存到第一个元素单元中
+                    array[j+1]=temp;//把临时变量（也就是第一个元素原值）保存到第二个元素中
+                }
+            }
+        }
+        showArray(array); //输出冒泡排序后的数组元素
+    }
+    /**
+     * //显示数组中的所有元素
+     * @param array
+     *
+     */
+    public void showArray(int[]array){
+        for (int i:array){ //遍历数组
+            System.out.print(">"+i); //输出每个数组元素值
+        }
+        System.out.println();
+    }
+}
+```
+- #### 直接选择排序
+  - 直接选择排序方法属于选择排序的一种，它的排序速度要比冒泡排序快一些，也是常用的排序算法
+  - 直接选择排序的基本思想是将指定排序位置与其他数组元素分别对比，如果满足条件就交换元素值。注意这里与冒泡排序的区别，不是交换相邻元素，而是**把满足条件的元素与指定的排序位置交换**（如从最后一个元素开始排序），**这样排序好的位置逐渐扩大，最后整个数组都成为已排序好的格式**。
+  - 实例代码:
+```
+/**
+ *
+ *
+ *
+ */
+public class Selectsort {
+    public static void main(String[] args) {
+        int[]array={1,32,45,36,67,89,12};
+        Selectsort sorter=new Selectsort();
+        sorter.sort(array);
+    }
+    /**
+     *
+     * @param array
+     *
+     */
+    public void sort(int[]array){
+        int index;
+        for (int i=1;i<=array.length;i++){
+            index=0;
+            for (int j=1;j<=array.length-i;j++){
+                if (array[j]>array[index]){
+                    index=j;
+                }
+            }
+            int temp=array[array.length-i];
+            array[array.length-i]=array[index];
+            array[index]=temp;
+        }
+        showArray(array);
+    }
+    /**
+     *
+     *
+     * @param array
+     *
+     */
+    public void showArray(int[]array){
+        for (int i:array){
+            System.out.print(">"+i);;
+        }
+        System.out.println();
+    }
+}
+```
+- #### 反转排序
+  - 反转排序就是以相反的顺序把原有数组的内容重新排序。
+  - 反转排序的基本思想比较简单，也很好理解，其实现思路就是把数组最后一个元素与第一个元素替换，倒数第二个元素与第二个元素替换，依此类推，直到把所有数组元素反转替换。
