@@ -875,3 +875,67 @@ public class Compare {
 - 从上述运行结果中可以看出，`“==”`运算符和`equals()`方法比较的内容是不相同的，`equals()`方法是`String`类中的方法，它**用于比较两个对象引用所指的内容是否相等**；而`“==”`运算符比较的是**两个对象引用的地址是否相等**。由于c1与c2是两个不同的对象引用，两者在内存中的位置不同，而`“String c3=c1;”`语句将c1的
 引用赋给c3，所以c1与c3这两个对象引用是相等的，也就是打印c1==c3这样的语句将返回true值。
 - ### 包装类
+- #### Integer
+  - `java.lang`包中的`Integer`类、`Long`类和`Short`类，可将基本类型`int、long`和`short`封装成一个类。
+  - 该类提供了多个方法，能在int类型和`String`类型之间互相转换，同时还提供了其他一些处理int类型时非常有用的常量和方法。
+- **构造方法** 
+  - `Integer (int number)`
+    - 该方法以一个`int`型变量为参数来获取`Integer`对象
+    - 例：`Integer number = new Integer(7);`
+  - `Integer (String str)`
+    - 该方法以一个`String`型变量为参数来获取`Integer`对象。
+    - 例：`Integer number = new Integer("45");`
+![](/Java/pic/java20.png)
+- `Integer`类中的`parseInt()`方法返回与调用该方法的数值字符串相应的整型
+`（int）`值。
+- `Integer`类中的`parseInt()`方法返回与调用该方法的数值字符串相应的整型`（int）`值。
+- 实例代码:
+```
+public class Summation {
+    public static void main(String[] args) {
+        String str[]={"23","43","56","67","78"};
+        int sum=0;
+        for (int i=0;i<str.length;i++){
+            int myint=Integer.parseInt(str[i]); //将数组中每个元素转换为int型
+            sum=sum+myint; //叠加
+        }
+        System.out.println("数组的元素之和为："+sum);
+    }
+}
+```
+|方法|字符串类别|
+|:----:|:----:|
+|toString()|十进制字符串|
+|toBinaryString()|二进制字符串|
+|toHexString()|十六进制字符串|
+|toOctalString()|八进制字符串|
+- 实例代码:
+```
+ublic class Charac {
+    public static void main(String[] args) {
+        String str=Integer.toString(123);
+        String str2=Integer.toBinaryString(123);
+        String str3=Integer.toHexString(123);
+        String str4=Integer.toOctalString(123);
+        System.out.println("'123’的十进制表示为："+str);
+        System.out.println("'123'的二进制表示为："+str2);
+        System.out.println("'123'的十六进制表示为："+str3);
+        System.out.println("'123'的八进制表示为："+str4);
+    }
+}
+```
+- **常量**
+  - `MAX_VALUE`：表示int类型可取的最大值，即${2}^{31}$-1。
+  - `MIN_VALUE`：表示int类型可取的最小值，即${-2}^{31}$。
+  - `SIZE`：用来以二进制补码形式表示int值的位数。
+  - `TYPE`：表示基本类型int的Class实例。 
+- #### Boolean
+  - 一个`Boolean`类型的对象只包含一个类型为`boolean`的字段。此外，此类还为`boolean`和`String`的相互转换提供了许多方法，并提供了处理`boolean`时非常有用的其他一些常量和方法。
+- **构造方法**
+  - `Boolean(boolean value)`
+    - 该方法创建一个表示`value`参数的`Boolean`对象。
+    - 例:`Boolean b = new Boolean(true);`
+  - `Boolean(String str)`
+    - 该方法以`String`变量作为参数创建`Boolean`对象。如果`String`参数不为`null`且在忽略大小写时等于true，则分配一个表示`true`值的Boolean对象，否则获得一个`false`值的Boolean对象。
+    - 以String为变量，例:`Boolean bool = new Boolean("ok");`
+![](/Java/pic/java21.png)
