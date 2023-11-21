@@ -580,7 +580,7 @@ import java.util.Arrays;
 public class Reference {
     public static void main(String[] args) {
         int ia[]=new int[]{1,8,9,4,5};
-        Arrays.sort(ia);
+        Arrays.sort(ia); //对数组从小到大进行排序(Arrays的方法sort)
         int index=Arrays.binarySearch(ia,4);
         System.out.println("4的索引位置是:"+index);
     }
@@ -602,7 +602,7 @@ import java.util.Arrays;
 public class Rakel {
     public static void main(String[] args) {
         String b[]=new String[]{"ab","cd","ef","yz"};
-        Arrays.sort(b);
+        Arrays.sort(b); //对数组从小到大进行排序(Arrays的方法sort)
         int x=Arrays.binarySearch(b,0,2,"cd");
         System.out.println("cd的索引位置为:"+x);
     }
@@ -679,7 +679,7 @@ public class Selectsort {
      * @param array
      *
      */
-    public void sort(int[]array){
+    public void sort(int[]array){ //调用上面sort方法及其变量
         int index;
         for (int i=1;i<=array.length;i++){
             index=0;
