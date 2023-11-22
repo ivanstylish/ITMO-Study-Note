@@ -878,7 +878,7 @@ public class Compare {
 - #### Integer
   - `java.lang`包中的`Integer`类、`Long`类和`Short`类，可将基本类型`int、long`和`short`封装成一个类。
   - 该类提供了多个方法，能在int类型和`String`类型之间互相转换，同时还提供了其他一些处理int类型时非常有用的常量和方法。
-- **构造方法** 
+- *构造方法*
   - `Integer (int number)`
     - 该方法以一个`int`型变量为参数来获取`Integer`对象
     - 例：`Integer number = new Integer(7);`
@@ -931,7 +931,7 @@ ublic class Charac {
   - `TYPE`：表示基本类型int的Class实例。 
 - #### Boolean
   - 一个`Boolean`类型的对象只包含一个类型为`boolean`的字段。此外，此类还为`boolean`和`String`的相互转换提供了许多方法，并提供了处理`boolean`时非常有用的其他一些常量和方法。
-- **构造方法**
+- *构造方法*
   - `Boolean(boolean value)`
     - 该方法创建一个表示`value`参数的`Boolean`对象。
     - 例:`Boolean b = new Boolean(true);`
@@ -939,3 +939,22 @@ ublic class Charac {
     - 该方法以`String`变量作为参数创建`Boolean`对象。如果`String`参数不为`null`且在忽略大小写时等于true，则分配一个表示`true`值的Boolean对象，否则获得一个`false`值的Boolean对象。
     - 以String为变量，例:`Boolean bool = new Boolean("ok");`
 ![](/Java/pic/java21.png)
+- #### Byte
+  - 一个Byte类型的对象只包含一个类型为byte的字段。
+  - 该类还为`byte`和`String`的相互转换提供了方法，并提供了其他一些处理byte时非常有用的常量和方法。
+- *构造方法*
+  - `Byte(byte value)` 
+    - 通过这种方法创建的`Byte`对象，可表示指定的`byte`值。
+    - 例:`byte mybyte = 45; Byte b = new Byte(mybyte);`
+  - `Byte(String str)` 
+    - 通过这种方法创建的`Byte`对象，可表示`String`参数所指示的`byte`值。
+    - `Byte mybyte = new Byte("12");`
+![](/Java/pic/java22.png)
+- 常量同Integer型相同
+- #### Character
+  - `Character`类在对象中包装一个基本类型为`char`的值。一个Character类型的对象包含类型为char的单个字段。
+- *构造方法*
+  - `Character(char value)`
+  - 该类的构造函数必须是一个`char`类型的数据。通过该构造函数创建的`Character`类对象包含由char类型参数提供的值。一旦Character类被创建，它包含的数值就不能改变了。
+  - 例:`Character mychar = new Character('s');`
+![](/Java/pic/java23.png)
