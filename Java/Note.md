@@ -958,3 +958,25 @@ ublic class Charac {
   - 该类的构造函数必须是一个`char`类型的数据。通过该构造函数创建的`Character`类对象包含由char类型参数提供的值。一旦Character类被创建，它包含的数值就不能改变了。
   - 例:`Character mychar = new Character('s');`
 ![](/Java/pic/java23.png)
+- *常量*
+  - `CONNECTOR_PUNCTUATION`：返回byte型值，表示`Unicode`规范中的常规类别`“Pc”`。
+  - `TITLECASE_LETTER`：返回`byte`型值，表示`Unicode`规范中的常规类别`“Lt”`。
+  - `UNASSIGNED`：返回`byte`型值，表示`Unicode`规范中的常规类别`“Cn”`。
+
+- #### Double
+  - `Double`和`Float`包装类是对`double、float`基本类型的封装，它们都是`Number`类的子类，又都是对**小数**进行操作，所以常用方法基本相同
+- *构造方法*
+  - `Double(double value)`：基于`double`参数创建`Double`类对象。
+  - `Double(String str)`：构造一个新分配的`Double`对象，表示用字符串表示的`double`类型的浮点值。
+![](/Java/pic/java24.png)
+- `常量`
+  - `MAX_EXPONENT`：返回`int`值，表示有限`double`变量可能**具有的最大指数**。
+  - `MIN_EXPONENT`：返回`int`值，表示标准化`double`变量可能具有的最小指数。
+  - `NEGATIVE_INFINITY`：返回`double`值，表示保存`double`类型的负无穷大值的常量。
+  - `POSITIVE_INFINITY`：返回`double`值，表示保存`double`类型的正无穷大值的常量。
+
+- #### Number
+  - 抽象类`Number`是`BigDecimal`、`BigInteger`、`Byte`、`Double`、`Float`、`Integer`、`Long`和`Short`类的父类，`Number`的子类必须提供将表示的数值转换为`byte、double、float、int、long和short`的方法。
+![](/Java/pic/java25.png)
+
+
