@@ -979,4 +979,56 @@ ublic class Charac {
   - 抽象类`Number`是`BigDecimal`、`BigInteger`、`Byte`、`Double`、`Float`、`Integer`、`Long`和`Short`类的父类，`Number`的子类必须提供将表示的数值转换为`byte、double、float、int、long和short`的方法。
 ![](/Java/pic/java25.png)
 
+- ### 数字处理类
+  - Java提供了许多数字处理类，包括`DecimalFormat`类（用于格式化数字）、`Math`类（为各种数学计算提供了工具方法）、`Random`类（为处理随机数问题提供了各种方法）、`BigInteger`类与`BigDecimal`类（为所有大数字的处理提供了相应的数学运算操作方法）。
+- #### 数字格式化
+  - 数字格式化操作主要针对的是浮点型数据，包括`double`型和`float`型数据。在Java中使用`java.text.DecimalFormat`格式化数字
+- 在Java中没有格式化的数据遵循以下原则：
+  - 如果数据**绝对值大于0.001并且小于10000000**，使以常规小数形式表示。
+  - 如果数据**绝对值小于0.001或者大于10000000**，使用科学记数法表示。
+- `DecimalFormat`是`NumberFormat`的一个子类，用于*格式化十进制数字*。它可以将一些数字格式化为*整数、浮点数、百分数*等。通过使用该类可以为要输出的数字加上单位或控制数字的精度。一般情况下可以在实例化`DecimalFormat`对象时传递数字格式，也可以通过`DecimalFormat`类中的`applyPattern()`方法来实现数字格式化。
+![](/Java/java26.png)
+
+- #### 数学运算
+  - 在Java语言中提供了一个执行数学基本运算的`Math`类，该类包括常用的数学运算方法，如三角函数方法、指数函数方法、对数函数方法、平方根函数方法等一些常用数学函数，除此之外还提供了一些常用的数学常量，如``PI、E`等。
+- **常用数学运算方法** 
+  - 在Math类中的常用数学运算方法较多，大致可以将其分为4大类别，分别为*三角函数方法*、*指数函数方法*、*取整函数方法*以及*取最大值、最小值和绝对值函数方法*。
+    - **三角函数方法** 
+      - `public static double sin(double a)`：返回角的三角正弦。
+      - `public static double cos(double a)`：返回角的三角余弦。
+      - `public static double tan(double a)`：返回角的三角正切。
+      - `public static double asin(double a)`：返回一个值的反正弦。
+      - `public static double acos(double a)`：返回一个值的反余弦。
+      - ` public static double atan(double a)`：返回一个值的反正切。
+      - `public static double toRadians(double angdeg)`：将角度转换为弧度。
+      - `public static double toDegrees(double angrad)`：将弧度转换为角度。
+      - 以上每个方法的参数和返回值都是`double`型的。将这些方法的参数的值设置为`double`型是有一定道理的，参数以弧度代替角度来实现，其中1°等于π/180弧度，所以180°可以使用π弧度来表示。除了可以获取角的正弦、余弦、正切、反正弦、反余弦、反正切之外，Math类还提供了**角度和弧度相互转换的方法**`toRadians()和toDegrees()`。但需要注意的是，角度与弧度的转换通常是不精确的。
+    - **指数函数方法**
+      - `public static double exp(double a)`：用于获取e的a次方，即取eª。
+      - `public static double log(double a)`：用于取自然对数，即取lna的值。
+      - `public static double log10(double a)`：用于取底数为10的对数。
+      - `public static double sqrt(double a)`：用于取a的平方根，其中a的值不能为负值。
+      - `public static double cbrt(double a)`：用于取a的立方根。
+      - `public static double pow(double a,double b)`：用于取a的b次方。
+    - **取整函数方法**
+      - `public static double ceil(double a)`：返回大于等于参数的最小整数。
+      - `public static double floor(double a)`：返回小于等于参数的最大整数。
+      - `public static double rint(double a)`：返回与参数最接近的整数，如果两个同为整数且同样接近，则结果取偶数。
+      - `public static int round(float a)`：将参数加上0.5后返回与参数最近的整数。
+      - `public static long round(double a)`：将参数加上0.5后返回与参数最近的整数，然后强制转换为长整型。
+    - **取最大值、最小值、绝对值函数方法**
+      - `public static double max(double a,double b)`：取a与b之间的最大值。
+      - `public static int min(int a,int b)`：取a与b之间的最小值，参数为整型。
+      - `public static long min(long a,long b)`：取a与b之间的最小值，参数为长整型。
+      - `public static float min(float a,float b)`：取a与b之间的最小值，参数为浮点型。
+      - `public static double min(double a,double b)`：取a与b之间的最小值，参数为双精度型。
+      - ` public static int abs(int a)`：返回整型参数的绝对值。
+      - `public static long abs(long a)`：返回长整型参数的绝对值。
+      - `public static float abs(float a)`：返回浮点型参数的绝对值。
+      - `public static double abs(double a)`：返回双精度型参数的绝对值。
+- #### 随机数
+
+
+
+
 
