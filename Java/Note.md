@@ -1027,8 +1027,61 @@ ublic class Charac {
       - `public static float abs(float a)`：返回浮点型参数的绝对值。
       - `public static double abs(double a)`：返回双精度型参数的绝对值。
 - #### 随机数
-
-
+  - Java中主要提供了两种生成随机数的方式，分别为调用`Math`类的`random()`方法生成随机数和调用`Random`类生成各种数据类型的随机数。
+- **Math.random()方法**
+  - 在`Math`类中存在一个`random()`方法，用于产生随机数字。这个方法默认生成大于等于0.0且小于1.0的`double`型随机数，即`0<=Math.random()<1.0`。虽然`Math.random()`方法只可以产生0~1之间的`double`型数字，但只要在`Math.random()`语句上稍加处理，就可以使用这个方法产生任意范围的随机数
+![](/Java/pic/java27.png)
+- 实例代码:
+```
+public class MathRondom {
+    /**
+     *定義產生偶數的方法
+     * @param num1 起始範圍參數
+     * @param num2 終止範圍參數
+     * @return 隨機的範圍内偶數
+     */
+    public static int GetEvenNum(double num1,double num2){
+        int s=(int)num1+(int)(Math.random()*(num2-num1)); //大於等於num1而小於num2
+        if (s%2==0){ //取餘為0
+            return s;
+        }else { //取餘不爲0，加1成偶數
+            return s+1;
+        }
+    }
+    public static void main(String[] args) { //輸出調用方法GetEvenNum
+        System.out.println("任意一個2到64的偶數為:"+GetEvenNum(2,64));
+    }
+}
+```
+- 若要随即表达字符，则可用实例代码来表示:
+`(char)(cha1+Math.random()*(cha2-cha1+1))`
+(重点:该随机数表达范围为≥cha1而＜cha2)
+- 实例代码:
+```
+public class MathRandomChar {
+    public static char GetRandomchar(char cha1,char cha2){
+        return(char)(cha1+Math.random()*(cha2-cha1+1));
+    }
+    public static void main(String[] args) {
+        System.out.println("'a'到'z'字符之间任意一个:"+GetRandomchar('a','z'));
+        System.out.println("'A'到'Z'字符之间任意一个:"+GetRandomchar('A','Z'));
+        System.out.println("'0'到'9'数字字符之间任意一个:"+GetRandomchar('0','9'));
+    }
+}
+```
+- **Random类**
+  - 除了`Math`类中的`random()`方法可以获取随机数之外，Java中还提供了一种可以获取随机数的方式，那就是`java.util.Random`类。通过**实例化**一个`Random`对象可以创建一个随机数生成器。 
+  - 例:`Random r=new Random(); //定义一个随机数对象`
+  - 在`Random`类中提供了获取各种数据类型随机数的方法:
+    - `public int nextInt()`：返回一个随机整数。
+    - `public int nextInt(int n)`：返回大于等于0且小于n的随机整数。
+    - `public long nextLong()`：返回一个随机长整型值。
+    - `public boolean nextBoolean()`：返回一个随机布尔型值。
+    - `public float nextFloat()`：返回一个随机浮点型值。
+    - `public double nextDouble()`：返回一个随机双精度型值。
+    - `public double nextGaussian()`：返回一个概率密度为高斯分布的双精度值。
+- **大数字运算**
+- 
 
 
 
