@@ -70,3 +70,51 @@ public class test6 {
     }
 }
 ```
+5.  尝试开发一个程序，获取2~32之间（不包括32）的6个偶数，并取得这6个偶数的和。
+- 代码:
+```
+public class test14 {
+    public static int x(int num1,int num2){
+        int sum=0; //定义偶数和
+        int count=0; //定义次数
+
+        while (true){
+            int y=(int)num1+(int)(Math.random()*(num2-num1));
+            if (y!=0&&y%2==0){ //逻辑与(比较y是否等于0)
+                System.out.println(y); //输出偶数
+                sum+=y;
+                count++;
+            }
+            if (count==6){
+                break;
+            }
+        }
+        return sum; //返回偶数之和
+    }
+
+    public static void main(String[] args) {
+        System.out.println("任意2到32之间的6个偶数之和为:"+x(2,32)); //调用上面的方法
+    }
+}
+```
+6. 尝试开发一个程序，定义一个求圆面积的方法，其中以圆半径作为参数，并将计算结果保留5位小数。
+- 代码:
+```
+import java.text.DecimalFormat;
+
+public class test15 {
+    static public void SimpleFormat(String pattern,double value){
+        DecimalFormat myFormat=new DecimalFormat();
+        String put= myFormat.format(value);
+        System.out.println("圆的面积："+value+""+put);
+    }
+    public static double GetAroundArea(double r){
+        return Math.PI*Math.pow(r,2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println();
+        SimpleFormat("圆的面积保留五位小数:"+"#.#####",GetAroundArea(2));
+    }
+}
+```
