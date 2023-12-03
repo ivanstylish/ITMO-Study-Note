@@ -1081,7 +1081,124 @@ public class MathRandomChar {
     - `public double nextDouble()`：返回一个随机双精度型值。
     - `public double nextGaussian()`：返回一个概率密度为高斯分布的双精度值。
 - **大数字运算**
-- 
+  - 在Java中提供了大数字的操作类，即`java.math.BigInteger`类与`java.math.BigDecimal`类。这两个类用于高精度计算，其中`BigInteger`类是针对**大整数**的处理类，而`BigDecimal`类则是针对**大小数**的处理类。 
+- **BigInteger**
+  - `BigInteger`类型的数字范围较`Integer`类型的数字范围要大得多。前文介绍过`Integer`是int的包装类，int的最大值为${2}^{31}$-1，如果要计算更大的数字，使用Integer数据类型就无法实现了，所以Java中提供了`BigInteger`类来处理更大的数字。`BigInteger`支持**任意精度的整数**，也就是说，在运算中BigInteger类型可以准确地表示任何大小的整数值而不会丢失信息。
+  - 除了基本的加、减、乘、除操作之外，还提供了**绝对值、相反数、最大公约数以及判断是否为质数**等操作。
+  - BigInteger类中常用的几种运算方法。(**val是十进制字符串**)
+    - `public BigInteger add(BigInteger val)`：做加法运算。
+    - `public BigInteger subtract(BigInteger val)`：做减法运算。
+    - `public BigInteger multiply(BigInteger val)`：做乘法运算。
+    - `public BigInteger divide(BigInteger val)`：做除法运算。
+    - `public BigInteger remainder(BigInteger val)`：做取余操作。
+    - `public BigInteger[] divideAndRemainder(BigInteger val)`：用数组返回余数和商，结果数组中第一个值为商，第二个值为余数
+    - `public BigInteger pow(int exponent)`：进行取参数的`exponent`次方操作。
+    - `public BigInteger negate()`：取相反数。
+    - `public BigInteger shiftLeft(int n)`：将数字左移n位，如果n为负数，做右移操作。
+    - `public BigInteger shiftRight(int n)`：将数字右移n位，如果n为负数，做左移操作。
+    - `public BigInteger and(BigInteger val)`：做与操作。
+    - `public BigInteger or(BigInteger val)`：做或操作。
+    - `public int compareTo(BigInteger val)`：做数字比较操作。
+    - `public boolean equals(Object x)`：当参数x是BigInteger类型的数字并且数值相等时，返回`true`。
+    - `public BigInteger min(BigInteger val)`：返回较小的数值。
+    - `public BigInteger max(BigInteger val)`：返回较大的数值。
+- **BigDecimal**
+  - `BigDecimal`和`BigInteger`都能实现大数字的运算，不同的是`BigDecimal`加入了小数的概念。一般的`float`型和`double`型数据只可以用来做科学计算或工程计算，但由于在商业计算中要求数字精度比较高，所以要用到`java.math.BigDecimal`类。`BigDecimal`类支持任何精度的定点数，可以用它来精确计算货币值。
+  - 在BigDecimal类中常用的两个构造方法如下。
+    - `public BigDecimal(double val)`：实例化时将**双精度型**转换为`BigDecimal`类型。
+    - `public BigDecimal(String val)`：实例化时将**字符串形式**转换为`BigDecimal`类型。
+  - 下面列举了`BigDecimal`类中实现加、减、乘、除的方法。
+    - `public BigDecimal add(BigDecimal augend)`：做加法操作。
+    - `public BigDecimal subtract(BigDecimal subtrahend)`：做减法操作。
+    - `public BigDecimal multiply(BigDecimal multiplicand)`：做乘法操作。
+    - `public BigDecimal divide(BigDecimal divisor,int scale,introundingMode)`：做除法操作，方法中3个参数分别代表**除数**、**商的小数点后的位数**、**近似处理模式**。
+![](/Java/pic/java28.png)
+- 实例代码:
+```
+import java.math.BigDecimal;
+
+public class BigDecimalDemo {
+    static final int location=10;
+    /**
+     * 定义加法方法，参数为加数与被加数
+     *
+     * @param value1
+     * 相加的第一个数
+     * @param value2
+     * 相加的第二个数
+     * @return 两数之和
+     */
+    public BigDecimal add(double value1,double value2){
+        BigDecimal b1=new BigDecimal(Double.toString(value1));
+        BigDecimal b2=new BigDecimal(Double.toString(value2));
+        return b1.add(b2);//调用加法方法
+    }
+    /**
+     * 定义减法方法，参数为减数与被减数
+     * @param value1 被减数
+     *
+     * @param value2 减数
+     *
+     * @return 两数之差
+     */
+    public BigDecimal sub(double value1,double value2){
+        BigDecimal b1=new BigDecimal(Double.toString(value1));
+        BigDecimal b2=new BigDecimal(Double.toString(value2));
+        return b1.subtract(b2);//调用减法方法
+    }
+    /**
+     * 定义乘法方法，参数为乘数与被乘数
+     *
+     * @param value1
+     *      第一个乘数
+     * @param value2
+     *      第二个乘数
+     * @return
+     */
+    public BigDecimal mul(double value1,double value2){
+        BigDecimal b1=new BigDecimal(Double.toString(value1));
+        BigDecimal b2=new BigDecimal(Double.toString(value2));
+        return b1.multiply(b2);//调用乘法方法
+    }
+    /**
+     * 定义除法方法，参数为除数与被除数
+     *
+     * @param value1 被除数
+     *
+     * @param value2 除数
+     *
+     * @return
+     *
+     */
+    public BigDecimal div(double value1,double value2){
+        return div(value1,value2,location);//调用自定义除法方法
+    }
+    //定义除法方法，将参数分别位除数与被除数以及商小数点后的位数
+    public BigDecimal div(double value1,double value2,int b){
+        if (b<0){
+            System.out.println("b的值必须大于等于0");
+        }
+        BigDecimal b1=new BigDecimal(Double.toString(value1));
+        BigDecimal b2=new BigDecimal(Double.toString(value2));
+        //调用除法方法，商小数点后保留b位，并将结果进行四舍五入操作
+        return b1.divide(b2,b,BigDecimal.ROUND_HALF_UP);//调用除法方法
+    }
+    public static void main(String[] args) {
+        BigDecimalDemo b=new BigDecimalDemo();
+        System.out.println("两个数字相加的结果为:"+b.add(-8.0,9.4));
+        System.out.println("两个数字相减的结果为:"+b.sub(-8.0,9.4));
+        System.out.println("两个数字相乘的结果为:"+b.mul(-8.0,9.4));
+        System.out.println("两个数字相除结果，结果小数后保留10位:"+b.div(10,2));
+        System.out.println("两个数字相除,保留小数后5位:"+b.div(-8.0,9.4,5));
+    }
+}
+```
+
+
+
+
+
+
 
 
 
