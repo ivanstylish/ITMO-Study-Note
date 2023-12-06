@@ -1193,6 +1193,32 @@ public class BigDecimalDemo {
     }
 }
 ```
+### 类的高级特性
+- #### 导入包
+  - 使用`import`关键字导入包
+    - import关键字的语法如下： 
+```
+import com.lzw.*; //指定com.lzw包中的所有类中的程序都能使用
+import com.lzw.Math //指定com.lzw包中的Math类在程序中可以使用
+```
+- 在使用`import`关键字时，可以指定类的完整描述，如果为了使用包中更多的类，可以在使用`import`关键字指定时在包指定后加上*，这表示可以在程序中使用包中的所有类。
+  - 使用import导入静态成员
+    - 使用import导入静态成员的语法如下：
+```
+import static 静态成员
+```
+- 实例代码:
+```
+import static java.lang.Math.max;
+import static java.lang.System.out;
+public class ImportTest {
+    public static void main(String[] args) {
+        out.println("5和7比较大小:"+max(5,7));
+    }
+}
+```
+
+ 
 
 
 

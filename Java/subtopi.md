@@ -118,3 +118,51 @@ public class test15 {
     }
 }
 ```
+7. 尝试创建一个父类，在父类中创建两个方法，在子类中覆盖第二个方法，再
+为子类创建一个对象，将它向上转型到基类并调用这个方法。
+```
+public class bird {
+    public void cuckoo() {
+        System.out.println("杜鹃"); //父类创建的第一个方法
+    }
+
+    public void owl() {
+        System.out.println("猫头鹰"); //父类创建的第二个方法
+    }
+
+    public static void main(String[] args) {
+        bird u = new sub(); //向上转型，将父类对象实例化
+        u.cuckoo(); //使用u对象成员方法
+        u.owl(); //使用u对象成员方法
+    }
+}
+class sub extends bird{ //将上一类继承父类
+    public void owl(){
+            System.out.println("被修改后的猫头鹰"); //子类修改父类的方法二
+    }
+}
+```
+8. 尝试创建一个父类和子类，分别创建构造方法，然后向父类和子类添加成员
+变量和方法，并总结构建子类对象时的顺序。
+```
+public class bird {
+    public void cuckoo() {
+        System.out.println("杜鹃"); //父类创建的第一个方法
+    }
+
+    public void owl() {
+        System.out.println("猫头鹰"); //父类创建的第二个方法
+    }
+
+    public static void main(String[] args) {
+        bird u = new sub(); //向上转型，将父类对象实例化
+        u.cuckoo(); //使用u对象成员方法
+        u.owl(); //使用u对象成员方法
+    }
+}
+class sub extends bird{ //将上一类继承父类
+    public void owl(){
+            System.out.println("被修改后的猫头鹰"); //子类修改父类的方法二
+    }
+}
+```
