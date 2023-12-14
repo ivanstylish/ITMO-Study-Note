@@ -1217,6 +1217,43 @@ public class ImportTest {
     }
 }
 ```
+### 异常处理
+- #### 捕捉异常
+  - Java语言的异常捕获结构由`try`、`catch`和`finally` 3部分组成。其中，`try`语句块存放的是可能发生异常的Java语句；`catch`程序块在`try`语句块之后，用来激发被捕获的异常；`finally`语句块是**异常处理结构的最后执行部分**，**无论`try`语句块中的代码如何退出**，都将执行`finally`语句块。
+- **`try-each`语句**
+- 实例代码：
+```
+public class Take {
+    public static void main(String[] args) {
+        try { //try语句中包含可能出现异常的程序代码
+            String str = "Ally";
+            System.out.println(str + "年龄是:");
+            int age = Integer.parseInt("20L"); //数据类型转换
+            System.out.println(age);
+        } catch (Exception e) { //catch语句用来获取异常信息
+            e.printStackTrace(); //输出异常性质
+        }
+        System.out.println("Program over");
+    }
+}
+```
+- 注意：
+  - `Exception`是`try`代码块传递给catch代码块的变量类型，`e`是变量名。`catch`代码块中语句`“e.getMessage();”`用于输出错误性质。通常，异常处理常用以下3个函数来获取异常的有关信息。
+    - `getMessage()`函数：输出错误性质.
+    - `toString()`函数：给出异常的类型与性质。
+    - `printStackTrace()`函数：指出异常的类型、性质、栈层次及出现在程序中的位置。
+- **`finally`语句块**
+  - 完整的异常处理语句一定要包含`finally`语句，无论程序中有无异常发生，并且无论之间的`try-catch`是否顺利执行完毕，都会执行`finally`语句。
+- #### 常见异常
+![](/Java/pic/java29.png)
+- #### 自定义异常
+  - 在程序中使用自定义异常类，大体可分为以下几个步骤：
+    - 创建自定义异常类。
+    - 在方法中通过`throw`关键字抛出异常对象。 
+    - 如果在当前抛出异常的方法中处理异常，可以使用`try-catch`语句块捕获并处理，否则在方法的声明处通过`throws`关键字指明要抛出给方法调用者的异常，继续进行下一步操作。
+    - 在出现异常方法的调用者中捕获并处理异常。
+
+
 
  
 
