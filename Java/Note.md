@@ -1252,9 +1252,92 @@ public class Take {
     - 在方法中通过`throw`关键字抛出异常对象。 
     - 如果在当前抛出异常的方法中处理异常，可以使用`try-catch`语句块捕获并处理，否则在方法的声明处通过`throws`关键字指明要抛出给方法调用者的异常，继续进行下一步操作。
     - 在出现异常方法的调用者中捕获并处理异常。
+- 实例代码:
+```
+public class MyException extends Exception{
+    public MyException(String ErrorMessage){
+        super(ErrorMessage);
+    }
+}
+public class Tran {
+    static int avg(int number1,int number2)throws MyException{
+        if (number1<0||number2<0){
+            throw new MyException("不可以小于0");
+        }
+        if (number1>100||number2>100){
+            throw new MyException("数值过于大了");
+        }
+        return (number1+number2)/2;
+    }
 
+    public static void main(String[] args) {
+        try{
+            int result=avg(-1,103);
+            System.out.println(result);
+        }catch (MyException e){
+            System.out.println(e);
+        }
+    }
+}
+```
+- 字符串`ErrorMessage`是要输出的错误信息。若想抛出用户自定义的异常对象，要使用`throw`关键字
+- #### 在方法中抛出异常
+  - 若某个方法可能会发生异常，但不想在当前方法中处理这个异常，则可以使用`throws`、`throw`关键字在方法中抛出异常。
+- **使用`throws`关键字抛出异常**
+- 实例代码:
+```
+public class Shoot {
+    static void pop() throws NegativeArraySizeException{ //定义方法并抛出NegativeArraySizeException异常
+        int arr[]=new int[-3]; //创建数组
+    }
 
+    public static void main(String[] args) {
+        try { //try语句处理异常信息
+            pop(); //调用pop()方法
+        }catch (NegativeArraySizeException e){
+            System.out.println("pop()方法抛出的异常");
+        }
+    }
+}
+```
+- **使用`throw`关键字抛出异常**
+  - `throw`关键字通常用于方法体中，并且抛出一个异常对象。程序在执行到`throw`语句时立即终止，它后面的语句都不执行。通过`throw`抛出异常后，如果想在上一级代码中来捕获并处理异常，则需要在抛出异常的方法中使用`throws`关键字在方法的声明中指明要抛出的异常；如果要捕捉`throw`抛出的异常，则必须使用`try-catch`语句块。
+- 实例代码:
+```
+public class MyException2 extends Exception{ //创建自定义异常类
+    String message; //定义String类型变量
+    public MyException2(String ErrorMessage){ //父类方法
+        message = ErrorMessage;
+    }
+    public String GetMessage(){ //覆盖父类方法
+        return message;
+    }
+}
+public class Captor {
+    static int quotient(int x,int y)throws MyException2{ //定义方法中抛出异常
+        if (y<0){ //判断参数是否小于0
+            throw new MyException2("除数不能是负数"); //异常信息
+        }
+        return x/y; //返回值
+    }
 
+    public static void main(String[] args) {
+        try {
+            int result=quotient(4,-3);
+        }catch (MyException2 e){
+            System.out.println(e.GetMessage());
+        }catch (ArithmeticException e){
+            System.out.println("除数不能为0");
+        }catch (Exception e){
+            System.out.println("程序发生了其他的异常");
+        }
+    }
+}
+```
+- #### 运行时异常
+  - `RuntimeException`异常是程序运行过程中产生的异常。Java类库的每个包中都定义了异常类，所有这些类都是`Throwable`类的子类。`Throwable`类派生了两个子类，分别是`Exception`和`Error`类。`Error`类及其子类用来描述Java运行系统中的内部错误以及资源耗尽的错误，这类错误比较严重。`Exception`类称为**非致命性类**，可以通过捕捉处理使程序继续执行。`Exception`类又根据错误发生的原因分为`RuntimeException`异常和除`RuntimeException`之外的异常
+
+- ### `Object`：所有类的超类
  
 
 
