@@ -1338,11 +1338,65 @@ public class Captor {
   - `RuntimeException`异常是程序运行过程中产生的异常。Java类库的每个包中都定义了异常类，所有这些类都是`Throwable`类的子类。`Throwable`类派生了两个子类，分别是`Exception`和`Error`类。`Error`类及其子类用来描述Java运行系统中的内部错误以及资源耗尽的错误，这类错误比较严重。`Exception`类称为**非致命性类**，可以通过捕捉处理使程序继续执行。`Exception`类又根据错误发生的原因分为`RuntimeException`异常和除`RuntimeException`之外的异常
 
 - ### `Object`：所有类的超类
- 
-
-
-
-
+- #### hashCode 方法
+  - 散列码`（hash code）` 是由对象导出的一个**整型值**。散列码是没有规律的。如果 x 和 y 是两个不同的对象， `x.hashCode( )` 与` y.hashCode( )` 基本上不会相同。
+  - 由于`hashCode`方法定义在`Object`类中， 因此每个对象都有一个默认的散列码，其值为**对象的存储地址**。
+ - 实例代码:
+```
+public class test {
+    public static void main(String[] args) {
+        String r="HELLO";
+        StringBuilder rb=new StringBuilder(r);
+        System.out.println(r.hashCode()+" "+rb.hashCode());
+        String m=new String("HELLO");
+        StringBuilder mb=new StringBuilder(m);
+        System.out.println(m.hashCode()+" "+mb.hashCode());
+    }
+}
+```
+![](/Java/pic/java30.png)
+- 其中字符串r与m有相同的散列码，这是由于字符串的散列码是由内容导出的。而字符串缓冲rb与mb却有不同的散列码， 这是因为在`StringBuffer`类中没有定义`hashCode`方法，它的散列码是由`Object`类的默认`hashCode`方法导出的对象存储地址。
+- 需要组合多个散列值时，可以调用`Objects.hash`并提供多个参数。这个方法会对各个参数调用`Objects.hashCode`，并组合这些散列值。
+- 可以简单写为：
+```
+public int hashCode{
+   return Objects.hash(name, salary, hireDay);
+}
+```
+- `Equals` 与 `hashCode` 的定义必须一致：如果 `x.equals(y)` 返回 `true`, 那么 `x.hashCode( )` 就必
+须与 `y.hashCode( )` 具有相同的值。
+- 注意：如果存在数组类型的域， 那么可以使用静态的 `Arrays.hashCode` 方法计算一个散列码，这个散列码由数组元素的散列码组成。
+![](/Java/pic/java31.png)
+- #### toString 方法
+  - 设计子类的程序员应该定义自己的` toString` 方法，并将子类域的描述添加进去。如果超类使用了` getClass( ).getName( )`, 那么子类只要调用 `super.toString( )`就可以了。
+- ### 泛型数组列表
+  - `ArrayList` 是一个采用类型参数（type parameter） 的泛型类（ generic class）。
+  - 声明和构造数组：
+```
+ArrayList<> staff = new ArrayList<>(); //也可添加初始容量
+```
+- 使用 `add` 方法可以将元素添加到数组列表中。
+```
+staff.add(new Employee("Harry Hacker", • • •));
+staff.add(new Eraployee("Tony Tester", . . .));
+```
+- 如果已经清楚或能够估计出数组可能存储的元素数量， 就可以在填充数组之前调用`ensureCapacity`方法：
+```
+staff.ensureCapacity(数量)
+```
+- 分配数组列表和新数组分配空间：
+```
+new ArrayList<>(lOO) // capacity是返回字符串所占容器的总大小
+new Employee[100] // size is 100 数组的大小
+```
+- **数组列表的容量与数组的大小**有一个非常重要的区别。如果为数组分配 100 个元素
+的存储空间，数组就有 100 个空位置可以使用。 而容量为 100 个元素的数组列表只是拥
+有保存 100 个元素的潜力 （ 实际上， 重新分配空间的话，将会超过100）, 但是在最初，
+甚至完成初始化构造之后，数组列表根本就不含有任何元素。
+- `size`方法将返回数组列表中**包含的实际元素数目**。例如，`staff.size`
+将返回 `staff` 数组列表的**当前元素数量**， 它等价于数组 a 的`a.length`。
+![](/Java/pic/java32.png)
+![](/Java/pic/java33.png)
 
 
 
