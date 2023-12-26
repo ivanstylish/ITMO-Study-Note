@@ -1397,8 +1397,44 @@ new Employee[100] // size is 100 数组的大小
 将返回 `staff` 数组列表的**当前元素数量**， 它等价于数组 a 的`a.length`。
 ![](/Java/pic/java32.png)
 ![](/Java/pic/java33.png)
+- ### 接口
+  - 在 Java 程序设计语言中， 接口不是类，而是对类的一组需求描述，这些类要遵从接口描述的统一格式进行定义。
+  - 定义接口的代码:**`public` `interface` 接口名** **//不要在定义接口的时候使用 `final` 关键字,也不可使用`private`,`protected`修饰符**
+  - 若接口中有定义方法，那么在有类使用这个接口时，也要包含其方法。
+  - 有类实现接口实例代码:**`public` `class` 类名 `implements` 接口名**
+  - 接口的变量是隐式 `public static final`（常量），所以其值无法改变。
+- #### 通过接口可以实现**多重继承**的目的
+```
+interface Happy{
+    void Happy();
+}
+interface Pretty{
+    void Pretty();
+}
+interface Extroverted{
+    void Extroverted();
+}
 
+public class Girl implements Happy,Pretty,Extroverted{
+    @Override
+    public void Happy(){
+        System.out.println("开心的女孩");
+    }
 
+    @Override
+    public void Pretty() {
+        System.out.println("漂亮的女孩");
+    }
+
+    @Override
+    public void Extroverted() {
+        System.out.println("外向的女孩");
+    }
+}
+```
+- 女孩类引用三个定义的接口并使用它们包含的方法，从而实现多重继承
+- #### 实现多态
+  - 多态可以通过继承（`extends`）的关系实现，也可以通过接口的形式实现。
 
 
 
