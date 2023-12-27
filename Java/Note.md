@@ -1435,6 +1435,124 @@ public class Girl implements Happy,Pretty,Extroverted{
 - 女孩类引用三个定义的接口并使用它们包含的方法，从而实现多重继承
 - #### 实现多态
   - 多态可以通过继承（`extends`）的关系实现，也可以通过接口的形式实现。
+- 实例代码:
+```
+public interface Shape { //Shape接口表示一个形状
+    String name();
+}
+public class Circle implements Shape { //Circle 类实现了 Shape 接口，并重写了 name() 方法。
+    @Override
+    public String name() {
+        return "圆";
+    }
+}
+public class Square implements Shape { //Square 类也实现了 Shape 接口，并重写了 name() 方法。
+    @Override
+    public String name() {
+        return "正方形";
+    }
+}
+List<Shape> shapes = new ArrayList<>(); //测试类
+Shape circleShape = new Circle();
+Shape squareShape = new Square();
+
+shapes.add(circleShape);
+shapes.add(squareShape);
+
+for (Shape shape : shapes) {
+    System.out.println(shape.name());
+}
+```
+```
+public class test2 {
+    interface Coach {
+        void Command();
+    }
+
+    interface CoachFactory {
+        Coach CreateCoach();
+    }
+
+    static class ACoach implements Coach {
+        public void Command() {
+            System.out.println("我是A级证书教练，其他都给我衮");
+        }
+    }
+
+    static class ACoachFactory implements CoachFactory {
+        public Coach CreateCoach() {
+            return new ACoach();
+        }
+    }
+
+    static class CCoach implements Coach {
+        public void Command() {
+            System.out.println("我是C级教练");
+        }
+
+        static class CCoachFactory implements CoachFactory {
+            @Override
+            public Coach CreateCoach() {
+                return new CCoach();
+            }
+        }
+
+        public class Demo {
+            public static void create(CoachFactory factory) {
+                factory.CreateCoach().Command();
+            }
+
+            public static void main(String[] args) {
+                create(new ACoachFactory());
+                create(new CCoachFactory());
+            }
+        }
+    }
+}
+```
+- ### 封装
+  - 指利用抽象将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体。 
+- 实例代码:
+```
+public class Husband {
+   /*
+     * 对属性的封装
+     * 一个人的姓名、性别、年龄、妻子都是这个人的私有属性
+     */
+    private String name;
+    private String sex;
+    private int age;
+    private Wife wife;
+    /*
+     * setter()、getter()是该对象对外开发的接口
+     */
+    public String getName(){
+        return name;
+    }
+    public String setName(String name){
+        this.name=name;
+    }
+    public String getSex(){
+        return sex;
+    }
+    public String setSex(String sex){
+        this.sex=sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+    public int setAge(){
+        this.age=age;
+    }
+
+    public void setWife(Wife wife) {
+        this.wife=wife;
+    }
+}
+```
+- 封装确实可以使我们更容易地修改类的内部实现，而无需修改使用了该类的代码。
+- 封装可以对成员变量进行更精确的控制。
 
 
-
+ 
