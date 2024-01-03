@@ -1554,6 +1554,70 @@ public class Husband {
 - 封装确实可以使我们更容易地修改类的内部实现，而无需修改使用了该类的代码。
 - 封装可以对成员变量进行更精确的控制。
 - ### lambda 表达式
+  - 一种 `lambda` 表达式形式：参数， 箭头（->） 以及一个表达式。如果代码要完成的计算无法放在一个表达式中，就可以像写方法一样，把这些代码放在 {}中，
+并包含显式的 `return`语句
+```
+(String first, String second) -> //()内为参数
+{
+if (first.length() < second.length()) 
+   return -1;
+else if (first.length() > second.length()) 
+   return 1;
+else 
+   return 0;
+}
+```
+- 即使 lambda 表达式**没有参数**， 仍然要提供空括号，就像无参数方法一样：
+```
+() ->
+{
+  for(i=0,i<=100,i++)System.out.println(i); 
+}
+```
+- ### 枚举类 
+  - 枚举类型下的实例对象是其类所包含(拥有)的
+  - 若你创建了Season这个类，那么其下就有春(SPRING),夏(SUMMER),秋(AUTUMN),冬(WINTER)，便要维护他们。
+```
+enum SeasonEnum{ //枚举季节类
+    SPRING("春天"),SUMMER("夏天"),AUTUMN("秋天"),WINTER("冬天");
 
-
+    private String chinese;
+    SeasonEnum(String chinese){ //构造方法
+        this.chinese=chinese; //调用this关键字
+    }
+    public String getchinese(){
+        return chinese;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        String summer = "SUMMER";
+        SeasonEnum season1 = SeasonEnum.SPRING;
+        System.out.println(season1.getchinese());
+    }
+}
+``` 
+```
+public class Test {
+    public static void main(String[] args) {
+        String summer="SUMMER";
+        SeasonEnum season1=SeasonEnum.valueOf(summer); //使用valueOf，获取SUMMER的枚举类型
+        SeasonEnum season2=SeasonEnum.SPRING; //直接初始化
+        switch (season1){
+            case SPRING:
+                System.out.println("春天");
+                break;
+            case SUMMER:
+                System.out.println("夏天");
+                break;
+            case AUTUMN:
+                System.out.println("秋天");
+                break;
+            case WINTER:
+                System.out.println("冬天");
+                break;
+        }
+    }
+}
+```
  
