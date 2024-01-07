@@ -760,12 +760,24 @@ public class ReverseSort {
 - #### 类
   - 类是**封装对象的属性和行为的载体**，而在Java语言中对象的属性以**成员变量**的形式存在，对象的方法以**成员方法**的形式存在。
 - **成员变量**
-- 为了了解成员变量，首先定义一个图书
-类，成员变量对应于类对象的属性，在Book类中设置3个成员变量，分别为id、
-name和category，分别对应于图书编号、图书名称和图书类别3个图书属性。
+- 为了了解成员变量，首先定义一个图书类，成员变量对应于类对象的属性，在Book类中设置3个成员变量，分别为id、name和category，分别对应于图书编号、图书名称和图书类别3个图书属性。
 - 实例代码:
 ```
+public class book {
+    private String name;
 
+    public String getName(){
+        int id=0;
+        setName("Java");
+        return id+this.name;
+    }
+    private void setName(String name){
+        this.name=name;
+    }
+    public book getbook(){
+        return this;
+    }
+}
 ```
 - **成员方法**
 - 定义成员方法的语法格式如下：
@@ -1435,7 +1447,8 @@ public class Girl implements Happy,Pretty,Extroverted{
 - 女孩类引用三个定义的接口并使用它们包含的方法，从而实现多重继承
 - #### 实现多态
   - 多态可以通过继承（`extends`）的关系实现，也可以通过接口的形式实现。
-- 实例代码:
+  - 其实将父类对象应用于子类的特征就是多态。(将子类的对象看作为父类的实例化对象，即可调用父类的方法进而实现子类所需要)
+  - 实例代码:
 ```
 public interface Shape { //Shape接口表示一个形状
     String name();
@@ -1512,6 +1525,7 @@ public class test2 {
 ```
 - ### 封装
   - 指利用抽象将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体。 
+  - 将对象的属性和行为封装起来，其载体就是类，类通常对客户隐藏其实现细节。
 - 实例代码:
 ```
 public class Husband {
@@ -1558,8 +1572,8 @@ public class Husband {
 并包含显式的 `return`语句
 ```
 (String first, String second) -> //()内为参数
-{
-if (first.length() < second.length()) 
+{ //需要完成的计算代码
+if (first.length() < second.length())  
    return -1;
 else if (first.length() > second.length()) 
    return 1;
@@ -1598,6 +1612,9 @@ public class Test {
 }
 ``` 
 ```
+enum SeasonEnum{ //枚举季节类
+    SPRING,SUMMER,AUTUMN,WINTER;
+}
 public class Test {
     public static void main(String[] args) {
         String summer="SUMMER";
