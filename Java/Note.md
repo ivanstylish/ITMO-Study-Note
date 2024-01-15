@@ -764,14 +764,14 @@ public class ReverseSort {
 - 实例代码:
 ```
 public class book {
-    private String name;
+    private String name; //定义成员变量
 
-    public String getName(){
-        int id=0;
+    public String getName(){ //定义成员方法
+        int id=0; //定义局部变量
         setName("Java");
-        return id+this.name;
+        return id+this.name; 
     }
-    private void setName(String name){
+    private void setName(String name){ //定义一个setName()成员方法
         this.name=name;
     }
     public book getbook(){
