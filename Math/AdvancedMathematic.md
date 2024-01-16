@@ -33,10 +33,10 @@
   - **双曲正切**：  $\th x$  =  $\frac{\sh x}{\ch x}$  =  $\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$  ,定义域(-  $\infty$  ,+  $\infty$  )，为奇函数，通过原点且关于原点对称，在定义域内其单调递增。
   - ![](/Math/pic/Math1.png)
   - 由双曲函数定义可得：
-    -   $\sh (x+y)$  =  $\sh xch y$  +  $\ch xsh y$  
-    - $\sh (x-y)$=$\sh xch y$-$\ch xsh y$
-    - $\ch (x+y)$=$\ch xch y$+$\sh xch y$
-    - $\ch (x-y)$=$\ch xch y$-$\sh xsh y$
+    -   $sh (x+y)$  =  $sh xch y$  +  $ch xsh y$  
+    -   $sh (x-y)$  =  $sh xch y$  -  $ch xsh y$  
+    -   $ch (x+y)$  =  $ch xch y$  +  $sh xch y$  
+    -   $ch (x-y)$  =  $ch xch y$  -  $sh xsh y$  
 #### 第二节 数列极限
 - 定义 设{${x}_{n}$}为一数列，如果存在常数a，对于任何给定的正数$\alpha$(无论它多么小)，总存在正整数N，使得当n>N时，不等式$\lvert {x}_{n}-a\rvert$<$\alpha$ 都成立，那么**称常数a是数列{${x}_{n}$}的极限**，或者称数列{${x}_{n}$}收敛于a，记为 $\underset{x\rightarrow\infty}{\lim}$=a,或${x}_{n}$->a( n->$\infty$ )
 - 收敛数列的性质：
