@@ -14,15 +14,15 @@
 
 ### 第一章 映射与函数
 #### 第一节
-$f[g(x)]$函数中g与f能构成复合函数的条件为:函数g的值$R_{g}$必须包含于函数f的定义域$D_{f}$,即$R_{g}$$\subset$$D_{f}$
+  $f[g(x)]$  函数中g与f能构成复合函数的条件为:函数g的值  $R_{g}$  必须包含于函数f的定义域  $D_{f}$  ,即  $R_{g}$$\subset$$D_{f}$  
 
 - 函数的运算
-  - 和(差)f$\pm$g：(f$\pm$g)(x)=$f(x)$$\pm$$g(x)$,x$\in$D;
-  - 积f$\cdot$g:(f$\cdot$g)(x)=$f(x)$$\cdot$$g(x)$,x$\in$D;
-  - 商f$\div$g:($\frac{f}{g}$)(x)=$\frac{f(x)}{g(x)}$,x$\in$D\{x|g(x)=0,x$\in$D}
+  - 和(差)f  $\pm$  g：(f  $\pm$  g)(x)=  $f(x)$  $\pm$  $g(x)$  ,x  $\in$  D;
+  - 积f  $\cdot$  g:(f  $\cdot$  g)(x)=  $f(x)$  $\cdot$  $g(x)$  ,x  $\in$  D;
+  - 商f  $\div$  g:(  $\frac{f}{g}$  )(x)=  $\frac{f(x)}{g(x)}$  ,x  $\in$  D\{x|g(x)=0,x  $\in$D  }
   
 - 初等函数
-  - **幂函数**：y=$x^{b}$(b$\in$R是常数)
+  - **幂函数**：y  =$x^{b}$  (b  $\in  $R是常数)
   - **指数函数**：y=$a^{x}$(a>o且a $\neq$1)
   - **对数函数**：y=$\log_ax$(a>0且a$\neq$1,当a=e时，为y=$\ln(x)$) 
   - **三角函数**：y=$\sin x$, y=$\cos x$, y=$\tan x$
