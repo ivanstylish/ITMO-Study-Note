@@ -56,4 +56,22 @@
 - 函数极限的性质：
   - 定理一：(函数极限的唯一性)如果  $\underset{x\rightarrow{x}_{0}}{\lim}$    $f(x)$   存在，那么这极限唯一。
   - 定理二：(函数极限的局部有界性)如果  $\underset{x\rightarrow{x}_{0}}{\lim}$    $f(x)$  =   $A$  ，那么存在常数M>0和   $\delta$  >0,使得当0<  $\lvert {x}-{x}_{0}\rvert$   <   $\delta$  时，有  $\lvert f(x)\rvert$    $\le$  M.
-  - 定理三：(函数极限的局部保号性)如果  $\underset{x\rightarrow{x}_{0}}{\lim}$    $f(x)$  =A，且A>0(或A<0),那么存在常数  $\delta$  >0
+  - 定理三：(函数极限的局部保号性)如果  $\underset{x\rightarrow{x}_{0}}{\lim}$    $f(x)$  =A，且A>0(或A<0),那么存在常数  $\delta$  >0，使得当0<  $\lvert {x}-{x}_{0}\rvert$  <  $\delta$  时，有f(x)>0(或f(x)<0)
+#### 第四节 无穷小与无穷大
+##### 无穷小
+- 定义一：如果函数f(x)当  $x$    $\rightarrow$    ${x}_{0}$  时的极限为0，那么称函数当前状况为无穷小
+- 定理一：在自变量的同一变化过程x  $\rightarrow$    ${x}_{0}$  (或x趋近于无限大)，函数  $f(x)$  具有极限值A的充分不必要条件是  $f(x)$  =A+a,其中a是无穷小。
+##### 无穷大
+- 当  $f(x)$  为无穷小时,  $\frac{1}{f(x)}$  为无穷大。当  $f(x)$  为无穷大时，则反之。
+#### 第五节 极限运算法则
+- 定理一：两个无穷小之和为无穷小，有限个无穷小之和仍为无穷小。    
+- 定理二：有界(总是小于或大于某一个值)与无穷小的积为无穷小。例：  $\underset{x\rightarrow{0}}{\lim}$    $sin(\frac{1}{x})*x$  =0,三角函数永远是有界的。
+- 推论一：c(常数)*无穷小是无穷小。
+- 推论二：有限个无穷小的积是无穷小。
+- 定理三：  $\underset{}{\lim}$    $f(x)$  =A,$\underset{}{\lim}$    $g(x)$  =B.(条件：极限存在)极限里相加或相乘都等于极限f(x)相加减或相乘除极限g(x)，也等于A相加减或相乘除B。
+### 第六节 极限存在准则 
+- 准则一：数列{  ${x}_{n}$  },{  ${y}_{n}$  }
+  -   $\exist$    ${n}_{0}$    $\in$  N,n>  ${n}_{0}$  时，  ${y}_{n}$    $\le$    ${x}_{n}$    $\le$    ${z}{n}$  .
+  -   $\underset{n\rightarrow{\infty}}{\lim}$    ${y}_{n}$  =a, $\underset{n\rightarrow{\infty}}{\lim}$    ${z}_{n}$  =a,则  $\underset{n\rightarrow{\infty}}{\lim}$    ${x}_{n}$  =a。
+  - g(x)  $\le$  f(x)  $\le$  h(x).
+  -    $\underset{}{\lim}$  g(x)=A, $\underset{}{\lim}$  h(x)=A,则 $\underset{}{\lim}$  f(x)=A.     
