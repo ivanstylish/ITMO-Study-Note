@@ -70,7 +70,7 @@
 - 推论二：有限个无穷小的积是无穷小。
 - 定理三：  $\underset{}{\lim}$    $f(x)$  =A,$\underset{}{\lim}$    $g(x)$  =B.(条件：极限存在)极限里相加或相乘都等于极限f(x)相加减或相乘除极限g(x)，也等于A相加减或相乘除B。
 ### 第六节 极限存在准则 
-- 准则一：数列{  ${x}_{n}$  },{  ${y}_{n}$  }
+- 准则一：数列{ ${x}_{n}$ },{ ${y}_{n}$ }
   -   $\exist$    ${n}_{0}$    $\in$  N,n>  ${n}_{0}$  时，  ${y}_{n}$    $\le$    ${x}_{n}$    $\le$    ${z}{n}$  .
   -   $\underset{n\rightarrow{\infty}}{\lim}$    ${y}_{n}$  =a, $\underset{n\rightarrow{\infty}}{\lim}$    ${z}_{n}$  =a,则  $\underset{n\rightarrow{\infty}}{\lim}$    ${x}_{n}$  =a。
   - g(x)  $\le$  f(x)  $\le$  h(x).
