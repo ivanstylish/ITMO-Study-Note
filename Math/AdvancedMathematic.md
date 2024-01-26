@@ -74,4 +74,6 @@
   -   $\exist$    ${n}_{0}$    $\in$  N,n>  ${n}_{0}$  时，  ${y}_{n}$    $\le$    ${x}_{n}$    $\le$    ${z}{n}$  .
   -   $\underset{n\rightarrow{\infty}}{\lim}$    ${y}_{n}$  =a, $\underset{n\rightarrow{\infty}}{\lim}$    ${z}_{n}$  =a,则  $\underset{n\rightarrow{\infty}}{\lim}$    ${x}_{n}$  =a。
   - g(x)  $\le$  f(x)  $\le$  h(x).
-  -    $\underset{}{\lim}$  g(x)=A, $\underset{}{\lim}$  h(x)=A,则 $\underset{}{\lim}$  f(x)=A.     
+  -    $\underset{}{\lim}$  g(x)=A, $\underset{}{\lim}$  h(x)=A,则 $\underset{}{\lim}$  f(x)=A.  
+- 洛必达法则：  $\underset{x\rightarrow{0}}{\lim}$     $\frac{f(x)}{g(x)}$  =  $\underset{x\rightarrow{0}}{\lim}$  其导数。
+- $\underset{x\rightarrow{0}}{\lim}$    $\frac{sin(x)}{x}$  =1,有关于三角函数的求极限，要往  $\frac{sin(x)}{x}$  上转换。例如：  $\frac{tan(x)}{x}$  =  $\frac{sin(x)}{x}$  *  $\frac{1}{cos(x)}$.     
