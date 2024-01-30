@@ -1346,6 +1346,10 @@ public class Captor {
     }
 }
 ```
+- #### 三种类型的异常处理
+  - 声明异常
+  - 抛出异常
+  - 捕获异常
 - #### 运行时异常
   - `RuntimeException`异常是程序运行过程中产生的异常。Java类库的每个包中都定义了异常类，所有这些类都是`Throwable`类的子类。`Throwable`类派生了两个子类，分别是`Exception`和`Error`类。`Error`类及其子类用来描述Java运行系统中的内部错误以及资源耗尽的错误，这类错误比较严重。`Exception`类称为**非致命性类**，可以通过捕捉处理使程序继续执行。`Exception`类又根据错误发生的原因分为`RuntimeException`异常和除`RuntimeException`之外的异常
 
@@ -1450,6 +1454,7 @@ public class Girl implements Happy,Pretty,Extroverted{
 - #### 实现多态
   - 多态可以通过继承（`extends`）的关系实现，也可以通过接口的形式实现。
   - 其实将父类对象应用于子类的特征就是多态。(将子类的对象看作为父类的实例化对象，即可调用父类的方法进而实现子类所需要)
+  - `Override`(方法覆盖)与`Overload`(方法重载)之间的区别：重载`Overload`表示同一个类中可以有多个名称相同的方法，但这些方法的参数列表各不相同（即参数个数或类型不同），而`Override`不仅名称相同，参数列表也相同。
   - 实例代码:
 ```
 public interface Shape { //Shape接口表示一个形状
