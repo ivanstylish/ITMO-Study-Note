@@ -1230,6 +1230,9 @@ public class ImportTest {
 }
 ```
 ### 异常处理
+- 异常分为两大类：已检查和未检查
+  - 对于未检查异常也叫RunTimeException
+![](/Java/pic/java34.png)
 - #### 捕捉异常
   - Java语言的异常捕获结构由`try`、`catch`和`finally` 3部分组成。其中，`try`语句块存放的是可能发生异常的Java语句；`catch`程序块在`try`语句块之后，用来激发被捕获的异常；`finally`语句块是**异常处理结构的最后执行部分**，**无论`try`语句块中的代码如何退出**，都将执行`finally`语句块。
 - **`try-each`语句**
