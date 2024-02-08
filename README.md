@@ -9,6 +9,7 @@ note for study
 
 [俄语](RussianLanguage/readme.md)  
 [数学语言](MathsLanguage/readme.md)
+[信息学]()
 
 
 
