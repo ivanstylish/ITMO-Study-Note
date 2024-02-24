@@ -76,4 +76,7 @@
   - g(x)  $\le$  f(x)  $\le$  h(x).
   -   $\underset{}{\lim}$  g(x)=A,   $\underset{}{\lim}$  h(x)=A,则 $\underset{}{\lim}$  f(x)=A.  
 - 洛必达法则：  $\underset{x\rightarrow{0}}{\lim}$     $\frac{f(x)}{g(x)}$  =  $\underset{x\rightarrow{0}}{\lim}$  其导数。
-- $\underset{x\rightarrow{0}}{\lim}$    $\frac{sin(x)}{x}$  =1,有关于三角函数的求极限，要往  $\frac{sin(x)}{x}$  上转换。例如：  $\frac{tan(x)}{x}$  =  $\frac{sin(x)}{x}$  *  $\frac{1}{cos(x)}$.     
+- $\underset{x\rightarrow{0}}{\lim}$    $\frac{sin(x)}{x}$  =1,有关于三角函数的求极限，要往  $\frac{sin(x)}{x}$  上转换。例如：  $\frac{tan(x)}{x}$  =  $\frac{sin(x)}{x}$  *  $\frac{1}{cos(x)}$. 
+
+### 第七节 无穷小的比较
+![](/Math/pic/Math5.png)    

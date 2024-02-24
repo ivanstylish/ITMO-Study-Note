@@ -1647,4 +1647,46 @@ public class Test {
     }
 }
 ```
- 
+
+- ### 集合类
+![](/Java/pic/java35.png)
+- #### Collection接口
+  - `Collection`接口是层次结构中的根接口。构成`Collection`的单位称为元素。`Collection`接口通常不能直接使用，但该接口提供了添加元素、删除元素、管理数据的方法。由于`List`接口与`Set`接口都继承了`Collection`接口，因此这些方法对`List`集合与`Set`集合是通用的。
+![](/Java/pic/java36.png)
+```
+public class p2 {
+    public static void main(String[] args) {
+        Collection <String>list=new ArrayList<>(); //实例化集合类对象
+        list.add("地平线"); //向集合添加数据
+        list.add("班加罗尔");
+        list.add("直布罗陀");
+        list.add("亡灵");
+        Iterator<String> it=list.iterator(); //创建迭代器
+        while (it.hasNext()){ //判断是否有下一个元素
+            String apex=(String)it.next(); //获取集合中元素
+            System.out.println(apex);
+        }
+    }
+}
+```
+- #### List集合
+  - `List`集合包括`List`接口以及`List`接口的所有实现类。`List`集合中的元素允许重复，各元素的顺序就是对象插入的顺序。类似Java数组，用户可通过使用索引（元素在集合中的位置）来访问集合中的元素。
+  - `List`接口
+    - List接口定义了两个重要方法
+      - `get(int index)` ；获得指定索引位置。
+      - `set(int index,Object obj)` ；将集合中指定索引位置的对象修改为指定对象。
+    - List接口的常用实现类为`ArrayList`和`LinkedList`。
+      - `ArrayList`类实现了可变的数组，允许保存所有元素，包括null，并可以根据索引位置对集合进行快速的随机访问；缺点是向指定的索引位置插入对象或删除对象的速度较慢。
+      - `LinkedList`类采用**链表结构**保存对象。这种结构的优点是便于向集合中**插入和删除对象**，需要向集合中插入、删除对象时，使用`LinkedList`类实现的`List`集合的效率较高；但对于随机访问集合中的对象，使用`LinkedList`类实现`List`集合的效率较低。
+      - 实例化对象时；`List<E> list=new ArrayList<>();`,其中E为数据类型，比如String。
+- #### Set集合
+  - `Set`集合中的对象不按特定的方式排序，只是简单地把对象加入集合中，但`Set`集合中不能包含重复对象。`Set`集合由`Set`接口和`Set`接口的实现类组成。`Set`接口继承了`Collection`接口，因此包含`Collection`接口的所有方法。
+  - 其常用的实现类有`HashSet`类与`Treeset`类。
+    - `HashSet`类实现`Set`接口，由哈希表（实际上是一个`HashMap`实例）支持。它不保证`Set`的迭代顺序，特别是它不保证该顺序恒久不变。此类允许使用`null`元素。 
+    - `TreeSet`类不仅实现了`Set`接口，还实现了`java.util.SortedSet`接口，因此，`TreeSet`类实现的`Set`集合在遍历集合时按照自然顺序递增排序，也可以按照指定比较器递增排序，即可以通过比较器对用`TreeSet`类实现的`Set`集合中的对象进行排序。
+![](/Java/pic/java37.png)
+        - 存入`TreeSet`类实现的`Set`集合必须实现`Comparable`接口，该接口中的`compareTo(Object o)`方法比较此对象与指定对象的顺序。如果该对象小于、等于或大于指定对象，则分别返回负整数、0或正整数。
+- #### Map集合
+  - `Map`集合没有继承`Collection`接口，其提供的是`key`到`value`的映射。`Map`中不
+能包含相同的`key`，每个`key`只能映射一个`value`。`key`还决定了存储对象在映射中的存储位置，但不是由`key`对象本身决定的，而是通过一种“散列技术”进行处理，产生一个散列码的整数值。散列码通常用作一个偏移量，该偏移量对应分配给映射的内存区域的起始位置，从而确定存储对象在映射中的存储位置。`Map`集合包括`Map`接口以及`Map`接口的所有实现类。
+![](/Java/pic/java38.png)
