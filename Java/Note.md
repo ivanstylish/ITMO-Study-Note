@@ -1690,3 +1690,30 @@ public class p2 {
   - `Map`集合没有继承`Collection`接口，其提供的是`key`到`value`的映射。`Map`中不
 能包含相同的`key`，每个`key`只能映射一个`value`。`key`还决定了存储对象在映射中的存储位置，但不是由`key`对象本身决定的，而是通过一种“散列技术”进行处理，产生一个散列码的整数值。散列码通常用作一个偏移量，该偏移量对应分配给映射的内存区域的起始位置，从而确定存储对象在映射中的存储位置。`Map`集合包括`Map`接口以及`Map`接口的所有实现类。
 ![](/Java/pic/java38.png)
+```
+public class p3 {
+    public static void main(String[] args) {
+        Map<String,String>map=new HashMap<>();
+        map.put("01","atree");
+        map.put("02","point");
+        map.put("03","truth");
+        map.put("04","coace");
+        Set<String>set=map.keySet();
+        Iterator<String>it= set.iterator();
+        System.out.println("key集合中的所有元素:");
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+        Collection<String>collection=map.values();
+        it=collection.iterator();
+        System.out.println("values集合中的元素：");
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+    }
+}
+```
+ - ##### Map接口的实现类
+   - `Map`接口常用的实现类有`HashMap`和`TreeMap`。建议使用`HashMap`类实现`Map`集合，因为由`HashMap`类实现的`Map`集合添加和删除映射关系效率更高。`HashMap`是基于哈希表的`Map`接口的实现，`HashMap`通过哈希码对其内部的映射关系进行快速查找；而`TreeMap`中的映射关系存在一定的顺序，如果希望`Map`集合中的对象也存在一定的顺序，应该使用`TreeMap`类实现`Map`集合。 
+   - `HashMap`类是基于哈希表的`Map`接口的实现，此实现提供所有可选的映射操作，并允许使用`null`值和`null`键，但必须保证键的唯一性。`HashMap`通过哈希表对其内部的映射关系进行快速查找。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。
+   - `TreeMap`类不仅实现了`Map`接口，还实现了`java.util.SortedMap`接口，因此，集合中的映射关系具有一定的顺序。但在添加、删除和定位映射关系时，`TreeMap`类比`HashMap`类性能稍差。由于`TreeMap`类实现的`Map`集合中的映射关系是根据键对象按照一定的顺序排列的，因此**不允许**键对象是`null`。
