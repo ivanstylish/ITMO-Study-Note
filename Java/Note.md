@@ -1740,3 +1740,27 @@ I/O（`Input/Output`，输入／输出）流提供了一条通道程序，可以
     - `markSupported()`方法：如果当前流支持`mark()/reset()`操作就返回`true`。
     - `close`方法：关闭此输入流并释放与该流关联的所有系统资源。
 ![](/Java/pic/java41.png)
+  - Java中的字符是`Unicode`编码，是双字节的。`InputStream`是用来处理字节的，并不适合处理字符文本。Java为字符文本的输入专门提供了一套单独的类`Reader`，但`Reader`类并不是`InputStream`类的替换者，只是在处理字符串时简化了编程。`Reader`类是字符输入流的抽象类，所有字符输入流的实现都是它的子类。
+![](/Java/pic/java42.png)
+- **输出流**
+  - `OutputStream`类是字节输出流的抽象类，此抽象类是表示输出字节流的所有类的超类。
+![](/Java/pic/java43.png)
+  - `OutputStream`类中的所有方法均返回void，在遇到错误时会引发`IOException`异常。
+  - 其中包括的一些方法：
+    - `write(int b)`方法：将指定的字节写入此输出流。
+    - `write(byte[] b)`方法：将b个字节从指定的`byte`数组写入此输出流。
+    - `write(byte[] b,int off,int len)`方法：将指定`byte`数组中从偏移量`off`开始的`len`个字节写入此输出流。
+    - `flush()`方法：彻底完成输出并清空缓存区。
+    - `close()`方法：关闭输出流。
+  - `Writer`类是字符输出流的抽象类，所有字符输出类的实现都是它的子类。
+![](/Java/pic/java44.png)
+- #### File类
+  - `File`类是`java.io`包中唯一代表磁盘文件本身的对象。`File`类定义了一些与平台无关的方法来操作文件，可以通过调用`File`类中的方法，**实现创建、删除、重命名文件等操作**。`File`类的对象主要用来获取文件本身的一些信息，如文件所在的目录、文件的长度、文件读写权限等。数据流可以将数据写入到文件中，**文件**也是数据流最常用的**数据媒体**。
+- ##### 文件的创建与删除
+- 常用以下三种方法来构造函数：
+  1. `File(String pathname)`
+  语法如下：`new file(String pathname)`其中，`pathname`指路径名称（包含文件名）。例如：`File file = new File("d:/1.txt");`
+  2. `File(String parent,String child)`
+  该构造方法根据定义的父路径和子路径字符串（包含文件名）创建一个新的`File`对象。语法如下：`new File(String parent,String child)`
+  3. `File(File f , String child)`该构造方法根据`parent`抽象路径名和`child`路径名字符串创建一个新`File`实例。语法如下：`new File(File f,String child)`
+
