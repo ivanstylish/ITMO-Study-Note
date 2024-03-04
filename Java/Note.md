@@ -1802,5 +1802,32 @@ public class p6 {
 - #### 文件输入流\输出流
 - ##### FileInputStream与FileOutputStream类
   - `FileInputStream`类与`FileOutputStream`类都用来操作磁盘文件。如果用户的文件读取需求比较简单，则可以使用`FileInputStream`类，该类继承自`InputStream`类。`FileOutputStream`类与`FileInputStream`类对应，提供了基本的文件写入能力。`FileOutputStream`类是`OutputStream`类的子类。 
-
+```
+public class p7 {
+    public static void main(String[] args) {
+        File file=new File("word.txt");
+        try {
+            FileOutputStream outputStream=new FileOutputStream(file);
+            byte buy[]="玩APEX就应该享受，我也在享受，谁不在享受，享受就得应该享受，而不是不享受。".getBytes();
+            outputStream.write(buy);
+            outputStream.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try {
+            FileInputStream inputStream=new FileInputStream(file);
+            byte byt[]=new byte[1024]; //[]为数组大小，byte为字节数组
+            int len=inputStream.read(byt);
+            System.out.println("文件中的信息为："+new String(byt,0,len));
+            inputStream.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+  - `FileReader`和`FileWriter`类 
+    - 使用`FileOutputStream`类向文件中写入数据与使用`FileInputStream`类从文件中将内容读出来，都存在一点不足，即这两个类都只提供了对字节或字节数组的读取方法。由于汉字在文件中占用两个字节，如果使用字节流，读取不好可能会出现乱码现象，此时采用字符流`Reader`或`Writer`类即可避免这种现象。`FileReader`和`FileWriter`字符流对应了`FileInputStream`和`FileOutputStream`类。`FileReader`流顺序地读取文件，只要不关闭流，每次调用`read()`方法就顺序地读取源中其余的内容，直到源的末尾或流被关闭。
+- #### 带缓存的输入／输出流
+  - 缓存是I/O的一种性能优化。缓存流为I/O流增加了内存缓存区。有了缓存区，使得在流上执行`skip()`、`mark()`和`reset()`方法都成为可能。   
 
