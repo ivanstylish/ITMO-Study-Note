@@ -1763,4 +1763,44 @@ I/O（`Input/Output`，输入／输出）流提供了一条通道程序，可以
   2. `File(String parent,String child)`
   该构造方法根据定义的父路径和子路径字符串（包含文件名）创建一个新的`File`对象。语法如下：`new File(String parent,String child)`
   3. `File(File f , String child)`该构造方法根据`parent`抽象路径名和`child`路径名字符串创建一个新`File`实例。语法如下：`new File(File f,String child)`
+![](/Java/pic/java45.png)
+```
+public class p5 {
+    public static void main(String[] args) {
+        File file=new File("word.txt");
+        if (file.exists()){
+            file.delete();
+            System.out.println("文件已删除");
+        }else {
+            try { //捕获可能出现的异常
+                file.createNewFile(); //创建该文件
+                System.out.println("文件已创建");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
+```
+public class p6 {
+    public static void main(String[] args) {
+        File file = new File("word.txt");
+        if (file.exists()) {
+            String filename=file.getName();
+            long lenth=file.length();
+            boolean hidden=file.isHidden();
+            System.out.println("文件名称为："+filename);
+            System.out.println("文件长度为："+lenth);
+            System.out.println("文件是否为隐藏文件："+hidden);
+        }else {
+            System.out.println("文件不存在");
+        }
+    }
+}
+```
+- #### 文件输入流\输出流
+- ##### FileInputStream与FileOutputStream类
+  - `FileInputStream`类与`FileOutputStream`类都用来操作磁盘文件。如果用户的文件读取需求比较简单，则可以使用`FileInputStream`类，该类继承自`InputStream`类。`FileOutputStream`类与`FileInputStream`类对应，提供了基本的文件写入能力。`FileOutputStream`类是`OutputStream`类的子类。 
+
 
