@@ -1830,4 +1830,55 @@ public class p7 {
     - 使用`FileOutputStream`类向文件中写入数据与使用`FileInputStream`类从文件中将内容读出来，都存在一点不足，即这两个类都只提供了对字节或字节数组的读取方法。由于汉字在文件中占用两个字节，如果使用字节流，读取不好可能会出现乱码现象，此时采用字符流`Reader`或`Writer`类即可避免这种现象。`FileReader`和`FileWriter`字符流对应了`FileInputStream`和`FileOutputStream`类。`FileReader`流顺序地读取文件，只要不关闭流，每次调用`read()`方法就顺序地读取源中其余的内容，直到源的末尾或流被关闭。
 - #### 带缓存的输入／输出流
   - 缓存是I/O的一种性能优化。缓存流为I/O流增加了内存缓存区。有了缓存区，使得在流上执行`skip()`、`mark()`和`reset()`方法都成为可能。   
+  -  **`BufferedInputStream`与`BufferedOutputStream`类**
+    - `BufferedInputStream`类可以对所有`InputStream`类进行带缓存区的包装以达到性能的优化。`BufferedInputStream`类有两个构造方法：
+      - `BufferedInputStream(InputStream in)`。 
+      - `BufferedInputStream(InputStream in,int size)`。
+      - 第一种形式的构造方法**创建了一个带有32个字节的缓存流**；第二种形式的构造方法**按指定的大小来创建缓存区**。一个最优的缓存区的大小，取决于它所在的操作系统、可用的内存空间以及机器配置。从构造方法可以看出，`BufferedInputStream`对象位于`InputStream`类对象之前。ОР  ПСЯАВЫФЫРВО ЛР Т    ПАП АП АПАПАПУ
+![](/Java/pic/java46.png)
+  - **`BufferedReader`与`BufferedWriter`类**
+    - 此两类分别继承`Reader`和`Writer`类。其具有内部缓存机制，可以以行为单位进行输入\输出。
+![](/Java/pic/java47.png)
+```
+public class p6 {
+    public static void main(String[] args) {
+        String content[]={"Hi 好久不见","你过得还好吗？","我想你了","不是你不在我身边了,而感到寂寞","是因为我真的爱上你了","回来吧。"};
+        File file=new File("word.txt");
+        try {
+            FileWriter fileWriter=new FileWriter(file);
+            BufferedWriter buf=new BufferedWriter(fileWriter);
+            for (int k = 0; k<content.length; k++){
+                buf.write(content[k]);
+                buf.newLine();
+            }
+            buf.close();
+            fileWriter.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try {
+            FileReader fileReader=new FileReader(file);
+            BufferedReader bufr=new BufferedReader(fileReader);
+            String s=null;
+            int i=0;
+            while ((s=bufr.readLine())!=null){
+                i++;
+                System.out.println("第"+i+"行："+s);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+  - #### 数据输入／输出流
+    - 数据输入／输出流（`DataInputStream`类与`DataOutputStream`类）允许应用程序以与机器无关的方式从底层输入流中读取基本Java数据类型。也就是说，当读取一个数据时，不必再关心这个数值应当是哪种字节。
+    - ![](/Java/pic/java48.png)
+    - 由于Java中的字符是Unicode编码，是双字节的，`writeBytes`只是将字符串中的每一个字符的低字节内容写入目标设备中；而`writeChars`将字符串中的每一个字符的两个字节的内容都写到目标设备中；`writeUTF`将字符串按照`UTF`编码后的字节长度写入目标设备，然后才是每一个字节的`UTF`编码。
+    - `DataInputStream`类只提供了一个`readUTF()`方法返回字符串。这是因为要在一个连续的字节流读取一个字符串，如果没有特殊的标记作为一个字符串的结尾，并且不知道这个字符串的长度，就无法知道读取到什么位置才是这个字符串的结束。
+  - ####  ZIP压缩输入／输出流
+    - `ZipOutputStream`与`ZipInputStream`类来实现文件的压缩／解压缩。无论是从ZIP压缩文件中读取内容还是写入内容进ZIP文件中都是先找到"目录进入点"。
+    - ![](/Java/pic/java49.png)
+    - ![](/Java/pic/java50.png)
+
 
