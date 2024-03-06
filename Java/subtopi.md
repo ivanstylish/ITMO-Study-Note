@@ -167,3 +167,41 @@ class son extends Ivan{
     }
 }
 ```
+9. 编写程序，实现读取文件时出现一个表示读取进度的进度条。可使用
+javax.swing包提供的输入流类ProgressMonitorInputStream。
+```
+public class FileReadWithProgressBar {
+    public static void main(String[] args) {
+        // 选择文件
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(null);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            // 获取选择的文件
+            File selectedFile = fileChooser.getSelectedFile();
+
+            // 设置进度条
+            ProgressMonitor progressMonitor = new ProgressMonitor(null, "Reading File", "", 0, (int) selectedFile.length());
+            try (FileInputStream fileInputStream = new FileInputStream(selectedFile);
+                 BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+                 ProgressMonitorInputStream progressMonitorInputStream = new ProgressMonitorInputStream(null, "Reading File", bufferedInputStream)) {
+
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = progressMonitorInputStream.read(buffer)) != -1) {
+                    // 处理文件数据，这里只是简单地模拟读取过程
+
+                    // 更新进度条
+                    progressMonitor.setProgress(progressMonitor.getMillisToPopup());
+                }
+
+                // 读取完成
+                JOptionPane.showMessageDialog(null, "File Read Complete");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
