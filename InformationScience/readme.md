@@ -1,3 +1,3 @@
 ## [主页](../README.md)/InformationScience
 
-- [ ] [Information](./readme.md)
+- [ ] [Information](./Infotmation.md)
