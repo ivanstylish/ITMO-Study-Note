@@ -205,3 +205,57 @@ public class FileReadWithProgressBar {
     }
 }
 ```
+10. 数字炸弹小游戏：输入玩家人数和名称，给定一个数字范围，玩家轮流猜数字，猜对了，炸弹爆炸，游戏结束。(Random，for循环，if和while条件语句，Scanner操作台来实现读取输入，hashmap集合记录玩家名称和分数，boolean逻辑语句)
+```
+public class NumberBombGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //使用Scanner操作台来实现读取输入
+
+        //输入数字范围
+        System.out.println("Please enter a range of numbers：");
+        int rangeStart = scanner.nextInt();
+        int rangeEnd = scanner.nextInt();
+
+        // 输入玩家的名称和数量
+        System.out.println("Please enter the number of players：");
+        int playNum = scanner.nextInt();
+        scanner.nextLine(); //需在nextInt后加上nextLine才能正确换行
+
+        //初始化玩家分数
+        Map<String,Integer> playScores = new HashMap<>();
+        for (int i = 1; i<=playNum; i++){
+            System.out.println("Please enter the player's "+ i +" name:");
+            String playerName = scanner.nextLine();
+            playScores.put(playerName, 0);
+        }
+
+        //随机生成一个数字
+        Random ran = new Random();
+        int targetNMum = ran.nextInt(rangeEnd - rangeStart + 1) + rangeStart;
+
+        //循环让每个玩家循环输入猜测的数字
+        boolean isGameEnded = false;
+        while (!isGameEnded){
+            for (String playerName : playScores.keySet()) {
+                System.out.println(playerName + " guess a number：");
+                int guessNum = scanner.nextInt(); //玩家猜测的数字
+                if (guessNum == targetNMum){ //如果猜对了，该玩家得分加10 ，游戏结束
+                    playScores.put(playerName,playScores.get(playerName) + 10);
+                    isGameEnded = true;
+                    break;
+                }else { //猜错，输出提示信息
+                    String wrong = guessNum < targetNMum ?"It's smaller for it":"It's bigger for it";
+                    System.out.println("You was tricked，" + wrong + "!");
+                }
+            }
+        }
+
+        //输出每个玩家的分数
+        System.out.println("THE GAME IS OVER!");
+        for (String playerName : playScores.keySet()){
+            System.out.println(playerName + "points:" + playScores.get(playerName));
+        }
+    }
+}
+```
