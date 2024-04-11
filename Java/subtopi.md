@@ -259,3 +259,125 @@ public class NumberBombGame {
     }
 }
 ```
+11. 编写程序，实现一个学生类，包含学生的姓名、年龄、性别、成绩、班级、入学时间等属性，并提供相应的构造方法和方法。
+```
+public class Student {
+    private String name;
+    private int age;
+    private String gender;
+    private double score;
+    private String clazz;
+    private Date enrollDate;
+
+    public Student(String name, int age, String gender, double score, String clazz, Date enrollDate) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.score = score;
+        this.clazz = clazz;
+        this.enrollDate = enrollDate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public String getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(String clazz) {
+        this.clazz = clazz;
+    }
+
+    public Date getEnrollDate() {
+        return enrollDate;
+    }
+
+    public void setEnrollDate(Date enrollDate) {
+        this.enrollDate = enrollDate;
+    }
+
+    public void printInfo() {
+        System.out.println("Name:" + name);
+        System.out.println("Age:" + age);
+        System.out.println("Gender:" + gender);
+        System.out.println("Score:" + score);
+        System.out.println("Class:" + clazz);
+        System.out.println("Enroll Date:" + enrollDate);
+    }
+}
+```
+12. 两数之和，给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
+```
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i,j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+// 或者用HashMap
+ public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+       Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>();
+       for(int i = 0; i < nums.length; ++i){
+           if (hashtable.containsKey(target - nums[i])){
+               return new int[]{hashtable.get(target - nums[i]), i};
+           }
+           hashtable.put(nums[i], i);
+       }
+       return new int[0];
+    }
+}
+```
+13. 给你一个 非严格递增排列 的数组 nums ，请你原地删除重复出现的元素，使每个元素 只出现一次 返回删除后数组的新长度。元素的 相对顺序 应该保持一致。然后返回 nums 中唯一元素的个数。
+```
+class Solution2 {
+    public int removeDuplicates(int[] nums) {
+        int slow = 0; //慢指针
+        //快指针
+        //找到不重复的元素，赋值到数组的开头
+        for (int fast = 0; fast < nums.length; fast++){
+            if (nums[fast] != nums[slow]) {
+                nums[++slow] = nums[fast];
+            }
+        }
+        return slow + 1;
+    }
+}
+```
