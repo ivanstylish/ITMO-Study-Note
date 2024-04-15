@@ -1838,7 +1838,7 @@ public class p7 {
     - `BufferedInputStream`类可以对所有`InputStream`类进行带缓存区的包装以达到性能的优化。`BufferedInputStream`类有两个构造方法：
       - `BufferedInputStream(InputStream in)`。 
       - `BufferedInputStream(InputStream in,int size)`。
-      - 第一种形式的构造方法**创建了一个带有32个字节的缓存流**；第二种形式的构造方法**按指定的大小来创建缓存区**。一个最优的缓存区的大小，取决于它所在的操作系统、可用的内存空间以及机器配置。从构造方法可以看出，`BufferedInputStream`对象位于`InputStream`类对象之前。ОР  ПСЯАВЫФЫРВО ЛР Т    ПАП АП АПАПАПУ
+      - 第一种形式的构造方法**创建了一个带有32个字节的缓存流**；第二种形式的构造方法**按指定的大小来创建缓存区**。一个最优的缓存区的大小，取决于它所在的操作系统、可用的内存空间以及机器配置。从构造方法可以看出，`BufferedInputStream`对象位于`InputStream`类对象之前。
 ![](/Java/pic/java46.png)
   - **`BufferedReader`与`BufferedWriter`类**
     - 此两类分别继承`Reader`和`Writer`类。其具有内部缓存机制，可以以行为单位进行输入\输出。
