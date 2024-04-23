@@ -433,16 +433,16 @@ public class Card {
     private Suit suit;
     private Rank rank;
 
-    public Card(Suit suit, Rank rank) {
+    public Card(Suit suit, Rank rank) { // 构造方法，传入花色和等级，初始化Card类
         this.suit = suit;
         this.rank = rank;
     }
 
-    public Suit getSuit() {
+    public Suit getSuit() { // 获得花色
         return suit;
     }
 
-    public void setSuit(Suit suit) {
+    public void setSuit(Suit suit) { // 设置花色
         this.suit = suit;
     }
 
@@ -454,11 +454,11 @@ public class Card {
         this.rank = rank;
     }
 
-    public enum Suit {
+    public enum Suit { // 定义花色枚举类型
         CLUB, DIAMOND, HEART, SPADE
     }
 
-    public enum Rank {
+    public enum Rank { // 定义等级枚举类型
         ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
     }
     // 重写toString方法
@@ -466,5 +466,38 @@ public class Card {
     public String toString() {
         return rank + " of " + suit;
    }
+}
+class Deck {  // 定义Deck类，代表一副扑克牌
+    private static int rankNums = 13;
+    private static int suitNums = 4;
+    private static int sizecard = rankNums * suitNums;
+
+    private Card [][] cards; // 确定card的二维数组包括了花色和数字
+
+    public Deck() {
+        cards = new Card[suitNums][rankNums];
+        for (int suit = Card.DIAMONDS; suit <= Card.SPADES; suit++) {
+            for (int rank = Card.ACE; rank <= Card.KING; rank++) {
+                cards[suit-1][rank-1] = new Card(rank,suit);
+            }
+        }
+    }
+    public Card getCards(int suit, int rank) {
+        return cards[suit-1][rank-1];
+    }
+}
+public class DisplayCard { // 展示扑克牌
+    public static void main(String[] args) {
+        Deck deck = new Deck();
+        for (int suit = Card.DIAMONDS; suit <= Card.SPADES; suit++){
+            for (int rank = Card.ACE; rank <= Card.KING; rank++){
+                Card card = deck.getCards(suit,rank);
+                System.out.format("%s of %s%n",
+                        Card.rankToString(card.getRank()), // 调用Card类中的静态方法
+                        Card.suitToString(card.getSuit())); // 调用Card类中的静态方法
+
+            }
+        }
+    }
 }
 ```
