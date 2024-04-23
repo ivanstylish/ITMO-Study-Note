@@ -409,3 +409,62 @@ public class Solution3 {
     }
 }
 ```
+15. 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。(使用递归方式)
+```
+public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    if (l1 == null) { // 若链表1为空，则返回链表2
+        return l2;
+    }
+    if (l2 == null) { // 若链表2为空，则返回链表1
+        return l1;
+    }
+    if (l1.val < l2.val) { // 若链表1的头节点值小于链表2的头节点值，则将链表1的头节点添加到新链表中，并递归调用mergeTwoLists方法
+        l1.next = mergeTwoLists(l1.next, l2);
+        return l1;
+    } else { // 反之则先将链表2的头节点添加到新链表中，并递归调用mergeTwoLists方法
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
+    }
+}
+```
+16. 编写一个类，其实例代表一副扑克牌中的一张扑克牌。扑克牌有两个显著属性：等级和花色。请务必保留您的解决方案，因为您将被要求在枚举类型中重写它。
+```
+public class Card {
+    private Suit suit;
+    private Rank rank;
+
+    public Card(Suit suit, Rank rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
+    public void setRank(Rank rank) {
+        this.rank = rank;
+    }
+
+    public enum Suit {
+        CLUB, DIAMOND, HEART, SPADE
+    }
+
+    public enum Rank {
+        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+    }
+    // 重写toString方法
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
+   }
+}
+```
