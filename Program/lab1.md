@@ -98,3 +98,55 @@
     $$d[i][j]=\left(\frac{\sin\left(\cos\left(\frac{2}{3}\cdot(x−1)\right)\right)}{2}/3\right)^{\frac{e^{\ln(\lvert x\rvert)−3}}{1}/2}$$
     
 4. Напечатать полученный в результате массив в формате с тремя знаками после запятой.
+
+
+### Решение варианта 7:
+```
+import java.util.Random;
+
+public class lab1 {
+    public static void main(String[] args) {
+        int d[] = new int[7];
+        int b = 16;
+        for (int i = 0; i < 7; i++) {
+            d[i] = b;
+            b -= 2;
+        }
+        System.out.println("一维数组为:");
+        for (int i = 0; i < 7; i++) {
+            System.out.println(d[i] + "");
+        }
+        Random arr = new Random();
+        float max = 5.0f;
+        float min = -10.0f;
+        float x[] = new float[10];
+        for (int i = 0; i < 10; i++) {
+            x[i] = min + arr.nextFloat(max - min + 1);
+        }
+        System.out.println("十个随机数为:");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(x[i] + "");
+        }
+        double[][] n = new double[7][10]; // 定义数组空间
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (d[i] == 10) {
+                    n[i][j] = Math.asin(0.2 * Math.cos(x[j]));
+                } else if (d[i] == 8 || d[i] == 12 || d[i] == 14) {
+                    double e = Math.E;
+                    n[i][j] = Math.cos(Math.atan(1 / Math.pow(e, Math.abs(x[j]))));
+                } else {
+                    n[i][j] = Math.sin(Math.pow(Math.pow((Math.asin(x[j]-2.5/15))*(1-Math.log(Math.abs(x[j]))),x[j]),x[j]/2));
+                }
+            }
+        }
+        System.out.println("二维数组为：");
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(n[i][j] + "");
+            }
+            System.out.println();
+        }
+    }
+}
+```

@@ -50,7 +50,7 @@ int x = 450,y = -462;
 ```
 float f1 = 13.23f;
 double d1 = 4562.12d;
-double d2 =45678.1564;
+double d2 = 45678.1564;
 ```
 - #### 字符类型
   -  char型
@@ -1174,7 +1174,7 @@ public class BigDecimalDemo {
     public BigDecimal mul(double value1,double value2){
         BigDecimal b1=new BigDecimal(Double.toString(value1));
         BigDecimal b2=new BigDecimal(Double.toString(value2));
-        return b1.multiply(b2);//调用乘法方法
+        return b1.multiply(b2); // 调用乘法方法
     }
     /**
      * 定义除法方法，参数为除数与被除数
