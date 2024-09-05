@@ -18,7 +18,7 @@ note for study
 
 [数学](Math/readme.md)  
 [编程](Program/readme.md)  
-[OPD](OPD/readme.md)
+[OPD](OPD/readme.md)  
 [信息学](InformationScience/readme.md)
 
 ## 大二
