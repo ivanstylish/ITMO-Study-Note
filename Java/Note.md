@@ -7,9 +7,11 @@
 - 每一个应用程序都必须包含一个main()方法，含有main()方法的类称为主类
 - 项目project、包package和类java class
 - main()方法是类体中的主方法。该方法从“{”开始，至“}”结束。
-public、static和void分别是main()方法的**权限修饰符、静态修饰符和返回值修饰符**，
-Java程序中的main()方法必须声明为`public static void。String[] args`是一
-个字符串类型的数组，它是`main()`方法的参数，main()方法是程序开始执行的位置。
+**public、static和void**分别是main()方法的**权限修饰符、静态修饰符和返回值修饰符**，Java程序中的main()方法必须声明为`public static void。String[] args`是一个字符串类型的数组，它是`main()`方法的参数，main()方法是程序开始执行的位置。
+**static**修饰符表示该方法是一个静态方法，可以不通过创建类的实例对象来调用。一个类中可以有无数个实例，但只有一个静态域。
+
+- 实例代码
+
 ```
 public class Main {
     public static void main(String[] args) {
@@ -104,8 +106,7 @@ boolean b = true;
 int age;
 char char1='r';
 ```
- - 系统的内存可大略分为3个区域，即**系统（OS）区、程序
-（Program）区和数据（Data）区**
+ - 系统的内存可大略分为3个区域，即**系统（OS）区、程序（Program）区和数据（Data）区**
 ![](/Java/pic/java4.png)
 - 常量称为**final变量**，在程序运算中只赋值一次
 - 在程序中，一般会根据变量的“有效范围”将变量分为“成员变量”和“局部变量”。
