@@ -24,4 +24,5 @@
 
 - [ ] [Information](Information.md)
 - [ ] [Python](Python.md)
-- [ ] [Lecture1](Lecture1.md)
+- [ ] [Lecture1](Lecture1.md)  
+- [ ] [Аннотация](annotation.md)
