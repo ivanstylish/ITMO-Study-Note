@@ -1,6 +1,6 @@
-Pyukumuku Lil wolf from the team White enters the battle!  
-Lotad Lil tiger from the team Purple enters the battle!  
-Lotad Lil tiger misses
+Pyukumuku Lil wolf from the team White enters the battle!    
+Lotad Lil tiger from the team Purple enters the battle!    
+Lotad Lil tiger misses  
 
 Pyukumuku Lil wolf uses Swagger ,try to raise enemy's Attack and confuses him..   
 Lotad Lil tiger increases attack.
