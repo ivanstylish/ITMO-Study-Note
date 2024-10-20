@@ -1,4 +1,4 @@
-## [主页](../README.md)/[InformationScience](./readme.md)/Information
+## [主页](../README.md)/[Informatics](./readme.md)/Information
 - ### Наиболее часто используемые функции в ЕГЭ
 |单词|意义|单词|意义|单词|意义|
 |:----:|:----:|:----:|:----:|:----:|:----:|
