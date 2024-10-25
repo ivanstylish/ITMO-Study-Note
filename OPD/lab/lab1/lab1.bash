@@ -3,30 +3,26 @@
 # Init
 
 #Задание 1:
-
 mkdir -p lab0
 cd lab0
-touch carvanha4 flaaffy0 omanyte99
-mkdir -p machoke7
+touch carvanha4 flaaffy0 omanyte9
+mkdir -p machoke7 whirlpede9 tirtouga5
 cd machoke7
 mkdir -p bronzong
 touch omastar
 touch marill
 cd ..
-mkdir -p tirtouga5
 cd tirtouga5
 touch beheeyem
 touch pupitar
 touch nidoking
 cd ..
-mkdir -p whirlpede9
 cd whirlpede9
 mkdir -p armaldo
 touch slowpoke
 mkdir -p tentacruel
 mkdir -p minccino
 cd ..
-
 echo Ходы > carvanha4
 echo "Ancientpower Bounce Dark Pulse Dive Fury Cutter Icy" >> carvanha4
 echo "Wind Mud-Slap Sleep Talk Snore Spite Super Fang Swift Uproar Water" >> carvanha4
@@ -50,6 +46,7 @@ echo "Hustle Sheer Force" >> nidoking
 cd ..
 cd whirlpede9
 echo "Развитые способности Regenerator" > slowpoke
+cd ..
 
 #Задание 2:
 chmod 044 carvanha4
@@ -85,12 +82,16 @@ chmod 777 flaaffy0
 chmod 777 whirlpede9/minccino
 chmod 777 whirlpede9/tentacruel
 chmod 777 carvanha4
+mkdir whirlpede9/tentacruel/whirlpede9_copy
 ln -s tirtouga5 Copy_70
 cat whirlpede9/slowpoke tirtouga5/beheeyem > flaaffy0_53
 ln -P omanyte9 tirtouga5/nidokingomanyte
 cp flaaffy0 whirlpede9/minccino
-cp -r whirlpede9/* whirlpede9/tentacruel
-ln -s carvanha4 tirtouga5/pupitarcarvanha
+mkdir -p TEMP/whirlpede9
+cp -r whirlpede9/* TEMP/whirlpede9
+mv TEMP/whirlpede9 whirlpede9/tentacruel
+rmdir TEMP
+ln -s $(pwd)carvanha4 tirtouga5/pupitarcarvanha
 cp omanyte9 tirtouga5/nidokingomanyte_omanyte_cp
 chmod 004 whirlpede9/slowpoke
 chmod 577 whirlpede9/tentacruel
@@ -108,13 +109,16 @@ chmod 777 whirlpede9/slowpoke
 chmod 777 carvanha4
 chmod 777 machoke7
 chmod 777 tirtouga5/beheeyem
+chmod 777 machoke7/omastar
 wc -l machoke7/omastar machoke7/marill | sort -nr
 [ ! -z $(grep -rl "ke" .)] && ls -l $(grep -rl "ke" .) 2>&1
-[ ! -z $(ls -1 -dp **/t* | grep -v "/$") ] && cat $(ls -1 -dp **/t* | grep -v "/$") | sort -r | nl 2> /tmp/opd_lab1_err>sort $(ls -1 -dp "$PWD/tirtouga5/"* | grep -v "/$") 2> /tmp/opd_lab1_errors4.log
+[ ! -z $(ls -1 -dp **/t* | grep -v "/$") ] && cat $(ls -1 -dp **/t* | grep -v "/$") | sort -r | nl 2> /tmp/opd_lab1_errors3.log
+sort $(ls -1 -dp "$PWD/tirtouga5/"* | grep -v "/$") 2> /tmp/opd_lab1_errors4.log
 cat -n $(ls -1 -dp "$PWD/whirlpede9/"* | grep -v "/$") 2> /dev/null
 ls -ltr 2>&1 | grep 'g$' | tail -2
 chmod 004 whirlpede9/slowpoke
 chmod 004 tirtouga5/beheeyem
+chmod 004 machoke7/omastar
 chmod 335 tirtouga5
 chmod 044 carvanha4
 chmod 357 machoke7
@@ -128,5 +132,7 @@ rm -f tirtouga5/pupitarcarvan*
 rm -f tirtouga5/nidokingomany*
 chmod 777 machoke7
 rm -r machoke7
-chmod -R 777 whirlpede9
-rm -r whirlpede9/tentacruel
+chmod -R 777 whirlpede9/tentacruel
+chmod u+w whirlpede9
+rm -rf whirlpede9/tentacruel
+chmod u-w whirlpede9
