@@ -1903,5 +1903,3 @@ public class p6 {
 |LinkedHashMap|一种可以记住键 / 值项添加次序的映射表|
 |WeakHashMap|一种其值无用武之地后可以被垃圾回收器回收的映射表|
 |IdentityHashMap|一种用==而不是equals()来比较键的映射表|
-
-![](/Java/pic/java51.png)

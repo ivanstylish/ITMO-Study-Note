@@ -12,3 +12,4 @@ Here is the link of the course: [Linear ALgebra](https://ocw.mit.edu/courses/18-
 - [第一单元](./1.md)
 - [第二单元](./2.md)
 - [第三单元](./3.md)
+- [座谈会](./symposium.md)
