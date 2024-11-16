@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schedule>
+    <day date="2024-11-26">
+        <P3110>
+            <DayOfWeek>Вторник</DayOfWeek>
+            <Class>Первая</Class>
+            <TimeOfClass>10:00 - 11:30</TimeOfClass>
+            <Type>Практика</Type>
+            <Subject>Линейная алгебра</Subject>
+            <Teacher>Кольцова Татьяна Борисовна</Teacher>
+            <Classroom>ауд.4306, ул.Ломоносова,д.9, лит.Б</Classroom>
+        </P3110>
+    </day>
+    <day date="2024-11-26">
+        <P3110>
+            <DayOfWeek>Вторник</DayOfWeek>
+            <Class>Вторая</Class>
+            <TimeOfClass>11:40 - 13:10</TimeOfClass>
+            <Type>Лекция</Type>
+            <Subject>Линейная алгебра</Subject>
+            <Teacher>Тушавин Глеб Владимирович</Teacher>
+            <Classroom>ауд.2202, ул.Ломоносова,д.9, лит.А</Classroom>
+        </P3110>
+    </day>
+    <day date="2024-11-28">
+        <P3110>
+            <DayOfWeek>Четверг</DayOfWeek>
+            <Class>Первая</Class>
+            <TimeOfClass>15:20 - 16:50</TimeOfClass>
+            <Type>Лекция</Type>
+            <Subject>История российской науки и техники</Subject>
+            <Teacher>Васильев Андрей Владимирович</Teacher>
+            <Classroom>ауд.1405, Кронверкский пр.,д49, лит.А</Classroom>
+        </P3110>
+    </day>
+    <day date="2024-11-28">
+        <P3110>
+            <DayOfWeek>Четверг</DayOfWeek>
+            <Class>Вторая</Class>
+            <TimeOfClass>18:40 - 20:10</TimeOfClass>
+            <Type>Практика</Type>
+            <Subject>История российской науки и техники</Subject>
+            <Teacher>Васильев Андрей Владимирович</Teacher>
+            <Classroom>ауд.2433, Кронверкский пр.,д49, лит.А</Classroom>
+        </P3110>
+    </day>
+</Schedule>
