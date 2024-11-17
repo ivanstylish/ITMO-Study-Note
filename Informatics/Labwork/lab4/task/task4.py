@@ -1,16 +1,10 @@
 import xml.etree.ElementTree as ET
 import yaml
+import time
 
 def parse_schedule_xml_to_yaml(input_file, output_file):
-    try:
-        tree = ET.parse(input_file)
-        root = tree.getroot()
-    except ET.ParseError:
-        print(f"Error parsing: Could not parse right XML file: {input_file}")
-        return
-    except FileNotFoundError:
-        print(f"Error: The input file {input_file} could not be found")
-        return
+    tree = ET.parse(input_file)
+    root = tree.getroot()
 
     schedule = []
 
@@ -46,14 +40,16 @@ def parse_schedule_xml_to_yaml(input_file, output_file):
         if day_schedule['P3110']:
             schedule.append(day_schedule)
 
-    try:
-        with open(output_file, 'w', encoding='utf-8') as outfile:
+    with open(output_file, 'w', encoding='utf-8') as outfile:
             yaml.dump({'schedule': schedule}, outfile, default_flow_style=False, allow_unicode=True)
             print(f"Successfully parsed to {output_file} output file.")
-    except Exception as e:
-        print(f"Error: Could not write to '{output_file}'. {e} output file.")
 
 if __name__ == '__main__':
     input_file = '../myXML/input_schedule.xml'
     output_file = '../myYAML/output_schedule_ex3.yaml'
     parse_schedule_xml_to_yaml(input_file, output_file)
+
+    start_time = time.time()
+    parse_schedule_xml_to_yaml(input_file, output_file)
+    end_time = time.time()
+    print(f"{end_time - start_time} seconds")

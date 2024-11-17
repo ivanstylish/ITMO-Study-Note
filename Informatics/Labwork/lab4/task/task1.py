@@ -1,10 +1,9 @@
+import time
+
+
 def parse_schedule_xml_to_yaml(input_file, output_file):
-    try:
-        with open(input_file, 'r', encoding='utf-8') as infile:
+    with open(input_file, 'r', encoding='utf-8') as infile:
             xml_data = infile.read()
-    except FileNotFoundError:
-        print(f"Error: {input_file} not found.")
-        return
 
     schedule = {}
     days = xml_data.split("<day date=")
@@ -32,23 +31,20 @@ def parse_schedule_xml_to_yaml(input_file, output_file):
             })
 
 
-    try:
-        with open(output_file, 'w', encoding='utf-8') as outfile:
-            outfile.write("schedule:\n")
-            for day in schedule.values():
-                outfile.write(f"- date: \"{day['date']}\"\n")
-                outfile.write(f"  P3110: \n")
-                for cls in day['classes']:
-                    outfile.write(f"  - DayOfWeek: {cls['dayOfWeek']}\n")
-                    outfile.write(f"    Class: {cls['class_num']}\n")
-                    outfile.write(f"    TimeOfClass: {cls['time']}\n")
-                    outfile.write(f"    Type: {cls['type']}\n")
-                    outfile.write(f"    Subject: {cls['subject']}\n")
-                    outfile.write(f"    Teacher: {cls['teacher']}\n")
-                    outfile.write(f"    Classroom: {cls['classroom']}\n")
-            print(f"Output written to {output_file}")
-    except Exception as e:
-        print(f"Error writing to {output_file}: {e}")
+    with open(output_file, 'w', encoding='utf-8') as outfile:
+        outfile.write("schedule:\n")
+        for day in schedule.values():
+            outfile.write(f"- date: \"{day['date']}\"\n")
+            outfile.write(f"  P3110: \n")
+            for cls in day['classes']:
+                outfile.write(f"  - DayOfWeek: {cls['dayOfWeek']}\n")
+                outfile.write(f"    Class: {cls['class_num']}\n")
+                outfile.write(f"    TimeOfClass: {cls['time']}\n")
+                outfile.write(f"    Type: {cls['type']}\n")
+                outfile.write(f"    Subject: {cls['subject']}\n")
+                outfile.write(f"    Teacher: {cls['teacher']}\n")
+                outfile.write(f"    Classroom: {cls['classroom']}\n")
+        print(f"Output written to {output_file}")
 
 def find_xml_value(data, tag):
     tag_start = f"<{tag}>"
@@ -60,4 +56,8 @@ def find_xml_value(data, tag):
 if __name__ == "__main__":
     input_file = "../myXML/input_schedule.xml"
     output_file = "../myYAML/output_schedule.yaml"
+
+    start_time = time.time()
     parse_schedule_xml_to_yaml(input_file, output_file)
+    end_time = time.time()
+    print(f"{end_time - start_time} seconds")

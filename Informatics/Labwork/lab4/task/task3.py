@@ -1,14 +1,11 @@
 import re
 import yaml
+import time
 
 
 def parse_xml_to_yaml(input_file, output_file):
-    try:
-        with open(input_file, 'r', encoding='utf-8') as infile:
-            xml_data = infile.read()
-    except FileNotFoundError:
-        print(f"Error: {input_file} not found.")
-        return
+    with open(input_file, 'r', encoding='utf-8') as infile:
+        xml_data = infile.read()
 
     day_pattern = r'<day date="([^"]+)">.*?<P3110>(.*?)</P3110>.*?</day>'
     class_pattern = r'<(\w+)>(.*?)</\1>'
@@ -30,15 +27,16 @@ def parse_xml_to_yaml(input_file, output_file):
         }
         schedule.append(day_schedule)
 
-    try:
-        with open(output_file, 'w', encoding='utf-8') as outfile:
+    with open(output_file, 'w', encoding='utf-8') as outfile:
             yaml.dump({'schedule': schedule}, outfile, allow_unicode=True, default_flow_style=False)
             print(f"Output written to {output_file}")
-    except Exception as e:
-        print(f"Error writing to {output_file}: {e}")
 
 
 if __name__ == '__main__':
     input_file = '../myXML/input_schedule.xml'
     output_file = '../myYAML/output_schedule_ex2.yaml'
+
+    start_time = time.time()
     parse_xml_to_yaml(input_file, output_file)
+    end_time = time.time()
+    print(f"{end_time - start_time} seconds")

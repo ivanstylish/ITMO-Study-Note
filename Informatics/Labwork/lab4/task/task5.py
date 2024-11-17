@@ -1,16 +1,10 @@
 import xml.etree.ElementTree as ET
 import csv
+import time
 
 def parse_schedule_xml_to_csv(input_file, output_file):
-    try:
-        tree = ET.parse(input_file)
-        root = tree.getroot()
-    except ET.ParseError:
-        print(f"Error parsing: Could not parse right XML file: {input_file}")
-        return
-    except FileNotFoundError:
-        print(f"Error: The input file {input_file} could not be found")
-        return
+    tree = ET.parse(input_file)
+    root = tree.getroot()
 
     with open(output_file, 'w', newline='') as csvfile:
         fieldnames = ['Date', 'DayOfWeek', 'Class', 'TimeOfClass', 'Type', 'Subject', 'Teacher', 'Classroom']
@@ -38,4 +32,9 @@ if __name__ == '__main__':
     input_file = '../myXML/input_schedule.xml'
     output_file = '../myYAML/output_schedule_ex5.csv'
     parse_schedule_xml_to_csv(input_file, output_file)
+
+    start_time = time.time()
+    parse_schedule_xml_to_csv(input_file, output_file)
+    end_time = time.time()
+    print(f"{end_time - start_time} seconds")
 
