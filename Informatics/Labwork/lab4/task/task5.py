@@ -1,12 +1,11 @@
 import xml.etree.ElementTree as ET
 import csv
 import time
-
 def parse_schedule_xml_to_csv(input_file, output_file):
     tree = ET.parse(input_file)
     root = tree.getroot()
 
-    with open(output_file, 'w', newline='') as csvfile:
+    with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['Date', 'DayOfWeek', 'Class', 'TimeOfClass', 'Type', 'Subject', 'Teacher', 'Classroom']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -31,7 +30,6 @@ def parse_schedule_xml_to_csv(input_file, output_file):
 if __name__ == '__main__':
     input_file = '../myXML/input_schedule.xml'
     output_file = '../myYAML/output_schedule_ex5.csv'
-    parse_schedule_xml_to_csv(input_file, output_file)
 
     start_time = time.time()
     parse_schedule_xml_to_csv(input_file, output_file)
