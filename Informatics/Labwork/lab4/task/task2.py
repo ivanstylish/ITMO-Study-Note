@@ -10,9 +10,6 @@ def parse_schedule_xml_to_yaml(input_file, output_file):
 
     for day in root.findall('day'):
         date = day.get('date')
-        if not date:
-            print("Warning: A day element is missing the 'date' attribute.")
-            continue
 
         day_schedule = {
             'date': date,
