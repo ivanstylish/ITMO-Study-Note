@@ -27,4 +27,5 @@
 - [ ] [Lecture1](/Informatics/Lecture/Lecture1.md)
 - [ ] [Lecture2](/Informatics/Lecture/Lecture2.md)  
 - [ ] [Lecture3](/Informatics/Lecture/Lecture3.md)  
+- [ ] [Lecture4](/Informatics/Lecture/Lecture4.md)
 - [ ] [Аннотация](annotation.md)
