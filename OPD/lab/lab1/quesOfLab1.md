@@ -116,3 +116,7 @@ bash myscript.sh
 
 source myscript.sh
 ```
+
+### man命令
+man命令是一种用于显示与操作Linux系统手册页（manual pages）的命令。  
+Команда man - это команда, используемая для отображения и работы со страницами руководства по системе Linux.
