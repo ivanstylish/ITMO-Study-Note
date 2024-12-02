@@ -6,48 +6,38 @@ def parse_schedule_xml_to_yaml(input_file, output_file):
     tree = ET.parse(input_file)
     root = tree.getroot()
 
-    schedule = []
-
-    if root.tag.strip() != 'Schedule':
-        print(f"Error: Root element is not 'Schedule'. Found '{root.tag}' instead.")
-        return
-
-    for day in root.findall('day'):
-        date = day.get('date')
-        if not date:
-            print(f"Error: Could not find the element 'day'")
-            return
-
-        day_schedule = {
-            'date': date,
-            'P3110': []
-        }
-
-        classes_list = day.findall('P3110')
-        if not classes_list:
-            print(f"Error: Could not find element 'P3110'")
-            return
-
-        for class_data in classes_list:
-            class_info = {}
-            for tag in ['DayOfWeek', 'Class', 'TimeOfClass', 'Type', 'Subject', 'Teacher', 'Classroom']:
-                element = class_data.find(tag)
-                class_info[tag] = element.text
-
-            if class_info:
-                day_schedule['P3110'].append(class_info)
-
-        if day_schedule['P3110']:
-            schedule.append(day_schedule)
+    root_tag = root.tag
+    parsed_result = parse_element_to_dict(root)
+    parsed_data = {root_tag : parsed_result} # 将根元素解析至最外层
 
     with open(output_file, 'w', encoding='utf-8') as outfile:
-            yaml.dump({'schedule': schedule}, outfile, default_flow_style=False, allow_unicode=True)
-            print(f"Successfully parsed to {output_file} output file.")
+        yaml.dump(parsed_data, outfile, default_flow_style=False, allow_unicode=True)
+        print(f"Successfully parsed to {output_file} output file.")
+
+def parse_element_to_dict(element):
+    child = list(element)
+
+    if not child:
+        return element.text.strip() if element.text else None # 若没有子元素，则直接返回元素的文本内容
+
+    result = {}
+
+    for c in child:
+        child_result = parse_element_to_dict(c)
+
+        if c.tag in result:
+            if isinstance(result[c.tag], list): # 比对是否为列表类型
+                result[c.tag].append(child_result)
+            else:
+                result[c.tag] = [result[c.tag], child_result]
+        else:
+            result[c.tag] = child_result
+
+    return result
 
 if __name__ == '__main__':
     input_file = '../myXML/input_schedule.xml'
     output_file = '../myYAML/output_schedule_ex3.yaml'
-    parse_schedule_xml_to_yaml(input_file, output_file)
 
     start_time = time.time()
     parse_schedule_xml_to_yaml(input_file, output_file)

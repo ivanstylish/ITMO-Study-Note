@@ -11,8 +11,8 @@ def parse_xml_to_yaml(input_file, output_file):
     class_pattern = r'<(\w+)>(.*?)</\1>'
 
     schedule = []
-    for day_match in re.finditer(day_pattern, xml_data, re.DOTALL):
-        date = day_match.group(1)
+    for day_match in re.finditer(day_pattern, xml_data, re.DOTALL): # pattern string flags=0
+        date = day_match.group(1) # 先是日期组，而后时当天课程组
         class_data = day_match.group(2)
 
         class_info = {}
@@ -22,7 +22,7 @@ def parse_xml_to_yaml(input_file, output_file):
             class_info[tag] = value
 
         day_schedule = {
-            'date': date,
+            'Date': date,
             'P3110': [class_info]
         }
         schedule.append(day_schedule)
