@@ -1,0 +1,93 @@
+' 这是关于额外实验任务（用EXCEL的VBA编程实现一个井字游戏）
+
+Dim board(1 To 3, 1 To 3) As String
+Dim currentPla As String
+
+Sub Game()
+    Application.EnableEvents = True
+    
+    Dim i As Integer: Dim j As Integer
+    For i = 1 To 3
+        For j = 1 To 3
+            board(i, j) = ""
+            Cells(i, j).Value = ""
+            Cells(i, j).Interior.ColorIndex = -4142
+        Next j
+    Next i
+    
+    currentPla = "X"
+    
+    MsgBox "Game begin!"
+
+End Sub
+
+
+Sub CellTest(ByVal row As Integer, ByVal column As Integer)
+    If board(row, column) <> "" Then
+        MsgBox "This spot is already taken, please try the other one!"
+        Exit Sub
+    End If
+    
+    board(row, column) = currentPla
+    Cells(row, column).Value = currentPla
+    
+    If CheckWinner() Then
+        MsgBox currentPla & " win!"
+        EndGame
+    ElseIf isDraw() Then
+        MsgBox "This is a draw!"
+        EndGame
+    Else
+        If currentPla = "X" Then
+            currentPla = "O"
+        Else
+            currentPla = "X"
+        End If
+    End If
+End Sub
+
+Function CheckWinner() As Boolean
+    Dim i As Integer: Dim j As Integer
+    For i = 1 To 3
+        If board(i, 1) = currentPla And board(i, 2) = currentPla And board(i, 3) = currentPla Then
+            CheckWinner = True
+            Exit Function
+        End If
+    Next i
+    
+   For j = 1 To 3
+        If board(1, j) = currentPla And board(2, j) = currentPla And board(3, j) = currentPla Then
+            CheckWinner = True
+            Exit Function
+        End If
+    Next j
+    
+    If board(1, 1) = currentPla And board(2, 2) = currentPla And board(3, 3) = currentPla Then
+        CheckWinner = True
+        Exit Function
+    End If
+    
+    CheckWinner = False
+    
+End Function
+
+Function isDraw() As Boolean
+    Dim i As Integer: Dim j As Integer
+    For i = 1 To 3
+        For j = 1 To 3
+            If board(i, j) = "" Then
+                isDraw = False
+                Exit Function
+            End If
+        Next j
+    Next i
+    
+    isDraw = True
+    
+End Function
+
+Sub EndGame()
+    Application.EnableEvents = False
+
+    MsgBox "Game over!"
+End Sub
