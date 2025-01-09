@@ -11,16 +11,16 @@ note for study
 
 ## 预科
 
-[俄语](RussianLanguage/readme.md)  
-[数学语言](MathsLanguage/readme.md)  
+[Russian](RussianLanguage/readme.md)  
+[MathsLanguage](MathsLanguage/readme.md)  
 
 ## 大一
 
-[数学](Math/readme.md)  
-[编程](Programming/readme.md)  
+[Math](Math/readme.md)  
+[Programming](Programming/readme.md)  
 [OPD](OPD/readme.md)  
-[信息学](Informatics/readme.md)  
-[历史](History/readme.md)
+[Informatics](Informatics/readme.md)  
+[History](History/readme.md)
 
 ## 大二
 
