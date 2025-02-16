@@ -189,3 +189,5 @@
 用于指定结构和使用 SQL 语言特点的单词和短语；  
 **SELECT * FROM** STUDENTS **WHERE** AGE > 19;
 
+一些常用的POSTGRESQL命令：
+[PostgreSQL命令大全](https://www.cnblogs.com/zhoujie/p/pgsql.html)

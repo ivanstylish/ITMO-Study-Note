@@ -19,7 +19,7 @@
    - Атрибуты: ID, ID корабля, ID планеты, временная метка.
 7. Миссия (Mission)
    - Тип: Стержневая.
-   - Атрибуты: equipment_id, название, тип (лазер, двигатель), статус.
+   - Атрибуты: mission_id, title, description, start_date
 8. Назначение на миссию (MissionAssignment)
    - Ассоциативные сущности
    - Атрибуты: assignment_id, astronaut_id, mission_id, роль.
