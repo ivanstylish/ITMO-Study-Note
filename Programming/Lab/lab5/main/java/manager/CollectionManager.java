@@ -7,14 +7,17 @@ import util.Console;
 import util.FileUtils;
 import util.JSONParser;
 
-import java.text.SimpleDateFormat;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class CollectionManager {
+
     private final Stack<Product> collection = new Stack<>();
     private final String dataFile;
     private final Console console;
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
 
     public CollectionManager(String dataFile, Console console) {
         this.dataFile = dataFile;
@@ -35,10 +38,15 @@ public class CollectionManager {
     public void saveToFile() {
         try {
             String json = JSONParser.serializeCollection(collection);
-            FileUtils.writeFile(dataFile, json);
+            File file = new File(dataFile);
+            try (FileOutputStream fos = new FileOutputStream(file)) {
+                fos.write(json.getBytes(StandardCharsets.UTF_8)); // 显式指定编码
+            }
             console.printSuccess("Data saved successfully");
-        } catch (Exception e) {
+        } catch (IOException e) {
             console.printError("Fail to save: " + e.getMessage());
+        } catch (Exception e) {
+            console.printError("Unexpected error: " + e.getMessage());
         }
     }
 
@@ -139,12 +147,11 @@ public class CollectionManager {
                 .count();
     }
 
-    public Stack<Product> getCollection() {
-        return collection;
-    }
-
     public Console getConsole() {
         return console;
     }
 
+    public Stack<Product> getCollection() {
+        return collection;
+    }
 }

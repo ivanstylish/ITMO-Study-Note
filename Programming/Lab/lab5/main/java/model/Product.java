@@ -1,5 +1,6 @@
 package model;
 
+import exception.EmptyInputException;
 import exception.InvalidInputException;
 import manager.IdGenerator;
 
@@ -57,9 +58,9 @@ public class Product implements Comparable<Product> {
     /**
      * go get setters
      */
-    public void setName(String name) throws InvalidInputException {
+    public void setName(String name) throws EmptyInputException {
         if (name == null || name.trim().isEmpty()) {
-            throw new InvalidInputException("Name cannot be null or empty");
+            throw new EmptyInputException("Name cannot be null or empty");
         }
         this.name = name.trim();
     }

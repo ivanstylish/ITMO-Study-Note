@@ -40,7 +40,7 @@ public class InputHandler {
     private String inputNonEmptyString(String prompt) {
         while (true) { // 循环直到输入有效
             String input = console.readLine(prompt + ": ").trim();
-            if (!input.isEmpty()) {
+            if (!input.isEmpty())  {
                 return input;
             }
             console.printError("Input cannot be empty！");

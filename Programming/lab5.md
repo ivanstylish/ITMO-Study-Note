@@ -33,6 +33,8 @@ int b = a;           // 自动拆箱：Integer → int
 ```  
 
 5. Потоки ввода-вывода в Java. Байтовые и символьные потоки. "Цепочки" потоков (Stream Chains). Java 中的 I/O 流。 字节流和字符流 "流链（Stream Chains）"。
+Печать на экране(`System.out.println()`)
+пользовательский ввод(`System.in`)
 Байтовые потоки (字节流): `InputStream, OutputStream`, Символьные потоки (字符流): `Reader, Writer`（处理文本数据，如.txt）。  
 
 
