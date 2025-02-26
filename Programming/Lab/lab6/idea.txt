@@ -1,0 +1,36 @@
+src/
+├── main/
+│   ├── java/
+│   │   ├── client/                  # 客户端模块
+│   │   │   ├── ClientMain.java       # 客户端入口
+│   │   │   ├── network/
+│   │   │   │   └── ClientNetworkHandler.java  # UDP通信逻辑
+│   │   │   ├── parsers/
+│   │   │   │   └── CommandParser.java         # 解析用户输入为命令对象
+│   │   │   └── ui/
+│   │   │       └── ConsoleUI.java             # 控制台交互
+│   │   ├── server/                  # 服务端模块
+│   │   │   ├── ServerMain.java       # 服务端入口
+│   │   │   ├── managers/
+│   │   │   │   └── CollectionManager.java    # 集合管理（Stream API）
+│   │   │   ├── network/
+│   │   │   │   ├── ServerNetworkHandler.java  # 非阻塞UDP监听
+│   │   │   │   └── CommandDispatcher.java     # 分发并执行命令
+│   │   │   └── logging/
+│   │   │       └── ServerLogger.java          # 日志记录（Java Util Logging）
+│   │   ├── common/                  # 共享模块
+│   │   │   ├── commands/            # 命令类
+│   │   │   │   ├── AddCommand.java
+│   │   │   │   ├── ClearCommand.java
+│   │   │   │   └── ...              # 其他命令
+│   │   │   ├── model/               # 数据模型
+│   │   │   │   └── Product.java     # 集合中的对象(等其他实验自带的基础数据)
+│   │   │   └── exceptions/          # 自定义异常
+│   │   │       ├── CommandParseException.java
+│   │   │       └── ServerUnavailableException.java
+│   │   └── util/                   # 工具类
+│   │       ├── SerializationUtils.java  # 序列化工具
+│   │       └── ValidationUtils.java     # 输入验证工具
+│   │       └── ServerLogger.java        # 日志记录工具            
+│   └── resources/                  # 配置文件（如日志配置）
+└── test/                           # 单元测试（可选）
