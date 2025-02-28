@@ -22,20 +22,9 @@ DROP TABLE IF EXISTS PLANET CASCADE;
 
 DROP TABLE IF EXISTS SHIP CASCADE;
 
-DROP TYPE IF EXISTS SEX CASCADE;
-
-DROP TYPE IF EXISTS ENTITY CASCADE;
-
+DROP TYPE IF EXISTS sex CASCADE;
 
 CREATE TYPE sex AS ENUM ('man', 'woman');
-
-CREATE TYPE entity AS ENUM (
-	'ship',
-	'astronaut',
-	'planet',
-	'equipment',
-	'mission'
-);
 
 CREATE TABLE SHIP (
 	SHIP_ID SERIAL PRIMARY KEY,
@@ -49,6 +38,7 @@ CREATE TABLE ASTRONAUT (
 	NAME VARCHAR(50) NOT NULL,
 	STATUS VARCHAR(20) CHECK (STATUS IN ('onboard', 'retired')),
 	POSITION VARCHAR(50) NOT NULL,
+	Sex sex NOT NULL,
 	SHIP_ID INT NOT NULL REFERENCES SHIP (SHIP_ID)
 );
 
@@ -92,8 +82,8 @@ CREATE TABLE MISSION (
 CREATE TABLE EQUIPMENT (
 	EQUIPMENT_ID SERIAL PRIMARY KEY,
 	NAME VARCHAR(50) NOT NULL,
-	TYPE VARCHAR(20) CHECK (TYPE IN ('laser', 'двигатель')),
-	STATUS VARCHAR(20) CHECK (STATUS IN ('active', 'broken'))
+	TYPE VARCHAR(20) CHECK (TYPE IN ('laser', 'machine', 'quantum')),
+	STATUS VARCHAR(20) CHECK (STATUS IN ('active', 'broken', 'on-reserve'))
 );
 
 CREATE TABLE MISSIONASSIGNMENT (
@@ -121,7 +111,8 @@ CREATE TABLE MISSIONPHASE (
 INSERT INTO
 	SHIP (NAME, LAUNCH_DATE, STATUS)
 VALUES
-	('Дискавери', '2024-02-14', 'active');
+	('Дискавери', '2024-02-14', 'active'),
+	('Сентинел', '2024-02-27', 'active');
 	
 INSERT INTO
 	MISSION (TITLE, DESCRIPTION, START_DATE)
@@ -130,39 +121,61 @@ VALUES
 		'Исследование Солнца',
 		'Анализ солнечной активности',
 		'2025-02-16'
+	),
+	(
+		'Исследование Титана',
+		'Исследование возможности метанового отстойника',
+		'2025-07-25'
+	),
+	(
+		'Исследование Урана',
+		'Исследование ледникового покрова',
+		'2026-05-26'
 	);
 
 INSERT INTO
 	EQUIPMENT (NAME, TYPE, STATUS)
 VALUES
-	('Лазерный передатчик', 'laser', 'active');
+	('Лазерный передатчик', 'laser', 'active'),
+	('глубоководный бурильщик', 'machine', 'on-reserve'),
+	('квантовый ретранслятор','quantum', 'broken');
 
 INSERT INTO 
-	ASTRONAUT (NAME, POSITION, STATUS, SHIP_ID)
+	ASTRONAUT (NAME, POSITION, STATUS, SEX, SHIP_ID)
 VALUES
-	('Дэвид Боумен', 'Командир', 'onboard', 1);
+	('Дэвид Боумен', 'Командир', 'onboard', 'man', 1),
+	('Ирина Волкова', 'астрофизик', 'onboard', 'woman', 1),
+	('Раджив Сингх', 'инженер', 'onboard', 'man', 1),
+	('Чжун Цзяцзюнь', 'инженер', 'onboard', 'man', 2),
+	('Cy Лянхуа', 'доктор', 'onboard', 'man', 2);
 
 INSERT INTO
 	MISSIONASSIGNMENT (ASTRONAUT_ID, MISSION_ID, ROLE)
 VALUES
-	(1, 1, 'Оператор связи');
-
+	(1, 1, 'Оператор связи'),
+	(2, 2, 'Исследование планетарной геологии'),
+	(2, 3, 'Исследование ледникового покрова');
+	
 INSERT INTO
 	MISSIONPHASE (MISSION_ID, PHASE_NAME, STATUS)
 VALUES
-	(1, 'Подготовка к старту', 'completed');
+	(1, 'Подготовка к старту', 'completed'),
+	(2, 'Отъезд на Титан', 'planned');
 
 
 INSERT INTO
 	PLANET (NAME, TYPE, DISTANCE)
 VALUES
 	('Земля', 'planet', 0.0),
-	('Солнце', 'star', 149.6);
+	('Солнце', 'star', 149.6),
+	('Титан', 'planet', 158.0),
+	('Уран', 'planet', 260.0);
 
 INSERT INTO
 	COMMUNICATION (SHIP_ID, STATUS, LAST_CHECK)
 VALUES
-	(1, 'active', '2024-02-15 13:00:00');
+	(1, 'active', '2024-02-15 13:00:00'),
+	(2, 'active', '2024-04-25 15:00:00');
 
 INSERT INTO
 	ALERT (
@@ -184,11 +197,13 @@ VALUES
 INSERT INTO
 	SHIPPOSITION (SHIP_ID, PLANET_ID, TIMESTAMP)
 VALUES
-	(1, 1, '2024-02-15 09:00:00');
+	(1, 1, '2024-02-15 09:00:00'),
+	(1, 2, '2024-04-06 14:00:00');
 
 INSERT INTO
 	EQUIPMENTSTATUS (EQUIPMENT_ID, STATUS, TIMESTAMP)
 VALUES
-	(1, 'active', '2024-02-16 12:00:00');
+	(1, 'active', '2024-02-16 12:00:00'),
+	(2, 'on reserve', '2024-05-13 12:00:00');
 
 END;
