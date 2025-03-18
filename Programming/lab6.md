@@ -63,6 +63,16 @@ remove_by_id id=1 //删除id为1的产品
 服务器接收命令并解析  
 客户端发送序列化数据  
 服务器接收数据并反序列化
+```
+sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: 发送 ClientAddCommand 对象（序列化）
+    Server->>Server: 反序列化为 ClientAddCommand
+    Server->>Server: 转换为 ServerAddCommand（需实现转换逻辑）
+    Server->>Server: 执行 ServerAddCommand.execute()
+    Server->>Client: 返回执行结果
+```
 
 1. 服务端模块
    - `ServerMain`：主类，负责启动服务器、监听UDP端口。 Основной класс, отвечающий за запуск сервера и прослушивание UDP-портов.
