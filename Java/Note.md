@@ -1,5 +1,23 @@
 ## [主页](../README.md)/[Java](readme.md)/代码笔记
 
+### 目录
+- [Java主类结构](#java主类结构)
+- [基本数据类型](#基本数据类型)
+  - [整数类型](#整数类型)
+  - [浮点类型](#浮点类型)
+  - [字符类型](#字符类型)
+  - [布尔类型](#布尔类型)
+- [变量与常量](#变量与常量)
+  - [标识符和关键字](#标识符和关键字)
+  - [声明变量](#声明变量)
+  - [常量](#常量)
+  - [变量类型](#变量类型)
+  - [变量作用域](#变量作用域)
+  - [变量的生命周期](#变量的生命周期)
+  - [变量的分类](#变量的分类)
+  - [变量的初始化](#变量的初始化)
+  - [变量的内存分配](#变量的内存分配)
+  - [变量的内存释放](#变量的内存释放)
 ### Java主类结构
 - Java程序的基本组成单元是类，类体中又包括属性与方法两部分
   - 通常将类的属性称为类的**全局变量**（成员变量），将方法中的属性称为**局部变量**。全局变量声明在类体中，局部变量声明在方法体中。全局变量和局部变量都有各自的应用范围 
@@ -1903,3 +1921,83 @@ public class p6 {
 |LinkedHashMap|一种可以记住键 / 值项添加次序的映射表|
 |WeakHashMap|一种其值无用武之地后可以被垃圾回收器回收的映射表|
 |IdentityHashMap|一种用==而不是equals()来比较键的映射表|
+
+- ### 并发和线程
+`操作系统中的多任务（multitasking）:在同一刻运行多个程序的能力`  
+多线程程序在较低的层次上扩展了多任务的概念：一个程序同时执行多个任务。通常，每一个任务称为一个**线程(thread)**, 它是线程控制的简称。可以同时运行一个以上线程的程序称为**多线程程序(multithreaded)**。  
+线程：进程中的单个顺序控制流，是一条执行路径
+
+线程全生命周期
+![](./pic/java52.png)
+
+实现`Runnable`接口的方式：
+- 定义一个类`MyRunnable`，实现`Runnable`接口
+- 重写`run()`方法，在`run()`方法中定义线程要执行的任务。
+- 创建`MyRunnable`类的实例，并将其作为参数传递给`Thread`类的构造器。
+- 创建`Thread`类的对象，把`MyRunnable`对象作为构造方法的参数
+- 调用`Thread`类的`start()`启动线程，执行`run()`方法
+
+- #### 线程的优先级
+  - 线程的优先级决定了线程调度的策略。Java虚拟机为每个线程分配一个优先级，优先级越高，线程调度的优先级越高。
+  -  Java 线程的优先级是一个整数，其取值范围是 1 （`Thread.MIN_PRIORITY`） - 10 （`Thread.MAX_PRIORITY`）。
+
+Thread类中的方法：
+![](./pic/java53.png)
+
+- #### wait()、notify()和notifyAll()方法
+1. `wait()、notify()和notifyAll()`方法是本地方法，并且为final方法，无法被重写。
+2. `wait()`方法使得线程暂停（线程阻塞），并且当前线程必须拥有此对象的`monitor`（即锁），直到其他线程调用`notify()`或`notifyAll()`方法唤醒它。
+3. 调用某个对象的`notify()`方法能够唤醒一个正在等待这个对象的`monitor`的线程，如果有多个线程都在等待这个对象的`monitor`，则只能唤醒其中一个
+4. 调用`notifyAll()`方法能够唤醒所有正在等待这个对象的`monitor`
+5. 如果调用某个对象的`wait()`方法，当前线程必须拥有这个对象的`monitor`（即锁），因此调用`wait()`方法必须在同步块或者同步方法中进行（`synchronized`块或者`synchronized`方法）
+6. `notify()`和`notifyAll()`方法只是唤醒等待该对象的`monitor`的线程，并不决定哪个线程能够获取到`monitor`
+
+- #### Condition接口
+1. 基本的方法就是`await()`和`signal()`方法
+2. `Condition`依赖于`Lock`接口，生成一个`Condition`的基本代码是`lock.newCondition()`
+3. 调用`Condition`的`await()`和`signal()`方法，都必须在`lock`保护之内，就是说必须在`lock.lock()`和`lock.unlock`之间才可以使用
+   1. `Conditon`中的`await()`对应`Object`的`wait()`；
+   2. `Condition`中的`signal()`对应`Object`的`notify()`；
+   3. `Condition`中的`signalAll()`对应`Object`的`notifyAll()`.
+
+从*线程同步*上来看，无论`synchronized`还是`Lock`，他们的底层都是通过传入唯一的锁对象来实现线程同步的。
+从*线程通信*来看，`synchronized`的线程只能实现两个线程之间的通信，但是`Condition`却可以实现更多线程之间的通信。
+
+- #### Volatile关键字与原子性操作
+原子性操作具有不可分割性  
+*非原子操作*都会存在线程安全问题，需要我们使用同步技术（`sychronized`）来让它变成一个原子操作。一个操作是原子操作，那么我们称它具有原子性  
+`volatile` 关键字是一种类型修饰符，被它声明的类型变量表示可以被某些编译器未知的因素更改
+```
+int volatile vint;
+```
+被关键字volatile修饰后：
+1. 保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
+2. 禁止进行指令重排序。
+
+- #### 线程池Thread pool
+- `Executor` 框架
+   - 通过 `Executor` 来启动线程比使用 `Thread` 的 `start` 方法更好，除了更易管理，效率更好（用线程池实现，节约开销）外，还有关键的一点：有助于避免 `this` 逃逸问题。 
+   - `Executor` 框架不仅包括了线程池的管理，还提供了**线程工厂**、**队列**以及**拒绝策略**等
+   - 1. 任务(`Runnable /Callable`)
+     - 执行任务需要实现的 `Runnable` 接口（无返回值） 或 `Callable`接口（有返回值）。`Runnable` 接口或 `Callable` 接口 实现类都可以被 `ThreadPoolExecutor` 或 `ScheduledThreadPoolExecutor` 执行。
+   - 2. 任务的执行(`Executor`) 
+     - 如下图所示，包括任务执行机制的核心接口 `Executor` ，以及继承自 `Executor` 接口的 `ExecutorService` 接口 
+     - ![](./pic/java54.png)
+   - 3. 异步计算的结果(`Future`)
+     - `Future` 接口以及 `Future` 接口的实现类 `FutureTask` 类都可以代表异步计算的结果 
+  - Exector 框架的使用：
+  - ![](./pic/java55.png)
+
+
+- ### JDBC连接操作数据库
+- Java数据库连接(Java Database Connectivity，JDBC)，是一种用于执行`SQL`语句的`Java API`，它由一组用Java编程语言编写的类和接口组成
+- 常用类和接口
+
+|接口/类|功能说明|
+|:----:|:----:|
+|Connection|数据库连接, 用于执行SQL语句|
+|DriverManager|数据库驱动管理类，用于加载和卸载各种驱动程序，并建立于数据库的连接|
+|Statement|此接口用于执行SQL语句并将数据检索到`ResultSet`中|
+|PreparedStatement|此接口用于执行预编译的SQL语句|
+|ResultSet|结果集接口，提供检索SQL语句返回数据的各种方法|
+|CallableStatement|此接口用于执行SQL存储过程的语句|
