@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant Server
+    participant Database
+    
+    Client->>Server: CommandRequest(credentials)
+    Server->>Server: AuthService.authenticate()
+    alt 认证成功
+        Server->>Server: CommandDispatcher.dispatch()
+        Server->>Database: 执行SQL操作
+        Database-->>Server: 返回结果
+        Server->>Server: 更新内存集合
+        Server-->>Client: CommandResponse(success)
+    else 认证失败
+        Server-->>Client: CommandResponse(error)
+    end
