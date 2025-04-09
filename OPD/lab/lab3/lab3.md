@@ -90,7 +90,7 @@ IP - > BR, AR
 BR + 1 - > IP; MEM(AR) - > DR
 DR -> CR
 
-Adress fetch(AF)
+Address fetch(AF)
 BR + IP - > AR
 MEM(AR) - > DR
 DR + 1 - > DR
@@ -104,3 +104,34 @@ MEM(AR) - > DR
 Execution(EX)
 DR - > AC
 
+
+EBF7
+Instruction fetch(IF)
+IP - > BR, AR
+BR + 1 - > IP; MEM(AR) - > DR
+DR -> CR
+
+Address fetch(AF) 扩展指令 FFF7
+BR + IP -> AR
+M(AR) -> DR 
+~0 + DR -> DR
+DR -> M(AR)
+
+Execution(EX)
+DR -> AR
+
+不同命令的执行阶段（寄存器关系）：
+`AND`: AC & DR - > AC, (NZV)  
+`OR`:   
+~AC & ~DR - > BR  
+~BR - > AC, (NZV)  
+`ADD`: AC + DR -> AC, (NZVC)  
+`ADC`: AC + DR + 1 -> AC (NZVC)  
+`SUB`: AC + ~DR + 1 -> AC, (NZVC)  
+`LOOP`:   
+~0 + DR -> DR  
+~0 + DR -> BR; DR -> MEM(AR)
+IP + 1 -> IP
+`LP`: DR -> AC, (NZV)  
+`JUMP`: DR -> IP
+`ST`: DR -> AR; AC -> DR
