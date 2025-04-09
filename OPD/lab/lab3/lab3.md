@@ -84,7 +84,7 @@
 - 输出CR十六位数据 例如F6 -> FFF6 -> 11111111 11110110 直接扩展
 
 微命令操作过程：
-AAF6 загрузка m -> ac косвенная автодекрементная (относительная) F6 – это смещение (A=1010)
+AAF6 загрузка m -> ac косвенная автоинкрементная (относительная) F6 – это смещение (A=1010)
 Instruction fetch(IF)
 IP - > BR, AR
 BR + 1 - > IP; MEM(AR) - > DR
@@ -93,13 +93,14 @@ DR -> CR
 Adress fetch(AF)
 BR + IP - > AR
 MEM(AR) - > DR
-
-Operrand fetch(OF)
 DR + 1 - > DR
 DR - > MEM(AR)
 ~0 + DR - > DR
 
-Execution(EX)
+Operrand fetch(OF)
 DR -> AR
 MEM(AR) - > DR
+
+Execution(EX)
 DR - > AC
+
