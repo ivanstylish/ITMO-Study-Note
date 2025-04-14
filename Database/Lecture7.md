@@ -1,4 +1,4 @@
-## [主页](../README.md)/Lecture6/[目录](./readme.md)
+## [主页](../README.md)/Lecture7/[目录](./readme.md)
 ## Lecture 7: Выполнение запросов  
 ## 讲座7：执行查询  
 
