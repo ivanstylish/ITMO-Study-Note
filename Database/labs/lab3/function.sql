@@ -17,7 +17,8 @@ BEGIN
     FROM MISSIONPHASE
     WHERE MISSION_ID = NEW.MISSION_ID;
 
-    -- Получение количества завершенных этапов текущей задачи    SELECT COUNT(*) INTO completed_phases
+    -- Получение количества завершенных этапов текущей задачи    
+    SELECT COUNT(*) INTO completed_phases
     FROM MISSIONPHASE
     WHERE MISSION_ID = NEW.MISSION_ID
     AND STATUS = 'completed';
