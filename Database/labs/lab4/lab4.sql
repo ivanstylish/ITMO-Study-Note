@@ -25,3 +25,41 @@ RIGHT JOIN Н_ОБУЧЕНИЯ ON Н_ЛЮДИ.ИД = Н_ОБУЧЕНИЯ.ЧЛВ�
 RIGHT JOIN Н_УЧЕНИКИ ON Н_ОБУЧЕНИЯ.ЧЛВК_ИД = Н_УЧЕНИКИ.ЧЛВК_ИД
 WHERE Н_ЛЮДИ.ОТЧЕСТВО < 'Георгиевич'
 AND Н_ОБУЧЕНИЯ.ЧЛВК_ИД < 105590;
+
+
+EXPLAIN 1:
+QUERY PLAN                                           
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Hash Join  (cost=676.10..5510.22 rows=18229 width=24) (actual time=5.220..21.279 rows=18601 loops=1)
+   Hash Cond: ("Н_ВЕДОМОСТИ"."ЧЛВК_ИД" = "Н_ЛЮДИ"."ИД")
+   ->  Bitmap Heap Scan on "Н_ВЕДОМОСТИ"  (cost=483.96..5209.29 rows=41410 width=8) (actual time=1.694..10.192 rows=42332 loops=1)
+         Recheck Cond: (("ЧЛВК_ИД" < 117219) OR ("ЧЛВК_ИД" = 117219))
+         Heap Blocks: exact=1553
+         ->  BitmapOr  (cost=483.96..483.96 rows=41422 width=0) (actual time=1.512..1.513 rows=0 loops=1)
+               ->  Bitmap Index Scan on "ВЕД_ЧЛВК_FK_IFK"  (cost=0.00..458.47 rows=41357 width=0) (actual time=1.506..1.507 rows=42301 loops=1)
+                     Index Cond: ("ЧЛВК_ИД" < 117219)
+               ->  Bitmap Index Scan on "ВЕД_ЧЛВК_FK_IFK"  (cost=0.00..4.78 rows=65 width=0) (actual time=0.005..0.005 rows=31 loops=1)
+                     Index Cond: ("ЧЛВК_ИД" = 117219)
+   ->  Hash  (cost=163.97..163.97 rows=2253 width=24) (actual time=3.507..3.508 rows=2251 loops=1)
+         Buckets: 4096  Batches: 1  Memory Usage: 158kB
+         ->  Seq Scan on "Н_ЛЮДИ"  (cost=0.00..163.97 rows=2253 width=24) (actual time=0.012..3.117 rows=2251 loops=1)
+               Filter: (("ОТЧЕСТВО")::text > 'Георгиевич'::text)
+               Rows Removed by Filter: 2867
+ Planning Time: 0.422 ms
+ Execution Time: 22.451 ms
+
+EXPLAIN 2:
+QUERY PLAN                                           
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.85..13.90 rows=5 width=16) (actual time=0.005..0.005 rows=0 loops=1)
+   ->  Nested Loop  (cost=0.56..12.61 rows=1 width=8) (actual time=0.004..0.005 rows=0 loops=1)
+         ->  Index Only Scan using "ОБУЧ_ЧЛВК_FK_I" on "Н_ОБУЧЕНИЯ"  (cost=0.28..4.30 rows=1 width=4) (actual time=0.004..0.004 rows=0 loops=1)
+               Index Cond: ("ЧЛВК_ИД" < 105590)
+               Heap Fetches: 0
+         ->  Index Scan using "ЧЛВК_PK" on "Н_ЛЮДИ"  (cost=0.28..8.30 rows=1 width=4) (never executed)
+               Index Cond: ("ИД" = "Н_ОБУЧЕНИЯ"."ЧЛВК_ИД")
+               Filter: (("ОТЧЕСТВО")::text < 'Георгиевич'::text)
+   ->  Index Scan using "УЧЕН_ОБУЧ_FK_I" on "Н_УЧЕНИКИ"  (cost=0.29..1.24 rows=5 width=12) (never executed)
+         Index Cond: ("ЧЛВК_ИД" = "Н_ЛЮДИ"."ИД")
+ Planning Time: 2.090 ms
+ Execution Time: 0.101 ms

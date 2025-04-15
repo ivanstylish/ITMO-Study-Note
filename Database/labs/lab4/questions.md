@@ -59,3 +59,5 @@ QUERY PLAN
  Planning Time: 1.390 ms
  Execution Time: 22.575 ms
 ```
+
+当没有索引时，数据库可能更倾向于使用`Hash Join`或`Merge Join`，尤其是当表的数据量较大时。`Nested Loops Join`适用于小表驱动大表的情况

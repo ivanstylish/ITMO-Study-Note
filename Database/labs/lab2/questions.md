@@ -38,4 +38,6 @@ SQL 序列是生成一系列数值的数据库对象，通常用于为表中的�
 
 DISTINCT 关键字（去除重复值） Удаление дублирующихся значений
 别名（ALIAS） 别名是给表、视图、列或表达式取的临时名称，以便于简化查询。  
-EXTRACT(field FROM source) 函数 提取日期或时间字段。  字段 列表
+EXTRACT(field FROM source) 函数 提取日期或时间字段。  字段 列表  
+使用了`having`必须使用`group by`，但是使用`group by` 不一定使用`having`。  
+`where`在前，`group by`在后
