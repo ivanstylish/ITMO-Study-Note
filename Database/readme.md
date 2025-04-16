@@ -2,8 +2,9 @@
 
 - [x] [Lecture1](Lecture1.md)
 - [x] [Lecture2](Lecture2.md)  
-- [ ] [Lecture3](Lecture3.md)
+- [x] [Lecture3](Lecture3.md)
 - [x] [Lecture6](Lecture6.md)
+- [x] [Lecture7](Lecture7.md)
 
 
 
