@@ -41,3 +41,4 @@ DISTINCT 关键字（去除重复值） Удаление дублирующих�
 EXTRACT(field FROM source) 函数 提取日期或时间字段。  字段 列表  
 使用了`having`必须使用`group by`，但是使用`group by` 不一定使用`having`。  
 `where`在前，`group by`在后
+

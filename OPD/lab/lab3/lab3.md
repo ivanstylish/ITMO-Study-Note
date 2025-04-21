@@ -1,4 +1,4 @@
-# [主页](../README.md)/lab3
+# [主页](../../README.md)/[OPD](readme.md)/lab3
 
 ## Контрольные вопросы
 
