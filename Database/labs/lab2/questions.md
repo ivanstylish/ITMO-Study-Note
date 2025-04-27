@@ -41,4 +41,7 @@ DISTINCT 关键字（去除重复值） Удаление дублирующих�
 EXTRACT(field FROM source) 函数 提取日期或时间字段。  字段 列表  
 使用了`having`必须使用`group by`，但是使用`group by` 不一定使用`having`。  
 `where`在前，`group by`在后
-
+`ORDER BY` 关键字（对结果排序）, 可以使用`ASC` 或 `DESC` 关键字来设置查询结果是升序还是降序。
+```sql
+ORDER BY column_name ASC|DESC;
+```

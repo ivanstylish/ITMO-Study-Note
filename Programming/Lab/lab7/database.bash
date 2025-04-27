@@ -1,0 +1,1 @@
+psql -U varnothing -d lab7 -f lab7.sql

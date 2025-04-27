@@ -14,3 +14,7 @@ sequenceDiagram
     else 认证失败
         Server-->>Client: CommandResponse(error)
     end
+
+
+
+

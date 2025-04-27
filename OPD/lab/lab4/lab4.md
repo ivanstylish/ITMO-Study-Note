@@ -1,7 +1,7 @@
 # [主页](../README.md)/[OPD](readme.md)/lab4
 
 ![](image.png)
-地址命令下的间接相对寻址方式
+地址命令下的相对寻址方式
 
 ![](image-1.png)
 程序往下执行

@@ -1,0 +1,79 @@
+package command;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CommandRequest {
+    private CommandType commandType;
+    private final Map<String, Object> arguments = new HashMap<>();
+    private String username;
+    private String password;
+
+    // 基础参数操作方法
+    public void addArgument(String key, Object value) {
+        arguments.put(key, value);
+    }
+
+    public Object getArgument(String key) {
+        return arguments.get(key);
+    }
+
+    // 类型安全的参数获取方法
+    public Long getLongArgument(String key) {
+        Object value = arguments.get(key);
+        if (value instanceof Long) return (Long) value;
+        if (value instanceof Integer) return ((Integer) value).longValue();
+        return null;
+    }
+
+    public Integer getIntegerArgument(String key) {
+        Object value = arguments.get(key);
+        if (value instanceof Integer) return (Integer) value;
+        return null;
+    }
+
+    public String getStringArgument(String key) {
+        Object value = arguments.get(key);
+        return (value != null) ? value.toString() : null;
+    }
+
+    // 特殊命令参数快捷方法
+    public Long getId() {
+        return getLongArgument("id");
+    }
+
+    public Integer getIndex() {
+        return getIntegerArgument("index");
+    }
+
+    public Long getPrice() {
+        return getLongArgument("price");
+    }
+
+    // Getters/Setters
+    public CommandType getType() {
+        return commandType;
+    }
+
+    public CommandRequest setCommandType(CommandType commandType) {
+
+        this.commandType = commandType;
+        return this;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}

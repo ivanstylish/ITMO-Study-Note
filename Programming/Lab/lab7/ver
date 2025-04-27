@@ -1,0 +1,6 @@
+DBMS: PostgreSQL (ver. 17.4)
+Case sensitivity: plain=lower, delimited=exact
+Driver: PostgreSQL JDBC Driver (ver. 42.7.3, JDBC4.2)
+
+Ping: 11 ms
+SSL: no
