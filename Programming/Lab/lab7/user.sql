@@ -1,19 +1,11 @@
-BEGIN; 
+BEGIN;
 
 DROP TYPE IF EXISTS unit_of_measure_type CASCADE;
 DROP TYPE IF EXISTS organization_type CASCADE;
-
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS organizations CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
 DROP TABLE IF EXISTS coordinates CASCADE;
-
-CREATE type unit_of_measure_type AS ENUM (
-    'CENTIMETERS',
-    'SQUARE_METERS',
-    'LITERS',
-    'MILLILITERS'
-);
 
 CREATE type organization_type AS ENUM (
     'COMMERCIAL',
@@ -21,19 +13,27 @@ CREATE type organization_type AS ENUM (
     'TRUST',
     'PRIVATE_LIMITED_COMPANY',
     'OPEN_JOINT_STOCK_COMPANY'
-);
+    );
+
+CREATE type unit_of_measure_type AS ENUM (
+    'CENTIMETERS',
+    'SQUARE_METERS',
+    'LITERS',
+    'MILLILITERS'
+    );
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL
+    password_hash VARCHAR(255) NOT NULL,
+    permissions TEXT[] DEFAULT '{}'
 );
 
 CREATE TABLE IF NOT EXISTS organizations (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    org_name VARCHAR(255) NOT NULL,
     full_name VARCHAR(1125) UNIQUE NOT NULL,
-    type organization_type NOT NULL
+    org_type organization_type NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS products (
@@ -52,12 +52,12 @@ CREATE TABLE IF NOT EXISTS coordinates (
     y REAL NOT NULL CHECK (y <= 569)
 );
 
+
 -- pro__id 自增
 ALTER TABLE products
     ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 END;
-
 
 select * from users;
 
