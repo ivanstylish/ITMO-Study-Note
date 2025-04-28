@@ -1,22 +1,29 @@
 import network.ServerProxy;
+import ui.Console;
+import ui.InteractiveShell;
+import ui.InputHandler;
+
 import java.net.SocketException;
 
 public class ClientMain {
     private ServerProxy proxy;
 
+
     public void start() {
         try {
             // 初始化网络代理
-            proxy = new ServerProxy("localhost", 12345);
+            proxy = new ServerProxy("localhost", 5432);
+            Console console = new InteractiveShell(proxy, null);
+            InputHandler inputHandler1 = new InputHandler(console);
+            InteractiveShell shell = new InteractiveShell(proxy, inputHandler1);
+            shell.start();
+
 
             // 注册关闭钩子
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 proxy.shutDown();
                 System.out.println("Client has safely exited");
             }));
-
-            // 启动交互界面
-            new ui.InteractiveShell(proxy).start();
 
         } catch (SocketException e) {
             System.err.println("Network initialization failure: " + e.getMessage());

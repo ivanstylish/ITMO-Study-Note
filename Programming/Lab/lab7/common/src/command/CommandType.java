@@ -15,5 +15,6 @@ public enum CommandType {
     MAX_BY_CREATION_DATE,
     COUNT_BY_UNIT_OF_MEASURE,
     INSERT_AT,
-    AUTH;
+    AUTH,
+    REGISTER
 }

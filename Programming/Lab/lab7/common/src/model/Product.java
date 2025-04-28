@@ -2,13 +2,13 @@ package model;
 
 import exception.EmptyInputException;
 import exception.InvalidInputException;
-import util.IdGenerator;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import static java.util.Objects.hash;
 
-public class Product implements Comparable<Product> {
+public class Product implements Comparable<Product>, Serializable {
     private Integer userId;
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -17,10 +17,10 @@ public class Product implements Comparable<Product> {
     private long price; //Значение поля должно быть больше 0
     private UnitOfMeasure unitOfMeasure; //Поле может быть null
     private Organization manufacturer; //Поле не может быть null
+    private int manufacturerId;
 
 
     public Product() {
-        this.id = IdGenerator.generateProductId();
         this.creationDate = new Date();
     }
 
@@ -119,6 +119,14 @@ public class Product implements Comparable<Product> {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public int getManufacturerId() {
+        return manufacturerId;
+    }
+
+    public void setManufacturerId(int manufacturerId) {
+        this.manufacturerId = manufacturerId;
     }
     @Override
     public boolean equals(Object o) {

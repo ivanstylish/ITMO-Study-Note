@@ -21,14 +21,15 @@ public class ProductDAO {
     public ProductDAO() throws SQLException {
         this.connection = DatabaseConnector.getConnection();
     }
+
     public ConcurrentHashMap<Long, Product> loadAllProducts() throws SQLException {
         ConcurrentHashMap<Long, Product> products = new ConcurrentHashMap<>();
         String query = "SELECT * FROM products p JOIN coordinates c ON p.id = c.product_id " +
                 "JOIN organizations o ON p.manufacturer_id = o.id";
 
-        try(Connection con = DatabaseConnector.getConnection();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query)) {
+        try (Connection con = DatabaseConnector.getConnection();
+             Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(query)) {
 
             while (rs.next()) {
                 Product product = mapResultSetToProduct(rs);
@@ -40,26 +41,28 @@ public class ProductDAO {
         return products;
     }
 
-    public Product save(Product product) throws SQLException {
-        String sql = "INSERT INTO products (name, coordinates, price, unit_of_measure, manufacturer_id, owner_id) "
-                + "VALUES (?, ?, ?, ?, ?, ?) RETURNING id";
-        try (Connection conn = DatabaseConnector.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+    public Product save(Product product, Connection conn) throws SQLException {
+        String productSql = "INSERT INTO products (name, price, unit_of_measure, manufacturer_id, user_id, creation_date) "
+                + "VALUES (?, ?, ?::unit_of_measure_type, ?, ?, ?) RETURNING id";
+        try (PreparedStatement productStmt = conn.prepareStatement(productSql)) {
+            productStmt.setString(1, product.getName());
+            productStmt.setLong(2, product.getPrice());
+            productStmt.setString(3, product.getUnitOfMeasure() != null ? product.getUnitOfMeasure().name() : null);
+            productStmt.setInt(4, product.getManufacturerId());
+            productStmt.setInt(5, product.getUserId());
+            productStmt.setTimestamp(6, new Timestamp(product.getCreationDate().getTime()));
 
-            stmt.setString(1, product.getName());
-            stmt.setObject(2, product.getCoordinates());
-            stmt.setLong(3, product.getPrice());
-            stmt.setString(4, product.getUnitOfMeasure().name());
-            stmt.setInt(5, product.getManufacturer().getId());
-            stmt.setInt(6, product.getUserId());
-
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                product.setId(rs.getLong(1));
+            try (ResultSet rs = productStmt.executeQuery()) {
+                if (!rs.next()) {
+                    throw new SQLException("Failed to get generated product ID");
+                }
+                long generatedId = rs.getLong(1);
+                product.setId(generatedId); // 确保ID被正确设置
+                return product;
             }
-            return product;
         }
     }
+
 
     private Product mapResultSetToProduct(ResultSet rs) throws SQLException, EmptyInputException, InvalidInputException {
         Product product = new Product();
@@ -69,9 +72,9 @@ public class ProductDAO {
         product.setPrice(rs.getLong("price"));
 
         // 映射Coordinates
-        Coordinates coordinates = new Coordinates();
-        coordinates.setX(rs.getDouble("x"));
-        coordinates.setY(rs.getFloat("y"));
+        double x = rs.getDouble("x");
+        float y = rs.getFloat("y");
+        Coordinates coordinates = new Coordinates(x, y);
         product.setCoordinates(coordinates);
 
         // 映射Organization
@@ -95,21 +98,22 @@ public class ProductDAO {
     }
 
     public void update(Product product) throws SQLException {
-        String sql = "UPDATE products SET name=?, coordinates=?, price=?, unit_of_measure=? WHERE id=?";
+        String sql = "UPDATE products SET name=?, price=?, unit_of_measure=? WHERE id=?";
         try (Connection conn = DatabaseConnector.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, product.getName());
-            stmt.setObject(2, product.getCoordinates());
-            stmt.setLong(3, product.getPrice());
-            stmt.setString(4, product.getUnitOfMeasure().name());
-            stmt.setLong(5, product.getId());
+            stmt.setLong(2, product.getPrice());
+            stmt.setString(3, product.getUnitOfMeasure().name());
+            stmt.setLong(4, product.getId());
             stmt.executeUpdate();
         }
     }
 
     public List<Product> show() throws SQLException {
         List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM products";
+        String sql = "SELECT * FROM products p " +
+                "JOIN coordinates c ON p.id = c.product_id " +
+                "JOIN organizations o ON p.manufacturer_id = o.id";
         try (Connection conn = DatabaseConnector.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -123,7 +127,7 @@ public class ProductDAO {
     }
 
     public void clear(int ownerId) throws SQLException {
-        String sql = "DELETE FROM products WHERE owner_id = ?";
+        String sql = "DELETE FROM products WHERE user_id = ?";
         try (Connection conn = DatabaseConnector.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, ownerId);
@@ -141,7 +145,7 @@ public class ProductDAO {
     }
 
     public Product findMinPriceProduct() throws SQLException, InvalidInputException, EmptyInputException {
-        String sql = "SELECT * FROM products ORDER BY price ASC LIMIT 1";
+        String sql = "SELECT * FROM products ORDER BY price LIMIT 1";
         try (Connection conn = DatabaseConnector.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -175,7 +179,7 @@ public class ProductDAO {
     }
 
     public int removeAnyByPrice(long price) throws SQLException {
-        String sql = "DELETE FROM products WHERE price = ? LIMIT 1";
+        String sql = "DELETE FROM products WHERE id IN (SELECT id FROM products WHERE price = ? LIMIT 1)";
         try (Connection conn = DatabaseConnector.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, price);
@@ -183,12 +187,23 @@ public class ProductDAO {
         }
     }
 
-    public void sortCollection() {
-        ConcurrentSkipListSet<Product> sortedSet = new ConcurrentSkipListSet<>((p1, p2) -> {
-            int priceCompare = Long.compare(p1.getPrice(), p2.getPrice());
-            return priceCompare != 0 ? priceCompare : Long.compare(p1.getId(), p2.getId());
-        });
-        sortedSet.addAll(collection);
-        collection = sortedSet;
+    public List<Product> showSorted() throws SQLException, InvalidInputException, EmptyInputException {
+        String sql = "SELECT * FROM products p " +
+                "JOIN coordinates c ON p.id = c.product_id " +
+                "JOIN organizations o ON p.manufacturer_id = o.id " +
+                "ORDER BY price, id"; // 按价格和ID排序
+        try (Connection conn = DatabaseConnector.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            List<Product> products = new ArrayList<>();
+            while (rs.next()) {
+                products.add(mapResultSetToProduct(rs));
+            }
+            return products;
+        }
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 }

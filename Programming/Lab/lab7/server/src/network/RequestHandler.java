@@ -2,7 +2,10 @@ package network;
 
 import command.CommandRequest;
 import command.CommandResponse;
+import commands.CommandProcessor;
 import dao.ProductDAO;
+import model.User;
+import state.SessionState;
 
 import java.io.*;
 import java.net.SocketAddress;
@@ -12,12 +15,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class RequestHandler {
-    private final ProductDAO productDAO;
+    private final CommandProcessor commandProcessor;
     private static final int THREAD_POOL_SIZE = 10;
     private final ExecutorService executor = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 
-    public RequestHandler(ProductDAO productDAO) {
-        this.productDAO = productDAO;
+    public RequestHandler (CommandProcessor commandProcessor) {
+        this.commandProcessor = commandProcessor;
     }
 
     public void handleRequest(ByteBuffer buffer, SocketAddress clientAddr, DatagramChannel channel) {
@@ -59,7 +62,8 @@ public class RequestHandler {
     }
 
     private CommandResponse processCommand(CommandRequest request) {
-        // 实际命令处理逻辑（需连接CommandProcessor）
-        return new CommandResponse(true, "Command processed", request);
+        System.out.println("[Server] Processing command: " + request.getType());
+        User currentUser = SessionState.getCurrentUser();
+        return commandProcessor.process(request, currentUser);
     }
 }

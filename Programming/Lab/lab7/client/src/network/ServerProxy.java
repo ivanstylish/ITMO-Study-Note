@@ -3,11 +3,12 @@ package network;
 import command.CommandRequest;
 import command.CommandResponse;
 import exception.NetworkException;
+import logger.Logger;
+import state.ConnectionState;
 import util.SerializationUtil;
 
 import java.io.IOException;
 import java.net.*;
-import java.util.Arrays;
 import java.util.concurrent.*;
 
 /**
@@ -17,20 +18,31 @@ public class ServerProxy {
     private static final int TIMEOUT_MS = 3000;
     private static final int MAX_RETRIES = 3;
 
+    private final ConnectionState cs;
     private final InetSocketAddress serverAddress;
     private final DatagramSocket socket;
     private final ExecutorService executor = Executors.newCachedThreadPool();
 
     public ServerProxy(String host, int port) throws SocketException {
-        this.serverAddress = new InetSocketAddress(host, port);
         this.socket = new DatagramSocket();
         this.socket.setSoTimeout(TIMEOUT_MS);
+        this.cs = new ConnectionState();
+        this.cs.setServerAddress(host, port);
+        this.serverAddress = new InetSocketAddress(cs.getServerHost(), cs.getServerPort());
     }
 
     /**
      * 发送请求并获取响应（同步方法）
      */
-    public CommandResponse sendRequest(CommandRequest request) throws NetworkException {
+    public CommandResponse sendRequest(CommandRequest request) throws NetworkException{
+        Logger.info("Sending request: " + request.getType());
+        try {
+            if (!cs.checkConnection()) {
+                cs.setConnected(true);
+            }
+        } catch (Exception e) {
+            Logger.error("Failed to connect....: " + e.getMessage());
+        }
         for (int i = 0; i < MAX_RETRIES; i++) {
             try {
                 byte[] requestData = SerializationUtil.serialize(request);
@@ -60,36 +72,6 @@ public class ServerProxy {
             }
         }
         throw new NetworkException("Unexpected error");
-    }
-
-    public CommandResponse receiveResponse() throws IOException, ClassNotFoundException {
-        byte[] buffer = new byte[65507];
-        DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-
-        for (int i = 0; i < MAX_RETRIES; i++) {
-            try {
-                socket.receive(packet);
-                return (CommandResponse) SerializationUtil.deserialize(
-                        Arrays.copyOf(packet.getData(), packet.getLength())
-                );
-            } catch (SocketTimeoutException e) {
-                if (i == MAX_RETRIES - 1) throw e;
-            }
-        }
-        throw new IOException("No response after " + MAX_RETRIES + " attempts");
-    }
-
-    /**
-     * 异步发送请求
-     */
-    public CompletableFuture<CommandResponse> sendAsync(CommandRequest request) {
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                return sendRequest(request);
-            }catch (NetworkException e) {
-                throw new CompletionException(e);
-            }
-        }, executor);
     }
 
     /**

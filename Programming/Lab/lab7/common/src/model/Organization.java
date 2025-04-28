@@ -1,19 +1,17 @@
 package model;
 
-
 import exception.InvalidInputException;
-import util.IdGenerator;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Organization {
+public class Organization implements Serializable {
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private String fullName; //Значение этого поля должно быть уникальным, Длина строки не должна быть больше 1125, Поле не может быть null
     private OrganizationType type; //Поле не может быть null
 
     public Organization() {
-        this.id = IdGenerator.generateOrgId();
     }
     public Integer getId() {
         return id;
@@ -90,3 +88,4 @@ public class Organization {
         return Objects.hash(id, name, type);
     }
 }
+

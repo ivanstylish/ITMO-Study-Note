@@ -3,21 +3,25 @@ package state;
 import model.User;
 
 import java.time.Instant;
-import java.util.Queue;
 
 public class SessionState {
     private static User currentUser;
-    private Instant lastActivity;
+    private static Instant lastActivity;
 
-    public void refresh() {
-        this.lastActivity = Instant.now();
+    public static void refresh() {
+        lastActivity = Instant.now();
     }
 
     public static void login(User user) {
         currentUser = user;
+        refresh();
     }
 
     public static boolean isLoggedIn() {
         return currentUser != null;
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
     }
 }

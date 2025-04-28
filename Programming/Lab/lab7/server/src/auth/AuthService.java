@@ -2,6 +2,7 @@ package auth;
 
 import dao.UserDAO;
 import model.User;
+import util.HashUtil;
 
 import java.security.MessageDigest;
 import java.sql.SQLException;
@@ -19,10 +20,10 @@ public class AuthService {
      */
 
     public boolean register(User user) throws SQLException {
-        if (userDAO.exists(user.getUsername())) {
-            return false;
-        }
-        user.setPasswordHash(hashPassword(user.getPasswordHash()));
+        String rawPassword = user.getPasswordHash(); // 假设传入的是明文密码
+        String hashedPassword = hashPassword(rawPassword);
+        user.setPasswordHash(hashedPassword);
+        System.out.println("[DEBUG] Registered Hash: " + hashedPassword);
         return userDAO.create(user) > 0;
     }
 
@@ -31,16 +32,17 @@ public class AuthService {
      */
     public User authenticate(String username, String password) throws SQLException {
         User user = userDAO.findByUsername(username);
-        if (user != null & user.getPasswordHash().equals(hashPassword(password))) {
+        if (user != null && HashUtil.validate(password, user.getPasswordHash())) {
+            System.out.println("[DEBUG] Validating password for: " + username + ", stored hash: " + user.getPasswordHash());
             return user;
         }
         return null;
     }
 
-    /**
-     * SHA-385哈希加密
-     */
-    private String hashPassword(String password) {
+        /**
+         * SHA-384哈希加密
+         */
+    public String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-384");
             byte[] hash = md.digest(password.getBytes());

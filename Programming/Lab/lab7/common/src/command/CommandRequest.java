@@ -1,17 +1,22 @@
 package command;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandRequest {
+public class CommandRequest implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private CommandType commandType;
     private final Map<String, Object> arguments = new HashMap<>();
     private String username;
     private String password;
 
     // 基础参数操作方法
-    public void addArgument(String key, Object value) {
+    public CommandRequest addArgument(String key, Object value) {
         arguments.put(key, value);
+        return this;
     }
 
     public Object getArgument(String key) {
@@ -42,9 +47,6 @@ public class CommandRequest {
         return getLongArgument("id");
     }
 
-    public Integer getIndex() {
-        return getIntegerArgument("index");
-    }
 
     public Long getPrice() {
         return getLongArgument("price");
@@ -61,19 +63,19 @@ public class CommandRequest {
         return this;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

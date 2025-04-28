@@ -27,11 +27,11 @@ public class UDPChannelManager {
         while (true) {
             selector.select();
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
-            
+
             while (keys.hasNext()) {
                 SelectionKey key = keys.next();
                 keys.remove();
-                
+
                 if (key.isReadable()) {
                     handleReadable(key);
                 }
@@ -46,6 +46,7 @@ public class UDPChannelManager {
         try {
             SocketAddress clientAddr = channel.receive(buffer);
             if (clientAddr != null) {
+                System.out.println("Received request from " + clientAddr);
                 buffer.flip(); // 切换为读模式
                 requestHandler.handleRequest(buffer, clientAddr, channel);
             }
@@ -54,3 +55,4 @@ public class UDPChannelManager {
         }
     }
 }
+

@@ -2,10 +2,8 @@ package command;
 
 import model.Product;
 import util.JsonParser;
-import util.SerializationUtil;
 import java.util.Arrays;
 import java.util.function.BiConsumer;
-
 public class CommandParser {
 
     private interface CommandHandler extends BiConsumer<String, CommandRequest> {}

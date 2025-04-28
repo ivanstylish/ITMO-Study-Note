@@ -39,10 +39,8 @@ CREATE TABLE IF NOT EXISTS organizations (
 CREATE TABLE IF NOT EXISTS products (
     id BIGINT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    creation_date TIMESTAMP NOT NULL,
+    creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     price BIGINT NOT NULL,
-    x DOUBLE PRECISION NOT NULL CHECK (x > -401),
-    y REAL NOT NULL CHECK (y <= 569),
     unit_of_measure unit_of_measure_type,
     manufacturer_id INT REFERENCES organizations(id),
     user_id INT REFERENCES users(id)
@@ -53,6 +51,10 @@ CREATE TABLE IF NOT EXISTS coordinates (
     x DOUBLE PRECISION NOT NULL CHECK (x > -401),
     y REAL NOT NULL CHECK (y <= 569)
 );
+
+-- pro__id 自增
+ALTER TABLE products
+    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 END;
 

@@ -1,41 +1,48 @@
 package ui;
 
-
 import command.Command;
-import command.*;
 import network.ServerProxy;
 
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
-public class InteractiveShell {
-    private final Map<String, Command> commands = new HashMap<>();
-    private final ServerProxy proxy;
-    private final Scanner scanner = new Scanner(System.in);
+public class InteractiveShell implements Console{
+    private final CommandRegistry commandRegistry;
+    private Scanner scanner = new Scanner(System.in);
 
 
-    public InteractiveShell(ServerProxy proxy) {
-        this.proxy = proxy;
-        registerCommands();
+    public InteractiveShell(ServerProxy proxy, InputHandler i) {
+        this.commandRegistry = new CommandRegistry(proxy, i);
     }
 
-    private void registerCommands() {
-        commands.put("login", new LoginCommand());
+    public String readLine(String line) {
+        System.out.print(line + ">");
+        System.out.flush();
+        try {
+            return scanner.nextLine().trim();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
     }
 
+    public void clearInputBuffer() {
+        if (scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+    }
     public void start() {
         printWelcome();
         while (true) {
             try {
-                System.out.print("> ");
+                System.out.print("-> ");
                 String input = scanner.nextLine().trim();
                 if (input.isEmpty()) {
                     continue;
                 }
-                String[] parts = input.split(" ");
-                Command cmd = commands.get(parts[0].toLowerCase());
+                String[] parts = input.split(" ", 2);
+                Command cmd = commandRegistry.getCommand(parts[0]);
 
                 if (cmd != null) {
                     cmd.execute(parts, scanner);
@@ -49,9 +56,17 @@ public class InteractiveShell {
     }
 
     public void printWelcome() {
-        System.out.println("""
+        printInfo("""
             === Product Management System ===
             Please enter 'help' to see all the available commands
             """);
+    }
+
+    public void printInfo(String s) {
+        System.out.println("\u001B[34m" + s + "\u001B[0m");
+    }
+
+    public void printError(String message) {
+        System.out.println("\u001B[31mERROR: " + message + "\u001B[0m");
     }
 }
