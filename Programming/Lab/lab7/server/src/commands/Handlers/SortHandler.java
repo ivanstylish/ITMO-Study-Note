@@ -22,7 +22,7 @@ public class SortHandler extends BaseCommandHandler {
     public CommandResponse handle(CommandRequest request, User user) {
         try {
             List<Product> sortedProducts = productDAO.showSorted();
-            return CommandResponse.success("Collection sorted by price and ID:", sortedProducts);
+            return CommandResponse.success("Collection sorted by price and ID:" + sortedProducts);
         } catch (SQLException | InvalidInputException | EmptyInputException e) {
             return CommandResponse.error("Sort failed: " + e.getMessage());
         }

@@ -1,28 +1,36 @@
 package command;
 
+import dao.ProductDAO;
 import exception.NetworkException;
 import model.Product;
 import network.ServerProxy;
+import state.SessionState;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ShowCommand implements Command {
     private final ServerProxy proxy;
+    private final ProductDAO productDAO;
 
-    public ShowCommand(ServerProxy proxy) {
+    public ShowCommand(ServerProxy proxy, ProductDAO productDAO) {
         this.proxy = proxy;
+        this.productDAO = productDAO;
     }
 
     @Override
     public void execute(String[] parts, Scanner scanner) {
+        if (!SessionState.isLoggedIn()) {
+            System.out.println("Please login first.");
+            return;
+        }
         try {
             CommandRequest request = new CommandRequest()
                     .setCommandType(CommandType.SHOW);
 
             CommandResponse response = proxy.sendRequest(request);
             if (response.isSuccess()) {
-                List<Product> products = (List<Product>) response.getData();
+                List<Product> products = productDAO.show();
                 if (products != null) {
                     products.forEach(System.out::println);
                 } else {

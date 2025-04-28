@@ -4,6 +4,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class CommandRequest implements Serializable {
     @Serial
@@ -78,4 +79,5 @@ public class CommandRequest implements Serializable {
     public String getPassword() {
         return password;
     }
+
 }

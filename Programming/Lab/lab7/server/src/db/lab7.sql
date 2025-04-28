@@ -31,9 +31,9 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS organizations (
                                              id SERIAL PRIMARY KEY,
-                                             name VARCHAR(255) NOT NULL,
+                                             org_name VARCHAR(255) NOT NULL,
                                              full_name VARCHAR(1125) UNIQUE NOT NULL,
-                                             type organization_type NOT NULL
+                                             org_type organization_type NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS products (
@@ -51,5 +51,10 @@ CREATE TABLE IF NOT EXISTS coordinates (
                                            x DOUBLE PRECISION NOT NULL CHECK (x > -401),
                                            y REAL NOT NULL CHECK (y <= 569)
 );
+
+
+-- pro__id 自增
+ALTER TABLE products
+    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 END;

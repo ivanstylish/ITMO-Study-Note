@@ -24,7 +24,7 @@ public class InsertAtHandler extends BaseCommandHandler {
             productDAO.insertAt(index, product);
             return CommandResponse.success("Inserted at index " + index);
         } catch (Exception e) {
-            return CommandResponse.error("Insert failed: " , e.getMessage());
+            return CommandResponse.error("Insert failed: " + e.getMessage());
         }
     }
 }

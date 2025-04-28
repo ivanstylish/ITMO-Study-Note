@@ -20,9 +20,9 @@ public class ShowHandler extends BaseCommandHandler {
     public CommandResponse handle(CommandRequest request, User user) {
         try {
             List<Product> products = productDAO.show();
-            return CommandResponse.success("All products:", products);
+            return CommandResponse.success("All products:" + products);
         } catch (SQLException e) {
-            return CommandResponse.error("Show failed: " , e.getMessage());
+            return CommandResponse.error("Show failed: " + e.getMessage());
         }
     }
 }

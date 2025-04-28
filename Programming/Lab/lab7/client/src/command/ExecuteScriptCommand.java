@@ -1,26 +1,59 @@
 package command;
 
-import java.io.File;
+import state.SessionState;
+import ui.CommandRegistry;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class ExecuteScriptCommand implements Command {
     @Override
     public void execute(String[] parts, Scanner scanner) {
+        if (!SessionState.isLoggedIn()) {
+            System.out.println("Please login first.");
+            return;
+        }
         if (parts.length < 2) {
             System.out.println("usage: execute_script <filename>");
             return;
         }
 
-        try (Scanner fileScanner = new Scanner(new File(parts[1]))) {
+        Path scriptPath = Paths.get(parts[1]).toAbsolutePath().normalize();
+        if (!Files.exists(scriptPath)) {
+            System.err.println("File does not exist or path is invalid:" + scriptPath);
+            return;
+        }
+
+        if (SessionState.isScriptRunning(scriptPath)) {
+            System.err.println("Recursive script execution detected:" + scriptPath);
+            return;
+        }
+        SessionState.markScriptRunning(scriptPath, true); // 标记为正在执行
+
+        try (Scanner fileScanner = new Scanner(scriptPath)) {
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine().trim();
-                if (!line.isEmpty()) {
-                    // 分发命令处理（需实现命令分发逻辑）
+                if (line.isEmpty()) continue;
+
+                String[] cmdParts = line.split("\\s+");
+                String commandName = cmdParts[0].toLowerCase();
+                Command command = CommandRegistry.getInstance().getCommand(commandName);
+                if (command != null) {
+                    command.execute(cmdParts, fileScanner);
+                } else {
+                    System.out.println("Unknown command:" + cmdParts[0]);
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("Failed to find the file: " + parts[1]);
+            System.err.println("Can't find the file:" + scriptPath);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            SessionState.markScriptRunning(scriptPath, false); // 清除标记
         }
     }
 

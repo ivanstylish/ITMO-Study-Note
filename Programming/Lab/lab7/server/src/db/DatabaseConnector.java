@@ -1,25 +1,32 @@
 package db;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
-    private static final String URL = "jdbc:postgresql://localhost:5432/lab7";
-    private static final String USER = "varnothing";
-    private static final String PASSWORD = "zjj18948165786";
+    private static final Logger logger = LoggerFactory.getLogger(DatabaseConnector.class);
+    private static final HikariDataSource dataSource;
 
     static {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("PostgreSQL JDBC Driver not found", e);
-        }
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:postgresql://localhost:5432/studs");
+        config.setUsername("s407959");
+        config.setPassword("18948165786");
+        config.setMaximumPoolSize(10); // 最大连接数
+        config.setMinimumIdle(2); // 最小空闲连接数
+        config.setIdleTimeout(30000); // 空闲超时时间（毫秒）
+        config.setConnectionTimeout(30000); // 连接超时时间（毫秒）
+        config.setMaxLifetime(1800000); // 连接最大生命周期（毫秒）
+
+        dataSource = new HikariDataSource(config);
     }
 
     public static Connection getConnection() throws SQLException {
-        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        conn.setAutoCommit(true);
-        return conn;
+        return dataSource.getConnection();
     }
 }

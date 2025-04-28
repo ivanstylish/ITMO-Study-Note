@@ -3,7 +3,10 @@ package commands.Handlers;
 import command.CommandRequest;
 import command.CommandResponse;
 import dao.ProductDAO;
+import db.DatabaseConnector;
 import model.User;
+
+import java.sql.Connection;
 
 public class ClearHandler extends BaseCommandHandler {
     private final ProductDAO productDAO;
@@ -15,10 +18,11 @@ public class ClearHandler extends BaseCommandHandler {
     @Override
     public CommandResponse handle(CommandRequest request, User user) {
         try {
-            productDAO.clear(user.getId());
+            Connection conn = DatabaseConnector.getConnection();
+            productDAO.clear(user.getId(), conn);
             return CommandResponse.success("Collection cleared");
         } catch (Exception e) {
-            return CommandResponse.error("Clear failed: " , e.getMessage());
+            return CommandResponse.error("Clear failed: " + e.getMessage());
         }
     }
 }

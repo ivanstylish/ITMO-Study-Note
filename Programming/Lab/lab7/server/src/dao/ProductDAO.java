@@ -3,10 +3,7 @@ package dao;
 import db.DatabaseConnector;
 import exception.EmptyInputException;
 import exception.InvalidInputException;
-import model.Coordinates;
-import model.Organization;
-import model.Product;
-import model.UnitOfMeasure;
+import model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -77,23 +74,38 @@ public class ProductDAO {
         Coordinates coordinates = new Coordinates(x, y);
         product.setCoordinates(coordinates);
 
+        // 映射 UnitOfMeasure
+        String unitOfMeasure = rs.getString("unit_of_measure");
+        if (unitOfMeasure != null) {
+            product.setUnitOfMeasure(UnitOfMeasure.valueOf(unitOfMeasure));
+        }
+
         // 映射Organization
         Organization org = new Organization();
-        org.setId(rs.getInt("organization_id"));
-        org.setName(rs.getString("org_name"));
+        org.setId(rs.getInt("id"));
+        org.setName(rs.getString("name"));
+        String org_type = rs.getString("org_type");
+        if (org_type != null) {
+            org.setType(OrganizationType.valueOf(org_type));
+        }
         product.setManufacturer(org);
 
-        product.setUserId(rs.getInt("owner_id"));
+        product.setUserId(rs.getInt("id"));
         return product;
     }
 
     public Product findById(Long id) throws SQLException, EmptyInputException, InvalidInputException {
-        String sql = "SELECT * FROM products WHERE id = ?";
+        String sql = "SELECT p.*, c.x, c.y, o.org_name AS org_name, o.org_type AS org_type, p.unit_of_measure AS unit_of_measure " +
+                "FROM products p " +
+                "LEFT JOIN coordinates c ON p.id = c.product_id " +
+                "LEFT JOIN organizations o ON p.manufacturer_id = o.id " +
+                "WHERE p.id = ?";
         try (Connection conn = DatabaseConnector.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, id);
-            ResultSet rs = stmt.executeQuery();
-            return rs.next() ? mapResultSetToProduct(rs) : null;
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next() ? mapResultSetToProduct(rs) : null;
+            }
         }
     }
 
@@ -111,9 +123,10 @@ public class ProductDAO {
 
     public List<Product> show() throws SQLException {
         List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM products p " +
-                "JOIN coordinates c ON p.id = c.product_id " +
-                "JOIN organizations o ON p.manufacturer_id = o.id";
+        String sql = "SELECT p.*, c.x, c.y, o.org_name AS org_name, o.org_type AS org_type, p.unit_of_measure AS unit_of_measure " +
+                "FROM products p " +
+                "LEFT JOIN coordinates c ON p.id = c.product_id " +
+                "LEFT JOIN organizations o ON p.manufacturer_id = o.id";
         try (Connection conn = DatabaseConnector.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -126,11 +139,25 @@ public class ProductDAO {
         return products;
     }
 
-    public void clear(int ownerId) throws SQLException {
-        String sql = "DELETE FROM products WHERE user_id = ?";
-        try (Connection conn = DatabaseConnector.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, ownerId);
+    public void clear(int userId, Connection conn) throws SQLException {
+        // 删除 coordinates 表的记录
+        String deleteCoordinatesSql = "DELETE FROM coordinates WHERE product_id IN (SELECT id FROM products WHERE user_id = ?)";
+        try (PreparedStatement stmt = conn.prepareStatement(deleteCoordinatesSql)) {
+            stmt.setInt(1, userId);
+            stmt.executeUpdate();
+        }
+
+        // 删除 products 表的记录
+        String deleteProductsSql = "DELETE FROM products WHERE user_id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(deleteProductsSql)) {
+            stmt.setInt(1, userId);
+            stmt.executeUpdate();
+        }
+
+        // 删除 organizations 表中的关联记录（如果存在外键）
+        String deleteOrgsSql = "DELETE FROM organizations WHERE id IN (SELECT manufacturer_id FROM products WHERE user_id = ?)";
+        try (PreparedStatement stmt = conn.prepareStatement(deleteOrgsSql)) {
+            stmt.setInt(1, userId);
             stmt.executeUpdate();
         }
     }
@@ -144,10 +171,12 @@ public class ProductDAO {
         }
     }
 
-    public Product findMinPriceProduct() throws SQLException, InvalidInputException, EmptyInputException {
-        String sql = "SELECT * FROM products ORDER BY price LIMIT 1";
-        try (Connection conn = DatabaseConnector.getConnection();
-             Statement stmt = conn.createStatement();
+    public Product findMinPriceProduct(Connection conn) throws SQLException, InvalidInputException, EmptyInputException {
+        String sql = "SELECT p.*, o.org_name AS org_name, o.org_type AS org_type, p.unit_of_measure AS unit_of_measure " +
+                "FROM products p " +
+                "LEFT JOIN organizations o ON p.manufacturer_id = o.id " +
+                "ORDER BY p.price LIMIT 1";
+        try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             return rs.next() ? mapResultSetToProduct(rs) : null;
         }
@@ -179,19 +208,33 @@ public class ProductDAO {
     }
 
     public int removeAnyByPrice(long price) throws SQLException {
-        String sql = "DELETE FROM products WHERE id IN (SELECT id FROM products WHERE price = ? LIMIT 1)";
-        try (Connection conn = DatabaseConnector.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setLong(1, price);
-            return stmt.executeUpdate();
+        try (Connection conn = DatabaseConnector.getConnection()) {
+            conn.setAutoCommit(false);
+
+            String deleteCoordinatesSql = "DELETE FROM coordinates WHERE product_id IN (SELECT id FROM products WHERE price = ? LIMIT 1)";
+            try (PreparedStatement stmt = conn.prepareStatement(deleteCoordinatesSql)) {
+                stmt.setLong(1, price);
+                stmt.executeUpdate();
+            }
+
+            String deleteProductsSql = "DELETE FROM products WHERE id IN (SELECT id FROM products WHERE price = ? LIMIT 1)";
+            try (PreparedStatement stmt = conn.prepareStatement(deleteProductsSql)) {
+                stmt.setLong(1, price);
+                int rowsAffected = stmt.executeUpdate();
+                conn.commit();
+                return rowsAffected;
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Remove by price failed: " + e.getMessage(), e);
         }
     }
 
     public List<Product> showSorted() throws SQLException, InvalidInputException, EmptyInputException {
-        String sql = "SELECT * FROM products p " +
-                "JOIN coordinates c ON p.id = c.product_id " +
-                "JOIN organizations o ON p.manufacturer_id = o.id " +
-                "ORDER BY price, id"; // 按价格和ID排序
+        String sql = "SELECT p.*, c.x, c.y, o.org_name AS org_name, o.org_type AS org_type " +
+                "FROM products p " +
+                "LEFT JOIN coordinates c ON p.id = c.product_id " +
+                "LEFT JOIN organizations o ON p.manufacturer_id = o.id " +
+                "ORDER BY p.price, p.id"; // 按价格和ID排序
         try (Connection conn = DatabaseConnector.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {

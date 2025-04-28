@@ -22,10 +22,10 @@ public class UpdateHandler extends BaseCommandHandler {
 
             Product existPro = productDAO.findById(productId);
             if (existPro == null) {
-                return CommandResponse.error("Product not found: ", productId);
+                return CommandResponse.error("Product not found: " + productId);
             }
             if (!existPro.getUserId().equals(user.getId())) {
-                return CommandResponse.error("Permission denied: Not product owner", null);
+                return CommandResponse.error("Permission denied: Not product user", null);
             }
 
             newProduct.setId(productId);
@@ -35,7 +35,7 @@ public class UpdateHandler extends BaseCommandHandler {
             productDAO.update(newProduct);
             return CommandResponse.success("Product updated: " + productId);
         } catch (Exception | EmptyInputException e) {
-            return CommandResponse.error("Update failed: " , e.getMessage());
+            return CommandResponse.error("Update failed: " + e.getMessage());
         } catch (InvalidInputException e) {
             throw new RuntimeException(e);
         }

@@ -11,6 +11,7 @@ public class Organization implements Serializable {
     private String fullName; //Значение этого поля должно быть уникальным, Длина строки не должна быть больше 1125, Поле не может быть null
     private OrganizationType type; //Поле не может быть null
 
+
     public Organization() {
     }
     public Integer getId() {
@@ -87,5 +88,7 @@ public class Organization implements Serializable {
     public int hashCode() {
         return Objects.hash(id, name, type);
     }
+
+
 }
 

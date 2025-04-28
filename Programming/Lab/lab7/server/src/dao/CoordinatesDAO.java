@@ -1,9 +1,11 @@
 package dao;
 
-import db.DatabaseConnector;
 import logger.Logger;
 import model.Coordinates;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class CoordinatesDAO {
     public void save(Coordinates coordinates, long productId, Connection conn) throws SQLException {

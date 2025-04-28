@@ -4,6 +4,7 @@ import command.Command;
 import network.ServerProxy;
 
 
+import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class InteractiveShell implements Console{
     private Scanner scanner = new Scanner(System.in);
 
 
-    public InteractiveShell(ServerProxy proxy, InputHandler i) {
+    public InteractiveShell(ServerProxy proxy, InputHandler i) throws SQLException {
         this.commandRegistry = new CommandRegistry(proxy, i);
     }
 

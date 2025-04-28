@@ -24,7 +24,7 @@ public class MaxByCreationDateHandler extends BaseCommandHandler {
                     latest
             );
         } catch (Exception | InvalidInputException | EmptyInputException e) {
-            return CommandResponse.error("Failed to find latest product: " , e.getMessage());
+            return CommandResponse.error("Failed to find latest product: " + e.getMessage());
         }
     }
 }

@@ -16,7 +16,7 @@ public class InsertAtCommand implements Command{
     @Override
     public void execute(String[] parts, Scanner scanner) {
         if (!SessionState.isLoggedIn()) {
-            System.out.println("Error: Authentication required. Please login first.");
+            System.out.println("Please login first.");
             return;
         }
 

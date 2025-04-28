@@ -2,6 +2,8 @@ package command;
 
 import exception.NetworkException;
 import network.ServerProxy;
+import state.SessionState;
+
 import java.util.Scanner;
 
 public class RemoveAnyByPriceCommand implements Command {
@@ -13,6 +15,10 @@ public class RemoveAnyByPriceCommand implements Command {
 
     @Override
     public void execute(String[] parts, Scanner scanner) {
+        if (!SessionState.isLoggedIn()) {
+            System.out.println("Please login first.");
+            return;
+        }
         System.out.print("Input Price: ");
         long price = Long.parseLong(scanner.nextLine());
 

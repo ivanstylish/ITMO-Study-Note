@@ -5,6 +5,7 @@ import command.CommandResponse;
 import dao.CoordinatesDAO;
 import dao.OrganizationDAO;
 import dao.ProductDAO;
+import db.DatabaseConnector;
 import logger.Logger;
 import model.Organization;
 import model.Product;
@@ -30,7 +31,7 @@ public class AddHandler extends BaseCommandHandler {
 
         Connection conn = null;
         try {
-            conn = productDAO.getConnection(); // 获取同一连接
+            conn = DatabaseConnector.getConnection(); // 获取同一连接
             conn.setAutoCommit(false); // 开启事务
 
             Product product = (Product) request.getArgument("product");

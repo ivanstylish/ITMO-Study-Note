@@ -3,6 +3,7 @@ package commands.Handlers;
 import command.CommandRequest;
 import command.CommandResponse;
 import dao.ProductDAO;
+import db.DatabaseConnector;
 import exception.EmptyInputException;
 import exception.InvalidInputException;
 import model.Product;
@@ -21,41 +22,23 @@ public class AddIfMinHandler extends BaseCommandHandler {
     @Override
     public CommandResponse handle(CommandRequest request, User user) {
 
-        Connection conn = null;
-        try {
-            conn = productDAO.getConnection(); // 获取数据库连接
-            conn.setAutoCommit(false); // 开启事务
+        try (Connection conn = DatabaseConnector.getConnection()) {
+            conn.setAutoCommit(false);
 
             Product newProduct = (Product) request.getArgument("product");
             newProduct.setUserId(user.getId());
 
-            Product minProduct = productDAO.findMinPriceProduct();
+            Product minProduct = productDAO.findMinPriceProduct(conn);
             if (minProduct == null || newProduct.getPrice() < minProduct.getPrice()) {
-                // 传递连接参数
                 productDAO.save(newProduct, conn);
-                conn.commit(); // 提交事务
+                conn.commit();
                 return CommandResponse.success("Product added with ID: " + newProduct.getId());
             } else {
+                conn.rollback();
                 return CommandResponse.error("Product price is not the minimum");
             }
-        } catch (InvalidInputException | EmptyInputException | SQLException e) {
-            if (conn != null) {
-                try {
-                    conn.rollback(); // 回滚事务
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
+        } catch (SQLException | InvalidInputException | EmptyInputException e) {
             return CommandResponse.error("AddIfMin failed: " + e.getMessage());
-        } finally {
-            if (conn != null) {
-                try {
-                    conn.setAutoCommit(true);
-                    conn.close(); // 关闭连接
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }

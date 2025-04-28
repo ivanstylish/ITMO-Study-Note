@@ -28,9 +28,9 @@ public class CountByUnitOfMeasureHandler extends BaseCommandHandler {
             );
         } catch (IllegalArgumentException e) {
             return CommandResponse.error("Invalid unit. Valid values: "
-                    , List.of(UnitOfMeasure.values()));
+                    + List.of(UnitOfMeasure.values()));
         } catch (Exception e) {
-            return CommandResponse.error("Count failed: " , e.getMessage());
+            return CommandResponse.error("Count failed: " + e.getMessage());
         }
     }
 }

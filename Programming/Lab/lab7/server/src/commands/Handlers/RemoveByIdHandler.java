@@ -32,7 +32,7 @@ public class RemoveByIdHandler extends BaseCommandHandler {
             productDAO.delete(id);
             return CommandResponse.success("Product " + id + " removed");
         } catch (Exception | EmptyInputException | InvalidInputException e) {
-            return CommandResponse.error("Remove failed: " , e.getMessage());
+            return CommandResponse.error("Remove failed: " + e.getMessage());
         }
     }
 }

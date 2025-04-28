@@ -44,6 +44,10 @@ public class CommandParser {
             req.addArgument("index", Integer.parseInt(parts[0]));
             req.addArgument("product", parseJsonArgument(parts[1], Product.class));
         };
+        COMMAND_HANDLERS[CommandType.HELP.ordinal()] = (args, req) -> {};
+        COMMAND_HANDLERS[CommandType.CLEAR.ordinal()] = (args, req) -> {};
+        COMMAND_HANDLERS[CommandType.INFO.ordinal()] = (args, req) -> {};
+
     }
 
     public static CommandRequest parse(String commandLine) {

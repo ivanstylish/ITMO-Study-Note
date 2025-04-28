@@ -2,6 +2,7 @@ package command;
 
 import exception.NetworkException;
 import network.ServerProxy;
+import state.SessionState;
 
 import java.util.Scanner;
 
@@ -14,6 +15,10 @@ public class MaxByCreationDateCommand implements Command {
 
     @Override
     public void execute(String[] parts, Scanner scanner) {
+        if (!SessionState.isLoggedIn()) {
+            System.out.println("Please login first.");
+            return;
+        }
         try {
             CommandRequest request = new CommandRequest()
                     .setCommandType(CommandType.MAX_BY_CREATION_DATE);

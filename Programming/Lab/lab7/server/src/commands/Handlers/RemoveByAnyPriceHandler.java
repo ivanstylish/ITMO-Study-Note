@@ -21,7 +21,7 @@ public class RemoveByAnyPriceHandler extends BaseCommandHandler {
                     "Removed " + removed + " product(s) with price " + price
             );
         } catch (Exception e) {
-            return CommandResponse.error("Remove by price failed: " , e.getMessage());
+            return CommandResponse.error("Remove by price failed: " + e.getMessage());
         }
     }
 }
