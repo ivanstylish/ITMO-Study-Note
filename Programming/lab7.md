@@ -108,7 +108,7 @@ sequenceDiagram
 - `notify()/notifyAll()` 方法唤醒其他等待该对象锁的线程,并在执行完同步代码块中的后续步骤后，释放对象锁 Метод `notify()/notifyAll()` пробуждает другие потоки, ожидающие блокировку объекта, и освобождает ее после выполнения последующих шагов в блоке синхронизации.(前者只唤醒其中一个线程，后者唤醒所有)
 - `Lock` — интерфейс из `lock` framework, предоставляющий гибкий подход по ограничению доступа к ресурсам/блокам по сравнению с `synchronized`. 锁 "是 "锁 "框架中的一个接口，与 "同步 "相比，它提供了一种灵活的方法来限制对资源/块的访问。
 
-![alt text](./pic/lab7.1.png)
+![](./pic/lab7.1.png)
 
 
 3. Классы-сихронизаторы из пакета `java.util.concurrent`. `java.util.concurrent` 包中的同步器类。
@@ -123,7 +123,7 @@ sequenceDiagram
 5. Коллекции из пакета `java.util.concurrent`.  来自 `java.util.concurrent` 软件包的集合。
 `Concurrency` – это библиотека классов в Java, в которой собрали специальные классы, оптимизированные для работы из нескольких нитей. Эти классы собраны в пакете `java.util.concurrent`.  
 `Concurrency` 是 Java 中的一个类库，它收集了经过优化的特殊类，以便在多线程下工作。 这些类被收集在`java.util.concurrent`包中。  
-![alt text](./pic/lab7.2.png)
+![](./pic/lab7.2.png)
 
 
 6. Интерфейсы `Executor`, `ExecutorService`, `Callable`, `Future` 接口 `Executor`, `ExecutorService`, `Callable`, `Future
