@@ -1,0 +1,30 @@
+1. 认证窗口 (AuthWindow)：
+
+使用 JFrame 实现登录/注册表单。
+
+密码使用 JPasswordField，哈希后通过 ServerProxy 发送到服务端验证。
+
+主窗口 (MainWindow)：
+
+采用 JTabbedPane 分页展示表格和可视化区域。
+
+顶部栏显示当前用户和语言切换下拉框。
+
+表格面板 (TablePanel)：
+
+使用 JTable 展示集合对象，支持点击列头排序（通过 TableRowSorter）。
+
+集成 JTextField 输入过滤条件，结合 Streams API 实现动态过滤。
+
+可视化面板 (VisualizationPanel)：
+
+继承 JPanel 并重写 paintComponent()，使用 Graphics2D 绘制对象。
+
+不同用户对象用不同颜色（通过 User.getColor() 映射）。
+
+点击事件监听：addMouseListener 触发对象详情弹窗。
+
+2. 实时同步与动画
+网络同步：在 RealTimeSyncHandler 中监听服务端推送的 UDP 消息（如 OBJECT_ADDED 事件），触发界面更新。
+
+动画实现：使用 javax.swing.Timer 控制动画帧率：

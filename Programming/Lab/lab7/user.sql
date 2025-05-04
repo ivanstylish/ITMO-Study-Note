@@ -58,9 +58,3 @@ ALTER TABLE products
     ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 END;
-
-select * from users;
-
-select * from products;
-
-select * from organizations;

@@ -2001,3 +2001,47 @@ int volatile vint;
 |PreparedStatement|此接口用于执行预编译的SQL语句|
 |ResultSet|结果集接口，提供检索SQL语句返回数据的各种方法|
 |CallableStatement|此接口用于执行SQL存储过程的语句|
+
+- 经常使用外部库jar来实现JDBC连接数据库，如`org.postgresql.jar`、`mysql-connector-java.jar`等。
+
+- ### Swing程序设计 
+  - 概述： `GUI`（图形用户界面）为程序提供图形界面，它最初的设计目的是为程序员构建一个通用的`GUI`，使其能够在所有的平台上运行
+  - Swing组件通常被称为“轻量级组件”，因为它完全由Java语言编写，而Java是不依赖于操作系统的语言，它可以在任何平台上运行；相反，依赖于本地平台的组件被称为“重量级组件”，如AWT组件就是依赖本地平台的窗口系统来决定组件的功能、外观和风格。Swing主要具有以下特点：
+     - 轻量级组件。
+     - 可插入外观组件。
+
+![](./pic/java56.png)
+   - 在`Swing`组件中大多数GUI组件都是`Component`类的直接子类或间接子类，`JComponent`类是`Swing`组件各种特性的存放位置，这些组件的特性包括设定组件边界、GUI组件自动滚动等。
+   - 在`Swing`组件中最重要的父类是`Container`类，而`Container`类有两个最重要的子类，分别为`java.awt.Window`与`java.awt.Frame`，除了以往的AWT类组件会继承这两个类之外，现在的`Swing`组件也扩展了这两个类。
+   - 常用组件：
+   - ![](./pic/java57.png)
+ - ### 常用窗体
+   - `JFrame`：最常用的窗体，可以用来创建带有标题栏、边框、菜单栏、状态栏的窗口。
+   - `JDialog`：用来创建对话框，它可以用来创建带有标题栏、边框、按钮、文本框等的窗口。
+   - `JWindow`：用来创建无边框的窗口，它可以用来创建不带有标题栏、边框、菜单栏、状态栏的窗口。
+ 
+ - #### JFrame窗体 
+   - Swing组件的窗体通常与组件和容器相关，所以在JFrame对象创建完成后，需要调用`getContentPane()`方法将窗体转换为容器，然后在容器中添加组件或设置布局管理器。 
+   - `JFrame j = new JFrame("title"); // 创建窗体 || Container c = j.getContentPane(); // 获取内容面板 || c.setLayout(new FlowLayout()); // 设置布局管理器 || c.add(new JButton("Button")); // 添加组件 || j.pack(); // 自动调整窗体大小 || j.setVisible(true); // 显示窗体(表示窗体可见)`
+   - 窗体关闭方式：`setDefaultCloseOperation()`方法关闭窗体，有以下四个方式：
+     - `DO_NOTHING_ON_CLOSE` 什么都不做就将窗体关闭
+     - `EXIT_ON_CLOSE` 程序退出时将窗体关闭
+     - `HIDE_ON_CLOSE` 示隐藏窗口的默认窗口关闭
+     - `DISPOSE_ON_CLOSE` 任何注册监听程序对象后会自动隐藏并释放窗体
+ 
+ - #### JDialog窗体
+   - `JDialog`窗体是`Swing`组件中的对话框，它继承了AWT组件中的`java.awt.Dialog`类。
+   - `JDialog`窗体的功能是从一个窗体中弹出另一个窗体，就像是在使用IE浏览器时弹出的确定对话框一样。JDialog窗体实质上就是另一种类型的窗体。
+   - 标签组件与图标
+     - 在`Swing`中显示文本或提示信息的方法是使用标签，它支持文本字符串和图标。
+     - 标签的使用 
+       - 标签由`JLabel`类定义，它的父类为`JComponent`类。 
+       - 标签可以显示一行只读文本、一个图像或带图像的文本，它并不能产生任何类型的事件，只是简单地显示文本和图片，但是可以使用标签的特性指定标签上文本的对齐方式。
+       - ```public JLabel(String text,Icon icon,int aligment)：// 创建一个带文本，带图标的JLabel对象，并设置标签内容的水平对齐方式 ```
+   - 图标的使用 
+     - `Swing`中的图标可以放置在按钮、标签等组件上，用于描述组件的用途。图标可以用Java支持的图片文件类型进行创建，也可以使用`java.awt.Graphics`类提供的功能方法来创建。 
+     - 创建图标
+       - 需要创建Icon接口，其中必须实现的方法有：`paintIcon(Component c, Graphics g, int x, int y)`、`getIconWidth()`、`getIconHeight()`。
+   - 按钮组件
+     - 按钮在Swing中是较为常见的组件，用于触发特定动作。Swing中提供多种按钮，包括提交按钮、复选框、单选按钮等，这些按钮都是从`AbstractButton`类中继承而来的(`JButton`)
+     - 其中它的构造函数有`public JButton(String text, Icon icon)`, 里面的参数可变
