@@ -3,7 +3,7 @@ package network;
 import command.CommandRequest;
 import command.CommandResponse;
 import commands.CommandProcessor;
-import dao.ProductDAO;
+
 import model.User;
 import state.SessionState;
 
