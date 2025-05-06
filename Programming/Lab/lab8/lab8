@@ -28,3 +28,20 @@
 网络同步：在 RealTimeSyncHandler 中监听服务端推送的 UDP 消息（如 OBJECT_ADDED 事件），触发界面更新。
 
 动画实现：使用 javax.swing.Timer 控制动画帧率：
+
+
+启动流程：
+ClientApp.start()
+├─ LanguageSelector (语言选择)
+├─ ServerProxy 初始化
+├─ AuthWindow (用户认证)
+└─ MainWindow (主界面)
+   ├─ VisualizationPanel (可视化)
+   │  └─ ObjectEditorDialog (编辑弹窗)
+   ├─ TablePanel (表格展示)
+   └─ RealTimeSyncHandler (实时同步)
+
+数据流向：
+1. 用户操作 -> CommandRequest -> ServerProxy
+2. 服务端响应 -> CommandResponse -> 更新界面
+3. 实时同步 -> 定期拉取数据 -> 刷新可视化

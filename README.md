@@ -1,6 +1,6 @@
 # Study-Note
+## NOTE for studying at ITMO University  
 
-note for study
 ## Go
 
 [Go](/Go/readme.md)

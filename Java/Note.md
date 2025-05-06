@@ -2045,3 +2045,56 @@ int volatile vint;
    - 按钮组件
      - 按钮在Swing中是较为常见的组件，用于触发特定动作。Swing中提供多种按钮，包括提交按钮、复选框、单选按钮等，这些按钮都是从`AbstractButton`类中继承而来的(`JButton`)
      - 其中它的构造函数有`public JButton(String text, Icon icon)`, 里面的参数可变
+  - ### 常用面板
+    - `Swing`中常用的面板包括`JPanel`面板以及`JScrollPane`面板。 
+    - #### JPanel面板
+      - `JPanel`面板可以聚集一些组件来布局。读者首先应该明确的是面板也是一种容器，因为它也继承自`java.awt.Container`类。 
+      - 默认是布局是`FlowLayout`
+  - ### 按钮组件
+    - 按钮在`Swing`中是较为常见的组件，用于触发特定动作。`Swing`中提供多种按钮，包括提交按钮、复选框、单选按钮等，这些按钮都是从`AbstractButton`类中继承而来。 
+    - **提交按钮组件**，由`JButton`对象表示：
+    - `public JButton(String text, Icon icon)`
+    - 通过使用上述构造方法，在`Swing`按钮上不仅能显示文本标签，还可以显示图标。
+    
+    - **单选按钮组件**
+    - 在默认情况下，单选按钮（`JRadioButton`）显示一个圆形图标，并且通常在该图标旁放置一些说明性文字，而在应用程序中，一般将多个单选按钮放置在按钮组中，使这些单选按钮表现出某种功能，当用户选中某个单选按钮后，按钮组中其他按钮将被自动取消。
+    - 主要使用JRadioButton类中的构造方法来创建单选按钮对象：
+    - `public JRadioButton(String text, boolean selected)`
+    - **按钮组**
+    - 在`Swing`类中有一个`ButtonGroup`类用于产生按钮组，一般就实例化一个它的对象。
+    - **复选框组件**
+    - 复选框（`JCheckBox`）在`Swing`组件中的使用也非常广泛，它具有一个方块图标，外加一段描述性文字。
+    - 同样继承于`AbstractButton`类，构造方法如下：
+    - `public JCheckBox(String text, boolean selected)`
+    - 复选框与其他按钮设置基本相同，除了可以在初始化时设置图标之外，还可以
+设置复选框的文字是否被选中。
+  - ### 列表组件
+    - `Swing`中提供两种列表组件，分别为下拉列表框与列表框。
+    - **下拉列表框组件**
+    - 下拉列表框的是由JComboBox类表示，它是一个组合框，用户可以从列表中选择一个或多个值。
+    - 构造方法如下：
+    - `public JComboBox(ComboBoxModel aModel)`
+    - `public JComboBox(Object[] items)`
+    - `public JComboBox(Vector items)`
+    - 在初始化下拉列表框时，可以选择同时指定下拉列表框中的项目内容，也可以在程序中使用其他方法设置下拉列表框中的内容，下拉列表框中的内容可以被封装在`ComboBoxModel`类型、数组或`Vector`类型中。
+    - `JComboBox`模型 
+    - 一般将下拉列表框中的项目封装为`ComboBoxModel`的情况比较多。`ComboBoxModel`为接口，它代表一般模型，可以自定义一个类实现该接口，然后在初始化`JComboBox`对象时向上转型为`ComboBoxModel`接口类型，但是必须实现以下两种方法：
+      - `public void setSelectedItem(Object item)`
+      - `public Object getSelectedItem()`
+  - ### 文本框组件
+    - **密码框组件** 
+    - 密码框（`JPasswordField`）与文本框的定义与用法基本相同，唯一不同的是密码框将用户输入的字符串以某种符号进行**加密**
+    - 其对象是通过`javax.swing.JPasswordField`类来创建的
+    - 构造方法为（参数可自由选择）：
+    - `public JPasswordField(Document docModel,String text,int fieldWidth)`
+  - ### 事件监听器
+    - 一般这个组件本身不带有什么功能，它主要用于监听事件，分有动作监听器(`actionListener`)和焦点监听器(`focusListener`) 
+
+
+    
+
+
+
+
+
+
