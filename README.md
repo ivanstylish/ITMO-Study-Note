@@ -1,5 +1,8 @@
 # Study-Note
-## NOTE for studying at ITMO University  
+## NOTE for studying at ITMO University
+*This is a general overview of my study notes at this stage of my life:*  
+https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
+
 
 ## Go
 
