@@ -8,4 +8,4 @@
 - [x] [lab5](./lab5.md)
 - [x] [lab6](./lab6.md)
 - [x] [lab7](./lab7.md)
-- [ ] [lab8](./lab8.md)
+- [x] [lab8](./lab8.md)
