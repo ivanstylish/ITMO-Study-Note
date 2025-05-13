@@ -5,10 +5,7 @@ import commandUtil.CommandRequest;
 import commandUtil.CommandResponse;
 import commandUtil.CommandType;
 import exception.NetworkException;
-import model.Product;
-
-import javax.swing.*;
-import java.util.List;
+import javafx.application.Platform;
 
 /**
  * 同步执行通信类(Synchronized execution of communication classes)
@@ -31,8 +28,7 @@ public class RealTimeSyncHandler {
                             new CommandRequest(CommandType.REFRESH)
                     );
                     if (response.isSuccess()) {
-                        List<Product> products = (List<Product>) response.getData();
-                        SwingUtilities.invokeLater(updateCB);
+                        Platform.runLater(updateCB); // 替换为 JavaFX 的线程工具
                     }
                     Thread.sleep(5000);
                 } catch (NetworkException | InterruptedException e) {
@@ -44,5 +40,4 @@ public class RealTimeSyncHandler {
             }
         }).start();
     }
-
 }

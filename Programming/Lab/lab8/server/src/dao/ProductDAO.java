@@ -81,13 +81,10 @@ public class ProductDAO {
         }
 
         // 映射Organization
-        Organization org = new Organization();
-        org.setId(rs.getInt("id"));
-        org.setName(rs.getString("name"));
-        String org_type = rs.getString("org_type");
-        if (org_type != null) {
-            org.setType(OrganizationType.valueOf(org_type));
-        }
+        String orgName = rs.getString("org_name");
+        String fullName = rs.getString("full_name"); // 确保数据库有该字段
+        String orgType = rs.getString("org_type");
+        Organization org = new Organization(orgName, fullName, OrganizationType.valueOf(orgType));
         product.setManufacturer(org);
 
         product.setUserId(rs.getInt("id"));

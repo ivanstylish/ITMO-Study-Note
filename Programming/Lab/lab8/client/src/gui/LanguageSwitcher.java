@@ -14,6 +14,7 @@ public class LanguageSwitcher extends ComboBox<String> {
             "Dansk", new Locale("da")
     );
 
+
     public LanguageSwitcher() {
         super();
         this.getItems().addAll(LANGUAGE_MAP.keySet());

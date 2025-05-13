@@ -2,6 +2,8 @@ package gui;
 
 import controller.MainController;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -14,13 +16,14 @@ import network.RealTimeSyncHandler;
 import util.DataUpdateEvent;
 import util.Event;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class MainWindow extends Stage {
-    private final MainController controller;
     private final ServerProxy serverProxy;
+    private MainController controller;
     private final TablePanel tablePanel = new TablePanel();
     private final VisualizationPanel visualizationPanel = new VisualizationPanel();
     private final TabPane tabPane = new TabPane();
@@ -42,13 +45,27 @@ public class MainWindow extends Stage {
     public Button executeScriptButton = new Button();
     public Button infoButton = new Button();
     public Button helpButton = new Button();
-    public MainWindow(ServerProxy serverProxy, MainController controller) {
-        this.serverProxy = serverProxy;
-        this.controller = controller;
-        initUI();
-        initSync();
-        initEventForwarding();
+    public MainWindow(ServerProxy proxy) {
+        this.serverProxy = proxy;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main.fxml"));
+            // 设置控制器工厂，传递 proxy 依赖
+            loader.setControllerFactory(param -> {
+                controller = new MainController(serverProxy);
+                return controller;
+            });
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        initEventForwarding(); // 初始化按钮事件
+        initUI(); // 初始化界面
+        initSync(); // 初始化同步逻辑
     }
+
 
     private void initEventForwarding() {
         Map<Button, String> buttonCommands = new HashMap<>();
@@ -98,7 +115,7 @@ public class MainWindow extends Stage {
 
     private void initSync() {
         // 触发数据刷新
-        new RealTimeSyncHandler(serverProxy, controller::refreshData);
+        refreshButton.setOnAction(e -> controller.refreshData());
 
         Event.subscribe(DataUpdateEvent.class, event -> Platform.runLater(() -> {
             visualizationPanel.updateProducts(event.getProducts());

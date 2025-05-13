@@ -1,5 +1,7 @@
 package dao;
 
+import auth.AuthService;
+import db.DatabaseConnector;
 import user.User;
 
 import java.sql.*;
@@ -8,8 +10,28 @@ import java.util.Arrays;
 public class UserDAO {
     private final Connection connection;
 
+
     public UserDAO(Connection connection) {
         this.connection = connection;
+    }
+
+    public boolean userExists(String username) throws SQLException{
+        String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && rs.getInt(1) > 0;
+        }
+    }
+    public boolean createUser(String username, String password) throws SQLException {
+        String sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            return stmt.executeUpdate() > 0;
+        }
     }
 
     /**

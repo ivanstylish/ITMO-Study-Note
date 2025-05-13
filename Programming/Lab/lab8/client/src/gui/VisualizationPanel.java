@@ -1,6 +1,8 @@
 package gui;
 
 import model.Product;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.canvas.Canvas;
@@ -13,7 +15,7 @@ import javafx.scene.paint.Color;
  */
 public class VisualizationPanel extends Pane {
     private final Canvas canvas = new Canvas();
-    private List<Product> products;
+    private List<Product> products = new ArrayList<>();;
 
     public VisualizationPanel() {
         this.getChildren().add(canvas);
@@ -38,7 +40,7 @@ public class VisualizationPanel extends Pane {
     }
 
     public void updateProducts(List<Product> products) {
-        this.products = products;
+        this.products = (products != null) ? products : new ArrayList<>();;
         redraw();
     }
 

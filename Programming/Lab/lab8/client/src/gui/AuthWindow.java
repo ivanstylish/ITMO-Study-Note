@@ -1,15 +1,16 @@
 package gui;
 
 import controller.AuthController;
-import controller.MainController;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 import network.ServerProxy;
 import util.LocalizationManager;
 
-import javafx.application.Platform;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+import java.io.IOException;
 
 
 public class AuthWindow extends Stage {
@@ -24,42 +25,35 @@ public class AuthWindow extends Stage {
     }
 
     private void setupUI() {
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-
-        // 添加组件：登录字段、密码字段、按钮等
-        Label loginLabel = new Label(LocalizationManager.getString("LoginField"));
-        TextField loginField = new TextField();
-        Label passwordLabel = new Label(LocalizationManager.getString("PasswordField"));
-        PasswordField passwordField = new PasswordField();
-        Button loginButton = new Button(LocalizationManager.getString("Login"));
-        Button registerButton = new Button(LocalizationManager.getString("SignUpButton"));
-
-        grid.add(loginLabel, 0, 0);
-        grid.add(loginField, 1, 0);
-        grid.add(passwordLabel, 0, 1);
-        grid.add(passwordField, 1, 1);
-        grid.add(loginButton, 0, 2);
-        grid.add(registerButton, 1, 2);
-
-        Scene scene = new Scene(grid, 400, 250);
-        this.setScene(scene);
-        this.setTitle(LocalizationManager.getString("AuthTitle"));
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Auth.fxml"));
+            loader.setController(authController);  // 手动设置控制器
+            Parent root = loader.load();
+            this.setScene(new Scene(root, 400, 250));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setupController() {
-        // 绑定控制器逻辑（参考原 AuthWindow 的 setupController()）
-        authController.setCallback(() -> {
-            Platform.runLater(() -> {
-                this.close();
-                MainController mainController = new MainController(proxy);
-                MainWindow mainWindow = new MainWindow(proxy, mainController);
-                mainWindow.show();
-            });
-        });
+        authController.setCallback(() -> Platform.runLater(() -> {
+            this.close(); // 关闭认证窗口
+            try {
+                // 加载主窗口的 FXML 文件，确保路径正确
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
+                Parent root = loader.load();
+                Stage mainStage = new Stage();
+                mainStage.setScene(new Scene(root));
+                mainStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                // 显示错误提示
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Unable to load the main interface: " + e.getMessage());
+                alert.show();
+            }
+        }));
         authController.setLocalizator(LocalizationManager.getInstance());
         authController.setClient(proxy);
-        authController.initialize();
     }
 }

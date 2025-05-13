@@ -45,7 +45,7 @@ public class ServerProxy {
                     if (response.isSuccess()) {
                         listeners.forEach(l -> l.onCollectionUpdate((List<Product>) response.getData()));
                     }
-                    Thread.sleep(5000);
+                    Thread.sleep(1000000);
                 } catch (InterruptedException | NetworkException e) {
                     Thread.currentThread().interrupt();
                 }
@@ -58,6 +58,7 @@ public class ServerProxy {
      */
     public CommandResponse sendRequest(CommandRequest request) throws NetworkException {
         Logger.info("Sending request: " + request.getType());
+        Logger.info("Request arguments: " + request.getArguments());
         try {
             if (!cs.checkConnection()) {
                 cs.setConnected(true);
@@ -68,6 +69,7 @@ public class ServerProxy {
         for (int i = 0; i < MAX_RETRIES; i++) {
             try {
                 byte[] requestData = SerializationUtil.serialize(request);
+                Logger.info("Sending request data length: " + requestData.length);
 
                 // 发送请求
                 DatagramPacket sendPacket = new DatagramPacket(
@@ -91,7 +93,8 @@ public class ServerProxy {
                             break;
                         }
                     }
-                    return (CommandResponse) SerializationUtil.deserialize(buffer);
+                    byte[] responseData = byteStream.toByteArray();
+                    return (CommandResponse) SerializationUtil.deserialize(responseData);
                 } catch (IOException | ClassNotFoundException e) {
                     if (i == MAX_RETRIES - 1) {
                         throw new NetworkException("Request failed, last attempt error: " + e.getMessage());
@@ -106,7 +109,6 @@ public class ServerProxy {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            throw new NetworkException("Unexpected error");
         }
         return null;
     }

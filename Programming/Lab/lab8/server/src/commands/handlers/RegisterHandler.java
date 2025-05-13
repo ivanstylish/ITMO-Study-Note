@@ -18,14 +18,18 @@ public class RegisterHandler extends BaseCommandHandler {
         String username = request.getStringArgument("username");
         String password = request.getStringArgument("password");
 
+        System.out.println("[DEBUG] Register request - username: " + username + ", password: " + password);
+
+        if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
+            System.err.println("[ERROR] Missing parameters: username or password empty");
+            return CommandResponse.error("Username or password is missing");
+        }
+
         try {
-            User newUser = new User(username, password);
-            boolean success = authService.register(newUser);
-            if (success) {
-                return CommandResponse.success("Successful registration!");
-            } else {
-                return CommandResponse.error("Username already exists", null);
-            }
+            boolean success = authService.register(username, password);
+            return success ?
+                    CommandResponse.success("Registration successful!") :
+                    CommandResponse.error("Username already exists");
         } catch (SQLException e) {
             return CommandResponse.error("Database error: " + e.getMessage());
         }

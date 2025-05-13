@@ -7,6 +7,7 @@ import commandUtil.CommandResponse;
 import commandUtil.CommandType;
 import exception.NetworkException;
 import gui.AuthWindow;
+import gui.LanguageSwitcher;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -16,9 +17,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.*;
 import network.ServerProxy;
+import user.User;
 import util.DataUpdateEvent;
 import util.Event;
-import util.FileChooser;
+import util.FileSelector;
 import util.LocalizationManager;
 
 import java.io.File;
@@ -69,8 +71,10 @@ public class MainController {
 
     @FXML private TableColumn<Product, Integer> organizationIdColumn;
     @FXML private TableColumn<Product, String> organizationNameColumn;
+    @FXML private TableColumn<Product, String> organizationFullNameColumn;
     @FXML private TableColumn<Product, String> organizationTypeColumn;
     @FXML private Tab visualTab;
+
 
     public MainController(ServerProxy proxy) {
         this.proxy = proxy;
@@ -101,6 +105,7 @@ public class MainController {
         Event.subscribe(DataUpdateEvent.class, event ->
                 Platform.runLater(this::refreshData)
         );
+        Event.subscribe(LanguageSwitcher.class, event -> updateUITexts());
     }
     public void handleButtonAction(String command) {
         switch (command) {
@@ -121,6 +126,7 @@ public class MainController {
             case "InsertAt": handleInsertAt(); break;
         }
     }
+    @FXML
     private void setupButtonActions() {
         helpButton.setOnAction(e -> handleHelp());
         infoButton.setOnAction(e -> handleInfo());
@@ -169,8 +175,10 @@ public class MainController {
     // ExecuteScript 执行脚本命令
     @FXML
     private void handleExecuteScript() {
-        FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog();
+        Stage currentStage = (Stage) executeScriptButton.getScene().getWindow();
+
+        FileSelector fileChooser = new FileSelector();
+        File file = fileChooser.showOpenDialog(currentStage); // 传递 Stage
         if (file != null) {
             CommandRequest request = new CommandRequest(CommandType.EXECUTE_SCRIPT)
                     .addArgument("scriptPath", file.getAbsolutePath());
@@ -326,6 +334,7 @@ public class MainController {
         }
     }
 
+    @FXML
     public void handleRemoveById() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setHeaderText(LocalizationManager.getString("EnterProductID"));
@@ -433,6 +442,7 @@ public class MainController {
         TextField xField = new TextField();
         TextField yField = new TextField();
         TextField org_nameField = new TextField();
+        TextField org_fullnameField = new TextField();
         ComboBox<String> org_typeField = new ComboBox<>();
         ComboBox<String> unitCombo = new ComboBox<>();
 
@@ -447,10 +457,12 @@ public class MainController {
         grid.add(yField, 1, 3);
         grid.add(new Label(LocalizationManager.getString("OrganizationName")), 0, 4);
         grid.add(org_nameField, 1, 4);
-        grid.add(new Label(LocalizationManager.getString("OrganizationType")), 0, 5);
-        grid.add(org_typeField, 1, 5);
-        grid.add(new Label(LocalizationManager.getString("UnitOfMeasure")), 0, 6);
-        grid.add(unitCombo, 1, 6);
+        grid.add(new Label(LocalizationManager.getString("OrganizationFullName")), 0, 5);
+        grid.add(org_fullnameField, 1, 5);
+        grid.add(new Label(LocalizationManager.getString("OrganizationType")), 0, 6);
+        grid.add(org_typeField, 1, 6);
+        grid.add(new Label(LocalizationManager.getString("UnitOfMeasure")), 0, 7);
+        grid.add(unitCombo, 1, 7);
 
         dialog.getDialogPane().setContent(grid);
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -466,6 +478,7 @@ public class MainController {
                     );
                     Organization organization = new Organization(
                             org_nameField.getText(),
+                            org_fullnameField.getText(),
                             OrganizationType.valueOf(org_typeField.getValue())
                     );
 
@@ -489,8 +502,17 @@ public class MainController {
     }
 
     private void updateUITexts() {
-        userLabel.setText(LocalizationManager.getString("User") + ": " + AuthProvider.getCurrentUser().getUsername());
-
+        User currentUser = AuthProvider.getCurrentUser();
+        if (currentUser != null) {
+            userLabel.setText(LocalizationManager.getString("User") + ": " + currentUser.getUsername());
+        } else {
+            userLabel.setText(LocalizationManager.getString("User") + ": " + "not logged in");
+        }
+        Platform.runLater(() -> {
+            AuthWindow authWindow = new AuthWindow(proxy);
+            authWindow.show();
+            ((Stage) userLabel.getScene().getWindow()).close();
+        });
         // 命令按钮
         helpButton.setText(LocalizationManager.getString("Help"));
         addButton.setText(LocalizationManager.getString("Add"));
@@ -509,12 +531,13 @@ public class MainController {
         sortButton.setText(LocalizationManager.getString("Sort"));
         updateButton.setText(LocalizationManager.getString("Update"));
         logoutButton.setText(LocalizationManager.getString("LogOut"));
+        refreshButton.setText(LocalizationManager.getString("Refresh"));
 
         tableTab.setText(LocalizationManager.getString("TableTab"));
         visualTab.setText(LocalizationManager.getString("VisualTab"));
 
         // 产品
-        userColumn.setText(LocalizationManager.getString("Owner"));
+        userColumn.setText(LocalizationManager.getString("User"));
         nameColumn.setText(LocalizationManager.getString("Name"));
         dateColumn.setText(LocalizationManager.getString("CreationDate"));
         priceColumn.setText(LocalizationManager.getString("Price"));
@@ -523,6 +546,7 @@ public class MainController {
         // 制造商
         organizationIdColumn.setText(LocalizationManager.getString("OrganizationId"));
         organizationNameColumn.setText(LocalizationManager.getString("OrganizationName"));
+        organizationFullNameColumn.setText(LocalizationManager.getString("OrganizationFullName"));
         organizationTypeColumn.setText(LocalizationManager.getString("OrganizationType"));
     }
 
@@ -531,7 +555,9 @@ public class MainController {
         updateUITexts();
     }
 
+    @FXML
     private void setupTableColumns() {
+        Objects.requireNonNull(userColumn, "userColumn is not injected from FXML!");
         userColumn.setCellValueFactory(new PropertyValueFactory<>("User"));
         idColumn.setCellValueFactory(new PropertyValueFactory<>("Id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -542,6 +568,7 @@ public class MainController {
         unitOfMeasureColumn.setCellValueFactory(new PropertyValueFactory<>("unitOfMeasure"));
         organizationIdColumn.setCellValueFactory(new PropertyValueFactory<>("organizationId"));
         organizationNameColumn.setCellValueFactory(new PropertyValueFactory<>("organizationName"));
+        organizationFullNameColumn.setCellValueFactory(new PropertyValueFactory<>("organizationFullName"));
         organizationTypeColumn.setCellValueFactory(new PropertyValueFactory<>("organizationType"));
     }
 

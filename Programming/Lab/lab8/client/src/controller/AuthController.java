@@ -5,13 +5,18 @@ import commandUtil.CommandRequest;
 import commandUtil.CommandResponse;
 import commandUtil.CommandType;
 import exception.NetworkException;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import model.Product;
 import network.ServerProxy;
 import user.User;
+import util.DataUpdateEvent;
+import util.Event;
 import util.LocalizationManager;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -55,12 +60,12 @@ public class AuthController {
             changeLanguage();
         });
         loginField.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (!newValue.matches(".{0,40}")) {
+            if (newValue == null || !newValue.matches(".{0,40}")) {
                 loginField.setText(oldValue);
             }
         });
         passwordField.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (!newValue.matches("\\S*")) {
+            if (newValue == null || !newValue.matches("\\S+")) {
                 passwordField.setText(oldValue);
             }
         });
@@ -76,24 +81,44 @@ public class AuthController {
     /**
      * 实现用户登录和注册功能
      */
+    @FXML
     private void handleAuth() throws NetworkException {
         String username = loginField.getText();
         String password = passwordField.getText();
 
         CommandRequest request = new CommandRequest(registerButton.isSelected() ? CommandType.REGISTER : CommandType.LOGIN);
-        request.addArgument("Username", username)
-                .addArgument("Password", password);
-        try{
+        request.addArgument("username", username)
+                .addArgument("password", password);
+        try {
             CommandResponse response = proxy.sendRequest(request);
             if (response.isSuccess()) {
                 User user = (User) response.getData();
-                AuthProvider.setCurrentUser(user);
-                callback.run(); // 跳转到主程序
+                if (user != null) {
+                    AuthProvider.setCurrentUser(user);
+                    // 手动触发数据刷新
+                    CommandRequest refreshRequest = new CommandRequest(CommandType.REFRESH);
+                    CommandResponse refreshResponse = proxy.sendRequest(refreshRequest);
+                    if (refreshResponse.isSuccess()) {
+                        List<Product> products = (List<Product>) refreshResponse.getData();
+                        // 更新界面数据（假设有回调方法）
+                        Platform.runLater(() -> {
+                            callback.run();
+                            // 通知主界面更新数据
+                            Event.publish(new DataUpdateEvent(products));
+                        });
+                    }
+                } else {
+                    showErrorDialog("Invalid user data");
+                }
             } else {
                 showErrorDialog(response.getMessage());
             }
         } catch (NetworkException e) {
+            e.printStackTrace();
             showErrorDialog("Network Error: " + e.getMessage());
+        }catch (Exception e) {
+            e.printStackTrace();
+            showErrorDialog("Unexpected Error: " + e.getMessage());
         }
     }
 
@@ -108,6 +133,7 @@ public class AuthController {
         loginField.setPromptText(LocalizationManager.getString("LoginField"));
         passwordField.setPromptText(LocalizationManager.getString("PasswordField"));
         registerButton.setText(LocalizationManager.getString("RegisterButton"));
+        submitButton.setText(LocalizationManager.getString("Submit"));
     }
     public void setCallback(Runnable callback) {
         this.callback = callback;

@@ -92,4 +92,7 @@ public class CommandRequest implements Serializable {
 
     public void setUser(User currentUser) {
     }
+    public Map<String, Object> getArguments() {
+        return arguments;
+    }
 }

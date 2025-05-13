@@ -10,10 +10,6 @@ public class Event {
     private static final List<Runnable> listeners = new ArrayList<>();
     private static final Map<Class<?>, List<Consumer<?>>> runner = new HashMap<>();
 
-    public static void subscribe(Runnable listener) {
-        listeners.add(listener);
-    }
-
     public static void publish() {
         listeners.forEach(Runnable::run);
     }

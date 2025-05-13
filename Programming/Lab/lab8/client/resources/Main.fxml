@@ -155,6 +155,8 @@
                                          text="Organization ID"/>
                             <TableColumn fx:id="organizationNameColumn" prefWidth="94.0"
                                          text="Organization name"/>
+                            <TableColumn fx:id="organizationFullNameColumn" prefWidth="94.0"
+                                         text="Organization FullName"/>
                             <TableColumn fx:id="organizationTypeColumn" prefWidth="90.0"
                                          text="Organization type"/>
                         </columns>

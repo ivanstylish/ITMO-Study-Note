@@ -30,9 +30,10 @@ public class LocalizationManager {
     private void loadBundle() {
         try {
             bundle = ResourceBundle.getBundle("Messages", currentLocale);
+            System.out.println("[DEBUG] Loaded bundle: " + bundle.getLocale());
         } catch (MissingResourceException e) {
             System.err.println("Failed to load bundle for locale: " + currentLocale);
-            bundle = ResourceBundle.getBundle("Messages", Locale.UK); // 回退到默认
+            bundle = ResourceBundle.getBundle("Messages", Locale.UK); // 回到默认语言
         }
     }
 

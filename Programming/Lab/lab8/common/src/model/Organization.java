@@ -12,14 +12,12 @@ public class Organization implements Serializable {
     private OrganizationType type; //Поле не может быть null
 
 
-    public Organization(String name, OrganizationType type) {
+    public Organization(String name, String fullName, OrganizationType type) {
         this.name = name;
+        this.fullName = fullName;
         this.type = type;
     }
 
-    public Organization() {
-
-    }
     public Integer getId() {
         return id;
     }

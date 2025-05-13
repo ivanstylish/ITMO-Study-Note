@@ -1,6 +1,7 @@
 package auth;
 
 import dao.UserDAO;
+import logger.Logger;
 import user.User;
 import util.HashUtil;
 
@@ -19,12 +20,15 @@ public class AuthService {
      * 用户注册 (User Registration)
      */
 
-    public boolean register(User user) throws SQLException {
-        String rawPassword = user.getPasswordHash(); // 假设传入的是明文密码
-        String hashedPassword = hashPassword(rawPassword);
-        user.setPasswordHash(hashedPassword);
-        System.out.println("[DEBUG] Registered Hash: " + hashedPassword);
-        return userDAO.create(user) > 0;
+    public boolean register(String username, String password) throws SQLException {
+        if (userDAO.userExists(username)) {
+            Logger.info("[Register] User name already exists: " + username);
+            return false;
+        }
+        String hashedPassword = hashPassword(password);
+        boolean success = userDAO.createUser(username, hashedPassword);
+        Logger.info("[Register] User " + username + " Registration Results: " + success);
+        return success;
     }
 
     /**

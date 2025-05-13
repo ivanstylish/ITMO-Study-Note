@@ -46,7 +46,7 @@ public class UDPChannelManager {
         try {
             SocketAddress clientAddr = channel.receive(buffer);
             if (clientAddr != null) {
-                System.out.println("Received request from " + clientAddr);
+                System.out.println("[Server] Received request from " + clientAddr + ", length: " + buffer.remaining());
                 buffer.flip(); // 切换为读模式
                 requestHandler.handleRequest(buffer, clientAddr, channel);
             }

@@ -8,32 +8,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d2efff;"
-            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AuthController">
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <Label fx:id="titleLabel" alignment="CENTER" layoutX="181.0" layoutY="90.0" prefHeight="52.0" prefWidth="245.0"
-           text="Авторизация" textAlignment="CENTER">
+           text="Auth" textAlignment="CENTER">
         <font>
             <Font name="Segoe UI Black" size="35.0"/>
         </font>
     </Label>
     <TextField fx:id="loginField" alignment="CENTER" layoutX="200.0" layoutY="169.0" prefHeight="30.0" prefWidth="200.0"
-               promptText="E-mail">
+               promptText="Login">
         <font>
             <Font name="Segoe UI" size="16.0"/>
         </font>
     </TextField>
     <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="200.0" layoutY="226.0" prefHeight="30.0"
-                   prefWidth="200.0" promptText="Пароль">
+                   prefWidth="200.0" promptText="Password">
         <font>
             <Font name="Segoe UI" size="16.0"/>
         </font>
     </PasswordField>
-    <CheckBox fx:id="signUpButton" layoutX="211.0" layoutY="338.0" mnemonicParsing="false" text="Зарегистрироваться">
+    <CheckBox fx:id="registerButton" layoutX="211.0" layoutY="338.0" mnemonicParsing="false" text="Register">
         <font>
             <Font name="Segoe UI" size="16.0"/>
         </font>
     </CheckBox>
+    <Button fx:id="submitButton"
+            layoutX="255.0"
+            layoutY="281.0"
+            mnemonicParsing="false"
+            prefHeight="36.0"
+            prefWidth="90.0"
+            style="-fx-border-color: #c0c0c0; -fx-background-radius: 10; -fx-border-radius: 10;"
+            text="Submit"
+            onAction="#handleAuth">
+    <font>
+        <Font name="Segoe UI" size="18.0" />
+    </font>
+    </Button>
     <ComboBox fx:id="languageComboBox" layoutX="468.0" layoutY="14.0" prefHeight="27.0" prefWidth="118.0"
               style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #c0c0c0;"/>
 </AnchorPane>
