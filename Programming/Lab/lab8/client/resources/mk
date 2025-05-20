@@ -1,0 +1,108 @@
+Products = Производи
+RefreshFailed = Освежувањето не успеа.
+RefreshLost = Освежувањето е изгубено.
+EmailInvalid = Е-поштата не е валидна!
+PasswordBad = Лозинката е невалидна:
+PasswordMin6 = Должината на лозинката мора да биде најмалку 8.
+PasswordContainUp = Лозинката мора да содржи барем една голема буква.
+PasswordContainLow = Лозинката мора да содржи барем една мала буква.
+PasswordContainDigit = Лозинката мора да содржи барем една бројка.
+PasswordContainSpecial = Лозинката мора да содржи барем еден специјален знак.
+AuthTitle = Авторизација
+LoginField = Е-пошта
+PasswordField = Лозинка
+SignUpButton = Регистрирај се
+UserLabel = Корисник:
+Owner = Сопственик
+Name = Име
+CreationDate = Датум на креирање
+Price = Цена
+PartNumber = Број на дел
+UnitOfMeasure = Единица мерка
+Manufacturer = Производител
+ManufacturerId = ID на производител
+ManufacturerName = Име на производител
+ManufacturerEmployeesCount = Вработени во производителот
+ManufacturerType = Тип на производител
+ManufacturerStreet = Улица на производител
+ManufacturerZipCode = Поштенски код
+HasManufacturer = Има производител?
+TableTab = Табела
+VisualTab = Визуелизација
+Exit = Излез
+LogOut = Одјави се
+Help = Помош
+Add = Додај
+Update = Ажурирај
+RemoveByID = Отстрани по ID
+Clear = Исчисти
+ExecuteScript = Изврши скрипта
+Head = Врв
+AddIfMax = Додај ако е најголем
+AddIfMin = Додај ако е најмал
+SumOfPrice = Збир на цени
+FilterByPrice = Филтрирај по цена
+FilterContainsPartNumber = Филтрирај по дел од број
+CancelButton = Откажи
+EditTitle = Уредување
+Info = Информации
+Error = Грешка
+DialogPrice = Цена:
+CannotBeEmpty = не може да биде празно.
+ZipCodeLength = Поштенскиот код мора да биде празен или најмалку 6 карактери.
+UpdateErr = Неуспешно ажурирање.
+ClearErr = Неуспешно чистење на колекцијата.
+AddErr = Неуспешно додавање производ.
+RemoveByIDErr = Неуспешно отстранување производ.
+FilterByPriceResult = Елементи ({0}) со истата цена:\n
+FilterContainsPartNumberResult = Елементи ({0}) кои содржат дел од бројот:\n
+SumOfPriceResult = Збир на цени: {0}.
+HeadResult = Најгорен производ:\n
+AddResult = Производот е успешно додаден!
+AddNotMax = Цената на производот не е најголема.
+AddNotMin = Цената на производот не е најмала.
+RemoveByIDSuc = Производот е успешно отстранет.
+UpdateSuc = Ажурирањето е успешно.
+ClearSuc = Колекцијата е успешно исчистена.
+ScriptExecutionSuc = Скриптата е успешно извршена.
+ScriptExecutionErr = Неуспешно извршување на скрипта.
+CheckScriptErr = Проверете ја точноста на податоците во скриптата!
+FileNotFoundException = Датотеката со скрипта не е пронајдена!
+EmptyFileErr = Скриптата е празна!
+ScriptRecursionException = Скриптите не можат да се повикуваат рекурзивно!
+UnexpectedErr = Неочекувана грешка!
+InvalidProduct = Невалидни полиња на производот. Проверете:\n- име, координати да не се празни;\n- цена > 0;\n- ако има производител, неговите податоци да се валидни.
+
+HelpResult = \
+  add {елемент} - додај елемент во колекцијата\n\
+  sum_of_price - збир на сите цени\n\
+  add_if_min {елемент} - додај ако е цена најмала\n\
+  clear - исчисти колекција\n\
+  update <ID> {елемент} - ажурирај по ID\n\
+  remove_by_id <ID> - отстрани по ID\n\
+  add_if_max {елемент} - додај ако е цена најголема\n\
+  head - покажи прв елемент\n\
+  help - прикажи помош\n\
+  filter_contains_part_number <PN> - филтрирај по дел од број\n\
+  filter_by_price <PRICE> - филтрирај по цена\n\
+  info - прикажи информации
+
+InfoResult = \
+  Информации за колекцијата:\n\
+  Тип: {0}\n\
+  Број на елементи: {1}\n\
+  Последно зачувување: {2}\n\
+  Последна иницијализација: {3}
+
+RegisterSuccess = Регистрацијата беше успешна!
+UserAlreadyExists = Корисникот веќе постои.
+SignInError = Погрешно корисничко име или лозинка.
+InvalidCredentials = Името мора да биде од 1 до 40 знаци, лозинката не смее да биде празна.
+UnavailableError = Серверот е моментално недостапен.
+NumberFormatException = Невалиден број.
+BadOwnerError = Не можете да измените производ од друг корисник!
+NotFoundException = Производот не е пронајден.
+FilterByPriceError = Неуспешно филтрирање по цена.
+FilterContainsPartNumberError = Неуспешно филтрирање по дел од број.
+SumOfPriceError = Неуспешно пресметување на збир на цени.
+HeadError = Неуспешно добивање на прв елемент.

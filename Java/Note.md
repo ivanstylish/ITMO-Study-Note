@@ -2118,6 +2118,32 @@ primaryStage.show();
   - `<?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?>`
 
 
+- ### 项目构建工具
+- #### `Maven`：Apache Maven是一个开源的项目管理工具，它使用XML格式的项目对象模型（POM）文件来描述项目的构建、报告和文档信息。
+   - *核心概念*：
+     - 项目对象模型（POM）：用于描述项目的构建信息，包括依赖关系、插件、配置等。
+     - 构建生命周期：Maven的构建过程由一系列预定义的阶段组成，如clean、compile、test、package等。
+     - 插件：Maven插件是一种可插拔的构建工具，用于实现构建生命周期的特定阶段。
+   - *构建过程*：  
+     - 1. clean：清理项目的目标文件，如编译后的类文件和JAR包。
+     - 2. compile：编译项目的源代码，生成字节码文件。
+     - 3. test：运行项目的单元测试，检查代码的正确性。
+     - 4. package：将编译后的字节码文件打包成JAR或WAR文件。
+     - 5. install：安装项目的包到本地仓库，以便于其他项目依赖。
+     - 6. deploy：将项目的包部署到远程仓库，以便于其他开发者使用。
 
+- #### `Gradle`：Gradle是一个基于Groovy的项目自动化构建工具，它使用一种基于Groovy的特定领域语言来声明项目配置，通过插件来实现自动化构建。
+   - *核心概念*：
+     - 构建脚本：用于描述项目的构建信息，包括依赖关系、任务、配置等。
+     - 构建任务：Gradle的构建过程由一系列可定制的任务组成，如compile、test、jar、war等。
+     - 插件：Gradle插件是一种可插拔的构建工具，用于实现构建任务的特定功能。
+   - *构建过程*：
+     - 1. compile：编译项目的源代码，生成字节码文件。
+     - 2. test：运行项目的单元测试，检查代码的正确性。
+     - 3. jar：将编译后的字节码文件打包成JAR文件。
+     - 4. war：将编译后的字节码文件打包成WAR文件。
+     - 5. distZip：将项目的所有文件打包成ZIP文件。
+    
+- 两者区别：描述项目构建信息的文件格式（xml vs groovy）   
 
 
