@@ -1,10 +1,12 @@
 package server.dao;
 
-import common.domain.Product;
-import common.domain.UnitOfMeasure;
+import common.model.Product;
+import common.model.UnitOfMeasure;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.Type;
+import server.utils.UnitTypePostgreSql;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -21,7 +23,6 @@ public class ProductDAO implements Serializable {
     this.y = product.getCoordinates().getY();
     this.creationDate = product.getCreationDate();
     this.price = product.getPrice();
-    this.partNumber = product.getPartNumber();
     this.unitOfMeasure = product.getUnitOfMeasure();
   }
 
@@ -31,7 +32,6 @@ public class ProductDAO implements Serializable {
     this.y = product.getCoordinates().getY();
     this.creationDate = product.getCreationDate();
     this.price = product.getPrice();
-    this.partNumber = product.getPartNumber();
     this.unitOfMeasure = product.getUnitOfMeasure();
   }
 
@@ -57,12 +57,9 @@ public class ProductDAO implements Serializable {
   @Column(name="price", nullable=false)
   private long price; // Поле не может быть null, Значение поля должно быть больше 0
 
-  @NotBlank(message = "Part number must not be empty.")
-  @Column(name="part_number")
-  private String partNumber; // Строка не может быть пустой, Поле может быть null
-
-  @Column(name="unit_of_measure")
   @Enumerated(EnumType.STRING)
+  @Column(name="unit_of_measure", columnDefinition = "unit_of_measure")
+  @Type(UnitTypePostgreSql.class)
   private UnitOfMeasure unitOfMeasure; // Поле может быть null
 
   @ManyToOne
@@ -119,14 +116,6 @@ public class ProductDAO implements Serializable {
 
   public void setPrice(long price) {
     this.price = price;
-  }
-
-  public String getPartNumber() {
-    return partNumber;
-  }
-
-  public void setPartNumber(String partNumber) {
-    this.partNumber = partNumber;
   }
 
   public UnitOfMeasure getUnitOfMeasure() {

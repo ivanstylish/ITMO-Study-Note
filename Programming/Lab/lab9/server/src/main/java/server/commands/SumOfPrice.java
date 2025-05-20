@@ -1,6 +1,6 @@
 package server.commands;
 
-import common.domain.Product;
+import common.model.Product;
 import common.network.requests.Request;
 import common.network.responses.*;
 import server.repositories.ProductRepository;

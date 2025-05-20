@@ -1,4 +1,4 @@
-package common.domain;
+package common.model;
 
 import common.utility.Element;
 
@@ -11,21 +11,18 @@ import java.util.Objects;
 public class Organization extends Element {
   @Serial
   private static final long serialVersionUID = 1L;
-
   private Integer id; // Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
   private final String name; // Поле не может быть null, Строка не может быть пустой
   private final long employeesCount; // Значение поля должно быть больше 0
   private final OrganizationType type; // Поле не может быть null
-  private final Address postalAddress; // Поле не может быть null
 
   private int creatorId;
 
-  public Organization(Integer id, String name, long employeesCount, OrganizationType type, Address postalAddress) {
+  public Organization(Integer id, String name, long employeesCount, OrganizationType type) {
     this.id = id;
     this.name = name;
     this.employeesCount = employeesCount;
     this.type = type;
-    this.postalAddress = postalAddress;
   }
 
   public void setId(Integer id) {
@@ -38,10 +35,13 @@ public class Organization extends Element {
    */
   @Override
   public boolean validate() {
-    if (name == null || name.isEmpty()) return false;
-    if (employeesCount <= 0) return false;
-    if (type == null) return false;
-    return postalAddress == null || postalAddress.validate();
+    if (name == null || name.isEmpty())
+      return false;
+    if (employeesCount <= 0)
+      return false;
+    if (type == null)
+      return false;
+    return false;
   }
 
   public int getId() {
@@ -60,9 +60,6 @@ public class Organization extends Element {
     return type;
   }
 
-  public Address getPostalAddress() {
-    return postalAddress;
-  }
 
   public int getCreatorId() {
     return creatorId;
@@ -82,19 +79,18 @@ public class Organization extends Element {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Organization that = (Organization) o;
-    return employeesCount == that.employeesCount && Objects.equals(id, that.id) && Objects.equals(name, that.name) && type == that.type && Objects.equals(postalAddress, that.postalAddress);
+    return employeesCount == that.employeesCount && Objects.equals(id, that.id) && Objects.equals(name, that.name) && type == that.type;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, employeesCount, type, postalAddress);
+    return Objects.hash(id, name, employeesCount, type);
   }
 
   @Override
   public String toString() {
     return "Organisation \"" + name+ "\" №" + id +
       "; Number of employees: " + employeesCount +
-      "; View: " + type +
-      "; Address: " + postalAddress;
+      "; View: " + type;
   }
 }

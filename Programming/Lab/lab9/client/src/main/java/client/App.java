@@ -94,7 +94,7 @@ public class App extends Application {
     try {
       parent = loader.load();
     } catch (IOException e) {
-      logger.error("Can't load " + loader.toString(), e);
+      logger.error("Can't load " + loader, e);
       System.exit(1);
     }
     return parent;

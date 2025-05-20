@@ -1,6 +1,6 @@
 package common.utility;
 
-import common.domain.Product;
+import common.model.Product;
 
 import java.util.Comparator;
 

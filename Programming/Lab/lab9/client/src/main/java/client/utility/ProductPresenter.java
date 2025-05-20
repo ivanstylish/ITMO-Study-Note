@@ -1,7 +1,7 @@
 package client.utility;
 
-import common.domain.Organization;
-import common.domain.Product;
+import common.model.Organization;
+import common.model.Product;
 
 public class ProductPresenter {
   private final Localizator localizator;
@@ -19,9 +19,7 @@ public class ProductPresenter {
     info += "\n X: " + product.getCoordinates().getX();
     info += "\n Y: " + product.getCoordinates().getY();
     info += "\n " + localizator.getKeyString("Price") + ": " + product.getPrice();
-    info += "\n " + localizator.getKeyString("PartNumber") + ": " + product.getPartNumber();
     info += "\n " + localizator.getKeyString("UnitOfMeasure") + ": " + product.getUnitOfMeasure();
-
     info += "\n " + localizator.getKeyString("Manufacturer") + describeManufacturer(product.getManufacturer());
 
     return info;
@@ -35,9 +33,6 @@ public class ProductPresenter {
     info += "\n    " + localizator.getKeyString("ManufacturerName") + ": " + organization.getName();
     info += "\n    " + localizator.getKeyString("ManufacturerEmployeesCount") + ": " + organization.getEmployeesCount();
     info += "\n    " + localizator.getKeyString("ManufacturerType") + ": " + organization.getType();
-    info += "\n    " + localizator.getKeyString("ManufacturerStreet") + ": " + organization.getPostalAddress().getStreet();
-    info += "\n    " + localizator.getKeyString("ManufacturerZipCode") + ": " + organization.getPostalAddress().getZipCode();
-
     return info;
   }
 }

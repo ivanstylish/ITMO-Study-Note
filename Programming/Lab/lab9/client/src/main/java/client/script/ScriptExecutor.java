@@ -21,8 +21,8 @@ public class ScriptExecutor {
   }
 
   private final List<String> scriptStack = new ArrayList<>();
-  private Localizator localizator;
-  private MainController mainController;
+  private final Localizator localizator;
+  private final MainController mainController;
 
   public ScriptExecutor(MainController mainController, Localizator localizator) {
     this.localizator = localizator;
@@ -79,7 +79,7 @@ public class ScriptExecutor {
     userCommand[0] = userCommand[0].trim();
     userCommand[1] = userCommand[1].trim();
 
-    if (userCommand[0].equals("")) return ExitCode.OK;
+    if (userCommand[0].isEmpty()) return ExitCode.OK;
 
     var noSuchCommand = false;
     switch (userCommand[0]) {
@@ -95,16 +95,18 @@ public class ScriptExecutor {
       case "add_if_min" -> mainController.addIfMin();
       case "sum_of_price" -> mainController.sumOfPrice();
       case "filter_by_price" -> mainController.filterByPrice();
-      case "filter_contains_part_number" -> mainController.filterContainsPartNumber();
       case "exit" -> mainController.exit();
+      case "max_by_creation_date" -> mainController.maxByCreationDate();
+      case "sort" -> mainController.sort();
+      case "count_by_unit_of_measure" -> mainController.countByUnitOfMeasure();
       default -> {
         noSuchCommand = true;
         var formatted = MessageFormat.format(localizator.getKeyString("CommandNotFound"), userCommand[0]);
         DialogManager.createAlert(localizator.getKeyString("Error"), formatted, Alert.AlertType.ERROR, true);
       }
-    };
+    }
 
-    if (noSuchCommand) return ExitCode.ERROR;
+      if (noSuchCommand) return ExitCode.ERROR;
     return ExitCode.OK;
   }
 }

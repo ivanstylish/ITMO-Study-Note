@@ -83,7 +83,9 @@ public class App {
       register(Commands.ADD_IF_MIN, new AddIfMin(repository));
       register(Commands.SUM_OF_PRICE, new SumOfPrice(repository));
       register(Commands.FILTER_BY_PRICE, new FilterByPrice(repository));
-      register(Commands.FILTER_CONTAINS_PART_NUMBER, new FilterContainsPartNumber(repository));
+      register(Commands.SORT, new Sort(repository));
+      register(Commands.COUNT_BY_UNIT_OF_MEASURE, new CountByUnitOfMeasure(repository));
+      register(Commands.MAX_BY_CREATION_DATE, new MaxByCreationDate(repository));
     }};
   }
 

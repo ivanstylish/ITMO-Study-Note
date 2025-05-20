@@ -39,7 +39,7 @@ public class AuthController {
   @FXML
   private PasswordField passwordField;
   @FXML
-  private Button okButton;
+  private Button enterButton;
   @FXML
   private CheckBox signUpButton;
   @FXML
@@ -70,7 +70,7 @@ public class AuthController {
   }
 
   @FXML
-  void ok() {
+  void enter() {
     if (signUpButton.isSelected()) {
       register();
     } else {
@@ -80,7 +80,7 @@ public class AuthController {
 
   public void register() {
     try {
-      if (loginField.getText().length() < 1  || loginField.getText().length() > 40 || passwordField.getText().length() < 1) {
+      if (loginField.getText().isEmpty() || loginField.getText().length() > 40 || passwordField.getText().isEmpty()) {
         throw new InvalidFormException();
       }
 
@@ -155,7 +155,7 @@ public class AuthController {
 
   public void authenticate() {
     try {
-      if (loginField.getText().length() < 1  || loginField.getText().length() > 40 || passwordField.getText().length() < 1) {
+      if (loginField.getText().isEmpty() || loginField.getText().length() > 40 || passwordField.getText().isEmpty()) {
         throw new InvalidFormException();
       }
 

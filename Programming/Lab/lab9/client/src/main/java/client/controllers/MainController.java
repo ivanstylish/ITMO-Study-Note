@@ -6,14 +6,18 @@ import client.script.ScriptExecutor;
 import client.ui.DialogManager;
 import client.utility.Localizator;
 import client.utility.ProductPresenter;
-import common.domain.Product;
 import common.exceptions.*;
+import common.model.Product;
+import common.model.UnitOfMeasure;
 import common.network.requests.*;
 import common.network.responses.*;
-
-import javafx.animation.*;
+import javafx.animation.FillTransition;
+import javafx.animation.PathTransition;
+import javafx.animation.SequentialTransition;
 import javafx.application.Platform;
-import javafx.beans.property.*;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -85,11 +89,15 @@ public class MainController {
   @FXML
   private Button filterByPriceButton;
   @FXML
-  private Button filterContainsPartNumberButton;
-  @FXML
   private Button exitButton;
   @FXML
   private Button logoutButton;
+  @FXML
+  private Button maxByCreationDateButton;
+  @FXML
+  private Button countByUnitOfMeasureButton;
+  @FXML
+  private Button sortButton;
 
   @FXML
   private Tab tableTab;
@@ -111,8 +119,6 @@ public class MainController {
   @FXML
   private TableColumn<Product, Long> priceColumn;
   @FXML
-  private TableColumn<Product, String> partNumberColumn;
-  @FXML
   private TableColumn<Product, String> unitOfMeasureColumn;
 
   @FXML
@@ -123,10 +129,6 @@ public class MainController {
   private TableColumn<Product, Long> manufacturerEmployeesCountColumn;
   @FXML
   private TableColumn<Product, String> manufacturerTypeColumn;
-  @FXML
-  private TableColumn<Product, String> manufacturerStreetColumn;
-  @FXML
-  private TableColumn<Product, String> manufacturerZipCodeColumn;
 
   @FXML
   private Tab visualTab;
@@ -153,7 +155,6 @@ public class MainController {
     yColumn.setCellValueFactory(product -> new SimpleLongProperty(product.getValue().getCoordinates().getY()).asObject());
     dateColumn.setCellValueFactory(product -> new SimpleStringProperty(localizator.getDate(product.getValue().getCreationDate())));
     priceColumn.setCellValueFactory(product -> new SimpleLongProperty(product.getValue().getPrice()).asObject());
-    partNumberColumn.setCellValueFactory(product -> new SimpleStringProperty(product.getValue().getPartNumber()));
     unitOfMeasureColumn.setCellValueFactory(
       product -> new SimpleStringProperty(
         product.getValue().getUnitOfMeasure() != null ? product.getValue().getUnitOfMeasure().toString() : null
@@ -184,20 +185,6 @@ public class MainController {
     manufacturerTypeColumn.setCellValueFactory(product -> {
       if (product.getValue().getManufacturer() != null) {
         return new SimpleStringProperty(product.getValue().getManufacturer().getType().toString());
-      }
-      return null;
-    });
-
-    manufacturerStreetColumn.setCellValueFactory(product -> {
-      if (product.getValue().getManufacturer() != null) {
-        return new SimpleStringProperty(product.getValue().getManufacturer().getPostalAddress().getStreet());
-      }
-      return null;
-    });
-
-    manufacturerZipCodeColumn.setCellValueFactory(product -> {
-      if (product.getValue().getManufacturer() != null) {
-        return new SimpleStringProperty(product.getValue().getManufacturer().getPostalAddress().getZipCode());
       }
       return null;
     });
@@ -290,7 +277,7 @@ public class MainController {
   @FXML
   public void update() {
     Optional<String> input = DialogManager.createDialog(localizator.getKeyString("Update"), "ID:");
-    if (input.isPresent() && !input.get().equals("")) {
+    if (input.isPresent() && !input.get().isEmpty()) {
       try {
         var id = Integer.parseInt(input.orElse(""));
         var product = collection.stream()
@@ -313,7 +300,7 @@ public class MainController {
   @FXML
   public void removeById() {
     Optional<String> input = DialogManager.createDialog(localizator.getKeyString("RemoveByID"), "ID: ");
-    if (input.isPresent() && !input.get().equals("")) {
+    if (input.isPresent() && !input.get().isEmpty()) {
       try {
         var id = Integer.parseInt(input.orElse(""));
         var product = collection.stream()
@@ -396,6 +383,100 @@ public class MainController {
       );
     } catch (APIException | ErrorResponseException e) {
       DialogManager.alert("HeadError", localizator);
+    } catch (IOException e) {
+      DialogManager.alert("UnavailableError", localizator);
+    }
+  }
+
+  @FXML
+  public void maxByCreationDate() {
+    try {
+      var response = (MaxByCreationDateResponse) client.sendAndReceiveCommand(new MaxByCreationDateRequest(SessionHandler.getCurrentUser()));
+      if (response.getError() != null && !response.getError().isEmpty()) {
+        throw new APIException(response.getError());
+      }
+
+      if (response.maxProduct != null) {
+        DialogManager.createAlert(
+          localizator.getKeyString("MaxByCreationDate"),
+          localizator.getKeyString("MaxByCreationDateResult") + "\n" +
+            new ProductPresenter(localizator).describe(response.maxProduct),
+          Alert.AlertType.INFORMATION,
+          true
+        );
+      } else {
+        DialogManager.createAlert(
+          localizator.getKeyString("MaxByCreationDate"),
+          localizator.getKeyString("EmptyCollection"),
+          Alert.AlertType.INFORMATION,
+          false
+        );
+      }
+    } catch (APIException | ErrorResponseException e) {
+      DialogManager.alert("MaxByCreationDateError", localizator);
+    } catch (IOException e) {
+      DialogManager.alert("UnavailableError", localizator);
+    }
+  }
+
+  @FXML
+  public void countByUnitOfMeasure() {
+    var dialogUnit = new ChoiceDialog<>();
+    dialogUnit.setTitle(localizator.getKeyString("CountByUnitOfMeasure"));
+    dialogUnit.setHeaderText(null);
+    dialogUnit.setContentText(localizator.getKeyString("UnitOfMeasurePrompt"));
+
+    var units = FXCollections.observableArrayList(UnitOfMeasure.values());
+    dialogUnit.getItems().addAll(units);
+
+    var unit = dialogUnit.showAndWait();
+    if (unit.isPresent()) {
+      try {
+        var response = (CountByUnitOfMeasureResponse) client.sendAndReceiveCommand(
+          new CountByUnitOfMeasureRequest((UnitOfMeasure) unit.get(), SessionHandler.getCurrentUser())
+        );
+        if (response.getError() != null && !response.getError().isEmpty()) {
+          throw new APIException(response.getError());
+        }
+
+        DialogManager.createAlert(
+          localizator.getKeyString("CountByUnitOfMeasure"),
+          MessageFormat.format(
+            localizator.getKeyString("CountByUnitOfMeasureResult"),
+            unit.get().toString(),
+            response.count
+          ),
+          Alert.AlertType.INFORMATION,
+          false
+        );
+      } catch (APIException | ErrorResponseException e) {
+        DialogManager.alert("CountByUnitOfMeasureError", localizator);
+      } catch (IOException e) {
+        DialogManager.alert("UnavailableError", localizator);
+      }
+    }
+  }
+
+  @FXML
+  public void sort() {
+    try {
+      var response = (SortResponse) client.sendAndReceiveCommand(new SortRequest(SessionHandler.getCurrentUser()));
+      if (response.getError() != null && !response.getError().isEmpty()) {
+        throw new APIException(response.getError());
+      }
+
+      setCollection(response.products);
+      DialogManager.createAlert(
+        localizator.getKeyString("Sort"),
+        MessageFormat.format(
+          localizator.getKeyString("SortResult"),
+          response.products.size()
+        ),
+        Alert.AlertType.INFORMATION,
+        false
+      );
+    } catch (APIException | ErrorResponseException e) {
+      DialogManager.alert("SortError", localizator);
     } catch (IOException e) {
       DialogManager.alert("UnavailableError", localizator);
     }
@@ -486,7 +567,7 @@ public class MainController {
     dialogPrice.setContentText(localizator.getKeyString("DialogPrice"));
     var price = dialogPrice.showAndWait();
 
-    if (price.isPresent() && !price.get().trim().equals("")) {
+    if (price.isPresent() && !price.get().trim().isEmpty()) {
       try {
         var response = (FilterByPriceResponse) client.sendAndReceiveCommand(new FilterByPriceRequest(Long.parseLong(price.orElse("")), SessionHandler.getCurrentUser()));
         if (response.getError() != null && !response.getError().isEmpty()) {
@@ -494,9 +575,7 @@ public class MainController {
         }
 
         var result = new StringBuilder();
-        response.filteredProducts.forEach(product -> {
-          result.append(new ProductPresenter(localizator).describe(product)).append("\n\n");
-        });
+        response.filteredProducts.forEach(product -> result.append(new ProductPresenter(localizator).describe(product)).append("\n\n"));
 
         DialogManager.createAlert(
           localizator.getKeyString("FilterByPrice"),
@@ -510,45 +589,6 @@ public class MainController {
         DialogManager.alert("UnavailableError", localizator);
       } catch (NumberFormatException e) {
         DialogManager.alert("NumberFormatException", localizator);
-      }
-    }
-  }
-
-  @FXML
-  public void filterContainsPartNumber() {
-    var dialogPartNumber = new TextInputDialog();
-    dialogPartNumber.setTitle(localizator.getKeyString("FilterContainsPartNumber"));
-    dialogPartNumber.setHeaderText(null);
-    dialogPartNumber.setContentText(localizator.getKeyString("PartNumber") + ": ");
-
-    var partNumber = dialogPartNumber.showAndWait();
-    if (partNumber.isPresent() && !partNumber.get().trim().equals("")) {
-      try {
-        var response = (FilterContainsPartNumberResponse) client.sendAndReceiveCommand(
-          new FilterContainsPartNumberRequest(partNumber.get().trim(), SessionHandler.getCurrentUser())
-        );
-        if (response.getError() != null && !response.getError().isEmpty()) {
-          throw new APIException(response.getError());
-        }
-
-        var result = new StringBuilder();
-        response.filteredProducts.forEach(product -> {
-          result.append(new ProductPresenter(localizator).describe(product)).append("\n\n");
-        });
-
-        DialogManager.createAlert(
-          localizator.getKeyString("FilterContainsPartNumber"),
-          MessageFormat.format(
-            localizator.getKeyString("FilterContainsPartNumberResult"),
-            String.valueOf(response.filteredProducts.size())
-          ) + result,
-          Alert.AlertType.INFORMATION,
-          true
-        );
-      } catch (APIException | ErrorResponseException e) {
-        DialogManager.alert("FilterContainsPartNumberError", localizator);
-      } catch (IOException e) {
-        DialogManager.alert("UnavailableError", localizator);
       }
     }
   }
@@ -750,7 +790,9 @@ public class MainController {
     addIfMinButton.setText(localizator.getKeyString("AddIfMin"));
     sumOfPriceButton.setText(localizator.getKeyString("SumOfPrice"));
     filterByPriceButton.setText(localizator.getKeyString("FilterByPrice"));
-    filterContainsPartNumberButton.setText(localizator.getKeyString("FilterContainsPartNumber"));
+    countByUnitOfMeasureButton.setText(localizator.getKeyString("CountByUnitOfMeasure"));
+    sortButton.setText(localizator.getKeyString("Sort"));
+    maxByCreationDateButton.setText(localizator.getKeyString("MaxByCreationDate"));
 
     tableTab.setText(localizator.getKeyString("TableTab"));
     visualTab.setText(localizator.getKeyString("VisualTab"));
@@ -759,15 +801,12 @@ public class MainController {
     nameColumn.setText(localizator.getKeyString("Name"));
     dateColumn.setText(localizator.getKeyString("CreationDate"));
     priceColumn.setText(localizator.getKeyString("Price"));
-    partNumberColumn.setText(localizator.getKeyString("PartNumber"));
     unitOfMeasureColumn.setText(localizator.getKeyString("UnitOfMeasure"));
 
     manufacturerIdColumn.setText(localizator.getKeyString("ManufacturerId"));
     manufacturerNameColumn.setText(localizator.getKeyString("ManufacturerName"));
     manufacturerEmployeesCountColumn.setText(localizator.getKeyString("ManufacturerEmployeesCount"));
     manufacturerTypeColumn.setText(localizator.getKeyString("ManufacturerType"));
-    manufacturerStreetColumn.setText(localizator.getKeyString("ManufacturerStreet"));
-    manufacturerZipCodeColumn.setText(localizator.getKeyString("ManufacturerZipCode"));
 
     editController.changeLanguage();
 

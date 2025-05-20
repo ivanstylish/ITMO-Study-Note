@@ -1,6 +1,6 @@
 package server.managers;
 
-import common.domain.*;
+import common.model.*;
 import common.user.User;
 import org.apache.logging.log4j.Logger;
 
@@ -45,7 +45,7 @@ public class PersistenceManager {
   }
 
   public OrganizationDAO addOrganization(User user, Organization organization) {
-    logger.info("Adding a new organisation " + organization.getName());
+    logger.info("Adding a new organization " + organization.getName());
 
     var dao = new OrganizationDAO(organization);
     dao.setCreator(new UserDAO(user));
@@ -55,9 +55,9 @@ public class PersistenceManager {
     session.persist(dao);
     session.getTransaction().commit();
 
-    logger.info("Adding an organisation has been successfully completed.");
+    logger.info("Adding an organization has been successfully completed.");
 
-    logger.info("The new organisation id is " + dao.getId());
+    logger.info("The new organization id is " + dao.getId());
     return dao;
   }
 

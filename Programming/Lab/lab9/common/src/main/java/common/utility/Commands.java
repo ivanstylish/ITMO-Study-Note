@@ -19,4 +19,7 @@ public interface Commands {
   String SUM_OF_PRICE = "sum_of_price";
   String FILTER_BY_PRICE = "filter_by_price";
   String FILTER_CONTAINS_PART_NUMBER = "filter_contains_part_number";
+  String SORT = "Sort";
+  String MAX_BY_CREATION_DATE = "Max_by_creation_date";
+  String COUNT_BY_UNIT_OF_MEASURE = "Count_by_unit_of_measure";
 }

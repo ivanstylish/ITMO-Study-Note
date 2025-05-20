@@ -1,6 +1,6 @@
 package common.network.requests;
 
-import common.domain.Product;
+import common.model.Product;
 import common.user.User;
 import common.utility.Commands;
 

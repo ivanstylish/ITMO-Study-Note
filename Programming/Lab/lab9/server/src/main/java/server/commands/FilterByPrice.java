@@ -1,6 +1,6 @@
 package server.commands;
 
-import common.domain.Product;
+import common.model.Product;
 import common.network.requests.*;
 import common.network.responses.*;
 import common.utility.ProductComparator;

@@ -1,4 +1,4 @@
-package common.domain;
+package common.model;
 
 import common.utility.Validatable;
 

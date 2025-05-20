@@ -1,4 +1,4 @@
-package common.domain;
+package common.model;
 
 import common.user.User;
 import common.utility.Element;
@@ -19,20 +19,18 @@ public class Product extends Element {
   private Coordinates coordinates; // Поле не может быть null
   private LocalDate creationDate; // Поле не может быть null, Значение этого поля должно генерироваться автоматически
   private Long price; // Поле не может быть null, Значение поля должно быть больше 0
-  private String partNumber; // Строка не может быть пустой, Поле может быть null
   private UnitOfMeasure unitOfMeasure; // Поле может быть null
   private Organization manufacturer; // Поле может быть null
 
   private User creator;
 
   public Product(int id, String name, Coordinates coordinates, LocalDate creationDate,
-                 Long price, String partNumber, UnitOfMeasure unitOfMeasure, Organization manufacturer, User creator) {
+                 Long price, UnitOfMeasure unitOfMeasure, Organization manufacturer, User creator) {
     this.id = id;
     this.name = name;
     this.coordinates = coordinates;
     this.creationDate = creationDate;
     this.price = price;
-    this.partNumber = partNumber;
     this.unitOfMeasure = unitOfMeasure;
     this.manufacturer = manufacturer;
     this.creator = creator;
@@ -40,7 +38,7 @@ public class Product extends Element {
 
   public Product copy(int id, User creator) {
     return new Product(id, this.name, this.coordinates, this.creationDate,
-      this.price, this.partNumber, this.unitOfMeasure, this.manufacturer, creator
+      this.price, this.unitOfMeasure, this.manufacturer, creator
     );
   }
 
@@ -50,12 +48,18 @@ public class Product extends Element {
    */
   @Override
   public boolean validate() {
-    if (name == null || name.isEmpty()) return false;
-    if (coordinates == null) return false;
-    if (creationDate == null) return false;
-    if (price == null || price <= 0) return false;
-    if (manufacturer != null && !manufacturer.validate()) return false;
-    return partNumber == null || !partNumber.isEmpty();
+    if (name == null || name.isEmpty())
+      return false;
+    if (coordinates == null)
+      return false;
+    if (creationDate == null)
+      return false;
+    if (price == null || price <= 0)
+      return false;
+    if (manufacturer != null) {
+      return manufacturer.getName() != null && !manufacturer.getName().isEmpty() && manufacturer.getEmployeesCount() > 0;
+    }
+      return true;
   }
 
   public void update(Product product) {
@@ -63,7 +67,6 @@ public class Product extends Element {
     this.coordinates = product.coordinates;
     this.creationDate = product.creationDate;
     this.price = product.price;
-    this.partNumber = product.partNumber;
     this.unitOfMeasure = product.unitOfMeasure;
     this.manufacturer = product.manufacturer;
   }
@@ -89,9 +92,6 @@ public class Product extends Element {
     return price;
   }
 
-  public String getPartNumber() {
-    return partNumber;
-  }
 
   public UnitOfMeasure getUnitOfMeasure() {
     return unitOfMeasure;
@@ -129,13 +129,13 @@ public class Product extends Element {
     Product product = (Product) o;
     return id == product.id && Objects.equals(name, product.name) && Objects.equals(coordinates, product.coordinates)
       && Objects.equals(creationDate, product.creationDate) && Objects.equals(price, product.price)
-      && Objects.equals(partNumber, product.partNumber) && unitOfMeasure == product.unitOfMeasure
+      && unitOfMeasure == product.unitOfMeasure
       && Objects.equals(manufacturer, product.manufacturer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, coordinates, creationDate, price, partNumber, unitOfMeasure, manufacturer);
+    return Objects.hash(id, name, coordinates, creationDate, price, unitOfMeasure, manufacturer);
   }
 
   @Override
@@ -146,7 +146,6 @@ public class Product extends Element {
     info += "\n Name: " + name;
     info += "\n Location: " + coordinates;
     info += "\n Price.: " + price;
-    info += "\n partNumber: " + ((partNumber == null) ? null : "'" + partNumber + "'");
     info += "\n Unit: " + unitOfMeasure;
     info += "\n Manufacturer:\n    " + manufacturer;
     info += "\n Creator: " + creator.toString();

@@ -1,11 +1,12 @@
 package server.dao;
 
-import common.domain.Organization;
-import common.domain.OrganizationType;
+import common.model.Organization;
+import common.model.OrganizationType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import org.hibernate.annotations.Type;
+import server.utils.OrganizationTypePostgreSql;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,16 +22,12 @@ public class OrganizationDAO implements Serializable {
     this.name = organization.getName();
     this.employeesCount = organization.getEmployeesCount();
     this.type = organization.getType();
-    this.street = organization.getPostalAddress().getStreet();
-    this.zipCode = organization.getPostalAddress().getZipCode();
   }
 
   public void update(Organization organization) {
     this.name = organization.getName();
     this.employeesCount = organization.getEmployeesCount();
     this.type = organization.getType();
-    this.street = organization.getPostalAddress().getStreet();
-    this.zipCode = organization.getPostalAddress().getZipCode();
   }
 
   @Id
@@ -46,17 +43,11 @@ public class OrganizationDAO implements Serializable {
   @Column(name="employees_count", nullable=false)
   private long employeesCount; // Значение поля должно быть больше 0
 
-  @Column(name="type", nullable=false)
+
   @Enumerated(EnumType.STRING)
+  @Column(name = "type", nullable = false, columnDefinition = "organization_type")
+  @Type(OrganizationTypePostgreSql.class)
   private OrganizationType type; // Поле не может быть null
-
-  @NotBlank(message = "The street can't be empty.")
-  @Column(name="street", nullable=false)
-  private String street; // Строка не может быть пустой, Поле не может быть null
-
-  @Size(min = 6, message = "Длина zip кода должна быть не меньше 6.")
-  @Column(name="zip_code")
-  private String zipCode; // Длина строки должна быть не меньше 6, Поле может быть null
 
   @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
   @JoinColumn(name="manufacturer_id")
@@ -96,22 +87,6 @@ public class OrganizationDAO implements Serializable {
 
   public void setType(OrganizationType type) {
     this.type = type;
-  }
-
-  public String getStreet() {
-    return street;
-  }
-
-  public void setStreet(String street) {
-    this.street = street;
-  }
-
-  public String getZipCode() {
-    return zipCode;
-  }
-
-  public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
   }
 
   public UserDAO getCreator() {

@@ -5,11 +5,11 @@ import common.utility.Commands;
 
 import java.util.List;
 
-public class ShowResponse extends Response {
+public class SortResponse extends Response{
   public final List<Product> products;
 
-  public ShowResponse(List<Product> products, String error) {
-    super(Commands.SHOW, error);
+  public SortResponse(List<Product> products, String error) {
+    super(Commands.SORT, error);
     this.products = products;
   }
 }

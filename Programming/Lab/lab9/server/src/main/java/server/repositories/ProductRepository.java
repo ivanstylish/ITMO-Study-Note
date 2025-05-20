@@ -1,9 +1,8 @@
 package server.repositories;
 
-import common.domain.Address;
-import common.domain.Coordinates;
-import common.domain.Organization;
-import common.domain.Product;
+import common.model.Coordinates;
+import common.model.Organization;
+import common.model.Product;
 import common.exceptions.BadOwnerException;
 import common.user.User;
 import common.utility.ProductComparator;
@@ -239,8 +238,7 @@ public class ProductRepository {
           dao.getManufacturer().getId(),
           dao.getManufacturer().getName(),
           dao.getManufacturer().getEmployeesCount(),
-          dao.getManufacturer().getType(),
-          new Address(dao.getManufacturer().getStreet(), dao.getManufacturer().getZipCode())
+          dao.getManufacturer().getType()
         );
       }
       return new Product(
@@ -249,7 +247,6 @@ public class ProductRepository {
         new Coordinates(dao.getX(), dao.getY()),
         dao.getCreationDate(),
         dao.getPrice(),
-        dao.getPartNumber(),
         dao.getUnitOfMeasure(),
         manufacturer,
         new User(dao.getCreator().getId(), dao.getCreator().getName(), "")

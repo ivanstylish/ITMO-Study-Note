@@ -1,6 +1,6 @@
 package common.network.responses;
 
-import common.domain.Product;
+import common.model.Product;
 import common.utility.Commands;
 
 public class HeadResponse extends Response {
