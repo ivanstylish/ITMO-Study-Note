@@ -3,8 +3,11 @@
 *This is a general overview of my study notes at this stage of my life:*  
 https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 
+## helios  
+### About how to connect to helios(uni server)  
+[Helios](helios.md)  
 
-## Go
+## Go  
 
 [Go](/Go/readme.md)
 
@@ -20,6 +23,7 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 ## 大一
 
 [Math](Math/readme.md)  
+[DiscreteMath](DiscreteMath/readme.md)
 [Programming](Programming/readme.md)  
 [OPD](OPD/readme.md)  
 [Informatics](Informatics/readme.md)  

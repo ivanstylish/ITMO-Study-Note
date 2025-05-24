@@ -12,3 +12,7 @@
 [lab2](/OPD/lab/lab2/lab2.md)  
 [lab3](/OPD/lab/lab3/readme.md)  
 [lab4](/OPD/lab/lab4/readme.md)  
+
+#### 命令
+![](./Picture/command.png)
+![](./Picture/command1.png)
