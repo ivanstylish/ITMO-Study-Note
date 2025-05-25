@@ -1,0 +1,1 @@
+[Infographics of first cccp computers](https://miro.com/app/board/uXjVIw2dc94=/?share_link_id=785374422445)
