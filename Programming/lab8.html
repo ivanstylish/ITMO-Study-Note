@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&lbrack;MainPage&rbrack;&lpar;&period;&period;&sol;READEME&period;md&rpar;&sol;&lbrack;Program&rbrack;&lpar;readme&period;md&rpar;&sol;lab8</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h2 id="mainpageprogramlab8"><a href="../READEME.html">MainPage</a>/<a href="readme.html">Program</a>/lab8</h2>
+<h1 id="лабораторная-работа-8">Лабораторная работа #8</h1>
+<h2 id="внимание-у-разных-вариантов-разный-текст-задания">Внимание! У разных вариантов разный текст задания!</h2>
+<ol>
+<li>Интерфейс должен быть реализован с помощью библиотеки Swing</li>
+<li>Графический интерфейс клиентской части должен поддерживать русский, македонский, датский и английский (Соединенное Королевство) языки / локали. Должно обеспечиваться корректное отображение чисел, даты и времени в соответстии с локалью. Переключение языков должно происходить без перезапуска приложения. Локализованные ресурсы должны храниться в классе.<br>
+Доработать программу из лабораторной работы №7 следующим образом:</li>
+</ol>
+<p>Заменить консольный клиент на клиент с графическим интерфейсом пользователя(GUI).<br>
+В функционал клиента должно входить:</p>
+<ol>
+<li>Окно с авторизацией/регистрацией.</li>
+<li>Отображение текущего пользователя.</li>
+<li>Таблица, отображающая все объекты из коллекции
+<ol>
+<li>Каждое поле объекта - отдельная колонка таблицы.</li>
+<li>Строки таблицы можно фильтровать/сортировать по значениям любой из колонок. Сортировку и фильтрацию значений столбцов реализовать с помощью Streams API.</li>
+</ol>
+</li>
+<li>Поддержка всех команд из предыдущих лабораторных работ.</li>
+<li>Область, визуализирующую объекты коллекции
+<ol>
+<li>Объекты должны быть нарисованы с помощью графических примитивов с использованием Graphics, Canvas или аналогичных средств графической библиотеки.</li>
+<li>При визуализации использовать данные о координатах и размерах объекта.</li>
+<li>Объекты от разных пользователей должны быть нарисованы разными цветами.</li>
+<li>При нажатии на объект должна выводиться информация об этом объекте.</li>
+<li>При добавлении/удалении/изменении объекта, он должен автоматически появиться/исчезнуть/измениться  на области как владельца, так и всех других клиентов.</li>
+<li>При отрисовке объекта должна воспроизводиться согласованная с преподавателем анимация.</li>
+</ol>
+</li>
+<li>Возможность редактирования отдельных полей любого из объектов (принадлежащего пользователю). Переход к редактированию объекта возможен из таблицы с общим списком объектов и из области с визуализацией объекта.</li>
+<li>Возможность удаления выбранного объекта (даже если команды remove ранее не было).</li>
+</ol>
+<p>Перед непосредственной разработкой приложения необходимо согласовать прототип интерфейса с преподавателем. Прототип интерфейса должен быть создан с помощью средства для построения прототипов интерфейсов(mockplus, <a href="http://draw.io">draw.io</a>, etc.)</p>
+<p><strong>Вопросы к защите лабораторной работы:</strong></p>
+<ol>
+<li>Компоненты пользовательского интерфейса. Иерархия компонентов. 用户界面组件。 组件的层次结构</li>
+</ol>
+<ul>
+<li><strong>Элементы ввода данных</strong> 数据输入要素
+<ul>
+<li>Поле ввода 输入栏</li>
+<li>Выпадающий список 下拉列表</li>
+<li>Флажок или чекбокс 复选框或复选框</li>
+<li>Переключатель или радиокнопка 开关或单选按钮</li>
+<li>Кнопка 按钮</li>
+</ul>
+</li>
+<li><strong>Графические элементы</strong> 图形元素
+<ul>
+<li>Иконка 图标</li>
+<li>Изображение 图形；映像</li>
+<li>График или диаграмма 图表</li>
+</ul>
+</li>
+<li><strong>Навигационные элементы</strong> 导航要素
+<ul>
+<li>Меню 菜单</li>
+<li>Ссылка 链接</li>
+<li>Вкладки 标签</li>
+<li>Панель навигации 导航栏</li>
+</ul>
+</li>
+<li><strong>Отображение информации</strong> 显示信息
+<ul>
+<li>Текстовое поле 文本字段</li>
+<li>Таблица 列表</li>
+<li>Список или дерево 列表或树</li>
+<li>Прогресс-бар 进度条
+Визуальное представление 视觉呈现<br>
+Визуальная иерархия — это концепция, которая позволяет пользователю обрабатывать информацию в определенном порядке . Ее функция в дизайне интерфейса (UI) — облегчить понимание информации пользователем.<br>
+视觉层次是一个概念，它允许用户按照特定顺序处理信息。 它在界面（UI）设计中的作用是让用户更容易理解信息。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>Базовые классы Component, Container, JComponent. 基类 Component、Container、JComponent。<br>
+<code>Component</code> - Базовый класс для всех элементов GUI в AWT (например, кнопки, текстовые поля).<br>
+<code>Component</code> - Java AWT（Abstract Window Toolkit）中所有图形用户界面（GUI）组件的抽象基类。提供基础方法（如绘制、事件处理、尺寸调整等）。同时为所有GUI组件的父类。<br>
+<code>Container</code> - Контейнер, способный содержать другие компоненты (например, окна, панели).<br>
+<code>Container</code> - 继承自 Component，是能容纳其他 Component 对象的容器（如窗口、面板）。管理子组件的布局、添加/删除操作。<br>
+<code>JComponent</code> - Базовый класс для всех компонентов Swing (например, JButton, JPanel).<br>
+<code>JComponent</code> - Java Swing 库中所有组件的基类，继承自 Container。提供高级功能（如双缓冲、可定制外观、键盘事件处理）。</p>
+</li>
+<li>
+<p>Менеджеры компоновки. 布局管理器。
+Менеджер расположения (layout manager) определяет, каким образом на форме будут располагаться компоненты. Независимо от платформы, виртуальной машины, разрешения и размеров экрана менеджер расположения гарантирует, что компоненты будут иметь предпочтительный или близкий к нему размер и располагаться в том порядке, который был указан программистом при создании программы.<br>
+布局管理器决定组件在表单上的排列方式。 无论平台、虚拟机、分辨率和屏幕尺寸如何，布局管理器都能确保组件达到或接近首选尺寸，并按照程序员创建程序时指定的顺序排列。</p>
+</li>
+<li>
+<p>Модель обработки событий. Класс-слушатель и класс-событие. 事件处理模型。 监听器类和事件类
+События - это вещи, которые происходят в системе, которую вы программируете. Когда происходит событие, система генерирует (или &quot;запускает&quot;) какой-то сигнал и предоставляет механизм для автоматического выполнения какого-то действия (т.е. выполнения какого-то кода) при наступлении события.<br>
+事件是发生在你正在编程的系统中的事情——当事件发生时，系统产生（或“触发”）某种信号，并提供一种机制，当事件发生时，可以自动采取某种行动（即运行一些代码）。</p>
+</li>
+</ol>
+<h4 id="listener-类是用来监听事件的类它实现了-actionlistener-接口并重写了-actionperformed-方法当事件发生时系统会自动调用-actionperformed-方法"><code>Listener</code> 类是用来<strong>监听事件的类</strong>，它实现了 <code>ActionListener</code> 接口，并重写了 <code>actionPerformed()</code> 方法。当事件发生时，系统会自动调用 <code>actionPerformed()</code> 方法。</h4>
+<h4 id="event-类是用来封装事件信息的类它包含了事件发生的时间事件源事件类型等信息"><code>Event</code> 类是用来<strong>封装事件信息的类</strong>。它包含了事件发生的时间、事件源、事件类型等信息。</h4>
+<ol start="5">
+<li>
+<p>Технология JavaFX. Особенности архитектуры, отличия от AWT / Swing. JavaFX 技术。 架构特点，与 AWT / Swing 的区别。
+<code>AWT (Abstract Windowing Toolkit)</code>, что в переводе с китайского означает &quot;Абстрактный оконный инструментарий&quot;, является базовым инструментом, предоставляемым Java для создания и настройки графических интерфейсов Java. Недостатком AWT является то, что он предоставляет только очень тонкий слой абстракции поверх родного пользовательского интерфейса, и AWT не гарантирует, что программа будет вести себя последовательно на различных платформах, вопреки тому, чтокредо Java &quot;пиши один раз, запускай везде&quot;.
+<code>AWT（Abstract Windowing Toolkit）</code>，中文译为抽象窗口工具包，是Java提供的用来建立和设置Java图形用户界面的基本工具。AWT的缺点是在原生的用户界面上仅提供了一个非常薄的抽象层，AWT不能保证程序在各种平台上表现一致，违背了Java“一次编写，到处运行”的信条。<br>
+<code>Java Swing</code> является частью <code>Java Foundation Classes (JFC)</code>, Swing - легкий компонент по сравнению с AWT, его недостаток - медленная работа, преимущество - возможность использования на всех платформах для единообразного поведения.Swing также предоставляет более богатый набор компонентов и более мощную функциональность, чем AWT, но гибкость Swing также увеличивает егосложность.
+<code>Java Swing</code>是<code>Java Foundation Classes（JFC）</code>的一部分，相对于<code>AWT</code>，<code>Swing</code>是轻量级元件，缺点是运行速度慢，优点是可以在所有平台上采用统一的行为。Swing也提供了比AWT更为丰富的组件和强大功能，但Swing的灵活性也增加了其复杂性。<br>
+<code>JavaFX</code> - это следующее поколение инструментария графического пользовательского интерфейса Java.Включает набор графических и мультимедийных API, которые мы можем использовать для создания и развертывания богатых клиентских приложений.JavaFX позволяет разработчикам быстро создавать богатые кросс-платформенные приложения.JavaFX поддерживает современные графические процессоры благодаря аппаратному ускорению графики.JavaFX позволяет разработчикам объединить графику, анимацию и элементы управления пользовательским интерфейсом в едином интерфейсе программирования.<br>
+<code>JavaFX</code>是Java下一代图形用户界面工具包。包括一组图形和媒体API，我们可以用它们来创建和部署富客户端应用程序。JavaFX允许开发人员快速构建丰富的跨平台应用程序。JavaFX通过硬件加速图形支持现代GPU。JavaFX允许开发人员在单个编程接口中组合图形，动画和UI控件。</p>
+</li>
+<li>
+<p>Интернационализация. Локализация. Хранение локализованных ресурсов. 国际化。 本地化。 本地化资源的存储。
+<code>**Интернационализация (i18n)**</code> - это процесс разработки приложения такой структуры, при которой дополнение нового языка не требует перестройки и перекомпиляции (сборки) всего приложения. Достигается это за счет отдельного хранения данных интернационализации в виде файлов свойств, загружаемых приложением динамически в процессе работы.<br>
+***国际化（i18n）***是以这样一种结构开发应用程序的过程，即添加一种新语言后，整个应用程序无需重建和重新编译（构建）。 为此，应用程序在运行过程中以动态加载属性文件的形式单独存储国际化数据。<br>
+<code>**Локализация (l10n)**</code> – это адаптация приложения к конкретному языку и региону путем перевода выводимых пользователю текстовых элементов и документации, а также определения данных времени, валют и др., согласно специфике данного региона.<br>
+***本地化 (l10n)***是通过翻译显示给用户的文本元素和文档，以及根据该地区的具体情况定义时间、货币数据等，使应用程序适应特定的语言和地区。</p>
+</li>
+<li>
+<p>Форматирование локализованных числовых данных, текста, даты и времени. Классы NumberFormat, DateFormat, MessageFormat, ChoiceFormat. 本地化数字数据、文本、日期和时间的格式化。 类 NumberFormat、DateFormat、MessageFormat、ChoiceFormat。
+<code>NumberFormat</code> — абстрактный базовый класс для всех форматов чисел. Возвращает максимальное число цифр, разрешенных в дробной части числа.<br>
+<code>NumberFormat</code> 是所有数字格式的抽象基类。 返回数字小数部分允许的最大位数。<br>
+<img src="file:///d:\Study-Note\Programming\pic\lab8.1.png" alt="">
+Класс <code>MessageFormat</code> предназначен для создания строк.<br>
+Данный класс Java принимает набор объектов, форматирует их, а затем вставляет форматированные строки в шаблон в соответствующих местах. Это своего рода альтернатива (или даже дополнение) к статическому методу <code>String.format</code>.<br>
+<code>MessageFormat</code> 类旨在创建字符串。
+该 Java 类接收一组对象，将其格式化，然后将格式化后的字符串插入模板的适当位置。 它是静态 <code>String.format</code> 方法的一种替代方法（甚至可以说是一种补充）。<br>
+<code>ChoiceFormat</code> позволяет прикрепить формат к диапазону чисел. Обычно он используется в MessageFormat для работы с множественным числом. Выбор задается с помощью возрастающего списка двоек, где каждый элемент задает полуоткрытый интервал до следующего элемента.<br>
+<code>ChoiceFormat</code>允许你将格式附加到一系列数字上。它通常用于<code>MessageFormat</code>处理复数。选项由一个升序的双精度数列表指定，其中每一项指定到下一项的半开区间</p>
+</li>
+</ol>
+<pre><code> X matches j if and only if limit[j] ≤ X &lt; limit[j+1]
+</code></pre>
+
+            
+            
+        </body>
+        </html>
