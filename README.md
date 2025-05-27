@@ -23,7 +23,7 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 ## 大一
 
 [Math](Math/readme.md)  
-[DiscreteMath](DiscreteMath/readme.md)
+[DiscreteMath](DiscreteMath/readme.md)  
 [Programming](Programming/readme.md)  
 [OPD](OPD/readme.md)  
 [Informatics](Informatics/readme.md)  
