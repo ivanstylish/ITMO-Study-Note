@@ -1,4 +1,4 @@
-登录：ssh s407959@helios.cs.ifmo.ru -p 2222
+登录：ssh s407959@helios.cs.ifmo.ru -p 2222 ; 注意如果使用VPN或在学校内网,就需要把端口名换为IP地址 -> (192.168.10.80)
 上传：scp -P 2222 ds.txt s407959@helios.cs.ifmo.ru:~/
 下载：scp -P 2222 s407959@helios.cs.ifmo.r
 u:~/ds.txt ds.txt
@@ -6,9 +6,13 @@ yDqY-9700
 
 VPN:
 s407959
-Zjj18948165786@
+Zjj189481#
 
-cat ~/.pgpass
+openVPN:
+s407959
+yDqY-9700
+
+cat ~/.pgpass ; 获数据库密码
 PGPASSWORD=R3JIQIhNsdM2QGJv
 连接学校数据库：
 psql -h pg -d studs
