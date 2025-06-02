@@ -105,3 +105,49 @@ PTR:    WORD ?          ; 间接寻址的指针
 CHAR:   WORD ?          ; 当前字符
 
 END START
+
+
+变体10745
+1. 程序从 VU-3 执行异步数据输入
+2. 程序从地址 565 开始。 要放置的字符串位于地址 5D4。
+3. 字符串必须以 KOI-8 编码显示。
+4. 字符串在内存中的表示格式： ADR1: SIMV2 SIMV1 ADR2: SIMV4 SIMV3 .... STOP_SIMV。
+5. 字符串输入或输出必须以字符代码 0D (CR) 结束。 停止字符是普通字符串字符，与其他字符串字符一样受内存位置规则的约束。
+
+```asm
+ORG 0x565 ;程序从地址565开始。
+RES: WORD 0x5D4 ;要放置的字符串位于地址5D4。
+FINISH: WORD 0x0D
+TEMP: WORD ?
+
+START:
+    CLA
+S1:
+    IN 7
+    AND #0x40
+    BEQ S1
+    IN 6
+    ST (RES)
+    ST TEMP
+    CMP FINISH
+    BEQ EXIT
+    CLA
+S2:
+    IN 7
+    AND #0x40
+    BEQ S2
+    IN 6
+    SWAB
+    OR TEMP
+    ST (RES)
+    SUB TEMP
+    SWAB
+    CMP FINISH
+    BEQ EXIT
+    LD (RES)+
+    CLA
+    JUMP S1
+EXIT:
+    HLT
+
+```
