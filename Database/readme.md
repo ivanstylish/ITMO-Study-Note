@@ -9,8 +9,13 @@
 
 
 ### 学期实验：
-- [x] [lab1](labs/lab1/readme.md) 
+- [x] [lab1](labs/lab1/readme.md)
 - [x] [lab2](labs/lab2/readme.md)
 - [x] [lab3](labs/lab3/readme.md)
 - [x] [lab4](labs/lab4/readme.md) 
 
+### 学期测试：
+- [x] [Rubesh](./Rub_test.md)
+
+### 期末考试：
+- [] [Exam]()
