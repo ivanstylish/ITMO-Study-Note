@@ -76,4 +76,9 @@ order_cargo(订单货物) -> id, order_id, cargo_id, quantity, status
 
 司机 1 - 1 路线  
 
-2. 
+2. SQL-Запрос:
+我希望
+
+
+sql 语句顺序：  
+select –>where –> group by–> having–>order by  
