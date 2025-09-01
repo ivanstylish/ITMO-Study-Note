@@ -4,6 +4,8 @@
 - [x] [Lecture1](Lecture1.md)
 - [x] [Lecture2](Lecture2.md)  
 - [x] [Lecture3](Lecture3.md)
+- [x] [Lecture4](lecture4.pdf)
+- [x] [Lecture5](lecture5.pdf)
 - [x] [Lecture6](Lecture6.md)
 - [x] [Lecture7](Lecture7.md)  
 
@@ -18,4 +20,4 @@
 - [x] [Rubesh](./Rub_test.md)
 
 ### 期末考试：
-- [] [Exam](Exam.md)
+- [x] [Exam](Exam.md)

@@ -16,20 +16,23 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 [Java](/Java/readme.md)
 
 ## 预科
-
 [Russian](RussianLanguage/readme.md)  
 [MathsLanguage](MathsLanguage/readme.md)  
 
-## 大一
+## 大一 GRADE 1 (1-2)
+- [x] [Math](Math/readme.md)  
+- [x] [DiscreteMath](DiscreteMath/readme.md)  
+- [x] [Programming](Programming/readme.md)  
+-  [OPD](OPD/readme.md)  
+- [x] [Informatics](Informatics/readme.md)  
+- [x] [History](History/readme.md)  
+- [x] [Database](Database/readme.md)
 
-[Math](Math/readme.md)  
-[DiscreteMath](DiscreteMath/readme.md)  
-[Programming](Programming/readme.md)  
-[OPD](OPD/readme.md)  
-[Informatics](Informatics/readme.md)  
-[History](History/readme.md)  
-[Database](Database/readme.md)
+## 大二 GRADE 2 (3-4)
+[Web-Programming](WebProgramming/readme.md)  
+[Probability-Theory](ProbabilityTheory/readme.md)  
+[Programming-language](ProgrammingLanguage/readme.md)  
 
-## 大二
+## 大三 GRADE 3 (5-6)  
 
 <!--pull request example-->

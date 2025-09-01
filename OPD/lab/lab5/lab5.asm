@@ -148,6 +148,6 @@ S2:
     CLA
     JUMP S1
 EXIT:
+    LD (RES)+
     HLT
-
 ```
