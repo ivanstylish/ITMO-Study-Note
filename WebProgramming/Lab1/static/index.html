@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labwork #1 - Area detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- 头部使用monospace字体 -->
+<header>
+    <h1>Labwork #1</h1>
+    <p>Student: Varnothing</p>
+    <p>Group: P3210</p>
+    <p>Variant: 407959</p>
+</header>
+
+<!-- 主容器使用ID选择器 -->
+<div id="main-container">
+    <!-- 输入表单 -->
+    <div class="card form-container">
+        <h2>Param input</h2>
+        <form id="pointForm" method="GET" action="/fcgi-bin/check">
+            <div class="form-group">
+                <label>X Coordinate:</label>
+                <div class="checkbox-group" id="x-checkboxes">
+                    <label><input type="checkbox" name="x" value="-3"> -3</label>
+                    <label><input type="checkbox" name="x" value="-2"> -2</label>
+                    <label><input type="checkbox" name="x" value="-1"> -1</label>
+                    <label><input type="checkbox" name="x" value="0"> 0</label>
+                    <label><input type="checkbox" name="x" value="1"> 1</label>
+                    <label><input type="checkbox" name="x" value="2"> 2</label>
+                    <label><input type="checkbox" name="x" value="3"> 3</label>
+                    <label><input type="checkbox" name="x" value="4"> 4</label>
+                    <label><input type="checkbox" name="x" value="5"> 5</label>
+                </div>
+                <span class="error-message" id="x-error">Please select at least one X value</span>
+            </div>
+
+            <div class="form-group">
+                <label for="y-input">Y Coordinate:</label>
+                <input type="text" id="y-input" name="y" placeholder="Enter a Y value (-5 to 3)">
+                <span class="error-message" id="y-error">Y values must be between -5 and 3</span>
+            </div>
+
+            <div class="form-group">
+                <label>R radio:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="r" value="1"> 1</label>
+                    <label><input type="radio" name="r" value="2"> 2</label>
+                    <label><input type="radio" name="r" value="3"> 3</label>
+                    <label><input type="radio" name="r" value="4"> 4</label>
+                    <label><input type="radio" name="r" value="5"> 5</label>
+                </div>
+                <span class="error-message" id="r-error">Please select R value</span>
+            </div>
+
+            <button type="submit">Check point</button>
+            <button type="button" id="clearBtn">Clear result</button>
+        </form>
+    </div>
+
+    <!-- 图形显示 -->
+    <div class="card canvas-container">
+        <h2>Coordinate area</h2>
+        <canvas id="graph" width="350" height="350"></canvas>
+    </div>
+
+    <!-- 结果表格 -->
+    <div class="card results-container">
+        <h2>Clear result</h2>
+        <table id="resultsTable">
+            <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Result</th>
+                <th>Current time</th>
+                <th>Execution time(ms)</th>
+            </tr>
+            </thead>
+            <tbody id="resultsBody">
+            <!-- 结果将动态添加到这里 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

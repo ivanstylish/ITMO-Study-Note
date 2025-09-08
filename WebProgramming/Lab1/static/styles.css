@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 头部样式 - 使用monospace字体（显式指定字体、颜色、大小） */
+header {
+    font-family: monospace;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* ID选择器 */
+#main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 类选择器和后代选择器 */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+/* 表单样式 */
+.form-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* 属性选择器 - 输入元素缩进使用百分比 */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 2%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* 单选按钮样式 */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5%;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.radio-group label:hover {
+    background: #e0e0e0;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* 复选框样式 */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 3%;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.checkbox-group label:hover {
+    background: #e0e0e0;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* 按钮样式 - 演示继承 */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+    font-family: inherit; /* 继承字体 */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Canvas样式 */
+.canvas-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+#graph {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+    background: white;
+}
+
+/* 结果表格样式 */
+.results-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: bold;
+}
+
+/* 伪选择器 - 演示级联 */
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f0f0;
+}
+
+/* 伪元素选择器 */
+.form-group::before {
+    content: "▸ ";
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* 错误消息样式 */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* 成功状态 - 演示级联优先级 */
+.success {
+    background: #27ae60 !important;
+    color: white;
+}
+
+/* 失败状态 */
+.failure {
+    background: #e74c3c !important;
+    color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #main-container {
+        flex-direction: column;
+    }
+
+    .checkbox-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
