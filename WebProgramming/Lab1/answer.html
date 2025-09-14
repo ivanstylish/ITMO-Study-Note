@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&Vcy;&ocy;&pcy;&rcy;&ocy;&scy;&ycy; &kcy; &zcy;&acy;&shchcy;&icy;&tcy;&iecy;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <ol>
+<li>Протокол HTTP. Структура запросов и ответов, методы запросов, коды ответов сервера, заголовки запросов и ответов.
+HTTP 协议。请求和响应的结构、请求方法、服务器响应代码、请求和响应标头。<br>
+HTTP (англ. HyperText Transfer Protocol — «протокол передачи гипертекста») — протокол прикладного уровня передачи данных (изначально — в виде гипертекстовых документов в формате «HTML», в настоящий момент используется для передачи произвольных данных). Основой HTTP является технология «клиент-сервер», то есть предполагается существование:<br>
+HTTP（超文本传输​​协议）是一种应用层数据传输协议（最初以 HTML 格式的超文本文档形式出现，目前用于传输任意数据）。HTTP 基于客户端-服务器技术，这意味着它假设存在：</li>
+</ol>
+<p>Потребителей (клиентов), которые инициируют соединение и посылают запрос;<br>
+Поставщиков (серверов), которые ожидают соединения для получения запроса, производят необходимые действия и возвращают обратно сообщение с результатом.<br>
+HTTP запрос состоит из трех основных частей, которые идут в нем именно в том порядке, который указан ниже. Между заголовками и телом сообщения находится пустая строка (в качестве разделителя), она представляет собой символ перевода строки.<br>
+消费者（客户端）发起连接并发送请求；<br>
+提供者（服务器）等待连接接收请求，执行必要的操作并返回包含结果的消息。<br>
+HTTP 请求由三个主要部分组成，按以下指定的顺序排列。在消息头和正文之间有一个空行（作为分隔符），它是一个换行符。</p>
+<p>строка запроса (Request Line)<br>
+заголовки (Message Headers)<br>
+пустая строка (разделитель)<br>
+тело сообщения (Entity Body) – необязательный параметр
+Строка запроса – указывает метод передачи, URL-адрес, к которому нужно обратиться и версию протокола HTTP. Заголовки – описывают тело сообщений, передают различные параметры и др. сведения и информацию. Тело сообщения — это сами данные, которые передаются в запросе. Тело сообщения – это необязательный параметр и может отсутствовать.<br>
+请求行<br>
+消息头<br>
+空行（分隔符）<br>
+实体主体 - 可选<br>
+请求行 - 指定传输方式、访问的 URL 以及 HTTP 协议版本。消息头 - 描述消息主体、传输各种参数以及其他信息。消息主体是请求中传输的数据本身。消息主体是可选参数，可以省略。</p>
+<p>Методы запросов:
+GET запрашивает представление ресурса, может только извлекать данные.
+HEAD как GET, только без тела ответа.
+POST используется для отправк сущностей определенному ресурсу. Может изменять данные.
+PUT создает новый ресурс или заменят предсавление целевого ресурса (в отличае от POST для идентичных наборов двнных будет иметь одинаковый результат).
+DELETE удаляет ресурм.
+CONNECT устанавливает &quot;туннель&quot; к серверу, определенному по ресурсу.
+OPTIONS для описания параметров соединения с ресурсом
+TRACE вызов возвращаемого текстового сообщения
+PATCH частичное изменение ресурса
+Коды ответов:
+1хх: Informational
+2xx: Success
+3xx: Redirection (перенаправление)
+4xx: Client Error
+5xx: Server Error
+请求方法：
+GET 请求资源的表述，仅可检索数据。
+HEAD 类似于 GET，但没有响应主体。
+POST 用于将实体发送到特定资源。可以修改数据。
+PUT 创建新资源或替换目标资源的表述（与 POST 不同，相同的数据集将产生相同的结果）。
+DELETE 删除资源。
+CONNECT 建立与资源指定服务器的“隧道”。
+OPTIONS 用于描述与资源的连接参数。
+TRACE 调用用于返回文本消息。
+PATCH 对资源进行部分修改。
+响应代码：
+1xx：信息
+2xx：成功
+3xx：重定向
+4xx：客户端错误
+5xx：服务器错误</p>
+<ol start="2">
+<li>Язык разметки HTML. Особенности, основные теги и атрибуты тегов.
+Документ состоит из элементов, начало и конец которых обозначаются тегами. Некоторые теги не могут содержать текст (например, <br> — перенос строки, <img> — картинка, <input> — элемент ввода в форме). Их не нужно закрывать:
+HTML 标记语言。功能、基本标记和标记属性。</li>
+</ol>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- плохо --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- хорошо --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span>
+</code></pre>
+<p>В HTML5 введены семантические теги <header>, <footer>, <section>, которые аналогичны <div>, но указывают на логическую структуру.<br>
+HTML5 引入了语义标签<header>、<footer>、<section>，它们与<div>类似，但表示逻辑结构。</p>
+<ol start="3">
+<li>Структура HTML-страницы. Объектная модель документа (DOM).
+HTML 页面的结构。文档对象模型 （DOM）。</li>
+</ol>
+<p>DOM - программный интерфейс для HTML и XML документов, описывающийструктурированное представление документа и определяющий, как это структура может быть доступна из программ, которые могут изменять ее содержимое. (Другими словами, DOM соединяет веб-страницу с языками описания сценариев).<br>
+DOM 是 HTML 和 XML 文档的编程接口，它描述了文档的结构化表示，并指定了程序如何访问该结构来修改其内容。（换句话说，DOM 将网页与脚本语言连接起来。）</p>
+<p>Согласно DOM документ может быть представлен в виде объектов, с которыми можно проихводить манипуляци:<br>
+根据 DOM，文档可以表示为可操作的对象：</p>
+<p>генерация и добавление узлов
+получение узлов
+изменение узлов
+изменение связей между ними
+удаление узлов
+Обращение к узлам происходит с помощью элементов document или window.<br>
+生成和添加节点
+获取节点
+更改节点
+更改节点之间的链接
+删除节点
+使用文档或窗口元素访问节点。</p>
+<p>Есть еще BOM - объектная модель браузера. Основное предназначение — управление окнами браузера и обеспечение их взаимодействия. BOM специфична для каждого браузера. Может в создание системных диалогов, управление информацией о параметрах монитора и браузера и всякое такое.<br>
+还有 BOM - 浏览器对象模型。其主要目的是管理浏览器窗口并确保它们之间的交互。BOM 是每个浏览器特有的。它可用于创建系统对话框、管理显示器和浏览器参数信息等等。</p>
+<ol start="4">
+<li>HTML-формы. Задание метода HTTP-запроса. Правила размещения форм на страницах, виды полей ввода.
+Форма предназначена для обмена данными между пользователем и сервером.
+HTML 表单。设置 HTTP 请求方法。在页面上放置表单的规则，输入字段的类型。</li>
+</ol>
+<pre><code>Задается с помощью тега &lt;form&gt; и могут содержать в себе атрибуты: action, содержищий URI обработчика формы (обязательный атрибут), method (по умолчанию, GET), enctype (тип кодирования), accept (MIME-типы для загрузки файлов), name, onsubmit/onreset (обработчик события submit/reset для скриптов), accept-character.
+</code></pre>
+<p>Виды полей:</p>
+<pre><code>Кнопка &lt;input&gt;. Типы кнопок &lt;submit&gt;, &lt;image&gt;, &lt;reset&gt;, &lt;button&gt;.
+Checkbox.
+Radio.
+Select.
+Text и многострочный textarea.
+Password.
+Hidden (скрытое поле).
+File.
+</code></pre>
+<ol start="5">
+<li>Каскадные таблицы стилей (CSS). Структура - правила, селекторы. Виды селекторов, особенности их применения. Приоритеты правил. Преимущества CSS перед непосредственным заданием стилей через атрибуты тегов.
+级联样式表 （CSS）。结构 - 规则、选择器。选择器的类型，其应用程序的功能。规则优先级。CSS 相对于直接通过标签属性设置样式的优势。</li>
+</ol>
+<p>CSS - формальный язык описания внешнего вида документа с помощью языка разметки.<br>
+CSS 是一种使用标记语言描述文档外观的正式语言。</p>
+<p>CSS-правило - блок, состоящий из селектора и блока объявления стилей.<br>
+CSS 规则是由选择器和样式声明块组成的块。</p>
+<p>Селекторы - имя тега, к которому применяется правило.<br>
+选择器——规则适用的标签的名称。</p>
+<p>Основные виды селекторов:<br>
+主要的选择器类型：</p>
+<ul>
+<li>
+<ul>
+<li>любые элементы
+div элементы с тегом div
+#id - элемент по id
+.class - элементы с классом class
+[name=&quot;value&quot;] - селекторы по атрибуту
+:visited - псевдоклассы
+div p - элементы p, являющиеся потомками div
+div &gt; p – только непосредственные потомки
+div ~ p – правые соседи: все p на том же уровне вложенности, которые идут после div
+div + p – первый правый сосед: p на том же уровне вложенности, который идёт сразу после div
+Приоритеты правил.
+Самый высокий приоритет имеет атрибут style.
+Второе по приоритету - присутствие ID в селекторе.
+Все атрибуты (включая class и псевдоклассы)
+Самый низкий - селекторы с именами элементов и псевдоэлементами.
+!important позволяет повысить приоритет стиля.<br>
+带有 div 标签的 div 元素
+#id - 按 ID 筛选元素
+.class - 带有 class 的元素
+[name=&quot;value&quot;] - 按属性筛选选择器
+:visited - 伪类
+div p - div 的后代元素 p
+div &gt; p - 仅限其直系后代
+div ~ p - 右邻元素：div 之后所有处于同一嵌套级别的 p
+div + p - 第一个右邻元素：div 之后所有处于同一嵌套级别的 p
+规则优先级：
+样式属性具有最高优先级。
+第二高优先级是选择器中存在 ID。
+所有属性（包括 class 和伪类）
+最低优先级 - 带有元素名称和伪元素的选择器。
+!important 可用于提高样式的优先级。</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>LESS, Sass, SCSS. Ключевые особенности, сравнительные характеристики. Совместимость с браузерами, трансляция в &quot;обычный&quot; CSS.
+LESS, Sass, CSS. 主要特征，比较特征。浏览器兼容性，翻译为“常规”CSS。</li>
+</ol>
+<p>LESS - это динамический язык стилей, который является надстройкой над CSS (Поэтому любой CSS код будет валидный LESS).<br>
+LESS 是一种动态样式语言，它是 CSS 的上层结构（因此任何 CSS 代码在 LESS 中都是有效的）。</p>
+<p>Приемущества LESS:<br>
+LESS的优势：</p>
+<p>Переменные (и области видимости переменных).
+Операции (в том числе и для управления цветом, т.е можно смешивать цвета: #941f1f + #222222).
+И другие функции для работы с цветом (осветление, затемнение и т.п.)
+Вложенность (можно вложить одно правило в другое, article.post p {} &lt;=&gt; article.post { p{   }}).
+Объединение аргуметов.
+LESS-файл конвертируется в CSS при помощи js (для этого необходимо скачать less.js с сайта LESS).</p>
+<pre><code>&lt;script src=&quot;less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+Затем можно привязывать файлы с расширением .less.
+
+&lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;style.less&quot;&gt;
+</code></pre>
+<p>Sass
+Sass - это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.<br>
+Sass 是一种基于 CSS 的元语言，旨在提高 CSS 代码的抽象级别并简化层叠样式表文件。</p>
+<p>Приемущества Sass:
+Sass的优势：</p>
+<p>Вложенные правила.
+Переменные.
+Возможность создавать миксины, позволяющие создавать многоразовые CSS-правила - группы деклараций, для многократного использования. (LESS в это не может)
+Расширения. Одиночный селектор может быть расширен больше, чес одним селектором с помошью @extend.<br>
+嵌套规则。
+变量。
+创建混合宏 (mixin) 的功能，允许您创建可重用的 CSS 规则（声明组），以便重复使用。（LESS 无法做到这一点）
+扩展。可以使用 @extend 扩展单个选择器，使其包含多个选择器。
+Есть логика. (if/then/for). (Этого в LESS тоже нет)
+Не может компилироватся на сервере в CSS (LESS использует js).</p>
+<p>Браузер не распознает файлы Sass, так что сначала их нужно скомпилировать в обычный CSS.<br>
+浏览器无法识别 Sass 文件，因此需要先将其编译为常规 CSS。</p>
+<p>SCSS
+SCSS — &quot;диалект&quot; языка SASS. Отличие SCSS от SASS заключается в том, что SCSS больше похож на обычный CSS код.<br>
+SCSS 是 SASS 语言的一种“方言”。SCSS 与 SASS 的区别在于，SCSS 更像常规的 CSS 代码。</p>
+<pre><code>@import - @import &quot;template&quot; подключит template.scss.
+Вложенность.
+$переменные.
+Математика чисел и цветов.
+Строки (умеет складвать строки, поддерживает конструкцию #{$var})
+</code></pre>
+<ol start="7">
+<li>Клиентские сценарии. Особенности, сферы применения. Язык JavaScript.
+客户端方案。特点，应用领域。JavaScript 语言。</li>
+</ol>
+<p>Сценарий - код, включенный в состав веб-страницы. Клиентский сценарий выполняется на компьютере-клиенте, для этого необходим встроенный интерпретатор. Вставка сценария в веб-страницу происходит при помощи тега <script>.<br>
+脚本 - 网页中包含的代码。客户端脚本在客户端计算机上执行，因此需要内置解释器。使用 <script> 标签可以将脚本插入网页。</p>
+<p>JavaScript является объектно-ориентированным языком. JavaScript имеет ряд свойств, присущих функциональным языкам — функции как объекты первого класса, объекты как списки, карринг, анонимные функции, замыкания. Js имеет автоматическое приведение типов, автоматическая сборка мусора, анонимные функции, функции как объекты первого класса (т.е. мб сохранены в переменную, переданны в функцию как аргумент, созданы во время выполнения программы и т.п.)<br>
+JavaScript 是一种面向对象的语言。JavaScript 具有许多函数式语言固有的特性——函数作为一等对象、对象作为列表、柯里化、匿名函数和闭包。JS 还具有自动类型转换、自动垃圾收集、匿名函数、函数作为一等对象（即，MB 保存在变量中、作为参数传递给函数、在程序执行期间创建等）等特性。</p>
+<p>Основные архитектурные черты:</p>
+<p>динамическая типизация;
+слабая типизация;
+автоматическое управление памятью;
+прототипное программирование;
+функции как объекты первого класса.
+Типы данных<br>
+动态类型；
+弱类型；
+自动内存管理；
+原型编程；
+函数作为一等对象。
+数据类型
+number -- целые, дробные числа, Infinity, NaN
+String
+boolean
+null
+undefined -- «значение не присвоено»
+object -- для коллекций и более сложных сущностей
+8. Версии ECMAScript, новые возможности ES6 и ES7.
+ECMAScript 版本，ES6 和 ES7 中的新功能。</p>
+<p>ECMAScript — это встраиваемый расширяемый не имеющий средств ввода-вывода язык программирования, используемый в качестве основы для построения других скриптовых языков. Стандартизирован международной организацией ECMA в спецификации. (ECMAScript это стандарт, а JavaScript его реализация).<br>
+ECMAScript 是一种可嵌入、可扩展、无 I/O 的编程语言，可作为构建其他脚本语言的基础。它由国际组织 ECMA 制定了标准化规范。（ECMAScript 是标准，JavaScript 是其实现。）</p>
+<p>Имеет 5 примитивных типов данных — Number, String, Boolean, Null и Undefined; Объектный тип данных — Object и 15 различных видов инструкций.<br>
+它有5种原始数据类型——Number、String、Boolean、Null和Undefined；对象数据类型——Object和15种不同类型的指令。</p>
+<p>В особенности можно добавить то, что блок не ограничивает область видимости функции. Если переменная объявляется вне функции, то она попадает в глобальную область видимости. Функция — это тоже объект.<br>
+特别需要补充的是，代码块不会限制函数的作用域。如果在函数外部声明变量，则该变量属于全局作用域。函数本身也是一个对象。</p>
+<p>ES6
+Это обновление добавило новый синтаксис для написания классов и модулей, добавились итераторы и циклы for/of, Python-style генераторы, двоичные данные, лямбда-выражения, типизированные массивы, коллекции, обещания (promises), рефлексию и прокси, усовершенствовали числа и математику. Добавлено ключевое слово let (которое помогает объявить переменной область видимости - блок) и const.<br>
+本次更新添加了用于编写类和模块、迭代器和 for/of 循环、Python 风格生成器、二进制数据、lambda 表达式、类型数组、集合、promise、反射和代理的新语法，并改进了数字和数学运算。新增了 let 关键字（用于声明变量的作用域 - 块）和 const。</p>
+<p>ES7
+Добавлена операция возведения в степень (**), Array.prototype.includes().</p>
+<ol start="9">
+<li>Синхронная и асинхронная обработка HTTP-запросов. AJAX.
+HTTP 请求的同步和异步处理。AJAX。<br>
+Синхронный запрос - запрос с ожидением ответа. (скрипт послал запрос (объект) на сервер и ждет ответ).<br>
+同步请求 - 期望得到响应的请求。（脚本向服务器发送了一个请求（对象），并正在等待响应）。</li>
+</ol>
+<p>Асинхронный запрос - запрос без ожидания ответа от сервера. (скрипт послал запрос (объект) на сервер, но продолжает выполняться, когда данные вернутся вступает в дело событие onreadystatechenge. Сам объект меняет это событие, когда у него меняется свойство readyState. Для события создается собственная функция, в которой проверяется свойство readyState. И как только оно становится равным &quot;4&quot; - это значит, что данные с сервера пришли. Теперь можно полученные данные обрабатывать).<br>
+异步请求 - 不等待服务器响应的请求。（脚本向服务器发送了一个请求（对象），但继续执行，当数据返回时，onreadystatechange 事件就会生效。当对象的 readyState 属性发生变化时，该事件也会随之改变。为此事件创建一个单独的函数，用于检查 readyState 属性。一旦该属性等于“4”，就表示服务器的数据已到达。现在就可以处理接收到的数据了。</p>
+<pre><code class="language-js">   <span class="hljs-keyword">var</span> request = <span class="hljs-title function_">getXmlHttpRequest</span>(); <span class="hljs-comment">// создание объекта</span>
+   request.<span class="hljs-property">onreadystatechenge</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){ <span class="hljs-comment">// установка обработчика onreadystatechenge и проверка свойства readyState</span>
+       <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> == <span class="hljs-number">4</span>)
+       ...
+   }
+   request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;GET&#x27;</span>, url, <span class="hljs-literal">true</span>); <span class="hljs-comment">// готовим запрос</span>
+   request.<span class="hljs-title function_">send</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// посылаем запрос</span>
+</code></pre>
+<p>AJAX
+Asynchronous Javascript and XML - подход к построению интерактивных пользовательских интерфейсов веб-приложений, заключающийся в «фоновом» обмене данными браузера с веб-сервером.<br>
+异步 Javascript 和 XML 是一种为 Web 应用程序构建交互式用户界面的方法，涉及浏览器和 Web 服务器之间的“后台”数据交换。</p>
+<p>Пользователь что-то делает -&gt; скрипт определяет с чем там надо работать -&gt; браузер отправляет запрос на сервер -&gt; сервер возвращает только то, от чего ожидаются изменения -&gt; скрипт вносит изменения обратно (без перезагрузки страницы).<br>
+用户执行某些操作 -&gt; 脚本确定需要处理的内容 -&gt; 浏览器向服务器发送请求 -&gt; 服务器仅返回预期更改的内容 -&gt; 脚本进行更改（无需重新加载页面）。</p>
+<ol start="10">
+<li>Библиотека jQuery. Назначение, основные API. Использование для реализации AJAX и работы с DOM.
+jQuery 库。目的，主要 API。用于 AJAX 实现和 与DOM工作。</li>
+</ol>
+<p>jQuery - библиотека js, помогающая легко получить доступ к любому элементу DOM и манипулировать ими, предоставляет API для работы с AJAX.<br>
+jQuery 是一个 js 库，可以帮助您轻松访问和操作任何 DOM 元素，并提供了与 AJAX 配合使用的 API。</p>
+<p>jQuery включается в страницу как внешний файл.<br>
+jQuery 作为外部文件包含在页面中。</p>
+<p><code>&lt;script src=&quot;jquery-2.2.2.min.js&quot;&gt;</code></p>
+<p>Вся работа с jQuery ведется с помощью функции $. Работу с jQuery можно разделить на 2 типа:</p>
+<p>Получение jQuery-объекта с помощью функции <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi><mtext>Вызовглобальныхметодовуобъекта</mtext></mrow><annotation encoding="application/x-tex">().
+Вызов глобальных методов у объекта </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mclose">)</span><span class="mord">.</span><span class="mord cyrillic_fallback">Вызовглобальныхметодовуобъекта</span></span></span></span>.
+Типичный пример манипуляции сразу несколькими узлами DOM заключается в вызове <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>функциисострокойселектора</mtext><mi>C</mi><mi>S</mi><mi>S</mi><mo separator="true">,</mo><mtext>чтовозвращаетобъект</mtext><mi>j</mi><mi>Q</mi><mi>u</mi><mi>e</mi><mi>r</mi><mi>y</mi><mo separator="true">,</mo><mtext>содержащийнекотороеколичествоэлементов</mtext><mi>H</mi><mi>T</mi><mi>M</mi><mi>L</mi><mo>−</mo><mtext>страницы</mtext><mi mathvariant="normal">.</mi><mtext>Этиэлементызатемобрабатываютсяметодами</mtext><mi>j</mi><mi>Q</mi><mi>u</mi><mi>e</mi><mi>r</mi><mi>y</mi><mi mathvariant="normal">.</mi><mtext>使用</mtext></mrow><annotation encoding="application/x-tex"> функции со строкой селектора CSS, что возвращает объект jQuery, содержащий некоторое количество элементов HTML-страницы. Эти элементы затем обрабатываются методами jQuery.  
+使用 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord cyrillic_fallback">функциисострокойселектора</span><span class="mord mathnormal" style="margin-right:0.05764em;">CSS</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cyrillic_fallback">чтовозвращаетобъект</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">Q</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.03588em;">ery</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cyrillic_fallback">содержащийнекотороеколичествоэлементов</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.10903em;">TM</span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord cyrillic_fallback">страницы</span><span class="mord">.</span><span class="mord cyrillic_fallback">Этиэлементызатемобрабатываютсяметодами</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">Q</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.03588em;">ery</span><span class="mord">.</span><span class="mord cjk_fallback">使用</span></span></span></span>() 函数获取 jQuery 对象。
+在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>对象上调用全局方法。一次操作多个</mtext><mi>D</mi><mi>O</mi><mi>M</mi><mtext>节点的一个常见示例是使用</mtext><mi>C</mi><mi>S</mi><mi>S</mi><mtext>选择器字符串调用</mtext></mrow><annotation encoding="application/x-tex"> 对象上调用全局方法。
+一次操作多个 DOM 节点的一个常见示例是使用 CSS 选择器字符串调用 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">对象上调用全局方法。一次操作多个</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.10903em;">OM</span><span class="mord cjk_fallback">节点的一个常见示例是使用</span><span class="mord mathnormal" style="margin-right:0.05764em;">CSS</span><span class="mord cjk_fallback">选择器字符串调用</span></span></span></span> 函数，该函数返回一个包含多个 HTML 页面元素的 jQuery 对象。然后，这些元素将由 jQuery 方法进行处理。</p>
+<pre><code>$(&quot;div.test&quot;).add(&quot;p.quote&quot;).addClass(&quot;blue&quot;).slideDown(&quot;slow&quot;);
+//находит элементы div с классом test, все элементы p с классом quote, добавляет им класс blue, ...
+$.ajax и соответствующие функции позволяют использовать методы AJAX
+
+$.ajax({
+  type: &quot;POST&quot;,
+  url: &quot;some.php&quot;,      // обращение к some.php
+  data: {name: 'John', location: 'Boston'},   //с какими-то параметрами
+  success: function(msg){
+    alert( &quot;Data Saved: &quot; + msg );  // получный результат выводится в alert
+  }
+}); 
+</code></pre>
+<ol start="11">
+<li>Реализация AJAX с помощью SuperAgent.
+使用 SuperAgent 实现 AJAX。<br>
+SuperAgent - API для реализации AJAX:<br>
+SuperAgent - 用于 AJAX 实现的 API：</li>
+</ol>
+<pre><code>request
+  .post('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
+  .end(function(err, res){
+  if (err || !res.ok) {
+    alert('Oh no! Error');
+  } else {
+    alert('yay got ' + JSON.stringify(res.body));
+  }
+});
+</code></pre>
+<ol start="12">
+<li>Серверные сценарии. CGI - определение, назначение, ключевые особенности.
+服务器方案。CGI - 定义、目的、主要特征。<br>
+CGI (Common Gateway Interface — общий интерфейс шлюза) — стандарт интерфейса, используемого для связи внешней программы с веб-сервером. Программу, которая работает по такому интерфейсу совместно с веб-сервером, принято называть шлюзом (оно же скрипт или CGI-программа). По сути позволяет использовать консоль ввода и вывода для взаимодействия с клиентом.<br>
+CGI（通用网关接口）是一种用于将外部程序连接到 Web 服务器的接口标准。与 Web 服务器协同运行在这种接口上的程序通常被称为网关（也称为脚本或 CGI 程序）。本质上，它允许您使用输入输出控制台与客户端进行交互。</li>
+</ol>
+<p>CGI - сценарии</p>
+<p>CGI — механизм вызова пользователем программ на стороне сервера.
+Данные отправляются программе посредством HTTP-запроса, формируемого веб-браузером.
+То, какая именно программа будет вызвана, обычно определяется URL запроса.
+Каждый запрос обрабатывается отдельным процессом CGI-программы.
+Взаимодействие программы с веб-сервером осуществляется через stdin и stdout.<br>
+CGI 是一种用户调用服务器端程序的机制。
+数据通过 Web 浏览器生成的 HTTP 请求发送到程序。
+通常由请求 URL 确定要调用的具体程序。
+每个请求由一个单独的 CGI 程序进程处理。
+程序通过标准输入 (stdin) 和标准输出 (stdout) 与 Web 服务器交互。</p>
+<ol start="13">
+<li>FastCGI и CGI
+FastCGI - 该技术的特点，与 CGI 相比的优缺点。
+CGI — устаревшая технология, позволяющая взаимодействовать веб-серверу с сервером приложений. Для каждого запроса запускается процесс с интерпретатором PHP, после возвращения ответа он завершается. Поскольку это очень неэффективно, был создан FastCGI, в котором процесс интерпретатора не завершается, а используется для последующих запросов.<br>
+CGI 是一种过时的技术，它允许 Web 服务器与应用服务器交互。对于每个请求，都会启动一个带有 PHP 解释器的进程，并在返回响应后终止该进程。由于这种机制效率低下，因此 FastCGI 应运而生，它的解释器进程不会被终止，而是用于后续请求。</li>
+</ol>
+<p>В PHP возможна многопоточность через расширение pthreads, но оно недоступно при использовании PHP как сервера приложений, только при написании скриптов для командной строки.<br>
+PHP 通过 pthreads 扩展具有多线程功能，但在使用 PHP 作为应用程序服务器时不可用，仅在编写命令行脚本时可用。</p>
+<ol start="14">
+<li>FastCGI сервер на языке Java.
+Java 中的 FastCGI 服务器。<br>
+Небольшая сводка по тому как вообще устроен CGI. В CGI используется понятие веб-сервера и серверного сценария, написанного на произвольном ЯП. Веб-сервер при обработке запроса запускает CGI процесс серверного сценария и при помощи stdin/stdout общается с прикладной программой. Очевидным недостатком такого подхода являются высокие накладные расходы на запуск отдельного процесса под обработку каждого запроса.<br>
+CGI 一般工作原理的简短总结。CGI 使用 Web 服务器和用任意语言编写的服务器脚本的概念。在处理请求时，Web 服务器启动服务器脚本的 CGI 进程，并使用 stdin/stdout 与应用程序进行通信。这种方法的明显缺点是运行单独的进程来处理每个请求的开销成本很高。<br>
+FastCGI стал развитием CGI в сторону оптимизации. Так, в FastCGI веб-сервер запускает пулл FastCGI процессов и общается с ними при помощи Unix sockets или TCP/IP sockets. Альтернативным вариантом может быть также внешний по отношении к веб-серверу FastCGI сервер. За счет поддержания постоянно запущенных процессов для обработки запросов снижаются накладные расходы. К тому же, так как появилась возможность использования внешного FastCGI сервера - стало возможным распределять обработку по нескольким узлам, что так же повышает потенциальную пропускную способность подобного решения.<br>
+FastCGI 是 CGI 向优化的演变。例如，在 FastCGI 中，Web 服务器运行 FastCGI 进程拉取并使用 Unix 套接字或 TCP/IP 套接字与它们通信。或者，您也可以在 FastCGI Web 服务器外部设置服务器。通过维护持续运行的处理请求的流程，可以降低间接成本。此外，由于可以使用外部 FastCGI 服务器，因此可以在多个节点之间分配处理，这也增加了此类解决方案的潜在吞吐量。</li>
+</ol>
+<h3 id="вопросы-к-защите">Вопросы к защите</h3>
+<ol>
+<li>CORS
+Политика same-origin, которую браузеры распространяют на запросы из JS (fetch()), клиент не может запросить ресурсы с другого origin'а (origin = домен (<a href="http://example.com">example.com</a>), протокол (http/https), порт (80)).</li>
+</ol>
+<p>Cross-origin resource sharing позволяет запросить ресурсы (картинки, CSS, JS) не со своего origin'а. Сначала клиент отправляет HTTP OPTIONS запрос с заголовком Origin: <a href="http://www.example.com">http://www.example.com</a>, где <a href="http://example.com">example.com</a> — адрес сайта. Если сервер не позволяет получить ресурс, возвращается страница ошибки, иначе — заголовок Access-Control-Allow-Origin: ..., который может вместо ... включать адрес запросившего сайта (<a href="http://www.example.com">http://www.example.com</a>) или *.</p>
+<p>Сервер может вернуть заголовок Access-Control-Allow-Methods: GET, POST, ..., в котором перечисляются возможные методы для доступа к ресурсу.</p>
+<p>Сервер может вернуть заголовок Access-Control-Allow-Credentials: true, чтобы указать, что клиент может отправлять cookies вместе с запросом.</p>
+<ol start="2">
+<li>HTTPS
+HTTPS позволяет общаться с сервером по зашифрованному каналу, что предотвращает утечку секретов (паролей) и атаки man-in-the-middle (злоумышленник меняет данные, которые передаются между клиентом и сервером).</li>
+</ol>
+<p>Шифруется все, что передается в запросе (URL запроса, заголовки, тело). Сервер предоставляет сертификат, который подтверждает его identity (сертификат должен быть издан доверенным лицом — обычно компанией, ключ которой браузеры признают как доверенный). Таким образом, сервер подтверждает, что он является тем, за кого себя выдает — не фишинг-сайтом и не &quot;человеком посредине&quot;.</p>
+<ol start="3">
+<li>ООП в JS
+В JavaScript у объектов есть прототипы. Экземпляр объекта содержит ссылку на его прототип, который содержит ссылку на прототип прототипа — до Object.</li>
+</ol>
+<p>Конструктор объявляется как функцией, this является в ней экземпляром объекта:</p>
+<p>function Person(name) {
+<a href="http://this.name">this.name</a> = name;
+this.greeting = function() {
+alert('Hi! I'm ' + <a href="http://this.name">this.name</a> + '.');
+};
+}
+Функции прототипа объявляются отдельно:</p>
+<p>Person.prototype.fun = function() { ... }
+this
+this в JavaScript зависит от того, как вызывается функция. Он может быть</p>
+<p>Вне функции, this — объект window. Внутри функции, он равен undefined, если не задан:</p>
+<p>function f(arg) { ... }
+f(1); // this === undefined, arg === 1
+f.call(2, 1); // this === 2, arg === 1
+Метод bind создают новую функцию, переопределяя в ней this:</p>
+<p>function f() { ... }
+f(); // this === undefined
+var newF = f.bind(3);
+newF(); // this === 3
+При вызове функции у экземпляра объекта, this становится равен экземпляру.</p>
+<p>ES6
+class Foo {} транслируется в function Foo(), т.е. функцию конструктора. При этом тело конструктора объявляется внутри класса:</p>
+<p>class Foo {
+constructor(arg1, arg2) {
+this.something = arg1 + arg2;
+}
+}
+Классы могут быть наследованы:</p>
+<p>class Foo extends Bar {
+constructor() {
+super(..); // возможно вызвать constructor у Bar
+}
+}
+4. CSS-анимация
+Все современные браузеры поддерживают CSS transitions и CSS animations, которые позволяют реализовывать анимацию срадствами CSS.</p>
+<p>CSS transitions: указываем некоторое свойство, которое будет анимироваться при помощи SCC-правил. Далее, при изменении этого свойства браузер сам будет обрабатывать анимацию.</p>
+<p>Есть 5 свойств, задающих анимацию:</p>
+<p>transition-property - устанавливает свойство для эффекта перехода.
+transition-duration - задает время, которое будет длиться анимация.
+transition-timing-function - математическая функция, указывающая с какой скоростью в зависимости от времени меняется значение свойства.
+transition-delay - время ожидания перед запуском эффекта.
+transitionend - событие после выполнения SCC transition.
+CSS animations: более сложные анимации можно сделать объединением простых при помощи CSS-правила @keyframes. В нем задается имя анимации и правила, по которым нужно анимировать. Потом анимацию можно подключить с помощью свойства animation.</p>
+<ol start="5">
+<li>Наследование в SCC. Что наследуется, что нет?
+Наследуемые свойства: border-collapse, border-spacing, caption-side, color, cursor, direction, font и его свита (размер, стиль...), letter-spacing, line-height, list-style (и его свита тоже), pitch-range, pitch, text-indent, text-transform, white-space, widows, word-spacing</li>
+</ol>
+<p>Остальные свойства являются ненаследуемыми.</p>
+<p>С помощью inherit можно указать, чтобы элемент наследовал значение у своего предка. initial - запрещает наследование (и устанавливает исходное значение).</p>
+<ol start="6">
+<li>Веб-сервер и сервер приложений
+Веб-сервер — сервер, принимающий HTTP-запросы от клиентов (обычно веб-браузеров), и выдающий им HTTP-ответы, вместе с HTML-страницей, изображениями, файлами и другими данными.</li>
+</ol>
+<p>Сервер приложений — программная платформа (фреймворк), предназначенная для эффективного исполнения программ/скриптов, на которых построены приложения. Сервер приложений действует как набор компонентов, доступных разработчику программного обеспечения через API.</p>
+<p>Для веб-приложений основная задача компонентов сервера — обеспечивать создание динамических страниц.</p>
+<ol start="7">
+<li>Как выглядят HTTP-запросы
+application/x-www-form-urlencoded: значения кодируются в кортежах с ключом, разделенных символом '&amp;', с '=' между ключом и значением.
+POST / HTTP/1.1
+Host: <a href="http://foo.com">foo.com</a>
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 13</li>
+</ol>
+<p>say=Hi&amp;to=Mom
+multipart/form-data
+POST /test.html HTTP/1.1
+Host: <a href="http://example.org">example.org</a>
+Content-Type: multipart/form-data;boundary=&quot;boundary&quot;</p>
+<p>--boundary
+Content-Disposition: form-data; name=&quot;field1&quot;</p>
+<p>value1
+--boundary
+Content-Disposition: form-data; name=&quot;field2&quot;; filename=&quot;example.txt&quot;</p>
+<p>value2
+Какие символы разрешены в GET
+Пробел кодируется как %20
+Буквы, цифры, некоторые символы * - . _ кодируются с %2B
+Для некоторых символов есть 16-ричное предстваление
+~ кодируется как %7E
+8. Cookie
+HTTP cookie (web cookie, cookie браузера) - это небольшой фрагмент данных, отправляемый сервером на браузер пользователя, который тот может сохранить и отсылать обратно с новым запросом к данному серверу. Это позволяет узнать, с одного ли браузера пришли запросы. Они запоминают информацию о состоянии для протокола HTTP, который сам по себе этого делать не умеет.</p>
+<p>Используется для:</p>
+<p>Управления сеансом (логины, корзины для виртуальных покупок)
+Персонализации (пользовательские предпочтения)
+Мониторинга (отслеживания поведения пользователя)
+Создание cookie
+Получив HTTP-запрос, вместе с откликом сервер может отправить заголовок Set-Cookie с ответом. Cookie обычно запоминаются браузером и посылаются в значении заголовка HTTP Cookie с каждым новым запросом к одному и тому же серверу.</p>
+<h3 id="问题需要改进">问题需要改进：</h3>
+<ol>
+<li>
+<p>Исправить таблицу с результатами попадания точки (либо скролл, либо пагинация)<br>
+使用点击点的结果来修复表格（滚动或分页）</p>
+</li>
+<li>
+<p>执行时间过短，需要改进</p>
+</li>
+</ol>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- 头部使用monospace字体 -->
 <header>
     <h1>Labwork #1</h1>
     <p>Student: Varnothing</p>
@@ -68,25 +67,27 @@
 
     <!-- 结果表格 -->
     <div class="card results-container">
-        <h2>Clear result</h2>
-        <table id="resultsTable">
-            <thead>
-            <tr>
-                <th>X</th>
-                <th>Y</th>
-                <th>R</th>
-                <th>Result</th>
-                <th>Current time</th>
-                <th>Execution time(ms)</th>
-            </tr>
-            </thead>
-            <tbody id="resultsBody">
-            <!-- 结果将动态添加到这里 -->
-            </tbody>
-        </table>
+        <h2>Result</h2>
+
+        <div class="table-wrapper">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Result</th>
+                        <th>Current time</th>
+                        <th>Execution time(ms)</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

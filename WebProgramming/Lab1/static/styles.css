@@ -181,37 +181,100 @@ button:disabled {
     background: white;
 }
 
-/* 结果表格样式 */
+/* 结果表格样式 - 修改为滚动表格 */
 .results-container {
     flex: 1 1 100%;
     max-width: 100%;
 }
 
-table {
+/* 表格包装器 - 固定高度和滚动 */
+.table-wrapper {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    margin-top: 10px;
+
+    /* 自定义滚动条样式 */
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* 表格样式 */
+#resultsTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin: 0;
+    min-width: 600px;
 }
 
-th, td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
+/* 固定表头 */
+#resultsTable thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
 }
 
-th {
+#resultsTable thead th {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     font-weight: bold;
+    padding: 15px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 伪选择器 - 演示级联 */
-tr:nth-child(even) {
+/* 修复表格行的文字颜色问题 */
+#resultsTable tbody td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333; /* 明确设置文字颜色 */
+}
+
+/* 修复行样式，确保文字颜色正确 */
+#resultsTable tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-tr:hover {
+#resultsTable tbody tr:nth-child(even) td {
+    background: #f9f9f9;
+    color: #333; /* 确保偶数行文字颜色正确 */
+}
+
+#resultsTable tbody tr:hover {
     background: #f0f0f0;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+#resultsTable tbody tr:hover td {
+    background: #f0f0f0;
+    color: #333; /* 确保悬停时文字颜色正确 */
 }
 
 /* 伪元素选择器 */
@@ -233,16 +296,39 @@ tr:hover {
     display: block;
 }
 
-/* 成功状态 - 演示级联优先级 */
+/* 成功状态 - 修复颜色覆盖问题 */
 .success {
     background: #27ae60 !important;
-    color: white;
 }
 
-/* 失败状态 */
+.success td {
+    background: #27ae60 !important;
+    color: white !important; /* 确保成功状态文字为白色 */
+}
+
+/* 失败状态 - 修复颜色覆盖问题 */
 .failure {
     background: #e74c3c !important;
-    color: white;
+}
+
+.failure td {
+    background: #e74c3c !important;
+    color: white !important; /* 确保失败状态文字为白色 */
+}
+
+/* 空状态提示 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.empty-state::before {
+    content: "📊";
+    display: block;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
 /* 响应式设计 */
@@ -253,5 +339,19 @@ tr:hover {
 
     .checkbox-group {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-wrapper {
+        height: 300px;
+    }
+
+    #resultsTable {
+        min-width: 500px;
+    }
+
+    #resultsTable th,
+    #resultsTable td {
+        padding: 8px 6px;
+        font-size: 14px;
     }
 }

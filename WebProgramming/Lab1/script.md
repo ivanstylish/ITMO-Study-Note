@@ -19,6 +19,9 @@ ssh -L <ВЫДАННЫЙ ВАМ ПОРТ>:localhost:<ВЫДАННЫЙ ВАМ П�
 
 1. 首先转移端口到本地：
 ssh -L 24666:localhost:24666 s407959@helios.cs.ifmo.ru -p 2222
+ssh -L 24666:localhost:24666 s407959@192.168.10.80 -p 2222
+192.168.10.80
+yDqY-9700
 
 2. 然后启动本地的HTTP服务器：
 httpd -f ~/httpd-root/conf/httpd.conf -k start
