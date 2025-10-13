@@ -32,3 +32,5 @@ pgpassword=R3JIQIhNsdM2QGJv
 COLLECTION_FILE=$HOME/data.json java -jar Lab5.jar  
 
 COLLECTION_FILE=$HOME/data.json java -jar Server_jar/Server.jar  
+
+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
