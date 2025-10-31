@@ -327,6 +327,41 @@ console.log(first, last); // 1 5
 #### HttpServlet API 
 ![](../pic/10.png)  
 
+#### Конфигурация сервлета Servlet 配置  
+![](../pic/11.png)  
+`web.xml` 文件中配置servlet。  
+如果web容器中有写好的`html`文件或者在`web.xml`中用`<url-pattern>/sample</url-pattern>`标记的该网页的访问地址，则可以直接访问该网页。  
+```
+http://localhost:8080/myweb/index.html
+OR
+http://localhost:8080/myweb/sample
+```
+
+#### Жизненный цикл сервлета Servlet的生命周期  
+- Жизненным циклом сервлета управляет вебконтейнер. 
+- Методы, управляющие жизненным циклом, должен вызывать только веб-контейнер.
+- `Servlet` 的生命周期由 `Web` 容器管理。
+- 生命周期管理方法只能由 `Web` 容器调用。
+
+过程：
+1. `Web` 容器加载 `Servlet` 类。
+2. `Web` 容器创建 `Servlet` 对象。
+3. 引用`init()`方法
+4. `Web` 容器调用 `service()` 方法处理 `HTTP` 请求。
+5. `Web` 容器调用 `destroy()` 方法销毁 `Servlet` 对象。
+
+#### Контекст сервлетов Servlet 上下文
+- API, с помощью которого сервлет может взаимодействовать со своим контейнером. 
+- Servlet 与其容器交互的 API。
+- Доступ к методам осуществляется через интерфейс `javax.servlet.ServletContext.` 
+- 方法通过 `javax.servlet.ServletContext` 接口访问。
+- У всех сервлетов внутри приложения общий контекст. 
+- 应用程序中的所有 Servlet 共享一个公共上下文。
+- В контекст можно помещать общую для всех сервлетов информацию (методы `getAttribute` и `setAttribute`). 
+- 该上下文可用于存储所有 Servlet 的公共信息（`getAttribute` 和 `setAttribute` 方法）。
+- Если приложение — распределённое, то на каждом экземпляре JVM контейнером создаётся свой контекст
+- 如果应用程序是分布式的，容器会在每个 JVM 实例上创建自己的上下文。
+
 ### MVC(Model-View-Controller) 模型-视图-控制器
 模型-视图-控制器 （MVC）是一种软件架构模式 ，通常用于开发用户界面 ，将相关程序逻辑划分为三个互连元素。这些元素是：
   - the model, the internal representations of information
