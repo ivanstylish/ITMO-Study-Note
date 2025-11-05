@@ -362,6 +362,113 @@ http://localhost:8080/myweb/sample
 - Если приложение — распределённое, то на каждом экземпляре JVM контейнером создаётся свой контекст
 - 如果应用程序是分布式的，容器会在每个 JVM 实例上创建自己的上下文。
 
+```
+import java.io.*;  
+import javax.servlet.*; 
+import javax.servlet.http.*;  
+public class DemoServlet extends HttpServlet{  
+  public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException {           res.setContentType("text/html");  
+  PrintWriter pw=res.getWriter(); //creating ServletContext object 
+  ServletContext context=getServletContext();  
+  //Getting the value of the initialization parameter 
+  //and printing it  String driverName=context.getInitParameter("dname");  
+  pw.println("driver name is="+driverName);  }
+   pw.close();  }
+```
+
+#### HTTP-сессии HTTP会话
+- HTTP — stateless-протокол. 
+- HTTP 是一种无状态协议。
+- `javax.servlet.HttpSession` — интерфейс, позволяющий идентифицировать конкретного клиента (браузер) при обработке множества HTTP-запросов от него. 
+- Интерфейс `javax.servlet.HttpSession` 允许标识特定的客户端（浏览器）并处理来自该客户端的多个 HTTP 请求。
+- Экземпляр HttpSession создаётся при первом обращении клиента к приложению и сохраняется некоторое (настраиваемое) время после последнего обращения. 
+- HttpSession 实例在客户端首次访问应用程序时创建，并在最后一次访问后保持一段时间（可配置）。
+- Идентификатор сессии либо помещается в cookie, либо добавляется к URL. Если удалить этот идентификатор, то сервер не сможет идентифицировать клиента и создаст новую сессию. 
+- 会话标识符可以存储在 cookie 中，也可以附加到 URL 后。如果此标识符被移除，服务器将无法识别客户端，并会创建一个新的会话。
+- В экземпляр HttpSession можно помещать общую для этой сессии информацию (методы getAttribute и setAttribute).
+- 您可以在 `HttpSession` 实例中存储会话信息（使用 `getAttribute` 和 `setAttribute` 方法）。 
+- Сессия «привязана» к конкретному приложению; у разных приложений — разные сессии.
+- 会话绑定到特定的应用程序；不同的应用程序拥有不同的会话。
+- В распределённом окружении обеспечивается сохранение целостности данных в HTTP-сессии (независимо от количества экземпляров JVM).
+- 在分布式环境中，HTTP 会话中数据的完整性得到保证（无论 JVM 实例的数量如何）。
+
+#### Диспетчеризация запросов сервлетами Servlet 的请求分发
+- Сервлеты могут делегировать обработку запросов другим ресурсам (сервлетам, JSP и HTML-страницам). 
+- Servlet 可以将请求处理委托给其他资源（Servlet、JSP 和 HTML 页面）。
+- Диспетчеризация осуществляется с помощью реализаций интерфейса `javax.servlet.RequestDispatcher`. 
+- 分发是通过 `javax.servlet.RequestDispatcher` 接口的实现来实现的。
+- Два способа получения `RequestDispatcher` — через ServletRequest (абсолютный или относительный URL) и ServletContext (только абсолютный URL).
+- `RequestDispatcher` 有两种方式：通过 `ServletRequest`（绝对或相对 URL）和 `ServletContext`（仅限绝对 URL）。
+-  Два способа делегирования обработки запроса — forward и include.
+-  委托请求处理有两种方式：转发 (`forward`) 和包含 (`include`)。
+
+```
+import java.io.*;  
+import javax.servlet.*; 
+import javax.servlet.http.*;  
+public class MyServlet extends HttpServlet{  
+  public void doGet(HttpServletRequest req,  HttpServletResponse res)  throws ServletException,IOException {  
+  RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp"); dispatcher.forward( request, response );
+  }
+}
+```
+
+#### Фильтры запросов 请求过滤器
+- Фильтры позволяют осуществлять пред- и постобработку запросов до и после передачи их ресурсу (сервлету, JSP или HTML-странице). 
+- 过滤器允许在将请求传递给资源（Servlet、JSP 或 HTML 页面）之前和之后对其进行预处理和后处理。
+- Пример предобработки — допуск к странице только авторизованных пользователей. 
+- 预处理的一个例子是仅允许授权用户访问页面。
+- Пример постобработки — запись в лог времени обработки запроса. 
+- 后处理的一个例子是记录请求处理时间。
+- Реализуют интерфейс `javax.servlet.Filter`. 
+- 过滤器实现了 `javax.servlet.Filter` 接口。
+- Ключевой метод — `doFilter`. 
+- 关键方法是 `doFilter`。
+- Метод `doFilter` класса `FilterChain` передаёт управление следующему фильтру или целевому ресурсу; таким образом, возможна реализация последовательностей фильтров,  обрабатывающих один и тот же запрос.
+- `FilterChain` 类的 `doFilter` 方法将控制权传递给下一个过滤器或目标资源；因此，可以实现一系列过滤器来处理同一个请求。
+
+##### 过滤器配置
+```
+<web-app>
+  <servlet>
+    <servlet-name>s1</servlet-name>
+    <servlet-class>MyServlet</servlet-class
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>s1</servlet-name>
+    <url-pattern>/myservlet</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>f1</filter-name>
+    <filter-class>MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>f1</filter-name>
+    <url-pattern>/myservlet</url-pattern>
+  </filter-mapping> 
+</web-app>
+```
+### 7. JavaServer Pages Java服务器页面
+定义：
+- Страницы JSP — это текстовые файлы, содержащие статический HTML и JSP-элементы.
+- JSP 页面是包含静态 HTML 和 JSP 元素的文本文件。
+- JSP-элементы позволяют формировать динамическое содержимое. 
+- JSP 元素允许生成动态内容。
+- При загрузке в веб-контейнер страницы JSP транслируются компилятором (jasper) в сервлеты.
+-  当加载到 Web 容器中时，JSP 页面会由编译器（例如 Jasper）转换为 Servlet。
+- Позволяют отделить бизнес-логику от уровня представления (если их комбинировать с сервлетами).
+- 它们（与 Servlet 结合使用时）可以实现业务逻辑与表示层的分离。
+
+#### Преимущества и недостатки JSP 优缺点
+- Преимущества: 
+  - Высокая производительность — транслируются в сервлеты. 
+  - Не зависят от используемой платформы — код пишется на Java. 
+  - Позволяют использовать Java API. 
+  - Простые для понимания — структура похожа на обычный HTML. 
+- Недостатки: 
+  - Трудно отлаживать, если приложение целиком основано на JSP. 
+  - Возможны конфликты при параллельной обработке нескольких запросов.
+
 ### MVC(Model-View-Controller) 模型-视图-控制器
 模型-视图-控制器 （MVC）是一种软件架构模式 ，通常用于开发用户界面 ，将相关程序逻辑划分为三个互连元素。这些元素是：
   - the model, the internal representations of information
