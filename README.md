@@ -23,15 +23,15 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 - [x] [Math](Math/readme.md)  
 - [x] [DiscreteMath](DiscreteMath/readme.md)  
 - [x] [Programming](Programming/readme.md)  
--  [OPD](OPD/readme.md)  
+- [x] [OPD](OPD/readme.md)  
 - [x] [Informatics](Informatics/readme.md)  
 - [x] [History](History/readme.md)  
 - [x] [Database](Database/readme.md)
 
 ## 大二 GRADE 2 (3-4)
-- [x] [Web-Programming](WebProgramming/readme.md)  
-- [x] [Probability-Theory](ProbabilityTheory/readme.md)  
-- [x] [Programming-language](ProgrammingLanguage/readme.md)  
+- [ ] [Web-Programming](WebProgramming/readme.md)  
+- [ ] [Probability-Theory](ProbabilityTheory/readme.md)  
+- [ ] [Programming-language](ProgrammingLanguage/readme.md)  
 
 ## 大三 GRADE 3 (5-6)  
 
