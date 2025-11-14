@@ -688,3 +688,127 @@ JavaCode
 - 您可以创建自己的组件。
 - 页面上的组件以树状结构组织，称为视图。
 - 视图的根元素是 `javax.faces.component.UIViewRoot` 类的实例。
+
+#### Иерархия компонентов JSF JSF组件层次结构
+![](../pic/17.png.png)  
+
+#### Навигация между страницами JSF 页面间导航
+- Реализуется экземплярами класса `NavigationHandler`.
+- Правила задаются в файле `faces-confg.xml`:
+```xml
+<navigation-rule>   
+  <from-view-id>/pages/inputname.xhtml</from-view-id>       
+  <navigation-case> 
+    <from-outcome>sayHello</from-outcome> 
+    <to-view-id>/pages/greeting.xhtml</to-view-id>        
+  </navigation-case>   
+   <navigation-case>
+    <to-view-id>/pages/goodbye.xhtml</to-view-id>     
+    </navigation-case> 
+  </navigation-rule> 
+```
+
+#### Управляемые бины 管理Bean
+- Содержат параметры и методы для обработки данных с компонентов. 
+- 包含用于处理组件数据的参数和方法。
+- Используются для обработки событий UI и валидации данных. 
+- 用于处理 UI 事件和验证数据。
+- Жизненным циклом управляет JSF Runtime Envronment. 
+- 生命周期由 JSF 运行时环境管理。
+- Доступ из JSF-страниц осуществляется с помощью элементов EL. 
+- 通过 JSF 页面使用 EL 元素进行访问。
+- Конфигурация задаётся в `faces-confg.xml` (JSF 1.X), либо с помощью аннотаций (JSF 2.0).
+- 配置在 `faces-confg.xml`（JSF 1.X）或使用注解（JSF 2.0）中指定。
+
+一般管理Bean类有注解`@ManagedBean` & `@SessionScoped`
+
+#### Контекст (scope) управляемых бинов 托管Bean范围
+- Задаётся через `faces-confg.xml` или с помощью аннотаций. 
+- 可通过 `faces-confg.xml` 文件或注解进行指定。
+- 6 вариантов конфигурации:
+- 6 个配置选项：
+  - `@NoneScoped` — контекст не определён, жизненным циклом управляют другие бины. 
+  - `@NoneScoped` — 上下文未定义，生命周期由其他 bean 管理。
+  - `@RequestScoped` (применяется по умолчанию) — контекст — запрос. 
+  - `@RequestScoped`（默认）— 上下文为请求。
+  - `@ViewScoped` (JSF 2.0) — контекст — страница.
+  - `@ViewScoped`（JSF 2.0）— 上下文为页面。 
+  - `@SessionScoped` — контекст — сессия. 
+  - `@SessionScoped` — 上下文为会话。
+  - `@ApplicationScoped` — контекст — приложение. 
+  - `@ApplicationScoped` — 上下文为应用程序。
+  - `@CustomScoped` (JSF 2.0) — бин сохраняется в Map; программист сам управляет его жизненным циклом.
+  - `@CustomScoped`（JSF 2.0）— bean 存储在 Map 中；程序员管理其生命周期。
+
+#### Конфигурация управляемых бинов 管理Bean配置
+- 方法一： 通过`faces-confg.xml`
+```xml
+<managed-bean>  
+  <managed-bean-name>customer</managed-bean-name>  
+  <managed-bean-class>CustomerBean</managed-bean-class>  
+  <managed-bean-scope>request</managed-bean-scope>  
+  <managed-property>    
+    <property-name>areaCode</property-name>    
+    <value>#{initParam.defaultAreaCode}</value>  
+    </managed-property> 
+</managed-bean>
+```
+- 方法二： 通过注解annotation(JSF 2.0)
+```java
+@ManagedNamed("customer")
+@RequestScoped
+public class CustomerBean {
+  private String areaCode;
+
+  @PostConstruct
+  public void init() {
+    ...
+  }
+```
+
+#### Доступ к управляемым бинам со страниц приложения JSF 访问管理Bean
+Осуществляется с помощью EL-выражений:  
+这是通过EL表达式实现的：  
+```xml
+<h:outputText value="#{customer.areaCode}"
+              validator="#{user.validate}" />
+```
+
+#### Конвертеры данных 数据转换器
+- Используются для преобразования данных компонента в заданный формат (дата, число и т. д.). 
+- 用于将组件数据转换为指定格式（日期、数字等）。
+- Реализуют интерфейс `javax.faces.convert.Converter`. 
+- 实现 javax.faces.convert.Converter 接口。
+- Существуют стандартные конвертеры для основных типов данных. 
+- 提供了常用数据类型的标准转换器。
+- Можно создавать собственные конвертеры.
+- 您可以创建自定义转换器。
+
+#### Назначение конвертеров 转换器的用途
+- Автоматическое (на основании типа данных): 自动转换
+- `<h: inputText value="#{user.age}" />`
+- С помощью атрибута converter: 使用转换器属性：
+- `<h inputText converter="#{javax.faces.DateTime}" />`
+- С помощью вложенного тега: 使用嵌套标签：
+- `<h:outputText value="#{user.birthDay}"> <f:converter converterId="#{javax.faces.DateTime}"/> </h:outputText>`
+
+#### Валидация данных JSF-компонентов JSF组件数据验证
+- Осуществляется перед обновлением значения компонента на уровне модели. 
+- 在模型级别更新组件值之前执行。
+- Класс, осуществляющий валидацию, должен реализовывать интерфейс `javax.faces.validator.Validator`. 
+- 执行验证的类必须实现 `javax.faces.validator.Validator` 接口。
+- Существуют стандартные валидаторы для основных типов данных. 
+- 针对常见数据类型，有标准验证器。
+- Можно создавать собственные валидаторы.
+- 您可以创建自己的验证器。
+
+#### Способы валидации данных 验证数据的不同方式
+- С помощью параметров компонента: 使用组件参数：
+- `<h:inputText id="zip" size="10" value="#{customerBean.zip}" required="true"> </h:inputText> <h:message for="zip"/>`
+- С помощью вложенного тега: 使用嵌套标签：
+- `<h:inputText id="quantity" size="4" value="#{item.quantity}"> <f:validateLongRange minimum="1"/> </h:inputText> <h:message for="quantity"/>`
+- С помощью логики на уровне управляемого бина. 
+- 在管理 bean 级别实现逻辑。
+
+#### 事件处理过程
+![](../pic/18.png)

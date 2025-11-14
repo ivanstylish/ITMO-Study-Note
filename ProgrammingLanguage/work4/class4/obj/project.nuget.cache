@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qz85t4508f4=",
+  "dgSpecHash": "7hzhwZ5EDVA=",
   "success": true,
-  "projectFilePath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+  "projectFilePath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\26771\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
     "C:\\Users\\26771\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
@@ -89,9 +89,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0”还原包“OpenXmlPowerTools 4.5.3.2”。此包可能与项目不完全兼容。",
-      "projectPath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "projectPath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "filePath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "libraryId": "OpenXmlPowerTools",
       "targetGraphs": [
         "net8.0"
@@ -101,9 +101,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0”还原包“System.Management.Automation.dll 10.0.10586”。此包可能与项目不完全兼容。",
-      "projectPath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "projectPath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "filePath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "libraryId": "System.Management.Automation.dll",
       "targetGraphs": [
         "net8.0"

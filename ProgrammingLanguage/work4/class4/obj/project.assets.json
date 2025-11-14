@@ -4775,11 +4775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "projectUniqueName": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "projectName": "class4",
-      "projectPath": "F:\\ProLang\\class4\\class4\\class4.csproj",
+      "projectPath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\class4.csproj",
       "packagesPath": "C:\\Users\\26771\\.nuget\\packages\\",
-      "outputPath": "F:\\ProLang\\class4\\class4\\obj\\",
+      "outputPath": "D:\\Study-Note\\ProgrammingLanguage\\work4\\class4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "F:\\VStudio\\Shared\\NuGetPackages"
