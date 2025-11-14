@@ -13,6 +13,7 @@ s407959
 yDqY-9700  
 
 > 关于数据库：  
+PGAdmin4
 cat ~/.pgpass ; 获数据库密码  
 PGPASSWORD=R3JIQIhNsdM2QGJv  
 连接学校数据库：  
