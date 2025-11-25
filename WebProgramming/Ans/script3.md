@@ -15,3 +15,9 @@ bash ~/wildfly-37.0.1.Final/bin/standalone.sh
 3. 浏览器打开网站
 ```
 http://localhost:5786/lab3-1.0/index.xhtml
+
+
+数据库：
+`ssh s407959@helios.cs.ifmo.ru -p 2222`    
+
+`psql -h pg -d studs`
