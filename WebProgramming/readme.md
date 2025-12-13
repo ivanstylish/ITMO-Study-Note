@@ -11,4 +11,4 @@
 
 -----------------------
 ### 实验labwork1-4
-- [ ] [labwork1](./Lab1/script.md)
+- [x] [labwork1](./Lab1/script.md)
