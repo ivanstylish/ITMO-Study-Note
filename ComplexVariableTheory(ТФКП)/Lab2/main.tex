@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+\geometry{a4paper, margin=2.5cm}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+    \textbf{Университет ИТМО}\\
+    \vspace{1em}
+    Факультет Программной Инженерии и Компьютерной Техники\\
+    \vspace{1em}
+    {\Large ТФКП}\\
+    \vspace{15em}
+    {\Large Лабораторная работа \textnumero 2}\\[1em]
+    {\Large \textbf{Построение конформных отображений}}\\[1em]
+    Вариант:\textbf{16}
+\end{center}
+\vspace{12em}
+\begin{flushright}
+    Выполнил:\\
+    Чжун Цзяцзюнь\\
+    Группа: P3210\\
+    Преподаватель:\\
+    Богачёв Владимир Александрович\\
+\end{flushright}
+\vspace{2em}
+\vspace{\fill}
+\begin{center}
+    Санкт-Петербург 2025 г.
+\end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+\section{Задание}
+Для варианта 16 необходимо построить конформное отображение между:
+\begin{itemize}
+    \item \textbf{Рисунок 5}: Угловая область 
+    \item \textbf{Рисунок 6}: Полоса на комплексной плоскости
+   
+    \centering
+    \includegraphics[width=0.95\textwidth]{pic.png}
+\end{itemize}
+\section{Аналитическое описание множеств}
+\subsection{Рисунок 5}
+Исходная область представляет собой угловой сектор:
+\begin{equation}
+    G_1 = \left\{ z \in \mathbb{C} : \frac{\pi}{4} < \arg(z) < \frac{3\pi}{4}, \, |z| > 0 \right\}
+\end{equation}
+Это сектор комплексной плоскости с углом раствора $\frac{\pi}{2}$ (от $\frac{\pi}{4}$ до $\frac{3\pi}{4}$), симметричный относительно положительной мнимой оси. В полярных координатах:
+\begin{equation}
+    z = r e^{i\theta}, \quad \text{где } r > 0, \quad \frac{\pi}{4} < \theta < \frac{3\pi}{4}
+\end{equation}
+\subsection{Рисунок 6}
+Целевая область представляет собой полуполосу:
+\begin{equation}
+    G_2 = \left\{ w \in \mathbb{C} : \text{Re}(w) > 0, \, 0 < \text{Im}(w) < \pi \right\}
+\end{equation}
+Это горизонтальная полуполоса с вершиной в начале координат, ограниченная:
+\begin{itemize}
+    \item Справа: уходит в бесконечность ($\text{Re}(w) \to +\infty$)
+    \item Снизу: действительной полуосью ($\text{Im}(w) = 0$, $\text{Re}(w) > 0$)
+    \item Сверху: прямой $\text{Im}(w) = \pi$, $\text{Re}(w) > 0$
+    \item Слева: мнимой полуосью от $0$ до $\pi i$ (не включая границу)
+\end{itemize}
+\section{Построение конформного отображения}
+\subsection{Прямое отображение: $G_1 \to G_2$}
+Для построения конформного отображения из $G_1$ в $G_2$ используем следующую композицию классических преобразований (соответствует комбинации из таблицы: №4 для возведения в степень, №16 для логарифма, с поворотами через умножение на $e^{i\theta}$).
+\subsubsection{Поворот на $-90^\circ$}
+Применяем преобразование:
+\begin{equation}
+    w_0 = -i z = e^{-i \pi / 2} z
+\end{equation}
+\textbf{Действие:}
+\begin{itemize}
+    \item Угол $\arg(z)$ смещается на $-\pi/2$: если $\frac{\pi}{4} < \arg(z) < \frac{3\pi}{4}$, то $-\frac{\pi}{4} < \arg(w_0) < \frac{\pi}{4}$
+    \item Сектор становится симметричным относительно положительной вещественной оси
+\end{itemize}
+Получаем область:
+\begin{equation}
+    G_0 = \left\{ w_0 \in \mathbb{C} : -\frac{\pi}{4} < \arg(w_0) < \frac{\pi}{4}, \, |w_0| > 0 \right\}
+\end{equation}
+\subsubsection{Возведение в квадрат}
+Применяем преобразование:
+\begin{equation}
+    w_1 = w_0^2
+\end{equation}
+\textbf{Действие:}
+\begin{itemize}
+    \item Угол $\arg(w_0)$ удваивается: $-\frac{\pi}{2} < \arg(w_1) < \frac{\pi}{2}$
+    \item Радиус возводится в квадрат: $|w_1| = |w_0|^2$
+    \item Сектор с углом $\frac{\pi}{2}$ преобразуется в правую полуплоскость ($\text{Re}(w_1) > 0$)
+\end{itemize}
+Получаем область:
+\begin{equation}
+    G_1' = \left\{ w_1 \in \mathbb{C} : \text{Re}(w_1) > 0 \right\}
+\end{equation}
+\subsubsection{Поворот на $90^\circ$}
+Применяем преобразование:
+\begin{equation}
+    w_2 = i w_1 = e^{i \pi / 2} w_1
+\end{equation}
+\textbf{Действие:}
+\begin{itemize}
+    \item Правая полуплоскость поворачивается на $90^\circ$ и становится верхней полуплоскостью ($\text{Im}(w_2) > 0$)
+    \item Аргумент лежит в $(0, \pi)$
+\end{itemize}
+Получаем область:
+\begin{equation}
+    G_2' = \left\{ w_2 \in \mathbb{C} : \text{Im}(w_2) > 0 \right\}
+\end{equation}
+\subsubsection{Логарифмическое отображение}
+Применяем преобразование:
+\begin{equation}
+    w = \ln w_2
+\end{equation}
+где $\ln$ --- главная ветвь логарифма с $\arg \in (0, \pi)$.
+\textbf{Действие:}
+\begin{itemize}
+    \item Верхняя полуплоскость отображается в горизонтальную полосу $0 < \text{Im}(w) < \pi$
+    \item Действительная часть: $\text{Re}(w) = \ln |w_2|$, которая может быть от $-\infty$ до $+\infty$
+    \item Для получения $\text{Re}(w) > 0$ можно ограничить исходные точки $|z| > 1$, но поскольку области бесконечны, полуполоса является частью полной полосы
+\end{itemize}
+\subsection{Итоговое прямое отображение}
+Композиция всех преобразований:
+\begin{equation}
+    f(z) = \ln \left( i (-i z)^2 \right) = \ln (-i z^2) = \ln(-i) + 2 \ln z = -i \frac{\pi}{2} + 2 \ln z
+\end{equation}
+(с учётом ветви логарифма для $\arg \in (0, \pi)$).
+\subsection{Обратное отображение: $G_2 \to G_1$}
+Обратное отображение строится путём обращения каждого шага в обратном порядке с соответствующими ветвями:
+\begin{enumerate}
+    \item Обратный логарифм: $v = e^w$
+    \item Обратный поворот (деление на $i$): $u = v / i = -i v$
+    \item Обратное возведение в квадрат (квадратный корень): $s = \sqrt{u}$, ветвь с $\text{Re}(s) > 0$, $\arg(s) \in (-\pi/2, \pi/2)$
+    \item Обратный поворот (умножение на $i$): $z = i s$
+\end{enumerate}
+Итоговое обратное отображение:
+\begin{equation}
+    f^{-1}(w) = i \sqrt{-i \, e^{w}}
+\end{equation}
+где квадратный корень берётся с ветвью $\text{Re} > 0$, а экспонента согласуется по ветвям.
+\section{Программная реализация}
+Программа реализована на языке Python с использованием библиотек \texttt{numpy} и \texttt{matplotlib}.
+\subsection{Основные этапы программы}
+\begin{enumerate}
+    \item \textbf{Генерация точек исходной области}: создаётся сетка точек в секторе $\frac{\pi}{4} < \arg(z) < \frac{3\pi}{4}$ в полярных координатах (радиус от 0.1 до 3 для визуализации)
+    \item \textbf{Применение преобразований}: последовательно применяются все промежуточные отображения (поворот, квадрат, поворот, логарифм)
+    \item \textbf{Визуализация}: отрисовка исходной области, промежуточных результатов и финальной области с фильтрацией на $\text{Re}(w) > 0$
+    \item \textbf{Визуализация сетки}: построение конформной сетки (радиальные линии и окружности) для наглядности сохранения углов
+\end{enumerate}
+
+\section{Результаты}
+\subsection{Визуализация преобразований}
+На рисунках ниже представлены результаты применения конформных отображений:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{conformal_mapping_variant16.png}
+    \caption{Пошаговое конформное отображение области из Рисунка 5 в Рисунок 6}
+    \label{fig:mapping}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{conformal_grid_variant16.png}
+    \caption{Трансформация конформной сетки при отображениях}
+    \label{fig:grid}
+\end{figure}
+\subsection{Анализ результатов}
+\begin{itemize}
+    \item Поворот $-i z$ симметрирует сектор относительно вещественной оси
+    \item Преобразование $w = z^2$ удваивает угол, преобразуя сектор с углом $\frac{\pi}{2}$ в правую полуплоскость
+    \item Поворот $i w$ переводит в верхнюю полуплоскость
+    \item Логарифм $\ln w$ даёт горизонтальную полосу $0 < \text{Im}(w) < \pi$
+    \item Конформная сетка показывает сохранение углов между кривыми при преобразованиях
+    \item Радиальные линии исходной области преобразуются в горизонтальные линии в полосе, а угловые --- в вертикальные
+    \item Область корректно отображается из углового сектора в горизонтальную полуполосу (с $\text{Re}(w) > 0$ для $|z| > 1$)
+\end{itemize}
+
+\section{Выводы}
+В ходе выполнения лабораторной работы:
+\begin{enumerate}
+    \item Построено аналитическое описание заданных областей (Рисунок 5 и Рисунок 6)
+    \item Составлено конформное отображение из исходной области в целевую с использованием композиции классических преобразований
+    \item Получено обратное отображение
+    \item Реализована программа на Python для визуализации преобразований
+    \item Продемонстрировано сохранение конформной структуры при отображениях
+\end{enumerate}
+\end{document}
