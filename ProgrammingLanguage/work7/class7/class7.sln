@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "class7", "class7.csproj", "{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{9FA3D6BD-1EC1-3BA5-80CB-CE02773A58D5}"
+	ProjectSection(SolutionItems) = preProject
+		native_math.c = native_math.c
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Debug|x64.ActiveCfg = Debug|x64
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Debug|x64.Build.0 = Debug|x64
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Release|x64.ActiveCfg = Release|x64
+		{81CF4E0A-19F9-4BA1-9C93-95ADB97A26FC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEB97D86-7D6C-47F5-9725-7BA3FAE74E55}
+	EndGlobalSection
+EndGlobal
