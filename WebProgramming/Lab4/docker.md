@@ -20,3 +20,5 @@ ALTER USER s407959 QUOTA UNLIMITED ON USERS;
 
 TRUNCATE TABLE APP_USER; // 清空表
 EXIT;
+
+//生成war文件（终端）：`.\gradlew clean :backend:bootWar`

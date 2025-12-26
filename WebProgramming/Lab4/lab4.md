@@ -1,3 +1,2 @@
-1. 历史点无法记录，点击画布和输入y值都无法检查点
-2. r为小于等于0的时候，无法画圆，画圆时会报错，或给出拦截框（不允许这样操作）
-
+1. 转移端口：`ssh -p 2222 s407959@se.ifmo.ru -L 5786:helios.cs.ifmo.ru:5786` yDqY-9700
+2. 启动服务器：`bash ~/wildfly-37.0.1.Final/bin/standalone.sh`
