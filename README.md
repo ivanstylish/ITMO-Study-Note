@@ -29,9 +29,14 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 - [x] [Database](Database/readme.md)
 
 ## 大二 GRADE 2 (3-4)
-- [ ] [Web-Programming](WebProgramming/readme.md)  
-- [ ] [Probability-Theory](ProbabilityTheory/readme.md)  
-- [ ] [Programming-language](ProgrammingLanguage/readme.md)  
+- [x] [Web-Programming](WebProgramming/readme.md)  
+- [x] [Probability-Theory](ProbabilityTheory/readme.md)  
+- [x] [Programming-language](ProgrammingLanguage/readme.md)  
+- [ ] [BasicSoftwareEngineering](ОПИ/readme.md)  
+- [ ] [ComputerArchitecture](ComputerArchitecture/readme.md)  
+- [ ] [MathmaticalStatistics](MathmaticalStatistics/readme.md)  
+- [ ] [AlgorithmsAndDataStructures](AADS/readme.md)  
+- [ ] [ComputationalMath](ComputationalMath/readme.md)
 
 ## 大三 GRADE 3 (5-6)  
 
