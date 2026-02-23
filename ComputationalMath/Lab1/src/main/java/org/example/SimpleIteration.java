@@ -18,6 +18,7 @@ public class SimpleIteration {
     }
 
     boolean compute() {
+        // 测试并尝试对角线优势
         if (!FormulaUtils.isDiagonal(matrix, n)) {
             System.out.println("No strict diagonal dominance -> row permutation");
             if (!FormulaUtils.isReorderRows(matrix, n)) {
@@ -28,12 +29,14 @@ public class SimpleIteration {
             MatrixPrinter.printMatrix(matrix, "Matrix after permutation:");
         }
 
+        // 迭代矩阵的范式
         double norms = FormulaUtils.iterMatNorm(matrix, n);
-        System.out.printf("Iteration matrix norm: %.5f\n", norms);
+        System.out.printf("Iteration matrix norm: %.4f\n", norms);
         if (norms >= 1.0) {
             System.out.print("Attention: norm >= 1 -> convergence is not guaranteed!");
         }
 
+        // 迭代
         double[] xOld = new double[n];
         double[] xNew = new double[n];
 
@@ -52,12 +55,13 @@ public class SimpleIteration {
                 xNew[i] = sum / matrix[i][i];
             }
 
+            // 误差
             double maxErr = 0.0;
             System.out.printf("IterationCount %3d |", iterationCount);
             for (int i = 0; i < n; i++) {
                 double err = Math.abs(xNew[i] - xOld[i]);
                 maxErr = Math.max(maxErr, err);
-                System.out.printf("Change%d = %.2e ", i + 1, err);
+                System.out.printf("Change%d = %.6f ", i + 1, err);
             }
             System.out.println();
 
@@ -81,4 +85,3 @@ public class SimpleIteration {
         return iterationCount;
     }
 }
-

@@ -5,7 +5,7 @@ public class MatrixPrinter {
         System.out.println(title);
         for (double[] row : matrix) {
             for (double r : row) {
-                System.out.print(r + " ");
+                System.out.printf("%.0f ", r);
             }
             System.out.println();
         }
@@ -15,7 +15,7 @@ public class MatrixPrinter {
     public static void printArray(double[] x, String title) {
         System.out.println(title);
         for (int i = 0; i < x.length; i++) {
-            System.out.printf("x%d = " + "%.4f" + "\n", i + 1, x[i]);
+            System.out.printf("x%d = " + "%.6f" + "\n", i + 1, x[i]);
         }
         System.out.println();
     }

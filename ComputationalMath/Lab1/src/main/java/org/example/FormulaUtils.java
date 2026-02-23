@@ -1,6 +1,7 @@
 package org.example;
 
 public class FormulaUtils {
+    // 对角线优势
     public static boolean isDiagonal(double[][] m, int n) {
         for (int i = 0; i < n; i++) {
             double value = Math.abs(m[i][i]);
@@ -17,9 +18,12 @@ public class FormulaUtils {
         return true;
     }
 
+    // 尝试重新排列线路，以实现严格的诊断优势
     public static boolean isReorderRows(double[][] m, int n) {
+        // 记录哪些行被选为某个目标列的对角行
         boolean[] used = new boolean[n];
 
+        // target为正在处理的行
         for (int target = 0; target < n; target++) {
             int bestRow = -1;
             double bValue = 0.0;
@@ -93,11 +97,10 @@ public class FormulaUtils {
             }
             double residual = Math.abs(matrix[i][n] - sum);
             maxResidual = Math.max(maxResidual, residual);
-            System.out.printf("r%-2d = %.2e\n", i + 1, residual);
+            System.out.printf("r%-2d = %.6f\n", i + 1, residual);
         }
 
-        System.out.printf("\nMaximum discrepancy: %.2e\n", maxResidual);
+        System.out.printf("\nMaximum discrepancy: %.6f\n", maxResidual);
         System.out.println("-".repeat(50));
     }
 }
-
