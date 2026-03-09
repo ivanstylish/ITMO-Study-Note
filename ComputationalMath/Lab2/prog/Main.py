@@ -1,15 +1,16 @@
 import math
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-from Equation import eq
-from SystemEquation import sys_eq
+from Equation import equations
+from SystemEquation import system_equations
 from Solvers.BisectionSolver import BisectionSolver
 from Solvers.ChordSolver import ChordSolver
 from Solvers.NewtonSolver import NewtonSolver
+from Solvers.NewtonSystemSolver import NewtonSystemSolver
 from Solvers.SecantSolver import SecantSolver
 from Solvers.SimpleIterationSolver import SimpleIterationSolver
-from Solvers.NewtonSystemSolver import NewtonSystemSolver
 from Solvers.SimpleIterationSystemSolver import SimpleIterationSystemSolver
 
 solvers_eq = {
@@ -144,7 +145,12 @@ while True:
             continue
 
     if mode == 1:
-        print("\nУравнение:", eq.name)
+        print("\nДоступные уравнения:")
+        for i, eq in enumerate(equations, 1):
+            print(f"  {i} - {eq.name}")
+
+        eq_choice = get_int("Выберите уравнение (1-3): ", [1,2,3])
+        selected_eq = equations[eq_choice - 1]
         print("\033[33mДоступные методы:\033[0m")
         for k, (_, name) in solvers_eq.items():
             print(f"  {k:2d}  —  {name}")
@@ -226,7 +232,12 @@ while True:
         print("\n")
 
     elif mode == 2:
-        print("\nСистема уравнений:")
+        print("\nДоступные системы уравнений:")
+        for i, sys_eq in enumerate(system_equations, 1):
+            print(f"  {i} - {sys_eq.name}")
+
+        sys_choice = get_int("Выберите систему (1-3): ", [1,2,3])
+        selected_sys = system_equations[sys_choice - 1]
         print(sys_eq.name)
         print("\033[33m\nДоступные методы:\033[0m")
         for k, (_, name) in solvers_sys.items():
