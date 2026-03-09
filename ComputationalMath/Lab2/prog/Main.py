@@ -183,7 +183,7 @@ while True:
         root, n_iter, table = solver.solve(eq, a, b, eps)
 
         if root is None:
-            print("Не удалось найти корень (возможно, метод не сошёлся).")
+            print("Не удалось найти корень.")
             continue
 
         print("\n" + "═"*70)
@@ -194,7 +194,7 @@ while True:
         print("═"*70)
 
         if table:
-            print("\nТаблица итерационного процесса (округлено до 3 знаков):")
+            print("\nТаблица итерационного процесса:")
             if m == 1:
                 print(" № |    a    |    b    |    x    |  f(a)  |  f(b)  |  f(x)  | |x_{k+1}-x_{k}|")
                 print("-"*78)
@@ -214,7 +214,7 @@ while True:
                 print("-"*60)
                 for row in table:
                     print(f"{row[0]:2} | {row[1]:8.4f} | {row[2]:8.3e} | {row[3]:8.3e} | "
-                          f"{row[4]:8.4f} | {row[5]:6.3e}")
+                          f"{row[4]:8.3f} | {row[5]:6.3e}")
 
             elif m == 4:
                 print(" № |    x_{k-1}    |    x_k    |    x_{k+1}    |  f(x_{k+1})  |  |x_{k+1}-x_{k}|  |")
@@ -227,7 +227,7 @@ while True:
                 print(" № |   x_k   |  x_{k+1} |   f(x_{k+1})   |  |x_{k+1}-x_{k}|  ")
                 print("-"*55)
                 for row in table:
-                    print(f"{row[0]:2} | {row[1]:8.4f} | {row[2]:8.4f} | {row[3]:9.3e} | {row[4]:7.3e}")
+                    print(f"{row[0]:2} | {row[1]:8.3f} | {row[2]:8.3f} | {row[3]:9.3e} | {row[4]:7.3e}")
 
         print("\n")
 
