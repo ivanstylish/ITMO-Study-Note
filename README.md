@@ -36,7 +36,8 @@ https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview
 - [ ] [ComputerArchitecture](ComputerArchitecture/readme.md)  
 - [ ] [MathmaticalStatistics](MathmaticalStatistics/readme.md)  
 - [ ] [AlgorithmsAndDataStructures](AADS/readme.md)  
-- [ ] [ComputationalMath](ComputationalMath/readme.md)
+- [ ] [ComputationalMath](ComputationalMath/readme.md)  
+- [ ] [Physics](Physics/readme.md)  
 
 ## 大三 GRADE 3 (5-6)  
 

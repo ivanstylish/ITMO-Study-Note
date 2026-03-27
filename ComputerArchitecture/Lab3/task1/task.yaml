@@ -1,0 +1,27 @@
+name: big_to_little_endian_test
+limit: 1000               # 指令上限，够用就行（你的代码很短，400也够，但给点余量）
+memory_size: 0x1000       # 内存大小 4096字节，必须有！参考hello.yaml
+memory_mapped_io:
+  0x80: []                # 输入端口：初始化为空数组（实际值通过memory_model或运行时设置）
+  0x84: []                # 输出端口：初始化为空数组
+memory_model:             # ← 这里放初始内存值（你的输入）
+  - addr: 0x80
+    value: 0x12345678     # 测试输入：大端序 0x12 34 56 78
+reports:
+  - name: Step-by-step
+    slice: all
+    view: |
+      {pc}:	{instruction}	{pc:label}
+  - name: Result
+    slice: last
+    view: |
+      numio[0x80]: {io:0x80:dec}
+      numio[0x84]: {io:0x84:dec}
+      numio[0x80]: {io:0x80:sym}
+      numio[0x84]: {io:0x84:sym}
+      {memory:0:16}         # 显示前16字节内存，便于debug
+    assert: |               # 自动验证输出（通过后报告会显示OK）
+      numio[0x84]: [] >>> [120, 86, 52, 18, 0, 0, 0, 0]   # 0x78563412 的字节（小端：78 56 34 12）
+      numio[0x84]: "" >>> "xV4\x12"                       # 符号表示（可选，调试用）
+      # 如果你想严格检查整个32位值，可以加：
+      # mem[0x84..0x87]: 78 56 34 12
