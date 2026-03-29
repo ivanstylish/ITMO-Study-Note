@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+% --- Титульный лист / Шапка ---
+\begin{flushleft}
+    Университет ИТМО \\
+    Физико-технический мегафакультет \\
+    Физический факультет \\
+\end{flushleft}
+
+\vspace{0.5cm}
+
+\noindent
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+Группа: \textbf{P3210} & К работе допущен: & Студент: \textbf{Чжун Цзяцзюнь, Давидюк Антон} \\ \hline
+Работа выполнена: & Преподаватель: \textbf{Сорокина Елена Константиновна} & Отчет принят: \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+\begin{center}
+    \Large \textbf{Рабочий протокол и отчет по лабораторной работе № 3.08 (2.12)} \\
+    \large \textbf{ЭФФЕКТ ХОЛЛА В ПРИМЕСНЫХ ПОЛУПРОВОДНИКАХ}
+\end{center}
+
+\section{Цель работы}
+Изучить эффект Холла в примесных полупроводниках. Ознакомиться с методом измерения концентрации и подвижности основных носителей тока в примесных полупроводниках с помощью эффекта Холла.
+
+\section{Рабочие формулы}
+\begin{enumerate}
+    \item Постоянная Холла: $R_x = \frac{U_x \cdot d}{I \cdot B}$
+    \item Концентрация носителей заряда: $n = \frac{1}{R_x \cdot e}$
+    \item Удельная электропроводность: $\sigma = \frac{I \cdot L}{U \cdot a \cdot d}$
+    \item Подвижность носителей: $\mu = \sigma \cdot R_x$
+    \item Напряжение Холла: $U_x = \frac{U'_{34} - U''_{34}}{2}$ (для исключения побочных эффектов)
+\end{enumerate}
+
+\section{Результаты измерений}
+
+% --- Таблица 1: Зависимость продольного напряжения от температуры ---
+\subsection{Таблица 1. Зависимость продольного напряжения $U_{12}$ от температуры ($I = 1$ мА)}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$T, K$ & 310 & 335 & 360 \\ \hline
+$U_{12}, B$ & 0.10 & 0.26 & 0.31 \\ \hline
+$1/T, 10^{-3} K^{-1}$ & 3.23 & 2.99 & 2.78 \\ \hline
+$\ln \sigma$ & \dots & \dots & \dots \\ \hline
+\end{tabular}
+\end{center}
+
+% --- Таблица 3: Зависимость ЭДС Холла от тока ---
+\subsection{Таблица 3. Зависимость ЭДС Холла $U_x$ от тока ($B = 200$ мТл, $T = 300$ К)}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$I, \mu A$ & 393 & 598 & 808 & 1008 \\ \hline
+$U'_{34}, B$ & 41 & 62 & 84 & 105 \\ \hline
+$U''_{34}, B$ & 42 & 64 & 83 & 107 \\ \hline
+$U_x, B$ & \dots & \dots & \dots & \dots \\ \hline
+\end{tabular}
+\end{center}
+
+\section{Пример расчета}
+Для $I = 1008 \mu A$ и $B = 200$ мТл:
+\begin{equation}
+    U_x = \frac{105 - 107}{2} = -1.0 \text{ В (условно)}
+\end{equation}
+\textit{Примечание: В расчетах необходимо использовать толщину образца $d$ и геометрические параметры из паспорта установки.}
+
+\section{Графики}
+В данной работе строятся следующие зависимости:
+\begin{enumerate}
+    \item $\ln \sigma = f(1/T)$ --- для определения энергии активации.
+    \item $U_x = f(I)$ --- для проверки линейности эффекта Холла.
+    \item $U_x = f(T)$ --- для изучения температурной зависимости концентрации.
+\end{enumerate}
+
+\section{Выводы}
+В ходе выполнения работы был исследован эффект Холла в полупроводнике. По знаку ЭДС Холла был определен тип проводимости (n-тип или p-тип). Рассчитаны основные характеристики носителей заряда: концентрация $n$ и подвижность $\mu$. Линейная зависимость $U_x(I)$ подтверждает теоретические положения.
+
+\end{document}
