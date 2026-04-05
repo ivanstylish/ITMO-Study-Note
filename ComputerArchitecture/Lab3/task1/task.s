@@ -1,61 +1,49 @@
-; big_to_little_endian for acc32
-; 输入:  mem[0x80] = 32-bit big-endian 值
-; 输出:  mem[0x84] = 32-bit little-endian 值
-;
-; 要求：
-;   - 所有立即数/常量必须定义在 .data 中，用 .word
-;   - load_imm 只接受地址/标签（加载 mem[标签] 到 acc）
-;   - 移位、and、or 等操作数都是内存地址（不是立即数）
+; big_to_little_endian.acc32 - 只读一次输入 + 正确存储到 0x84
+; 使用 load_imm 把地址作为立即加载到 acc，然后 load_acc 读 mem[acc]
 
-    .data
-
-input_addr:     .word  0x80             ; 输入地址标签（实际值是 0x80）
-output_addr:    .word  0x84             ; 输出地址标签
-
-shift_8:        .word  8                ; 移位量 8
-shift_16:       .word  16               ; 移位量 16
-shift_24:       .word  24               ; 移位量 24
-
-mask_ff:        .word  0xFF             ; 字节掩码 255
-
-result:         .word  0x00000000       ; 累积结果（初始 0，可选）
+.data
+; 将变量放在数据段，并确保它们有明确的初始值
+temp_input:     .word  0
+temp_res:       .word  0
+mask_ff:        .word  0x000000FF
+shamt8:         .word  8
+shamt16:        .word  16
+shamt24:        .word  24
 
     .text
+_start:
+    ; 1. 读取输入：直接加载地址 0x80
+    load_imm 0x80          ; acc = 0x80
+    load_acc               ; acc = mem[0x80] (即 0x12345678)
+    store_addr temp_input  ; 安全备份
 
-_start:                                 ; 程序入口（可省略，但建议加标签清晰）
+    ; 2. 提取 Byte 0 (最低位) 并左移 24 位
+    and mask_ff            ; acc = 0x00000078
+    shiftl shamt24         ; acc = 0x78000000
+    store_addr temp_res
 
-    ; 加载输入到 acc
-    load_imm input_addr                 ; acc <- mem[input_addr] = 0x80
-    load_acc                            ; acc <- mem[acc] = mem[0x80] （输入值）
+    ; 3. 提取 Byte 1 并左移 16 位
+    load_addr temp_input
+    shiftr shamt8          ; 算术右移，可能带符号
+    and mask_ff            ; 强制清空符号扩展的高位
+    shiftl shamt16
+    or temp_res
+    store_addr temp_res
 
-    ; === byte3 (低8位) -> 高8位 (<<24) ===
-    and mask_ff                         ; acc = input & 0xFF
-    shiftl shift_24                     ; acc <<= mem[shift_24] = <<24
-    store_addr result                   ; 保存到 result（临时累积）
-
-    ; === byte2 (<<16) ===
-    load_imm input_addr
-    load_acc                            ; 重新取输入
-    shiftr shift_8                      ; acc >>= 8
-    and mask_ff                         ; & 0xFF
-    shiftl shift_16                     ; <<= 16
-    or result                           ; acc |= result
-    store_addr result                   ; 更新 result
-
-    ; === byte1 (<<8) ===
-    load_imm input_addr
-    load_acc
-    shiftr shift_16                     ; >>= 16
+    ; 4. 提取 Byte 2 并左移 8 位
+    load_addr temp_input
+    shiftr shamt16
     and mask_ff
-    shiftl shift_8                      ; <<= 8
-    or result
-    store_addr result
+    shiftl shamt8
+    or temp_res
+    store_addr temp_res
 
-    ; === byte0 (最低8位) ===
-    load_imm input_addr
-    load_acc
-    shiftr shift_24                     ; >>= 24 （高8位变成低8位）
-    or result                           ; 最后或上
-    store_addr output_addr              ; 存到 mem[0x84]
+    ; 5. 提取 Byte 3 (最高位) 并移至最低位
+    load_addr temp_input
+    shiftr shamt24
+    and mask_ff            ; 清理
+    or temp_res            ; 此时 acc = 0x78563412
 
+    ; 6. 输出到 0x84
+    store_addr 0x84
     halt
