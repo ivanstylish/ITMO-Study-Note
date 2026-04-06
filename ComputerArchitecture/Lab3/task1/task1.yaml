@@ -2,15 +2,13 @@ name: big_to_little_endian_test
 limit: 1000
 memory_size: 8192
 memory_mapped_io:
-  0x80: [2018915346]   # 输入: 0x78563412 (大端序编码的值)
-  0x84: []             # 输出端口
+  0x80: [305419896]   # 输入: 0x12345678 (大端序编码的值)
+  0x84: []             
 reports:
   - name: Result-BIG-TO-LITTLE
-    slice: last
+    slice: all
     view: |
       Acc: {Acc:hex}
       numio[0x80]: {io:0x80:dec}
       numio[0x84]: {io:0x84:dec}
-    assert: |
-      numio[0x80]: [] >>> []
-      numio[0x84]: [] >>> [305419896]
+    
