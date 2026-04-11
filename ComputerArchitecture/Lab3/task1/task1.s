@@ -17,14 +17,14 @@ _start:
     load_addr org_value     ; 从端口0x80读取数据
     and mask                ; acc = org_value & 0xFF          
     shiftl s24              ; acc = byte0 << 24         
-    store_addr result       ; result = 0x12000000
+    store_addr result       ; result = 0x78000000
 
     ; 第2步：取 bits 8-15，移到 bits 16-23
     load_addr org_value     ; 加载原始值
     shiftr s8               ; acc = org_value >> 8 右移8位 (s8=8)，把次低字节挪到最右边
     and mask                ; acc = byte1  和0xFF做与运算，切断高位的所有干扰        
     shiftl s16              ; acc = byte1 << 16  左移16位 (s16=16)，把它送到目标位置  
-    or result               ; result |= 0x00340000  与之前保存的中间结果合并  (例: 0x12340000)
+    or result               ; result |= 0x00560000  与之前保存的中间结果合并  
     store_addr result       ; 更新结果
 
     ; 第3步：取 bits 16-23，移到 bits 8-15
@@ -32,14 +32,14 @@ _start:
     shiftr s16              ; acc = org_value >> 16
     and mask                ; acc = byte2               
     shiftl s8               ; acc = byte2 << 8          
-    or result               ; result |= 0x00005600      
+    or result               ; result |= 0x00003400      
     store_addr result
 
     ; 第4步：取 bits 24-31 (MSB)，放到 bits 0-7 成为新 LSB
     load_addr org_value
     shiftr s24              ; acc = org_value >> 24
     and mask                ; acc = byte3              
-    or result               ; result |= 0x78            
+    or result               ; result |= 0x78563412            
     store_addr result
 
     ; 写出字节翻转后的结果
