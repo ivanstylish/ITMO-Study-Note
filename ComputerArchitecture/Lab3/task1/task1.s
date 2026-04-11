@@ -15,8 +15,8 @@ _start:
 
     ; 第1步：取 bits 0-7 (LSB)，移到 bits 24-31 成为新 MSB
     load_addr org_value     ; 从端口0x80读取数据
-    and mask                ; acc = org_value & 0xFF          (例: 0x12)
-    shiftl s24              ; acc = byte0 << 24         (例: 0x12000000)
+    and mask                ; acc = org_value & 0xFF          
+    shiftl s24              ; acc = byte0 << 24         
     store_addr result       ; result = 0x12000000
 
     ; 第2步：取 bits 8-15，移到 bits 16-23
@@ -30,9 +30,9 @@ _start:
     ; 第3步：取 bits 16-23，移到 bits 8-15
     load_addr org_value
     shiftr s16              ; acc = org_value >> 16
-    and mask                ; acc = byte2               (例: 0x56)
-    shiftl s8               ; acc = byte2 << 8          (例: 0x00005600)
-    or result               ; result |= 0x00005600      (例: 0x12345600)
+    and mask                ; acc = byte2               
+    shiftl s8               ; acc = byte2 << 8          
+    or result               ; result |= 0x00005600      
     store_addr result
 
     ; 第4步：取 bits 24-31 (MSB)，放到 bits 0-7 成为新 LSB
