@@ -10,7 +10,8 @@ s24:    .word 24
 _start:
     ; 从IO读取一个32位大端整数
     load_addr 0x80
-    store_addr org_value          ; 存入内存变量，防止多次读取端口导致数据耗尽  Сохраним данные в переменной памяти, чтобы предотвратить исчерпание данных из-за многократного чтения с портов.
+    store_addr org_value          ; 存入内存变量，防止多次读取端口导致数据耗尽  
+                                  ; Сохраним данные в переменной памяти, чтобы предотвратить исчерпание данных из-за многократного чтения с портов.
 
     ; 第1步：取 bits 0-7 (LSB)，移到 bits 24-31 成为新 MSB
     load_addr org_value     ; 从端口0x80读取数据
@@ -19,12 +20,12 @@ _start:
     store_addr result       ; result = 0x12000000
 
     ; 第2步：取 bits 8-15，移到 bits 16-23
-    load_addr org_value
-    shiftr s8               ; acc = org_value >> 8
-    and mask                ; acc = byte1               (例: 0x34)
-    shiftl s16              ; acc = byte1 << 16         (例: 0x00340000)
-    or result               ; result |= 0x00340000      (例: 0x12340000)
-    store_addr result
+    load_addr org_value     ; 加载原始值
+    shiftr s8               ; acc = org_value >> 8 右移8位 (s8=8)，把次低字节挪到最右边
+    and mask                ; acc = byte1  和0xFF做与运算，切断高位的所有干扰        
+    shiftl s16              ; acc = byte1 << 16  左移16位 (s16=16)，把它送到目标位置  
+    or result               ; result |= 0x00340000  与之前保存的中间结果合并  (例: 0x12340000)
+    store_addr result       ; 更新结果
 
     ; 第3步：取 bits 16-23，移到 bits 8-15
     load_addr org_value
