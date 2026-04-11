@@ -4,7 +4,8 @@ The Acc32 ISA is a simple accumulator-based instruction set designed for educati
 
 ## Architecture Overview
 
-The Acc32 architecture is a 32-bit accumulator-based architecture. It features:
+The Acc32 architecture is a 32-bit accumulator-based architecture. It features:  
+Архитектура Acc32 — это 32-разрядная архитектура, основанная на аккумуляторе.
 
 - A single general-purpose accumulator register (Acc)
 - Two status flags: overflow (V) and carry (C)

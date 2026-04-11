@@ -10,10 +10,10 @@ s24:    .word 24
 _start:
     ; 从IO读取一个32位大端整数
     load_addr 0x80
-    store_addr org_value          ; 保存原值
+    store_addr org_value          ; 存入内存变量，防止多次读取端口导致数据耗尽  Сохраним данные в переменной памяти, чтобы предотвратить исчерпание данных из-за многократного чтения с портов.
 
     ; 第1步：取 bits 0-7 (LSB)，移到 bits 24-31 成为新 MSB
-    load_addr org_value
+    load_addr org_value     ; 从端口0x80读取数据
     and mask                ; acc = org_value & 0xFF          (例: 0x12)
     shiftl s24              ; acc = byte0 << 24         (例: 0x12000000)
     store_addr result       ; result = 0x12000000
