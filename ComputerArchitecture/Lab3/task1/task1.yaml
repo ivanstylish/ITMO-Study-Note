@@ -2,7 +2,7 @@ name: big_to_little_endian_test
 limit: 1000
 memory_size: 8192
 memory_mapped_io:
-  0x80: [305419896]   # 输入: 0x12345678 (大端序编码的值)
+  0x80: [305419896]   
   0x84: []             
 reports:
   - name: Result-BIG-TO-LITTLE

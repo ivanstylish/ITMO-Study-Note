@@ -206,6 +206,7 @@ reports:
 
 - **Type:** Integer
 - **Description:** Specifies the maximum number of instructions the simulation can execute. If the simulation exceeds this limit, it will be terminated.
+- Указывает максимальное количество инструкций, которое может выполнить симуляция. Если симуляция превысит этот лимит, она будет завершена.
 - **CLI Override:** `--instruction-limit LIMIT` sets the upper limit for that option.
 - **Example:**
 
@@ -227,7 +228,8 @@ reports:
 #### `memory_mapped_io`
 
 - **Type:** Map of decimal or hexadecimal addresses to lists of inputs
-- **Description:** Defines the memory-mapped IO streams for the simulation. Each key is a memory address, and the value is a list of inputs that should be fed into the simulation at that address. To define an output port only, leave the list empty.
+- **Description:** Defines the memory-mapped IO streams for the simulation. Each key is a memory address, and the value is a list of inputs that should be fed into the simulation at that address. To define an output port only, leave the list empty.  
+- Определяет потоки ввода-вывода, отображаемые в память, для моделирования. Каждый ключ представляет собой адрес в памяти, а значение — список входных данных, которые должны подаваться в моделирование по этому адресу. Чтобы определить только выходной порт, оставьте список пустым.
 - **Example:**
 
   ```yaml
@@ -240,6 +242,7 @@ reports:
 
 - **Type:** List of report configurations
 - **Description:** Specifies the reports to generate during the simulation. Each report configuration includes settings such as the name, slice, filter, inspector, and assertions.
+- Указывает отчеты, которые будут генерироваться во время моделирования. Каждая конфигурация отчета включает такие параметры, как имя, срез, фильтр, инспектор и утверждения.
 - **Example:**
 
   ```yaml
@@ -266,6 +269,7 @@ Each report configuration can include the following fields:
 
 - **Type:** String or List
 - **Description:** Specifies which part of the simulation records should be included in the report. Possible values are:
+- Указывает, какая часть записей моделирования должна быть включена в отчет. Возможные значения:
     - `"all"`: Include all records.
     - `["head", n]`: Include the first `n` records.
     - `["tail", n]`: Include the last `n` records.
@@ -280,6 +284,7 @@ Each report configuration can include the following fields:
 
 - **Type:** String (template)
 - **Description:** Text template to print log records. In the template, you can use state view expressions in curly brackets.
+- Текстовый шаблон для вывода записей журнала. В шаблоне можно использовать выражения представления состояния в фигурных скобках.
 - **Example:** `program counter: {pc}`
 
 General state view expressions implemented for all ISAs:
@@ -296,6 +301,7 @@ For ISA-specific state views, see the respective architecture documentation.
 
 - **Type:** String (optional)
 - **Description:** Specifies the expected final state of the simulation. If the actual final state does not match, an assertion failure will be reported.
+- Указывает ожидаемое конечное состояние моделирования. Если фактическое конечное состояние не совпадает, будет сообщено об ошибке утверждения.
 - **Example:**
 
   ```yaml
