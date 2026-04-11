@@ -1,8 +1,8 @@
 .data
-org_value:    .word 0         ; 原始输入值
-result: .word 0         ; 字节翻转后的结果
-mask:   .word 0xFF      ; 字节提取掩码
-s8:     .word 8         ; 移位量
+org_value:    .word 0         ; 原始输入值 исходное входное значение
+result: .word 0         ; 字节翻转后的结果 Результат переворачивания байта
+mask:   .word 0xFF      ; 字节提取掩码 Маска извлечения байтов
+s8:     .word 8         ; 移位量 количество смен
 s16:    .word 16
 s24:    .word 24
 
@@ -38,8 +38,8 @@ _start:
     ; 第4步：取 bits 24-31 (MSB)，放到 bits 0-7 成为新 LSB
     load_addr org_value
     shiftr s24              ; acc = org_value >> 24
-    and mask                ; acc = byte3               (例: 0x78)
-    or result               ; result |= 0x78            (例: 0x12345678)
+    and mask                ; acc = byte3              
+    or result               ; result |= 0x78            
     store_addr result
 
     ; 写出字节翻转后的结果

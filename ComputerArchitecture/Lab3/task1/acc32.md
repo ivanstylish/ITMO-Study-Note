@@ -30,12 +30,12 @@ Instruction size: 1 byte for opcode, 4 bytes for absolute operand, 2 bytes for r
 
 - **Load Immediate**
     - **Syntax:** `load_imm <address>`
-    - **Description:** Load an immediate value into the accumulator.
+    - **Description:** Load an immediate value into the accumulator. 加载数值本身。把操作数直接放入累加器。
     - **Operation:** `acc <- <address>`
 
 - **Load**
     - **Syntax:** `load <offset>`
-    - **Description:** Load a value from a relative address into the accumulator.
+    - **Description:** Load a value from a relative address into the accumulator. 相对寻址。根据当前指令位置的偏移量去读内存。
     - **Operation:** `acc <- mem[pc + <offset>]`
 
 - **Store**
@@ -45,7 +45,7 @@ Instruction size: 1 byte for opcode, 4 bytes for absolute operand, 2 bytes for r
 
 - **Load Address**
     - **Syntax:** `load_addr <address>`
-    - **Description:** Load a value from a specific address into the accumulator.
+    - **Description:** Load a value from a specific address into the accumulator. 绝对地址寻址。去内存中地址为 addr 的地方读数据。
     - **Operation:** `acc <- mem[<address>]`
 
 - **Store Address**
@@ -55,7 +55,7 @@ Instruction size: 1 byte for opcode, 4 bytes for absolute operand, 2 bytes for r
 
 - **Load Acc**
     - **Syntax:** `load_acc`
-    - **Description:** Load a value from an address in acc into the accumulator.
+    - **Description:** Load a value from an address in acc into the accumulator. 间接寻址。把累加器当前的值当成地址，再去读那个地址里的数据。
     - **Operation:** `acc <- mem[acc]`
 
 - **Store Indirect**
