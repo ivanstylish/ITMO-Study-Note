@@ -1,49 +1,50 @@
-; big_to_little_endian.acc32 - 只读一次输入 + 正确存储到 0x84
-; 使用 load_imm 把地址作为立即加载到 acc，然后 load_acc 读 mem[acc]
-
 .data
-; 将变量放在数据段，并确保它们有明确的初始值
-temp_input:     .word  0
-temp_res:       .word  0
-mask_ff:        .word  0x000000FF
-shamt8:         .word  8
-shamt16:        .word  16
-shamt24:        .word  24
+org_value:    .word 0         ; 原始输入值 исходное входное значение
+result: .word 0         ; 字节翻转后的结果 Результат переворачивания байта
+mask:   .word 0xFF      ; 字节提取掩码 Маска извлечения байтов
+s8:     .word 8         ; 移位量 количество смен
+s16:    .word 16
+s24:    .word 24
 
-    .text
+.text
 _start:
-    ; 1. 读取输入：直接加载地址 0x80
-    load_imm 0x80          ; acc = 0x80
-    load_acc               ; acc = mem[0x80] (即 0x12345678)
-    store_addr temp_input  ; 安全备份
+    ; 从IO读取一个32位大端整数
+    load_addr 0x80
+    store_addr org_value          ; 存入内存变量，防止多次读取端口导致数据耗尽  
+                                  ; Сохраним данные в переменной памяти, чтобы предотвратить исчерпание данных из-за многократного чтения с портов.
 
-    ; 2. 提取 Byte 0 (最低位) 并左移 24 位
-    and mask_ff            ; acc = 0x00000078
-    shiftl shamt24         ; acc = 0x78000000
-    store_addr temp_res
+    ; 第1步：取 bits 0-7 (LSB)，移到 bits 24-31 成为新 MSB
+    load_addr org_value     ; 从端口0x80读取数据
+    and mask                ; acc = org_value & 0xFF          
+    shiftl s24              ; acc = byte0 << 24         
+    store_addr result       ; result = 0x78000000
 
-    ; 3. 提取 Byte 1 并左移 16 位
-    load_addr temp_input
-    shiftr shamt8          ; 算术右移，可能带符号
-    and mask_ff            ; 强制清空符号扩展的高位
-    shiftl shamt16
-    or temp_res
-    store_addr temp_res
+    ; 第2步：取 bits 8-15，移到 bits 16-23
+    load_addr org_value     ; 加载原始值
+    shiftr s8               ; acc = org_value >> 8 右移8位 (s8=8)，把次低字节挪到最右边
+    and mask                ; acc = byte1  和0xFF做与运算，切断高位的所有干扰        
+    shiftl s16              ; acc = byte1 << 16  左移16位 (s16=16)，把它送到目标位置  
+    or result               ; result |= 0x00560000  与之前保存的中间结果合并  
+    store_addr result       ; 更新结果
 
-    ; 4. 提取 Byte 2 并左移 8 位
-    load_addr temp_input
-    shiftr shamt16
-    and mask_ff
-    shiftl shamt8
-    or temp_res
-    store_addr temp_res
+    ; 第3步：取 bits 16-23，移到 bits 8-15
+    load_addr org_value
+    shiftr s16              ; acc = org_value >> 16
+    and mask                ; acc = byte2               
+    shiftl s8               ; acc = byte2 << 8          
+    or result               ; result |= 0x00003400      
+    store_addr result
 
-    ; 5. 提取 Byte 3 (最高位) 并移至最低位
-    load_addr temp_input
-    shiftr shamt24
-    and mask_ff            ; 清理
-    or temp_res            ; 此时 acc = 0x78563412
+    ; 第4步：取 bits 24-31 (MSB)，放到 bits 0-7 成为新 LSB
+    load_addr org_value
+    shiftr s24              ; acc = org_value >> 24
+    and mask                ; acc = byte3              
+    or result               ; result |= 0x78563412            
+    store_addr result
 
-    ; 6. 输出到 0x84
+    ; 写出字节翻转后的结果
+    load_addr result
     store_addr 0x84
+
+done:
     halt

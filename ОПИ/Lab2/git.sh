@@ -140,13 +140,13 @@ git commit -m "Revision 8 (r8)"
 echo "- Коммит r8 (red) [branch1]"
 
 
-# r9 — blue [branch2]
+# r9 — blue [branch2] change in Revision r9(cuz files in r7 and r9 are same)
 git checkout branch2
 mkdir -p src
 rm -rf src/* 2>/dev/null || true
 cp -r rs/r9/* src/ 2>/dev/null || true
 git add -A .
-git commit --author="blue <blue@example.com>" -m "Revision 9 (r9)"
+git commit --allow-empty --author="blue <blue@example.com>" -m "Revision 9 (r9)"
 echo "- Коммит r9 (blue) [branch2]"
 
 

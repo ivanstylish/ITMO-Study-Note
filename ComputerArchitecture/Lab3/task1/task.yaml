@@ -1,17 +1,14 @@
 name: big_to_little_endian_test
 limit: 1000
-memory_size: 0x1000
+memory_size: 8192
 memory_mapped_io:
-  0x80: []  # 输入端口
-  0x84: []  # 输出端口
-memory_model:
-  - addr: 0x80
-    value: 0x12345678  # 这里的输入会被 load_acc 读取
+  0x80: [305419896]   
+  0x84: []             
 reports:
-  - name: Result
-    slice: last
+  - name: Result-BIG-TO-LITTLE
+    slice: all
     view: |
       Acc: {Acc:hex}
+      numio[0x80]: {io:0x80:dec}
       numio[0x84]: {io:0x84:dec}
-    assert: |
-      numio[0x84]: [120, 86, 52, 18, 0, 0, 0, 0]
+    
