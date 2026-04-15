@@ -1,4 +1,3 @@
-# 本地测试配置：输入 "Hello\n"，期望输出 "HELLO" 存入 mem[0x00..0x1F]
 limit: 500
 memory_size: 0x1000
 memory_mapped_io:
