@@ -1,0 +1,344 @@
+26771@Ivan MINGW64 /d/Undergraduate/Sophomore/FOSE/lab2 (branch1)
+$ ./git2.sh
+cp: cannot create regular file '.rotter/.git/objects/1e/938ee84cdef4415a5945cf5013b724d1865ef6': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/4e/a7c6a7591bf90c2337a2d7c6a2c677e07c4727': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/ca/0a8f3eabcb87bb50a9a06a96a139f504c1fef5': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b2/a364a3721a5983a049a79e500fd5f4cacdeaf5': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/19/9256f0339d5a12e5e75eafa3bd17619f720751': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/62/97681e90e9aac47c972bc2c26c8db0d89a0289': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/1b/4e419390dad8b08151eebde234612196f13673': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/1b/d7f88e1fd20f0859c42585deaaf1790d783013': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/8b/9c43bc46febb5adf447f241814a05da85a22b3': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/e6/73c54f99aa35d9a00bcccc8d143782270187aa': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/e6/07c72ea2776236c746772f94100f9eb489034b': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/0e/f35104076772c35c8c60d70dc309b310247c1e': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/63/69c944cfab9b74ba6522248e5ffb07385c6416': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/da/df57862ef6d81876f950f736f8b9fb690f4155': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b0/3c17925bf34af20a0e32c1b7ddc4910bbe831f': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b0/9906cf73bce6cfa79a4913aac3511c4c854948': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/c3/d354102c9a2665371870e53369eb565530930f': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/6b/3caaa87d19258c284baafdf97b6af92d936865': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/cf/f5c7bc911c1c46e356727804927736fddfa0fe': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/94/101160cdf66be67cb579f9752a924e3592316c': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/c8/9f6a35cdd57e136453a67a495b521b79f5ab26': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/5c/8042e42347c21038609251492ab78cde5011e3': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/e3/21f3c55869c78a11c9bdbeb58fbefddc1b55be': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/59/d46c1da7e4e0bcfc52790d93eb6c8162bd969b': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/3f/dae1b63e1aa88515402ec699a5cb6b14574019': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/4b/2c9b1d9e5870fcbb34a507fc9f794abf993fd8': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/74/3d9b19fe355e625e78ec32b9cf290bd9b9c05f': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/7b/0dbf4f1cac57223c9efe360d34559982768ddd': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/a4/4b3ae365b25b4cc96100a351a8ec2337ea7f17': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/87/c070416b4f1d0d2ef6f213fd4002cba908db81': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/8d/3dea38c9d1c5ccc26cddc1bd55b12a45a3e888': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/40/d5b98a67757571d3346d9af4c25213caca0550': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b5/3028457de4d62f42342de616351f2fb7755c3e': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/1f/a4b59920de794651e4e9bac38ce1d251c424a3': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b4/17beb9a22e9de30a5ab4c0e28bd5c67cf8875e': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/b4/05fc69cdb8eed5e990c1b5c043050c3cbe92c9': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/cc/c4bf69c637c762c69af715ae062ac73fa5b505': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/29/49c12083644024b0af4b56f1646e101c66905b': Permission denied
+cp: cannot create regular file '.rotter/.git/objects/4f/63ec4dcf438fb113eb59b7929cf60a6d8bbd6e': Permission denied
+Initialized empty Git repository in D:/Undergraduate/Sophomore/FOSE/lab2/.git/
+Switched to a new branch 'branch1'
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'git2.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r0/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r0/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r0/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r0/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r1/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r1/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r1/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r1/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r10/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r10/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r10/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r10/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r11/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r11/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r11/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r11/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r12/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r12/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r12/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r12/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r13/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r13/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r13/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r13/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r14/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r14/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r14/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r14/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r2/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r2/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r2/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r2/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r3/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r3/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r3/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r3/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r4/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r4/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r4/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r4/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r5/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r5/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r5/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r5/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r6/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r6/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r6/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r6/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r7/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r7/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r7/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r7/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r8/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r8/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r8/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r8/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r9/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r9/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r9/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'rs/r9/I.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch1 (root-commit) ec3a200] Initial commit (r0)
+ 82 files changed, 957 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 git2.sh
+ create mode 100644 report.docx
+ create mode 100644 rs/r0/D.java
+ create mode 100644 rs/r0/E.java
+ create mode 100644 rs/r0/H.java
+ create mode 100644 rs/r0/I.java
+ create mode 100644 rs/r1/D.java
+ create mode 100644 rs/r1/E.java
+ create mode 100644 rs/r1/H.java
+ create mode 100644 rs/r1/I.java
+ create mode 100644 rs/r1/_
+ create mode 100644 rs/r10/D.java
+ create mode 100644 rs/r10/E.java
+ create mode 100644 rs/r10/H.java
+ create mode 100644 rs/r10/I.java
+ create mode 100644 rs/r10/MNzZZCpL02.HUp
+ create mode 100644 rs/r11/D.java
+ create mode 100644 rs/r11/E.java
+ create mode 100644 rs/r11/G7DceKLjzD.JHV
+ create mode 100644 rs/r11/H.java
+ create mode 100644 rs/r11/I.java
+ create mode 100644 rs/r11/pMNzZZCpL0.HHU
+ create mode 100644 rs/r12/D.java
+ create mode 100644 rs/r12/E.java
+ create mode 100644 rs/r12/H.java
+ create mode 100644 rs/r12/HUpMNzZZCp.x5H
+ create mode 100644 rs/r12/I.java
+ create mode 100644 rs/r12/_
+ create mode 100644 rs/r13/D.java
+ create mode 100644 rs/r13/E.java
+ create mode 100644 rs/r13/H.java
+ create mode 100644 rs/r13/I.java
+ create mode 100644 rs/r13/_
+ create mode 100644 rs/r14/D.java
+ create mode 100644 rs/r14/E.java
+ create mode 100644 rs/r14/H.java
+ create mode 100644 rs/r14/I.java
+ create mode 100644 rs/r2/D.java
+ create mode 100644 rs/r2/E.java
+ create mode 100644 rs/r2/H.java
+ create mode 100644 rs/r2/I.java
+ create mode 100644 rs/r2/ZZCpL02Raa.MNz
+ create mode 100644 rs/r3/D.java
+ create mode 100644 rs/r3/E.java
+ create mode 100644 rs/r3/H.java
+ create mode 100644 rs/r3/I.java
+ create mode 100644 rs/r3/_
+ create mode 100644 rs/r4/D.java
+ create mode 100644 rs/r4/E.java
+ create mode 100644 rs/r4/H.java
+ create mode 100644 rs/r4/I.java
+ create mode 100644 rs/r4/_
+ create mode 100644 rs/r5/D.java
+ create mode 100644 rs/r5/E.java
+ create mode 100644 rs/r5/H.java
+ create mode 100644 rs/r5/I.java
+ create mode 100644 rs/r5/_
+ create mode 100644 rs/r6/D.java
+ create mode 100644 rs/r6/E.java
+ create mode 100644 rs/r6/H.java
+ create mode 100644 rs/r6/I.java
+ create mode 100644 rs/r6/_
+ create mode 100644 rs/r7/D.java
+ create mode 100644 rs/r7/E.java
+ create mode 100644 rs/r7/H.java
+ create mode 100644 rs/r7/I.java
+ create mode 100644 rs/r7/MNzZZCpL02.HUp
+ create mode 100644 rs/r8/D.java
+ create mode 100644 rs/r8/E.java
+ create mode 100644 rs/r8/H.java
+ create mode 100644 rs/r8/I.java
+ create mode 100644 rs/r8/_
+ create mode 100644 rs/r9/D.java
+ create mode 100644 rs/r9/E.java
+ create mode 100644 rs/r9/H.java
+ create mode 100644 rs/r9/I.java
+ create mode 100644 rs/r9/MNzZZCpL02.HUp
+ create mode 100644 src/D.java
+ create mode 100644 src/E.java
+ create mode 100644 src/H.java
+ create mode 100644 src/I.java
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch1 b433553] Revision 4 (r4)
+ 2 files changed, 4 insertions(+)
+ create mode 100644 src/_
+error: unknown non-ascii option in string: `-··A'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --chmod (+|-)x        override the executable bit of the listed files
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+On branch branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/D.java
+        modified:   src/_
+
+no changes added to commit (use "git add" and/or "git commit -a")
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch1 b962c49] Revision 10 (r10)
+ 3 files changed, 8 insertions(+)
+ create mode 100644 src/MNzZZCpL02.HUp
+Switched to a new branch 'branch2'
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 0b7f60d] Revision 1 (r1)
+ Author: blue <blue@example.com>
+ 2 files changed, 4 insertions(+)
+ create mode 100644 src/_
+Switched to a new branch 'branch3'
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch3 37b45cc] Revision 2 (r2)
+ 2 files changed, 4 deletions(-)
+ create mode 100644 src/ZZCpL02Raa.MNz
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch3 87ea342] Revision 5 (r5)
+ 1 file changed, 4 insertions(+)
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch3 1c99ca3] Revision 6 (r6)
+ 2 files changed, 4 insertions(+)
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch3 b395364] Revision 7 (r7)
+ 2 files changed, 4 insertions(+)
+ create mode 100644 src/MNzZZCpL02.HUp
+Switched to branch 'branch2'
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 8198484] Revision 3 (r3)
+ Author: blue <blue@example.com>
+ 2 files changed, 4 insertions(+)
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 44a7643] Revision 9 (r9)
+ Author: blue <blue@example.com>
+ 2 files changed, 4 insertions(+)
+ create mode 100644 src/MNzZZCpL02.HUp
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 754123b] Revision 11 (r11)
+ Author: blue <blue@example.com>
+ 3 files changed, 6 insertions(+)
+ create mode 100644 src/G7DceKLjzD.JHV
+ create mode 100644 src/pMNzZZCpL0.HHU
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 4c1926a] Revision 12 (r12)
+ Author: blue <blue@example.com>
+ 3 files changed, 4 insertions(+)
+ create mode 100644 src/HUpMNzZZCp.x5H
+Auto-merging src/D.java
+Auto-merging src/_
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch2 6414c56] Revision 13 (r13)
+Switched to branch 'branch1'
+Auto-merging src/D.java
+Auto-merging src/_
+warning: in the working copy of 'src/D.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/E.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/H.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/I.java', LF will be replaced by CRLF the next time Git touches it
+[branch1 beb2e3a] Revision 14 (r14)
+
+====== ГРАФ КОММИТОВ ======
+*   beb2e3a - (0 seconds ago) Revision 14 (r14) - red (HEAD -> branch1)
+|\
+| *   6414c56 - (1 second ago) Revision 13 (r13) - red (branch2)
+| |\
+| | * b395364 - (3 seconds ago) Revision 7 (r7) - red (branch3)
+| | * 1c99ca3 - (3 seconds ago) Revision 6 (r6) - red
+| | * 87ea342 - (3 seconds ago) Revision 5 (r5) - red
+| | * 37b45cc - (4 seconds ago) Revision 2 (r2) - red
+| * | 4c1926a - (1 second ago) Revision 12 (r12) - blue
+| * | 754123b - (2 seconds ago) Revision 11 (r11) - blue
+| * | 44a7643 - (2 seconds ago) Revision 9 (r9) - blue
+| * | 8198484 - (2 seconds ago) Revision 3 (r3) - blue
+| |/
+| * 0b7f60d - (4 seconds ago) Revision 1 (r1) - blue
+* | b962c49 - (5 seconds ago) Revision 10 (r10) - red
+* | b433553 - (5 seconds ago) Revision 4 (r4) - red
+|/
+* ec3a200 - (5 seconds ago) Initial commit (r0) - red
