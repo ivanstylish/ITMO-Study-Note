@@ -1,94 +1,158 @@
+; 这是一个行程长度压缩算法。它从输入端口逐个读取字符，遇到换行符 \n 停止。然后将连续相同的字符合并为“数量+字符”的形式（例如 AAA 变成 3A），并将结果输出到输出端口。
+; Это алгоритм сжатия RLE (Run-Length Encoding). Он считывает символы по одному из порта ввода и останавливается на символе новой строки \n. 
+; Затем он объединяет идущие подряд одинаковые символы в формат "количество+символ" (например, AAA становится 3A) и выводит результат в порт вывода.
+
+; 0x00 ~ 0x3F : input_buf  (64字节)
+; 0x40 ~ 0x7F : output_buf (64字节)
+; 0x80        : IO输入端口 (安全，不被缓冲区覆盖)
+; 0x84        : IO输出端口 (安全)
+; 0x0200+     : 代码区     (安全)
+
+; A0	输入缓冲区指针	Указатель буфера ввода
+; A1	输出缓冲区指针	Указатель буфера вывода
+; A2	IO输入端口地址 (0x80)	Адрес порта ввода-вывода (0x80)
+; A3	IO输出端口地址 (0x84)	Адрес порта вывода-вывода (0x84)
+; D0	临时存放读取的字节	Временный байт для чтения
+; D1	当前连续字符的计数 (1~9)	Счетчик текущей серии символов (1~9)
+; D2	当前正在统计的字符	Текущий подсчитываемый символ
+; D3	输出缓冲区已用长度	Длина использованного буфера вывода
+; D4	输入缓冲区已读长度	Длина считанных данных буфера ввода
+; D5	遇到不同字符时暂存新字符	Временное сохранение нового символа при несовпадении
+
 .data
-.org 0x0000
-input_buf:  .byte 0                     ; 64-byte input  buffer (filled at runtime)
-.org 0x0100
-output_buf: .byte 0                     ; 64-byte output buffer (filled at runtime)
+input_buf:  .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0   
+output_buf: .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0  
 
 .text
 .org 0x0200
+
+; 设置各个指针和计数器。将 input_buf 地址加载到 A0，IO端口地址加载到 A2、A3，并将输入长度计数器 D4 清零。
+; Начальная настройка. Загружает адрес input_buf в A0, адреса портов ввода/вывода в A2 и A3, 
+; обнуляет счетчик длины ввода D4.
+
 _start:
-    movea.l input_buf,  A0          ; A0 -> start of input buffer
-    move.l  0, D4                   ; D4 = number of chars read (input length)
+    movea.l input_buf, A0
+    movea.l 0x80, A2
+    movea.l 0x84, A3
+    move.l 0, D4
+
+; 不断从 0x80 端口读取字符。如果读了64个字符还没遇到换行符（D4 >= 0x40），则跳转到溢出处理；如果是换行符 \n，跳转到 read_done；否则将字符存入输入缓冲区，指针 A0 后移，D4 加1，继续循环。
+; Цикл чтения. Считывает символы из порта 0x80. Если считано 64 символа без \n, переходит к обработке переполнения. Если \n — переходит к read_done. 
+; Иначе сохраняет символ в буфер, сдвигает указатель A0 и увеличивает D4.
 
 read_loop:
-    cmp.l   0x40, D4                ; have we filled the input buffer?
-    bge     read_done               ; yes -> stop reading (we have enough to process)
-    move.b  (0x80), D0              ; read one byte from IO port 0x80
-    cmp.b   0x0A, D0               ; is it '\n'?
-    beq     read_done               ; yes -> end of input
-    move.b  D0, (A0)+              ; store char, advance pointer
-    add.l   1, D4                   ; D4++
-    jmp     read_loop
+    cmp.l 0x40, D4
+    bge overflow
+    move.b (A2), D0
+    cmp.b 0x0A, D0
+    beq read_done
+    move.b D0, (A0)+
+    add.l 1, D4
+    jmp read_loop
+
+; 重置 A0 指向 input_buf 开头。检查 D4 是否为0（空输入）。如果为空，直接停机；否则跳转到 compress_init 开始压缩。
+; Чтение завершено. Сбрасывает A0 на начало input_buf. 
+; Проверяет, пуст ли ввод (D4=0). Если пуст, останавливает программу; иначе переходит к инициализации сжатия.
 
 read_done:
-    movea.l input_buf, A0          ; A0 -> first input char
-
-    cmp.l   0, D4
-    bne     compress_init
-    ; empty -- write '\0' to output port and halt
-    move.b  0, (0x84)
+    movea.l input_buf, A0
+    cmp.l 0, D4
+    bne compress_init
     halt
+
+; 初始化压缩所需的变量。A1 指向 output_buf，D3（输出长度）清零。从输入缓冲区读取第一个字符作为当前统计字符存入 D2，设置初始计数 D1=1，已读字符数 D4 减1。
+; Инициализация сжатия. Устанавливает A1 на output_buf, обнуляет D3 (длина вывода). 
+; Считывает первый символ в D2 как текущий символ серии, устанавливает счетчик D1=1, уменьшает D4.
 
 compress_init:
-    movea.l output_buf, A1         ; A1 -> start of output buffer
-    move.l  0, D3                   ; output length = 0
+    movea.l output_buf, A1
+    move.l 0, D3
+    move.b (A0)+, D2
+    move.l 1, D1
+    sub.l 1, D4
 
-    move.b  (A0)+, D2              ; D2 = first char; advance A0
-    move.l  1,  D1                  ; run length = 1
-    sub.l   1,  D4                  ; one char consumed from input
+; 核心逻辑。如果输入已读完（D4=0）或连续计数达到9（D1=9），跳转到 flush_run 输出当前统计。否则读取下一个字符，D4 减1。比较新字符是否与当前字符（D2）相同：相同则 D1 加1，继续循环；不同则跳转到 flush_and_new。
+; Основной цикл сравнения. Если ввод закончился (D4=0) или счетчик достиг 9 (D1=9), переходит к записи серии. 
+; Иначе считывает следующий символ, уменьшает D4. Если символ совпадает с D2, увеличивает D1; если нет — переходит к flush_and_new.
 
 char_loop:
-    cmp.l   0, D4
-    beq     flush_run               ; no more input -> flush last run
+    cmp.l 0, D4
+    beq flush_run
+    cmp.l 9, D1
+    beq flush_run
+    move.b (A0)+, D0
+    sub.l 1, D4
+    cmp.b D2, D0
+    bne flush_and_new
+    add.l 1, D1
+    jmp char_loop
 
-    cmp.l   9, D1
-    beq     flush_run               ; yes -> flush, then restart
-
-    move.b  (A0), D0               ; peek next char (don't advance yet)
-    cmp.b   D2, D0                 ; same as current run char?
-    bne     flush_run               ; different -> flush run
-
-    add.l   1, A0                  ; advance input pointer
-    sub.l   1, D4                   ; one more char consumed
-    add.l   1, D1                   ; D1++
-    jmp     char_loop
+; 将当前的统计结果（D1 和 D2）写入输出缓冲区。输出长度 D3 加2。如果 D3 超过64，触发溢出。将 D1 加上 0x30 变成 ASCII 数字，存入缓冲区，再将字符 D2 存入。
+; 如果输入没读完，读取下一个字符作为新的 D2，重置 D1=1，继续 char_loop；如果读完了，跳转到 compress_done。
+; Запись текущей серии в вывод. Увеличивает D3 на 2. Если D3 > 64, вызывает переполнение. 
+; Преобразует D1 в ASCII-цифру (+0x30) и записывает, затем записывает символ D2. 
+; Если ввод не закончился, берет следующий символ как новый D2, сбрасывает D1=1 и возвращается к циклу; иначе переходит к завершению.
 
 flush_run:
-    add.l   2, D3                   ; we'll write 2 bytes
-    cmp.l   0x40, D3               ; output_len >= 0x40?
-    bge     overflow                ; yes -> overflow
+    add.l 2, D3
+    cmp.l 0x40, D3
+    bge overflow
+    move.l D1, D0
+    add.b 0x30, D0
+    move.b D0, (A1)+
+    move.b D2, (A1)+
+    cmp.l 0, D4
+    beq compress_done
+    move.b (A0)+, D2
+    sub.l 1, D4
+    move.l 1, D1
+    jmp char_loop
 
-    ; Write digit ('0' + count)
-    move.l  D1, D0
-    add.b   0x30, D0               ; D0 = '0' + count
-    move.b  D0, (A1)+
+; 当遇到与当前字符不同的新字符时触发。先把新字符暂存到 D5。
+; 接下来的写入逻辑与 flush_run 相同（写数字和旧字符）。写入完成后，把暂存在 D5 的新字符移入 D2 作为新的统计字符，重置 D1=1，跳回 char_loop。
+; Срабатывает при несовпадении символов. Сохраняет новый символ в D5. 
+; Записывает серию старого символа (как в flush_run). 
+; После записи переносит новый символ из D5 в D2, сбрасывает счетчик D1=1 и возвращается к char_loop.
 
-    ; Write character
-    move.b  D2, (A1)+
+flush_and_new:
+    move.b D0, D5
+    add.l 2, D3
+    cmp.l 0x40, D3
+    bge overflow
+    move.l D1, D0
+    add.b 0x30, D0
+    move.b D0, (A1)+
+    move.b D2, (A1)+
+    move.b D5, D2
+    move.l 1, D1
+    jmp char_loop
 
-    cmp.l   0, D4
-    beq     compress_done           ; no more input
-
-    move.b  (A0)+, D2
-    sub.l   1, D4
-    move.l  1, D1
-    jmp     char_loop
+; 在输出缓冲区末尾写入 \0（空字符结束符）。重置 A1 指向 output_buf 的开头，准备开始输出。
+; Сжатие завершено. Записывает нуль-терминатор \0 в конец буфера вывода. 
+; Сбрасывает A1 на начало output_buf для начала вывода.
 
 compress_done:
-    move.b  0, (A1)
-    movea.l output_buf, A1         ; reset A1 to start of output buffer
+    move.b 0, (A1)
+    movea.l output_buf, A1
+
+; 逐个字节从输出缓冲区读取数据。如果是 \0，说明输出完毕，跳转到 done；否则将字节写入输出端口 0x84，继续循环。
+; Цикл вывода. Считывает данные из буфера вывода байтом за байтом. 
+; Если \0, переходит к завершению; иначе записывает байт в порт вывода 0x84 и продолжается.
 
 output_loop:
-    move.b  (A1)+, D0              ; read byte from output buffer
-    cmp.b   0, D0                  ; null terminator?
-    beq     done                    ; yes -> done
-    move.b  D0, (0x84)             ; write to IO port 0x84
-    jmp     output_loop
+    move.b (A1)+, D0
+    cmp.b 0, D0
+    beq done
+    move.b D0, (A3)
+    jmp output_loop
+
+; 当输入超过64字符，或压缩后的结果超过64字节时触发。向输出端口写入错误码 0xCCCCCCCC（对应十进制 -858993460），然后停机。
+; Обработка переполнения. Срабатывает, если ввод превышает 64 символа или сжатый результат превышает 64 байта. 
+; Записывает код ошибки 0xCCCCCCCC в порт вывода и останавливает программу.
 
 overflow:
-    ; Write 0xFF (overflow error value) to IO port 0x84
-    move.b  0xFF, (0x84)
+    move.l 0xCCCCCCCC, D0
+    move.l D0, (A3)
     halt
-
 done:
     halt

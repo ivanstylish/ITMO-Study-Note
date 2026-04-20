@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arm MTE — Memory Tagging Extension</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=Fira+Code:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F7F4EF;
+  --ink:#151412;
+  --muted:#6B6560;
+  --red:#C42B2B;
+  --red-light:#FAEAEA;
+  --blue:#1B4FD8;
+  --blue-light:#EAF0FD;
+  --gold:#9A6E12;
+  --gold-light:#FBF3E3;
+  --border:#D8D3CB;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'Fira Code','Courier New',monospace;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:#111;font-family:var(--sans)}
+
+/* ── Slide system ── */
+.deck{width:100vw;height:100vh;position:relative}
+.slide{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  display:none;
+  background:var(--cream);
+  overflow:hidden;
+}
+.slide.active{display:flex}
+
+/* ── Nav ── */
+#nav{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:16px;
+  background:rgba(21,20,18,.85);backdrop-filter:blur(8px);
+  padding:10px 20px;border-radius:100px;
+  z-index:999;color:#fff;font-size:13px;font-family:var(--mono);
+}
+#nav button{
+  background:none;border:none;color:#ccc;cursor:pointer;
+  font-size:18px;line-height:1;padding:0 4px;
+  transition:color .15s;
+}
+#nav button:hover{color:#fff}
+#slide-num{color:#fff;min-width:52px;text-align:center}
+.dots{display:flex;gap:5px}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .2s}
+.dot.on{background:#fff}
+
+/* ── Reusable layout atoms ── */
+.split{display:flex;width:100%;height:100%}
+.half{width:50%;height:100%;display:flex;flex-direction:column;padding:56px 52px}
+.half.dark{background:var(--ink);color:#F7F4EF}
+.half.red-bg{background:var(--red);color:#fff}
+.full{width:100%;height:100%;display:flex;flex-direction:column;padding:60px 72px}
+
+.label{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:12px;
+}
+.label.on-dark{color:rgba(255,255,255,.5)}
+.label.on-red{color:rgba(255,255,255,.7)}
+
+.rule{height:1px;background:var(--border);margin:20px 0}
+.rule.dark{background:rgba(255,255,255,.18)}
+.rule.red{background:rgba(255,255,255,.3)}
+
+.tag{
+  display:inline-block;padding:3px 10px;
+  border:1px solid currentColor;border-radius:3px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+}
+
+/* ── Typography ── */
+.display{font-family:var(--serif);font-weight:900;line-height:1.0}
+.serif{font-family:var(--serif)}
+.mono{font-family:var(--mono)}
+.body-text{font-size:15px;line-height:1.7;color:var(--muted)}
+
+/* ── Decorative giant text ── */
+.bg-text{
+  position:absolute;font-family:var(--serif);font-weight:900;
+  color:rgba(0,0,0,.04);line-height:1;pointer-events:none;user-select:none;
+  white-space:nowrap;
+}
+
+/* ── Callout boxes ── */
+.box{
+  border:1px solid var(--border);padding:20px 24px;
+  border-radius:4px;background:#fff;
+}
+.box.dark-box{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.06)}
+.box.accent-left{border-left:3px solid var(--red);border-color:var(--border)}
+.box.accent-left-blue{border-left:3px solid var(--blue);border-color:var(--border)}
+.box.accent-left-gold{border-left:3px solid var(--gold);border-color:var(--border)}
+
+/* ── Stat number ── */
+.stat-num{
+  font-family:var(--serif);font-weight:900;
+  line-height:.9;letter-spacing:-.02em;
+}
+
+/* ── Code block ── */
+.code-block{
+  background:#1E1C1A;color:#D4C8B8;
+  font-family:var(--mono);font-size:13px;line-height:1.6;
+  padding:20px 24px;border-radius:4px;
+}
+.code-block .c-cyan{color:#5ECBC8}
+.code-block .c-orange{color:#E8944E}
+.code-block .c-green{color:#7DBF7D}
+.code-block .c-comment{color:#7A7268}
+
+/* ═══ SLIDE 1 — Title ═══ */
+#s1{background:var(--cream)}
+#s1 .bg-text{font-size:260px;top:-30px;right:-20px;color:rgba(0,0,0,.045)}
+#s1-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  justify-content:center;height:100%;
+  padding:0 80px;
+}
+#s1 .eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--red);margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+#s1 .eyebrow::before{
+  content:'';display:block;width:28px;height:1px;background:var(--red);
+}
+#s1 h1{
+  font-family:var(--serif);font-weight:900;font-size:82px;
+  line-height:1.0;color:var(--ink);letter-spacing:-.02em;
+  margin-bottom:8px;
+}
+#s1 h1 em{font-style:italic;color:var(--red)}
+#s1 .sub{
+  font-size:18px;color:var(--muted);max-width:580px;
+  line-height:1.5;margin:24px 0 40px;font-weight:300;
+}
+#s1 .meta{
+  display:flex;gap:24px;align-items:center;
+  border-top:1px solid var(--border);padding-top:24px;
+  max-width:600px;
+}
+#s1 .meta-item{font-family:var(--mono);font-size:11px;color:var(--muted)}
+#s1 .meta-item strong{color:var(--ink);display:block;margin-bottom:2px;font-size:12px}
+#s1 .side-bar{
+  position:absolute;right:0;top:0;bottom:0;width:340px;
+  background:var(--ink);display:flex;flex-direction:column;
+  justify-content:center;padding:56px 48px;
+}
+#s1 .side-bar .pill{
+  display:flex;align-items:center;gap:12px;padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+#s1 .side-bar .pill:last-child{border-bottom:none}
+#s1 .side-bar .pill-num{
+  font-family:var(--serif);font-weight:700;font-size:28px;color:var(--red);
+  min-width:40px;
+}
+#s1 .side-bar .pill-text{font-size:13px;color:rgba(255,255,255,.75);line-height:1.4}
+
+/* ═══ SLIDE 2 — Problem ═══ */
+#s2{flex-direction:column}
+#s2 .top-bar{
+  background:var(--ink);color:#fff;
+  padding:28px 72px;display:flex;align-items:baseline;gap:20px;
+}
+#s2 .top-bar .slide-title{
+  font-family:var(--serif);font-size:28px;font-weight:700;
+}
+#s2 .content{
+  flex:1;padding:0 72px;display:grid;
+  grid-template-columns:1fr 1fr 1fr 1.2fr;
+  gap:0;align-items:stretch;
+}
+#s2 .stat-col{
+  padding:48px 36px;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+#s2 .stat-col:last-child{border-right:none}
+#s2 .stat-num{font-size:96px;line-height:.85}
+#s2 .stat-label{font-size:14px;color:var(--muted);line-height:1.5;margin-top:16px}
+#s2 .stat-source{font-family:var(--mono);font-size:10px;color:var(--border);margin-top:8px}
+#s2 .stat-col.insight{background:#fff;border-left:none}
+#s2 .insight-head{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.2;color:var(--ink);margin-bottom:20px;
+}
+#s2 .cat-box{
+  padding:14px 16px;border-radius:3px;margin-bottom:10px;
+}
+#s2 .cat-box h4{font-size:13px;font-weight:500;margin-bottom:4px}
+#s2 .cat-box p{font-size:12px;line-height:1.5;color:var(--muted)}
+#s2 .bottom-note{
+  padding:16px 72px;background:#fff;border-top:1px solid var(--border);
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:8px;
+}
+
+/* ═══ SLIDE 3 — Lock & Key ═══ */
+#s3{}
+#s3 .left{background:var(--ink);color:#fff;flex:0 0 52%}
+#s3 .right{flex:1;padding:52px 48px;gap:20px}
+#s3 .diagram{flex:1;display:flex;flex-direction:column;gap:0;position:relative}
+#s3 .mem-row{
+  display:flex;align-items:center;gap:0;margin:0;
+}
+#s3 .mem-cell{
+  font-family:var(--mono);font-size:12px;text-align:center;
+  padding:10px 8px;border:1px solid rgba(255,255,255,.2);
+  white-space:nowrap;
+}
+#s3 .mem-cell.tag{background:#C42B2B;border-color:#C42B2B;color:#fff;min-width:80px;font-weight:500}
+#s3 .mem-cell.addr{min-width:180px;color:rgba(255,255,255,.6)}
+#s3 .mem-cell.alloc-tag{background:#9A6E12;border-color:#9A6E12;color:#fff;min-width:100px;font-weight:500}
+#s3 .mem-cell.data{min-width:160px;color:rgba(255,255,255,.5);font-size:11px}
+#s3 .arrow-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:rgba(255,255,255,.4);text-transform:uppercase;margin:6px 0 4px;
+}
+#s3 .check-row{
+  display:flex;align-items:center;gap:12px;padding:10px 0;
+  border-top:1px solid rgba(255,255,255,.1);margin-top:8px;
+}
+#s3 .check-sym{
+  font-size:18px;width:28px;text-align:center;flex-shrink:0;
+}
+#s3 .check-text{font-size:13px;color:rgba(255,255,255,.8);line-height:1.4}
+#s3 .fact-card{
+  border:1px solid var(--border);border-radius:4px;
+  padding:16px 20px;background:#fff;
+  display:flex;gap:16px;align-items:flex-start;
+}
+#s3 .fact-num{
+  font-family:var(--serif);font-size:36px;font-weight:900;
+  color:var(--red);line-height:1;flex-shrink:0;min-width:32px;
+}
+#s3 .fact-body h4{font-size:14px;font-weight:500;margin-bottom:4px;color:var(--ink)}
+#s3 .fact-body p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ═══ SLIDE 4 — Instructions ═══ */
+#s4{flex-direction:column}
+#s4 .header{padding:36px 72px 20px;border-bottom:1px solid var(--border)}
+#s4 .header h2{font-family:var(--serif);font-size:36px;font-weight:700}
+#s4 .header p{color:var(--muted);font-size:14px;margin-top:6px}
+#s4 .grid{
+  flex:1;padding:24px 72px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-content:start;
+}
+#s4 .instr-group{}
+#s4 .group-title{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;padding:6px 12px;margin-bottom:10px;
+  border-radius:2px;display:inline-block;
+}
+#s4 .gt-red{color:var(--red);background:var(--red-light)}
+#s4 .gt-blue{color:var(--blue);background:var(--blue-light)}
+#s4 .gt-gold{color:var(--gold);background:var(--gold-light)}
+#s4 .instr-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:10px 0;border-bottom:1px solid var(--border);
+}
+#s4 .instr-item:last-child{border-bottom:none}
+#s4 .instr-cmd{
+  font-family:var(--mono);font-size:13px;font-weight:500;
+  min-width:120px;flex-shrink:0;color:var(--ink);
+}
+#s4 .instr-desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ═══ SLIDE 5 — Three Modes ═══ */
+#s5{}
+#s5 .mode{
+  flex:1;display:flex;flex-direction:column;
+  padding:52px 40px;position:relative;overflow:hidden;
+}
+#s5 .mode-bg{
+  position:absolute;bottom:-30px;right:-20px;
+  font-family:var(--serif);font-weight:900;font-size:180px;
+  line-height:1;pointer-events:none;user-select:none;
+}
+#s5 .mode:nth-child(1){background:#fff;border-right:1px solid var(--border)}
+#s5 .mode:nth-child(1) .mode-bg{color:rgba(196,43,43,.06)}
+#s5 .mode:nth-child(2){background:var(--ink);border-right:1px solid rgba(255,255,255,.1)}
+#s5 .mode:nth-child(2) .mode-bg{color:rgba(255,255,255,.04)}
+#s5 .mode:nth-child(3){background:var(--cream)}
+#s5 .mode:nth-child(3) .mode-bg{color:rgba(154,110,18,.07)}
+#s5 .mode-name{
+  font-family:var(--serif);font-size:62px;font-weight:900;
+  letter-spacing:-.02em;line-height:1;margin-bottom:4px;
+}
+#s5 .mode:nth-child(1) .mode-name{color:var(--red)}
+#s5 .mode:nth-child(2) .mode-name{color:#fff}
+#s5 .mode:nth-child(3) .mode-name{color:var(--gold)}
+#s5 .mode-full{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;margin-bottom:20px}
+#s5 .mode:nth-child(2) .mode-full{color:rgba(255,255,255,.4)}
+#s5 .mode-overhead{
+  font-family:var(--serif);font-size:38px;font-weight:700;
+  margin-bottom:4px;
+}
+#s5 .mode:nth-child(1) .mode-overhead{color:var(--ink)}
+#s5 .mode:nth-child(2) .mode-overhead{color:#fff}
+#s5 .mode:nth-child(3) .mode-overhead{color:var(--ink)}
+#s5 .mode-oh-label{font-size:11px;color:var(--muted);margin-bottom:20px}
+#s5 .mode:nth-child(2) .mode-oh-label{color:rgba(255,255,255,.45)}
+#s5 .mode-use{
+  font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  margin-bottom:24px;padding:6px 12px;border-radius:2px;display:inline-block;
+}
+#s5 .mode:nth-child(1) .mode-use{color:var(--red);background:var(--red-light)}
+#s5 .mode:nth-child(2) .mode-use{color:rgba(255,255,255,.9);background:rgba(255,255,255,.1)}
+#s5 .mode:nth-child(3) .mode-use{color:var(--gold);background:var(--gold-light)}
+#s5 .mode-point{
+  font-size:13px;line-height:1.6;padding:8px 0;
+  border-top:1px solid var(--border);color:var(--muted);
+  display:flex;gap:8px;
+}
+#s5 .mode:nth-child(2) .mode-point{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.55)}
+#s5 .mode-point::before{content:'—';flex-shrink:0;color:var(--border)}
+#s5 .mode:nth-child(2) .mode-point::before{color:rgba(255,255,255,.2)}
+
+/* ═══ SLIDE 6 — Spatial vs Temporal ═══ */
+#s6{}
+#s6 .left{background:var(--red-light);border-right:2px solid var(--red)}
+#s6 .right{background:var(--blue-light);border-left:2px solid var(--blue)}
+#s6 .col-title{
+  font-family:var(--serif);font-size:34px;font-weight:700;
+  margin-bottom:4px;line-height:1.1;
+}
+#s6 .left .col-title{color:var(--red)}
+#s6 .right .col-title{color:var(--blue)}
+#s6 .col-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+#s6 .example-box{
+  background:#fff;border-radius:4px;padding:16px 20px;margin-bottom:16px;
+  border-left:3px solid var(--red);
+}
+#s6 .right .example-box{border-left-color:var(--blue)}
+#s6 .example-box h4{font-size:13px;font-weight:500;margin-bottom:6px}
+#s6 .example-box p{font-size:12px;color:var(--muted);line-height:1.6}
+#s6 .detection-list{margin-top:16px}
+#s6 .det-item{
+  display:flex;gap:10px;padding:10px 0;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  font-size:13px;line-height:1.5;color:var(--ink);
+}
+#s6 .det-item:last-child{border-bottom:none}
+#s6 .det-icon{font-size:15px;flex-shrink:0;padding-top:1px}
+#s6 .how-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px;margin-top:8px;
+}
+
+/* ═══ SLIDE 7 — Deployment ═══ */
+#s7{flex-direction:column}
+#s7 .top{background:var(--ink);color:#fff;padding:32px 72px}
+#s7 .top h2{font-family:var(--serif);font-size:32px;font-weight:700}
+#s7 .top p{color:rgba(255,255,255,.5);font-size:14px;margin-top:4px}
+#s7 .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;border-top:none}
+#s7 .dep-col{padding:40px 56px;border-right:1px solid var(--border)}
+#s7 .dep-col:last-child{border-right:none}
+#s7 .dep-title{
+  display:flex;align-items:center;gap:12px;margin-bottom:24px;
+}
+#s7 .dep-badge{
+  font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  padding:4px 10px;border-radius:2px;flex-shrink:0;
+}
+#s7 .dep-badge.heap{color:var(--red);background:var(--red-light)}
+#s7 .dep-badge.stack{color:var(--gold);background:var(--gold-light)}
+#s7 .dep-h{font-family:var(--serif);font-size:26px;font-weight:700}
+#s7 .dep-item{
+  display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);
+  align-items:flex-start;
+}
+#s7 .dep-item:last-child{border-bottom:none}
+#s7 .dep-bullet{color:var(--red);font-weight:700;flex-shrink:0;font-size:16px;padding-top:1px}
+#s7 .dep-bullet.blue{color:var(--gold)}
+#s7 .dep-text{font-size:13px;line-height:1.6;color:var(--muted)}
+#s7 .dep-code{
+  margin-top:6px;font-family:var(--mono);font-size:11px;
+  color:var(--ink);background:#F0EDE6;padding:6px 10px;border-radius:2px;
+  display:inline-block;
+}
+#s7 .bottom-strip{
+  padding:16px 72px;background:#fff;border-top:1px solid var(--border);
+  display:flex;gap:32px;
+}
+#s7 .strip-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}
+#s7 .strip-item strong{color:var(--ink)}
+
+/* ═══ SLIDE 8 — Performance ═══ */
+#s8{flex-direction:column}
+#s8 .header{padding:32px 72px 20px;background:var(--ink);color:#fff}
+#s8 .header h2{font-family:var(--serif);font-size:30px;font-weight:700}
+#s8 .body{flex:1;display:grid;grid-template-columns:1.3fr 1fr;padding:32px 72px;gap:40px}
+#s8 .chart-area{display:flex;flex-direction:column;gap:8px}
+#s8 .chart-title{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+#s8 .bar-row{display:flex;align-items:center;gap:12px}
+#s8 .bar-label{font-family:var(--mono);font-size:12px;min-width:100px;text-align:right;color:var(--ink)}
+#s8 .bar-track{flex:1;height:28px;background:#F0EDE6;border-radius:2px;overflow:hidden}
+#s8 .bar-fill{height:100%;border-radius:2px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px}
+#s8 .bar-val{font-family:var(--mono);font-size:11px;font-weight:500;color:#fff}
+#s8 .tbl-area{}
+#s8 .tbl-title{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+#s8 .cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--border)}
+#s8 .cmp-row:last-child{border-bottom:none}
+#s8 .cmp-row.head{background:var(--ink);border-radius:3px 3px 0 0;margin-bottom:0}
+#s8 .cmp-cell{
+  padding:10px 14px;font-size:12px;line-height:1.4;color:var(--muted);
+}
+#s8 .cmp-row.head .cmp-cell{color:#fff;font-weight:500;font-size:12px}
+#s8 .cmp-cell:not(:last-child){border-right:1px solid var(--border)}
+#s8 .cmp-row.head .cmp-cell:not(:last-child){border-right-color:rgba(255,255,255,.2)}
+#s8 .highlight-cell{color:var(--ink);font-weight:500}
+#s8 .note{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  grid-column:1/-1;margin-top:8px;padding-top:12px;border-top:1px solid var(--border);
+}
+
+/* ═══ SLIDE 9 — Android & Linux ═══ */
+#s9{flex-direction:column}
+#s9 .top{padding:36px 72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1}
+#s9 .platform-card{
+  border:1px solid var(--border);border-radius:4px;
+  background:#fff;padding:24px 28px;
+}
+#s9 .platform-card h3{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  margin-bottom:8px;
+}
+#s9 .platform-card.android h3{color:var(--red)}
+#s9 .platform-card.linux h3{color:var(--blue)}
+#s9 .api-code{
+  font-family:var(--mono);font-size:11px;background:#1E1C1A;
+  color:#D4C8B8;padding:10px 14px;border-radius:3px;margin:10px 0;
+  line-height:1.6;
+}
+#s9 .platform-list{margin-top:10px}
+#s9 .platform-item{
+  font-size:13px;color:var(--muted);padding:6px 0;
+  border-bottom:1px solid var(--border);display:flex;gap:8px;
+}
+#s9 .platform-item:last-child{border-bottom:none}
+#s9 .platform-item::before{color:var(--blue);font-weight:700;flex-shrink:0}
+#s9 .android .platform-item::before{color:var(--red);content:'→'}
+#s9 .linux .platform-item::before{color:var(--blue);content:'→'}
+#s9 .timeline{
+  padding:0 72px 28px;border-top:1px solid var(--border);background:#fff;
+}
+#s9 .tl-label{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:14px 0 16px}
+#s9 .tl-track{display:flex;align-items:flex-start;gap:0;position:relative}
+#s9 .tl-track::before{
+  content:'';position:absolute;top:14px;left:0;right:0;height:1px;background:var(--border);
+}
+#s9 .tl-item{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;padding-top:0}
+#s9 .tl-dot{
+  width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--ink);
+  position:relative;z-index:2;margin-bottom:10px;flex-shrink:0;
+}
+#s9 .tl-dot.red{border-color:var(--red);background:var(--red)}
+#s9 .tl-dot.blue{border-color:var(--blue);background:var(--blue)}
+#s9 .tl-year{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:4px;color:var(--ink)}
+#s9 .tl-text{font-size:11px;color:var(--muted);text-align:center;line-height:1.4;max-width:110px}
+
+/* ═══ SLIDE 10 — Optimizations ═══ */
+#s10{flex-direction:column}
+#s10 .hdr{background:var(--cream);border-bottom:1px solid var(--border);padding:32px 72px 20px}
+#s10 .hdr h2{font-family:var(--serif);font-size:34px;font-weight:700}
+#s10 .hdr p{color:var(--muted);font-size:14px;margin-top:6px}
+#s10 .body{flex:1;display:grid;grid-template-columns:1fr 1fr;padding:28px 72px;gap:40px;align-content:start}
+#s10 .section-title{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+#s10 .section-title.do{color:var(--blue)}
+#s10 .section-title.dont{color:var(--red)}
+#s10 .opt-item{
+  display:flex;gap:14px;padding:14px 0;
+  border-bottom:1px solid var(--border);align-items:flex-start;
+}
+#s10 .opt-item:last-child{border-bottom:none}
+#s10 .opt-icon{
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px;
+}
+#s10 .opt-icon.do{background:var(--blue-light);color:var(--blue)}
+#s10 .opt-icon.dont{background:var(--red-light);color:var(--red)}
+#s10 .opt-title{font-size:13px;font-weight:500;margin-bottom:3px;color:var(--ink)}
+#s10 .opt-body{font-size:12px;color:var(--muted);line-height:1.6}
+#s10 .limit-badge{
+  display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  padding:2px 8px;border-radius:2px;background:var(--red-light);color:var(--red);
+  margin-top:4px;
+}
+
+/* ═══ SLIDE 11 — Conclusion ═══ */
+#s11{flex-direction:column}
+#s11 .bg-text{font-size:320px;top:-60px;left:-20px;color:rgba(0,0,0,.025)}
+#s11 .content{
+  position:relative;z-index:2;
+  flex:1;display:grid;grid-template-columns:1fr 1fr;
+  padding:52px 72px;gap:48px;
+}
+#s11 .left-col{display:flex;flex-direction:column;justify-content:space-between}
+#s11 .kicker{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:16px;
+}
+#s11 .end-title{
+  font-family:var(--serif);font-size:52px;font-weight:900;
+  line-height:1.0;color:var(--ink);letter-spacing:-.02em;
+  margin-bottom:24px;
+}
+#s11 .end-title em{font-style:italic;color:var(--red)}
+#s11 .tagline{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  border-left:2px solid var(--border);padding-left:16px;margin-bottom:28px;
+}
+#s11 .src-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+#s11 .src-item{
+  font-size:12px;color:var(--muted);padding:4px 0;display:flex;gap:6px;align-items:baseline;
+}
+#s11 .src-item::before{content:'→';color:var(--border);flex-shrink:0}
+#s11 .right-col{display:flex;flex-direction:column;gap:14px;justify-content:center}
+#s11 .concl-item{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:16px 20px;border:1px solid var(--border);
+  border-radius:4px;background:#fff;
+}
+#s11 .concl-num{
+  font-family:var(--serif);font-size:32px;font-weight:900;
+  color:var(--red);line-height:1;flex-shrink:0;min-width:28px;
+}
+#s11 .concl-text{font-size:13px;line-height:1.6;color:var(--muted);padding-top:6px}
+#s11 .concl-text strong{color:var(--ink);font-weight:500}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- ═══ SLIDE 1 ═══ -->
+<div class="slide active" id="s1">
+  <span class="bg-text" style="top:-40px;right:-30px">MTE</span>
+  <div id="s1-content">
+    <div class="eyebrow">Компьютерная Архитектура · Семинар</div>
+    <h1>Arm Memory<br><em>Tagging</em><br>Extension</h1>
+    <p class="sub">Аппаратный механизм обнаружения пространственных и временных ошибок памяти в Armv8.5-A и Armv9</p>
+    <div class="meta">
+      <div class="meta-item"><strong>Архитектура</strong>Armv8.5-A / Armv9</div>
+      <div style="width:1px;height:32px;background:var(--border)"></div>
+      <div class="meta-item"><strong>Режимы</strong>SYNC · ASYNC · ASYMM</div>
+      <div style="width:1px;height:32px;background:var(--border)"></div>
+      <div class="meta-item"><strong>Поддержка</strong>Android · Linux · iOS</div>
+    </div>
+  </div>
+  <div id="s1" class="side-bar">
+    <p class="label on-dark" style="margin-bottom:20px">Ключевые цифры</p>
+    <div class="pill">
+      <span class="pill-num">70%</span>
+      <span class="pill-text">уязвимостей Microsoft — нарушения памяти</span>
+    </div>
+    <div class="pill">
+      <span class="pill-num">75%</span>
+      <span class="pill-text">уязвимостей Android — memory safety bugs</span>
+    </div>
+    <div class="pill">
+      <span class="pill-num">&lt;2%</span>
+      <span class="pill-text">overhead MTE ASYNC — пригоден для продакшена</span>
+    </div>
+    <div class="pill">
+      <span class="pill-num">16</span>
+      <span class="pill-text">байт — гранулярность тега (tag granule)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2 ═══ -->
+<div class="slide" id="s2">
+  <div class="top-bar">
+    <p class="label on-dark" style="margin:0">01</p>
+    <p class="slide-title">Масштаб проблемы</p>
+  </div>
+  <div class="content">
+    <div class="stat-col">
+      <div>
+        <p class="label">Microsoft / 2019</p>
+        <p class="stat-num display" style="color:var(--red)">70<span style="font-size:48px">%</span></p>
+        <p class="stat-label">всех закрытых уязвимостей в продуктах Microsoft вызваны нарушениями безопасности памяти</p>
+      </div>
+      <p class="stat-source">BlueHat · M. Miller, 2019</p>
+    </div>
+    <div class="stat-col">
+      <div>
+        <p class="label">Google Android</p>
+        <p class="stat-num display" style="color:var(--gold)">75<span style="font-size:48px">%+</span></p>
+        <p class="stat-label">уязвимостей Android — нарушения memory safety ежегодно на протяжении последних лет</p>
+      </div>
+      <p class="stat-source">Google Security Blog</p>
+    </div>
+    <div class="stat-col">
+      <div>
+        <p class="label">Debian Linux</p>
+        <p class="stat-num display" style="color:var(--blue)">500<span style="font-size:38px">M+</span></p>
+        <p class="stat-label">строк кода на C/C++ только в Debian Stretch — переписать невозможно</p>
+      </div>
+      <p class="stat-source">sources.debian.org/stats</p>
+    </div>
+    <div class="stat-col insight">
+      <p class="insight-head">Два класса нарушений памяти</p>
+      <div class="cat-box" style="background:var(--red-light);border-left:3px solid var(--red)">
+        <h4 style="color:var(--red)">Spatial Safety</h4>
+        <p>Доступ за пределами объекта — переполнение буфера, перезапись return address → ROP-атаки</p>
+      </div>
+      <div class="cat-box" style="background:var(--blue-light);border-left:3px solid var(--blue)">
+        <h4 style="color:var(--blue)">Temporal Safety</h4>
+        <p>Ссылка используется после освобождения памяти — use-after-free, перезапись vtable → type confusion</p>
+      </div>
+      <div style="margin-top:auto">
+        <p style="font-size:12px;color:var(--muted);line-height:1.6">MTE — первый аппаратный инструмент обнаружения обоих классов с накладными расходами, пригодными для продакшена.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <span style="color:var(--red)">●</span>
+    Ключевая проблема: огромная база C/C++ кода не может быть переписана, но может быть защищена аппаратно
+  </div>
+</div>
+
+<!-- ═══ SLIDE 3 ═══ -->
+<div class="slide" id="s3">
+  <div class="split">
+    <div class="half dark" id="s3-left">
+      <p class="label on-dark" style="margin-bottom:24px">02 · Механизм работы</p>
+      <h2 class="display" style="font-size:36px;color:#fff;margin-bottom:28px">Lock &amp; Key<br>на уровне железа</h2>
+      <div class="diagram">
+        <p class="arrow-label">Указатель (64-bit virtual address)</p>
+        <div class="mem-row">
+          <div class="mem-cell tag">TAG: 4 bit</div>
+          <div class="mem-cell addr">адрес (56 bit)</div>
+        </div>
+        <div style="padding:12px 0 8px 0;display:flex;align-items:center;gap:8px">
+          <div style="width:40px;height:1px;background:rgba(255,255,255,.2)"></div>
+          <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.3)">сравнивается при load/store</span>
+        </div>
+        <p class="arrow-label">Normal Tagged Memory</p>
+        <div class="mem-row">
+          <div class="mem-cell alloc-tag">ALLOC TAG: 4 bit</div>
+          <div class="mem-cell data">16 байт данных</div>
+        </div>
+        <div style="margin-top:24px">
+          <div class="check-row">
+            <span class="check-sym" style="color:#5ECBC8">✓</span>
+            <span class="check-text">Теги совпали → доступ разрешён, никаких задержек</span>
+          </div>
+          <div class="check-row">
+            <span class="check-sym" style="color:#E8944E">✗</span>
+            <span class="check-text">Теги не совпали → SIGSEGV (SYNC) или флаг в регистре (ASYNC)</span>
+          </div>
+        </div>
+        <div style="margin-top:auto;padding-top:24px">
+          <div class="code-block">
+            <span class="c-comment">// Top Byte Ignore (TBI)</span><br>
+            ptr = <span class="c-cyan">0xA7</span><span class="c-orange">00007FFF_0040</span><br>
+            <span class="c-comment">//   ↑ tag  ↑ 56-bit address</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="half" id="s3-right" style="gap:16px;justify-content:center">
+      <p class="label">Ключевые свойства архитектуры</p>
+      <div class="fact-card">
+        <span class="fact-num">16</span>
+        <div class="fact-body">
+          <h4>Tag Granule — 16 байт</h4>
+          <p>Каждые 16 байт физической памяти получают один 4-битный тег. Выравнивание объектов до 16 байт гарантирует детерминированное обнаружение соседних переполнений.</p>
+        </div>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num" style="color:var(--gold)">4</span>
+        <div class="fact-body">
+          <h4>4-битный тег — 16 возможных значений</h4>
+          <p>Logical tag в старшем байте указателя через TBI — без расширения размера указателя и изменения ABI. Вероятность ложного совпадения: 1/16 ≈ 6.25%.</p>
+        </div>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num" style="color:var(--blue)">IRG</span>
+        <div class="fact-body">
+          <h4>Аппаратная генерация случайных тегов</h4>
+          <p>Инструкция IRG генерирует случайный тег в регистр. Аллокатор всегда назначает соседним блокам разные теги — последовательные переполнения обнаруживаются с вероятностью 1.</p>
+        </div>
+      </div>
+      <div class="fact-card" style="border-color:var(--border)">
+        <span class="fact-num" style="font-size:22px;color:var(--muted);line-height:1.2">NEW</span>
+        <div class="fact-body">
+          <h4>Normal Tagged Memory — новый тип памяти</h4>
+          <p>В Armv8.5-A добавлен новый тип «Normal Tagged Memory». Только обращения к нему проверяются; существующий код в dynamically linked системах выигрывает без перекомпиляции.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 4 ═══ -->
+<div class="slide" id="s4">
+  <div class="header">
+    <p class="label" style="margin-bottom:8px">03 · ISA Extensions</p>
+    <h2>Новые инструкции Armv8.5-A для MTE</h2>
+    <p>Три категории инструкций: работа с тегами, арифметика указателей, системный уровень</p>
+  </div>
+  <div class="grid">
+    <div class="instr-group">
+      <span class="group-title gt-red">Работа с тегами памяти</span>
+      <div class="instr-item">
+        <span class="instr-cmd">IRG</span>
+        <span class="instr-desc">Генерация случайного тега в регистр — основа статистической гарантии MTE</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">STG / STZG</span>
+        <span class="instr-desc">Запись тега в память без модификации данных / с обнулением данных</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">LDG</span>
+        <span class="instr-desc">Чтение тега из памяти в регистр</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">ST2G / STZ2G</span>
+        <span class="instr-desc">Операции на двух гранулах — эффективнее для крупных блоков</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">STGP</span>
+        <span class="instr-desc">Совместная запись тега и данных в память одной инструкцией</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">GMI</span>
+        <span class="instr-desc">Управление excluded-множеством тегов для специальных значений</span>
+      </div>
+    </div>
+    <div class="instr-group">
+      <span class="group-title gt-blue">Арифметика указателей / стек</span>
+      <div class="instr-item">
+        <span class="instr-cmd">ADDG</span>
+        <span class="instr-desc">Сложение с раздельной арифметикой над адресом и тегом — создание tagged адресов на стеке</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">SUBG</span>
+        <span class="instr-desc">Вычитание с раздельной арифметикой — создание субадресов в пределах tagged-объекта</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">SUBP(S)</span>
+        <span class="instr-desc">56-битное вычитание с игнорированием тега — корректная арифметика разниц указателей</span>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:var(--blue-light);border-radius:3px;border-left:3px solid var(--blue)">
+        <p style="font-size:12px;color:var(--blue);font-weight:500;margin-bottom:4px">Стратегия stack tagging</p>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">При входе в функцию: IRG → случайный тег. ADDG/SUBG → теги для каждого slot. Соседние объекты = разные теги → последовательный overflow всегда обнаружен.</p>
+      </div>
+    </div>
+    <div class="instr-group">
+      <span class="group-title gt-gold">Системный уровень (EL1+)</span>
+      <div class="instr-item">
+        <span class="instr-cmd">LDGM</span>
+        <span class="instr-desc">Массовое чтение тегов — только privileged. Для сериализации (swap to non-tag storage)</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">STGM</span>
+        <span class="instr-desc">Массовая запись тегов — инициализация, восстановление из swap</span>
+      </div>
+      <div class="instr-item">
+        <span class="instr-cmd">STZGM</span>
+        <span class="instr-desc">Zero + tag за одну операцию — высокоэффективная инициализация страниц в ядре ОС</span>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:var(--gold-light);border-radius:3px;border-left:3px solid var(--gold)">
+        <p style="font-size:12px;color:var(--gold);font-weight:500;margin-bottom:4px">Cache maintenance</p>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">MTE добавляет cache maintenance операции для работы с тегами на уровне cache-линий — эффективная batch-обработка.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 5 ═══ -->
+<div class="slide" id="s5">
+  <div class="mode">
+    <span class="mode-bg">S</span>
+    <p class="label" style="margin-bottom:16px">04 · Режимы работы</p>
+    <p class="mode-name">SYNC</p>
+    <p class="mode-full">Synchronous</p>
+    <p class="mode-overhead" style="color:var(--ink)">5–25%</p>
+    <p class="mode-oh-label">overhead · зависит от CPU и нагрузки</p>
+    <span class="mode-use">Разработка / Тестирование</span>
+    <div class="mode-point">Точное исключение (SIGSEGV) на нарушающей инструкции</div>
+    <div class="mode-point">Известна точная инструкция-нарушитель — ideal для debugging</div>
+    <div class="mode-point">si_code = SEGV_MTESERR с полной информацией об адресе</div>
+    <div class="mode-point">Сериализация в конвейере: load-tag → check-tag → load-value</div>
+  </div>
+  <div class="mode">
+    <span class="mode-bg">A</span>
+    <p class="label on-dark" style="margin-bottom:16px">04 · Режимы работы</p>
+    <p class="mode-name">ASYNC</p>
+    <p class="mode-full" style="color:rgba(255,255,255,.4)">Asynchronous</p>
+    <p class="mode-overhead">~1–2%</p>
+    <p class="mode-oh-label">overhead · приемлем для production</p>
+    <span class="mode-use">Продакшен</span>
+    <div class="mode-point">Несоответствие тегов накапливается в системном регистре TFSR_ELx</div>
+    <div class="mode-point">Проверка при system call или context switch — изолируется по потоку</div>
+    <div class="mode-point">Точная инструкция неизвестна — только поток-нарушитель</div>
+    <div class="mode-point">До 6.64× на store-heavy microbenchmarks (arXiv:2601.11786)</div>
+  </div>
+  <div class="mode">
+    <span class="mode-bg">A</span>
+    <p class="label" style="margin-bottom:16px;color:var(--muted)">04 · Режимы работы</p>
+    <p class="mode-name">ASYMM</p>
+    <p class="mode-full" style="color:var(--muted)">Asymmetric</p>
+    <p class="mode-overhead" style="color:var(--ink)">1–5%</p>
+    <p class="mode-oh-label" style="color:var(--muted)">overhead · компромиссный режим</p>
+    <span class="mode-use">Баланс</span>
+    <div class="mode-point">Reads: synchronous · Writes: asynchronous</div>
+    <div class="mode-point">Компромисс между диагностикой и производительностью</div>
+    <div class="mode-point">Не поддержан на всех текущих реализациях процессоров</div>
+    <div class="mode-point">Актуален для read-heavy паттернов доступа к памяти</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 6 ═══ -->
+<div class="slide" id="s6">
+  <div class="split">
+    <div class="half" id="s6-left" style="background:#FEF5F5;border-right:2px solid var(--red)">
+      <p class="label" style="color:var(--red);margin-bottom:16px">05 · Spatial Safety</p>
+      <p class="col-title" style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--red);margin-bottom:4px;line-height:1.1">Пространственная<br>безопасность</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Нарушение: объект доступен вне своих границ</p>
+      <div style="background:#fff;border-radius:4px;padding:14px 18px;margin-bottom:14px;border-left:3px solid var(--red)">
+        <h4 style="font-size:13px;font-weight:500;margin-bottom:6px">Buffer Overflow на стеке</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6">Перезапись return address → ROP / stack smashing. Основа эксплойтов с 1988 года (Worm Морриса).</p>
+      </div>
+      <div style="background:#fff;border-radius:4px;padding:14px 18px;margin-bottom:20px;border-left:3px solid var(--red)">
+        <h4 style="font-size:13px;font-weight:500;margin-bottom:6px">Heap Buffer Overflow</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6">Перезапись метаданных аллокатора или данных соседнего объекта — heap metadata corruption.</p>
+      </div>
+      <p class="how-label" style="font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Как MTE обнаруживает</p>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(196,43,43,.2);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--red);flex-shrink:0">→</span>Аллокатор назначает соседним блокам разные теги (гарантировано)</div>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(196,43,43,.2);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--red);flex-shrink:0">→</span>Последовательный overflow всегда обнаруживается (детерминировано)</div>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(196,43,43,.2);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--red);flex-shrink:0">→</span>«Дикий» произвольный доступ — вероятностно 15/16 ≈ 93.75%</div>
+    </div>
+    <div class="half" id="s6-right" style="background:#EDF3FE;border-left:none">
+      <p class="label" style="color:var(--blue);margin-bottom:16px">05 · Temporal Safety</p>
+      <p class="col-title" style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--blue);margin-bottom:4px;line-height:1.1">Временна́я<br>безопасность</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Нарушение: ссылка используется после free()</p>
+      <div style="background:#fff;border-radius:4px;padding:14px 18px;margin-bottom:14px;border-left:3px solid var(--blue)">
+        <h4 style="font-size:13px;font-weight:500;margin-bottom:6px">Use-After-Free</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6">Висячий указатель на освобождённый объект. Если память переназначена → перезапись нового объекта (vtable, function pointer → type confusion).</p>
+      </div>
+      <div style="background:#fff;border-radius:4px;padding:14px 18px;margin-bottom:20px;border-left:3px solid var(--blue)">
+        <h4 style="font-size:13px;font-weight:500;margin-bottom:6px">Use-After-Return</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6">Указатель на объект стека, использованный после возврата из функции — стек-фрейм уже перезаписан.</p>
+      </div>
+      <p class="how-label" style="font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Как MTE обнаруживает</p>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(27,79,216,.15);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--blue);flex-shrink:0">→</span>При free() аллокатор назначает памяти новый тег</div>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(27,79,216,.15);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--blue);flex-shrink:0">→</span>Висячий указатель хранит старый тег — несоответствие неизбежно</div>
+      <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid rgba(27,79,216,.15);font-size:13px;line-height:1.5;color:var(--ink)"><span style="color:var(--blue);flex-shrink:0">→</span>Обращение через висячий указатель → немедленное исключение</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 7 ═══ -->
+<div class="slide" id="s7">
+  <div class="top">
+    <div>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">06 · Deployment</p>
+      <h2>Развёртывание MTE в программном обеспечении</h2>
+      <p>Два уровня интеграции с разными требованиями к изменению кода</p>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="dep-col">
+      <div class="dep-title">
+        <span class="dep-badge heap">Heap Tagging</span>
+        <p class="dep-h" style="font-family:var(--serif)">Без перекомпиляции</p>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet">→</span>
+        <div class="dep-text">В dynamically linked системах — только ядро ОС и libc. Существующие бинари не трогаются.
+          <span class="dep-code">malloc / free / calloc / realloc</span>
+        </div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet">→</span>
+        <div class="dep-text">Linux kernel: поддержка Normal Tagged Memory в mmap, удаление тегов при syscall address space операциях, обработка SIGSEGV по аналогии с translation fault</div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet">→</span>
+        <div class="dep-text">Memory copy / string функции модифицированы для защиты от overread источника
+          <span class="dep-code">memcpy / strcpy / memmove</span>
+        </div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet">→</span>
+        <div class="dep-text">Android NDK API: выбор режима для текущего процесса
+          <span class="dep-code">android_mallopt(M_BIONIC_SET_HEAP_TAGGING_LEVEL)</span>
+        </div>
+      </div>
+    </div>
+    <div class="dep-col">
+      <div class="dep-title">
+        <span class="dep-badge stack">Stack Tagging</span>
+        <p class="dep-h" style="font-family:var(--serif)">Требует перекомпиляции</p>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet blue">→</span>
+        <div class="dep-text">Компилятор вставляет IRG при входе в функцию для генерации случайного тега стек-фрейма</div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet blue">→</span>
+        <div class="dep-text">ADDG/SUBG создают tagged адреса для каждого stack slot с уникальным смещением тега — соседние объекты имеют гарантированно разные теги</div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet blue">→</span>
+        <div class="dep-text">Alignment объектов увеличивается до 16 байт — небольшое увеличение потребления стека (benchmarks: обычно незначительное)</div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet blue">→</span>
+        <div class="dep-text">Unchecked: SP-based immediate addressing — статически доказуемо корректно компилятором, проверка избыточна</div>
+      </div>
+      <div class="dep-item">
+        <span class="dep-bullet blue">→</span>
+        <div class="dep-text">Требуется BTI + PAC для защиты stack pointer от hijacking — MTE не защищает SP по архитектурному допущению</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-strip">
+    <div class="strip-item"><strong>SYNC + collect</strong> → максимум информации при тестировании</div>
+    <div style="width:1px;height:20px;background:var(--border)"></div>
+    <div class="strip-item"><strong>ASYNC + terminate</strong> → баланс overhead / защита в продакшене</div>
+    <div style="width:1px;height:20px;background:var(--border)"></div>
+    <div class="strip-item"><strong>Crash → restart in SYNC</strong> → адаптивная диагностика</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 8 ═══ -->
+<div class="slide" id="s8">
+  <div class="header">
+    <p style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.4);margin-bottom:8px;text-transform:uppercase">07 · Производительность</p>
+    <h2>MTE vs ASan: накладные расходы и покрытие</h2>
+  </div>
+  <div class="body">
+    <div class="chart-area">
+      <p class="chart-title">Замедление относительно baseline (меньше = лучше)</p>
+      <div class="bar-row">
+        <span class="bar-label">ASan</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:100%;background:var(--red)"><span class="bar-val">2.0×</span></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">HWASan</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:72.5%;background:#C8630A"><span class="bar-val">1.45×</span></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">MTE SYNC</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:60%;background:var(--gold)"><span class="bar-val">1.20×</span></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">MTE ASYMM</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:16%;background:var(--blue)"><span class="bar-val">1.05×</span></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">MTE ASYNC</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:9%;background:#1B9C65"><span class="bar-val">1.02×</span></div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px 16px;background:var(--gold-light);border-left:3px solid var(--gold);border-radius:3px">
+        <p style="font-size:12px;color:var(--muted);line-height:1.6"><strong style="color:var(--gold)">Важно:</strong> arXiv:2601.11786 (2026) фиксирует до <strong>6.64× замедления</strong> на отдельных store-heavy microbenchmarks в SYNC режиме из-за сериализации конвейера. Серверные нагрузки (RocksDB, Nginx, PostgreSQL) — обычно &lt;1.18×.</p>
+      </div>
+    </div>
+    <div class="tbl-area">
+      <p class="tbl-title">Сравнение ASan vs MTE ASYNC</p>
+      <div style="border:1px solid var(--border);border-radius:4px;overflow:hidden">
+        <div class="cmp-row head">
+          <div class="cmp-cell">Параметр</div>
+          <div class="cmp-cell" style="color:#FF8A8A">ASan</div>
+          <div class="cmp-cell" style="color:#5ECBC8">MTE ASYNC</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">CPU overhead</div>
+          <div class="cmp-cell" style="color:var(--red);font-weight:500">~2×</div>
+          <div class="cmp-cell highlight-cell">~1–2%</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">RAM overhead</div>
+          <div class="cmp-cell" style="color:var(--red);font-weight:500">+50–100%</div>
+          <div class="cmp-cell highlight-cell">&lt;3%</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">Heap: изменение кода</div>
+          <div class="cmp-cell" style="color:var(--red);font-weight:500">Recompile</div>
+          <div class="cmp-cell highlight-cell">Нет</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">Продакшен</div>
+          <div class="cmp-cell" style="color:var(--red);font-weight:500">Нет</div>
+          <div class="cmp-cell highlight-cell">Да</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">Точность</div>
+          <div class="cmp-cell">Точная</div>
+          <div class="cmp-cell">По потоку</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">Spatial ошибки</div>
+          <div class="cmp-cell">✓</div>
+          <div class="cmp-cell highlight-cell">✓</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell">Temporal ошибки</div>
+          <div class="cmp-cell">✓</div>
+          <div class="cmp-cell highlight-cell">✓</div>
+        </div>
+      </div>
+      <p class="note">Источники: arXiv:2601.11786 (Pixel 8/9, AmpereOne, Apple M5, 2026) · developer.arm.com · Android NDK docs</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 9 ═══ -->
+<div class="slide" id="s9">
+  <div class="top" style="padding:36px 72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1">
+    <div class="platform-card android">
+      <p class="label" style="margin-bottom:8px">08 · Экосистема</p>
+      <h3>Android NDK Support</h3>
+      <div class="api-code">android_mallopt(<br>&nbsp;&nbsp;M_BIONIC_SET_HEAP_TAGGING_LEVEL,<br>&nbsp;&nbsp;M_HEAP_TAGGING_LEVEL_SYNC  <span style="color:#7A7268">// or ASYNC</span><br>);</div>
+      <div class="platform-list">
+        <div class="platform-item">Google Pixel 8 (2023) — первый массовый телефон с MTE hardware</div>
+        <div class="platform-item">SYNC — отладка: точная диагностика с SIGSEGV</div>
+        <div class="platform-item">ASYNC — release: &lt;2% overhead, production-ready</div>
+        <div class="platform-item">Apple iPhone 17 / A19 (2025) — поддержка MTE architecture</div>
+        <div class="platform-item">MTE нашёл UAF баги на Pixel 8 в реальных приложениях (Project Zero)</div>
+      </div>
+    </div>
+    <div class="platform-card linux">
+      <p class="label" style="margin-bottom:8px">08 · Экосистема</p>
+      <h3>Linux Kernel Support</h3>
+      <div class="api-code" style="color:#D4C8B8;background:#1E1C1A">prctl(PR_SET_TAGGED_ADDR_CTRL,<br>&nbsp;&nbsp;PR_TAGGED_ADDR_ENABLE |<br>&nbsp;&nbsp;PR_MTE_TCF_ASYNC, 0, 0, 0);</div>
+      <div class="platform-list" style="--red:var(--blue)">
+        <div class="platform-item" style="--red:var(--blue)">Kernel patch upstream от Arm для Tagged Memory</div>
+        <div class="platform-item">clear_page / copy_page — aware of tags (STZGM)</div>
+        <div class="platform-item">SIGSEGV handling: аналог translation fault</div>
+        <div class="platform-item">mmap → Normal Tagged Memory для userspace процессов</div>
+        <div class="platform-item">AMBA 5 CHI — новая спецификация для когерентности тегов</div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline">
+    <p class="tl-label">08 · Хронология внедрения MTE</p>
+    <div class="tl-track">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-year">2019</p>
+        <p class="tl-text">Armv8.5-A spec опубликована (август)</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-year">2021</p>
+        <p class="tl-text">Первые Armv9 CPU с MTE в silicon</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red"></div>
+        <p class="tl-year">2023</p>
+        <p class="tl-text">Google Pixel 8 — первый mass-market Android с MTE</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red"></div>
+        <p class="tl-year">2024</p>
+        <p class="tl-text">Google Pixel 9, UAF баги найдены Project Zero</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot blue"></div>
+        <p class="tl-year">2025</p>
+        <p class="tl-text">Apple A19 (iPhone 17) добавляет MTE</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot blue"></div>
+        <p class="tl-year">2026</p>
+        <p class="tl-text">arXiv:2601.11786 — первый полный perf-анализ на 4 microarch</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 10 ═══ -->
+<div class="slide" id="s10">
+  <div class="hdr">
+    <p class="label" style="margin-bottom:8px">09 · Практика</p>
+    <h2>Оптимизации и ограничения MTE</h2>
+    <p>Рекомендации по снижению overhead и границы применимости технологии</p>
+  </div>
+  <div class="body">
+    <div>
+      <p class="section-title do">✓ Рекомендуется</p>
+      <div class="opt-item">
+        <div class="opt-icon do">→</div>
+        <div>
+          <p class="opt-title">Записывать теги и данные вместе</p>
+          <p class="opt-body">Использовать STZGM для zero+tag за одну операцию при инициализации страниц ядром. Избегать раздельных операций записи данных и тегов.</p>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon do">→</div>
+        <div>
+          <p class="opt-title">Минимизировать de-allocation / re-allocation</p>
+          <p class="opt-body">Частые malloc/free усиливают overhead MTE: фиксированные затраты на аллокацию растут, существующие perf-проблемы amplify.</p>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon do">→</div>
+        <div>
+          <p class="opt-title">Избегать больших fixed-size стек-буферов</p>
+          <p class="opt-body">Буферы типа PATH_MAX (4096 байт) часто содержат короткие строки. Выравнивание до 16 байт при редком использовании → напрасная запись тегов.</p>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon do">→</div>
+        <div>
+          <p class="opt-title">Избегать over-allocation address space</p>
+          <p class="opt-body">Если ПО резервирует гигабайты address space, но пишет мало — теги всё равно пишутся. С MTE это дороже, чем без него.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="section-title dont">✗ Ограничения</p>
+      <div class="opt-item">
+        <div class="opt-icon dont">!</div>
+        <div>
+          <p class="opt-title">Вероятностная, не абсолютная защита</p>
+          <p class="opt-body">4 бита = 16 значений тегов. Вероятность случайного совпадения при «диком» доступе: 1/16. При N запусках вероятность → 100%.</p>
+          <span class="limit-badge">1/16 false negative rate</span>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon dont">!</div>
+        <div>
+          <p class="opt-title">Не защищает алгоритмические уязвимости</p>
+          <p class="opt-body">MTE работает с нарушениями memory safety, но не с логическими ошибками, инъекциями, или уязвимостями в коде без обращений к памяти.</p>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon dont">!</div>
+        <div>
+          <p class="opt-title">Stack требует перекомпиляции + BTI + PAC</p>
+          <p class="opt-body">Архитектура предполагает trustworthy stack pointer. Без BTI и PAC атакующий может контролировать SP и обойти MTE для стека.</p>
+        </div>
+      </div>
+      <div class="opt-item">
+        <div class="opt-icon dont">!</div>
+        <div>
+          <p class="opt-title">Только Arm — нет аналога на x86/RISC-V</p>
+          <p class="opt-body">MTE специфична для Armv8.5-A+. Intel MPX (deprecated 2019) и AMD не имеют функционального эквивалента в production silicon сегодня.</p>
+          <span class="limit-badge">Arm-only</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 11 ═══ -->
+<div class="slide" id="s11">
+  <span class="bg-text" style="top:-80px;left:-40px;font-size:340px">MTE</span>
+  <div class="content">
+    <div class="left-col">
+      <div>
+        <p class="kicker">10 · Итоги доклада</p>
+        <p class="end-title">Что даёт<br>MTE<br><em>архитектурно</em></p>
+        <p class="tagline">
+          Первый production-ready аппаратный механизм обнаружения ошибок памяти с накладными расходами менее 2% в ASYNC режиме — пригоден для реальных устройств без изменения пользовательского кода.
+        </p>
+      </div>
+      <div>
+        <p class="src-label">Источники</p>
+        <div class="src-item">Armv8.5-A Memory Tagging Extension White Paper (developer.arm.com)</div>
+        <div class="src-item">Android NDK · Arm MTE Guide (developer.android.com)</div>
+        <div class="src-item">arXiv:2601.11786 — ARM MTE Performance in Practice (2026)</div>
+        <div class="src-item">Project Zero: MTE As Implemented (2023)</div>
+        <div class="src-item">AOSP: Arm Memory Tagging Extension (source.android.com)</div>
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="concl-item">
+        <span class="concl-num">01</span>
+        <p class="concl-text"><strong>Lock &amp; Key в железе:</strong> 4-битный тег на каждые 16 байт без изменения ABI — через Top Byte Ignore указателя</p>
+      </div>
+      <div class="concl-item">
+        <span class="concl-num">02</span>
+        <p class="concl-text"><strong>Три режима:</strong> SYNC (диагностика), ASYNC (~1-2% overhead, продакшен), ASYMM (компромисс)</p>
+      </div>
+      <div class="concl-item">
+        <span class="concl-num">03</span>
+        <p class="concl-text"><strong>Heap без перекомпиляции;</strong> stack требует BTI + PAC + recompile для полной безопасности</p>
+      </div>
+      <div class="concl-item">
+        <span class="concl-num">04</span>
+        <p class="concl-text"><strong>Обнаруживает оба класса:</strong> buffer overflow детерминировано, use-after-free — детерминировано при условии смены тега при free()</p>
+      </div>
+      <div class="concl-item">
+        <span class="concl-num">05</span>
+        <p class="concl-text"><strong>Широкое внедрение 2023–2025:</strong> Pixel 8/9, AmpereOne, Apple A19 — MTE вышел из spec в production silicon</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<!-- Navigation -->
+<div id="nav">
+  <button onclick="go(-1)">←</button>
+  <span id="slide-num">1 / 11</span>
+  <button onclick="go(1)">→</button>
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let cur = 0;
+
+const dotsEl = document.getElementById('dots');
+slides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' on' : '');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+});
+
+function goTo(n) {
+  slides[cur].classList.remove('active');
+  dotsEl.children[cur].classList.remove('on');
+  cur = (n + total) % total;
+  slides[cur].classList.add('active');
+  dotsEl.children[cur].classList.add('on');
+  document.getElementById('slide-num').textContent = (cur + 1) + ' / ' + total;
+}
+function go(d) { goTo(cur + d); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') go(1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(-1);
+});
+</script>
+</body>
+</html>
