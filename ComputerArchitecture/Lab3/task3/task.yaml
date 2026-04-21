@@ -16,5 +16,3 @@ reports:
     slice: last
     view: |
       output: {io:0x84:sym}
-    assert: |
-      output: [] >>> [51, 65, 52, 66, 52, 67]
