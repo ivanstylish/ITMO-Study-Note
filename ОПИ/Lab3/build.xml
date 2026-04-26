@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    build.xml — Apache Ant build script
+    Проект: Lab3 — Coordinate Check (Jakarta EE + JSF + JPA)
+    Автор: org.coordinate
+    ============================================================
+    Цели (targets):
+      compile  — компиляция исходных кодов
+      build    — компиляция + упаковка в jar
+      clean    — удаление скомпилированных классов и временных файлов
+      test     — запуск JUnit-тестов (зависит от build)
+      music    — воспроизведение музыки после сборки
+      history  — откат на рабочую git-ревизию при ошибке компиляции
+    ============================================================
+-->
+<project name="CoordinateCheck" default="build" basedir=".">
+
+    <!-- ============================================================
+         0. Загрузка внешнего файла параметров
+         ============================================================ -->
+    <property file="build.properties"/>
+
+    <!-- Определение OS для music target -->
+    <condition property="os.linux">
+        <os family="unix"/>
+    </condition>
+    <condition property="os.mac">
+        <os family="mac"/>
+    </condition>
+    <condition property="os.windows">
+        <os family="windows"/>
+    </condition>
+
+    <!-- Classpath для компиляции: всё из lib/compile -->
+    <path id="compile.classpath">
+        <fileset dir="${lib.compile}" includes="*.jar" erroronmissingdir="false"/>
+    </path>
+
+    <!-- Classpath для тестов: классы проекта + lib/compile + lib/test -->
+    <path id="test.classpath">
+        <pathelement location="${classes.dir}"/>
+        <fileset dir="${lib.compile}" includes="*.jar" erroronmissingdir="false"/>
+        <fileset dir="${lib.test}"    includes="*.jar" erroronmissingdir="false"/>
+    </path>
+
+
+    <!-- ============================================================
+         1. TARGET: compile
+         Компиляция исходных кодов проекта
+         ============================================================ -->
+    <target name="compile" description="Компиляция исходных кодов проекта">
+        <echo message="========================================"/>
+        <echo message=" [compile] Компиляция исходников..."/>
+        <echo message=" src  : ${src.dir}"/>
+        <echo message=" dest : ${classes.dir}"/>
+        <echo message="========================================"/>
+
+        <!-- Создаём директорию для скомпилированных классов -->
+        <mkdir dir="${classes.dir}"/>
+
+        <!-- Копируем ресурсы (persistence.xml и т.д.) -->
+        <copy todir="${classes.dir}" failonerror="false">
+            <fileset dir="${resources.dir}" includes="**/*" erroronmissingdir="false"/>
+        </copy>
+
+        <!-- Основная компиляция -->
+        <javac srcdir="${src.dir}"
+               destdir="${classes.dir}"
+               includeantruntime="false"
+               encoding="UTF-8"
+               debug="true"
+               debuglevel="lines,vars,source"
+               source="17"
+               target="17"
+               failonerror="true">
+            <classpath refid="compile.classpath"/>
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>
+
+        <echo message="[compile] OK — классы скомпилированы в ${classes.dir}"/>
+    </target>
+
+
+    <!-- ============================================================
+         2. TARGET: build
+         Компиляция + упаковка в исполняемый JAR
+         (compile вызывается через depends)
+         ============================================================ -->
+    <target name="build" depends="compile" description="Компиляция и упаковка в JAR">
+        <echo message="========================================"/>
+        <echo message=" [build] Упаковка в JAR-архив..."/>
+        <echo message=" jar : ${jar.file}"/>
+        <echo message="========================================"/>
+
+        <!-- Создаём директорию dist -->
+        <mkdir dir="${dist.dir}"/>
+
+        <!-- Формируем MANIFEST.MF с версией и главным классом -->
+        <jar destfile="${jar.file}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Manifest-Version"       value="1.0"/>
+                <attribute name="Implementation-Title"   value="${project.name}"/>
+                <attribute name="Implementation-Version" value="${project.version}"/>
+                <attribute name="Implementation-Vendor"  value="${manifest.vendor}"/>
+                <attribute name="Main-Class"             value="${project.main.class}"/>
+                <attribute name="Built-By"               value="${user.name}"/>
+                <attribute name="Build-Jdk"              value="${java.version}"/>
+            </manifest>
+            <!-- Включаем также webapp-ресурсы -->
+            <fileset dir="${webapp.dir}" erroronmissingdir="false">
+                <include name="**/*.xhtml"/>
+                <include name="**/*.css"/>
+                <include name="**/*.js"/>
+                <include name="**/*.xml"/>
+            </fileset>
+        </jar>
+
+        <echo message="[build] OK — ${jar.file} создан успешно!"/>
+
+        <!-- Вызов music по завершению сборки -->
+        <antcall target="music"/>
+    </target>
+
+
+    <!-- ============================================================
+         3. TARGET: clean
+         Удаление скомпилированных классов и временных файлов
+         ============================================================ -->
+    <target name="clean" description="Удаление скомпилированных классов и временных файлов">
+        <echo message="========================================"/>
+        <echo message=" [clean] Очистка директорий сборки..."/>
+        <echo message="========================================"/>
+
+        <delete dir="${build.dir}"  verbose="true" failonerror="false"/>
+        <delete dir="${dist.dir}"   verbose="true" failonerror="false"/>
+
+        <!-- Удаляем временные файлы (*.tmp, *.bak, diff-файлы из history) -->
+        <delete failonerror="false" verbose="true">
+            <fileset dir="${basedir}" includes="*.tmp,*.bak,broken_diff_*.diff"/>
+        </delete>
+
+        <echo message="[clean] OK — временные файлы и классы удалены."/>
+    </target>
+
+
+    <!-- ============================================================
+         4. TARGET: test
+         Запуск JUnit-тестов (зависит от build)
+         ============================================================ -->
+    <target name="test" depends="build" description="Запуск JUnit-тестов проекта">
+        <echo message="========================================"/>
+        <echo message=" [test] Запуск JUnit тестов..."/>
+        <echo message="========================================"/>
+
+        <!-- Создаём директории для классов тестов и отчётов -->
+        <mkdir dir="${test.classes.dir}"/>
+        <mkdir dir="${test.reports.dir}"/>
+
+        <!-- Компилируем тесты -->
+        <javac srcdir="${test.src.dir}"
+               destdir="${test.classes.dir}"
+               includeantruntime="false"
+               encoding="UTF-8"
+               source="17"
+               target="17"
+               failonerror="true"
+               erroronmissingdir="false">
+            <classpath>
+                <path refid="test.classpath"/>
+            </classpath>
+        </javac>
+
+        <!-- Запускаем JUnit 5 через junit-platform-console-standalone -->
+        <java classname="org.junit.platform.console.ConsoleLauncher"
+              fork="${junit.fork}"
+              failonerror="false"
+              resultproperty="test.result">
+            <classpath>
+                <path refid="test.classpath"/>
+                <pathelement location="${test.classes.dir}"/>
+                <pathelement location="${junit.jar}"/>
+            </classpath>
+            <arg value="--scan-classpath"/>
+            <arg value="--reports-dir=${test.reports.dir}"/>
+            <arg value="--details=verbose"/>
+        </java>
+
+        <!-- Генерируем HTML-отчёт -->
+        <junitreport todir="${test.reports.dir}">
+            <fileset dir="${test.reports.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${test.reports.dir}/html"/>
+        </junitreport>
+
+        <echo message="[test] Отчёт: ${test.reports.dir}/html/index.html"/>
+
+        <fail message="[test] ОШИБКА: некоторые тесты не прошли! Смотри отчёт в ${test.reports.dir}">
+            <condition>
+                <not><equals arg1="${test.result}" arg2="0"/></not>
+            </condition>
+        </fail>
+
+        <echo message="[test] OK — все тесты прошли успешно!"/>
+    </target>
+
+
+    <!-- ============================================================
+         5. TARGET: music
+         Воспроизведение музыки по завершению сборки (build)
+         Определяет ОС и вызывает нужную команду
+         ============================================================ -->
+    <target name="music" description="Воспроизведение музыки после сборки">
+        <echo message="[music] Воспроизведение музыки..."/>
+
+        <!-- Linux (aplay для .wav, mpg123 для .mp3) -->
+        <antcall target="music-linux"/>
+        <!-- macOS -->
+        <antcall target="music-mac"/>
+        <!-- Windows -->
+        <antcall target="music-windows"/>
+    </target>
+
+    <target name="music-linux" if="os.linux">
+        <echo message="[music] OS: Linux — используем ${music.cmd.linux}"/>
+        <exec executable="${music.cmd.linux}" failonerror="false" spawn="true">
+            <arg value="${music.file}"/>
+        </exec>
+    </target>
+
+    <target name="music-mac" if="os.mac">
+        <echo message="[music] OS: macOS — используем ${music.cmd.mac}"/>
+        <exec executable="${music.cmd.mac}" failonerror="false" spawn="true">
+            <arg value="${music.file}"/>
+        </exec>
+    </target>
+
+    <target name="music-windows" if="os.windows">
+        <echo message="[music] OS: Windows — используем ${music.cmd.windows}"/>
+        <exec executable="${music.cmd.windows}" failonerror="false" spawn="true">
+            <arg value="${music.file}"/>
+        </exec>
+    </target>
+
+
+    <!-- ============================================================
+         6. TARGET: history
+         Если compile завершается ошибкой — откатываемся по git
+         до последней работающей ревизии.
+         Если найдена — формируем diff-файл изменений следующей ревизии.
+
+         Алгоритм (реализован через Ant + exec + условия):
+           1. Попытка compile текущей ревизии.
+           2. При ошибке: получить список всех ревизий (git log).
+           3. Для каждой ревизии (начиная с предыдущей):
+              a. git checkout <rev>
+              b. Попытка compile
+              c. Если успех — сохранить rev, выйти из цикла
+           4. Если рабочая ревизия найдена — git diff <working_rev> <next_rev>
+              записать в файл broken_diff_<timestamp>.diff
+           5. Вывести итоговое сообщение.
+
+         Примечание: Ant не имеет встроенного цикла с break.
+         Используем внешний shell-скрипт history.sh, вызываемый через exec.
+         ============================================================ -->
+    <target name="history" description="Откат на рабочую git-ревизию при ошибке компиляции">
+        <echo message="========================================"/>
+        <echo message=" [history] Проверка текущей сборки..."/>
+        <echo message="========================================"/>
+
+        <!-- Шаг 1: Попытка скомпилировать текущее состояние -->
+        <antcall target="compile-silent" inheritall="true"/>
+
+        <condition property="compile.ok">
+            <available file="${classes.dir}/org/coordinate/bean/PointBean.class"/>
+        </condition>
+
+        <!-- Если скомпилировалось — всё хорошо -->
+        <antcall target="history-already-ok"/>
+
+        <!-- Если нет — запускаем поиск рабочей ревизии через shell-скрипт -->
+        <antcall target="history-search"/>
+    </target>
+
+    <!-- Вспомогательный compile без остановки по ошибке -->
+    <target name="compile-silent">
+        <mkdir dir="${classes.dir}"/>
+        <copy todir="${classes.dir}" failonerror="false">
+            <fileset dir="${resources.dir}" includes="**/*" erroronmissingdir="false"/>
+        </copy>
+        <javac srcdir="${src.dir}"
+               destdir="${classes.dir}"
+               includeantruntime="false"
+               encoding="UTF-8"
+               source="17"
+               target="17"
+               failonerror="false">
+            <classpath refid="compile.classpath"/>
+        </javac>
+    </target>
+
+    <target name="history-already-ok" if="compile.ok">
+        <echo message="[history] Текущая ревизия компилируется успешно. Откат не нужен."/>
+    </target>
+
+    <target name="history-search" unless="compile.ok">
+        <echo message="[history] Текущий код не компилируется. Запуск поиска рабочей ревизии..."/>
+
+        <!-- Определяем платформу и вызываем соответствующий скрипт -->
+        <antcall target="history-search-unix"/>
+        <antcall target="history-search-windows"/>
+    </target>
+
+    <target name="history-search-unix" if="os.linux">
+        <echo message="[history] Запуск history.sh ..."/>
+        <exec executable="bash" failonerror="false" resultproperty="history.result">
+            <arg value="${basedir}/history.sh"/>
+            <arg value="${src.dir}"/>
+            <arg value="${classes.dir}"/>
+            <arg value="${lib.compile}"/>
+        </exec>
+        <echo message="[history] Shell-скрипт завершён с кодом: ${history.result}"/>
+    </target>
+
+    <target name="history-search-windows" if="os.windows">
+        <echo message="[history] Запуск history.bat ..."/>
+        <exec executable="cmd" failonerror="false">
+            <arg value="/c"/>
+            <arg value="${basedir}\history.bat"/>
+            <arg value="${src.dir}"/>
+            <arg value="${classes.dir}"/>
+            <arg value="${lib.compile}"/>
+        </exec>
+    </target>
+
+</project>
