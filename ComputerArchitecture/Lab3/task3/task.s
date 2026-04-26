@@ -11,6 +11,7 @@
 ; 0x84        : IO输出端口 
 ; 0x0200     : 代码区     
 
+; (D0 - D7数据寄存器)， (A0 - A7(堆栈指针)地址寄存器)
 ; A0	输入缓冲区指针	Указатель буфера ввода
 ; A1	输出缓冲区指针	Указатель буфера вывода
 ; A2	IO输入端口地址 (0x80)	Адрес порта ввода (0x80)
@@ -42,10 +43,10 @@ output_buf: .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 
 ; 一：程序入口
 _start:
-    movea.l input_buf, A0
-    movea.l 0x80, A2
-    movea.l 0x84, A3
-    move.l 0, D4
+    movea.l input_buf, A0  ; 将 input_buf 的地址加载到 A0
+    movea.l 0x80, A2       ; A2 指向 IO 输入端口 (0x80)
+    movea.l 0x84, A3       ; A3 指向 IO 输出端口 (0x84)
+    move.l 0, D4           ; 初始化 D4 为 0，用于记录读取了多少字节
 
 ; 二：读取输入阶段
 ; 读取循环，不断从 0x80 端口读取字符。如果读了64个字符还没遇到换行符（D4 >= 0x40），则跳转到溢出处理；如果是换行符 \n，跳转到 read_done；否则将字符存入输入缓冲区，指针 A0 后移，D4 加1，继续循环。
@@ -53,24 +54,24 @@ _start:
 ; Иначе сохраняет символ в буфер, сдвигает указатель A0 и увеличивает D4.
 
 read_loop:
-    cmp.l 0x40, D4
-    bge overflow
-    move.b (A2), D0
-    cmp.b 0x0A, D0
-    beq read_done
-    move.b D0, (A0)+
-    add.l 1, D4
-    jmp read_loop
+    cmp.l 0x40, D4         ; 比较 D4 和 64 (0x40)
+    bge overflow           ; 如果 D4 >= 64，跳转到 overflow 处理
+    move.b (A2), D0        ; 从 IO 端口 (A2) 读取 1 字节到 D0 (地址间接寻址)
+    cmp.b 0x0A, D0         ; 检查是否为换行符 '\n' (ASCII 0x0A)
+    beq read_done          ; 如果是换行符，跳转到读取完成
+    move.b D0, (A0)+       ; 将字符存入 input_buf，A0 自动后移 1 字节 (后置增量寻址)
+    add.l 1, D4            ; D4++ (记录读取的总数)
+    jmp read_loop          ; 继续循环
 
 ; 读取完成，重置 A0 指向 input_buf 开头。检查 D4 是否为0（空输入）。如果为空，直接停机；否则跳转到 compress_init 开始压缩。
 ; Чтение завершено. Сбрасывает A0 на начало input_buf. 
 ; Проверяет, пуст ли ввод (D4=0). Если пуст, останавливает программу; иначе переходит к инициализации сжатия.
 
 read_done:
-    movea.l input_buf, A0
-    cmp.l 0, D4
-    bne compress_init
-    halt
+    movea.l input_buf, A0  ; A0 重新指向缓冲区开头，准备处理
+    cmp.l 0, D4            ; 检查输入是否为空
+    bne compress_init      ; 如果不为空，开始压缩
+    halt                   ; 为空则直接停机
 
 ; 三：压缩处理阶段
 ; 初始化压缩所需的变量。A1 指向 output_buf，D3（输出长度）清零。从输入缓冲区读取第一个字符作为当前统计字符存入 D2，设置初始计数 D1=1，已读字符数 D4 减1。
@@ -78,26 +79,26 @@ read_done:
 ; Считывает первый символ в D2 как текущий символ серии, устанавливает счетчик D1=1, уменьшает D4.
 
 compress_init:
-    movea.l output_buf, A1
-    move.l 0, D3
-    move.b (A0)+, D2
-    move.l 1, D1
-    sub.l 1, D4
+    movea.l output_buf, A1 ; A1 指向输出暂存区
+    move.l 0, D3           ; D3 为输出长度计数
+    move.b (A0)+, D2       ; 取第一个字符存入 D2，A0 后移
+    move.l 1, D1           ; 初始化连续计数器 D1 = 1
+    sub.l 1, D4            ; 总字符数减 1
 
 ; 核心逻辑。如果输入已读完（D4=0）或连续计数达到9（D1=9），跳转到 flush_run 输出当前统计。否则读取下一个字符到D0，D4 减1。比较新字符是否与当前字符（D2）相同：相同则 D1 加1，继续循环；不同则跳转到 flush_and_new。
 ; Основной цикл сравнения. Если ввод закончился (D4=0) или счетчик достиг 9 (D1=9), переходит к записи серии. 
 ; Иначе считывает следующий символ, уменьшает D4. Если символ совпадает с D2, увеличивает D1; если нет — переходит к flush_and_new.
 
 char_loop:
-    cmp.l 0, D4
-    beq flush_run
-    cmp.l 9, D1
-    beq flush_run
-    move.b (A0)+, D0
-    sub.l 1, D4
-    cmp.b D2, D0
-    bne flush_and_new
-    add.l 1, D1
+    cmp.l 0, D4            ; 检查输入是否处理完 Проверьте, обработаны ли входные данные.
+    beq flush_run          ; 完结，刷入最后一组统计
+    cmp.l 9, D1            ; 检查计数是否达到 9 (Python 逻辑：splits runs > 9)
+    beq flush_run          ; 达到 9，强制刷入
+    move.b (A0)+, D0       ; 取下一个字符到 D0
+    sub.l 1, D4            ; 待处理数减 1
+    cmp.b D2, D0           ; 比较新字符 D0 与当前统计字符 D2
+    bne flush_and_new      ; 如果字符不同，跳转处理
+    add.l 1, D1            ; 字符相同，D1++
     jmp char_loop
 
 ; 刷入当前统计，将当前的统计结果（D1 和 D2）写入输出缓冲区。输出长度 D3 加2。如果 D3 超过64，触发溢出。将 D1 加上 0x30 变成 ASCII 数字，存入缓冲区，再将字符 D2 存入。
@@ -107,18 +108,18 @@ char_loop:
 ; Если ввод не закончился, берет следующий символ как новый D2, сбрасывает D1=1 и возвращается к циклу; иначе переходит к завершению.
 
 flush_run:
-    add.l 2, D3
-    cmp.l 0x40, D3
+    add.l 2, D3            ; 每次写入产生 2 字节（数字+字符）
+    cmp.l 0x40, D3         ; 检查输出是否超过 64 字节
     bge overflow
-    move.l D1, D0
-    add.b 0x30, D0
-    move.b D0, (A1)+
-    move.b D2, (A1)+
-    cmp.l 0, D4
-    beq compress_done
-    move.b (A0)+, D2
+    move.l D1, D0          ; 将计数值 D1 移入 D0
+    add.b 0x30, D0         ; 将 1-9 转换为 ASCII '1'-'9' (0x30 为 '0') Преобразовать числа от 1 до 9 в ASCII-код '1'-'9' (0x30 — это '0').
+    move.b D0, (A1)+       ; 写入数字到输出缓冲区 Записать числа в выходной буфер
+    move.b D2, (A1)+       ; 写入字符到输出缓冲区 Записать символ в выходной буфер
+    cmp.l 0, D4            ; 如果输入已空
+    beq compress_done      ; 压缩完成
+    move.b (A0)+, D2       ; 否则取新字符作为下一轮统计对象
     sub.l 1, D4
-    move.l 1, D1
+    move.l 1, D1           ; 重置计数为 1
     jmp char_loop
 
 ; 刷入统计并处理新字符，当遇到与当前字符不同的新字符时触发。先把新字符暂存到 D5。
@@ -128,7 +129,7 @@ flush_run:
 ; После записи переносит новый символ из D5 в D2, сбрасывает счетчик D1=1 и возвращается к char_loop.
 
 flush_and_new:
-    move.b D0, D5
+    move.b D0, D5           ; 将那个“不同”的新字符暂存在 D5
     add.l 2, D3
     cmp.l 0x40, D3
     bge overflow
@@ -136,8 +137,8 @@ flush_and_new:
     add.b 0x30, D0
     move.b D0, (A1)+
     move.b D2, (A1)+
-    move.b D5, D2
-    move.l 1, D1
+    move.b D5, D2          ; 将新字符 D5 存入 D2 成为新的统计目标
+    move.l 1, D1           ; 重置计数
     jmp char_loop
 
 ; 四：输出和结束阶段
@@ -146,18 +147,18 @@ flush_and_new:
 ; Сбрасывает A1 на начало output_buf для начала вывода.
 
 compress_done:
-    move.b 0, (A1)
-    movea.l output_buf, A1
+    move.b 0, (A1)         ; 写入字符串结束符 \0
+    movea.l output_buf, A1 ; A1 回到输出缓冲区开头
 
 ; 输出循环，逐个字节从输出缓冲区读取数据。如果是 \0，说明输出完毕，跳转到 done；否则将字节写入输出端口 0x84，继续循环。
 ; Цикл вывода. Считывает данные из буфера вывода байтом за байтом. 
 ; Если \0, переходит к завершению; иначе записывает байт в порт вывода 0x84 и продолжается.
 
 output_loop:
-    move.b (A1)+, D0
-    cmp.b 0, D0
+    move.b (A1)+, D0       ; 从缓冲区取出一字节
+    cmp.b 0, D0            ; 是否为结束符(与当前字符比较)
     beq done
-    move.b D0, (A3)
+    move.b D0, (A3)        ; 将字符写入 IO 输出端口 (0x84)
     jmp output_loop
 
 ; 溢出错误处理，当输入超过64字符，或压缩后的结果超过64字节时触发。向输出端口写入错误码 0xCCCCCCCC（对应十进制 -858993460），然后停机。
@@ -166,7 +167,7 @@ output_loop:
 
 overflow:
     move.l 0xCCCCCCCC, D0
-    move.l D0, (A3)
+    move.l D0, (A3)         ; 输出错误码
     halt
 done:
     halt
