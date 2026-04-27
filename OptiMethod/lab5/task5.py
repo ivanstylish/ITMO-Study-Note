@@ -14,9 +14,9 @@ y_data = np.array([-0.10, 1.72, 4.73, 2.27, 0.03])
 
 class RBFNetwork:
     def __init__(self, n_neurons=2):
-        self.n_neurons = n_neurons
-        self.centers = None 
-        self.sigmas_sq = None
+        self.n_neurons = n_neurons # Количество нейронов в скрытом слое, здесь установлено значение 2.
+        self.centers = None # Центральная точка радиальных базисных функций c
+        self.sigmas_sq = None # Коэффициент сглаживания (дисперсия) сигма^2
         self.weights = None  # [w0, w1, w2]
 
     def _kmeans_from_scratch(self, X, max_iter=100):
@@ -27,11 +27,14 @@ class RBFNetwork:
         print("--- Запуск K-Means (Обучение без учителя) ---")
         for i in range(max_iter):
             distances = np.zeros((X.shape[0], self.n_neurons))
+            # Вычислить евклидово расстояние от каждой точки до центральной точки
             for j in range(self.n_neurons):
                 distances[:, j] = np.sqrt(np.sum((X - centers[j]) ** 2, axis=1))
 
+            # Направить образцы в ближайший центр
             labels = np.argmin(distances, axis=1)
 
+            # Пересчитать центральную точку (найдите среднее значение).
             new_centers = np.copy(centers)
             for j in range(self.n_neurons):
                 cluster_points = X[labels == j]
@@ -40,6 +43,7 @@ class RBFNetwork:
 
             print(f"Итерация K-Means {i + 1}: Центры = {new_centers}")
 
+            # Если центр не изменится, завершить процесс досрочно.
             if np.all(centers == new_centers):
                 break
             centers = new_centers
@@ -153,12 +157,12 @@ fig = plt.figure(figsize=(18, 5))
 ax1 = fig.add_subplot(131)
 ax1.plot(loss_history, color='blue')
 ax1.set_title('Кривая обучения (Loss по итерациям)')
-ax1.set_xlabel('Итерация');
-ax1.set_ylabel('MSE Loss');
+ax1.set_xlabel('Итерация')
+ax1.set_ylabel('MSE Loss')
 ax1.grid(True)
 
 # 2. 3D поверхность
-x_grid = np.linspace(0, 6, 50);
+x_grid = np.linspace(0, 6, 50)
 y_grid = np.linspace(0, 6, 50)
 X_grid, Y_grid = np.meshgrid(x_grid, y_grid)
 grid_points = np.c_[X_grid.ravel(), Y_grid.ravel()]
@@ -173,7 +177,7 @@ ax2.set_title('3D-визуализация RBF-сети')
 ax3 = fig.add_subplot(133)
 contour = ax3.contourf(X_grid, Y_grid, Z_grid, levels=25, cmap='viridis', alpha=0.9)
 ax3.scatter(X_data[:, 0], X_data[:, 1], c=y_data, s=120, edgecolors='black', cmap='viridis')
-ax3.set_title('Линии уровня');
+ax3.set_title('Линии уровня')
 plt.colorbar(contour, ax=ax3)
 
 plt.tight_layout()
