@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- 俄语支持与必备宏包 ---
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{listings} % 用于插入代码
+\usepackage{xcolor}
+
+% 代码块样式设置
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    breaklines=true,
+    captionpos=b
+}
+
+\geometry{left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \textbf{Университет ИТМО} \\
+    \vspace{1em}
+    Факультет Программной Инженерии и Компьютерной Техники\\
+    \vspace{1em}
+    \vspace{4cm}
+    \textbf{\Large Расчётно-графическая работа №2} \\
+    \textbf{Дисциплина: Математическая статистика} \\
+    \vspace{4cm}
+    \textbf{Тема: Проверка статистических гипотез} \\
+    \vfill
+    Выполнил: Чжун Ц.
+              Су Л.\\
+    Вариант: А-4 \\
+    2026
+\end{titlepage}
+
+\section{Программный код (Python)}
+Для проведения всех статистических расчетов был использован язык программирования Python и библиотека \texttt{scipy.stats}. Код учитывает необходимость объединения интервалов для критерия Пирсона.
+
+\begin{lstlisting}[caption=Реализация статистических критериев]
+
+\end{lstlisting}
+
+\section{Результаты вычислений}
+
+\subsection{Сравнение средних $X_1$ и $X_2$ (Этап 4.2 и 4.4)}
+\begin{itemize}
+    \item \textbf{Параметрический $t$-критерий:} $h_{набл} = [0.3593]$, $p\text{-value} = [0.7197]$.
+    \item \textbf{Критерий Манна-Уитни:} $U_{набл} = [5785.0000]$, $p\text{-value} = [0.709275]$.
+    \item \textbf{Вывод:} [Напишите: "Средние равны" или "Средние различаются"] на уровне значимости $\alpha=0.05$. Выводы обоих критериев [совпали/не совпали].
+\end{itemize}
+
+\subsection{Параметр нормального распределения $X_3$ (Этап 4.3)}
+Проверялась гипотеза $H_0: \mu = 95.0$.
+\begin{itemize}
+    \item Наблюдаемое значение: $h = [-1.4767]$.
+    \item $p\text{-value} = [0.1427]$.
+    \item \textbf{Результат:} Гипотеза $H_0$ [отвергается / не отвергается].
+\end{itemize}
+
+\subsection{Критерий согласия Пирсона для $X_4$ (Этап 4.5)}
+Проверялось соответствие экспоненциальному закону $Exp(0.1)$.
+\begin{itemize}
+    \item Число степеней свободы $df = [5]$.
+    \item Статистика $\chi^2_{набл} = [13.2211]$, $p\text{-value} = [0.0214]$.
+    \item \textbf{Результат:} Данные [соответствуют/не соответствуют] заданному распределению.
+\end{itemize}
+
+\section{Заключение}
+В данной работе была реализована программная проверка гипотез. Использование критерия Манна-Уитни позволило подтвердить устойчивость выводов $t$-критерия. При проверке критерия Пирсона было выполнено условие $np_k \ge 5$ путем объединения малочисленных интервалов, что гарантирует достоверность результата. Ошибка первого рода в данных экспериментах означала бы ложное отклонение гипотезы о равенстве параметров или виде распределения при их фактической верности.
+
+\end{document}
