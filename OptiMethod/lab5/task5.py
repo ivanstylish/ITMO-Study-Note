@@ -41,6 +41,9 @@ class RBFNetwork:
                 if len(cluster_points) > 0:
                     new_centers[j] = np.mean(cluster_points, axis=0)
 
+            # Копирование текущих центров для вычислений. 
+            # Проход по каждому кластеру: если в кластере есть точки, вычисляется их среднее значение как новый центр.
+
             print(f"Итерация K-Means {i + 1}: Центры = {new_centers}")
 
             # Если центр не изменится, завершить процесс досрочно.
@@ -61,6 +64,7 @@ class RBFNetwork:
         # 2. Инициализация сигм (ширин)
         d = np.sqrt(np.sum((self.centers[0] - self.centers[1]) ** 2))
         self.sigmas_sq = np.array([d ** 2 / 4, d ** 2 / 4])  # sigma^2 = (d/2)^2
+        # Вычисление расстояния d между двумя центрами. Инициализация дисперсии по эмпирической формуле
 
         # 3. Инициализация весов
         self.weights = np.array([0.0, 0.1, 0.1])  # w0, w1, w2
@@ -68,6 +72,8 @@ class RBFNetwork:
         print("--- Запуск Градиентного Спуска (Обучение с учителем) ---")
         loss_history = []
 
+        # Начало итераций градиентного спуска. Вычисление матрицы радиальных базисных функций phi: 
+        # вычисление квадрата расстояния r_sq от образца до центра, затем подстановка в формулу функции Гаусса 
         for epoch in range(epochs):
             # Прямое распространение
             phi = np.zeros((N, self.n_neurons))
@@ -86,7 +92,7 @@ class RBFNetwork:
             if epoch % 1000 == 0 or epoch == 0:
                 print(f"Эпоха {epoch}: Loss = {mse:.6f} | Веса = {self.weights} | Сигмы^2 = {self.sigmas_sq}")
 
-            # Вычисление градиентов
+            # Инициализация градиентов для всех параметров
             grad_w0 = np.mean(errors)
             grad_w = np.zeros(self.n_neurons)
             grad_centers = np.zeros_like(self.centers)
