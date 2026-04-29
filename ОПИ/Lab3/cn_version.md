@@ -63,18 +63,18 @@ git 回滚找能编译的版本        →   ant history（最复杂，含循环
 │   └── test/
 │       └── java/
 │           └── org/coordinate/service/
-│               └── AreaCheckTest.java    ← JUnit 5 测试文件
+│               └── AreaCheckTest.java  
 │
 ├── lib/
-│   ├── compile/                     ← 放 Jakarta EE API jar
+│   ├── compile/                    
 │   │   └── jakarta.jakartaee-api-10.0.0.jar
 │   └── test/
 │       └── junit-platform-console-standalone-1.10.0.jar
 │
 ├── resources/
-│   └── my-music.wav                 ← ★ 你自己的音乐文件放这里
+│   └── my-music.wav             
 │
-└── build/                           ← 自动生成，不用手动创建
+└── build/                       
     ├── classes/
     ├── dist/
     └── test/
