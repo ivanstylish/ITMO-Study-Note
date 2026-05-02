@@ -6,7 +6,6 @@ from Color import Color
 
 
 class Data:
-    """Фабричные методы: возвращают InterpolationData из разных источников."""
 
     TEST_FILES = {
         "test1.txt": (
@@ -150,7 +149,6 @@ class Data:
         print(Color.green("\n  [Демо] Таблица 1.5, вариант 15 загружена."))
         return InterpolationData(x, y)
 
-    # ── вспомогательные ──────────────────────────────────────────
 
     @classmethod
     def _ensure_test_files(cls):

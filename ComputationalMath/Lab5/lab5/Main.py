@@ -6,7 +6,6 @@ from Color import Color
 
 
 class Main:
-    """Интерактивное приложение: объединяет все компоненты."""
 
     MENU = {
         "1": "Ввод данных с клавиатуры",
@@ -28,14 +27,13 @@ class Main:
 
             choice = input("Выбор: ").strip()
             if choice == "0":
-                print("Выход.")
+                print("SORRY IM OUT OF HERE...")
                 break
 
             data = self._load_data(choice)
             if data is None:
                 continue
 
-            # таблица конечных разностей
             print("\n" + Color.cyan("=" * 62))
             print(Color.cyan("Таблица конечных разностей:"))
             try:
@@ -45,7 +43,6 @@ class Main:
 
             ip = Interpolator(data)
 
-            # запрос точек
             query_points = []
             while True:
                 xp = self._ask_query_point(data)
@@ -59,7 +56,6 @@ class Main:
                 if again not in ("д", "y", "yes", "да"):
                     break
 
-            # график
             try:
                 Plotter(data, ip).plot(
                     query_points,
@@ -108,14 +104,13 @@ class Main:
             if xp < lo or xp > hi:
                 ans = input(Color.yellow(
                     f"  x={xp} вне диапазона (экстраполяция). "
-                    f"Продолжить? [д/н]: "
+                    f"Продолжить? [y/n]: "
                 )).strip().lower()
                 if ans not in ("д", "y", "yes", "да"):
                     continue
             return xp
 
 
-# =====================================================================
 
 if __name__ == "__main__":
     Main().run()

@@ -1,29 +1,26 @@
-# =====================================================================
-#  3. Interpolator — все методы интерполяции
-# =====================================================================
 from FiniteDiffTable import FiniteDiffTable
 from Color import Color
 
 
 class Interpolator:
-    """Вычисляет значение функции в точке xp по данным InterpolationData."""
 
     METHODS_VAR15 = [
-        ("lagrange",       "Лагранж"),
-        ("newton_divided", "Ньютон (разд. разн.)"),
+        ("lagrange", "Лагранж"),
         ("newton_forward", "Ньютон вперёд (кон. разн.)"),
+        ("newton_backward", "Ньютон назад (кон. разн.)"),
+        ("gauss_forward", "Гаусс вперёд"),
+        ("gauss_backward", "Гаусс назад"),
     ]
 
     def __init__(self, data):
         self._d = data
-        self._fdt = None  # создаётся лениво
+        self._fdt = None
 
     def _get_fdt(self):
         if self._fdt is None:
             self._fdt = FiniteDiffTable(self._d)
         return self._fdt
 
-    # ── 3.1 Лагранж ──────────────────────────────────────────────
     def lagrange(self, xp):
         xi, yi, n = self._d.x, self._d.y, self._d.n
         total = 0.0
@@ -40,7 +37,6 @@ class Interpolator:
             total += L * yi[i]
         return total
 
-    # ── 3.2 Ньютон с разделёнными разностями ─────────────────────
     def newton_divided(self, xp):
         xi, yi, n = self._d.x, self._d.y, self._d.n
         dd = [list(yi)]
@@ -62,7 +58,6 @@ class Interpolator:
             result += dd[k][0] * prod
         return result
 
-    # ── 3.3 Ньютон вперёд ────────────────────────────────────────
     def newton_forward(self, xp):
         if not self._d.is_uniform:
             raise ValueError("Требуется равномерный шаг.")
@@ -76,7 +71,6 @@ class Interpolator:
             result += coeff * fdt.table[k][0]
         return result
 
-    # ── 3.4 Ньютон назад ─────────────────────────────────────────
     def newton_backward(self, xp):
         if not self._d.is_uniform:
             raise ValueError("Требуется равномерный шаг.")
@@ -90,7 +84,6 @@ class Interpolator:
             result += coeff * fdt.table[k][n - k - 1]
         return result
 
-    # ── 3.5 Гаусс вперёд ─────────────────────────────────────────
     def gauss_forward(self, xp):
         if not self._d.is_uniform:
             raise ValueError("Требуется равномерный шаг.")
@@ -100,19 +93,23 @@ class Interpolator:
         m = min(range(n), key=lambda i: abs(x[i] - xp))
         t = (xp - x[m]) / h
         result = self._d.y[m]
-        if m < len(tbl[1]):
-            result += t * tbl[1][m]
-        if 0 <= m - 1 < len(tbl[2]):
-            result += t * (t - 1) / 2 * tbl[2][m - 1]
-        if 0 <= m - 1 < len(tbl[3]):
-            result += (t + 1) * t * (t - 1) / 6 * tbl[3][m - 1]
-        if 0 <= m - 2 < len(tbl[4]):
-            result += (t + 2) * (t + 1) * t * (t - 1) / 24 * tbl[4][m - 2]
-        if 0 <= m - 2 < len(tbl[5]):
-            result += (t + 2) * (t + 1) * t * (t - 1) * (t - 2) / 120 * tbl[5][m - 2]
+
+        coeff = 1.0
+        for k in range(1, n):
+            if k % 2 == 1:
+                t_mult = t + (k - 1) // 2
+                idx = m - (k - 1) // 2
+            else:
+                t_mult = t - k // 2
+                idx = m - k // 2
+
+            if 0 <= idx < len(tbl[k]):
+                coeff *= t_mult / k
+                result += coeff * tbl[k][idx]
+            else:
+                break
         return result
 
-    # ── 3.6 Гаусс назад ──────────────────────────────────────────
     def gauss_backward(self, xp):
         if not self._d.is_uniform:
             raise ValueError("Требуется равномерный шаг.")
@@ -122,17 +119,23 @@ class Interpolator:
         m = min(range(n), key=lambda i: abs(x[i] - xp))
         t = (xp - x[m]) / h
         result = self._d.y[m]
-        if 0 <= m - 1 < len(tbl[1]):
-            result += t * tbl[1][m - 1]
-        if 0 <= m - 1 < len(tbl[2]):
-            result += t * (t + 1) / 2 * tbl[2][m - 1]
-        if 0 <= m - 1 < len(tbl[3]):
-            result += (t + 1) * t * (t - 1) / 6 * tbl[3][m - 1]
-        if 0 <= m - 2 < len(tbl[4]):
-            result += (t + 1) * t * (t - 1) * (t - 2) / 24 * tbl[4][m - 2]
+
+        coeff = 1.0
+        for k in range(1, n):
+            if k % 2 == 1:
+                t_mult = t - (k - 1) // 2
+                idx = m - (k + 1) // 2
+            else:
+                t_mult = t + k // 2
+                idx = m - k // 2
+
+            if 0 <= idx < len(tbl[k]):
+                coeff *= t_mult / k
+                result += coeff * tbl[k][idx]
+            else:
+                break
         return result
 
-    # ── общий расчёт и вывод ──────────────────────────────────────
     def compute_all(self, xp, methods=None):
         if methods is None:
             methods = self.METHODS_VAR15
@@ -151,8 +154,6 @@ class Interpolator:
         print(Color.cyan("─" * 50))
         for label, val in results.items():
             if isinstance(val, float):
-                # числовой результат — зелёный
                 print(f"  {label:<34}: {Color.green(f'{val:.6f}')}")
             else:
-                # «Недоступно: ...» — жёлтый (предупреждение, не крэш)
                 print(f"  {label:<34}: {Color.yellow(val)}")

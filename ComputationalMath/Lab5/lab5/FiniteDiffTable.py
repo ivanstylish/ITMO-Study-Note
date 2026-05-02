@@ -1,9 +1,4 @@
-# =====================================================================
-#  2. FiniteDiffTable — таблица конечных разностей
-# =====================================================================
-
 class FiniteDiffTable:
-    """Строит таблицу конечных разностей (только для равномерного шага)."""
 
     def __init__(self, data):
         if not data.is_uniform:
@@ -22,7 +17,6 @@ class FiniteDiffTable:
         return table
 
     def get(self, order, index):
-        """Возвращает Δ^order y[index]."""
         if order >= len(self.table) or index >= len(self.table[order]):
             raise IndexError(
                 f"Δ^{order}y[{index}] выходит за границы таблицы."
