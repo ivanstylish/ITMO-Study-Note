@@ -80,7 +80,7 @@ sum_even__overflow:
 sum_even__return:
     lw   s1,  0(sp)
     lw   s0,  4(sp)
-    lw   ra,   8(sp)
+    lw   ra,  8(sp)
     addi sp, sp, 12
     jr   ra
 
