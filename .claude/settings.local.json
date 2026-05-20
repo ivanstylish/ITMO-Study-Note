@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\Study-Note\\\\ComputerArchitecture\\\\Lab3\" -Recurse -Depth 5)",
+      "Bash(Select-Object FullName)",
+      "Bash(python3:*)",
+      "Read(//tmp/**)",
+      "Bash(rm -f /tmp/gen_drawio.py)"
+    ]
+  }
+}
