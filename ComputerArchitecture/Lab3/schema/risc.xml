@@ -1,0 +1,170 @@
+<mxGraphModel dx="1422" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#111111" math="0" shadow="0">
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      
+      <mxCell id="box_cpu" value="PROCESSOR CORE (RISC-IV CPU)" style="swimlane;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontSize=14;fontStyle=1;startSize=30;dashed=1;" vertex="1" parent="1">
+        <mxGeometry x="40" y="40" width="640" height="720" as="geometry" />
+      </mxCell>
+      
+      <mxCell id="box_bus" value="BUS &amp; ADDRESS DECODER" style="swimlane;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontSize=14;fontStyle=1;startSize=30;dashed=1;" vertex="1" parent="1">
+        <mxGeometry x="720" y="40" width="320" height="720" as="geometry" />
+      </mxCell>
+      
+      <mxCell id="box_mem_io" value="MEMORY &amp; MMIO DEVICES" style="swimlane;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontSize=14;fontStyle=1;startSize=30;dashed=1;" vertex="1" parent="1">
+        <mxGeometry x="1080" y="40" width="400" height="720" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="cpu_pc" value="PC&#xa;(Program Counter)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="80" y="160" width="120" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_imem" value="Instruction Memory&#xa;(IF)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="80" y="320" width="120" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_pc4" value="PC + 4" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="80" y="480" width="120" height="40" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="cpu_cu" value="Control Unit&#xa;(Decoder)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="280" y="120" width="140" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_rf" value="Register File&#xa;(32 x 32b)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="280" y="300" width="140" height="90" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_se" value="Sign Extend&#xa;(12b -&gt; 32b)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="280" y="450" width="140" height="50" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="cpu_alu" value="ALU&#xa;(add/sub/mul/div)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="500" y="315" width="130" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_mux_src2" value="MUX&#xa;src2" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="450" y="360" width="40" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_pcoffset" value="PC + Offset" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="500" y="455" width="130" height="40" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="cpu_mux_wb" value="MUX&#xa;WB" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="220" y="315" width="40" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="cpu_mux_npc" value="MUX&#xa;nextPC" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="120" y="90" width="40" height="50" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="bus_addr" value="SYSTEM ADDRESS BUS (32-bit)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+        <mxGeometry x="750" y="240" width="260" height="30" as="geometry" />
+      </mxCell>
+      <mxCell id="bus_data" value="SYSTEM DATA BUS (32-bit)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+        <mxGeometry x="750" y="330" width="260" height="30" as="geometry" />
+      </mxCell>
+      <mxCell id="bus_decoder" value="MMIO Address Decoder&#xa;(Detects 0x80 / 0x84)" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="800" y="460" width="160" height="100" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="dev_dmem" value="Data Memory&#xa;(RAM / ROM)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;fontSize=13;fontStyle=1" vertex="1" parent="1">
+        <mxGeometry x="1140" y="220" width="160" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="dev_mmio_80" value="MMIO Device (0x80)&#xa;UART Data Register" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="1140" y="440" width="160" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="dev_mmio_84" value="MMIO Device (0x84)&#xa;UART Status Register" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxGeometry x="1140" y="540" width="160" height="60" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="edge1" edge="1" parent="1" source="cpu_mux_npc" target="cpu_pc" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="edge2" edge="1" parent="1" source="cpu_pc" target="cpu_imem" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      
+      <mxCell id="edge3" edge="1" parent="1" source="cpu_imem" target="cpu_cu" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="240;350" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge4" edge="1" parent="1" source="cpu_imem" target="cpu_rf" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="edge5" edge="1" parent="1" source="cpu_rf" target="cpu_alu" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="430;325" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge6" edge="1" parent="1" source="cpu_rf" target="cpu_mux_src2" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="430;375" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge7" edge="1" parent="1" source="cpu_se" target="cpu_mux_src2" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="450;475" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge8" edge="1" parent="1" source="cpu_mux_src2" target="cpu_alu" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="edge9" edge="1" parent="1" source="cpu_alu" target="bus_addr" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=3;html=1;labelBackgroundColor=#111111;">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="710" y="345" name="targetPoint" />
+          <Array points="670;345 ; 670;255" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge10" edge="1" parent="1" source="cpu_rf" target="bus_data" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=3;html=1;jumpStyle=arc;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="440;360 ; 440;290 ; 710;290 ; 710;345" />
+        </mxGeometry>
+      </mxCell>
+  
+      <mxCell id="edge11" edge="1" parent="1" source="bus_addr" target="bus_decoder" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="edge12" edge="1" parent="1" source="bus_decoder" target="dev_dmem" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;labelBackgroundColor=#111111;">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="1050" y="510" name="sourcePoint" />
+          <Array points="1040;510 ; 1040;260" />
+          <mxValue type="String" value="Standard Mem Address" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge13" edge="1" parent="1" source="bus_decoder" target="dev_mmio_80" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="1010;510 ; 1010;470" />
+          <mxValue type="String" value="Address == 0x80" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge14" edge="1" parent="1" source="bus_decoder" target="dev_mmio_84" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="1010;510 ; 1010;570" />
+          <mxValue type="String" value="Address == 0x84" />
+        </mxGeometry>
+      </mxCell>
+  
+      <mxCell id="edge15" edge="1" parent="1" source="bus_data" target="cpu_mux_wb" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;jumpStyle=arc;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="730;350 ; 730;210 ; 240;210" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="edge16" edge="1" parent="1" source="cpu_mux_wb" target="cpu_rf" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=2;html=1;">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+  
+      <mxCell id="ctrl1" edge="1" parent="1" source="cpu_cu" target="cpu_mux_src2" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=1;dashed=1;html=1;jumpStyle=arc;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="470;150" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="ctrl2" edge="1" parent="1" source="cpu_cu" target="cpu_alu" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=1;dashed=1;html=1;jumpStyle=arc;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="565;150" />
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="ctrl3" edge="1" parent="1" source="cpu_cu" target="cpu_mux_wb" style="edgeStyle=orthogonalEdgeStyle;round=1;strokeColor=#ffffff;strokeWidth=1;dashed=1;html=1;jumpStyle=arc;">
+        <mxGeometry relative="1" as="geometry">
+          <Array points="240;150" />
+        </mxGeometry>
+      </mxCell>
+    </root>
+  </mxGraphModel>
