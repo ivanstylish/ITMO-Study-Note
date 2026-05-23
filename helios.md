@@ -33,3 +33,5 @@ pgpassword=R3JIQIhNsdM2QGJv
 COLLECTION_FILE=$HOME/data.json java -jar Lab5.jar  
 
 COLLECTION_FILE=$HOME/data.json java -jar Server_jar/Server.jar  
+
+claude --settings D:/Study-Note/claude-deepseek-settings.json --bare
