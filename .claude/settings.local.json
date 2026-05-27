@@ -5,7 +5,23 @@
       "Bash(Select-Object FullName)",
       "Bash(python3:*)",
       "Read(//tmp/**)",
-      "Bash(rm -f /tmp/gen_drawio.py)"
+      "Bash(rm -f /tmp/gen_drawio.py)",
+      "Bash(pip list:*)",
+      "Bash(findstr -i \"pdfplumber pymupdf pdfminer\")",
+      "Bash(python -c ':*)",
+      "Bash(where pdftotext:*)",
+      "Bash(where xpdf-pdftotext:*)",
+      "Bash(where python:*)",
+      "Bash(python dz1_1_cubic_approximation.py)",
+      "Bash(python HW2.py)",
+      "Bash(ls:*)",
+      "Read(//f/web-pro/Lab3/**)",
+      "Bash(echo \"Lab3 not found at F:\\\\\\\\web-pro\\\\\\\\Lab3\")",
+      "Bash(tar -tzf HttpUnit.tar.gz)",
+      "Bash(./add-user.sh -u admin -p admin -s)",
+      "Bash(cp 'F:\\\\web-pro\\\\Lab3\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\\\\PointsCounterMBean.java' 'D:\\\\Study-Note\\\\ОПИ\\\\Lab4\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\":*)",
+      "Bash(cp 'F:\\\\web-pro\\\\Lab3\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\\\\ClickIntervalMBean.java' 'D:\\\\Study-Note\\\\ОПИ\\\\Lab4\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\":*)",
+      "Bash(./gradlew compileJava)"
     ]
   }
 }

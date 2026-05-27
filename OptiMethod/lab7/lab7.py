@@ -82,6 +82,7 @@ print(f"Скорость обучения: alpha = {lr_gd}")
 print(f"Критерий останова: |f(x_k+1) - f(x_k)| < {eps_stop}")
 print()
 
+# 2.1 标准梯度下降
 def gradient_descent(x_init, y_init, lr, n_max, eps):
     x, y = x_init, y_init
     history = [(x, y)]; n_stop = n_max
@@ -113,13 +114,14 @@ ax.set_title(f'Задание 2.1. ГС к седловой (alpha={lr_gd}, eps=
 ax.legend(fontsize=10); plt.tight_layout()
 save_fig('task2_1_gd_to_saddle.png')
 
+# 2.2 手动实现的Adagrad算法
 def adagrad(x_init, y_init, lr, n_iter, eps_ada=1e-8):
     x, y = x_init, y_init
     G = np.zeros(2); history = [(x, y)]
     for _ in range(n_iter):
         g = grad_f(x, y)
-        G = G + g**2
-        step = lr / np.sqrt(G + eps_ada)
+        G = G + g**2 # 累积历史梯度的平方
+        step = lr / np.sqrt(G + eps_ada) # 自适应学习率
         x = x - step[0]*g[0]; y = y - step[1]*g[1]
         history.append((x, y))
     return np.array(history)
@@ -152,6 +154,7 @@ x_lo, x_hi = -7.0, 7.0; y_lo, y_hi = -10.0, 25.0
 x_zoom = np.linspace(x_lo, x_hi, 300); y_zoom = np.linspace(y_lo, y_hi, 300)
 Xz, Yz = np.meshgrid(x_zoom, y_zoom); Zz = f(Xz, Yz)
 
+# 2.3 Adagrad超参数eps的影响
 hist_saw    = adagrad(x0, y0, lr_ada, n_iters_used, eps_ada=1e-2)
 hist_smooth = adagrad(x0, y0, lr_ada, n_iters_used, eps_ada=1e-10)
 print(f"--- 2.3: Область [{x_lo},{x_hi}]x[{y_lo},{y_hi}] ---")
@@ -255,6 +258,7 @@ train_loader  = DataLoader(train_dataset, batch_size=128, shuffle=True)
 
 n_features_nn = X_train.shape[1]; n_classes = 3
 
+# 定义神经网络与自定义PyTorch优化器
 class MatchNet(nn.Module):
     def __init__(self, n_in, n_out):
         super().__init__()
@@ -266,6 +270,7 @@ class MatchNet(nn.Module):
         )
     def forward(self, x): return self.net(x)
 
+# вручную воспроизвел математические формулы Адаграда, используя чисто тензорные операции PyTorch.
 class MyAdagrad(torch.optim.Optimizer):
     def __init__(self, params, lr=0.01, eps=1e-8):
         defaults = dict(lr=lr, eps=eps)
@@ -287,26 +292,34 @@ class MyAdagrad(torch.optim.Optimizer):
                 p.data.addcmul_(step_size, g, value=-1)
         return loss
 
+# 任务3： 模型训练与评估
 def train_model(model, optimizer, n_epochs=60):
     criterion = nn.CrossEntropyLoss(); loss_history = []
+    # 标准pytorch循环
     for epoch in range(n_epochs):
         model.train(); epoch_loss = 0.0
         for X_batch, y_batch in train_loader:
             optimizer.zero_grad()
             loss = criterion(model(X_batch), y_batch)
-            loss.backward(); optimizer.step()
+            loss.backward(); 
+            # 自动完成全部反向传播计算。loss.backward() в PyTorch автоматически вычисляет все градиенты.
+            optimizer.step()
             epoch_loss += loss.item()
         loss_history.append(epoch_loss / len(train_loader))
     return loss_history
 
-def evaluate(model, X_t, y_t):
+def evaluate(model, X_t, y_t): # 评估
     model.eval()
     with torch.no_grad():
-        preds = model(X_t).argmax(dim=1).numpy()
+        preds = model(X_t).argmax(dim=1).numpy() # 预测逻辑（Победа хозяев, ничья, победа гостей）
     return accuracy_score(y_t.numpy(), preds), f1_score(y_t.numpy(), preds, average='weighted')
+    # 计算预测正确的比赛占总比赛的比例
 
 n_epochs = 60
 
+# 分别实例化自定义优化器和官方优化器，设置相同的学习率 0.05 和随机种子 42，训练 60 个 Epoch。使用 Accuracy 和加权 F1-score 来评估测试集性能。
+# По очереди инициализируются пользовательский и официальный оптимизаторы с одинаковым шагом обучения 0.05 и фиксированным случайным
+# сидом 42, обучение идет 60 эпох. Для оценки производительности на тестовой выборке используются Accuracy и взвешенный F1-score.
 print("--- MyAdagrad ---")
 torch.manual_seed(42)
 model_my = MatchNet(n_features_nn, n_classes)
