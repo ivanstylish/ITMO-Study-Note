@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net">
   <diagram name="第 1 页" id="jtf0dNKNrG4nxgUiHhO0">
-    <mxGraphModel dx="1745" dy="-408" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1745" dy="-365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="GT5t4dx6GbMSmE_Dgt_V-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;" value="PROCESSOR" vertex="1">
+        <mxCell id="GT5t4dx6GbMSmE_Dgt_V-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;" value="PROCESSOR" vertex="1">
           <mxGeometry height="1080" width="1020" x="110" y="2030" as="geometry" />
         </mxCell>
         <mxCell id="O8Rbof68ffIjVsod9osL-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=16;" value="IF - Fetch" vertex="1">
@@ -31,7 +31,7 @@
         <mxCell id="O8Rbof68ffIjVsod9osL-12" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);" value="Control Unit" vertex="1">
           <mxGeometry height="54" width="148" x="790" y="2180" as="geometry" />
         </mxCell>
-        <mxCell id="NEW-HALT" parent="1" style="whiteSpace=wrap;strokeWidth=1;fontSize=11;labelBackgroundColor=default;strokeColor=light-dark(#000000,#CCCCCC);" value="HALT" vertex="1">
+        <mxCell id="NEW-HALT" parent="1" style="whiteSpace=wrap;strokeWidth=1;fontSize=11;labelBackgroundColor=default;" value="HALT" vertex="1">
           <mxGeometry height="28" width="60" x="834" y="2140" as="geometry" />
         </mxCell>
         <mxCell id="O8Rbof68ffIjVsod9osL-10" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);" value="Register File 32x32b" vertex="1">
