@@ -349,3 +349,72 @@ F:\web-pro\Lab3├── src/main/java/org/coordinate/
 
 
 ---
+
+### 连接方式（远程或本地）
+#### 本地连接
+```
+F:\web-pro\lab3-opi4\wildfly-37.0.1.Final\bin\standalone.bat -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+   -Dcom.sun.management.jmxremote.port=7203 -Dcom.sun.management.jmxremote.rmi.port=7203 -Djava.rmi.server.hostname=localhost
+```
+打开网站：  
+`http://localhost:8080/lab3-1.0/`  
+
+**Jconsole**: 
+**VisualVM**: 找本地进程 `org.jboss.modules.Main`
+#### 远程 学校服务器helios
+**确认SSH隧道**
+```
+ssh -L 9314:0.0.0.0:9314 -L 11224:0.0.0.0:11224 -L 7203:0.0.0.0:7203 s407959@se.ifmo.ru -p 2222 -N
+!!!用自己设置的端口
+ssh -L 9314:0.0.0.0:9314 -L 11224:0.0.0.0:11224 s407959@se.ifmo.ru -p 2222 -N
+```
+**对于 JConsole**：
+1. 它支持WildFly 的 remote+http 协议，所以可以下载wildfly bin中的`jboss-cli-client.jar`  
+2. 通过终端启动`jconsole -J-Djava.class.path="C:\Program Files\Java\jdk-17\lib\jconsole.jar;C:\Program Files\Java\jdk-17\lib\tools.jar;F:\web-pro\lab3-opi4\jboss-cli-client.jar"`  
+3. JConsole 窗口打开后，选 `Remote Process`
+4. 填入：`service:jmx:remote+http://localhost:11224(自己设置的端口)`+`自己设置的用户名加密码`
+设置内存：
+`export _JAVA_OPTIONS='-XX:MaxHeapSize=1G -XX:MaxMetaspaceSize=512m'`
+5. 启动wildfly（带JMX参数）
+```
+cd ~/wildfly-29.0.1.Final
+./bin/standalone.sh -b 0.0.0.0 \
+    -Dcom.sun.management.jmxremote \
+    -Dcom.sun.management.jmxremote.authenticate=false \
+    -Dcom.sun.management.jmxremote.ssl=false \
+    -Dcom.sun.management.jmxremote.port=7203 \
+    -Dcom.sun.management.jmxremote.rmi.port=7203 \
+    -Djava.rmi.server.hostname=0.0.0.0 \
+    -Djboss.bind.address.management=0.0.0.0 \
+    -Djboss.bind.address=0.0.0.0
+```
+
+**对于VisualVM**
+VisualVM 不支持 remote+http 协议，它只能用标准 JMX RMI（7203端口）。
+1. 带 JMX 参数重新启动
+```
+  cd ~/wildfly-29.0.1.Final
+  nohup ./bin/standalone.sh -b 0.0.0.0 \
+      -Dcom.sun.management.jmxremote \
+      -Dcom.sun.management.jmxremote.authenticate=false \
+      -Dcom.sun.management.jmxremote.ssl=false \
+      -Dcom.sun.management.jmxremote.port=7203 \
+      -Dcom.sun.management.jmxremote.rmi.port=7203 \
+      -Djava.rmi.server.hostname=0.0.0.0 \
+      -Djboss.bind.address.management=0.0.0.0 \
+      -Djboss.bind.address=0.0.0.0
+```
+2. 然后 VisualVM → File → Add JMX Connection → localhost:7203 → OK。
+
+
+`ssh -L localhost:9314:0.0.0.0:9314 localhost:11224:0.0.0.0:11224 s407959@se.ifmo.ru -p 2222 -N`
+HTTP端口：**9314**
+Management：9990 + 1234 = **11224**
+
+
+`scp -P 2222 F:\web-pro\Lab3\build\libs\Lab3.war s407959@se.ifmo.ru:~/wildfly-29.0.1.Final/standalone/deployments/`
+`yDqY-9700`
+`scp -P 2222 s407959@se.ifmo.ru:~/wildfly-29.0.1.Final/bin/client/jboss-cli-client.jar F:\web-pro\Lab3\`
+
+website:
+`http://localhost:9314/lab3-1.0/`
