@@ -359,7 +359,7 @@ F:\web-pro\lab3-opi4\wildfly-37.0.1.Final\bin\standalone.bat -Dcom.sun.managemen
 打开网站：  
 `http://localhost:8080/lab3-1.0/`  
 
-**Jconsole**: 
+**Jconsole**: 找本地进程
 **VisualVM**: 找本地进程 `org.jboss.modules.Main`
 #### 远程 学校服务器helios
 **确认SSH隧道**
@@ -418,3 +418,5 @@ Management：9990 + 1234 = **11224**
 
 website:
 `http://localhost:9314/lab3-1.0/`
+
+`ssh s407959@helios.cs.ifmo.ru -p 2222`
