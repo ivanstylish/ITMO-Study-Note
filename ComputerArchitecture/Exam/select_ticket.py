@@ -7,7 +7,7 @@ def gen(n):
         for v in buf:
             yield v
 
-g = gen(233)
+g = gen(234)
 
 def ticket():
     print(f"1.  - {(str(g.__next__()).rjust(3), str(g.__next__()).rjust(3))} - / - ".replace("'", ""))
