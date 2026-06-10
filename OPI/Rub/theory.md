@@ -197,3 +197,9 @@ clean:
 
 .PHONY: all clean
 ```
+
+#### 风险类型
+![](image-4.png)  
+![](image-5.png)   
+![](image-6.png)  
+风险优先级=发生危险概率*后果严重程度
