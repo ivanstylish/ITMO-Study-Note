@@ -1,0 +1,474 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page 1" id="jtf0dNKNrG4nxgUiHhO0">
+    <mxGraphModel dx="1745" dy="-365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ══════════════════════════════════════════
+             LEGEND
+             ══════════════════════════════════════════ -->
+        <mxCell id="LEGEND" parent="1"
+          style="whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#f9f9f9,#1a1a1a);strokeColor=light-dark(#aaaaaa,#888888);fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=8;"
+          value="Legend&#xa;solid line   = data bus [32b]&#xa;dash-dot     = address / PC path [32b]&#xa;dashed red   = control signal [1-4b]&#xa;rule: data enters left/top, exits right/bottom of each block"
+          vertex="1">
+          <mxGeometry height="100" width="340" x="1080" y="40" as="geometry" />
+        </mxCell>
+
+        <!-- PROCESSOR outer frame -->
+        <mxCell id="GT5t4dx6GbMSmE_Dgt_V-2" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;"
+          value="PROCESSOR" vertex="1">
+          <mxGeometry height="1550" width="1460" x="40" y="40" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════
+             IF - Fetch  (top band)
+             ══════════════════════════════════════════ -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-6" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=16;"
+          value="IF - Fetch" vertex="1">
+          <mxGeometry height="290" width="1400" x="70" y="90" as="geometry" />
+        </mxCell>
+
+        <!-- PC -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-7" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="PC" vertex="1">
+          <mxGeometry height="50" width="90" x="160" y="160" as="geometry" />
+        </mxCell>
+
+        <!-- PC+4 -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-8" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="PC + 4" vertex="1">
+          <mxGeometry height="50" width="100" x="370" y="130" as="geometry" />
+        </mxCell>
+
+        <!-- PC+offset -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-15" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="PC + offset&#xa;(branch / jal target)" vertex="1">
+          <mxGeometry height="50" width="170" x="370" y="220" as="geometry" />
+        </mxCell>
+
+        <!-- MUX next PC -->
+        <mxCell id="NEW-MPC" parent="1"
+          style="rhombus;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="MUX&#xa;next PC&#xa;(3-in)" vertex="1">
+          <mxGeometry height="120" width="130" x="640" y="155" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════
+             ID - Decode  (second band)
+             ══════════════════════════════════════════ -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-5" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=16;"
+          value="ID - Decode" vertex="1">
+          <mxGeometry height="340" width="1400" x="70" y="420" as="geometry" />
+        </mxCell>
+
+        <!-- Control Unit -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-12" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="Control Unit" vertex="1">
+          <mxGeometry height="60" width="150" x="160" y="460" as="geometry" />
+        </mxCell>
+
+        <!-- HALT -->
+        <mxCell id="NEW-HALT" parent="1"
+          style="whiteSpace=wrap;strokeWidth=1;fontSize=11;fillColor=light-dark(#ffe6e6,#4a1010);strokeColor=light-dark(#cc0000,#ff6666);fontColor=light-dark(#cc0000,#ff9999);"
+          value="HALT" vertex="1">
+          <mxGeometry height="30" width="70" x="160" y="540" as="geometry" />
+        </mxCell>
+
+        <!-- Register File -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-10" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="Register File 32x32b" vertex="1">
+          <mxGeometry height="60" width="200" x="440" y="460" as="geometry" />
+        </mxCell>
+
+        <!-- Sign Extend -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-11" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="Sign Extend 12b" vertex="1">
+          <mxGeometry height="60" width="200" x="440" y="600" as="geometry" />
+        </mxCell>
+
+        <!-- MUX WB -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-18" parent="1"
+          style="rhombus;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="MUX WB" vertex="1">
+          <mxGeometry height="110" width="130" x="760" y="510" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════
+             EX - Execute  (third band)
+             ══════════════════════════════════════════ -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-4" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=16;"
+          value="EX - Execute" vertex="1">
+          <mxGeometry height="290" width="680" x="70" y="850" as="geometry" />
+        </mxCell>
+
+        <!-- MUX src2 -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-13" parent="1"
+          style="rhombus;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="MUX src2" vertex="1">
+          <mxGeometry height="100" width="150" x="300" y="900" as="geometry" />
+        </mxCell>
+
+        <!-- ALU -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-14" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="ALU&#xa;add / sub / mul / div / rem&#xa;sll / srl / sra / and / or / xor" vertex="1">
+          <mxGeometry height="90" width="240" x="220" y="1030" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════
+             MEM - Memory Subsystem  (fourth band, same row as EX continues below)
+             ══════════════════════════════════════════ -->
+        <mxCell id="MEM-OUTER" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=16;"
+          value="MEM - Memory Subsystem" vertex="1">
+          <mxGeometry height="290" width="690" x="800" y="850" as="geometry" />
+        </mxCell>
+
+        <!-- Addr Decoder -->
+        <mxCell id="MEM-ADDRDEC" parent="1"
+          style="rhombus;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);fontSize=12;"
+          value="Addr Decoder&#xa;0x80 / 0x84 / other" vertex="1">
+          <mxGeometry height="100" width="150" x="840" y="900" as="geometry" />
+        </mxCell>
+
+        <!-- Data Memory -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-16" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="Data Memory" vertex="1">
+          <mxGeometry height="60" width="160" x="1070" y="860" as="geometry" />
+        </mxCell>
+
+        <!-- MMIO -->
+        <mxCell id="O8Rbof68ffIjVsod9osL-17" parent="1"
+          style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);"
+          value="MMIO&#xa;INPUT: 0x80&#xa;OUTPUT: 0x84" vertex="1">
+          <mxGeometry height="60" width="160" x="1070" y="990" as="geometry" />
+        </mxCell>
+
+        <!-- MUX MemRD -->
+        <mxCell id="MEM-MUXOUT" parent="1"
+          style="rhombus;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#000000,#CCCCCC);fontColor=light-dark(#333333,#cccccc);fontSize=12;"
+          value="MUX&#xa;MemRD" vertex="1">
+          <mxGeometry height="90" width="110" x="1300" y="905" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════
+             DATA BUS  (solid lines)
+             ══════════════════════════════════════════════ -->
+
+        <!-- PC -> PC+4 -->
+        <mxCell id="E-PC-PC4" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-7" target="O8Rbof68ffIjVsod9osL-8"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);dashed=1;dashPattern=8 3 2 3;strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="PC [32b]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- PC -> PC+offset -->
+        <mxCell id="E-PC-BT" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-7" target="O8Rbof68ffIjVsod9osL-15"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);dashed=1;dashPattern=8 3 2 3;strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="PC [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PC+4 -> MUX next PC -->
+        <mxCell id="E-PC4-MPC" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-8" target="NEW-MPC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="PC+4 [32b]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- PC+offset -> MUX next PC -->
+        <mxCell id="E-BT-MPC" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-15" target="NEW-MPC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="branch/jal target [32b]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MUX next PC -> PC  (dedicated leftmost feedback channel, x=110) -->
+        <mxCell id="E-MPC-PC" edge="1" parent="1" source="NEW-MPC" target="O8Rbof68ffIjVsod9osL-7"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);dashed=1;dashPattern=8 3 2 3;strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="next PC [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="190" />
+              <mxPoint x="110" y="120" />
+              <mxPoint x="205" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PC -> opcode line (top of IF area, into CU) -->
+        <mxCell id="E-PC-OPCODE" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-7" target="O8Rbof68ffIjVsod9osL-12"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="opcode [7b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="205" y="400" />
+              <mxPoint x="205" y="478" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PC -> rs1,rs2,rd line, into Register File -->
+        <mxCell id="E-PC-RSRD" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-7" target="O8Rbof68ffIjVsod9osL-10"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="rs1, rs2, rd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="225" y="380" />
+              <mxPoint x="225" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PC -> imm[11:0] line, into Sign Extend -->
+        <mxCell id="E-PC-IMM" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-7" target="O8Rbof68ffIjVsod9osL-11"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="imm [11:0]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="350" />
+              <mxPoint x="245" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Register File -> ALU (operand A) -->
+        <mxCell id="E-RF-ALU-A" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-10" target="O8Rbof68ffIjVsod9osL-14"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="A [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="490" />
+              <mxPoint x="400" y="540" />
+              <mxPoint x="170" y="540" />
+              <mxPoint x="170" y="1050" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Register File -> MUX src2 (operand B) -->
+        <mxCell id="E-RF-MUX2-B" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-10" target="O8Rbof68ffIjVsod9osL-13"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="B [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="710" />
+              <mxPoint x="500" y="780" />
+              <mxPoint x="280" y="780" />
+              <mxPoint x="280" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Register File -> Memory Subsystem (sw/sb write data) -->
+        <mxCell id="E-RF-MEM-SW" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-10" target="MEM-ADDRDEC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="B (sw/sb data) [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="500" />
+              <mxPoint x="700" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Sign Extend -> MUX src2 (imm) -->
+        <mxCell id="E-SE-MUX2" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-11" target="O8Rbof68ffIjVsod9osL-13"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="imm [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="800" />
+              <mxPoint x="320" y="800" />
+              <mxPoint x="320" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Sign Extend -> PC+offset (offset) -->
+        <mxCell id="E-SE-BT" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-11" target="O8Rbof68ffIjVsod9osL-15"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="offset [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="618" />
+              <mxPoint x="600" y="618" />
+              <mxPoint x="600" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MUX src2 -> ALU (src2) -->
+        <mxCell id="E-MUX2-ALU" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-13" target="O8Rbof68ffIjVsod9osL-14"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="src2 [32b]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ALU -> Memory Subsystem (address) -->
+        <mxCell id="E-ALU-MEM" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-14" target="MEM-ADDRDEC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);dashed=1;dashPattern=8 3 2 3;strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="addr [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="1075" />
+              <mxPoint x="600" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALU -> MUX WB (result) -->
+        <mxCell id="E-ALU-MUXWB" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-14" target="O8Rbof68ffIjVsod9osL-18"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="result [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="1055" />
+              <mxPoint x="140" y="660" />
+              <mxPoint x="800" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALU -> MUX next PC (jr: rs1) -->
+        <mxCell id="NEW-ALU-MPC" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-14" target="NEW-MPC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);dashed=1;dashPattern=8 3 2 3;strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="rs1 (jr) [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="1190" />
+              <mxPoint x="80" y="1190" />
+              <mxPoint x="80" y="305" />
+              <mxPoint x="705" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Addr Decoder -> Data Memory -->
+        <mxCell id="E-DEC-DM" edge="1" parent="1" source="MEM-ADDRDEC" target="O8Rbof68ffIjVsod9osL-16"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="addr/data (regular)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Addr Decoder -> MMIO -->
+        <mxCell id="E-DEC-MMIO" edge="1" parent="1" source="MEM-ADDRDEC" target="O8Rbof68ffIjVsod9osL-17"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="addr/data (0x80/0x84)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Data Memory -> MUX MemRD -->
+        <mxCell id="E-DM-MUXOUT" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-16" target="MEM-MUXOUT"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="RD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MMIO -> MUX MemRD -->
+        <mxCell id="E-MMIO-MUXOUT" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-17" target="MEM-MUXOUT"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="INPUT (0x80)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MUX MemRD -> MUX WB  (dedicated rightmost return channel) -->
+        <mxCell id="E-MUXOUT-MUXWB" edge="1" parent="1" source="MEM-MUXOUT" target="O8Rbof68ffIjVsod9osL-18"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="MemRD [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1450" y="950" />
+              <mxPoint x="1450" y="585" />
+              <mxPoint x="890" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MUX WB -> Register File (write-back) -->
+        <mxCell id="E-MUXWB-RF" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-18" target="O8Rbof68ffIjVsod9osL-10"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#CCCCCC);strokeWidth=2;endArrow=block;endFill=1;fontColor=light-dark(#333333,#cccccc);" value="WD (write-back) [32b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="595" y="540" />
+              <mxPoint x="595" y="525" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════
+             CONTROL SIGNALS  (dashed red lines, dedicated left vertical corridor x=300)
+             ══════════════════════════════════════════════ -->
+
+        <!-- Control Unit -> HALT -->
+        <mxCell id="NEW-CU-HALT" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="NEW-HALT"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" value="halt [1b]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control Unit -> MUX next PC  (Branch/Jump/JR) -->
+        <mxCell id="E-CU-MPC" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="NEW-MPC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" value="Branch/Jump/JR [2b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="490" />
+              <mxPoint x="60" y="345" />
+              <mxPoint x="705" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control Unit -> MUX src2  (ALUSrc) -->
+        <mxCell id="E-CU-MUX2" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="O8Rbof68ffIjVsod9osL-13"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" value="ALUSrc [1b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="800" />
+              <mxPoint x="345" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control Unit -> ALU  (ALUOp) -->
+        <mxCell id="E-CU-ALU" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="O8Rbof68ffIjVsod9osL-14"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" value="ALUOp [4b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="496" />
+              <mxPoint x="380" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control Unit -> Memory Subsystem  (MemWrite/Read) -->
+        <mxCell id="E-CU-MEM" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="MEM-ADDRDEC"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" value="MemW/R [2b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="480" />
+              <mxPoint x="400" y="820" />
+              <mxPoint x="915" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control Unit -> MUX WB  (MemToReg, RegWrite) -->
+        <mxCell id="E-CU-MUXWB" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-12" target="O8Rbof68ffIjVsod9osL-18"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" value="MemToReg / RegWrite [2b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="472" />
+              <mxPoint x="825" y="472" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALU -> Control Unit  (zero flag) -->
+        <mxCell id="E-ALU-CU-ZERO" edge="1" parent="1" source="O8Rbof68ffIjVsod9osL-14" target="O8Rbof68ffIjVsod9osL-12"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#cc2200;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#cc2200;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" value="zero flag [1b]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="1015" />
+              <mxPoint x="390" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
