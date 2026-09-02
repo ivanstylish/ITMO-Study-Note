@@ -21,7 +21,10 @@
       "Bash(./add-user.sh -u admin -p admin -s)",
       "Bash(cp 'F:\\\\web-pro\\\\Lab3\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\\\\PointsCounterMBean.java' 'D:\\\\Study-Note\\\\ОПИ\\\\Lab4\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\":*)",
       "Bash(cp 'F:\\\\web-pro\\\\Lab3\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\\\\ClickIntervalMBean.java' 'D:\\\\Study-Note\\\\ОПИ\\\\Lab4\\\\src\\\\main\\\\java\\\\org\\\\coordinate\\\\mbean\":*)",
-      "Bash(./gradlew compileJava)"
+      "Bash(./gradlew compileJava)",
+      "Bash(cp:*)",
+      "Bash(printf %s\\\\n:*)",
+      "Bash(cmd.exe:*)"
     ]
   }
 }
