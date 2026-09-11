@@ -1,0 +1,4 @@
+﻿model,features,R2,RMSE,MAE,iterations
+Модель 1,"Hours Studied, Sleep Hours, Sample Question Papers Practiced",0.14675488684923477,17.877664046710365,15.503171022218066,236
+Модель 2,"Previous Scores, Extracurricular Activities",0.8376651661531704,7.797937095084034,6.666671926277131,236
+Модель 3,"Hours Studied, Previous Scores, Extracurricular Activities, Sleep Hours, Sample Question Papers Practiced, Study Efficiency",0.988618549649034,2.064774705080585,1.6398036764006851,7729

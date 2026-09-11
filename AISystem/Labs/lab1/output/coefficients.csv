@@ -1,0 +1,15 @@
+﻿model,feature,coefficient
+Модель 1,intercept,55.136237021154564
+Модель 1,Hours Studied,7.162707885409591
+Модель 1,Sleep Hours,0.987463802018694
+Модель 1,Sample Question Papers Practiced,0.7146608558507926
+Модель 2,intercept,55.13623702115457
+Модель 2,Previous Scores,17.54178828256925
+Модель 2,Extracurricular Activities_Yes,0.30599712900655307
+Модель 3,intercept,55.136237022030876
+Модель 3,Hours Studied,7.357105428506538
+Модель 3,Previous Scores,17.60804264732643
+Модель 3,Sleep Hours,0.8213488802614198
+Модель 3,Sample Question Papers Practiced,0.5488522606898923
+Модель 3,Study Efficiency,0.01786925429979521
+Модель 3,Extracurricular Activities_Yes,0.31043820285794815

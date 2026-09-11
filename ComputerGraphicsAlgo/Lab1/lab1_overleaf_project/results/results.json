@@ -1,0 +1,52 @@
+{
+  "parameters": {
+    "width_mm": 1000.0,
+    "height_mm": 1000.0,
+    "width_px": 600,
+    "height_px": 600,
+    "source_x_mm": 200.0,
+    "source_y_mm": -150.0,
+    "source_z_mm": 800.0,
+    "intensity_w_sr": 100.0,
+    "circle_x_mm": 0.0,
+    "circle_y_mm": 0.0,
+    "circle_radius_mm": 400.0
+  },
+  "statistics_on_pixel_grid_w_m2": {
+    "minimum": 56.705531447844784,
+    "maximum": 156.24932183380471,
+    "mean": 110.43401885296349
+  },
+  "analytical_extrema_w_m2": {
+    "minimum": 56.69204152249133,
+    "maximum": 156.24999999999994
+  },
+  "reference_points": {
+    "Центр C": {
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "irradiance_w_m2": 129.68427451526696
+    },
+    "C + R по X": {
+      "x_mm": 400.0,
+      "y_mm": 0.0,
+      "irradiance_w_m2": 129.68427451526696
+    },
+    "C - R по X": {
+      "x_mm": -400.0,
+      "y_mm": 0.0,
+      "irradiance_w_m2": 61.21436385483108
+    },
+    "C + R по Y": {
+      "x_mm": 0.0,
+      "y_mm": 400.0,
+      "irradiance_w_m2": 66.30020265589286
+    },
+    "C - R по Y": {
+      "x_mm": 0.0,
+      "y_mm": -400.0,
+      "irradiance_w_m2": 116.08792753573894
+    }
+  },
+  "normalization": "G = round(255 * E / E_max) inside the circle; G = 0 outside"
+}

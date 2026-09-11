@@ -1,0 +1,305 @@
+{
+  "file": "D:\\Study-Note\\Modeling\\lab1\\3315_Барсуков_Горляков_УИР1.docx",
+  "comment_count": 13,
+  "comments": [
+    {
+      "id": "0",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:07:48Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "По лабораторной работе №1"
+            },
+            {
+              "where": "end",
+              "text": "По лабораторной работе №1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:08:06Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "проведения корреляционного анализа сгенерированной в соответствии с аппроксимирующим законом распределения последовательности случайных величин и заданной числовой последовательности на основе коэффиц"
+            },
+            {
+              "where": "end",
+              "text": "проведения корреляционного анализа сгенерированной в соответствии с аппроксимирующим законом распределения последовательности случайных величин и заданной числовой последовательности на основе коэффиц"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:08:46Z",
+      "initials": null,
+      "resolved": false,
+      "text": "??",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "-23.3757"
+            },
+            {
+              "where": "end",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:08:35Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "±8.7077"
+            },
+            {
+              "where": "end",
+              "text": "±7.2621"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:08:51Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "±175.4642"
+            },
+            {
+              "where": "end",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:08:30Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "±10.3758"
+            },
+            {
+              "where": "end",
+              "text": "±8.6533"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T20:09:09Z",
+      "initials": null,
+      "resolved": false,
+      "text": "18 19 90%?",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "% – относительные отклонения полученных значений от наилучших значений, полагая, что наилучшими (эталонными) являются значения, рассчитанные для наиболее представительной выборки из трехсот случайных "
+            },
+            {
+              "where": "end",
+              "text": "% – относительные отклонения полученных значений от наилучших значений, полагая, что наилучшими (эталонными) являются значения, рассчитанные для наиболее представительной выборки из трехсот случайных "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "author": "Даниил Горляков",
+      "date": "2024-10-24T20:49:37Z",
+      "initials": null,
+      "resolved": false,
+      "text": "?",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "Выберем q = 0.3, тогда:"
+            },
+            {
+              "where": "end",
+              "text": "Выберем q = 0.3, тогда:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T22:26:08Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "19,557"
+            },
+            {
+              "where": "end",
+              "text": "19,557"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T22:25:51Z",
+      "initials": null,
+      "resolved": false,
+      "text": "?",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "%"
+            },
+            {
+              "where": "end",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T22:25:57Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "%"
+            },
+            {
+              "where": "end",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T22:25:45Z",
+      "initials": null,
+      "resolved": false,
+      "text": ".",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "%"
+            },
+            {
+              "where": "end",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "author": "Maxim Barsukov",
+      "date": "2024-10-24T22:14:26Z",
+      "initials": null,
+      "resolved": false,
+      "text": "?!",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "Для сгенерированной и полученной последовательности мы рассчитали корреляционную зависимость. Как мы видим из 0.09 ≥ |𝑟|, корреляции между исходной и сгенерированной случайной последовательностями нет"
+            },
+            {
+              "where": "end",
+              "text": "Для сгенерированной и полученной последовательности мы рассчитали корреляционную зависимость. Как мы видим из 0.09 ≥ |𝑟|, корреляции между исходной и сгенерированной случайной последовательностями нет"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
