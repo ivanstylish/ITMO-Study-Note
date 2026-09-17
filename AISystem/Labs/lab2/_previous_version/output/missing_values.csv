@@ -1,0 +1,9 @@
+feature,zero_count,missing_after_cleaning
+Pregnancies,111,0
+Glucose,5,5
+BloodPressure,35,35
+SkinThickness,227,227
+Insulin,374,374
+BMI,11,11
+DiabetesPedigreeFunction,0,0
+Age,0,0

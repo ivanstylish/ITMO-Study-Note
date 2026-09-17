@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "shape": [
+    768,
+    9
+  ],
+  "sha256": "6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af",
+  "data_path": "D:\\Study-Note\\AISystem\\Labs\\lab2\\pima-indians-diabetes.data.csv",
+  "kaggle": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database",
+  "mirror": "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv",
+  "train": 460,
+  "validation": 154,
+  "test": 154,
+  "development": 614,
+  "selected": {
+    "optimizer": "gd",
+    "learning_rate": 0.01,
+    "iterations": 100
+  },
+  "final_metrics": {
+    "accuracy": 0.7532467532467533,
+    "precision": 0.6666666666666666,
+    "recall": 0.5925925925925926,
+    "f1": 0.6274509803921569,
+    "tp": 32,
+    "tn": 84,
+    "fp": 16,
+    "fn": 22,
+    "log_loss": 0.5963654652328645
+  },
+  "baseline": {
+    "accuracy": 0.6493506493506493,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "tn": 100,
+    "fp": 0,
+    "fn": 54
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1"
+  }
+}
