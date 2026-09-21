@@ -1,4 +1,3 @@
-"""Лабораторная работа 6. Логистическая регрессия с нуля: NumPy и Pandas."""
 from pathlib import Path
 import hashlib
 import json

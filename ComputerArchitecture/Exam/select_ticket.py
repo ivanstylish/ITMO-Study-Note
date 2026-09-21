@@ -12,7 +12,7 @@ g = gen(234)
 def ticket():
     print(f"1.  - {(str(g.__next__()).rjust(3), str(g.__next__()).rjust(3))} - / - ".replace("'", ""))
 
-for _ in range(12):
-    for _ in range(10):
+for _ in range(20):
+    for _ in range(5):
         ticket()
     print()

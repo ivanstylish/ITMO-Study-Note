@@ -9,4 +9,4 @@
 
 - [Lab3: Эксперименты架构实验](./Lab3/readme.md)
    - [variant](./Lab3/variant.md)
-   - [task1](./Lab3/task1/task.asm)
+   - [task1](./Lab3/task1/task.s)

@@ -1,5 +1,3 @@
-"""Лабораторная работа 3. Линейная регрессия без готовых ML-моделей."""
-
 from pathlib import Path
 import os
 
@@ -103,7 +101,7 @@ def make_eda_plots(data):
     axes[0, 0].set(title="Распределение индекса успеваемости", xlabel=TARGET, ylabel="Частота")
     axes[0, 0].legend()
 
-    axes[0, 1].boxplot([data[c] for c in numeric], tick_labels=["Часы", "Прошлые\nбаллы", "Сон", "Работы", "Индекс"])
+    axes[0, 1].boxplot([data[c] for c in numeric], labels=["Часы", "Прошлые\nбаллы", "Сон", "Работы", "Индекс"])
     axes[0, 1].set_title("Разброс числовых признаков")
 
     counts = data["Extracurricular Activities"].value_counts().sort_index()
@@ -113,8 +111,10 @@ def make_eda_plots(data):
     corr = data[numeric].corr().to_numpy()
     image = axes[1, 1].imshow(corr, cmap="RdBu_r", vmin=-1, vmax=1)
     short = ["Hours", "Previous", "Sleep", "Papers", "Index"]
-    axes[1, 1].set_xticks(range(len(short)), short, rotation=35, ha="right")
-    axes[1, 1].set_yticks(range(len(short)), short)
+    axes[1, 1].set_xticks(range(len(short)))
+    axes[1, 1].set_xticklabels(short, rotation=35, ha="right")
+    axes[1, 1].set_yticks(range(len(short)))
+    axes[1, 1].set_yticklabels(short)
     axes[1, 1].set_title("Корреляционная матрица")
     for i in range(len(short)):
         for j in range(len(short)):

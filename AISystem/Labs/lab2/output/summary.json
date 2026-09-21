@@ -31,6 +31,6 @@
     "fn": 54
   },
   "sha256": "6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af",
-  "numpy": "2.3.5",
-  "pandas": "3.0.1"
+  "numpy": "1.19.5",
+  "pandas": "1.1.5"
 }
