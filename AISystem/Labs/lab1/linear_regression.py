@@ -57,7 +57,7 @@ def predict(x, theta):
 
 
 def metrics(y, pred):
-    # R² 是实验要求的主要指标；RMSE 和 MAE 作为辅助解释
+    # R^2是实验要求的主要指标；RMSE 和 MAE 作为辅助解释
     residual = y - pred
     sse = np.sum(residual**2)
     r2 = 1 - sse / np.sum((y - y.mean()) ** 2)

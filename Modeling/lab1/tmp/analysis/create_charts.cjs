@@ -5,6 +5,8 @@ const path = require("path");
 const sharp = require("sharp");
 
 const OUT = "D:\\Study-Note\\Modeling\\lab1\\tmp\\analysis\\variant115";
+// 先运行 analyze_variant115.py 得到 results.json，再运行本文件生成六张 PNG。
+// 这里读取已有统计结果；图像绘制不重新抽样，不改变模型参数。
 const data = JSON.parse(fs.readFileSync(path.join(OUT, "results.json"), "utf8"));
 
 const W = 1200;
@@ -28,6 +30,8 @@ function base(title, xLabel, yLabel) {
   ];
 }
 
+// 将数据范围线性映射到画布坐标：像素位置=起点+(值-min)/(max-min)×长度。
+// SVG 的 y 坐标向下增大，故纵轴映射需要反向。
 function xScale(v, min, max) { return M.l + (v - min) / (max - min) * IW; }
 function yScale(v, min, max) { return M.t + IH - (v - min) / (max - min) * IH; }
 
@@ -64,6 +68,8 @@ async function save(name, svg) {
 }
 
 async function sequenceChart(values, title, name, color) {
+  // 横轴保留观测顺序，不能先排序；用来识别趋势、周期和偶发峰值。
+  // 当前实验固定 300 个观测，纵轴上界向上取整到 50 的倍数。
   const yMax = Math.ceil(Math.max(...values) / 50) * 50;
   const svg = base(title, "Номер наблюдения", "Значение");
   addXTicks(svg, 1, 300, 6, 0);
@@ -73,6 +79,8 @@ async function sequenceChart(values, title, name, color) {
 }
 
 async function acfChart(values, title, name, color) {
+  // 连接 1 至 10 阶自相关；浅蓝区为 ±1.96/√300 的近似参考带。
+  // 参考带只用于单个滞后的粗略判断，不能据此证明所有观测完全独立。
   const yMin = -0.20, yMax = 0.20;
   const svg = base(title, "Сдвиг", "Коэффициент автокорреляции");
   const upper = data.acf_95_bound;
@@ -89,6 +97,8 @@ async function acfChart(values, title, name, color) {
 }
 
 function histogram(values, edges) {
+  // 每个观测落入一个 [左边界, 右边界) 区间；最后一个区间额外包含右端点。
+  // 返回频数，不是密度；后续比较理论密度时还需按样本量和组距归一化。
   const counts = Array(edges.length - 1).fill(0);
   values.forEach((v) => {
     let i = edges.findIndex((e, idx) => idx < edges.length - 1 && v >= e && v < edges[idx + 1]);
@@ -99,6 +109,7 @@ function histogram(values, edges) {
 }
 
 async function histogramChart(values, edges, title, name) {
+  // 原始频数直方图：每根柱子的高度为区间内观测个数，全部频数之和为 300。
   const counts = histogram(values, edges);
   const yMax = Math.ceil(Math.max(...counts) / 50) * 50;
   const min = edges[0], max = edges.at(-1);
@@ -114,14 +125,20 @@ async function histogramChart(values, edges, title, name) {
 }
 
 async function comparisonChart(original, generated, params, name) {
+  // 两组数据使用相同分组边界才能直接比较；范围覆盖两者的最大观测。
+  // 此处从 0 起分 18 组，因此边界与原始序列单独绘图时可能不同。
   const min = 0;
   const max = Math.ceil(Math.max(...original, ...generated) / 50) * 50;
   const edges = Array.from({length: 19}, (_, i) => min + (max - min) * i / 18);
   const width = edges[1] - edges[0];
+  // 密度柱高 f_j=c_j/(n*h)：柱高×组距为该组相对频率，全部柱面积之和为 1。
+  // 归一化后才能将经验直方图与理论概率密度放在同一纵轴上。
   const co = histogram(original, edges).map(c => c / original.length / width);
   const cg = histogram(generated, edges).map(c => c / generated.length / width);
   const q = params.q, t1 = params.t1, t2 = params.t2;
   const grid = Array.from({length: 500}, (_, i) => max * i / 499);
+  // H₂ 密度 f(x)=q/t1·exp(-x/t1)+(1-q)/t2·exp(-x/t2)，x≥0。
+  // t1、t2 是分量均值，指数分布的速率参数分别为 1/t1、1/t2。
   const dens = grid.map(x => q / t1 * Math.exp(-x / t1) + (1 - q) / t2 * Math.exp(-x / t2));
   const yMax = Math.max(...co, ...cg, ...dens) * 1.12;
   const svg = base("Сравнение распределений", "Значение", "Плотность");
@@ -132,6 +149,7 @@ async function comparisonChart(original, generated, params, name) {
     const y = yScale(c, 0, yMax);
     svg.push(`<rect x="${x1 + 1}" y="${y}" width="${Math.max(1, x2 - x1 - 2)}" height="${M.t + IH - y}" fill="#8FB3D9" opacity="0.70"/>`);
   });
+  // 生成样本采用阶梯线显示分组密度，原始样本用柱形，理论密度用平滑折线。
   const stepPoints = [];
   cg.forEach((c, i) => {
     const x1 = xScale(edges[i], min, max), x2 = xScale(edges[i + 1], min, max), y = yScale(c, 0, yMax);
@@ -150,6 +168,7 @@ async function comparisonChart(original, generated, params, name) {
 }
 
 (async () => {
+  // 输出顺序：原序列、原自相关、原频数直方图、生成序列、生成自相关、密度比较。
   await sequenceChart(data.original, "График исходной числовой последовательности", "01_original_sequence.png", "#2E5EAA");
   await acfChart(data.original_acf, "Автокорреляция исходной ЧП", "02_original_acf.png", "#2E5EAA");
   await histogramChart(data.original, data.histogram.edges, "Гистограмма распределения частот исходной ЧП", "03_original_histogram.png");
