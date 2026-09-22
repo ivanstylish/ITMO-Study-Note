@@ -1,0 +1,15 @@
+﻿model,feature,weight
+Модель 1,Intercept,55.136237021154564
+Модель 1,Hours Studied,7.162707885409591
+Модель 1,Sleep Hours,0.987463802018694
+Модель 1,Sample Question Papers Practiced,0.7146608558507925
+Модель 2,Intercept,55.13623702115457
+Модель 2,Previous Scores,17.54178828256925
+Модель 2,Extracurricular Activities,0.30599712900655296
+Модель 3,Intercept,55.136237022030876
+Модель 3,Hours Studied,7.357105428506539
+Модель 3,Previous Scores,17.60804264732643
+Модель 3,Sleep Hours,0.8213488802614198
+Модель 3,Sample Question Papers Practiced,0.5488522606898922
+Модель 3,Extracurricular Activities,0.3104382028579481
+Модель 3,Study Interaction,0.01786925429979416

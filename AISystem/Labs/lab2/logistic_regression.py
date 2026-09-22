@@ -44,7 +44,7 @@ def prepare(frame, parameters=None):
         filled = X.fillna(medians)
         parameters = medians, filled.mean(), filled.std(ddof=0).replace(0, 1)
     medians, means, scales = parameters
-    # Не переоцениваем параметры на проверке и тесте. 中文：验证和测试不能重新计算参数。
+    # Не переоцениваем параметры на проверке и тесте. 验证和测试不能重新计算参数。
     X = ((X.fillna(medians) - means) / scales).to_numpy()
     if not np.isfinite(X).all():
         raise ValueError('После обработки остались некорректные значения')

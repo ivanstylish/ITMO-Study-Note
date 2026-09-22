@@ -12,19 +12,12 @@ SOURCE = ROOT / "!_УИР1_Варианты_с — копия.xlsx"
 OUT = ROOT / "tmp" / "analysis" / "variant115"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# 实验流程：读取变体 → 估计统计量 → 拟合 H₂ → 生成样本 → 比较 → 保存绘图数据。
-# 各样本量均取原序列的前 n 项，保留观测顺序，不重新抽样或排序。
 SAMPLE_SIZES = [10, 20, 50, 100, 200, 300]
-# 资料中的 t_p 实际为双侧区间的正态分位数，不是 Student t 分位数。
-# 0.90 对应的 1.643 按实验资料保留；小样本且明显偏态时区间仅为近似。
 TP = {0.90: 1.643, 0.95: 1.960, 0.99: 2.576}
-# 固定种子由变体 115 和实验 01 组成；相同生成器及调用顺序下可复现结果。
 RNG_SEED = 11501
 
 
 def load_variant() -> np.ndarray:
-    # 按首行标题 115 定位变体，不是取工作表的第 115 个物理列。
-    # data_only=True 读取 Excel 公式已缓存的结果，本程序不负责重算工作簿。
     wb = openpyxl.load_workbook(SOURCE, read_only=True, data_only=True)
     ws = wb["101-150"]
     column = None
@@ -34,7 +27,6 @@ def load_variant() -> np.ndarray:
             break
     if column is None:
         raise RuntimeError("Variant 115 was not found in row 1")
-    # 第 1 行是变体编号，第 2 至 301 行为 300 个观测值。
     values = [ws.cell(row=r, column=column).value for r in range(2, 302)]
     wb.close()
     if len(values) != 300 or any(v is None for v in values):
@@ -182,8 +174,6 @@ def main():
     # 这不是同时覆盖全部 10 个滞后的区间，偶尔越界不等于存在周期。
     conf = float(1.96 / np.sqrt(300))
 
-    # 19 个边界定义 18 个等宽区间，组距 h=(max-min)/18。
-    # numpy 默认左闭右开，最后一个区间包含最右端点，确保最大观测不遗漏。
     source_bins = np.linspace(float(original.min()), float(original.max()), 19)
     source_freq, source_edges = np.histogram(original, bins=source_bins)
 
