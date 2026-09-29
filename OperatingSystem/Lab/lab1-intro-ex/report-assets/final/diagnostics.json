@@ -1,0 +1,1223 @@
+{
+  "rows": [
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "bare",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.103746546",
+      "realtime_s": "0.103750969",
+      "real_start_ns": "1790629078117309532",
+      "real_end_ns": "1790629078221060501",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/3_tools_read_lseek_read_bare_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "time_v",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.099967563",
+      "realtime_s": "0.099971428",
+      "real_start_ns": "1790629078470115743",
+      "real_end_ns": "1790629078570087171",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/4_tools_read_lseek_read_time_v_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "strace",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "4.353811681",
+      "realtime_s": "3.852641284",
+      "real_start_ns": "1790629078817716475",
+      "real_end_ns": "1790629082670357759",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/5_tools_read_lseek_read_strace_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "write",
+      "tool": "bare",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.250187838",
+      "realtime_s": "0.250192826",
+      "real_start_ns": "1790629082925696515",
+      "real_end_ns": "1790629083175889341",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/6_tools_read_lseek_write_bare_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "write",
+      "tool": "time_v",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.247398523",
+      "realtime_s": "0.247402503",
+      "real_start_ns": "1790629083424227463",
+      "real_end_ns": "1790629083671629966",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/7_tools_read_lseek_write_time_v_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "read_lseek",
+      "mode": "write",
+      "tool": "strace",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "8.868145590",
+      "realtime_s": "14.957695280",
+      "real_start_ns": "1790629083912837867",
+      "real_end_ns": "1790629098870533147",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/8_tools_read_lseek_write_strace_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "bare",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.004643873",
+      "realtime_s": "0.004647264",
+      "real_start_ns": "1790629092039315018",
+      "real_end_ns": "1790629092043962282",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/9_tools_mmap_read_bare_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "time_v",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.004180957",
+      "realtime_s": "0.004184213",
+      "real_start_ns": "1790629092286929626",
+      "real_end_ns": "1790629092291113839",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/10_tools_mmap_read_time_v_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "strace",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.006866544",
+      "realtime_s": "0.006869876",
+      "real_start_ns": "1790629092541349764",
+      "real_end_ns": "1790629092548219640",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/11_tools_mmap_read_strace_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "write",
+      "tool": "bare",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.006586323",
+      "realtime_s": "0.006589596",
+      "real_start_ns": "1790629092800692595",
+      "real_end_ns": "1790629092807282191",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/12_tools_mmap_write_bare_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "write",
+      "tool": "time_v",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.007055019",
+      "realtime_s": "0.007058292",
+      "real_start_ns": "1790629093056781358",
+      "real_end_ns": "1790629093063839650",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/13_tools_mmap_write_time_v_1.log"
+    },
+    {
+      "phase": "tools",
+      "api": "mmap",
+      "mode": "write",
+      "tool": "strace",
+      "rep": "1",
+      "iterations": "1",
+      "wall_s": "0.007519017",
+      "realtime_s": "0.007522162",
+      "real_start_ns": "1790629093301928272",
+      "real_end_ns": "1790629093309450434",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/14_tools_mmap_write_strace_1.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "1",
+      "iterations": "20",
+      "wall_s": "1.971384810",
+      "realtime_s": "1.971388966",
+      "real_start_ns": "1790629093727066726",
+      "real_end_ns": "1790629095698455692",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/15_quiet_read_lseek_read_resource_1.log"
+    },
+    {
+      "phase": "stress",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "1",
+      "iterations": "20",
+      "wall_s": "4.320453943",
+      "realtime_s": "3.819962175",
+      "real_start_ns": "1790629095952198301",
+      "real_end_ns": "1790629099772160476",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/16_stress_read_lseek_read_resource_1.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "1",
+      "iterations": "20",
+      "wall_s": "0.039630875",
+      "realtime_s": "0.039635192",
+      "real_start_ns": "1790629100031950454",
+      "real_end_ns": "1790629100071585646",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/17_quiet_mmap_read_resource_1.log"
+    },
+    {
+      "phase": "stress",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "1",
+      "iterations": "20",
+      "wall_s": "0.076782233",
+      "realtime_s": "0.076786600",
+      "real_start_ns": "1790629100327809948",
+      "real_end_ns": "1790629100404596548",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/18_stress_mmap_read_resource_1.log"
+    },
+    {
+      "phase": "stress",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "2",
+      "iterations": "20",
+      "wall_s": "4.281029428",
+      "realtime_s": "3.778738358",
+      "real_start_ns": "1790629100654688540",
+      "real_end_ns": "1790629104433426898",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/19_stress_read_lseek_read_resource_2.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "2",
+      "iterations": "20",
+      "wall_s": "1.951799284",
+      "realtime_s": "1.951803982",
+      "real_start_ns": "1790629104697864130",
+      "real_end_ns": "1790629106649668112",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/20_quiet_read_lseek_read_resource_2.log"
+    },
+    {
+      "phase": "stress",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "2",
+      "iterations": "20",
+      "wall_s": "0.062799557",
+      "realtime_s": "0.062804362",
+      "real_start_ns": "1790629106905095682",
+      "real_end_ns": "1790629106967900044",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/21_stress_mmap_read_resource_2.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "2",
+      "iterations": "20",
+      "wall_s": "0.039124880",
+      "realtime_s": "0.039129620",
+      "real_start_ns": "1790629113810394007",
+      "real_end_ns": "1790629113849523627",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/22_quiet_mmap_read_resource_2.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "3",
+      "iterations": "20",
+      "wall_s": "1.945741538",
+      "realtime_s": "1.945747073",
+      "real_start_ns": "1790629107003018279",
+      "real_end_ns": "1790629108948765352",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/23_quiet_read_lseek_read_resource_3.log"
+    },
+    {
+      "phase": "stress",
+      "api": "read_lseek",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "3",
+      "iterations": "20",
+      "wall_s": "4.241727083",
+      "realtime_s": "3.738571849",
+      "real_start_ns": "1790629109208356360",
+      "real_end_ns": "1790629112946928209",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/24_stress_read_lseek_read_resource_3.log"
+    },
+    {
+      "phase": "quiet",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "3",
+      "iterations": "20",
+      "wall_s": "0.029296324",
+      "realtime_s": "0.029299771",
+      "real_start_ns": "1790629113206481607",
+      "real_end_ns": "1790629113235781378",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/25_quiet_mmap_read_resource_3.log"
+    },
+    {
+      "phase": "stress",
+      "api": "mmap",
+      "mode": "read",
+      "tool": "resource",
+      "rep": "3",
+      "iterations": "20",
+      "wall_s": "0.065040011",
+      "realtime_s": "0.065044123",
+      "real_start_ns": "1790629113482808566",
+      "real_end_ns": "1790629113547852689",
+      "exit_code": "0",
+      "valid": "1",
+      "log": "logs/26_stress_mmap_read_resource_3.log"
+    }
+  ],
+  "noise": {
+    "read_lseek": {
+      "quiet": {
+        "n": 3,
+        "mean": 1.956308544,
+        "sd": 0.013403149593554315,
+        "low": 1.9230132746388333,
+        "high": 1.9896038133611669,
+        "invol": 7.666666666666667
+      },
+      "stress": {
+        "n": 3,
+        "mean": 4.281070151333333,
+        "sd": 0.0393634457988288,
+        "low": 4.183285931161234,
+        "high": 4.378854371505432,
+        "invol": 533.6666666666666
+      },
+      "ratio": 2.1883409774308755
+    },
+    "mmap": {
+      "quiet": {
+        "n": 3,
+        "mean": 0.036017359666666665,
+        "sd": 0.005826083423661247,
+        "low": 0.02154456612232564,
+        "high": 0.05049015321100769,
+        "invol": 0.6666666666666666
+      },
+      "stress": {
+        "n": 3,
+        "mean": 0.068207267,
+        "sd": 0.007510155787824646,
+        "low": 0.04955100578657598,
+        "high": 0.08686352821342402,
+        "invol": 7.666666666666667
+      },
+      "ratio": 1.8937331228953032
+    }
+  },
+  "traces": {
+    "11_tools_mmap_read_strace_1.strace.txt": {
+      "mmap": 9,
+      "mprotect": 4,
+      "pread64": 4,
+      "close": 3,
+      "openat": 3,
+      "newfstatat": 3,
+      "write": 2,
+      "munmap": 2,
+      "arch_prctl": 2,
+      "read": 1,
+      "brk": 1,
+      "access": 1,
+      "execve": 1,
+      "set_tid_address": 1,
+      "set_robust_list": 1,
+      "prlimit64": 1,
+      "rseq": 1,
+      "total": 40
+    },
+    "14_tools_mmap_write_strace_1.strace.txt": {
+      "mmap": 9,
+      "mprotect": 4,
+      "pread64": 4,
+      "close": 3,
+      "openat": 3,
+      "newfstatat": 3,
+      "write": 2,
+      "munmap": 2,
+      "arch_prctl": 2,
+      "read": 1,
+      "brk": 1,
+      "access": 1,
+      "execve": 1,
+      "set_tid_address": 1,
+      "set_robust_list": 1,
+      "prlimit64": 1,
+      "rseq": 1,
+      "total": 40
+    },
+    "5_tools_read_lseek_read_strace_1.strace.txt": {
+      "read": 436907,
+      "lseek": 436906,
+      "mmap": 8,
+      "mprotect": 4,
+      "pread64": 4,
+      "close": 3,
+      "openat": 3,
+      "newfstatat": 3,
+      "write": 2,
+      "arch_prctl": 2,
+      "munmap": 1,
+      "brk": 1,
+      "access": 1,
+      "execve": 1,
+      "set_tid_address": 1,
+      "set_robust_list": 1,
+      "prlimit64": 1,
+      "rseq": 1,
+      "total": 873850
+    },
+    "8_tools_read_lseek_write_strace_1.strace.txt": {
+      "lseek": 873811,
+      "read": 436907,
+      "write": 436907,
+      "mmap": 8,
+      "mprotect": 4,
+      "pread64": 4,
+      "close": 3,
+      "openat": 3,
+      "newfstatat": 3,
+      "arch_prctl": 2,
+      "munmap": 1,
+      "brk": 1,
+      "access": 1,
+      "execve": 1,
+      "set_tid_address": 1,
+      "set_robust_list": 1,
+      "prlimit64": 1,
+      "rseq": 1,
+      "total": 1747660
+    }
+  },
+  "resources": {
+    "10_tools_mmap_read_time_v_1.time.txt": "\tCommand being timed: \"./out/graph_traverse_mmap 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin\"\n\tUser time (seconds): 0.00\n\tSystem time (seconds): 0.00\n\tPercent of CPU this job got: 100%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 11680\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 232\n\tVoluntary context switches: 1\n\tInvoluntary context switches: 0\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 8\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+    "13_tools_mmap_write_time_v_1.time.txt": "\tCommand being timed: \"./out/graph_traverse_mmap --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin\"\n\tUser time (seconds): 0.00\n\tSystem time (seconds): 0.00\n\tPercent of CPU this job got: 80%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 11680\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 2790\n\tVoluntary context switches: 1\n\tInvoluntary context switches: 0\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 20488\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+    "4_tools_read_lseek_read_time_v_1.time.txt": "\tCommand being timed: \"./out/graph_traverse 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin\"\n\tUser time (seconds): 0.04\n\tSystem time (seconds): 0.04\n\tPercent of CPU this job got: 89%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 1440\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 69\n\tVoluntary context switches: 1\n\tInvoluntary context switches: 0\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 8\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+    "7_tools_read_lseek_write_time_v_1.time.txt": "\tCommand being timed: \"./out/graph_traverse --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin\"\n\tUser time (seconds): 0.06\n\tSystem time (seconds): 0.16\n\tPercent of CPU this job got: 91%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:00.24\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 1440\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 71\n\tVoluntary context switches: 1\n\tInvoluntary context switches: 0\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 20488\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n"
+  },
+  "clock_audit": {
+    "main_clock_count": 120,
+    "main_gt_1ms": 37,
+    "main_max_abs_difference": 8.593230065,
+    "diag_gt_1ms": 5,
+    "diag_max_abs_difference": 6.08954969
+  },
+  "main_clocks": [
+    {
+      "log": "r10_mmap_read.log",
+      "real": 0.030123705,
+      "mono": 0.030119274,
+      "difference": 4.430999999999186e-06
+    },
+    {
+      "log": "r10_mmap_write.log",
+      "real": 0.065810272,
+      "mono": 0.065806086,
+      "difference": 4.186000000003243e-06
+    },
+    {
+      "log": "r10_read_lseek_read.log",
+      "real": 1.949372041,
+      "mono": 1.94936726,
+      "difference": 4.780999999898228e-06
+    },
+    {
+      "log": "r10_read_lseek_write.log",
+      "real": 4.287899123,
+      "mono": 4.778544842,
+      "difference": -0.49064571899999976
+    },
+    {
+      "log": "r11_mmap_read.log",
+      "real": 0.029792041,
+      "mono": 0.029788272,
+      "difference": 3.768999999997219e-06
+    },
+    {
+      "log": "r11_mmap_write.log",
+      "real": 0.065769194,
+      "mono": 0.065765279,
+      "difference": 3.915000000007107e-06
+    },
+    {
+      "log": "r11_read_lseek_read.log",
+      "real": 1.473035171,
+      "mono": 1.974206141,
+      "difference": -0.50117097
+    },
+    {
+      "log": "r11_read_lseek_write.log",
+      "real": 4.796727973,
+      "mono": 4.796722738,
+      "difference": 5.235000000602952e-06
+    },
+    {
+      "log": "r12_mmap_read.log",
+      "real": 0.030074622,
+      "mono": 0.030070134,
+      "difference": 4.488000000000408e-06
+    },
+    {
+      "log": "r12_mmap_write.log",
+      "real": 6.653783826,
+      "mono": 0.066900252,
+      "difference": 6.586883574
+    },
+    {
+      "log": "r12_read_lseek_read.log",
+      "real": -5.142085409,
+      "mono": 1.944310322,
+      "difference": -7.086395731
+    },
+    {
+      "log": "r12_read_lseek_write.log",
+      "real": 4.308503141,
+      "mono": 4.821798908,
+      "difference": -0.5132957669999998
+    },
+    {
+      "log": "r13_mmap_read.log",
+      "real": 0.030213116,
+      "mono": 0.030209254,
+      "difference": 3.86200000000031e-06
+    },
+    {
+      "log": "r13_mmap_write.log",
+      "real": 0.066676618,
+      "mono": 0.066667441,
+      "difference": 9.17700000001298e-06
+    },
+    {
+      "log": "r13_read_lseek_read.log",
+      "real": 1.974813818,
+      "mono": 1.974809161,
+      "difference": 4.657000000074518e-06
+    },
+    {
+      "log": "r13_read_lseek_write.log",
+      "real": 4.301557664,
+      "mono": 4.791900364,
+      "difference": -0.49034270000000024
+    },
+    {
+      "log": "r14_mmap_read.log",
+      "real": 0.03096579,
+      "mono": 0.030961867,
+      "difference": 3.922999999999427e-06
+    },
+    {
+      "log": "r14_mmap_write.log",
+      "real": 0.067153618,
+      "mono": 0.067149399,
+      "difference": 4.218999999999751e-06
+    },
+    {
+      "log": "r14_read_lseek_read.log",
+      "real": 1.965319155,
+      "mono": 1.965314821,
+      "difference": 4.333999999994731e-06
+    },
+    {
+      "log": "r14_read_lseek_write.log",
+      "real": 4.286709809,
+      "mono": 4.789251251,
+      "difference": -0.5025414419999992
+    },
+    {
+      "log": "r15_mmap_read.log",
+      "real": 0.036787806,
+      "mono": 0.036784129,
+      "difference": 3.677000000000541e-06
+    },
+    {
+      "log": "r15_mmap_write.log",
+      "real": 0.065548665,
+      "mono": 0.065543985,
+      "difference": 4.680000000006901e-06
+    },
+    {
+      "log": "r15_read_lseek_read.log",
+      "real": 1.465112782,
+      "mono": 1.966613578,
+      "difference": -0.501500796
+    },
+    {
+      "log": "r15_read_lseek_write.log",
+      "real": 4.343696725,
+      "mono": 4.844046296,
+      "difference": -0.5003495710000001
+    },
+    {
+      "log": "r16_mmap_read.log",
+      "real": 0.031365326,
+      "mono": 0.031361289,
+      "difference": 4.036999999998403e-06
+    },
+    {
+      "log": "r16_mmap_write.log",
+      "real": 0.07156604,
+      "mono": 0.071561997,
+      "difference": 4.042999999995245e-06
+    },
+    {
+      "log": "r16_read_lseek_read.log",
+      "real": 1.953739789,
+      "mono": 1.953735978,
+      "difference": 3.8109999997981703e-06
+    },
+    {
+      "log": "r16_read_lseek_write.log",
+      "real": 4.307760574,
+      "mono": 4.810189841,
+      "difference": -0.5024292670000001
+    },
+    {
+      "log": "r17_mmap_read.log",
+      "real": 0.034660355,
+      "mono": 0.03465637,
+      "difference": 3.984999999998018e-06
+    },
+    {
+      "log": "r17_mmap_write.log",
+      "real": 0.069129904,
+      "mono": 0.069125819,
+      "difference": 4.0850000000008935e-06
+    },
+    {
+      "log": "r17_read_lseek_read.log",
+      "real": 1.942536862,
+      "mono": 1.942532456,
+      "difference": 4.406000000178878e-06
+    },
+    {
+      "log": "r17_read_lseek_write.log",
+      "real": 4.30043461,
+      "mono": 4.800217064,
+      "difference": -0.499782454
+    },
+    {
+      "log": "r18_mmap_read.log",
+      "real": 0.031223114,
+      "mono": 0.031218947,
+      "difference": 4.166999999999366e-06
+    },
+    {
+      "log": "r18_mmap_write.log",
+      "real": 0.068860779,
+      "mono": 0.068857181,
+      "difference": 3.597999999993551e-06
+    },
+    {
+      "log": "r18_read_lseek_read.log",
+      "real": 1.962073918,
+      "mono": 1.962069433,
+      "difference": 4.485000000054029e-06
+    },
+    {
+      "log": "r18_read_lseek_write.log",
+      "real": 4.333221054,
+      "mono": 4.833185771,
+      "difference": -0.4999647170000001
+    },
+    {
+      "log": "r19_mmap_read.log",
+      "real": 0.029401533,
+      "mono": 0.029397795,
+      "difference": 3.7379999999996583e-06
+    },
+    {
+      "log": "r19_mmap_write.log",
+      "real": 0.067868785,
+      "mono": 0.067864787,
+      "difference": 3.998000000005053e-06
+    },
+    {
+      "log": "r19_read_lseek_read.log",
+      "real": 8.526694466,
+      "mono": 1.940195666,
+      "difference": 6.5864988
+    },
+    {
+      "log": "r19_read_lseek_write.log",
+      "real": 4.78244295,
+      "mono": 4.782437403,
+      "difference": 5.546999999772595e-06
+    },
+    {
+      "log": "r1_mmap_read.log",
+      "real": 0.030369763,
+      "mono": 0.03036575,
+      "difference": 4.013000000000627e-06
+    },
+    {
+      "log": "r1_mmap_write.log",
+      "real": 0.068751582,
+      "mono": 0.06874743,
+      "difference": 4.152000000007261e-06
+    },
+    {
+      "log": "r1_read_lseek_read.log",
+      "real": 1.964460814,
+      "mono": 1.964456274,
+      "difference": 4.539999999941813e-06
+    },
+    {
+      "log": "r1_read_lseek_write.log",
+      "real": 4.804883474,
+      "mono": 4.804879353,
+      "difference": 4.121000000800734e-06
+    },
+    {
+      "log": "r20_mmap_read.log",
+      "real": 0.034999284,
+      "mono": 0.034995129,
+      "difference": 4.154999999998743e-06
+    },
+    {
+      "log": "r20_mmap_write.log",
+      "real": 0.069208732,
+      "mono": 0.069204669,
+      "difference": 4.0629999999985955e-06
+    },
+    {
+      "log": "r20_read_lseek_read.log",
+      "real": 1.965906055,
+      "mono": 1.965900376,
+      "difference": 5.679000000036183e-06
+    },
+    {
+      "log": "r20_read_lseek_write.log",
+      "real": 4.801112862,
+      "mono": 4.801109111,
+      "difference": 3.751000000384863e-06
+    },
+    {
+      "log": "r21_mmap_read.log",
+      "real": 0.029526949,
+      "mono": 0.029522634,
+      "difference": 4.315000000001262e-06
+    },
+    {
+      "log": "r21_mmap_write.log",
+      "real": 0.065955643,
+      "mono": 0.065951782,
+      "difference": 3.860999999993897e-06
+    },
+    {
+      "log": "r21_read_lseek_read.log",
+      "real": 1.965704811,
+      "mono": 1.965700857,
+      "difference": 3.953999999861679e-06
+    },
+    {
+      "log": "r21_read_lseek_write.log",
+      "real": -3.734513567,
+      "mono": 4.858716498,
+      "difference": -8.593230065
+    },
+    {
+      "log": "r22_mmap_read.log",
+      "real": 0.030368803,
+      "mono": 0.030365136,
+      "difference": 3.6669999999988656e-06
+    },
+    {
+      "log": "r22_mmap_write.log",
+      "real": 0.065595246,
+      "mono": 0.065591723,
+      "difference": 3.522999999991394e-06
+    },
+    {
+      "log": "r22_read_lseek_read.log",
+      "real": 1.940024827,
+      "mono": 1.940020487,
+      "difference": 4.340000000047084e-06
+    },
+    {
+      "log": "r22_read_lseek_write.log",
+      "real": 4.271604429,
+      "mono": 4.782097209,
+      "difference": -0.5104927799999999
+    },
+    {
+      "log": "r23_mmap_read.log",
+      "real": 0.029940946,
+      "mono": 0.029937423,
+      "difference": 3.522999999998333e-06
+    },
+    {
+      "log": "r23_mmap_write.log",
+      "real": 0.068234067,
+      "mono": 0.0682301,
+      "difference": 3.9669999999936145e-06
+    },
+    {
+      "log": "r23_read_lseek_read.log",
+      "real": -5.130816009,
+      "mono": 1.963931965,
+      "difference": -7.094747974000001
+    },
+    {
+      "log": "r23_read_lseek_write.log",
+      "real": 4.318671709,
+      "mono": 4.818200263,
+      "difference": -0.4995285539999994
+    },
+    {
+      "log": "r24_mmap_read.log",
+      "real": 0.031307214,
+      "mono": 0.031303318,
+      "difference": 3.89600000000323e-06
+    },
+    {
+      "log": "r24_mmap_write.log",
+      "real": 0.066382091,
+      "mono": 0.066377721,
+      "difference": 4.370000000003538e-06
+    },
+    {
+      "log": "r24_read_lseek_read.log",
+      "real": 1.938505599,
+      "mono": 1.938501153,
+      "difference": 4.445999999935779e-06
+    },
+    {
+      "log": "r24_read_lseek_write.log",
+      "real": 4.303616273,
+      "mono": 4.80549009,
+      "difference": -0.5018738169999999
+    },
+    {
+      "log": "r25_mmap_read.log",
+      "real": 0.029888063,
+      "mono": 0.02988427,
+      "difference": 3.7929999999984643e-06
+    },
+    {
+      "log": "r25_mmap_write.log",
+      "real": 0.067874273,
+      "mono": 0.067702123,
+      "difference": 0.00017214999999999592
+    },
+    {
+      "log": "r25_read_lseek_read.log",
+      "real": 1.967686928,
+      "mono": 1.967683075,
+      "difference": 3.852999999942597e-06
+    },
+    {
+      "log": "r25_read_lseek_write.log",
+      "real": 4.309400176,
+      "mono": 4.806305324,
+      "difference": -0.49690514800000063
+    },
+    {
+      "log": "r26_mmap_read.log",
+      "real": 0.032991281,
+      "mono": 0.032987659,
+      "difference": 3.621999999994796e-06
+    },
+    {
+      "log": "r26_mmap_write.log",
+      "real": 0.074135352,
+      "mono": 0.07413113,
+      "difference": 4.221999999998172e-06
+    },
+    {
+      "log": "r26_read_lseek_read.log",
+      "real": 1.485968791,
+      "mono": 1.982701326,
+      "difference": -0.49673253500000003
+    },
+    {
+      "log": "r26_read_lseek_write.log",
+      "real": 4.281524562,
+      "mono": 4.785972719,
+      "difference": -0.5044481569999997
+    },
+    {
+      "log": "r27_mmap_read.log",
+      "real": 0.030063322,
+      "mono": 0.03005922,
+      "difference": 4.101999999998884e-06
+    },
+    {
+      "log": "r27_mmap_write.log",
+      "real": 0.067428661,
+      "mono": 0.067423273,
+      "difference": 5.387999999995063e-06
+    },
+    {
+      "log": "r27_read_lseek_read.log",
+      "real": 1.959364451,
+      "mono": 1.959360514,
+      "difference": 3.936999999787361e-06
+    },
+    {
+      "log": "r27_read_lseek_write.log",
+      "real": 4.321449367,
+      "mono": 4.820744671,
+      "difference": -0.49929530400000033
+    },
+    {
+      "log": "r28_mmap_read.log",
+      "real": 0.033590938,
+      "mono": 0.033586105,
+      "difference": 4.833000000002696e-06
+    },
+    {
+      "log": "r28_mmap_write.log",
+      "real": 0.067049817,
+      "mono": 0.067045955,
+      "difference": 3.861999999993371e-06
+    },
+    {
+      "log": "r28_read_lseek_read.log",
+      "real": 1.961770906,
+      "mono": 1.961766955,
+      "difference": 3.950999999835503e-06
+    },
+    {
+      "log": "r28_read_lseek_write.log",
+      "real": 4.298506959,
+      "mono": 4.801730427,
+      "difference": -0.5032234679999998
+    },
+    {
+      "log": "r29_mmap_read.log",
+      "real": 0.029242286,
+      "mono": 0.029238244,
+      "difference": 4.041999999999241e-06
+    },
+    {
+      "log": "r29_mmap_write.log",
+      "real": 0.064961149,
+      "mono": 0.064956153,
+      "difference": 4.995999999993228e-06
+    },
+    {
+      "log": "r29_read_lseek_read.log",
+      "real": 1.956419325,
+      "mono": 1.956415115,
+      "difference": 4.209999999948977e-06
+    },
+    {
+      "log": "r29_read_lseek_write.log",
+      "real": 4.304382562,
+      "mono": 4.806165062,
+      "difference": -0.5017825
+    },
+    {
+      "log": "r2_mmap_read.log",
+      "real": 0.028902201,
+      "mono": 0.028898279,
+      "difference": 3.921999999999953e-06
+    },
+    {
+      "log": "r2_mmap_write.log",
+      "real": 0.065026982,
+      "mono": 0.065022875,
+      "difference": 4.1070000000031914e-06
+    },
+    {
+      "log": "r2_read_lseek_read.log",
+      "real": 1.939600094,
+      "mono": 1.939596386,
+      "difference": 3.7079999999356517e-06
+    },
+    {
+      "log": "r2_read_lseek_write.log",
+      "real": -3.74127476,
+      "mono": 4.850575838,
+      "difference": -8.591850598
+    },
+    {
+      "log": "r30_mmap_read.log",
+      "real": 0.031067201,
+      "mono": 0.031063176,
+      "difference": 4.02499999999778e-06
+    },
+    {
+      "log": "r30_mmap_write.log",
+      "real": 0.065406219,
+      "mono": 0.065402036,
+      "difference": 4.183000000004822e-06
+    },
+    {
+      "log": "r30_read_lseek_read.log",
+      "real": 1.45354601,
+      "mono": 1.95291295,
+      "difference": -0.49936694000000004
+    },
+    {
+      "log": "r30_read_lseek_write.log",
+      "real": 4.301853065,
+      "mono": 4.802449066,
+      "difference": -0.5005960009999999
+    },
+    {
+      "log": "r3_mmap_read.log",
+      "real": 0.030836419,
+      "mono": 0.030832737,
+      "difference": 3.6820000000013786e-06
+    },
+    {
+      "log": "r3_mmap_write.log",
+      "real": 0.066650255,
+      "mono": 0.066646107,
+      "difference": 4.148000000009366e-06
+    },
+    {
+      "log": "r3_read_lseek_read.log",
+      "real": 1.946286329,
+      "mono": 1.946281301,
+      "difference": 5.02800000012904e-06
+    },
+    {
+      "log": "r3_read_lseek_write.log",
+      "real": 4.363463236,
+      "mono": 4.862619774,
+      "difference": -0.4991565379999994
+    },
+    {
+      "log": "r4_mmap_read.log",
+      "real": 0.032305558,
+      "mono": 0.032301146,
+      "difference": 4.4119999999953086e-06
+    },
+    {
+      "log": "r4_mmap_write.log",
+      "real": 0.063777579,
+      "mono": 0.063773838,
+      "difference": 3.7410000000015486e-06
+    },
+    {
+      "log": "r4_read_lseek_read.log",
+      "real": 1.441959686,
+      "mono": 1.943827753,
+      "difference": -0.5018680670000002
+    },
+    {
+      "log": "r4_read_lseek_write.log",
+      "real": 4.285784771,
+      "mono": 4.78688279,
+      "difference": -0.5010980189999996
+    },
+    {
+      "log": "r5_mmap_read.log",
+      "real": 0.029549333,
+      "mono": 0.029545824,
+      "difference": 3.5090000000022326e-06
+    },
+    {
+      "log": "r5_mmap_write.log",
+      "real": 0.064993896,
+      "mono": 0.064990393,
+      "difference": 3.5030000000019212e-06
+    },
+    {
+      "log": "r5_read_lseek_read.log",
+      "real": 1.9406585,
+      "mono": 1.940653971,
+      "difference": 4.529000000141892e-06
+    },
+    {
+      "log": "r5_read_lseek_write.log",
+      "real": 4.302068239,
+      "mono": 4.805309411,
+      "difference": -0.5032411720000001
+    },
+    {
+      "log": "r6_mmap_read.log",
+      "real": 0.03245885,
+      "mono": 0.032454933,
+      "difference": 3.916999999999116e-06
+    },
+    {
+      "log": "r6_mmap_write.log",
+      "real": 0.066094619,
+      "mono": 0.066090644,
+      "difference": 3.974999999989404e-06
+    },
+    {
+      "log": "r6_read_lseek_read.log",
+      "real": 1.94475223,
+      "mono": 1.944748709,
+      "difference": 3.5210000000063246e-06
+    },
+    {
+      "log": "r6_read_lseek_write.log",
+      "real": 4.307384697,
+      "mono": 4.805858788,
+      "difference": -0.4984740910000003
+    },
+    {
+      "log": "r7_mmap_read.log",
+      "real": 0.029587689,
+      "mono": 0.02958388,
+      "difference": 3.809000000000451e-06
+    },
+    {
+      "log": "r7_mmap_write.log",
+      "real": 0.069869166,
+      "mono": 0.069864967,
+      "difference": 4.1989999999964e-06
+    },
+    {
+      "log": "r7_read_lseek_read.log",
+      "real": 8.542592615,
+      "mono": 1.958188683,
+      "difference": 6.584403932000001
+    },
+    {
+      "log": "r7_read_lseek_write.log",
+      "real": -2.248375709,
+      "mono": 4.839747347,
+      "difference": -7.088123056000001
+    },
+    {
+      "log": "r8_mmap_read.log",
+      "real": 0.030315412,
+      "mono": 0.03031147,
+      "difference": 3.9419999999998345e-06
+    },
+    {
+      "log": "r8_mmap_write.log",
+      "real": 0.07158447,
+      "mono": 0.071579781,
+      "difference": 4.689000000002164e-06
+    },
+    {
+      "log": "r8_read_lseek_read.log",
+      "real": 1.470397702,
+      "mono": 1.969454809,
+      "difference": -0.49905710699999983
+    },
+    {
+      "log": "r8_read_lseek_write.log",
+      "real": 4.318827726,
+      "mono": 4.821281837,
+      "difference": -0.5024541109999996
+    },
+    {
+      "log": "r9_mmap_read.log",
+      "real": 0.034594865,
+      "mono": 0.034590945,
+      "difference": 3.9200000000044755e-06
+    },
+    {
+      "log": "r9_mmap_write.log",
+      "real": 0.079184239,
+      "mono": 0.079180298,
+      "difference": 3.9410000000073e-06
+    },
+    {
+      "log": "r9_read_lseek_read.log",
+      "real": 1.941843548,
+      "mono": 1.9418385,
+      "difference": 5.048000000007491e-06
+    },
+    {
+      "log": "r9_read_lseek_write.log",
+      "real": 4.317821781,
+      "mono": 4.830309113,
+      "difference": -0.5124873320000001
+    }
+  ]
+}

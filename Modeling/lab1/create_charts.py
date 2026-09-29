@@ -63,7 +63,6 @@ def fit_and_generate(x):
 
 
 def acf(x):
-    # Pearson 自相关：两个截取序列分别减去各自的均值，与原分析代码一致。
     # 不同于统一减全样本均值的另一种 ACF 定义；检查滞后 1 至 10。
     return np.array([np.corrcoef(x[:-k], x[k:])[0, 1] for k in range(1, 11)])
 
