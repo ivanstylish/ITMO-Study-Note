@@ -11,7 +11,7 @@ RATES = np.array([2 * ALPHA / B, 2 * (1 - ALPHA) / B])
 
 
 def stationary(q):
-    """解 pi Q = 0，并用归一化方程替换最后一列"""
+    """解 pi Q = 0，并用归一化方程替换转置矩阵的最后一行（一个平衡方程）"""
     a = q.T.copy()
     a[-1] = 1
     rhs = np.zeros(len(q))
