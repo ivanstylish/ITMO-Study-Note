@@ -8,9 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
-// @Service：声明业务层 Spring Bean，由容器创建并注入其依赖。
 @Service
-// @Transactional：在事务中执行方法；readOnly=true 标记只读意图，提交与回滚由事务管理器处理。
 @Transactional(readOnly = true)
 public class SpecialService {
     private final SpecialRepository repository;

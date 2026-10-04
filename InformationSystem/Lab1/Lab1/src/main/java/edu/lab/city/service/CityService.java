@@ -11,9 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
-// @Service：声明业务层 Spring Bean，由容器创建并注入其依赖。
 @Service
-// @Transactional：在事务中执行方法；readOnly=true 标记只读意图，提交与回滚由事务管理器处理。
 @Transactional
 public class CityService {
     private final ObjectRepository repository;
@@ -52,7 +50,6 @@ public class CityService {
     }
 
     private void version(Long actual, Long expected) {
-        // 检查用户打开表单时的版本；过期表单不能覆盖其他用户的新修改。
         if (expected == null || !expected.equals(actual)) {
             String message = "Object was changed by another user. Close this dialog and reload before editing.";
             throw new ResponseStatusException(HttpStatus.CONFLICT, message);
@@ -60,7 +57,6 @@ public class CityService {
     }
 
     public City saveCity(Long id, CityInput input) {
-        // 同一个方法处理新增与修改；关联对象必须先在数据库中存在。
         if (!Float.isFinite(input.area()))
             throw new IllegalArgumentException("area must be finite");
         City city = id == null ? new City() : get(City.class, id);
@@ -117,7 +113,6 @@ public class CityService {
             actual = ((Coordinates) object).getVersion();
         }
         version(actual, expectedVersion);
-        // 不使用级联删除。数据库外键会原子地阻止删除仍被城市引用的坐标或人物。
         repository.remove(object);
     }
 }

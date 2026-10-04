@@ -9,10 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-// @Repository：声明数据访问层 Spring Bean；此注解不代表使用了 Spring Data Repository。
 @Repository
 public class ObjectRepository {
-    // @PersistenceContext：注入关联当前事务持久化上下文的 EntityManager 代理。
     @PersistenceContext
     private EntityManager em;
 
@@ -42,7 +40,6 @@ public class ObjectRepository {
 
     public Page<City> cities(
         int page, int size, String column, String value, String sort, boolean desc) {
-        // 只允许白名单列参与排序；用户提供的值通过参数绑定，不能拼入 SQL/JPQL。
         Map<String, String> fields = Map.of(
             "name", "c.name",
             "governorName", "h.name",

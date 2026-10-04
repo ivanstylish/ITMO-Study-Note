@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-// @Repository：声明数据访问层 Spring Bean；此注解不代表使用了 Spring Data Repository。
 @Repository
 public class UserRepository {
-    // @PersistenceContext：注入关联当前事务持久化上下文的 EntityManager 代理。
     @PersistenceContext
     private EntityManager em;
 

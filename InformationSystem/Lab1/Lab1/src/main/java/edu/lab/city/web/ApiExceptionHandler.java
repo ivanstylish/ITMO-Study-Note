@@ -12,10 +12,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
-// @RestControllerAdvice：集中处理控制器异常，并将结果作为 JSON 响应返回。
 @RestControllerAdvice
 public class ApiExceptionHandler {
-    // @ExceptionHandler：指定此方法处理的异常类型，用于统一转换 HTTP 状态与错误消息。
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ResponseEntity<?> validation(MethodArgumentNotValidException e) {
         Map<String, String> fields = new LinkedHashMap<>();
@@ -61,7 +59,6 @@ public class ApiExceptionHandler {
         while (t != null) {
             if (t instanceof java.sql.SQLException sql) {
                 String state = sql.getSQLState();
-                // 用户名唯一约束兜底：两个请求同时注册时，也不会创建重复账号。
                 if ("23505".equals(state)) {
                     return error(409, "Этот логин уже занят.");
                 }
@@ -89,7 +86,6 @@ public class ApiExceptionHandler {
         return error(500, "Database operation failed. Check the server log and database connection.");
     }
 
-    // 统一组装错误响应，避免每个分支重复嵌套 ResponseEntity、body 和 Map.of。
     private ResponseEntity<?> error(int status, String message) {
         return ResponseEntity.status(status).body(Map.of("message", message));
     }
