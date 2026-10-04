@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>CITY — Ваш мир городов</title>
+        <link rel="stylesheet" href="/ui.css" />
+        <link rel="stylesheet" href="/style.css" />
+        <script src="/i18n.js" defer></script>
+        <script src="/ui.js" defer></script>
+        <script src="/app.js" defer></script>
+    </head>
+    <body>
+        <header class="topbar">
+            <button class="brand" data-tab="home" aria-label="На главную" data-i18n-label="На главную">
+                CITY
+                <span>●</span>
+            </button>
+            <label class="language-control">
+                <select id="languageSelect" aria-label="Language / 语言 / Язык">
+                    <option value="ru">Русский</option>
+                    <option value="zh">中文</option>
+                    <option value="en" data-i18n="English">English</option>
+                </select>
+            </label>
+            <div class="account">
+                <span class="avatar" aria-hidden="true">↗</span>
+                <span id="user"></span>
+                <button id="logout"><span data-i18n="Выйти ↗">Выйти ↗</span></button>
+            </div>
+        </header>
+        <main>
+            <section id="dashboard">
+                <div class="hero">
+                    <h1>
+                        <span data-i18n="Города">Города</span>
+                        <span data-i18n="и люди.">и люди.</span>
+                    </h1>
+                </div>
+                <nav class="entry-grid" aria-label="Разделы приложения" data-i18n-label="Разделы приложения">
+                    <button class="entry-card card-city" data-tab="cities">
+                        <span class="card-title" data-i18n="Города">Города</span>
+                        <span class="card-arrow">↗</span>
+                        <svg class="city-drawing" viewBox="0 0 300 160" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path
+                                    d="M0 152H300M20 152V70H54V152M30 70V54H44V70M69 152V101H100V152M112 152V39H145V152M120 39V19H137V39M128 19V0M160 152V78H199V152M215 152V51H245V152M230 51V17M258 152V107H290V152"
+                                />
+                                <path
+                                    d="M27 85H47M27 101H47M27 117H47M119 60H139M119 78H139M119 96H139M119 114H139M169 93H190M169 110H190M222 69H238M222 88H238M222 107H238"
+                                />
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="entry-card card-coordinates" data-tab="coordinates">
+                        <img src="/images/cities/london.jpg" alt="" class="card-photo" />
+                        <span class="card-title" data-i18n="Координаты">Координаты</span>
+                        <span class="card-arrow">↗</span>
+                        <span class="crosshair" aria-hidden="true">⊕</span>
+                    </button>
+                    <button class="entry-card card-human" data-tab="humans">
+                        <span class="card-title" data-i18n="Губернаторы">Губернаторы</span>
+                        <span class="card-arrow">↗</span>
+                        <svg class="human-drawing" viewBox="0 0 220 200" aria-hidden="true">
+                            <circle cx="110" cy="68" r="46" fill="#ba7554" />
+                            <path d="M29 199C29 99 191 99 191 199" fill="#ba7554" />
+                            <circle
+                                cx="110"
+                                cy="100"
+                                r="97"
+                                fill="none"
+                                stroke="#ba7554"
+                                stroke-width="1"
+                                stroke-dasharray="2 6"
+                            />
+                        </svg>
+                    </button>
+                    <button class="entry-card card-special" data-tab="operations">
+                        <span class="card-title" data-i18n="Специальные операции">Специальные операции</span>
+                        <span class="card-arrow">↗</span>
+                        <span class="special-art" aria-hidden="true">✳</span>
+                    </button>
+                </nav>
+            </section>
+            <section id="workspace" hidden>
+                <div class="workspace-top">
+                    <button class="back-home" data-tab="home">
+                        <span data-i18n="← На главную">← На главную</span>
+                    </button>
+                    <nav class="section-nav" aria-label="Меню разделов" data-i18n-label="Меню разделов">
+                        <button data-tab="cities"><span data-i18n="Города">Города</span></button>
+                        <button data-tab="coordinates"><span data-i18n="Координаты">Координаты</span></button>
+                        <button data-tab="humans"><span data-i18n="Губернаторы">Губернаторы</span></button>
+                        <button data-tab="operations">
+                            <span data-i18n="Специальные операции">Специальные операции</span>
+                        </button>
+                    </nav>
+                </div>
+                <div id="status" role="status"><span data-i18n="Подключение…">Подключение…</span></div>
+                <section id="objects">
+                    <div class="toolbar">
+                        <div>
+                            <h2 id="sectionTitle"><span data-i18n="Города">Города</span></h2>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button id="create" class="primary"><span data-i18n="＋ Создать">＋ Создать</span></button>
+                            <form id="lookup" novalidate>
+                                <input
+                                    name="id"
+                                    required
+                                    inputmode="numeric"
+                                    pattern="[1-9][0-9]*"
+                                    placeholder="Id объекта"
+                                    data-i18n-placeholder="Id объекта"
+                                    aria-label="Id объекта"
+                                    data-i18n-label="Id объекта"
+                                />
+                                <button><span data-i18n="Найти ↗">Найти ↗</span></button>
+                            </form>
+                        </div>
+                    </div>
+                    <form id="filters" class="filter-panel" novalidate>
+                        <label>
+                            <span data-i18n="Точное совпадение">Точное совпадение</span>
+                            <select id="column">
+                                <option value="" data-i18n="Без фильтра">Без фильтра</option>
+                                <option value="name" data-i18n="Name">Name</option>
+                                <option value="governorName" data-i18n="Governor.name">Governor.name</option>
+                                <option value="climate" data-i18n="Climate">Climate</option>
+                                <option value="government" data-i18n="Government">Government</option>
+                                <option value="standardOfLiving" data-i18n="StandardOfLiving">StandardOfLiving</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span data-i18n="Значение">Значение</span>
+                            <input
+                                id="filterValue"
+                                placeholder="С учётом регистра"
+                                data-i18n-placeholder="С учётом регистра"
+                            />
+                        </label>
+                        <label>
+                            <span data-i18n="Сортировка">Сортировка</span>
+                            <select id="sort">
+                                <option value="id" data-i18n="Id">Id</option>
+                                <option value="name" data-i18n="Name">Name</option>
+                                <option value="governorName" data-i18n="Governor.name">Governor.name</option>
+                                <option value="climate" data-i18n="Climate">Climate</option>
+                                <option value="government" data-i18n="Government">Government</option>
+                                <option value="standardOfLiving" data-i18n="StandardOfLiving">StandardOfLiving</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span data-i18n="Порядок">Порядок</span>
+                            <select id="desc">
+                                <option value="false" data-i18n="По возрастанию">По возрастанию</option>
+                                <option value="true" data-i18n="По убыванию">По убыванию</option>
+                            </select>
+                        </label>
+                        <button><span data-i18n="Применить ↗">Применить ↗</span></button>
+                    </form>
+                    <div class="table-wrap">
+                        <table>
+                            <thead id="head"></thead>
+                            <tbody id="rows"></tbody>
+                        </table>
+                    </div>
+                    <div class="pager">
+                        <span id="pageInfo"></span>
+                        <label>
+                            <span data-i18n="На странице">На странице</span>
+                            <select id="size">
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                            </select>
+                        </label>
+                        <button id="prev"><span data-i18n="← Назад">← Назад</span></button>
+                        <button id="next"><span data-i18n="Далее →">Далее →</span></button>
+                    </div>
+                </section>
+                <section id="operations" hidden>
+                    <h2><span data-i18n="Специальные операции">Специальные операции</span></h2>
+                    <form id="specialForm" class="filter-panel" novalidate>
+                        <label>
+                            <span data-i18n="Операция">Операция</span>
+                            <select id="operation">
+                                <option value="average" data-i18n="Средняя высота над уровнем моря">
+                                    Средняя высота над уровнем моря
+                                </option>
+                                <option value="groups" data-i18n="Количество городов по площади">
+                                    Количество городов по площади
+                                </option>
+                                <option value="substring" data-i18n="Города: имя содержит подстроку">
+                                    Города: имя содержит подстроку
+                                </option>
+                                <option value="extremes" data-i18n="Маршрут: максимальная → минимальная площадь">
+                                    Маршрут: максимальная → минимальная площадь
+                                </option>
+                                <option value="newest" data-i18n="Маршрут: начало координат → самый новый город">
+                                    Маршрут: начало координат → самый новый город
+                                </option>
+                            </select>
+                        </label>
+                        <label>
+                            <span data-i18n="Подстрока">Подстрока</span>
+                            <input
+                                id="needle"
+                                placeholder="Для поиска по имени"
+                                data-i18n-placeholder="Для поиска по имени"
+                            />
+                        </label>
+                        <button class="primary"><span data-i18n="Выполнить ↗">Выполнить ↗</span></button>
+                    </form>
+                    <p class="muted">
+                        <span data-i18n="Длина маршрута — расстояние по прямой с учётом высоты над уровнем моря.">
+                            Длина маршрута — расстояние по прямой с учётом высоты над уровнем моря.
+                        </span>
+                    </p>
+                    <div id="specialResult" class="panel" aria-live="polite">
+                        <span data-i18n="Выберите операцию.">Выберите операцию.</span>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <dialog id="dialog" aria-labelledby="dialogTitle">
+            <div class="dialog-heading">
+                <h2 id="dialogTitle"></h2>
+                <button id="close" aria-label="Закрыть" data-i18n-label="Закрыть">×</button>
+            </div>
+            <div id="dialogNotice" role="status"></div>
+            <div id="dialogBody"></div>
+        </dialog>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+DROP TABLE app_user CASCADE;
+DROP TABLE city CASCADE;
+DROP TABLE coordinates CASCADE;
+DROP TABLE flyway_schema_history CASCADE;
+DROP TABLE human CASCADE;
+DROP TABLE revision CASCADE;
+DROP TABLE IF EXISTS flyway_schema_history CASCADE;
+DROP FUNCTION IF EXISTS average_elevation() CASCADE;
+DROP FUNCTION IF EXISTS bump_revision() CASCADE;
+DROP FUNCTION IF EXISTS group_by_area() CASCADE;
+DROP FUNCTION IF EXISTS protect_city_generated_fields() CASCADE;
+DROP FUNCTION IF EXISTS route_extreme_areas() CASCADE;
+DROP FUNCTION IF EXISTS route_newest_city() CASCADE;

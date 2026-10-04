@@ -1,0 +1,204 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram id="application-classes" name="application-classes">
+    <mxGraphModel dx="3270" dy="1286" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2310" pageHeight="1820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="auth" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="218" width="520" x="35" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-header" parent="auth" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«controller»&lt;br&gt;AuthController" vertex="1">
+          <mxGeometry height="54" width="520" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-attributes" parent="auth" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- accounts: AccountService" vertex="1">
+          <mxGeometry height="46" width="520" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-methods" parent="auth" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ login(): String&lt;br&gt;+ csrf(token: CsrfToken): Map&amp;lt;String,String&amp;gt;&lt;br&gt;+ register(input: Registration):&lt;br&gt;    Map&amp;lt;String,String&amp;gt;" vertex="1">
+          <mxGeometry height="118" width="520" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="api" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="386" width="600" x="680" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="api-header" parent="api" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«rest controller»&lt;br&gt;ApiController" vertex="1">
+          <mxGeometry height="54" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="api-attributes" parent="api" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- cities: CityService&lt;br&gt;- special: SpecialService" vertex="1">
+          <mxGeometry height="70" width="600" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="api-methods" parent="api" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ list(...): Page&amp;lt;City&amp;gt;&lt;br&gt;+ city(id: long): City&lt;br&gt;+ addCity(input: CityInput): City&lt;br&gt;+ editCity(id: long, input: CityInput): City&lt;br&gt;+ deleteCity(id: long, version: long): void&lt;br&gt;+ coordinates(): List&amp;lt;Coordinates&amp;gt;&lt;br&gt;+ humans(): List&amp;lt;Human&amp;gt;&lt;br&gt;+ operation(operation: String, needle: String):&lt;br&gt;    Result&lt;br&gt;+ revision(): Map&amp;lt;String,String&amp;gt;" vertex="1">
+          <mxGeometry height="262" width="600" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="handler" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="220" width="820" x="1450" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="handler-header" parent="handler" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«rest controller advice»&lt;br&gt;ApiExceptionHandler" vertex="1">
+          <mxGeometry height="54" width="820" as="geometry" />
+        </mxCell>
+        <mxCell id="handler-methods" parent="handler" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="~ validation(e: MethodArgumentNotValidException):&lt;br&gt;    ResponseEntity&amp;lt;?&amp;gt;&lt;br&gt;~ status(e: ResponseStatusException): ResponseEntity&amp;lt;?&amp;gt;&lt;br&gt;~ badInput(e: Exception): ResponseEntity&amp;lt;?&amp;gt;&lt;br&gt;~ conflict(e: Exception): ResponseEntity&amp;lt;?&amp;gt;&lt;br&gt;~ database(e: Exception): ResponseEntity&amp;lt;?&amp;gt;" vertex="1">
+          <mxGeometry height="166" width="820" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="account" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="242" width="520" x="35" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="account-header" parent="account" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«service»&lt;br&gt;AccountService" vertex="1">
+          <mxGeometry height="54" width="520" as="geometry" />
+        </mxCell>
+        <mxCell id="account-attributes" parent="account" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- users: UserRepository&lt;br&gt;- encoder: PasswordEncoder" vertex="1">
+          <mxGeometry height="70" width="520" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="account-methods" parent="account" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ loadUserByUsername(username: String):&lt;br&gt;    UserDetails&lt;br&gt;+ register(username: String, password: String,&lt;br&gt;    confirmation: String): void" vertex="1">
+          <mxGeometry height="118" width="520" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="cityservice" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="338" width="600" x="680" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="cityservice-header" parent="cityservice" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«service»&lt;br&gt;CityService" vertex="1">
+          <mxGeometry height="54" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="cityservice-attributes" parent="cityservice" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- repository: ObjectRepository" vertex="1">
+          <mxGeometry height="46" width="600" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cityservice-methods" parent="cityservice" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ &amp;lt;T&amp;gt; get(type: Class&amp;lt;T&amp;gt;, id: long): T&lt;br&gt;+ list(...): Page&amp;lt;City&amp;gt;&lt;br&gt;+ &amp;lt;T&amp;gt; all(type: Class&amp;lt;T&amp;gt;): List&amp;lt;T&amp;gt;&lt;br&gt;+ saveCity(id: Long, input: CityInput): City&lt;br&gt;+ saveCoordinates(id: Long,&lt;br&gt;    input: CoordinatesInput): Coordinates&lt;br&gt;+ saveHuman(id: Long, input: HumanInput): Human&lt;br&gt;+ &amp;lt;T&amp;gt; delete(type: Class&amp;lt;T&amp;gt;, id: long,&lt;br&gt;    expectedVersion: long): void" vertex="1">
+          <mxGeometry height="238" width="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="special" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="170" width="600" x="1450" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="special-header" parent="special" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«service»&lt;br&gt;SpecialService" vertex="1">
+          <mxGeometry height="54" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="special-attributes" parent="special" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- repository: SpecialRepository" vertex="1">
+          <mxGeometry height="46" width="600" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="special-methods" parent="special" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ revision(): String&lt;br&gt;+ run(operation: String, needle: String): Result" vertex="1">
+          <mxGeometry height="70" width="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="userrepo" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="194" width="520" x="35" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="userrepo-header" parent="userrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;strokeWidth=1.5;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="«repository»&lt;br&gt;UserRepository" vertex="1">
+          <mxGeometry height="54" width="520" as="geometry" />
+        </mxCell>
+        <mxCell id="userrepo-attributes" parent="userrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- em: EntityManager" vertex="1">
+          <mxGeometry height="46" width="520" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="userrepo-methods" parent="userrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ findByUsername(username: String):&lt;br&gt;    Optional&amp;lt;AppUser&amp;gt;&lt;br&gt;+ insert(user: AppUser): void" vertex="1">
+          <mxGeometry height="94" width="520" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="objectrepo" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="266" width="600" x="680" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="objectrepo-header" parent="objectrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«repository»&lt;br&gt;ObjectRepository" vertex="1">
+          <mxGeometry height="54" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="objectrepo-attributes" parent="objectrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- em: EntityManager" vertex="1">
+          <mxGeometry height="46" width="600" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="objectrepo-methods" parent="objectrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ &amp;lt;T&amp;gt; find(type: Class&amp;lt;T&amp;gt;, id: long): T&lt;br&gt;+ &amp;lt;T&amp;gt; insert(object: T): T&lt;br&gt;+ remove(object: Object): void&lt;br&gt;+ flush(): void&lt;br&gt;+ &amp;lt;T&amp;gt; all(type: Class&amp;lt;T&amp;gt;): List&amp;lt;T&amp;gt;&lt;br&gt;+ cities(...): Page&amp;lt;City&amp;gt;" vertex="1">
+          <mxGeometry height="166" width="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="specialrepo" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="266" width="600" x="1450" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="specialrepo-header" parent="specialrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="«repository»&lt;br&gt;SpecialRepository" vertex="1">
+          <mxGeometry height="54" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="specialrepo-attributes" parent="specialrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="- em: EntityManager" vertex="1">
+          <mxGeometry height="46" width="600" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="specialrepo-methods" parent="specialrepo" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ average(): Object&lt;br&gt;+ groups(): List&amp;lt;Object[]&amp;gt;&lt;br&gt;+ containing(needle: String): List&amp;lt;City&amp;gt;&lt;br&gt;+ extremeRoute(): Object&lt;br&gt;+ newestRoute(): Object&lt;br&gt;+ revision(): String" vertex="1">
+          <mxGeometry height="166" width="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="details" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="124" width="520" x="35" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="details-header" parent="details" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#eee9f6;strokeColor=#32465a;strokeWidth=1.5;" value="«interface»&lt;br&gt;UserDetailsService" vertex="1">
+          <mxGeometry height="54" width="520" as="geometry" />
+        </mxCell>
+        <mxCell id="details-methods" parent="details" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacingLeft=14;fontFamily=Courier New;fontSize=15;fontStyle=0;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;" value="+ loadUserByUsername(username: String):&lt;br&gt;    UserDetails" vertex="1">
+          <mxGeometry height="70" width="520" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="em" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#32465a;strokeWidth=1.5;container=1;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="54" width="450" x="1220" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="em-header" parent="em" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacingLeft=0;fontFamily=Arial;fontSize=17;fontStyle=1;fillColor=#eee9f6;strokeColor=#32465a;strokeWidth=1.5;" value="«interface»&lt;br&gt;EntityManager" vertex="1">
+          <mxGeometry height="54" width="450" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" edge="1" parent="1" source="auth" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="account" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-1" edge="1" parent="1" source="api" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="cityservice" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" edge="1" parent="1" source="api" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=0.8;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="special" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="348.8" />
+              <mxPoint x="1370" y="505" />
+              <mxPoint x="1750" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" edge="1" parent="1" source="account" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="userrepo" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-4" edge="1" parent="1" source="cityservice" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="objectrepo" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-5" edge="1" parent="1" source="special" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=0;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="specialrepo" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-6" edge="1" parent="1" source="account" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=block;endFill=0;dashed=1;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" target="details" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="15" y="721" />
+              <mxPoint x="15" y="1582" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-7" edge="1" parent="1" source="handler" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=1;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.3;exitPerimeter=0;entryPerimeter=0;" target="api" value="«handles»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="150" />
+              <mxPoint x="1370" y="155.8" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-8" edge="1" parent="1" source="userrepo" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=1;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=0.7;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" target="em" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="1145.8" />
+              <mxPoint x="610" y="1547" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-9" edge="1" parent="1" source="objectrepo" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=1;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=1;entryX=0.2;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="em" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="1276" />
+              <mxPoint x="1310" y="1440" />
+              <mxPoint x="1310" y="1520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-10" edge="1" parent="1" source="specialrepo" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#32465a;strokeWidth=1.5;endArrow=open;endFill=0;dashed=1;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=1;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" target="em" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1750" y="1547" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

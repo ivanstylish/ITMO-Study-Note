@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1520" viewBox="0 0 1700 1520"><defs><marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#32465a" stroke-width="1.5"/></marker><marker id="triangle" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="13" markerHeight="13" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#32465a"/></marker></defs><rect width="100%" height="100%" fill="white"/><rect x="590" y="12" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="590" y="30" width="480" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="830" y="60" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city</text>
+<rect x="590" y="78" width="480" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="604" y="107" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">CityApplication</text>
+<rect x="590" y="232" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="590" y="250" width="480" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="830" y="280" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.web</text>
+<rect x="590" y="298" width="480" height="118" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="604" y="327" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">ApiController</text>
+<text x="604" y="351" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">AuthController</text>
+<text x="604" y="375" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">AuthController.Registration</text>
+<text x="604" y="399" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">ApiExceptionHandler</text>
+<rect x="590" y="557" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="590" y="575" width="480" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="830" y="605" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.service</text>
+<rect x="590" y="623" width="480" height="94" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="604" y="652" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">CityService</text>
+<text x="604" y="676" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">SpecialService</text>
+<text x="604" y="700" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">AccountService</text>
+<rect x="590" y="872" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="590" y="890" width="480" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="830" y="920" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.repository</text>
+<rect x="590" y="938" width="480" height="94" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="604" y="967" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">ObjectRepository</text>
+<text x="604" y="991" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">SpecialRepository</text>
+<text x="604" y="1015" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">UserRepository</text>
+<rect x="45" y="292" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="45" y="310" width="385" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="237.5" y="340" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.dto</text>
+<rect x="45" y="358" width="385" height="166" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="59" y="387" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests</text>
+<text x="59" y="411" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests.CityInput</text>
+<text x="59" y="435" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests.CoordinatesInput</text>
+<text x="59" y="459" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests.HumanInput</text>
+<text x="59" y="483" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests.Page&lt;T&gt;</text>
+<text x="59" y="507" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Requests.Result</text>
+<rect x="1260" y="522" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="1260" y="540" width="400" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="1460" y="570" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.domain</text>
+<rect x="1260" y="588" width="400" height="214" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1274" y="617" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">City</text>
+<text x="1274" y="641" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Coordinates</text>
+<text x="1274" y="665" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Human</text>
+<text x="1274" y="689" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">AppUser</text>
+<text x="1274" y="713" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Climate</text>
+<text x="1274" y="737" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">Government</text>
+<text x="1274" y="761" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">StandardOfLiving</text>
+<text x="1274" y="785" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">ZonedDateTimeConverter</text>
+<rect x="1260" y="12" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="1260" y="30" width="400" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="1460" y="60" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">edu.lab.city.config</text>
+<rect x="1260" y="78" width="400" height="94" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1274" y="107" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">PersistenceConfig</text>
+<text x="1274" y="131" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">SecurityConfig</text>
+<text x="1274" y="155" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">JsonConfig</text>
+<rect x="590" y="1232" width="85" height="18" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<rect x="590" y="1250" width="480" height="48" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="830" y="1280" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">jakarta.persistence</text>
+<rect x="590" y="1298" width="480" height="94" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="604" y="1327" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">EntityManager</text>
+<text x="604" y="1351" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">EntityManagerFactory</text>
+<text x="604" y="1375" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">AttributeConverter&lt;X,Y&gt;</text>
+<polyline points="830,124 830,250" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="760.6" y="164" width="138.8" height="21" fill="white"/>
+<text x="830" y="180" fill="#203447" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="normal">«component scan»</text>
+<polyline points="1070,77 1165,77 1165,101 1260,101" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="1095.6" y="66" width="138.8" height="21" fill="white"/>
+<text x="1165" y="82" fill="#203447" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="normal">«component scan»</text>
+<polyline points="830,416 830,575" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="830,717 830,890" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="590,333 510,333 510,369.92 430,369.92" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="590,646 485,646 485,481.20000000000005 430,481.20000000000005" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="590,961 460,961 237.5,961 237.5,524" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="430,515.44 450,515.44 450,530 1210,530 1210,560.96 1260,560.96" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1070,341.3 1200,341.3 1200,605.5 1260,605.5" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1070,646 1160,646 1160,671 1260,671" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1070,961 1175,961 1175,749.6 1260,749.6" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="830,1032 830,1250" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1460,802 1460,1321 1070,1321" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1660,101 1680,101 1680,1450 998,1450 998,1392" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/></svg>

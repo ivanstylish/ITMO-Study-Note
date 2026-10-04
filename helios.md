@@ -35,3 +35,26 @@ COLLECTION_FILE=$HOME/data.json java -jar Lab5.jar
 COLLECTION_FILE=$HOME/data.json java -jar Server_jar/Server.jar  
 
 claude --settings D:/Study-Note/claude-deepseek-settings.json --bare
+
+s407956
+ssh s407956@helios.cs.ifmo.ru -p 2222 
+GCrx<1558
+
+DO $$
+DECLARE
+    r RECORD;
+BEGIN
+    FOR r IN
+        SELECT tablename
+        FROM pg_tables
+        WHERE schemaname = 's407956'
+    LOOP
+        EXECUTE format(
+            'DROP TABLE IF EXISTS %I.%I CASCADE',
+            's407956',
+            r.tablename
+        );
+    END LOOP;
+END $$;
+
+psql -h helios.se.ifmo.ru -p 5432 -U s407956 -d studs -W

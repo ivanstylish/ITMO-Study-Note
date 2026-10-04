@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>CITY — Вход</title>
+        <link rel="stylesheet" href="/ui.css" />
+        <link rel="stylesheet" href="/auth.css" />
+        <script src="/i18n.js" defer></script>
+        <script src="/ui.js" defer></script>
+        <script src="/auth.js" defer></script>
+    </head>
+    <body>
+        <main class="auth-layout">
+            <section
+                class="visual"
+                aria-label="Путешествие по городам мира"
+                data-i18n-label="Путешествие по городам мира"
+            >
+                <div class="collage">
+                    <figure class="tile tile-1">
+                        <img src="/images/cities/shanghai.jpg" alt="Шанхай — городской пейзаж" />
+                        <figcaption><span data-i18n="Шанхай">Шанхай</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-2">
+                        <img src="/images/cities/moscow.jpg" alt="Москва — городской пейзаж" />
+                        <figcaption><span data-i18n="Москва">Москва</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-3">
+                        <img src="/images/cities/shenzhen.jpg" alt="Шэньчжэнь — городской пейзаж" />
+                        <figcaption><span data-i18n="Шэньчжэнь">Шэньчжэнь</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-4">
+                        <img src="/images/cities/beijing.jpg" alt="Пекин — городской пейзаж" />
+                        <figcaption><span data-i18n="Пекин">Пекин</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-5">
+                        <img src="/images/cities/saint-petersburg.jpg" alt="Санкт-Петербург — городской пейзаж" />
+                        <figcaption><span data-i18n="Санкт-Петербург">Санкт-Петербург</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-6">
+                        <img src="/images/cities/london.jpg" alt="Лондон — городской пейзаж" />
+                        <figcaption><span data-i18n="Лондон">Лондон</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-7">
+                        <img src="/images/cities/paris.jpg" alt="Париж — городской пейзаж" />
+                        <figcaption><span data-i18n="Париж">Париж</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-8">
+                        <img src="/images/cities/new-york.jpg" alt="Нью-Йорк — городской пейзаж" />
+                        <figcaption><span data-i18n="Нью-Йорк">Нью-Йорк</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-9">
+                        <img src="/images/cities/berlin.jpg" alt="Берлин — городской пейзаж" />
+                        <figcaption><span data-i18n="Берлин">Берлин</span></figcaption>
+                    </figure>
+                    <figure class="tile tile-10">
+                        <img src="/images/cities/los-angeles.jpg" alt="Лос-Анджелес — городской пейзаж" />
+                        <figcaption><span data-i18n="Лос-Анджелес">Лос-Анджелес</span></figcaption>
+                    </figure>
+                </div>
+
+                <h1 class="city-art">CITY</h1>
+            </section>
+            <section class="auth-panel">
+                <label class="language-control">
+                    <select id="languageSelect" aria-label="Language / 语言 / Язык">
+                        <option value="ru">Русский</option>
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </label>
+                <div class="auth-content">
+                    <h2 id="formTitle"><span data-i18n="Вход">Вход</span></h2>
+
+                    <div class="auth-tabs" role="tablist" aria-label="Аккаунт" data-i18n-label="Аккаунт">
+                        <button id="loginTab" role="tab" aria-selected="true" class="active" type="button">
+                            <span data-i18n="Вход">Вход</span>
+                        </button>
+                        <button id="registerTab" role="tab" aria-selected="false" type="button">
+                            <span data-i18n="Регистрация">Регистрация</span>
+                        </button>
+                    </div>
+                    <p id="authSuccess" class="success" role="status" hidden></p>
+                    <form id="authForm" novalidate>
+                        <label for="username">
+                            <span data-i18n="Логин">Логин</span>
+                            <input
+                                id="username"
+                                name="username"
+                                aria-label="Логин"
+                                data-i18n-label="Логин"
+                                autocomplete="username"
+                                required
+                                placeholder="Ваш логин"
+                                data-i18n-placeholder="Ваш логин"
+                            />
+                        </label>
+                        <label for="password">
+                            <span data-i18n="Пароль">Пароль</span>
+                            <span class="password-control">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    aria-label="Пароль"
+                                    data-i18n-label="Пароль"
+                                    type="password"
+                                    autocomplete="current-password"
+                                    required
+                                    placeholder="Введите пароль"
+                                    data-i18n-placeholder="Введите пароль"
+                                />
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    aria-label="Показать пароль"
+                                    data-i18n-label="Показать пароль"
+                                >
+                                    ◉
+                                </button>
+                            </span>
+                        </label>
+                        <label id="confirmLabel" for="confirmation" hidden>
+                            <span data-i18n="Повторите пароль">Повторите пароль</span>
+                            <input
+                                id="confirmation"
+                                name="confirmation"
+                                aria-label="Повтор пароля"
+                                data-i18n-label="Повтор пароля"
+                                type="password"
+                                autocomplete="new-password"
+                                disabled
+                                placeholder="Ещё раз"
+                                data-i18n-placeholder="Ещё раз"
+                            />
+                        </label>
+                        <p id="passwordHint" class="hint" hidden>
+                            <span data-i18n="Логин: 3–32 латинские буквы, цифры или _. Пароль: от 8 символов.">
+                                Логин: 3–32 латинские буквы, цифры или _. Пароль: от 8 символов.
+                            </span>
+                        </p>
+                        <p id="authError" class="error-text" role="alert"></p>
+                        <button id="authSubmit" class="submit" type="submit">
+                            <span data-i18n="Войти">Войти</span>
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="panel-bottom">
+                    <button id="photoCredits" type="button">
+                        <span data-i18n="Фотографии ↗">Фотографии ↗</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+        <dialog id="creditsDialog" aria-labelledby="creditsTitle">
+            <div class="credits-heading">
+                <h2 id="creditsTitle"><span data-i18n="Города в кадре">Города в кадре</span></h2>
+                <button id="closeCredits" type="button" aria-label="Закрыть" data-i18n-label="Закрыть">×</button>
+            </div>
+            <p>
+                <span data-i18n="Wikimedia Commons · фотографии показаны с кадрированием.">
+                    Wikimedia Commons · фотографии показаны с кадрированием.
+                </span>
+            </p>
+            <div id="creditsList"></div>
+        </dialog>
+    </body>
+</html>

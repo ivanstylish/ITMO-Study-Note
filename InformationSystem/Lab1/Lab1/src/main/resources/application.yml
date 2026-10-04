@@ -1,0 +1,19 @@
+server:
+    address: ${SERVER_ADDRESS:127.0.0.1}
+    port: ${PORT:8080}
+spring:
+    config:
+        import: optional:file:./config/local.properties
+    datasource:
+        url: ${DB_URL:jdbc:postgresql://helios.se.ifmo.ru:5432/studs}
+        username: ${DB_USER:s407959}
+        password: ${DB_PASSWORD:s407959}
+        hikari:
+            schema: ${DB_SCHEMA:s407959}
+    flyway:
+        schemas: ${DB_SCHEMA:s407959}
+        default-schema: ${DB_SCHEMA:s407959}
+        create-schemas: false
+    jackson:
+        deserialization:
+            fail-on-unknown-properties: true
