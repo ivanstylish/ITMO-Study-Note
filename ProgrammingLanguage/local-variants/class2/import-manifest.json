@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-class2",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "main.cpp",
+      "source": "main.cpp",
+      "bytes": 1004,
+      "sha256": "0d965a2f9988dff0617518e33466f529d5146998c3218fdbd2276d0bb90be55d"
+    },
+    {
+      "path": "zoo.c",
+      "source": "zoo.c",
+      "bytes": 6044,
+      "sha256": "f3d52558c910a5e4534c445e7875232763b389acf35701eefe7d89448c867672"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "cmake-build-debug",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

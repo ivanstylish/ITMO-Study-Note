@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "sourceGroup": "algo-lab1",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "part10.cpp",
+      "source": "part10.cpp",
+      "bytes": 1172,
+      "sha256": "b5469de7e20b0549adf8dcf777ef16cc9b2e4f27f9a0ac685f9d181dd2bc65dd"
+    },
+    {
+      "path": "part11.cpp",
+      "source": "part11.cpp",
+      "bytes": 2079,
+      "sha256": "7a2289b7b6eadf64abae31e42d860ba3c472b7a74541bf86252f40d7750fba11"
+    },
+    {
+      "path": "part12.cpp",
+      "source": "part12.cpp",
+      "bytes": 680,
+      "sha256": "df9b906bfac9aed1b88c42279ed33dd953616c4130286b60fc4809730eeb36a4"
+    },
+    {
+      "path": "part13.cpp",
+      "source": "part13.cpp",
+      "bytes": 1752,
+      "sha256": "77ef89f730648397a6ee29f905fb73473455f24869cd6c9189e4d5ffd27261d3"
+    },
+    {
+      "path": "part14.cpp",
+      "source": "part14.cpp",
+      "bytes": 679,
+      "sha256": "0c83121db76a6049434195951e44302e4722b09e640ea4a7f5d4d53fa0fcc83d"
+    },
+    {
+      "path": "part15.cpp",
+      "source": "part15.cpp",
+      "bytes": 796,
+      "sha256": "5163742ffd41e0b8458dd084ce0a9924b6b486b9d4528a668b26ffbeecb992f6"
+    },
+    {
+      "path": "part16.cpp",
+      "source": "part16.cpp",
+      "bytes": 1727,
+      "sha256": "53a09129dad9f2acb05792ef9468a5d21ae5a93602fa4ef58b3f8019ef915e3c"
+    },
+    {
+      "path": "part9.cpp",
+      "source": "part9.cpp",
+      "bytes": 1134,
+      "sha256": "a63ad6deb6f5a431cf069ea6d20811309b951aa5b68f796402407fb707740db2"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "cmake-build-debug",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "part9.h",
+      "reason": "empty file"
+    }
+  ]
+}

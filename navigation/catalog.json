@@ -1,0 +1,1853 @@
+{
+  "schemaVersion": 1,
+  "source": "第1–5学期教务截图（用户提供，2026-10）；仅索引仓库已有课程资料，不保存成绩。",
+  "semesters": [
+    {
+      "number": 1,
+      "year": 1,
+      "title": "2024 秋季",
+      "period": "2024–2025 学年 · 秋季"
+    },
+    {
+      "number": 2,
+      "year": 1,
+      "title": "2025 春季",
+      "period": "2024–2025 学年 · 春季"
+    },
+    {
+      "number": 3,
+      "year": 2,
+      "title": "2025 秋季",
+      "period": "2025–2026 学年 · 秋季"
+    },
+    {
+      "number": 4,
+      "year": 2,
+      "title": "2026 春季",
+      "period": "2025–2026 学年 · 春季"
+    },
+    {
+      "number": 5,
+      "year": 3,
+      "title": "2026 秋季",
+      "period": "2026–2027 学年 · 秋季（当前）"
+    }
+  ],
+  "courses": [
+    {
+      "id": "informatics",
+      "title": "信息学",
+      "ru": "Информатика",
+      "semesters": [
+        1
+      ],
+      "directory": "Informatics",
+      "dashboard": "Informatics/index.md",
+      "kind": "专业课程",
+      "note": "讲义和 Lab 1–6 的代码/报告分开保存；实验要求不代表验收记录。",
+      "assessments": {
+        "1": "考试 · Экзамен"
+      },
+      "related": [
+        "programming"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "信息学基础与编码",
+            "path": "Informatics/Lecture/Lecture1.md"
+          },
+          {
+            "label": "编码与数据表示",
+            "path": "Informatics/Lecture/Lecture2.md"
+          },
+          {
+            "label": "Python / 正则表达式",
+            "path": "Informatics/Lecture/Lecture3.md"
+          },
+          {
+            "label": "数据格式",
+            "path": "Informatics/Lecture/Lecture4.md"
+          },
+          {
+            "label": "Python 速记",
+            "path": "Informatics/Lecture/Python.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab1"
+          },
+          {
+            "label": "Lab 2：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab2"
+          },
+          {
+            "label": "Lab 3：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab3"
+          },
+          {
+            "label": "Lab 4：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab4"
+          },
+          {
+            "label": "Lab 5：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab5"
+          },
+          {
+            "label": "Lab 6：代码 / 报告 / 要求",
+            "path": "Informatics/Labwork/lab6"
+          }
+        ],
+        "defense": [
+          {
+            "label": "实验选项与问答",
+            "path": "Informatics/option.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "资料说明",
+            "path": "Informatics/Information.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "history",
+      "title": "俄罗斯科技史",
+      "ru": "История российской науки и техники",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "History",
+      "dashboard": "History/index.md",
+      "kind": "专业课程",
+      "note": "考试文件是问题清单；研究报告、演讲稿与答案应分别阅读。",
+      "assessments": {
+        "1": "考查 · Зачёт",
+        "2": "考试 · Экзамен"
+      },
+      "related": [],
+      "resources": {
+        "theory": [
+          {
+            "label": "历史与文化",
+            "path": "History/HistoryandCulture.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "坎托罗维奇报告与演示",
+            "path": "History/report"
+          },
+          {
+            "label": "研究报告",
+            "path": "History/НИР/report.md"
+          },
+          {
+            "label": "报告整理",
+            "path": "History/ReReport.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "演示讲稿",
+            "path": "History/report/maintain.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "考试问题清单（非完整答案）",
+            "path": "History/exam/ans.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "linear-algebra",
+      "title": "线性代数",
+      "ru": "Линейная алгебра",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "Math/LinearAlgebra",
+      "dashboard": "Math/LinearAlgebra/index.md",
+      "kind": "数学基础",
+      "note": "第 1 学期笔记与第 2 学期复习资料分别保存；ans.md 是空文件，不作为复习入口。",
+      "assessments": {
+        "1": "考试 · Экзамен",
+        "2": "考试 · Экзамен"
+      },
+      "related": [
+        "analysis",
+        "statistics"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "矩阵、子空间与分解",
+            "path": "Math/LinearAlgebra/1.md"
+          },
+          {
+            "label": "原线性代数索引",
+            "path": "Math/LinearAlgebra/LinearAlgebra.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "第 2 学期终测整理（中俄）",
+            "path": "Math/LinearAlgebra/Sem2/final_test.md"
+          },
+          {
+            "label": "考试问题 PDF",
+            "path": "Math/LinearAlgebra/Список вопросов к экзамену.pdf"
+          }
+        ],
+        "resources": [
+          {
+            "label": "第 2 学期讲义与复习 PDF",
+            "path": "Math/LinearAlgebra/Sem2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "analysis",
+      "title": "数学分析",
+      "ru": "Математический анализ",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "Math",
+      "dashboard": "Math/analysis/index.md",
+      "kind": "数学基础",
+      "note": "原笔记仍在 Math 根目录；这里仅增加课程入口，不搬迁正文。",
+      "assessments": {
+        "1": "考试 · Экзамен",
+        "2": "考试 · Экзамен"
+      },
+      "related": [
+        "extra-analysis",
+        "numerical"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "数学分析：定义与定理",
+            "path": "Math/Analysis.md"
+          },
+          {
+            "label": "函数、极限与高等数学",
+            "path": "Math/AdvancedMathematic.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "第 2 学期理论最低要求",
+            "path": "Math/MathAnaly/MatAn_TeorMin_2.pdf"
+          },
+          {
+            "label": "第 1 学期考试样题",
+            "path": "Math/MathAnaly/Демо вариант Матанализ 1 сем.pdf"
+          }
+        ],
+        "resources": [
+          {
+            "label": "数学分析讲义与考试资料",
+            "path": "Math/MathAnaly"
+          }
+        ]
+      }
+    },
+    {
+      "id": "discrete",
+      "title": "离散数学基础 / 离散数学",
+      "ru": "Основы дискретной математики / Дискретная математика",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "DiscreteMath",
+      "dashboard": "DiscreteMath/index.md",
+      "kind": "数学基础",
+      "note": "教务第 1 学期名称为“基础”，第 2 学期为“离散数学”；共用现有资料入口。",
+      "assessments": {
+        "1": "考查 · Зачёт",
+        "2": "考试 · Экзамен"
+      },
+      "related": [
+        "algorithms",
+        "knowledge-graphs"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "集合与离散数学基础",
+            "path": "Math/DisMathematic.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "第 1 学期课程作业",
+            "path": "DiscreteMath/FirstSem"
+          },
+          {
+            "label": "第 2 学期作业与课程项目",
+            "path": "DiscreteMath/SecSem"
+          },
+          {
+            "label": "模糊逻辑演示",
+            "path": "DiscreteMath/SecSem/KP/FuzzyLogic.html"
+          }
+        ]
+      }
+    },
+    {
+      "id": "opd",
+      "title": "专业活动基础",
+      "ru": "Основы профессиональной деятельности",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "OPD",
+      "dashboard": "OPD/index.md",
+      "kind": "专业课程",
+      "note": "保留 БЭВМ、I/O、中断及 Lab 1–6 原路径；Part 2/4 只有标题，不作为独立理论入口。",
+      "assessments": {
+        "1": "考查 · Зачёт",
+        "2": "分级考查 · Дифференцированный зачёт"
+      },
+      "related": [
+        "architecture",
+        "os"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "БЭВМ 基础、指令与计算机组成",
+            "path": "OPD/Part1.md"
+          },
+          {
+            "label": "I/O 与中断",
+            "path": "OPD/Part3.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：Linux / Helios",
+            "path": "OPD/lab/lab1/quesOfLab1.md"
+          },
+          {
+            "label": "Lab 2：CPU",
+            "path": "OPD/lab/lab2/lab2.md"
+          },
+          {
+            "label": "Lab 3：程序与问答",
+            "path": "OPD/lab/lab3/lab3.md"
+          },
+          {
+            "label": "Lab 4",
+            "path": "OPD/lab/lab4/lab4.md"
+          },
+          {
+            "label": "Lab 5",
+            "path": "OPD/lab/lab5/lab5.md"
+          },
+          {
+            "label": "Lab 6",
+            "path": "OPD/lab/lab6/lab6.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：命令与控制问题",
+            "path": "OPD/lab/lab1/quesOfLab1.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "考试题目与 PDF / DOCX",
+            "path": "OPD/exam"
+          },
+          {
+            "label": "阶段测验",
+            "path": "OPD/rub/rub2.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "programming",
+      "title": "程序设计",
+      "ru": "Программирование",
+      "semesters": [
+        1,
+        2
+      ],
+      "directory": "Programming",
+      "dashboard": "Programming/index.md",
+      "kind": "专业课程",
+      "note": "按原实验编号检索；Lab 3–4 共用说明，Lab 8 要求与现有客户端实现应分别核对。",
+      "assessments": {
+        "1": "考查 · Зачёт",
+        "2": "考试 · Экзамен"
+      },
+      "related": [
+        "languages",
+        "database",
+        "web"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Java 基础、OOP 与集合",
+            "path": "Java/Note.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1",
+            "path": "Programming/lab1.md"
+          },
+          {
+            "label": "Lab 2：Pokémon",
+            "path": "Programming/lab2.md"
+          },
+          {
+            "label": "Lab 3–4：OOP",
+            "path": "Programming/lab3-4.md"
+          },
+          {
+            "label": "Lab 5：集合管理",
+            "path": "Programming/lab5.md"
+          },
+          {
+            "label": "Lab 6：网络",
+            "path": "Programming/lab6.md"
+          },
+          {
+            "label": "Lab 7：并发与 JDBC",
+            "path": "Programming/lab7.md"
+          },
+          {
+            "label": "Lab 8：GUI",
+            "path": "Programming/lab8.md"
+          },
+          {
+            "label": "Lab 9：现有代码",
+            "path": "Programming/Lab/lab9"
+          }
+        ],
+        "defense": [
+          {
+            "label": "并发 / 数据库控制问题",
+            "path": "Programming/lab7.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "第 2 学期阶段测验",
+            "path": "Programming/rub/SecSem.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "全部原实验代码",
+            "path": "Programming/Lab"
+          }
+        ]
+      }
+    },
+    {
+      "id": "russian",
+      "title": "俄语（外语）",
+      "ru": "Русский язык как иностранный",
+      "semesters": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "directory": "RussianLanguage",
+      "dashboard": "RussianLanguage/index.md",
+      "kind": "语言课程",
+      "note": "资料含预科及第二学年内容；不能由文件年份精确推断每份作业所属学期。",
+      "assessments": {
+        "1": "考查 · Зачёт",
+        "2": "考查 · Зачёт",
+        "3": "考查 · Зачёт",
+        "4": "考查 · Зачёт",
+        "5": "考查 · Зачёт"
+      },
+      "related": [
+        "presentation"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "词汇表",
+            "path": "RussianLanguage/words.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Homework 1",
+            "path": "RussianLanguage/Homework1.md"
+          },
+          {
+            "label": "Homework 2",
+            "path": "RussianLanguage/Homework2.md"
+          },
+          {
+            "label": "Homework 3",
+            "path": "RussianLanguage/Homework3.md"
+          },
+          {
+            "label": "第二学年练习",
+            "path": "RussianLanguage/2year"
+          },
+          {
+            "label": "演示：环太平洋",
+            "path": "RussianLanguage/ppt/Тихоокеанский рубеж.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "口语测试准备",
+            "path": "RussianLanguage/2year/OralTest.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "动机信",
+            "path": "RussianLanguage/2year/MotivationLetter.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "database",
+      "title": "数据库",
+      "ru": "Базы данных",
+      "semesters": [
+        2
+      ],
+      "directory": "Database",
+      "dashboard": "Database/index.md",
+      "kind": "专业课程",
+      "note": "Lab 1–4 有说明、SQL 与答辩问题；考试文件保留原题和任务。",
+      "assessments": {
+        "2": "考试 · Экзамен"
+      },
+      "related": [
+        "programming",
+        "information-systems",
+        "web"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Lecture 1",
+            "path": "Database/Lecture1.md"
+          },
+          {
+            "label": "Lecture 2",
+            "path": "Database/Lecture2.md"
+          },
+          {
+            "label": "Lecture 3",
+            "path": "Database/Lecture3.md"
+          },
+          {
+            "label": "Lecture 6",
+            "path": "Database/Lecture6.md"
+          },
+          {
+            "label": "Lecture 7",
+            "path": "Database/Lecture7.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：说明与 SQL",
+            "path": "Database/labs/lab1"
+          },
+          {
+            "label": "Lab 2：说明与 SQL",
+            "path": "Database/labs/lab2"
+          },
+          {
+            "label": "Lab 3：说明与 SQL",
+            "path": "Database/labs/lab3"
+          },
+          {
+            "label": "Lab 4：说明与 SQL",
+            "path": "Database/labs/lab4"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：答辩问题",
+            "path": "Database/labs/lab1/questions.md"
+          },
+          {
+            "label": "Lab 2：答辩问题",
+            "path": "Database/labs/lab2/questions.md"
+          },
+          {
+            "label": "Lab 3：答辩问题",
+            "path": "Database/labs/lab3/questions.md"
+          },
+          {
+            "label": "Lab 4：答辩问题",
+            "path": "Database/labs/lab4/questions.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "考试任务",
+            "path": "Database/Exam.md"
+          },
+          {
+            "label": "阶段测验",
+            "path": "Database/Rub_test.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "Lecture 4 PDF",
+            "path": "Database/lecture4.pdf"
+          },
+          {
+            "label": "Lecture 5 PDF",
+            "path": "Database/lecture5.pdf"
+          },
+          {
+            "label": "Lab 1 SQL",
+            "path": "Database/labs/lab1/lab1.sql"
+          },
+          {
+            "label": "Lab 2 SQL",
+            "path": "Database/labs/lab2/lab2.sql"
+          },
+          {
+            "label": "Lab 3 SQL / 函数",
+            "path": "Database/labs/lab3/function.sql"
+          },
+          {
+            "label": "Lab 4 SQL",
+            "path": "Database/labs/lab4/lab4.sql"
+          }
+        ]
+      }
+    },
+    {
+      "id": "web",
+      "title": "Web 编程",
+      "ru": "Веб-программирование",
+      "semesters": [
+        3
+      ],
+      "directory": "WebProgramming",
+      "dashboard": "WebProgramming/index.md",
+      "kind": "专业课程",
+      "note": "答辩与考试资料覆盖 HTTP、Servlet、JSP、JSF 和框架；历史启动笔记不纳入网站搜索。",
+      "assessments": {
+        "3": "考试 · Экзамен"
+      },
+      "related": [
+        "programming",
+        "database",
+        "information-systems",
+        "opi"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "课程讲义（中俄）",
+            "path": "WebProgramming/Lecture/lecture.md"
+          },
+          {
+            "label": "HTML",
+            "path": "WebProgramming/HTML.md"
+          },
+          {
+            "label": "CSS",
+            "path": "WebProgramming/CSS.md"
+          },
+          {
+            "label": "AJAX",
+            "path": "WebProgramming/AJAX.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：原源码",
+            "path": "WebProgramming/Lab1"
+          },
+          {
+            "label": "Lab 3：原要求",
+            "path": "WebProgramming/Lab3/readme.md"
+          },
+          {
+            "label": "Lab 2：补回 Servlet / JSP 源码",
+            "path": "WebProgramming/Lab2/README.md"
+          },
+          {
+            "label": "Lab 3：补回 JSF / JPA / JMX 源码",
+            "path": "WebProgramming/Lab3/local-source/README.md"
+          },
+          {
+            "label": "Lab 4：补回 Spring Boot / React 源码",
+            "path": "WebProgramming/Lab4/local-source/README.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "答辩 1：概念与口头准备",
+            "path": "WebProgramming/Ans/answer1.md"
+          },
+          {
+            "label": "答辩 2：概念与口头准备",
+            "path": "WebProgramming/Ans/answer2.md"
+          },
+          {
+            "label": "答辩 3：概念与口头准备",
+            "path": "WebProgramming/Ans/answer3.md"
+          },
+          {
+            "label": "答辩 4：概念与口头准备",
+            "path": "WebProgramming/Ans/answer4.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "阶段测验题",
+            "path": "WebProgramming/Exam/rub2.md"
+          },
+          {
+            "label": "JSF / React / JPA 编程题",
+            "path": "WebProgramming/Exam/code_rub2.md"
+          },
+          {
+            "label": "补充代码题",
+            "path": "WebProgramming/Exam/code2.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "原讲义 PDF",
+            "path": "WebProgramming/Lecture/Программирование интернет-приложений.pdf"
+          },
+          {
+            "label": "Lab 3 / OPI Lab 4：源码变体",
+            "path": "WebProgramming/Lab3/opi-variant/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "extra-analysis",
+      "title": "数学分析补充章节",
+      "ru": "Дополнительные главы математического анализа",
+      "semesters": [
+        3
+      ],
+      "directory": "Math/ExtraMath",
+      "dashboard": "Math/ExtraMath/index.md",
+      "kind": "数学基础",
+      "note": "现有双语定义整理与 PDF；不另建空实验或考试答案。",
+      "assessments": {
+        "3": "考试 · Экзамен"
+      },
+      "related": [
+        "analysis",
+        "complex",
+        "probability"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "定义与复习整理",
+            "path": "Math/ExtraMath/ans.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "复习 PDF",
+            "path": "Math/ExtraMath/ans.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "probability",
+      "title": "概率论",
+      "ru": "Теория вероятностей",
+      "semesters": [
+        3
+      ],
+      "directory": "ProbabilityTheory",
+      "dashboard": "ProbabilityTheory/index.md",
+      "kind": "数学基础",
+      "note": "以 PDF 讲义、控制作业与实际 Python 实践为主。",
+      "assessments": {
+        "3": "考查 · Зачёт"
+      },
+      "related": [
+        "statistics",
+        "ai",
+        "modeling"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Lecture 1–7：概率、随机变量、估计与检验",
+            "path": "ProbabilityTheory/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "实践报告",
+            "path": "ProbabilityTheory/np/Practical_work6.pdf"
+          },
+          {
+            "label": "实践 Python",
+            "path": "ProbabilityTheory/np/work.py"
+          }
+        ],
+        "exam": [
+          {
+            "label": "控制作业题解 PDF",
+            "path": "ProbabilityTheory/Kp"
+          }
+        ],
+        "resources": [
+          {
+            "label": "概率分布表",
+            "path": "ProbabilityTheory/Таблицы.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "complex",
+      "title": "复变函数论",
+      "ru": "Теория функций комплексного переменного",
+      "semesters": [
+        3
+      ],
+      "directory": "ComplexVariableTheory(ТФКП)",
+      "dashboard": "ComplexVariableTheory(ТФКП)/index.md",
+      "kind": "数学基础",
+      "note": "现有实验包含分形计算和共形映射报告。",
+      "assessments": {
+        "3": "考试 · Экзамен"
+      },
+      "related": [
+        "extra-analysis",
+        "graphics"
+      ],
+      "resources": {
+        "labs": [
+          {
+            "label": "Lab 1：分形代码与报告",
+            "path": "ComplexVariableTheory(ТФКП)/Lab1"
+          },
+          {
+            "label": "Lab 2：报告",
+            "path": "ComplexVariableTheory(ТФКП)/Lab2/lab2.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "physics",
+      "title": "物理",
+      "ru": "Физика",
+      "semesters": [
+        3,
+        4
+      ],
+      "directory": "Physics",
+      "dashboard": "Physics/index.md",
+      "kind": "自然科学",
+      "note": "第 3 学期对应力学（1.xx），第 4 学期对应电磁学与振荡（3.xx）；实验原编号保留。",
+      "assessments": {
+        "3": "考试 · Экзамен",
+        "4": "考试 · Экзамен"
+      },
+      "related": [
+        "graphics",
+        "numerical"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "力学讲义",
+            "path": "Physics/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "第 3 学期：Lab 1.01",
+            "path": "Physics/Labworks/lab1.01"
+          },
+          {
+            "label": "第 3 学期：Lab 1.02",
+            "path": "Physics/Labworks/lab1.02"
+          },
+          {
+            "label": "第 3 学期：Lab 1.04",
+            "path": "Physics/Labworks/lab1.04"
+          },
+          {
+            "label": "第 3 学期：Lab 1.05",
+            "path": "Physics/Labworks/lab1.05"
+          },
+          {
+            "label": "第 3 学期：Lab 1.07",
+            "path": "Physics/Labworks/lab1.07"
+          },
+          {
+            "label": "第 4 学期：Lab 3.01",
+            "path": "Physics/Labworks/lab3.01"
+          },
+          {
+            "label": "第 4 学期：Lab 3.02",
+            "path": "Physics/Labworks/lab3.02"
+          },
+          {
+            "label": "第 4 学期：Lab 3.05",
+            "path": "Physics/Labworks/lab3.05"
+          },
+          {
+            "label": "第 4 学期：Lab 3.08",
+            "path": "Physics/Labworks/lab3.08"
+          },
+          {
+            "label": "第 4 学期：Lab 3.11",
+            "path": "Physics/Labworks/lab3.11"
+          }
+        ],
+        "defense": [
+          {
+            "label": "静电场：答辩问答",
+            "path": "Physics/Labworks/lab3.01/ans.md"
+          },
+          {
+            "label": "电路",
+            "path": "Physics/Labworks/lab3.02/lab3.02.md"
+          },
+          {
+            "label": "半导体",
+            "path": "Physics/Labworks/lab3.05/lab3.05.md"
+          },
+          {
+            "label": "振荡",
+            "path": "Physics/Labworks/lab3.11/lab3.11.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "languages",
+      "title": "编程语言",
+      "ru": "Языки программирования",
+      "semesters": [
+        3
+      ],
+      "directory": "ProgrammingLanguage",
+      "dashboard": "ProgrammingLanguage/index.md",
+      "kind": "专业课程",
+      "note": "C、C#、Python 与跨语言调用保留 work 编号；源码存在不等于每项实验均已通过。",
+      "assessments": {
+        "3": "考试 · Экзамен"
+      },
+      "related": [
+        "programming",
+        "architecture"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Low-Level Programming 教材",
+            "path": "ProgrammingLanguage/Low-Level_Programming_C_Assembly_and_Program_Execution_on_Intel_64_Architecture.pdf"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Work 1：原项目",
+            "path": "ProgrammingLanguage/work1"
+          },
+          {
+            "label": "Work 2：原项目",
+            "path": "ProgrammingLanguage/work2"
+          },
+          {
+            "label": "Work 3：原项目",
+            "path": "ProgrammingLanguage/work3"
+          },
+          {
+            "label": "Work 4：原项目",
+            "path": "ProgrammingLanguage/work4"
+          },
+          {
+            "label": "Work 5：原项目",
+            "path": "ProgrammingLanguage/work5"
+          },
+          {
+            "label": "Work 6：原项目",
+            "path": "ProgrammingLanguage/work6"
+          },
+          {
+            "label": "Work 7：原项目",
+            "path": "ProgrammingLanguage/work7"
+          },
+          {
+            "label": "Work 8：反射、Attribute 与动态 IL",
+            "path": "ProgrammingLanguage/work8/README.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Work 5：异步 / Task.WhenAll",
+            "path": "ProgrammingLanguage/work5/readme.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "早期 C / C# / Native 源码变体",
+            "path": "ProgrammingLanguage/local-variants"
+          }
+        ]
+      }
+    },
+    {
+      "id": "algorithms",
+      "title": "算法与数据结构",
+      "ru": "Алгоритмы и структуры данных",
+      "semesters": [
+        4
+      ],
+      "directory": "AADS",
+      "dashboard": "AADS/index.md",
+      "kind": "专业课程",
+      "note": "ABCD / EFGH 保存 part 1–8 C++ 题目；目录中的二进制不代表新的实验。",
+      "assessments": {
+        "4": "考试 · Экзамен"
+      },
+      "related": [
+        "discrete",
+        "programming",
+        "numerical"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "内容速记",
+            "path": "AADS/content.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Part 1–4：ABCD",
+            "path": "AADS/ABCD"
+          },
+          {
+            "label": "Part 5–8：EFGH",
+            "path": "AADS/EFGH"
+          },
+          {
+            "label": "测试源码",
+            "path": "AADS/Test/1.cpp"
+          },
+          {
+            "label": "Part 9–16：补回独立源码",
+            "path": "AADS/local-lab1/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "architecture",
+      "title": "计算机体系结构",
+      "ru": "Архитектура компьютера",
+      "semesters": [
+        4
+      ],
+      "directory": "ComputerArchitecture",
+      "dashboard": "ComputerArchitecture/index.md",
+      "kind": "专业课程",
+      "note": "Lab 1–3 有演示、论文或 ISA 程序；Lab 4 现存要求，不推断为已实现。完整考试答案缺少部分原图。",
+      "assessments": {
+        "4": "考试 · Экзамен"
+      },
+      "related": [
+        "opd",
+        "os",
+        "languages"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Wrench 架构资料",
+            "path": "ComputerArchitecture/Lab3/description.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：ARM MTE",
+            "path": "ComputerArchitecture/Lab1/readme.md"
+          },
+          {
+            "label": "Lab 2：论文与评审",
+            "path": "ComputerArchitecture/Lab2/readme.md"
+          },
+          {
+            "label": "Lab 3：四种 ISA / schema",
+            "path": "ComputerArchitecture/Lab3/readme.md"
+          },
+          {
+            "label": "Lab 4：实验要求",
+            "path": "ComputerArchitecture/Lab4/lab4.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "ARM MTE：中俄讲稿",
+            "path": "ComputerArchitecture/Lab1/word.md"
+          },
+          {
+            "label": "acc32 / 字节序",
+            "path": "ComputerArchitecture/Lab3/task1/acc32.md"
+          },
+          {
+            "label": "f32a / 字符串",
+            "path": "ComputerArchitecture/Lab3/task2/f32a.md"
+          },
+          {
+            "label": "m68k / RLE",
+            "path": "ComputerArchitecture/Lab3/task3/m68k.md"
+          },
+          {
+            "label": "risc-iv / 指令",
+            "path": "ComputerArchitecture/Lab3/task4/risc-iv.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "15 域完整考试答案（部分图缺失）",
+            "path": "ComputerArchitecture/Exam/CSA_2026_Экзаменационные_ответы.md"
+          },
+          {
+            "label": "口头考试答案",
+            "path": "ComputerArchitecture/Exam/CSA_2026_Экзаменационные_ответы_устно.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "考前快速复习",
+            "path": "ComputerArchitecture/quick-review.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numerical",
+      "title": "计算数学",
+      "ru": "Вычислительная математика",
+      "semesters": [
+        4
+      ],
+      "directory": "ComputationalMath",
+      "dashboard": "ComputationalMath/index.md",
+      "kind": "数学与计算",
+      "note": "现有 Lab 1–6 源码；Lab 2 原 Markdown 为空，使用要求 PDF 和代码。",
+      "assessments": {
+        "4": "考查 · Зачёт"
+      },
+      "related": [
+        "analysis",
+        "algorithms",
+        "modeling",
+        "statistics"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "六讲 PDF：SLAE、非线性、积分、拟合、插值、ODE",
+            "path": "ComputationalMath/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：现有代码 / 资源",
+            "path": "ComputationalMath/Lab1"
+          },
+          {
+            "label": "Lab 2：现有代码 / 资源",
+            "path": "ComputationalMath/Lab2"
+          },
+          {
+            "label": "Lab 3：现有代码 / 资源",
+            "path": "ComputationalMath/Lab3"
+          },
+          {
+            "label": "Lab 4：现有代码 / 资源",
+            "path": "ComputationalMath/Lab4"
+          },
+          {
+            "label": "Lab 5：现有代码 / 资源",
+            "path": "ComputationalMath/Lab5"
+          },
+          {
+            "label": "Lab 6：现有代码 / 资源",
+            "path": "ComputationalMath/Lab6"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：SLAE / 迭代法问答",
+            "path": "ComputationalMath/Questions/lab1.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "控制作业说明",
+            "path": "ComputationalMath/KP2/des.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "公式与答辩速查",
+            "path": "ComputationalMath/cheatsheet.md"
+          },
+          {
+            "label": "Lab 1：变体 15 独立源码",
+            "path": "ComputationalMath/Lab1/local-variant/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "statistics",
+      "title": "数理统计",
+      "ru": "Математическая статистика",
+      "semesters": [
+        4
+      ],
+      "directory": "MathematicalStatistics",
+      "dashboard": "MathematicalStatistics/index.md",
+      "kind": "数学与数据",
+      "note": "РГР 1–3 保存数据分析源码与报告；现有根 README 只有标题。",
+      "assessments": {
+        "4": "考试 · Экзамен"
+      },
+      "related": [
+        "probability",
+        "ai",
+        "modeling"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Lecture 1 PDF",
+            "path": "MathematicalStatistics/Lecture/Лекция 1.pdf"
+          }
+        ],
+        "labs": [
+          {
+            "label": "РГР 1：统计量与置信区间",
+            "path": "MathematicalStatistics/РГР1"
+          },
+          {
+            "label": "РГР 2：Python 与报告",
+            "path": "MathematicalStatistics/РГР2"
+          },
+          {
+            "label": "РГР 3：Python",
+            "path": "MathematicalStatistics/РГР3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "optimization",
+      "title": "最优化方法",
+      "ru": "Методы оптимизации",
+      "semesters": [
+        4
+      ],
+      "directory": "OptiMethod",
+      "dashboard": "OptiMethod/index.md",
+      "kind": "数学与计算",
+      "note": "现有作业覆盖二次/三次近似及后续程序与问答；只链接有内容的文件。",
+      "assessments": {
+        "4": "考查 · Зачёт"
+      },
+      "related": [
+        "numerical",
+        "ai"
+      ],
+      "resources": {
+        "labs": [
+          {
+            "label": "实践 3：二次/三次近似",
+            "path": "OptiMethod/HW/lab3/des.md"
+          },
+          {
+            "label": "Lab 4：程序",
+            "path": "OptiMethod/lab4/main.py"
+          },
+          {
+            "label": "Lab 5：源码",
+            "path": "OptiMethod/lab5"
+          },
+          {
+            "label": "Lab 7：源码与报告",
+            "path": "OptiMethod/lab7"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 5：答辩",
+            "path": "OptiMethod/lab5/ans.md"
+          },
+          {
+            "label": "Lab 7：机器学习问题",
+            "path": "OptiMethod/lab7/ques.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "opi",
+      "title": "软件工程基础",
+      "ru": "Основы программной инженерии",
+      "semesters": [
+        4
+      ],
+      "directory": "OPI",
+      "dashboard": "OPI/index.md",
+      "kind": "专业课程",
+      "note": "Lab 1–4 对应需求、版本控制、构建与监控；现有考试资料含 UML / RUP / JMX。",
+      "assessments": {
+        "4": "考试 · Экзамен"
+      },
+      "related": [
+        "web",
+        "information-systems",
+        "software-architecture"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "原讲义 PDF",
+            "path": "OPI/Leture/lecture.pdf"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：需求与报告",
+            "path": "OPI/Lab1/Description.md"
+          },
+          {
+            "label": "Lab 2：Git / SVN",
+            "path": "OPI/Lab2/command.md"
+          },
+          {
+            "label": "Lab 3：构建",
+            "path": "OPI/Lab3/ans.md"
+          },
+          {
+            "label": "Lab 4：JMX 监控",
+            "path": "OPI/Lab4/readme.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 2 问答",
+            "path": "OPI/Lab2/ans.md"
+          },
+          {
+            "label": "Lab 3 问答",
+            "path": "OPI/Lab3/ans.md"
+          },
+          {
+            "label": "Lab 4 问答",
+            "path": "OPI/Lab4/ans.md"
+          },
+          {
+            "label": "JMX / 负载测试命令",
+            "path": "OPI/Lab4/List.md"
+          }
+        ],
+        "exam": [
+          {
+            "label": "2025–2026 考试整理（中俄）",
+            "path": "OPI/Exam/ОПИ_2025-2026.md"
+          },
+          {
+            "label": "阶段测验理论",
+            "path": "OPI/Rub/theory.md"
+          },
+          {
+            "label": "旧考试整理",
+            "path": "OPI/Exam/exam.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "Web Lab3 联动源码变体",
+            "path": "WebProgramming/Lab3/opi-variant/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "presentation",
+      "title": "公众演讲与展示",
+      "ru": "Техники публичных выступлений и презентаций",
+      "semesters": [
+        4
+      ],
+      "directory": "PublicPresentation",
+      "dashboard": "PublicPresentation/index.md",
+      "kind": "表达与展示",
+      "note": "已有演讲稿、作业要求与文章；不推断具体考核成绩。",
+      "assessments": {
+        "4": "考查 · Зачёт"
+      },
+      "related": [
+        "russian",
+        "ui"
+      ],
+      "resources": {
+        "labs": [
+          {
+            "label": "New Jazz 演讲稿",
+            "path": "PublicPresentation/NewJazz.md"
+          },
+          {
+            "label": "Homework 2 要求",
+            "path": "PublicPresentation/HW2.md"
+          },
+          {
+            "label": "Essay",
+            "path": "PublicPresentation/Essay.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphics",
+      "title": "计算机图形学算法",
+      "ru": "Алгоритмы компьютерной графики",
+      "semesters": [
+        5
+      ],
+      "directory": "ComputerGraphicsAlgo",
+      "dashboard": "ComputerGraphicsAlgo/index.md",
+      "kind": "专业课程",
+      "note": "Lab 1 为光照，Lab 2 为球面；提交包保留原结构，README 中重复文件不计成新实验。",
+      "assessments": {
+        "5": "考查 · Зачёт"
+      },
+      "related": [
+        "physics",
+        "algorithms"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "光照、几何与教材 PDF",
+            "path": "ComputerGraphicsAlgo/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：实际提交包",
+            "path": "ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md"
+          },
+          {
+            "label": "Lab 2：实际提交包",
+            "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：中俄答辩",
+            "path": "ComputerGraphicsAlgo/Lab1/defense_zh_ru.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "Lab 1 实现",
+            "path": "ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/lab1_illumination.py"
+          },
+          {
+            "label": "Lab 2 实现",
+            "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/lab2_sphere.py"
+          }
+        ]
+      }
+    },
+    {
+      "id": "software-architecture",
+      "title": "软件系统架构",
+      "ru": "Архитектура программных систем",
+      "semesters": [
+        5
+      ],
+      "directory": "SoftwareSystemArch",
+      "dashboard": "SoftwareSystemArch/index.md",
+      "kind": "专业课程",
+      "note": "目前只有第一讲 PDF；课程首页不建立没有内容的实验与考试页。",
+      "assessments": {
+        "5": "考试 · Экзамен"
+      },
+      "related": [
+        "opi",
+        "information-systems"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Lecture 1：软件生命周期",
+            "path": "SoftwareSystemArch/Lecture/lecture1.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "knowledge-graphs",
+      "title": "知识图谱",
+      "ru": "Графы знаний",
+      "semesters": [
+        5
+      ],
+      "directory": "KnowledgeGraphs",
+      "dashboard": "KnowledgeGraphs/index.md",
+      "kind": "专业课程",
+      "note": "现有内容为电影知识图谱选题/演示方案，不能标为已完成图谱系统。",
+      "assessments": {
+        "5": "考查 · Зачёт"
+      },
+      "related": [
+        "ai",
+        "database",
+        "discrete"
+      ],
+      "resources": {
+        "labs": [
+          {
+            "label": "Step 1：选题与演讲提纲",
+            "path": "KnowledgeGraphs/Step-1/des.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "电影知识图谱演示",
+            "path": "KnowledgeGraphs/Step-1/Граф_знаний_о_фильмах.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "id": "information-systems",
+      "title": "信息系统",
+      "ru": "Информационные системы",
+      "semesters": [
+        5
+      ],
+      "directory": "InformationSystem",
+      "dashboard": "InformationSystem/index.md",
+      "kind": "专业课程",
+      "note": "现有 Lab 1 与课程项目阶段 1；Lab 2–4 未发现真实实验内容，不沿用原 README 的重复链接。",
+      "assessments": {
+        "5": "考试 · Экзамен + 课程项目 · Курсовая работа"
+      },
+      "related": [
+        "web",
+        "database",
+        "opi",
+        "software-architecture"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "Java EE / Persistence / Spring / 事务 / EJB / 分布式 PDF",
+            "path": "InformationSystem/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：项目说明",
+            "path": "InformationSystem/Lab1/README.md"
+          },
+          {
+            "label": "课程项目：要求与阶段报告",
+            "path": "InformationSystem/КурсоваяРабота/readme.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：中俄答辩",
+            "path": "InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "Lab 1：实际 Java / Web 实现",
+            "path": "InformationSystem/Lab1/Lab1"
+          },
+          {
+            "label": "Lab 1：独立本地源码版本",
+            "path": "InformationSystem/Lab1/local-variant/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "modeling",
+      "title": "建模",
+      "ru": "Моделирование",
+      "semesters": [
+        5
+      ],
+      "directory": "Modeling",
+      "dashboard": "Modeling/index.md",
+      "kind": "专业课程",
+      "note": "УИР 1 统计拟合与 УИР 2 马尔可夫排队模型均有真实笔记；WinMark 项目与 Python 计算交叉核对。",
+      "assessments": {
+        "5": "考试 · Экзамен"
+      },
+      "related": [
+        "probability",
+        "statistics",
+        "numerical"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "课程演示资料",
+            "path": "Modeling/Lecture"
+          }
+        ],
+        "labs": [
+          {
+            "label": "УИР 1：变体 115 学习笔记",
+            "path": "Modeling/lab1/实验一学习笔记_中俄双语_变体115.md"
+          },
+          {
+            "label": "УИР 2：变体 15 实际计算",
+            "path": "Modeling/lab2/lab2_variant15.py"
+          }
+        ],
+        "defense": [
+          {
+            "label": "УИР 1：中俄理论与结果",
+            "path": "Modeling/lab1/实验一学习笔记_中俄双语_变体115.md"
+          },
+          {
+            "label": "УИР 2：中俄答辩",
+            "path": "Modeling/lab2/УИР2_defense.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "УИР 2：结果复核",
+            "path": "Modeling/lab2/УИР2_复核说明.md"
+          },
+          {
+            "label": "WinMark 项目说明",
+            "path": "Modeling/lab2/Calculation_data/WinMark/README.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "os",
+      "title": "操作系统",
+      "ru": "Операционные системы",
+      "semesters": [
+        5
+      ],
+      "directory": "OperatingSystem",
+      "dashboard": "OperatingSystem/index.md",
+      "kind": "专业课程",
+      "note": "当前只有 intro-ex 实验；已有性能测量与报告，学习笔记明确记录时间误差、perf 缺失和采样限制，未据此宣称验收。",
+      "assessments": {
+        "5": "考试 · Экзамен"
+      },
+      "related": [
+        "architecture",
+        "opd",
+        "modeling"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "实验方法：环境",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/doc/experiments/environment.md"
+          },
+          {
+            "label": "实验方法：监控",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/doc/experiments/monitoring.md"
+          },
+          {
+            "label": "实验方法：统计",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/doc/experiments/statistics.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1 intro-ex：原始要求",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "Lab 1：最终学习与答辩（含证据限制）",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md"
+          },
+          {
+            "label": "Lab 1：控制问题",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/test.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "考前快速复习",
+            "path": "OperatingSystem/quick-review.md"
+          },
+          {
+            "label": "Ubuntu 实验运行",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/Ubuntu-开始实验.md"
+          },
+          {
+            "label": "最终报告 PDF",
+            "path": "OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-report.pdf"
+          },
+          {
+            "label": "性能分析教材",
+            "path": "OperatingSystem/Lecture"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ui",
+      "title": "用户界面设计",
+      "ru": "Проектирование пользовательских интерфейсов",
+      "semesters": [
+        5
+      ],
+      "directory": "UIDesign",
+      "dashboard": "UIDesign/index.md",
+      "kind": "专业课程",
+      "note": "目前资料是知识助手的方案、演讲稿与用户场景；不把方案视作已开发产品。",
+      "assessments": {
+        "5": "考试 · Экзамен"
+      },
+      "related": [
+        "knowledge-graphs",
+        "web",
+        "presentation"
+      ],
+      "resources": {
+        "labs": [
+          {
+            "label": "Homework 1：项目说明",
+            "path": "UIDesign/HW/01_PPT总结与项目说明.md"
+          },
+          {
+            "label": "Homework 2：用户场景",
+            "path": "UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "5 分钟演讲稿（中俄）",
+            "path": "UIDesign/HW/02_演讲稿_5分钟_RU_ZH.md"
+          },
+          {
+            "label": "完整演讲稿（中俄）",
+            "path": "UIDesign/HW/03_演讲稿_完整版_RU_ZH.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai",
+      "title": "人工智能系统",
+      "ru": "Системы искусственного интеллекта",
+      "semesters": [
+        5
+      ],
+      "directory": "AISystem",
+      "dashboard": "AISystem/index.md",
+      "kind": "专业课程",
+      "note": "Labs/lab2 保存的是任务书实验 6“逻辑回归”；保留目录名，在入口明确任务编号。",
+      "assessments": {
+        "5": "考试 · Экзамен"
+      },
+      "related": [
+        "statistics",
+        "probability",
+        "optimization",
+        "knowledge-graphs"
+      ],
+      "resources": {
+        "theory": [
+          {
+            "label": "线性回归：完整中俄笔记",
+            "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md"
+          }
+        ],
+        "labs": [
+          {
+            "label": "Lab 1：线性回归实现与笔记",
+            "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md"
+          },
+          {
+            "label": "目录 lab2 / 任务书 Lab 6：逻辑回归",
+            "path": "AISystem/Labs/lab2/README.md"
+          }
+        ],
+        "defense": [
+          {
+            "label": "线性回归：中俄笔记 / 问答",
+            "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md"
+          },
+          {
+            "label": "逻辑回归：中俄答辩",
+            "path": "AISystem/Labs/lab2/Защита_RU_ZH.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "线性回归源码",
+            "path": "AISystem/Labs/lab1/linear_regression.py"
+          },
+          {
+            "label": "逻辑回归源码",
+            "path": "AISystem/Labs/lab2/logistic_regression.py"
+          },
+          {
+            "label": "回归公式与答辩速查",
+            "path": "AISystem/cheatsheet.md"
+          }
+        ]
+      }
+    }
+  ]
+}

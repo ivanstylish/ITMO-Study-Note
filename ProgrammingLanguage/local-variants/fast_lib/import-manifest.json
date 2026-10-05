@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-native",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "fast_lib.c",
+      "source": "fast_lib.c",
+      "bytes": 1096,
+      "sha256": "70cec0b51aca74f59ef57675873a1ebae25f6a5dbc3f5c51c63c392e2d31bde3"
+    },
+    {
+      "path": "framework.h",
+      "source": "framework.h",
+      "bytes": 159,
+      "sha256": "ff8a09dcdae188436337ec0bfdf56ccca20708d75f17831f1406e2ca20424158"
+    },
+    {
+      "path": "pch.h",
+      "source": "pch.h",
+      "bytes": 544,
+      "sha256": "067525f2e3cc463559231a3d749d24857627f14e360d398a82f8e549e8c79fc3"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "fast_lib/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "fast_lib.vcxproj.user",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "x64",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

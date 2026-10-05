@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "sourceGroup": "web-lab3",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 539,
+      "sha256": "a93bdfcd360457eda08493f400c60417db368a7807cd01109793650129610ced"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 1543,
+      "sha256": "8f265754eb675103aadb805b5a0d4228fd90c73818a012c6492acc0bd95ef01a"
+    },
+    {
+      "path": "build.xml",
+      "source": "build.xml",
+      "bytes": 6236,
+      "sha256": "539bae33b078a97dfd2b60900f280398d5e8adf1fdebdb6366db295701990c1f"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 60756,
+      "sha256": "91a239400bb638f36a1795d8fdf7939d532cdc7d794d1119b7261aac158b1e60"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 236,
+      "sha256": "bd6a3d279a472c9560293ef1684ed343fbbafec2de78c0fce8899dce66a82e86"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8070,
+      "sha256": "f96a757581fe5292465e3f3393380bd11fd8086d450b92e7c693da6513f583fe"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2763,
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "history.bat",
+      "source": "history.bat",
+      "bytes": 2202,
+      "sha256": "592ff80f9f343d43483c4d6634d012d70d0810742ac5ac0b367dfac2b3fe6022"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 43,
+      "sha256": "45ae2dd8a09b6c0e8ff96ee767fe4ac3209a02dfa6b7d229e8e76445980a3cee"
+    },
+    {
+      "path": "sql/lab3.sql",
+      "source": "sql/lab3.sql",
+      "bytes": 343,
+      "sha256": "57e2df3ec785d059bd1e0a80b1a23621d2ca819d85c8b16a9c2fa512b1aa6702"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/ClockBean.java",
+      "source": "src/main/java/org/coordinate/bean/ClockBean.java",
+      "bytes": 913,
+      "sha256": "e78b91c1d46e902b4c6abbac21df7fb62be01fa645553da78946be986513baed"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/PointBean.java",
+      "source": "src/main/java/org/coordinate/bean/PointBean.java",
+      "bytes": 5158,
+      "sha256": "2ff0fd5225d4b5958d3e58796a845161a3adc0cd6dccd34b3fd58635f72bad43"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/ResultBean.java",
+      "source": "src/main/java/org/coordinate/bean/ResultBean.java",
+      "bytes": 4931,
+      "sha256": "984e40d14e40a1afe95e5bc341e61d7f1638cf6f6a8b9768021cb946c5421fa0"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/ResultDTO.java",
+      "source": "src/main/java/org/coordinate/bean/ResultDTO.java",
+      "bytes": 919,
+      "sha256": "15331f7d153b2c518b35d08724e51eec1bab92870c8e929a1ef8ca2c861eb09f"
+    },
+    {
+      "path": "src/main/java/org/coordinate/entity/Result.java",
+      "source": "src/main/java/org/coordinate/entity/Result.java",
+      "bytes": 2096,
+      "sha256": "b15b8bf787e0fb8948f69cacd8cbf03221d6af448c0615290a77e379921ba902"
+    },
+    {
+      "path": "src/main/java/org/coordinate/mbean/ClickInterval.java",
+      "source": "src/main/java/org/coordinate/mbean/ClickInterval.java",
+      "bytes": 1301,
+      "sha256": "bc546f8d2aa7f5077077a6c706d4aadf197cfb7887a10a5ccb76193ea40fc356"
+    },
+    {
+      "path": "src/main/java/org/coordinate/mbean/ClickIntervalMBean.java",
+      "source": "src/main/java/org/coordinate/mbean/ClickIntervalMBean.java",
+      "bytes": 546,
+      "sha256": "74d593fc5689c185587281b5d3e8dd015fcd897a0e27aba2223f57a30bef0103"
+    },
+    {
+      "path": "src/main/java/org/coordinate/mbean/JMXRegistration.java",
+      "source": "src/main/java/org/coordinate/mbean/JMXRegistration.java",
+      "bytes": 2233,
+      "sha256": "790c9450c8f1915f67821ab7c0e9c62644fde54a2b5d4e1f841e91beaf76d6a2"
+    },
+    {
+      "path": "src/main/java/org/coordinate/mbean/PointsCounter.java",
+      "source": "src/main/java/org/coordinate/mbean/PointsCounter.java",
+      "bytes": 2137,
+      "sha256": "49388bd4b319db89f6a9877bb8d00c721136101add662ee57e2bfc0a6414a7dc"
+    },
+    {
+      "path": "src/main/java/org/coordinate/mbean/PointsCounterMBean.java",
+      "source": "src/main/java/org/coordinate/mbean/PointsCounterMBean.java",
+      "bytes": 596,
+      "sha256": "140db6e435844369a1ecafdeb74a21b3f79ff31dd48d27a2cc03feeffc89a2df"
+    },
+    {
+      "path": "src/main/java/org/coordinate/service/AreaCheck.java",
+      "source": "src/main/java/org/coordinate/service/AreaCheck.java",
+      "bytes": 953,
+      "sha256": "5e1934b5c71969be995371bd53c6542273116b44a08a871717968e9d3db99790"
+    },
+    {
+      "path": "src/main/webapp/errorPage/404.xhtml",
+      "source": "src/main/webapp/errorPage/404.xhtml",
+      "bytes": 575,
+      "sha256": "215062213636a5cd23cd7bf72eccc569ac4dc0194989a33544560e2d8d2e54ad"
+    },
+    {
+      "path": "src/main/webapp/errorPage/500.xhtml",
+      "source": "src/main/webapp/errorPage/500.xhtml",
+      "bytes": 585,
+      "sha256": "0a36cce081e56ca54f2954d0aa1f7463ba378d3893087519efd42ea66014a20b"
+    },
+    {
+      "path": "src/main/webapp/index.xhtml",
+      "source": "src/main/webapp/index.xhtml",
+      "bytes": 1538,
+      "sha256": "d9fd68ea08834a11d9bf71eef43d82158947854ae6887beb1edfc021594d0173"
+    },
+    {
+      "path": "src/main/webapp/main.xhtml",
+      "source": "src/main/webapp/main.xhtml",
+      "bytes": 8931,
+      "sha256": "42cf59bb626c2c9ece312230dc4ac9c9cd5bd862315496359ff634bb7e3adbec"
+    },
+    {
+      "path": "src/main/webapp/resources/css/style.css",
+      "source": "src/main/webapp/resources/css/style.css",
+      "bytes": 6769,
+      "sha256": "23243f509d0b342f23f5040d083a3d90a7042d6cb302bfac67c882e6da4210e8"
+    },
+    {
+      "path": "src/main/webapp/resources/js/main.js",
+      "source": "src/main/webapp/resources/js/main.js",
+      "bytes": 8330,
+      "sha256": "58de54f713e5d7955953e883221c3be4755ce3e92aec033073251991d5ccf1fe"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/beans.xml",
+      "source": "src/main/webapp/WEB-INF/beans.xml",
+      "bytes": 342,
+      "sha256": "ae067bacd8a69be9672d4660d7262d489f91f0d7e4bb1a0c42a1a75cff2de4ce"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/faces-config.xml",
+      "source": "src/main/webapp/WEB-INF/faces-config.xml",
+      "bytes": 1629,
+      "sha256": "7ecb56984bea67328cf4fdc79ba38120bffe4a27581beaa62b418f9dfbd9c15b"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/web.xml",
+      "source": "src/main/webapp/WEB-INF/web.xml",
+      "bytes": 1046,
+      "sha256": "35bcba84fba7030dc10af51e5dde17f343025caf38a926d78517fc6f8d493a41"
+    },
+    {
+      "path": "src/test/java/AreaCheckTest.java",
+      "source": "src/test/java/AreaCheckTest.java",
+      "bytes": 6150,
+      "sha256": "814dae0d95612f86f8a583cac01b22c53170286d5cd9546dc586357e35f9abc5"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build.properties",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "jboss-cli-client.jar",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "lib/compile/jakarta.jakartaee-api-10.0.0.jar",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "lib/test/junit-platform-console-standalone-1.10.0.jar",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "song/feeling.wav",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "sql/psql-dev.txt",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "src/main/resources/META-INF/persistence.xml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "wildfly-37.0.1.Final",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// This is a disposable reading projection; the repository remains the source.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const output = path.join(root, '.build', 'docs');
+const catalog = JSON.parse(await fs.readFile(path.join(root, 'navigation/catalog.json'), 'utf8'));
+const ignored = new Set(['node_modules', '.git', '.idea', '.vs', '.vscode', '.packages', '.python_deps', 'javafx-sdk', 'bin', 'obj', 'target', 'build', 'dist', '__pycache__', 'tmp', '_qa', '.venv', 'venv']);
+const protectedNotes = new Set([
+  'helios.md',
+  'WebProgramming/Lab4/lab4.md',
+  'WebProgramming/Lab4/docker.md',
+  'ComputerArchitecture/Lab1/prompt.md',
+  'InformationSystem/Lab1/details.md'
+]);
+const roots = new Set(['navigation', 'academic', 'study', 'knowledge', 'Go', 'Java', 'MathsLanguage', 'Blender']);
+for (const course of catalog.courses) roots.add(course.directory.split('/')[0]);
+const files = [];
+const directories = [];
+async function walk(directory) {
+  directories.push(directory);
+  for (const entry of await fs.readdir(path.join(root, directory), { withFileTypes: true }).catch(() => [])) {
+    const relative = path.posix.join(directory, entry.name);
+    if (entry.isSymbolicLink()) continue;
+    if (entry.isDirectory()) {
+      if (!ignored.has(entry.name) && !/^javafx-sdk(?:-|$)/i.test(entry.name)) await walk(relative);
+    } else if (entry.isFile()) files.push(relative);
+  }
+}
+for (const directory of [...roots].sort()) await walk(directory);
+// Root auxiliary files can remain accessible through GitHub even when their
+// operator instructions are intentionally absent from the public search index.
+files.push('README.md', 'helios.md', 'LICENSE');
+
+// Refuse secret-bearing documents instead of sending them to the search index.
+// Deliberately exclude operator/deployment notes and maintenance prompts as well.
+function exclusion(file, content) {
+  if (protectedNotes.has(file)) return 'protected note / maintenance prompt';
+  if (/(?:^|\/)(?:prompt|details|artifact|docker|script\d*)\.md$/i.test(file)) return 'operator / maintenance note';
+  if (/-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----/.test(content)) return 'private key pattern';
+  if (/(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,})/.test(content)) return 'token pattern';
+  if (/(?:postgres(?:ql)?|mysql|mongodb(?:\+srv)?):\/\/[^\s/:]+:[^\s/@]+@/i.test(content)) return 'credential URL';
+  if (/(?:password|passwd|pwd|secret|access[_-]?token|api[_-]?key)\s*[:=]\s*["']?(?!\$|<|\{|process\.|os\.|System\.|null\b|none\b|your\b|example\b|password\b|changeme\b|PLACEHOLDER\b)[A-Za-z0-9_!@#%+.-]{6,}/i.test(content)) return 'credential-like assignment';
+  return null;
+}
+
+// Delete only the verified disposable projection, never a course directory.
+if (output !== path.join(root, '.build', 'docs')) throw new Error('Unexpected output path');
+await fs.rm(output, { recursive: true, force: true });
+await fs.mkdir(output, { recursive: true });
+const pages = [];
+const excluded = [];
+for (const file of files.filter(file => /\.md$/i.test(file)).sort()) {
+  const content = await fs.readFile(path.join(root, file), 'utf8');
+  if (!content.trim()) { excluded.push({ path: file, reason: 'empty document' }); continue; }
+  const reason = exclusion(file, content);
+  if (reason) { excluded.push({ path: file, reason }); continue; }
+  // Original inline HTML cannot execute in the reading site. Strip obsolete
+  // head/scripts; escape Vue interpolation outside fenced code at rendering time.
+  const safe = content.replace(/<head\b[^>]*>[\s\S]*?<\/head>/gi, '')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/^(#{1,6} [^\n]*?)\s*<a\s+id=["']([A-Za-z][\w:-]*)["']\s*>\s*<\/a>\s*$/gm, (_, heading, id) => `${heading} {#${id}}`)
+    .replace(/<a\s+id=["']([A-Za-z][\w:-]*)["']\s*>\s*<\/a>\s*\n(#{1,6} [^\n]+)/g, (_, id, heading) => `${heading} {#${id}}`);
+  const destination = path.join(output, file === 'README.md' ? 'index.md' : file);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.writeFile(destination, safe);
+  pages.push(file);
+}
+const manifest = {
+  repository: 'https://github.com/ivanstylish/ITMO-Study-Note',
+  branch: process.env.DOCS_SOURCE_REF || 'main',
+  pages,
+  files,
+  directories,
+  excluded
+};
+await fs.writeFile(path.join(root, '.build/site-manifest.json'), JSON.stringify(manifest, null, 2));
+console.log(`Reading projection: ${pages.length} Markdown pages; ${excluded.length} excluded. No PDF, DOCX, code or dependencies copied.`);
+console.log('Exclusions and original-file map: .build/site-manifest.json');

@@ -1,3 +1,7 @@
+<!-- kb:navigation:start -->
+[课程首页 · 复习与答辩](index.md)
+<!-- kb:navigation:end -->
+
 ## [主页](../README.md)/Database 数据库
 
 ### 讲座内容：

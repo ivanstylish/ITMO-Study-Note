@@ -1,0 +1,102 @@
+[
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg",
+        "city": "Beijing",
+        "slug": "beijing",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg/1280px-Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "license": "CC BY 4.0",
+        "filename": "Skyline_of_Beijing_CBD_with_B-5906_approaching_(20211016171955)_(1).jpg",
+        "author": "N509FZ"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg",
+        "city": "Berlin",
+        "slug": "berlin",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/1280px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "license": "CC BY-SA 4.0",
+        "filename": "Museumsinsel_Berlin_Juli_2021_1_(cropped)_b.jpg",
+        "author": "File:Museumsinsel Berlin Juli 2021 1 (cropped).jpg: Kasa Fue\nderivative work: Georgfotoart"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_%28125508655%29.jpeg",
+        "city": "London",
+        "slug": "london",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/1280px-London_Skyline_%28125508655%29.jpeg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "license": "CC BY-SA 3.0",
+        "filename": "London_Skyline_(125508655).jpeg",
+        "author": "\nIlya Grigorik"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Hollywood_sign_%288485145044%29.jpg",
+        "city": "Los Angeles",
+        "slug": "los-angeles",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/1280px-Hollywood_sign_%288485145044%29.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "license": "CC BY-SA 2.0",
+        "filename": "Hollywood_sign_(8485145044).jpg",
+        "author": "Gnaphron"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg",
+        "city": "Moscow",
+        "slug": "moscow",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg/1280px-Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg",
+        "licenseUrl": null,
+        "license": "Public domain",
+        "filename": "Saint_Basil's_Cathedral_and_the_Red_Square.jpg",
+        "author": "U.S. Department of State"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+        "city": "New York City",
+        "slug": "new-york",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1280px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "license": "CC BY-SA 4.0",
+        "filename": "View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg",
+        "author": "Dllu"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg",
+        "city": "Paris",
+        "slug": "paris",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1280px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "license": "CC BY-SA 2.0",
+        "filename": "La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_août_2014_(2).jpg",
+        "author": "Yann Caradec from Paris, France"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg",
+        "city": "Saint Petersburg",
+        "slug": "saint-petersburg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg/1280px-Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg",
+        "licenseUrl": "http://artlibre.org/licence/lal/en",
+        "license": "FAL",
+        "filename": "Spb_06-2017_img20_StMichael_Castle_(cropped).jpg",
+        "author": "A.Savin"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg",
+        "city": "Shanghai",
+        "slug": "shanghai",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg/1280px-Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "license": "CC BY 2.0",
+        "filename": "Huangpu_Park_20124-Shanghai_(32208802494).jpg",
+        "author": "xiquinhosilva"
+    },
+    {
+        "source": "https://commons.wikimedia.org/wiki/File:Commercial_area_of_futian_to_east2020.jpg",
+        "city": "Shenzhen",
+        "slug": "shenzhen",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Commercial_area_of_futian_to_east2020.jpg/1280px-Commercial_area_of_futian_to_east2020.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "license": "CC BY-SA 4.0",
+        "filename": "Commercial_area_of_futian_to_east2020.jpg",
+        "author": "Charlie fong"
+    }
+]

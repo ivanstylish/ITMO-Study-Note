@@ -1,4 +1,45 @@
-/WebProgramming/Lab2
-/WebProgramming/NEW lab2/Lab2
-/ComputationalMath/Lab1
 claude-deepseek-settings.json
+
+# Site output and dependency caches (course sources remain trackable)
+/node_modules/
+/.build/
+**/node_modules/
+**/.packages/
+**/.python_deps/
+**/__pycache__/
+**/.gradle/
+**/build/
+**/target/
+**/bin/
+**/obj/
+**/.stack-work/
+**/.idea/
+**/.vs/
+**/dist/
+**/out/
+*.pyc
+*.class
+*.pdb
+*.ilk
+*.exe
+*.war
+*.ear
+*.dll
+*.so
+*.dylib
+~$*
+
+# Machine-specific credentials and private keys
+.env
+.env.*
+!.env.example
+*.ppk
+*.pem
+*.key
+**/credentials.json
+**/application-local.*
+**/standalone.xml
+
+# Local editor and assistant configuration
+/.vscode/
+/.claude/

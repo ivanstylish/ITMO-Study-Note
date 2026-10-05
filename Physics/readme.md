@@ -1,3 +1,7 @@
+<!-- kb:navigation:start -->
+[课程首页 · 复习与答辩](index.md)
+<!-- kb:navigation:end -->
+
 # [主页](../README.md)/Physics физика 物理 
 
 ### 上学期：
@@ -10,6 +14,6 @@
 ### 下学期：
 - [lab3.01](./Labworks/lab3.01/lab3.01.md)  
 - [lab3.02](./Labworks/lab3.02/3.02.pdf)  
-- [lab3.05](./Labworks/lab3.05/Физика%203.5.DOCX)  
+- [lab3.05](./Labworks/lab3.05/lab3.05.md)
 - [lab3.08](./Labworks/lab3.08/)  
-- [lab3.11](./Labworks/lab1.07/1.07.pdf)  
+- [lab3.11](./Labworks/lab3.11/lab3.11.md)

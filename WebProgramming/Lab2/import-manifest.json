@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "sourceGroup": "web-lab2",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 539,
+      "sha256": "a93bdfcd360457eda08493f400c60417db368a7807cd01109793650129610ced"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 352,
+      "sha256": "a14f989e0dbcec45f8f9cb435f36985b2efe3f2ab9141fb636f100f251f814cd"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 60756,
+      "sha256": "91a239400bb638f36a1795d8fdf7939d532cdc7d794d1119b7261aac158b1e60"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 236,
+      "sha256": "3bc96eb7a839560aab0a9ce8224bcd9b7c9e44f69e0baf6b2a136d40944ed63c"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8070,
+      "sha256": "f96a757581fe5292465e3f3393380bd11fd8086d450b92e7c693da6513f583fe"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2763,
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 29,
+      "sha256": "e470496cfd61c9afd5ba00f39b86c29626aadde57b8905e807e47c4a1893c9cb"
+    },
+    {
+      "path": "src/main/java/servlets/AreaCheckServlet.java",
+      "source": "src/main/java/servlets/AreaCheckServlet.java",
+      "bytes": 3954,
+      "sha256": "86c5ecd82c0c1ac8be82e58b0c60de356b23caecc80dbe6daaf7c7332be981bb"
+    },
+    {
+      "path": "src/main/java/servlets/ControllerServlet.java",
+      "source": "src/main/java/servlets/ControllerServlet.java",
+      "bytes": 4224,
+      "sha256": "3dfda9d1e4f81e0339f38f50fd10160945604d61bdee4cceac3affe74a23c28f"
+    },
+    {
+      "path": "src/main/java/servlets/HitResult.java",
+      "source": "src/main/java/servlets/HitResult.java",
+      "bytes": 940,
+      "sha256": "8162342887c8c6c0d6e4b6c40b44241e92e883f8429925fb36bcf3481360f552"
+    },
+    {
+      "path": "src/main/webapp/index.html",
+      "source": "src/main/webapp/index.html",
+      "bytes": 302,
+      "sha256": "7bd4d46f9b0f7629bf046e65f136a063ea1f196b74ae31938cf43df188eb4bb9"
+    },
+    {
+      "path": "src/main/webapp/jsp/form.jsp",
+      "source": "src/main/webapp/jsp/form.jsp",
+      "bytes": 5255,
+      "sha256": "5a3968ada7da0ecd23d47f418ddbe9c6cceaedd3a7dad1c61c77951d556b010a"
+    },
+    {
+      "path": "src/main/webapp/jsp/result.jsp",
+      "source": "src/main/webapp/jsp/result.jsp",
+      "bytes": 6201,
+      "sha256": "0d89a2969d8998b2125e7775f55cd74a05df61a73d7e505d9cc3be1edb9aebbc"
+    },
+    {
+      "path": "src/main/webapp/script/form.js",
+      "source": "src/main/webapp/script/form.js",
+      "bytes": 9524,
+      "sha256": "31ec76dd3ce30de8164e8803d304c9aeebadd67eabd05852844d5de0c9622448"
+    },
+    {
+      "path": "src/main/webapp/style/style.css",
+      "source": "src/main/webapp/style/style.css",
+      "bytes": 5393,
+      "sha256": "8504203bcb1a7599c1edde8bea7cf16968e6e029a52f64f21e31ddf69410c8d3"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/web.xml",
+      "source": "src/main/webapp/WEB-INF/web.xml",
+      "bytes": 1068,
+      "sha256": "9818795768be11cd1edaf14111fce089641b0f4b9e0ff5379446681a0d4830ed"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "src/main/webapp/font/ARLRDBD.TTF",
+      "reason": "outside explicit source/document whitelist"
+    }
+  ]
+}

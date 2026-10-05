@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "sourceGroup": "web-opi-variant",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 539,
+      "sha256": "a93bdfcd360457eda08493f400c60417db368a7807cd01109793650129610ced"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 1407,
+      "sha256": "cffb003b5882d1f5c8e5af21be9545e1caab28e6a7605cac491655870c9c7fc7"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 60756,
+      "sha256": "91a239400bb638f36a1795d8fdf7939d532cdc7d794d1119b7261aac158b1e60"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 236,
+      "sha256": "bd6a3d279a472c9560293ef1684ed343fbbafec2de78c0fce8899dce66a82e86"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8070,
+      "sha256": "f96a757581fe5292465e3f3393380bd11fd8086d450b92e7c693da6513f583fe"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2763,
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 43,
+      "sha256": "45ae2dd8a09b6c0e8ff96ee767fe4ac3209a02dfa6b7d229e8e76445980a3cee"
+    },
+    {
+      "path": "sql/lab3.sql",
+      "source": "sql/lab3.sql",
+      "bytes": 343,
+      "sha256": "57e2df3ec785d059bd1e0a80b1a23621d2ca819d85c8b16a9c2fa512b1aa6702"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/ClockBean.java",
+      "source": "src/main/java/org/coordinate/bean/ClockBean.java",
+      "bytes": 876,
+      "sha256": "bd120b3fd002e9923e14cd40ef98b8bcd4989e387f2725256e43f7b5bb90a40e"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/PointBean.java",
+      "source": "src/main/java/org/coordinate/bean/PointBean.java",
+      "bytes": 5262,
+      "sha256": "5b6fb8746af214d65664ef0c5d682dd535bb59ed8eea2fafde6d64d183505edf"
+    },
+    {
+      "path": "src/main/java/org/coordinate/bean/ResultBean.java",
+      "source": "src/main/java/org/coordinate/bean/ResultBean.java",
+      "bytes": 6616,
+      "sha256": "761da1cf78a99293fe0444a868d262c30acc2538545a0b867ca965e8f9962c07"
+    },
+    {
+      "path": "src/main/java/org/coordinate/entity/Result.java",
+      "source": "src/main/java/org/coordinate/entity/Result.java",
+      "bytes": 2096,
+      "sha256": "b15b8bf787e0fb8948f69cacd8cbf03221d6af448c0615290a77e379921ba902"
+    },
+    {
+      "path": "src/main/java/org/coordinate/service/AreaCheck.java",
+      "source": "src/main/java/org/coordinate/service/AreaCheck.java",
+      "bytes": 953,
+      "sha256": "5e1934b5c71969be995371bd53c6542273116b44a08a871717968e9d3db99790"
+    },
+    {
+      "path": "src/main/webapp/errorPage/404.xhtml",
+      "source": "src/main/webapp/errorPage/404.xhtml",
+      "bytes": 579,
+      "sha256": "98805cf98bca4f08d017bbd8a5cda5682f960015ce33c32fdda03f39071f48de"
+    },
+    {
+      "path": "src/main/webapp/errorPage/500.xhtml",
+      "source": "src/main/webapp/errorPage/500.xhtml",
+      "bytes": 587,
+      "sha256": "c75458c801821736d81e0005af0cf8c200d5db1962ca024bbad9b2618d97ca42"
+    },
+    {
+      "path": "src/main/webapp/index.xhtml",
+      "source": "src/main/webapp/index.xhtml",
+      "bytes": 1538,
+      "sha256": "d9fd68ea08834a11d9bf71eef43d82158947854ae6887beb1edfc021594d0173"
+    },
+    {
+      "path": "src/main/webapp/main.xhtml",
+      "source": "src/main/webapp/main.xhtml",
+      "bytes": 9031,
+      "sha256": "cc403787d0aadc0e02cad9300a620b28b88094b6844a51af090e7602d5c9b375"
+    },
+    {
+      "path": "src/main/webapp/resources/css/style.css",
+      "source": "src/main/webapp/resources/css/style.css",
+      "bytes": 11129,
+      "sha256": "ef8d7c497dcb1720196b4eb3027894b173e89f85fbc355dcfa7ed43d5df64af9"
+    },
+    {
+      "path": "src/main/webapp/resources/js/main.js",
+      "source": "src/main/webapp/resources/js/main.js",
+      "bytes": 8405,
+      "sha256": "db1e5dd249b0efe4ba22480a08fe778c1e04a886fc171151f3155959339b0e27"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/beans.xml",
+      "source": "src/main/webapp/WEB-INF/beans.xml",
+      "bytes": 342,
+      "sha256": "ae067bacd8a69be9672d4660d7262d489f91f0d7e4bb1a0c42a1a75cff2de4ce"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/faces-config.xml",
+      "source": "src/main/webapp/WEB-INF/faces-config.xml",
+      "bytes": 1629,
+      "sha256": "7ecb56984bea67328cf4fdc79ba38120bffe4a27581beaa62b418f9dfbd9c15b"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/mbean/ClickInterval.java",
+      "source": "src/main/webapp/WEB-INF/mbean/ClickInterval.java",
+      "bytes": 1103,
+      "sha256": "a21735d9cff2775592ab2e69168074ea218086669eba4ba3c336ebfbd691998f"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/mbean/ClickIntervalMBean.java",
+      "source": "src/main/webapp/WEB-INF/mbean/ClickIntervalMBean.java",
+      "bytes": 441,
+      "sha256": "41e96f11ed257c0c35a978a2f37172da59c079fc93f206a0f3bc7550548bccec"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/mbean/JMXRegistration.java",
+      "source": "src/main/webapp/WEB-INF/mbean/JMXRegistration.java",
+      "bytes": 2271,
+      "sha256": "8902f20bc0af7e8c0cba9dbcd55eb9274d6064539827e2f0a0da20c616dc8bf9"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/mbean/PointsCounter.java",
+      "source": "src/main/webapp/WEB-INF/mbean/PointsCounter.java",
+      "bytes": 1677,
+      "sha256": "e8e8d6a376c0179f64a6213483ade8f857025728f97fb00dea09507e73f30bc2"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/mbean/PointsCounterMBean.java",
+      "source": "src/main/webapp/WEB-INF/mbean/PointsCounterMBean.java",
+      "bytes": 390,
+      "sha256": "d29003dd667f6d02a89e66aef1fd4391081ef9050dbe01af358f6b8fc0c5fbaa"
+    },
+    {
+      "path": "src/main/webapp/WEB-INF/web.xml",
+      "source": "src/main/webapp/WEB-INF/web.xml",
+      "bytes": 2084,
+      "sha256": "5c0eceb95c812551e78770fbf0878ab2e4c52e7f0bac0f2eae493f454d44a936"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "bin",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "FlClash-0.8.93-windows-amd64-setup.exe",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "HttpUnit",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "jboss-cli-client.jar",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "report.docx",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "sql/psql-dev.txt",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "src/main/resources/META-INF/persistence.xml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "wildfly-37.0.1.Final",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

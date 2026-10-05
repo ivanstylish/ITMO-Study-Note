@@ -1,0 +1,8 @@
+plugins {
+    id "com.github.node-gradle.node" version "7.1.0"
+}
+
+node {
+    download = true
+    version.set("24.11.1")
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Public template written during archive recovery, not the private original.
+     JPA does not expand environment variables in XML automatically.
+     Expand DB_URL, DB_USERNAME and DB_PASSWORD locally before producing
+     src/main/resources/META-INF/persistence.xml; do not commit that file. -->
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="CoordinatePU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>org.coordinate.entity.Result</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="${DB_URL}"/>
+            <property name="jakarta.persistence.jdbc.user" value="${DB_USERNAME}"/>
+            <property name="jakarta.persistence.jdbc.password" value="${DB_PASSWORD}"/>
+        </properties>
+    </persistence-unit>
+</persistence>

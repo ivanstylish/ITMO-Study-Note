@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-class01",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "ConsoleApplication1/ConsoleApplication1/lab1.c",
+      "source": "ConsoleApplication1/ConsoleApplication1/lab1.c",
+      "bytes": 1942,
+      "sha256": "51a5bcb28c124d8a31fc7e0df85ffa0053c329593cd75dac9e631469e63ebd42"
+    },
+    {
+      "path": "lab01.c",
+      "source": "lab01.c",
+      "bytes": 1939,
+      "sha256": "52cb2f63ae4cb744a0763b16ab8004209cd0b986b70be3d8215e4b3c9626b221"
+    },
+    {
+      "path": "lab1.c",
+      "source": "lab1.c",
+      "bytes": 1884,
+      "sha256": "aa56441d9e29b85b01728f11a1d67c242b21c58e0886865b94a9dcd34aac9968"
+    },
+    {
+      "path": "main.cpp",
+      "source": "main.cpp",
+      "bytes": 968,
+      "sha256": "9f227b2bea94a49982938f491674a88c477c34705b4192d89034b7a565fc8153"
+    },
+    {
+      "path": "zoo.c",
+      "source": "zoo.c",
+      "bytes": 6044,
+      "sha256": "f3d52558c910a5e4534c445e7875232763b389acf35701eefe7d89448c867672"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class2/.vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class2/class2/class2.vcxproj.user",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "class2/class2/lab02.c",
+      "reason": "already present exact source duplicate"
+    },
+    {
+      "path": "class2/class2/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class2/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "cmake-build-debug",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "ConsoleApplication1/.vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "ConsoleApplication1/ConsoleApplication1/ConsoleApplication1.vcxproj.user",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "ConsoleApplication1/ConsoleApplication1/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "ConsoleApplication1/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project1/.vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project1/Debug",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project1/Project1/Debug",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project1/Project1/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project1/Project1.vcxproj.user",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "Project1/x64",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project2/.vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "Project2/Project2/Project2.vcxproj.user",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    }
+  ]
+}

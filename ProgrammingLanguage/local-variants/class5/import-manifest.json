@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-class5",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "PageAggregatorService.cs",
+      "source": "PageAggregatorService.cs",
+      "bytes": 1687,
+      "sha256": "cb1c7b9a5f1c384d2d6c6f194cfe3b4db981a9858564ac2c8d82f6da91b1d881"
+    },
+    {
+      "path": "SlowExternalDataService.cs",
+      "source": "SlowExternalDataService.cs",
+      "bytes": 926,
+      "sha256": "0a28137b36952b9aabc8b371b1218d58becd6e28e339dec36d0d5195960aafbc"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class5/bin",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class5/obj",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "IExternalDataService.cs",
+      "reason": "already present exact source duplicate"
+    },
+    {
+      "path": "IPageAggregator.cs",
+      "reason": "already present exact source duplicate"
+    },
+    {
+      "path": "PagePayload.cs",
+      "reason": "already present exact source duplicate"
+    }
+  ]
+}

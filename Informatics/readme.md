@@ -1,3 +1,7 @@
+<!-- kb:navigation:start -->
+[课程首页 · 复习与答辩](index.md)
+<!-- kb:navigation:end -->
+
 ## [主页](../README.md)/Informatics 信息学
 
 ### Информатика – дисциплина, изучающая свойства и структуру информации, закономерности ее создания, преобразования, накопления, передачи и использования.  
@@ -23,7 +27,7 @@
 
 
 - [x] [Information](Information.md)
-- [x] [Python](Python.md)
+- [x] [Python](Lecture/Python.md)
 - [x] [Lecture1](/Informatics/Lecture/Lecture1.md)
 - [x] [Lecture2](/Informatics/Lecture/Lecture2.md)  
 - [x] [Lecture3](/Informatics/Lecture/Lecture3.md)  

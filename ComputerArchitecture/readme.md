@@ -1,3 +1,7 @@
+<!-- kb:navigation:start -->
+[课程首页 · 复习与答辩](index.md)
+<!-- kb:navigation:end -->
+
 # [主页](../README.md)/Aka 计算机架构
 - [Lab1: Семинар研讨会](./Lab1/readme.md)
   - [Description报告描述](./Lab1/description.md)

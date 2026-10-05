@@ -1,4 +1,4 @@
-### [实验三](../lab4/readme.md)/QUESTION 4
+### [实验四](../lab4/readme.md)/QUESTION 4
 
 `EXPLAIN ANALYZE` 语句：
 - 返回详细的执行计划和实际时间（`actual time`）和实际行数（`actual rows`）

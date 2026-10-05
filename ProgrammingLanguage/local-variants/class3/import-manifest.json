@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-class3",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "class3/BattleManager.cs",
+      "source": "class3/BattleManager.cs",
+      "bytes": 2339,
+      "sha256": "f7a2208e3ce537cdaf3fc2c7a4ba960ba91d7f8f321ecd7af142383033ed6dc0"
+    },
+    {
+      "path": "class3/class3.csproj",
+      "source": "class3/class3.csproj",
+      "bytes": 252,
+      "sha256": "8d5bb1bf8634e3fab11f1f50d464ec6ce923222265ffb946f26faa9528008b2c"
+    },
+    {
+      "path": "class3/Garen.cs",
+      "source": "class3/Garen.cs",
+      "bytes": 833,
+      "sha256": "cad1d5c20a72026ac92a03ff928412c7077c535828635e217628d8ae89dcff34"
+    },
+    {
+      "path": "class3/Legend.cs",
+      "source": "class3/Legend.cs",
+      "bytes": 2254,
+      "sha256": "6cc25d7119bd9193f5c9040b5e51fdc95fdebbc95cfec07b7d11a0d1c4304807"
+    },
+    {
+      "path": "class3/Mantis.cs",
+      "source": "class3/Mantis.cs",
+      "bytes": 880,
+      "sha256": "84c8ee7a733666bd8c61c22a55276d8403891b8e06a82fd541cbb61e32ee0844"
+    },
+    {
+      "path": "class3/Program.cs",
+      "source": "class3/Program.cs",
+      "bytes": 1170,
+      "sha256": "1928f4201732f844486c06ca538b23e47c966d304f8846e0cba12dfeb562ebba"
+    },
+    {
+      "path": "class3.sln",
+      "source": "class3.sln",
+      "bytes": 1131,
+      "sha256": "6c44328a164edbb73345259e4e59621b9d7dec887518aee2e3e8ab4637c8c404"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class3/bin",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "class3/obj",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

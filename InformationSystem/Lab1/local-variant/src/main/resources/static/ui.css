@@ -1,0 +1,134 @@
+/* 共用字体与基础样式：优先使用本机已有字体，没有安装时自动回退，不加载额外字体文件。 */
+:root {
+    --font-body: Bahnschrift, 'Microsoft YaHei', system-ui, Arial, sans-serif;
+    --font-display: 'CityDisplay', Impact, 'Arial Black', sans-serif;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+}
+/* 已有艺术字体的字形较高，统一缩放和基线，避免大标题超出照片区域。 */
+@font-face {
+    font-family: 'CityDisplay';
+    src: local('BLASTIMO SANS');
+    size-adjust: 55%;
+    ascent-override: 100%;
+    descent-override: 0%;
+    line-gap-override: 0%;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+input,
+select,
+textarea {
+    font-size: 1rem;
+}
+button {
+    cursor: pointer;
+}
+[hidden] {
+    display: none !important;
+}
+.error-dialog {
+    width: min(450px, calc(100vw - 32px));
+    border: 1px solid #efc5bd;
+    border-radius: 22px;
+    padding: 32px;
+    background: #fff9f3;
+    color: #b52c26;
+    box-shadow: 0 30px 100px #28130a40;
+    font: inherit;
+}
+.error-dialog::backdrop {
+    background: #26191080;
+    backdrop-filter: blur(4px);
+}
+.error-dialog h2 {
+    font-size: 23px;
+    line-height: 1.2;
+    color: #b52c26;
+    margin: 18px 0 12px;
+}
+.error-dialog p {
+    color: #b52c26;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+.error-dialog button {
+    border: 0;
+    border-radius: 40px;
+    padding: 12px 24px;
+    background: #b52c26;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+.error-symbol {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d35a50;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+.error-text,
+.error,
+.error-box,
+.field-error,
+[role='alert'] {
+    color: #b52c26 !important;
+}
+[aria-invalid='true'] {
+    border-color: #b52c26 !important;
+    outline-color: #b52c26;
+}
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #bd563a;
+    outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* 语言控件共用一套样式，不额外增加三套页面。 */
+.language-control {
+    margin: 0;
+    flex: 0 0 auto;
+}
+.language-control select {
+    border: 1px solid #d8cbbb;
+    border-radius: 24px;
+    background: #fffcf6;
+    color: #493b30;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+}
+.auth-panel > .language-control {
+    align-self: flex-end;
+}
+@media (max-width: 650px) {
+    .topbar {
+        height: auto;
+        min-height: 66px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}

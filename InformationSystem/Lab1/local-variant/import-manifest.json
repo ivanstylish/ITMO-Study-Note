@@ -1,0 +1,525 @@
+{
+  "version": 1,
+  "sourceGroup": "information-lab1",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "source": ".editorconfig",
+      "bytes": 516,
+      "sha256": "ed2d721a2e22539fa6c60d369a6ba023ec387a96a0970e756d780a27789a82fc"
+    },
+    {
+      "path": ".gitattributes",
+      "source": ".gitattributes",
+      "bytes": 95,
+      "sha256": "6fdc77e82a2ef6028d5608a093138486599604859c4e33518687f3b1462ea434"
+    },
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 80,
+      "sha256": "6a4d530fbcc33b003b3071eb92a1d755c72bf0cf4e64a065dc8bc174c4700958"
+    },
+    {
+      "path": ".prettierrc.json",
+      "source": ".prettierrc.json",
+      "bytes": 142,
+      "sha256": "bd8cbc8b708721d2b870d4f6aca4c10e6adfd8a74552066c8a90851870fafc11"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 2075,
+      "sha256": "4daebe9b01ddf24eb7ed11ac52df2b0848ba6c3ac7721223c69e48136dcf4cfa"
+    },
+    {
+      "path": "docs/CODE_STYLE_ZH.md",
+      "source": "docs/CODE_STYLE_ZH.md",
+      "bytes": 1214,
+      "sha256": "7625cc01d2c3d3fa61b91f83d52aab98cf4f78e21ed890c048ab42f3b4f1ef29"
+    },
+    {
+      "path": "docs/CONCLUSION_RU.md",
+      "source": "docs/CONCLUSION_RU.md",
+      "bytes": 964,
+      "sha256": "1f8f6c63765b1f219cc4cec51480282666523491ce6241704749a4b0cf34e74b"
+    },
+    {
+      "path": "docs/DEFENSE_QA_ZH_RU.md",
+      "source": "docs/DEFENSE_QA_ZH_RU.md",
+      "bytes": 20106,
+      "sha256": "b1a7acf19e2d5c07603cc955db2902d38b97c584b39db9a32d01107ebfe4f24d"
+    },
+    {
+      "path": "docs/diagrams/application-classes.drawio",
+      "source": "docs/diagrams/application-classes.drawio",
+      "bytes": 21431,
+      "sha256": "812cddf4519ce1831c8b973796d651e90eacf7804baaa51d2f988868059cd819"
+    },
+    {
+      "path": "docs/diagrams/application-classes.png",
+      "source": "docs/diagrams/application-classes.png",
+      "bytes": 132031,
+      "sha256": "cd731f58fb4019e4505c3b6436363ca7e5c0ad1d253d6a2acacdbfe83b8df94e"
+    },
+    {
+      "path": "docs/diagrams/application-classes.svg",
+      "source": "docs/diagrams/application-classes.svg",
+      "bytes": 18811,
+      "sha256": "ef39896b9beb690c807154a2a9364b58300a1b6f224485b01c0c25125da882a3"
+    },
+    {
+      "path": "docs/diagrams/domain-classes.drawio",
+      "source": "docs/diagrams/domain-classes.drawio",
+      "bytes": 15848,
+      "sha256": "2e243567fea52f17584135f89aa879cc0e2944a58ac5d07b606ed801dd038780"
+    },
+    {
+      "path": "docs/diagrams/domain-classes.png",
+      "source": "docs/diagrams/domain-classes.png",
+      "bytes": 91589,
+      "sha256": "4c846dfa5fce4cc4942f72d687eb995c2a3966dd79b2e300df9e406e5dd16f6c"
+    },
+    {
+      "path": "docs/diagrams/domain-classes.svg",
+      "source": "docs/diagrams/domain-classes.svg",
+      "bytes": 15606,
+      "sha256": "9cbb1b094dd01b7beb5f5c1ad68c469de0f00587ad8996eabbca1fb8f5084a07"
+    },
+    {
+      "path": "docs/diagrams/packages.drawio",
+      "source": "docs/diagrams/packages.drawio",
+      "bytes": 16914,
+      "sha256": "07957931d692936e282aa3fdfef28265f7228d88b86e5037331e2506b7639e71"
+    },
+    {
+      "path": "docs/diagrams/packages.png",
+      "source": "docs/diagrams/packages.png",
+      "bytes": 69569,
+      "sha256": "01573a8198214e7fc48f1b0fddf98bc2acca517cdc67db8257ba7ae5702337ab"
+    },
+    {
+      "path": "docs/diagrams/packages.svg",
+      "source": "docs/diagrams/packages.svg",
+      "bytes": 11327,
+      "sha256": "6098d3622b805e03c45b88599892176dc2cfd5037e3a265774705cd175907266"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_GUIDE_ZH.md",
+      "source": "docs/IMPLEMENTATION_GUIDE_ZH.md",
+      "bytes": 17247,
+      "sha256": "784a11fa5831dacfe713c15a2ce4b2e2f32426fd9008c5ae571481a7c1660c1a"
+    },
+    {
+      "path": "docs/PHOTO_CREDITS.md",
+      "source": "docs/PHOTO_CREDITS.md",
+      "bytes": 2324,
+      "sha256": "15de0b946cdafebfdbd234aa6448cb9f01ff804a38c6f76d7f48e61da41954dd"
+    },
+    {
+      "path": "docs/TESTING_ZH.md",
+      "source": "docs/TESTING_ZH.md",
+      "bytes": 2696,
+      "sha256": "bd9f2343cb8fa68bc9d2ba891c574c751a878c6d118fafec9d7912b5138a1b2a"
+    },
+    {
+      "path": "docs/UI_REFINEMENT_ZH.md",
+      "source": "docs/UI_REFINEMENT_ZH.md",
+      "bytes": 3622,
+      "sha256": "15e7991a2a7cba3fc391e6e0918ca3069c0083a927d287fbcf228a6b5a77f651"
+    },
+    {
+      "path": "docs/UI_UPDATE_ZH.md",
+      "source": "docs/UI_UPDATE_ZH.md",
+      "bytes": 3535,
+      "sha256": "a7bbcb3f0360610a5fce505532796da13b49a415f2d3cfddb6b662a17618afda"
+    },
+    {
+      "path": "docs/UML_VIEWING_ZH.md",
+      "source": "docs/UML_VIEWING_ZH.md",
+      "bytes": 1697,
+      "sha256": "1ce986fd21534fd637837f35d212e9686b9b3955b0b0167ebc2c50a893ec920e"
+    },
+    {
+      "path": "docs/VERIFICATION_ZH.md",
+      "source": "docs/VERIFICATION_ZH.md",
+      "bytes": 1416,
+      "sha256": "d3ee6ef18a254f83a6a9e645e20912c0a150a5b27153d47133b0e1c1eefd3e35"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43462,
+      "sha256": "d3b261c2820e9e3d8d639ed084900f11f4a86050a8f83342ade7b6bc9b0d2bdd"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 250,
+      "sha256": "7e1d39503dd81e9efcfdcb507c788d307c0f66fc49ffebb5ab8a0518f7398da8"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8692,
+      "sha256": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2868,
+      "sha256": "8e327fcb99d29ce0fe3ee2fec6e6a25de815a2df83a6a44a553dea89ffc92955"
+    },
+    {
+      "path": "PROJECT_README.md",
+      "source": "README.md",
+      "bytes": 12222,
+      "sha256": "ec62ecd1b3466dd63ac42afdf25b58dab842aafacc2dbf0749c2fffc1fd26589"
+    },
+    {
+      "path": "scripts/clean_tables.sql",
+      "source": "scripts/clean_tables.sql",
+      "bytes": 559,
+      "sha256": "f1e526e5841727c84c5767315f546f29f0f32ebe3785fa36a73875d196480268"
+    },
+    {
+      "path": "scripts/run-server.sh",
+      "source": "scripts/run-server.sh",
+      "bytes": 549,
+      "sha256": "319307e9e78eddc4aa6d73393a367d8f9f195ea64446fd41b54e36ce73152416"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 31,
+      "sha256": "ab310f3f5909064be7bdd34ee9caea4587d59a7a27b158b4f9e579741af8aa95"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/CityApplication.java",
+      "source": "src/main/java/edu/lab/city/CityApplication.java",
+      "bytes": 430,
+      "sha256": "f61491e0dc723aec2c4506c22401beb2b18cfb1543b2a3cf37ce8c061f7733c3"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/config/JsonConfig.java",
+      "source": "src/main/java/edu/lab/city/config/JsonConfig.java",
+      "bytes": 847,
+      "sha256": "b8fad428f47a3a5e0d7a9953f852309c51a0f6228ddc97684ddb685274450421"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/config/PersistenceConfig.java",
+      "source": "src/main/java/edu/lab/city/config/PersistenceConfig.java",
+      "bytes": 2093,
+      "sha256": "fe17457cf604d33b38b82ba3ea14a5fbcdd8e7a1a6d696e253473996f6a6f2dd"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/config/SecurityConfig.java",
+      "source": "src/main/java/edu/lab/city/config/SecurityConfig.java",
+      "bytes": 2633,
+      "sha256": "f1f2c21f1b2ba199b08af701c464668305dd21f0588f9e87276800679d57947e"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/AppUser.java",
+      "source": "src/main/java/edu/lab/city/domain/AppUser.java",
+      "bytes": 1988,
+      "sha256": "e6f5fa3cd2deab60f54a0c68ffbc98ba550b39a35272fe9c8110a206c1986756"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/City.java",
+      "source": "src/main/java/edu/lab/city/domain/City.java",
+      "bytes": 5551,
+      "sha256": "88e1730d88a90516baac5fba131ac24cbcaea499a39a1b11d6b3fae3ba25677f"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/Climate.java",
+      "source": "src/main/java/edu/lab/city/domain/Climate.java",
+      "bytes": 124,
+      "sha256": "6c0dab9641842d89ed57ba94d848d9a2a36eb69a726015081ff86b30d129cc10"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/Coordinates.java",
+      "source": "src/main/java/edu/lab/city/domain/Coordinates.java",
+      "bytes": 2200,
+      "sha256": "80192675915230a21a7037dbfd0d91f73a934093d73292e206e8e83e4c91551b"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/Government.java",
+      "source": "src/main/java/edu/lab/city/domain/Government.java",
+      "bytes": 100,
+      "sha256": "17e67a16cbb6fd7088d09008bacb6ee3e3b7f8c923652f1cc9f47a2eb75b5a24"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/Human.java",
+      "source": "src/main/java/edu/lab/city/domain/Human.java",
+      "bytes": 2541,
+      "sha256": "cb81191ebdfcda0a6fba1639645a387e5ef6ec1f1c8d9ce8c58198dd36095320"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/StandardOfLiving.java",
+      "source": "src/main/java/edu/lab/city/domain/StandardOfLiving.java",
+      "bytes": 131,
+      "sha256": "5fcb754afc72648d50d3655abbe60e06a8e8248d2a0be9baa09aa4c5915e7073"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/domain/ZonedDateTimeConverter.java",
+      "source": "src/main/java/edu/lab/city/domain/ZonedDateTimeConverter.java",
+      "bytes": 780,
+      "sha256": "7e63bdcac06e78bfeb99942719fea8cf00b49dc844b952a00ef8206375a0b803"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/dto/Requests.java",
+      "source": "src/main/java/edu/lab/city/dto/Requests.java",
+      "bytes": 1716,
+      "sha256": "2bd0760bca42f60fc27bc8f3dccb52c087bb9f62c6f70f6bc6e7e63aa78470fc"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/repository/ObjectRepository.java",
+      "source": "src/main/java/edu/lab/city/repository/ObjectRepository.java",
+      "bytes": 3090,
+      "sha256": "a91caf0d11ea4e13d2b969ba5933c94b4460ce11df97d613255f5be0a87280eb"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/repository/SpecialRepository.java",
+      "source": "src/main/java/edu/lab/city/repository/SpecialRepository.java",
+      "bytes": 1656,
+      "sha256": "83d09d5622080f210ac0a2e900c02b4155db0695c3a957d5b66e4ac6cd6c5bd7"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/repository/UserRepository.java",
+      "source": "src/main/java/edu/lab/city/repository/UserRepository.java",
+      "bytes": 845,
+      "sha256": "2e3db97d559391f7b5bbe3764ea62f692aa93e1820130402a0b3c6a3d5f88cd4"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/service/AccountService.java",
+      "source": "src/main/java/edu/lab/city/service/AccountService.java",
+      "bytes": 2716,
+      "sha256": "57ed5e979a441e0d57b83b8cbf8f91abf5cbe88c475ce781edb8f4899b400763"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/service/CityService.java",
+      "source": "src/main/java/edu/lab/city/service/CityService.java",
+      "bytes": 5207,
+      "sha256": "b48535282989b6beae55ff3901089f0564045134b30c8e51c9d41b09011f1547"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/service/SpecialService.java",
+      "source": "src/main/java/edu/lab/city/service/SpecialService.java",
+      "bytes": 2175,
+      "sha256": "0e55cc52e11cf4423d9f47f7a05df563ab264b749c2b90c250ce594a457f60b6"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/web/ApiController.java",
+      "source": "src/main/java/edu/lab/city/web/ApiController.java",
+      "bytes": 4865,
+      "sha256": "17ddf21edc2a245bc9301b8b7424cedd62b710248de17856e0487307b0128148"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/web/ApiExceptionHandler.java",
+      "source": "src/main/java/edu/lab/city/web/ApiExceptionHandler.java",
+      "bytes": 4368,
+      "sha256": "2f590dc67379f23ff07c657889284f44dae910b2eac55193bfbe913d3d6fc842"
+    },
+    {
+      "path": "src/main/java/edu/lab/city/web/AuthController.java",
+      "source": "src/main/java/edu/lab/city/web/AuthController.java",
+      "bytes": 2547,
+      "sha256": "bc62df58b77b9719f2e06b87a4a56ec9f845aef50b92b60da8490b9bc1300305"
+    },
+    {
+      "path": "src/main/resources/db/migration/V1__schema.sql",
+      "source": "src/main/resources/db/migration/V1__schema.sql",
+      "bytes": 3485,
+      "sha256": "0e2b26a0b2a7878a95066e10de3724584a4aa9c7e439946f6888a12c3ee4baf7"
+    },
+    {
+      "path": "src/main/resources/db/migration/V2__special_functions.sql",
+      "source": "src/main/resources/db/migration/V2__special_functions.sql",
+      "bytes": 2733,
+      "sha256": "281961fa94dddcfc683dbe222f496e255885acb366665dd85b719d0b9bcfe02a"
+    },
+    {
+      "path": "src/main/resources/db/migration/V3__registered_users.sql",
+      "source": "src/main/resources/db/migration/V3__registered_users.sql",
+      "bytes": 399,
+      "sha256": "5eb9758580b7f9b88b5570e614662f5b1af3055f7a3d045ad340473201f6e6ed"
+    },
+    {
+      "path": "src/main/resources/db/migration/V4__rebind_schema_functions.sql",
+      "source": "src/main/resources/db/migration/V4__rebind_schema_functions.sql",
+      "bytes": 3185,
+      "sha256": "d1f7d74378b6e4f9da7c79bcd8aeee034c0a299c397a04bac87dd2a1f52b3477"
+    },
+    {
+      "path": "src/main/resources/static/app.js",
+      "source": "src/main/resources/static/app.js",
+      "bytes": 23991,
+      "sha256": "0e7854c75cf00c56054db0b0362b5d60bc56be03983bd8bd2e62ecd4f0767bc0"
+    },
+    {
+      "path": "src/main/resources/static/auth.css",
+      "source": "src/main/resources/static/auth.css",
+      "bytes": 5628,
+      "sha256": "5fe1d68d73cf230a92836ba471f58ba3bd43682d4b46722cc73b0519ceec813f"
+    },
+    {
+      "path": "src/main/resources/static/auth.html",
+      "source": "src/main/resources/static/auth.html",
+      "bytes": 9895,
+      "sha256": "2ffd13585bde82ddd0f8c94314207ee6e44fe121b6c4b7b8795a415d4174700b"
+    },
+    {
+      "path": "src/main/resources/static/auth.js",
+      "source": "src/main/resources/static/auth.js",
+      "bytes": 5227,
+      "sha256": "8c5d95ca0baf711abaded128cccad735192d949be9ded94f4483f8e6458608f4"
+    },
+    {
+      "path": "src/main/resources/static/i18n.js",
+      "source": "src/main/resources/static/i18n.js",
+      "bytes": 24642,
+      "sha256": "1b1c3f8f12483805887bacbfa5f943eb5ad0117d0699f31dcf134aad470b6ac1"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/beijing.jpg",
+      "source": "src/main/resources/static/images/cities/beijing.jpg",
+      "bytes": 424345,
+      "sha256": "a22f89fcc39f4e6d7237d471e9bfdcae2fde5d537652206963444abe1d03f9a2"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/berlin.jpg",
+      "source": "src/main/resources/static/images/cities/berlin.jpg",
+      "bytes": 439191,
+      "sha256": "1cef1615e06c95b18278c59ba8464e44535c30865a5e0292a05ff6b38a964fc9"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/credits.json",
+      "source": "src/main/resources/static/images/cities/credits.json",
+      "bytes": 6007,
+      "sha256": "e7a646c53a2696b3b8f2d852832dd72b1d62dec794e9dcb7f7135cdd07180c06"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/london.jpg",
+      "source": "src/main/resources/static/images/cities/london.jpg",
+      "bytes": 294633,
+      "sha256": "b7447937e5c4a186b1959350696ee4fea7bd6f57d37a6bc95ec73b56ca41d95a"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/los-angeles.jpg",
+      "source": "src/main/resources/static/images/cities/los-angeles.jpg",
+      "bytes": 201061,
+      "sha256": "5df91464fe011c9048bb7b92e6d045907408a07e5ab1f14a4f167b06d0ecb353"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/moscow.jpg",
+      "source": "src/main/resources/static/images/cities/moscow.jpg",
+      "bytes": 329006,
+      "sha256": "7ca755115431330a5956253e7baf01a6bcf67fe1bfe08e2304269a7034ed262c"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/new-york.jpg",
+      "source": "src/main/resources/static/images/cities/new-york.jpg",
+      "bytes": 267470,
+      "sha256": "c3e1075978822b3e31d37fe6d21134be2ef0d7d5858cf9c469a7827af668ede9"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/paris.jpg",
+      "source": "src/main/resources/static/images/cities/paris.jpg",
+      "bytes": 334704,
+      "sha256": "a8d8e904fbc45558cc00d322130b53aca62b9f2d8e55307c8c86463c7478e51e"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/saint-petersburg.jpg",
+      "source": "src/main/resources/static/images/cities/saint-petersburg.jpg",
+      "bytes": 415250,
+      "sha256": "51f7a2ca82f4a46c5dab1d2f911183cc81d83d08a14bf16fe6656e55ac23ce4c"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/shanghai.jpg",
+      "source": "src/main/resources/static/images/cities/shanghai.jpg",
+      "bytes": 297393,
+      "sha256": "851299cb51cd64226b1c91c6bd05a6844b707d19b6b0e9620e31daa75ce4257f"
+    },
+    {
+      "path": "src/main/resources/static/images/cities/shenzhen.jpg",
+      "source": "src/main/resources/static/images/cities/shenzhen.jpg",
+      "bytes": 351104,
+      "sha256": "b41ab7026590a38e060c820d92ba82f80f0aa06e41308b44e77fb08549fc87d0"
+    },
+    {
+      "path": "src/main/resources/static/index.html",
+      "source": "src/main/resources/static/index.html",
+      "bytes": 14642,
+      "sha256": "6ef84b33949badf0cf66778d98695111d4204531d70d3ffd363e7d7e05021a70"
+    },
+    {
+      "path": "src/main/resources/static/style.css",
+      "source": "src/main/resources/static/style.css",
+      "bytes": 11999,
+      "sha256": "c6e4f0b6dfdd401cd29f818fcc7423e7f01fad24202f67113a1b8e54cac696ac"
+    },
+    {
+      "path": "src/main/resources/static/ui.css",
+      "source": "src/main/resources/static/ui.css",
+      "bytes": 2788,
+      "sha256": "28830ec405898d16c609af16e1efbf7f7eb70b3d6b18457c85128edeb3cdfb59"
+    },
+    {
+      "path": "src/main/resources/static/ui.js",
+      "source": "src/main/resources/static/ui.js",
+      "bytes": 2596,
+      "sha256": "358c857e88a3c68a1b2633b94491de37113b776c679ddc51cc31155ab775c5f1"
+    },
+    {
+      "path": "src/test/java/edu/lab/city/PostgresIntegrationTest.java",
+      "source": "src/test/java/edu/lab/city/PostgresIntegrationTest.java",
+      "bytes": 14977,
+      "sha256": "a12c44a6599957362974e654fc05614f47c3677c7ca03883d713073b563c389d"
+    },
+    {
+      "path": "src/test/java/edu/lab/city/ValidationTest.java",
+      "source": "src/test/java/edu/lab/city/ValidationTest.java",
+      "bytes": 1630,
+      "sha256": "271ec32980835c32aa92cacf9da0aa7494cd24ade194083fed6d86c0949d94c2"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "compose.yaml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "config",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "docs/DEPLOYMENT_ZH.md",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "docs/LOCAL_DATABASE_ZH.md",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "scripts/create-local-db.sql",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "src/main/resources/application.yml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    }
+  ]
+}

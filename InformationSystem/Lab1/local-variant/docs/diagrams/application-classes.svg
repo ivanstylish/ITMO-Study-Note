@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2310" height="1820" viewBox="0 0 2310 1820"><defs><marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#32465a" stroke-width="1.5"/></marker><marker id="triangle" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="13" markerHeight="13" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#32465a"/></marker></defs><rect width="100%" height="100%" fill="white"/><rect x="35" y="40" width="520" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="295" y="61" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«controller»</text>
+<text x="295" y="85" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">AuthController</text>
+<rect x="35" y="94" width="520" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="123" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- accounts: AccountService</text>
+<rect x="35" y="140" width="520" height="118" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="169" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ login(): String</text>
+<text x="49" y="193" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ csrf(token: CsrfToken): Map&lt;String,String&gt;</text>
+<text x="49" y="217" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ register(input: Registration):</text>
+<text x="49" y="241" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    Map&lt;String,String&gt;</text>
+<rect x="680" y="40" width="600" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="980" y="61" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«rest controller»</text>
+<text x="980" y="85" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">ApiController</text>
+<rect x="680" y="94" width="600" height="70" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="123" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- cities: CityService</text>
+<text x="694" y="147" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- special: SpecialService</text>
+<rect x="680" y="164" width="600" height="262" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="193" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ list(...): Page&lt;City&gt;</text>
+<text x="694" y="217" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ city(id: long): City</text>
+<text x="694" y="241" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ addCity(input: CityInput): City</text>
+<text x="694" y="265" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ editCity(id: long, input: CityInput): City</text>
+<text x="694" y="289" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ deleteCity(id: long, version: long): void</text>
+<text x="694" y="313" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ coordinates(): List&lt;Coordinates&gt;</text>
+<text x="694" y="337" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ humans(): List&lt;Human&gt;</text>
+<text x="694" y="361" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ operation(operation: String, needle: String):</text>
+<text x="694" y="385" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    Result</text>
+<text x="694" y="409" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ revision(): Map&lt;String,String&gt;</text>
+<rect x="1450" y="40" width="820" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="1860" y="61" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«rest controller advice»</text>
+<text x="1860" y="85" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">ApiExceptionHandler</text>
+<rect x="1450" y="94" width="820" height="166" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1464" y="123" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">~ validation(e: MethodArgumentNotValidException):</text>
+<text x="1464" y="147" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    ResponseEntity&lt;?&gt;</text>
+<text x="1464" y="171" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">~ status(e: ResponseStatusException): ResponseEntity&lt;?&gt;</text>
+<text x="1464" y="195" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">~ badInput(e: Exception): ResponseEntity&lt;?&gt;</text>
+<text x="1464" y="219" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">~ conflict(e: Exception): ResponseEntity&lt;?&gt;</text>
+<text x="1464" y="243" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">~ database(e: Exception): ResponseEntity&lt;?&gt;</text>
+<rect x="35" y="600" width="520" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="295" y="621" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«service»</text>
+<text x="295" y="645" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">AccountService</text>
+<rect x="35" y="654" width="520" height="70" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="683" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- users: UserRepository</text>
+<text x="49" y="707" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- encoder: PasswordEncoder</text>
+<rect x="35" y="724" width="520" height="118" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="753" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ loadUserByUsername(username: String):</text>
+<text x="49" y="777" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    UserDetails</text>
+<text x="49" y="801" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ register(username: String, password: String,</text>
+<text x="49" y="825" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    confirmation: String): void</text>
+<rect x="680" y="600" width="600" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="980" y="621" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«service»</text>
+<text x="980" y="645" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">CityService</text>
+<rect x="680" y="654" width="600" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="683" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- repository: ObjectRepository</text>
+<rect x="680" y="700" width="600" height="238" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="729" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; get(type: Class&lt;T&gt;, id: long): T</text>
+<text x="694" y="753" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ list(...): Page&lt;City&gt;</text>
+<text x="694" y="777" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; all(type: Class&lt;T&gt;): List&lt;T&gt;</text>
+<text x="694" y="801" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ saveCity(id: Long, input: CityInput): City</text>
+<text x="694" y="825" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ saveCoordinates(id: Long,</text>
+<text x="694" y="849" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    input: CoordinatesInput): Coordinates</text>
+<text x="694" y="873" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ saveHuman(id: Long, input: HumanInput): Human</text>
+<text x="694" y="897" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; delete(type: Class&lt;T&gt;, id: long,</text>
+<text x="694" y="921" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    expectedVersion: long): void</text>
+<rect x="1450" y="600" width="600" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="1750" y="621" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«service»</text>
+<text x="1750" y="645" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">SpecialService</text>
+<rect x="1450" y="654" width="600" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1464" y="683" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- repository: SpecialRepository</text>
+<rect x="1450" y="700" width="600" height="70" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1464" y="729" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ revision(): String</text>
+<text x="1464" y="753" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ run(operation: String, needle: String): Result</text>
+<rect x="35" y="1120" width="520" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="295" y="1141" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«repository»</text>
+<text x="295" y="1165" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">UserRepository</text>
+<rect x="35" y="1174" width="520" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="1203" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- em: EntityManager</text>
+<rect x="35" y="1220" width="520" height="94" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="1249" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ findByUsername(username: String):</text>
+<text x="49" y="1273" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    Optional&lt;AppUser&gt;</text>
+<text x="49" y="1297" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ insert(user: AppUser): void</text>
+<rect x="680" y="1120" width="600" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="980" y="1141" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«repository»</text>
+<text x="980" y="1165" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">ObjectRepository</text>
+<rect x="680" y="1174" width="600" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="1203" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- em: EntityManager</text>
+<rect x="680" y="1220" width="600" height="166" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="694" y="1249" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; find(type: Class&lt;T&gt;, id: long): T</text>
+<text x="694" y="1273" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; insert(object: T): T</text>
+<text x="694" y="1297" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ remove(object: Object): void</text>
+<text x="694" y="1321" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ flush(): void</text>
+<text x="694" y="1345" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ &lt;T&gt; all(type: Class&lt;T&gt;): List&lt;T&gt;</text>
+<text x="694" y="1369" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ cities(...): Page&lt;City&gt;</text>
+<rect x="1450" y="1120" width="600" height="54" fill="#eaf1f7" stroke="#32465a" stroke-width="1.5"/>
+<text x="1750" y="1141" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«repository»</text>
+<text x="1750" y="1165" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">SpecialRepository</text>
+<rect x="1450" y="1174" width="600" height="46" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1464" y="1203" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">- em: EntityManager</text>
+<rect x="1450" y="1220" width="600" height="166" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="1464" y="1249" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ average(): Object</text>
+<text x="1464" y="1273" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ groups(): List&lt;Object[]&gt;</text>
+<text x="1464" y="1297" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ containing(needle: String): List&lt;City&gt;</text>
+<text x="1464" y="1321" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ extremeRoute(): Object</text>
+<text x="1464" y="1345" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ newestRoute(): Object</text>
+<text x="1464" y="1369" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ revision(): String</text>
+<rect x="35" y="1520" width="520" height="54" fill="#eee9f6" stroke="#32465a" stroke-width="1.5"/>
+<text x="295" y="1541" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«interface»</text>
+<text x="295" y="1565" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">UserDetailsService</text>
+<rect x="35" y="1574" width="520" height="70" fill="#ffffff" stroke="#32465a" stroke-width="1.5"/>
+<text x="49" y="1603" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">+ loadUserByUsername(username: String):</text>
+<text x="49" y="1627" fill="#203447" font-family="Consolas, monospace" font-size="15" text-anchor="start" font-weight="normal">    UserDetails</text>
+<rect x="1220" y="1630" width="450" height="54" fill="#eee9f6" stroke="#32465a" stroke-width="1.5"/>
+<text x="1445" y="1651" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">«interface»</text>
+<text x="1445" y="1675" fill="#203447" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold">EntityManager</text>
+<polyline points="295,258 295,600" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="980,426 980,600" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="1280,348.8 1370,348.8 1370,505 1750,505 1750,600" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="295,842 295,1120" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="980,938 980,1120" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="1750,770 1750,1120" fill="none" stroke="#32465a" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<polyline points="35,721 15,721 15,1582 35,1582" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<polyline points="1450,150 1370,150 1370,155.8 1280,155.8" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="1327.9" y="129.9" width="84.2" height="21" fill="white"/>
+<text x="1370" y="145.9" fill="#203447" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="normal">«handles»</text>
+<polyline points="555,1255.8 610,1255.8 610,1657 1220,1657" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1280,1386 1310,1386 1310,1550 1310,1630 1310,1630" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="1750,1386 1750,1657 1670,1657" fill="none" stroke="#32465a" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/></svg>

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-class1",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "lab0.c",
+      "source": "lab0.c",
+      "bytes": 171,
+      "sha256": "d47cba6195795f2d503694a56adff23ffeb9350ebc8c66b1c0a4f04c400f2512"
+    },
+    {
+      "path": "library.c",
+      "source": "library.c",
+      "bytes": 94,
+      "sha256": "2c5fb15114858402eb3d1ad3f0da149f113973add92c5dc2561fd108af893a71"
+    },
+    {
+      "path": "library.h",
+      "source": "library.h",
+      "bytes": 97,
+      "sha256": "c4982dce1dba976d811d703a037b7579379a70e8221ad098a014e7009ff17218"
+    },
+    {
+      "path": "sum.c",
+      "source": "sum.c",
+      "bytes": 91,
+      "sha256": "199d09cdc4f3b1485747f76f532ba745c45abf530dd1081e1d638a27c8e67342"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "cmake-build-debug",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+<!-- kb:navigation:start -->
+[课程首页 · 复习与答辩](index.md)
+<!-- kb:navigation:end -->
+
 # [主页](../README.md)/算法与数据结构
 
 ## 要求：

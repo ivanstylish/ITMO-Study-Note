@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "sourceGroup": "web-lab4",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 539,
+      "sha256": "a93bdfcd360457eda08493f400c60417db368a7807cd01109793650129610ced"
+    },
+    {
+      "path": "backend/.gitattributes",
+      "source": "backend/.gitattributes",
+      "bytes": 54,
+      "sha256": "193fbf6c445dea576a6f238c5262320931945a2ea03bae24b161b30856919a09"
+    },
+    {
+      "path": "backend/.gitignore",
+      "source": "backend/.gitignore",
+      "bytes": 444,
+      "sha256": "795029e58e368bb91c71cb3adb971491562622d4b1684604f278cdbfb8fec238"
+    },
+    {
+      "path": "backend/build.gradle",
+      "source": "backend/build.gradle",
+      "bytes": 1812,
+      "sha256": "fd72cf0a5e0c02aad33622716880dcdbe066f20a616581eb3e93da9cf85861c7"
+    },
+    {
+      "path": "backend/gradle/wrapper/gradle-wrapper.jar",
+      "source": "backend/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 45633,
+      "sha256": "423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9"
+    },
+    {
+      "path": "backend/gradle/wrapper/gradle-wrapper.properties",
+      "source": "backend/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 252,
+      "sha256": "9efd7948359a68d9c80aa8d5df1717af1415c440b59d493040d3cfbd13885383"
+    },
+    {
+      "path": "backend/gradlew",
+      "source": "backend/gradlew",
+      "bytes": 8618,
+      "sha256": "fb68debc1b1acf8ec55dc0d5e5495e1dedd0bd6b61f304bee61613eeb2bd9b92"
+    },
+    {
+      "path": "backend/gradlew.bat",
+      "source": "backend/gradlew.bat",
+      "bytes": 2896,
+      "sha256": "fedad02c18e266ec094995a5751b7fe1eb6e74f66bf75db64fae2e50eb22c234"
+    },
+    {
+      "path": "backend/settings.gradle",
+      "source": "backend/settings.gradle",
+      "bytes": 29,
+      "sha256": "e03828fa8c89ed13b6ae3ed2ac54b4a4eed2a6e86f69dc70dd07bb7ec0c4ab81"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/BackendApplication.java",
+      "source": "backend/src/main/java/com/example/backend/BackendApplication.java",
+      "bytes": 681,
+      "sha256": "9b1546e2ae010ace46db6a3617d1be061e96c8193d31bf64d359446271325305"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/config/SecurityConfig.java",
+      "source": "backend/src/main/java/com/example/backend/config/SecurityConfig.java",
+      "bytes": 3063,
+      "sha256": "976dce523e995c3091c90e73daa5e923669835d4be83fdd0475121282b5c3531"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/controller/AuthController.java",
+      "source": "backend/src/main/java/com/example/backend/controller/AuthController.java",
+      "bytes": 2225,
+      "sha256": "d8529338eb1757e8591b07abd0888bcd6381608f3fea6da3357005304c46ec8e"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/controller/PointController.java",
+      "source": "backend/src/main/java/com/example/backend/controller/PointController.java",
+      "bytes": 1306,
+      "sha256": "302c01078295f5172cee83dcbff67c019eb3fb46ee2cdb374bab7e6fa93e1ac8"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/dto/LoginDto.java",
+      "source": "backend/src/main/java/com/example/backend/dto/LoginDto.java",
+      "bytes": 152,
+      "sha256": "99f24e15646c9c1723faf02b7d68893b0f7e8861e9ac53acfc0a6838fd650a18"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/dto/PointDto.java",
+      "source": "backend/src/main/java/com/example/backend/dto/PointDto.java",
+      "bytes": 685,
+      "sha256": "6129339b32136f926d950fab94c175b7299e2dd300e751884c57f34998646892"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/entity/Result.java",
+      "source": "backend/src/main/java/com/example/backend/entity/Result.java",
+      "bytes": 820,
+      "sha256": "ba296446b09810529da3cbd1c34b5251d31d911820602b1396fdc1c6b043b316"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/entity/User.java",
+      "source": "backend/src/main/java/com/example/backend/entity/User.java",
+      "bytes": 829,
+      "sha256": "49beb7aa8d87f00b8f8c97293209be7430ffbcb7a10324ab6a708640b1f2ab5f"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/repository/ResultRepository.java",
+      "source": "backend/src/main/java/com/example/backend/repository/ResultRepository.java",
+      "bytes": 302,
+      "sha256": "a04ba78846b9c8e42a4acfafb683768fd09e9cccfd4b517de06cc915487a970f"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/repository/UserRepository.java",
+      "source": "backend/src/main/java/com/example/backend/repository/UserRepository.java",
+      "bytes": 300,
+      "sha256": "3ce51ffaf84d21066a8303088cc9152a13cd06478cb73d499f836743d8ead142"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/service/PointService.java",
+      "source": "backend/src/main/java/com/example/backend/service/PointService.java",
+      "bytes": 1430,
+      "sha256": "762b68485aaaf087956466cdcc059c49d072ce5a38736f3f5a4972f0295610b8"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/service/ResultService.java",
+      "source": "backend/src/main/java/com/example/backend/service/ResultService.java",
+      "bytes": 851,
+      "sha256": "bad20b0bfcbf03768d6e56a8e82e10a5d17d1ab5d4684c03a80b707c85182f8e"
+    },
+    {
+      "path": "backend/src/main/java/com/example/backend/service/UserService.java",
+      "source": "backend/src/main/java/com/example/backend/service/UserService.java",
+      "bytes": 1703,
+      "sha256": "e176046c141101b1c3befd51c85b771c8d841221359cac5c4a4062a127f9f18f"
+    },
+    {
+      "path": "backend/src/main/resources/META-INF/jboss-deployment-structure.xml",
+      "source": "backend/src/main/resources/META-INF/jboss-deployment-structure.xml",
+      "bytes": 712,
+      "sha256": "b8a475d1d0628e2e8b3c172bfa3aaf32ed33066e602046c684ab3dfb42af9c8b"
+    },
+    {
+      "path": "backend/src/test/java/com/example/backend/BackendApplicationTests.java",
+      "source": "backend/src/test/java/com/example/backend/BackendApplicationTests.java",
+      "bytes": 221,
+      "sha256": "dabbaf2d067d4e690280e7dd0911b973ee9d75852f5d989e5a075fb51244b67f"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 478,
+      "sha256": "983a26b566d5a0a67fa604826bb3b403b4e0419199fbc1ca76833cec668778a5"
+    },
+    {
+      "path": "frontend/.gitignore",
+      "source": "frontend/.gitignore",
+      "bytes": 310,
+      "sha256": "d373417ea2a8844e3b7a1515aab123e90fbeb4b7225144d55d243d9f6f04f73a"
+    },
+    {
+      "path": "frontend/build.gradle",
+      "source": "frontend/build.gradle",
+      "bytes": 130,
+      "sha256": "ed0d2a15369d5a955e03614dd1e77c855e52a60f54b7b255d602fea2ab94dec1"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "source": "frontend/package-lock.json",
+      "bytes": 665779,
+      "sha256": "5d7f94c953c75d20d08f6dd0eae2c0de3fddc86693c854e19f6f57d4939d15eb"
+    },
+    {
+      "path": "frontend/package.json",
+      "source": "frontend/package.json",
+      "bytes": 957,
+      "sha256": "8ed4442c9bc409568da619e38e1c57120d8584c0d73f5ef9fee36eb942281a9b"
+    },
+    {
+      "path": "frontend/public/index.html",
+      "source": "frontend/public/index.html",
+      "bytes": 142,
+      "sha256": "c82462548e5cc948b18265e8c1f9ffb95899309d80ddc6c21e92a610b9d68a5e"
+    },
+    {
+      "path": "frontend/public/manifest.json",
+      "source": "frontend/public/manifest.json",
+      "bytes": 492,
+      "sha256": "50b3d8c3903af3f78d871b94557ab14f4e39ca192eaca3d2cfa863c867279a14"
+    },
+    {
+      "path": "frontend/README.md",
+      "source": "frontend/README.md",
+      "bytes": 3359,
+      "sha256": "70eafbc7a5fd466aa3213b5a7e1b2a41383cbe5d4e6fc5f4582efc58bdb509d1"
+    },
+    {
+      "path": "frontend/src/App.js",
+      "source": "frontend/src/App.js",
+      "bytes": 852,
+      "sha256": "b4811fd1b13e74c7475b47cf03db4afe0240dc1b7cf55f5c39456eab8fd5fd94"
+    },
+    {
+      "path": "frontend/src/components/GraphComponent.js",
+      "source": "frontend/src/components/GraphComponent.js",
+      "bytes": 5977,
+      "sha256": "1a3557543b85d4eeb590489b26b09b20a2af13a1fcca71b9b031feb41a01e03c"
+    },
+    {
+      "path": "frontend/src/components/ResultTable.js",
+      "source": "frontend/src/components/ResultTable.js",
+      "bytes": 1448,
+      "sha256": "5bec13d5a77ad89341d4555858460ac59000c94c96413759bd88c682780a2442"
+    },
+    {
+      "path": "frontend/src/css/style.css",
+      "source": "frontend/src/css/style.css",
+      "bytes": 11331,
+      "sha256": "599833037f641ca39ace45c8a3f54914deb40c716542a160235c67fd5acb3d6e"
+    },
+    {
+      "path": "frontend/src/index.js",
+      "source": "frontend/src/index.js",
+      "bytes": 418,
+      "sha256": "d25711293f8a11cc236e9260923678047fe08ca2aeb5c585d433b495c04d865c"
+    },
+    {
+      "path": "frontend/src/pages/MainPage.js",
+      "source": "frontend/src/pages/MainPage.js",
+      "bytes": 8762,
+      "sha256": "46a43db283a056e52504afd821bd64821cfa9ddfae26a6d6d7a5c7b482051f91"
+    },
+    {
+      "path": "frontend/src/pages/StartPage.js",
+      "source": "frontend/src/pages/StartPage.js",
+      "bytes": 5916,
+      "sha256": "ee5c172317f04164abb2bcba941b14461e2af41a9ace0309f561c48d89248d97"
+    },
+    {
+      "path": "frontend/src/slices/authSlice.js",
+      "source": "frontend/src/slices/authSlice.js",
+      "bytes": 2064,
+      "sha256": "c3f9c904a248d17d8fd5ca8185290c6829d236a0f18a63f5aa7dd4e59c961c70"
+    },
+    {
+      "path": "frontend/src/slices/pointSlice.js",
+      "source": "frontend/src/slices/pointSlice.js",
+      "bytes": 2313,
+      "sha256": "14a56e1b5fa5f408f9c60f06827ff5414e81f8729346cf41f4650922912c9d3c"
+    },
+    {
+      "path": "frontend/src/slices/store/index.js",
+      "source": "frontend/src/slices/store/index.js",
+      "bytes": 263,
+      "sha256": "aa7be55511196b528d2a4d26972dce1057975ecf1f3a647162c0e6d541925c36"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 60756,
+      "sha256": "91a239400bb638f36a1795d8fdf7939d532cdc7d794d1119b7261aac158b1e60"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 236,
+      "sha256": "c41e0310cdea6dfd5a5e77a7f87ae2514bdda7051cf0108587a2e41fadad3a0b"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8070,
+      "sha256": "f96a757581fe5292465e3f3393380bd11fd8086d450b92e7c693da6513f583fe"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2763,
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 66,
+      "sha256": "a75fbbf52c96549cec5bffcdbe84f13d46123b4067eec4e0157273065a379a22"
+    },
+    {
+      "path": "src/main/java/org/example/Main.java",
+      "source": "src/main/java/org/example/Main.java",
+      "bytes": 138,
+      "sha256": "22f23becbfe74090f6a9027a3f4b8195c80b402d3a109b6907f354e57d18c879"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "backend/.git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "backend/.gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "backend/build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "backend/HELP.md",
+      "reason": "generated framework helper"
+    },
+    {
+      "path": "backend/src/main/resources/application.properties",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/logging.properties",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "backend/src/main/resources/static/asset-manifest.json",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/index.html",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/manifest.json",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/static/css/main.7e6f6db0.css",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/static/css/main.7e6f6db0.css.map",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/static/js/main.ae850128.js",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/static/js/main.ae850128.js.LICENSE.txt",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "backend/src/main/resources/static/static/js/main.ae850128.js.map",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "docker-compose.yml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "frontend/.gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "frontend/build",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "frontend/node_modules",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "frontend.iml",
+      "reason": "private/deployment configuration or generated frontend bundle"
+    },
+    {
+      "path": "ojdbc8.jar",
+      "reason": "outside explicit source/document whitelist"
+    },
+    {
+      "path": "wildfly-37.0.1.Final",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

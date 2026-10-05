@@ -1,4 +1,3 @@
--- schema 改名后重新绑定函数内的限定名称；历史迁移 V1/V2 保持不变。
 -- All five operations execute in PostgreSQL, not Java or JavaScript.
 CREATE OR REPLACE FUNCTION "${flyway:defaultSchema}".average_elevation() RETURNS numeric LANGUAGE sql STABLE AS $$
  SELECT avg(meters_above_sea_level) FROM "${flyway:defaultSchema}".city
@@ -42,7 +41,6 @@ END $$;
 CREATE OR REPLACE FUNCTION "${flyway:defaultSchema}".bump_revision()
 RETURNS trigger LANGUAGE plpgsql AS $$
 BEGIN
-    -- 所有应用实例共享同一个已提交版本号，用于界面同步。
     UPDATE "${flyway:defaultSchema}".revision SET value = value + 1 WHERE id = 1;
     RETURN NULL;
 END $$;

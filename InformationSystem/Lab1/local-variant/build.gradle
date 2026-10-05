@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'edu.lab'
+version = '1.0.0'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework:spring-orm'
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+    implementation 'org.eclipse.persistence:eclipselink:4.0.4'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-parameters')
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+bootJar {
+    archiveFileName = 'city-lab1.jar'
+}
+
+jar {
+    enabled = false
+}
+// 普通测试不连接数据库；集成测试单独运行，防止误清理日常业务数据。
+test {
+    exclude '**/PostgresIntegrationTest.class'
+}
+
+tasks.register('integrationTest', Test) {
+    description = 'HTTP/ORM/SQL tests; requires TEST_DB_URL pointing to a disposable PostgreSQL database.'
+    group = 'verification'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    include '**/PostgresIntegrationTest.class'
+    doFirst {
+        if (!System.getenv('TEST_DB_URL')) {
+            throw new GradleException('Set TEST_DB_URL to a disposable PostgreSQL database.')
+        }
+    }
+}

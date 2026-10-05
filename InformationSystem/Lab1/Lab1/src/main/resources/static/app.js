@@ -20,13 +20,11 @@ let lastOperation = null;
 let lastPollingError = null;
 let filter = { column: '', value: '', sort: 'id', desc: 'false' };
 
-// 动态文本先转义 HTML 特殊字符，再放入页面，避免用户输入被当作标签执行。
 function esc(value) {
     const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
     return String(value ?? '—').replace(/[&<>"']/g, (character) => entities[character]);
 }
 
-// 统一发送 JSON 请求，并附带当前会话的 CSRF 令牌；失败交给调用处显示错误弹窗。
 async function api(path, options = {}) {
     const response = await fetch('/api' + path, {
         ...options,

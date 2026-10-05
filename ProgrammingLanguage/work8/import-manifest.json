@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "sourceGroup": "prolang-work8",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": "class8.csproj",
+      "source": "class8.csproj",
+      "bytes": 252,
+      "sha256": "8d5bb1bf8634e3fab11f1f50d464ec6ce923222265ffb946f26faa9528008b2c"
+    },
+    {
+      "path": "class8.sln",
+      "source": "class8.sln",
+      "bytes": 1124,
+      "sha256": "2053f92f01a345c4250d02a71bfb552bcd5174bd85ec61e3c6d83e9b7a44848c"
+    },
+    {
+      "path": "Core/BattleContext.cs",
+      "source": "Core/BattleContext.cs",
+      "bytes": 413,
+      "sha256": "a7e74f7ab22375275eaf3f8aa20eab41fdc11e6f0d0b160ebfd9ea2238f2b35f"
+    },
+    {
+      "path": "Core/CombatSkillAttribute.cs",
+      "source": "Core/CombatSkillAttribute.cs",
+      "bytes": 579,
+      "sha256": "9f686ce1874244245fc907a0ccab8bc556324c6bb86ee50b0963fef981c84bc0"
+    },
+    {
+      "path": "Core/GameAttribute.cs",
+      "source": "Core/GameAttribute.cs",
+      "bytes": 303,
+      "sha256": "77dbd761e328a2a15a60a58e781b681b12bad04f0f89c7b935ed1d12c27a9f2f"
+    },
+    {
+      "path": "Core/SkillEngine.cs",
+      "source": "Core/SkillEngine.cs",
+      "bytes": 3730,
+      "sha256": "e188395ce197507d10873834d5cf9ddd8e9705bbf113acb15d9529bf71760b76"
+    },
+    {
+      "path": "Core/TriggerType.cs",
+      "source": "Core/TriggerType.cs",
+      "bytes": 230,
+      "sha256": "86030af40829bb86e6e815de49cdb76059ce6e2ce3422c103877bdbab75cec67"
+    },
+    {
+      "path": "Core/UnitStats.cs",
+      "source": "Core/UnitStats.cs",
+      "bytes": 213,
+      "sha256": "1441ec9db4f14bcf265a17628524a708888d1000b9a0c62beafc53be074e62c0"
+    },
+    {
+      "path": "Mechanics/VampireMechanics.cs",
+      "source": "Mechanics/VampireMechanics.cs",
+      "bytes": 1095,
+      "sha256": "858b081c1215efc821d0a93a83b6fef2190392eb7365e908e3082104ee02ed8d"
+    },
+    {
+      "path": "Performance/EmitDemo.cs",
+      "source": "Performance/EmitDemo.cs",
+      "bytes": 900,
+      "sha256": "ae8993e8c4031c253217cc18d3ce1893b8e88d38e74db457f8c0f33eede01d87"
+    },
+    {
+      "path": "Program.cs",
+      "source": "Program.cs",
+      "bytes": 653,
+      "sha256": "8003f24abce0eb730df5f60e62f834c9af8504fe61319ec308c14723cdf04ae5"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".vs",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "bin",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "obj",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

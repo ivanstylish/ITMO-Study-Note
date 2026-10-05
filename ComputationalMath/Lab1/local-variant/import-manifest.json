@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "sourceGroup": "math-lab1",
+  "status": "source snapshot; not built, run, or accepted",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": ".gitignore",
+      "bytes": 539,
+      "sha256": "a93bdfcd360457eda08493f400c60417db368a7807cd01109793650129610ced"
+    },
+    {
+      "path": "build.gradle",
+      "source": "build.gradle",
+      "bytes": 297,
+      "sha256": "d569e5841ceae0cd98044900420764b3317219c628aa2c93af3734b84645df93"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 60756,
+      "sha256": "91a239400bb638f36a1795d8fdf7939d532cdc7d794d1119b7261aac158b1e60"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 236,
+      "sha256": "ad10253c90e3c01a4ca91da6b989c40d173c923f101e4012270808a72efbf961"
+    },
+    {
+      "path": "gradlew",
+      "source": "gradlew",
+      "bytes": 8070,
+      "sha256": "f96a757581fe5292465e3f3393380bd11fd8086d450b92e7c693da6513f583fe"
+    },
+    {
+      "path": "gradlew.bat",
+      "source": "gradlew.bat",
+      "bytes": 2763,
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "settings.gradle",
+      "source": "settings.gradle",
+      "bytes": 29,
+      "sha256": "d4d1d6d1891c95abb434481acdb8a3e378e353583c31ab5deefbdc0aa9d76ae7"
+    },
+    {
+      "path": "src/main/java/org/example/Data.java",
+      "source": "src/main/java/org/example/Data.java",
+      "bytes": 5105,
+      "sha256": "01ff6c82981c30650ad0d8f43a12c986478e98db32848cda7bb7449373407396"
+    },
+    {
+      "path": "src/main/java/org/example/FormulaUtils.java",
+      "source": "src/main/java/org/example/FormulaUtils.java",
+      "bytes": 3204,
+      "sha256": "f7205ea740be8aa3709d1be4c974868765a6e74ebd28510ef202a6066ab70d7c"
+    },
+    {
+      "path": "src/main/java/org/example/Main.java",
+      "source": "src/main/java/org/example/Main.java",
+      "bytes": 2568,
+      "sha256": "b1a57eefd38c3462e1daa7d04b973532359f96a0fedba85630809e69d526dace"
+    },
+    {
+      "path": "src/main/java/org/example/MatrixPrinter.java",
+      "source": "src/main/java/org/example/MatrixPrinter.java",
+      "bytes": 653,
+      "sha256": "e8cabfbfd7ba96e35cde487596e1348dd57417647b03575211cb63d5c4786603"
+    },
+    {
+      "path": "src/main/java/org/example/SimpleIteration.java",
+      "source": "src/main/java/org/example/SimpleIteration.java",
+      "bytes": 2705,
+      "sha256": "7df0de042eab5bfd16a610063d7f65eb9f9622455ee8495b89b00f7e5b27433a"
+    },
+    {
+      "path": "src/main/resources/test.txt",
+      "source": "src/main/resources/test.txt",
+      "bytes": 14,
+      "sha256": "060d7757708efade4744e89b0547e1e135f41ee515c209da2035c5973da11b0c"
+    },
+    {
+      "path": "src/main/resources/test2.txt",
+      "source": "src/main/resources/test2.txt",
+      "bytes": 14,
+      "sha256": "5d2b728f0acbf43b274b633702cc9cff642962d91c54bef28984e18cb83d249b"
+    },
+    {
+      "path": "src/main/resources/test3.txt",
+      "source": "src/main/resources/test3.txt",
+      "bytes": 241,
+      "sha256": "ae726ede24831301922ee6a3fed2398957cd51ea600cb579a04220cce1501fef"
+    },
+    {
+      "path": "src/main/resources/test4.txt",
+      "source": "src/main/resources/test4.txt",
+      "bytes": 823,
+      "sha256": "d992b40941aac8052b264cfeced571a7bcc191dc90c18556f062f55f83064a34"
+    },
+    {
+      "path": "src/main/resources/test5.txt",
+      "source": "src/main/resources/test5.txt",
+      "bytes": 262,
+      "sha256": "b829ee136d0732feddcce87d6292ac989e237891d95fc6da0801947851cf315f"
+    },
+    {
+      "path": "src/main/resources/test6.txt",
+      "source": "src/main/resources/test6.txt",
+      "bytes": 258,
+      "sha256": "fc0c055bd5a339eb6e5907844746ec0a8c4f39a41cd38d3809627a4684ec3121"
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".git",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".gradle",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": ".idea",
+      "reason": "dependency/build/private configuration directory"
+    },
+    {
+      "path": "build",
+      "reason": "dependency/build/private configuration directory"
+    }
+  ]
+}

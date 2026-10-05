@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CoordinateCheck" default="build" basedir=".">
+
+    <property file="build.properties"/>
+
+    <!-- ===== Classpath ===== -->
+    <path id="compile.classpath">
+        <fileset dir="${lib.compile}" includes="*.jar" erroronmissingdir="false"/>
+    </path>
+
+    <path id="test.classpath">
+        <pathelement location="${classes.dir}"/>
+        <path refid="compile.classpath"/>
+        <fileset dir="${lib.test}" includes="*.jar" erroronmissingdir="false"/>
+    </path>
+
+    <macrodef name="do-compile">
+        <attribute name="failonerror" default="true"/>
+        <sequential>
+            <mkdir dir="${classes.dir}"/>
+            <copy todir="${classes.dir}" failonerror="false">
+                <fileset dir="${resources.dir}" includes="**/*" erroronmissingdir="false"/>
+            </copy>
+            <property name="compile.failed" value="false"/>
+            <javac srcdir="${src.dir}" destdir="${classes.dir}"
+                   includeantruntime="false" encoding="UTF-8"
+                   debug="true" source="17" target="17"
+                   failonerror="@{failonerror}"
+                   errorProperty="compile.failed">
+                <classpath refid="compile.classpath"/>
+            </javac>
+        </sequential>
+    </macrodef>
+
+    <!-- ===== 1. compile ===== -->
+    <target name="compile" description="Компиляция исходных кодов проекта">
+        <echo message="[compile] ${src.dir} -> ${classes.dir}"/>
+        <do-compile failonerror="true"/>
+        <echo message="[compile] Компиляция завершена успешно."/>
+    </target>
+
+    <!-- ===== 2. build ===== -->
+    <target name="build" depends="compile" description="Компиляция и упаковка в JAR">
+        <echo message="[build] Упаковка в JAR: ${jar.file}"/>
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${jar.file}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Manifest-Version"       value="1.0"/>
+                <attribute name="Implementation-Title"   value="${project.name}"/>
+                <attribute name="Implementation-Version" value="${project.version}"/>
+                <attribute name="Implementation-Vendor"  value="${manifest.vendor}"/>
+                <attribute name="Main-Class"             value="${project.main.class}"/>
+            </manifest>
+            <fileset dir="${webapp.dir}" erroronmissingdir="false">
+                <include name="**/*.xhtml"/>
+                <include name="**/*.css"/>
+                <include name="**/*.js"/>
+                <include name="**/*.xml"/>
+            </fileset>
+        </jar>
+        <echo message="[build] Сборка завершена: ${jar.file}"/>
+        <antcall target="music"/>
+    </target>
+
+    <!-- ===== 3. clean ===== -->
+    <target name="clean" description="Удаление скомпилированных классов и временных файлов">
+        <echo message="[clean] Очистка директории сборки..."/>
+        <delete dir="${build.dir}"/>
+        <echo message="[clean] Очистка завершена."/>
+    </target>
+
+    <!-- ===== 4. test ===== -->
+    <target name="test" depends="build" description="Запуск JUnit-тестов проекта">
+        <echo message="[test] Запуск JUnit-тестов..."/>
+        <mkdir dir="${test.classes.dir}"/>
+        <mkdir dir="${test.reports.dir}"/>
+
+        <javac srcdir="${test.src.dir}" destdir="${test.classes.dir}"
+               includeantruntime="false" encoding="UTF-8"
+               source="17" target="17" failonerror="true">
+            <classpath refid="test.classpath"/>
+        </javac>
+
+        <java classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true" failonerror="false"
+              resultproperty="test.exit.code">
+            <classpath>
+                <path refid="test.classpath"/>
+                <pathelement location="${test.classes.dir}"/>
+                <pathelement location="${junit.jar}"/>
+            </classpath>
+            <arg value="--scan-classpath"/>
+            <arg value="--reports-dir=${test.reports.dir}"/>
+            <arg value="--details=tree"/>
+        </java>
+
+        <fail message="[test] Некоторые тесты не прошли. Отчёт: ${test.reports.dir}">
+            <condition>
+                <not><equals arg1="${test.exit.code}" arg2="0"/></not>
+            </condition>
+        </fail>
+        <echo message="[test] Все тесты прошли успешно."/>
+    </target>
+
+    <!-- ===== 5. music ===== -->
+    <target name="music" description="Воспроизведение музыки">
+        <echo message="[music] ${music.file}"/>
+        <exec executable="powershell" failonerror="false" spawn="true">
+            <arg value="(New-Object Media.SoundPlayer '${music.file}').PlaySync()"/>
+        </exec>
+    </target>
+
+    <!-- ===== Internal: silent compile ===== -->
+    <target name="compile-silent">
+        <do-compile failonerror="true"/>
+    </target>
+
+    <!-- ===== 6. history ===== -->
+    <target name="history" description="Откат на рабочую git-ревизию при ошибке компиляции">
+        <echo message="[history] Проверка компилируемости текущего кода..."/>
+
+        <do-compile failonerror="false"/>
+
+        <condition property="compile.ok">
+            <isfalse value="${compile.failed}"/>
+        </condition>
+
+        <antcall target="history-ok"/>
+        <antcall target="history-search"/>
+    </target>
+
+    <target name="history-ok" if="compile.ok">
+        <echo message="[history] Текущая ревизия компилируется успешно. Откат не нужен."/>
+    </target>
+
+    <target name="history-search" unless="compile.ok">
+        <echo message="[history] Текущий код не компилируется. Поиск рабочей ревизии..."/>
+        <exec executable="cmd" failonerror="false">
+            <arg value="/c"/>
+            <arg value="${basedir}\history.bat"/>
+        </exec>
+    </target>
+
+</project>

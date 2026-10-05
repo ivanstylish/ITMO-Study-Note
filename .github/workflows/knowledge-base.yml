@@ -1,0 +1,57 @@
+name: Knowledge base website
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'navigation/catalog.json'
+      - 'site/**'
+      - 'tools/**'
+      - 'package*.json'
+      - '.github/workflows/knowledge-base.yml'
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Publish the verified build to GitHub Pages'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Verify navigation and source links
+        run: npm run kb:check
+      - name: Verify imported source snapshots
+        run: node tools/import-local-labs.mjs --verify
+      - name: Build reading site
+        run: npm run docs:build
+        env:
+          DOCS_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .build/site
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
