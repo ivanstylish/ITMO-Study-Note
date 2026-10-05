@@ -47,7 +47,6 @@
 
 ## 阅读与维护
 
-在 VS Code 打开本文件后按 **Ctrl+Shift+V** 即可预览，GitHub 使用同一套相对链接。
 
 [阅读指南](navigation/reading.md) · [维护规则](navigation/maintenance.md) · [设计方向](navigation/design.md) · [可选网站](navigation/website.md)
 
