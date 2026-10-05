@@ -34,13 +34,14 @@ export default defineConfig({
     math: true,
     languageAlias: { assembly: 'asm', jsp: 'java', shell: 'sh' },
     lineNumbers: false,
-    config(md) { safeMarkdown(md, manifest, root); }
+    config(md) { safeMarkdown(md, manifest, { base: process.env.DOCS_BASE || '/' }); }
   },
   themeConfig: {
     siteTitle: 'ITMO 学习笔记',
     nav: [
       { text: '学期与课程', link: '/navigation/courses' },
       { text: '知识索引', link: '/knowledge/' },
+      { text: '复习脑图', link: '/knowledge/mindmap' },
       { text: '复习', link: '/study/revision' },
       { text: '答辩', link: '/study/defense' }
     ],
@@ -49,6 +50,8 @@ export default defineConfig({
         { text: '首页', link: '/' },
         { text: '课程总览', link: '/navigation/courses' },
         { text: '知识关联', link: '/knowledge/' },
+        { text: '复习脑图', link: '/knowledge/mindmap' },
+        { text: '资料反向关联', link: '/knowledge/backlinks' },
         { text: '考试复习', link: '/study/revision' },
         { text: '实验答辩', link: '/study/defense' }
       ] },

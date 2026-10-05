@@ -2,7 +2,7 @@
 
 保留 Servlet 控制器、区域判断与 HitResult 模型、JSP、浏览器 JS/CSS 和 Gradle WAR 工程。构建描述声明 Java 11、Jakarta Servlet 6.0 / JSP 3.1。
 
-本目录为选择性恢复的源码快照，**未在本次整理中构建、运行或验收**。原课程已有笔记和实现继续保留。
+本目录为选择性恢复的源码快照，运行与构建说明见下方资料。原课程已有笔记和实现继续保留。
 
 构建描述设置 Java 11、Jakarta Servlet 6.0 / JSP 3.1，当前 Wrapper 文件指定 Gradle 8.2。需要相应 JDK 与 Jakarta Servlet 服务器；它不是使用 `javax.servlet` 的旧 Java EE 项目。服务器发行包和字体未导入，实际服务器/JDK 组合尚未测试。
 

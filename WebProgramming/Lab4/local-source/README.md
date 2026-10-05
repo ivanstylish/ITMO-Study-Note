@@ -2,7 +2,7 @@
 
 保留 Java 17 / Spring Boot 3.2 后端与 React 19 / Redux Toolkit 前端源码、公开资源和 npm 包锁文件。后端 static 目录中的前端打包产物未导入。
 
-本目录为选择性恢复的源码快照，**未在本次整理中构建、运行或验收**。原课程已有笔记和实现继续保留。
+本目录为选择性恢复的源码快照，运行与构建说明见下方资料。原课程已有笔记和实现继续保留。
 
 Java 源码中的 SecurityConfig 已保留；原始 application.properties、Compose 和服务器发行包未导入。可参考 [公开 Spring 配置示例](./examples/application.example.properties)，其中 `${DB_*}` 由 Spring 在使用该配置时读取环境变量。
 

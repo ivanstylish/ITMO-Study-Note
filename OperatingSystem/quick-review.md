@@ -1,6 +1,6 @@
 # 操作系统：15 分钟复习 / Быстрое повторение
 
-[课程入口](index.md) · [完整答辩](Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md) · [跨课程知识](../knowledge/index.md)
+[课程入口](readme.md) · [完整答辩](Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md) · [跨课程知识](../knowledge/index.md)
 
 本页只提炼仓库已有 Intro Exp 实测资料，数据和限制均以[最终学习与答辩](Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md)为准。
 
@@ -53,5 +53,5 @@ $$
 
 闭卷追问：Write 为什么包含读取？页缓存与 CPU 缓存有什么区别？为什么 n=30？mmap 为什么仍受操作系统管理？本实验能否证明一般情况下 mmap 总是更快？
 
-[返回课程入口](index.md) · [继续完整答辩](Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md)
+[返回课程入口](readme.md) · [继续完整答辩](Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md)
 

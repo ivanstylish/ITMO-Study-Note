@@ -1,8 +1,19 @@
-<!-- kb:navigation:start -->
-[课程首页 · 复习与答辩](index.md)
-<!-- kb:navigation:end -->
-
 # [主页](../README.md)/Aka 计算机架构
+
+<!-- kb:course-overview:start -->
+
+计算机体系结构 · Архитектура компьютера
+
+**课程状态：✓ 已通过**
+
+[课程总览](../navigation/courses.md) · [第 4 学期](../academic/semester-04.md) · [知识索引](../knowledge/index.md)
+
+[理论 · Теория](#theory) · [实验 / 作业 · Практика](#labs) · [答辩 · Защита](#defense) · [考试 · Экзамен](#exam) · [资料 / 速查 · Материалы](#resources)
+
+Lab 1–4 按原编号整理，演示、论文、ISA 程序与实验要求分别归档。
+
+<!-- kb:course-overview:end -->
+
 - [Lab1: Семинар研讨会](./Lab1/readme.md)
   - [Description报告描述](./Lab1/description.md)
   - []
@@ -14,3 +25,39 @@
 - [Lab3: Эксперименты架构实验](./Lab3/readme.md)
    - [variant](./Lab3/variant.md)
    - [task1](./Lab3/task1/task.s)
+
+<!-- kb:course-resources:start -->
+
+## 理论 · Теория <a id="theory"></a>
+
+- [Wrench 架构资料](Lab3/description.md)
+
+## 实验 / 作业 · Практика <a id="labs"></a>
+
+| 实验 / 作业资料 | 状态 |
+|---|---|
+| [Lab 4：实验要求](Lab4/lab4.md) | ✓ 已通过 |
+
+## 答辩 · Защита <a id="defense"></a>
+
+- [ARM MTE：中俄讲稿](Lab1/word.md)
+- [acc32 / 字节序](Lab3/task1/acc32.md)
+- [f32a / 字符串](Lab3/task2/f32a.md)
+- [m68k / RLE](Lab3/task3/m68k.md)
+- [risc-iv / 指令](Lab3/task4/risc-iv.md)
+
+## 考试 · Экзамен <a id="exam"></a>
+
+- [15 域完整考试答案（部分图缺失）](Exam/CSA_2026_%D0%AD%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B.md)
+- [口头考试答案](Exam/CSA_2026_%D0%AD%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B_%D1%83%D1%81%D1%82%D0%BD%D0%BE.md)
+
+## 资料 / 速查 · Материалы <a id="resources"></a>
+
+- [考前快速复习](quick-review.md)
+
+## 复习与关联
+
+- [实验答辩入口](../study/defense.md) · [考前复习入口](../study/revision.md)
+- 关联课程：[专业活动基础](../OPD/readme.md) · [操作系统](../OperatingSystem/readme.md) · [编程语言](../ProgrammingLanguage/readme.md)
+
+<!-- kb:course-resources:end -->

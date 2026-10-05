@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sourceGroup": "web-lab2",
-  "status": "source snapshot; not built, run, or accepted",
+  "status": "source snapshot",
   "files": [
     {
       "path": ".gitignore",

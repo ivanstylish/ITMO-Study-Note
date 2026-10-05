@@ -2,7 +2,7 @@
 
 真实 .NET 8 控制台项目：扫描程序集中的自定义 Attribute、按触发器和优先级注册技能、通过 MethodInfo.Invoke 执行；Performance/EmitDemo.cs 另含 DynamicMethod / IL 生成示例，但当前 Main 没有调用它。
 
-本目录为选择性恢复的源码快照，**未在本次整理中构建、运行或验收**。原课程已有笔记和实现继续保留。
+本目录为选择性恢复的源码快照，运行与构建说明见下方资料。原课程已有笔记和实现继续保留。
 
 需要 .NET 8 SDK。可在此目录运行 dotnet run --project class8.csproj；本次没有运行或进行性能测试。
 

@@ -1,6 +1,6 @@
 # 人工智能回归速查 / Регрессия
 
-[课程入口](index.md) · [线性回归详细笔记](Labs/lab1/Lab1_AI_Linear_Regression.md) · [逻辑回归双语答辩](Labs/lab2/Защита_RU_ZH.md)
+[课程入口](readme.md) · [线性回归详细笔记](Labs/lab1/Lab1_AI_Linear_Regression.md) · [逻辑回归双语答辩](Labs/lab2/Защита_RU_ZH.md)
 
 用 15 分钟比较两个已有实验。逻辑回归文件夹保留 lab2，正式任务说明称实验 6，参见[原说明](Labs/lab2/README.md)。
 
@@ -53,5 +53,5 @@ $$
 
 闭卷回答：为什么要全 1 列？标准化如何影响梯度下降？为什么不在测试集选学习率？准确率和 F1 为什么可能给出不同印象？牛顿法比梯度下降多用什么信息？
 
-[返回课程入口](index.md) · [去完整答辩入口](../study/defense.md)
+[返回课程入口](readme.md) · [去完整答辩入口](../study/defense.md)
 

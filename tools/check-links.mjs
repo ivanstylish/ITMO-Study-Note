@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import MarkdownIt from 'markdown-it';
+import { overviewStart, overviewEnd, resourcesStart, resourcesEnd } from './course-readme.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'navigation/catalog.json'), 'utf8'));
@@ -29,17 +30,18 @@ if (fs.existsSync(path.join(root, 'ProgrammingLanguage/local-variants'))) {
   for (const d of fs.readdirSync(path.join(root, 'ProgrammingLanguage/local-variants'))) snapshots.push('ProgrammingLanguage/local-variants/' + d);
 }
 for (const d of snapshots) if (fs.existsSync(path.join(root, d, 'README.md'))) files.add(d + '/README.md');
-// Check only our inserted navigation block, leaving legacy body links outside
-// this maintenance scope. Original course readmes remain the familiar entry.
-const bridgeSources = new Map();
+// Check the managed navigation and resource blocks in each course's sole README.
+// Historical body links retain their wording and remain outside this scope.
+const courseSources = new Map();
 for (const course of catalog.courses) {
-  const dir = course.directory === 'Math' || course.directory.startsWith('Math/') ? 'Math' : course.directory;
-  const name = fs.readdirSync(path.join(root, dir)).find(n => n.toLowerCase() === 'readme.md');
-  if (!name) continue;
-  const file = path.posix.join(dir, name);
+  const file = course.dashboard;
+  if (!fs.existsSync(path.join(root, file))) continue;
   const source = fs.readFileSync(path.join(root, file), 'utf8');
-  const match = source.match(/<!-- kb:navigation:start -->([\s\S]*?)<!-- kb:navigation:end -->/);
-  if (match) { files.add(file); bridgeSources.set(file, match[1]); }
+  const blocks = [[overviewStart, overviewEnd], [resourcesStart, resourcesEnd]].map(([start, end]) => {
+    if (!source.includes(start) || !source.includes(end)) throw new Error(`课程 README 缺少导航块：${file}`);
+    return source.slice(source.indexOf(start) + start.length, source.indexOf(end));
+  });
+  courseSources.set(file, blocks.join('\n\n'));
 }
 const errors = [];
 let links = 0;
@@ -87,7 +89,7 @@ function validate(from, href) {
 for (const file of files) {
   const absolute = path.join(root, file);
   if (!fs.existsSync(absolute)) { errors.push(`维护页面不存在：${file}`); continue; }
-  const source = bridgeSources.get(file) ?? fs.readFileSync(absolute, 'utf8');
+  const source = courseSources.get(file) ?? fs.readFileSync(absolute, 'utf8');
   for (const token of parser.parse(source, {})) for (const inline of token.children || []) {
     if (inline.type === 'link_open') validate(file, inline.attrGet('href'));
     if (inline.type === 'image') validate(file, inline.attrGet('src'));

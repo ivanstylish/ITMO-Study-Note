@@ -2,7 +2,7 @@
 
 [主页](../README.md) · [答辩入口](../study/defense.md) · [复习入口](../study/revision.md)
 
-从一个概念找到它的理论说明、实验代码和口述材料。下表关联的是已有资料；阅读顺序是学习建议，不能作为课程完成或实验通过的记录。
+从一个概念找到理论说明、实验代码和口述材料。可用[复习脑图](mindmap.md)展开学习方向，用[资料反向关联](backlinks.md)回到引用这份笔记的页面。
 
 ## 用概念查资料
 
@@ -13,7 +13,7 @@
 | 标准差、置信区间 / СКО, доверительный интервал | 数理统计 → 建模 → 操作系统测量 | [建模实验一](../Modeling/lab1/实验一学习笔记_中俄双语_变体115.md) → [OS 实测答辩](../OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md) | 个体离散程度、均值标准误和系统误差有何区别？ |
 | 残差与模型评价 / Невязка, оценка модели | 计算数学 → 数理统计 → 人工智能 | [SLAE 残差与误差](../ComputationalMath/cheatsheet.md) → [线性回归指标](../AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md) | 残差小能否直接证明解误差小？RMSE 与 R² 如何解释？ |
 | 数据预处理与泄漏 / Подготовка данных, утечка | 人工智能 → 建模与统计 | [逻辑回归双语答辩](../AISystem/Labs/lab2/Защита_RU_ZH.md) → [实际预处理实现](../AISystem/Labs/lab2/logistic_regression.py) | 填补和标准化参数应由哪部分数据计算？ |
-| 状态、转移与稳态 / Состояние, стационарное распределение | 概率论 → 建模 | [概率论课件](../ProbabilityTheory/index.md) → [排队系统答辩](../Modeling/lab2/УИР2_defense.md) → [模型复核](../Modeling/lab2/УИР2_复核说明.md) | 超指数服务为什么需要相位状态？拒绝事件是否改变状态？ |
+| 状态、转移与稳态 / Состояние, стационарное распределение | 概率论 → 建模 | [概率论课件](../ProbabilityTheory/readme.md) → [排队系统答辩](../Modeling/lab2/УИР2_defense.md) → [模型复核](../Modeling/lab2/УИР2_复核说明.md) | 超指数服务为什么需要相位状态？拒绝事件是否改变状态？ |
 | 页缓存、CPU 缓存、虚拟内存 / Файловый кеш, кеш CPU, виртуальная память | 计算机体系结构 → 操作系统 | [体系结构速查](../ComputerArchitecture/quick-review.md) → [OS 速查](../OperatingSystem/quick-review.md) → [mmap 源码](../OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/src/graph_traverse_mmap.c) | mmap、MMIO 与 CPU 缓存是同一概念吗？ |
 | 指令、寻址与调用 / Инструкция, адресация, вызов | OPD → 计算机体系结构 | [基础指令知识](../OPD/Part1.md) → [Wrench 实验说明](../ComputerArchitecture/Lab3/readme.md) → [RISC-IV 指令解释](../ComputerArchitecture/Lab3/task4/expla_instr.md) | 从源码到指令执行，应跟踪哪些寄存器和内存变化？ |
 | HTTP、会话与 MVC / HTTP, сессия, MVC | Web → 信息系统 | [Servlet 与 JSP](../WebProgramming/Ans/answer2.md) → [信息系统双语答辩](../InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md) → [ApiController](../InformationSystem/Lab1/Lab1/src/main/java/edu/lab/city/web/ApiController.java) | 一次请求如何经过 Controller、Service 与 Repository？ |

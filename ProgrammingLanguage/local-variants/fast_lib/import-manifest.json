@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sourceGroup": "prolang-native",
-  "status": "source snapshot; not built, run, or accepted",
+  "status": "source snapshot",
   "files": [
     {
       "path": "fast_lib.c",

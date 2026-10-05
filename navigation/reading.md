@@ -2,13 +2,15 @@
 
 [首页](../README.md) · [按学期](index.md) · [按课程](courses.md) · [考试复习](../study/revision.md) · [实验答辩](../study/defense.md)
 
-所有学习入口都是仓库内的 Markdown 文件。日常查阅不需要启动网站、运行 npm 或打开任何辅助应用；直接打开仓库的 `README.md` 就能进入学期、课程、知识点、速查和答辩。
+所有学习入口都是仓库内的 Markdown 文件。直接打开仓库的 `README.md` 就能进入学期、课程、知识点、速查和答辩；30 门课程各以一份课程 `readme.md` 为入口。
 
 ## VS Code：打开资料就能用
 
 1. 在 VS Code 打开平时使用的项目目录，再打开根 `README.md`。
 2. 用 `Ctrl+Shift+V` 打开内置 Markdown 预览，或用 `Ctrl+K` 然后按 `V` 在右侧预览。
-3. 点击表格中的课程或学习目标，再继续打开笔记、代码和报告。课程旧 `readme.md` 顶部也有新的导航入口。
+3. 点击表格中的课程或学习目标，进入对应课程 `readme.md`。新增导航与原有讲座分类、各学期实验记录放在同一页，再从这里打开笔记、代码和报告。
+
+课程与实验状态统一使用 **✓ 已通过 / ○ 待通过 / — 未标记**。第 1–4 学期的课程与实验均已通过，第 5 学期按当前记录维护。
 
 如果使用已安装的 **Markdown Preview Enhanced**，可从命令面板运行它的 **Open Preview to the Side**。保持一个目录入口，再从预览点击相对链接进入正文。PDF 可用已安装的 PDF 预览扩展查看。
 
@@ -35,13 +37,18 @@
 
 [知识图](../knowledge/index.md)使用 GitHub 可直接渲染的 Mermaid 代码块，见 [GitHub 官方说明](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)。公式、表格和代码块也保留在 Markdown 原文中。
 
+## 脑图与资料关联
+
+[复习脑图](../knowledge/mindmap.md)按五个学习方向组织课程，Markdown 大纲可直接点击。也可在文件管理器中双击 [mindmap.html](../knowledge/mindmap.html)，在浏览器里离线展开与缩放，无需启动网站。在网站上可展开节点、拖动画布和缩放，点击“适应画布”回到全图。
+
+[资料反向关联](../knowledge/backlinks.md)显示课程和笔记的引用来源；网站的笔记底部也提供反向关联入口。
+
 ## 维护资料
 
-编辑已有笔记可直接保存，不用重新生成入口。新增资料后，在 [catalog.json](catalog.json) 中增加真实文件路径，再运行下面两个轻量脚本；只需 Node.js，不需要安装网站依赖：
+编辑已有笔记、课程讲座分类或实验状态可直接保存。新增导航资料后，在 [catalog.json](catalog.json) 中增加真实文件路径，再运行下面的轻量脚本；只需 Node.js：
 
 ```sh
 node tools/generate-index.mjs
-node tools/update-course-links.mjs
 ```
 
-完整维护规则见 [维护说明](maintenance.md)。[网站](website.md)是额外阅读方式，可自行从终端运行，不影响 VS Code 与 GitHub 的日常阅读。
+脚本将课程导航合并进现有 `readme.md`，只管理 `kb:course-overview` 和 `kb:course-resources` 两组注释块；块外的手工正文可直接编辑。`kb:course-resources` 中的实验表允许只修改状态列，重新生成时按资料路径保留，原手工清单中同编号的状态记录优先。资料标签与链接通过 catalog 修改。完整规则见 [维护说明](maintenance.md)，组织与呈现的参考见 [项目设计方向](design.md)。

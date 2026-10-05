@@ -6,20 +6,18 @@
 
 2025–2026 学年 · 春季 · 大二。本页 9 门课程已有仓库资料。
 
-课程归属和考核类型依据本人提供的第 1–5 学期教务截图；截图中仓库未收录的学科不建页面。跨学期课程共用资料，入口数量不代表该学期完成量。
+按学期查看课程、实验与考试资料。第 1–4 学期的课程与实验均已通过；第 5 学期按当前记录维护。
 
-| 课程 | Русское название | 考核类型 | 实验 / 作业 | 考试资料 |
-|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/index.md) | Русский язык как иностранный | 考查 · Зачёт | [5 个入口](../RussianLanguage/index.md#labs) | [1 个入口](../RussianLanguage/index.md#exam) |
-| [物理](../Physics/index.md) | Физика | 考试 · Экзамен | [10 个入口](../Physics/index.md#labs) | — |
-| [算法与数据结构](../AADS/index.md) | Алгоритмы и структуры данных | 考试 · Экзамен | [4 个入口](../AADS/index.md#labs) | — |
-| [计算机体系结构](../ComputerArchitecture/index.md) | Архитектура компьютера | 考试 · Экзамен | [4 个入口](../ComputerArchitecture/index.md#labs) | [2 个入口](../ComputerArchitecture/index.md#exam) |
-| [计算数学](../ComputationalMath/index.md) | Вычислительная математика | 考查 · Зачёт | [6 个入口](../ComputationalMath/index.md#labs) | [1 个入口](../ComputationalMath/index.md#exam) |
-| [数理统计](../MathematicalStatistics/index.md) | Математическая статистика | 考试 · Экзамен | [3 个入口](../MathematicalStatistics/index.md#labs) | — |
-| [最优化方法](../OptiMethod/index.md) | Методы оптимизации | 考查 · Зачёт | [4 个入口](../OptiMethod/index.md#labs) | — |
-| [软件工程基础](../OPI/index.md) | Основы программной инженерии | 考试 · Экзамен | [4 个入口](../OPI/index.md#labs) | [3 个入口](../OPI/index.md#exam) |
-| [公众演讲与展示](../PublicPresentation/index.md) | Техники публичных выступлений и презентаций | 考查 · Зачёт | [3 个入口](../PublicPresentation/index.md#labs) | — |
+| 课程 | Русское название | 考核类型 | 状态 | 实验 / 作业 | 考试资料 |
+|---|---|---|---|---|---|
+| [俄语（外语）](../RussianLanguage/readme.md) | Русский язык как иностранный | 考查 · Зачёт | ✓ 已通过 | [5 个入口](../RussianLanguage/readme.md#labs) | [1 个入口](../RussianLanguage/readme.md#exam) |
+| [物理](../Physics/readme.md) | Физика | 考试 · Экзамен | ✓ 已通过 | [10 个入口](../Physics/readme.md#labs) | — |
+| [算法与数据结构](../AADS/readme.md) | Алгоритмы и структуры данных | 考试 · Экзамен | ✓ 已通过 | [4 个入口](../AADS/readme.md#labs) | — |
+| [计算机体系结构](../ComputerArchitecture/readme.md) | Архитектура компьютера | 考试 · Экзамен | ✓ 已通过 | [4 个入口](../ComputerArchitecture/readme.md#labs) | [2 个入口](../ComputerArchitecture/readme.md#exam) |
+| [计算数学](../ComputationalMath/readme.md) | Вычислительная математика | 考查 · Зачёт | ✓ 已通过 | [6 个入口](../ComputationalMath/readme.md#labs) | [1 个入口](../ComputationalMath/readme.md#exam) |
+| [数理统计](../MathematicalStatistics/readme.md) | Математическая статистика | 考试 · Экзамен | ✓ 已通过 | [3 个入口](../MathematicalStatistics/readme.md#labs) | — |
+| [最优化方法](../OptiMethod/readme.md) | Методы оптимизации | 考查 · Зачёт | ✓ 已通过 | [4 个入口](../OptiMethod/readme.md#labs) | — |
+| [软件工程基础](../OPI/readme.md) | Основы программной инженерии | 考试 · Экзамен | ✓ 已通过 | [4 个入口](../OPI/readme.md#labs) | [3 个入口](../OPI/readme.md#exam) |
+| [公众演讲与展示](../PublicPresentation/readme.md) | Техники публичных выступлений и презентаций | 考查 · Зачёт | ✓ 已通过 | [3 个入口](../PublicPresentation/readme.md#labs) | — |
 
 [本学期考前复习入口](../study/revision.md) · [实验答辩入口](../study/defense.md)
-
-未保存成绩、考试日期或教务截图；不据此推断课程验收结果。

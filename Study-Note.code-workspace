@@ -1,7 +1,14 @@
 {
-  "folders": [{ "name": "ITMO 学习笔记", "path": "." }],
+  "folders": [
+    {
+      "name": "ITMO 学习笔记",
+      "path": "."
+    }
+  ],
   "settings": {
-    "[markdown]": { "editor.wordWrap": "on" },
+    "[markdown]": {
+      "editor.wordWrap": "on"
+    },
     "markdown.preview.fontSize": 16,
     "markdown.preview.lineHeight": 1.7,
     "markdown.preview.scrollEditorWithPreview": true,
@@ -34,18 +41,12 @@
         "label": "知识库：生成学期与课程导航",
         "type": "process",
         "command": "node",
-        "args": ["tools/generate-index.mjs"],
-        "options": { "cwd": "${workspaceFolder}" },
-        "problemMatcher": []
-      },
-      {
-        "label": "知识库：更新原课程 README 入口",
-        "type": "process",
-        "command": "node",
-        "args": ["tools/update-course-links.mjs"],
-        "options": { "cwd": "${workspaceFolder}" },
-        "dependsOn": "知识库：生成学期与课程导航",
-        "dependsOrder": "sequence",
+        "args": [
+          "tools/generate-index.mjs"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
         "problemMatcher": []
       }
     ]

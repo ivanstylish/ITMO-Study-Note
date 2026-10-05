@@ -2,7 +2,7 @@
 
 [主页](../README.md) · [知识关联](../knowledge/index.md) · [复习入口](revision.md)
 
-按“任务 → 原理 → 代码 → 结果 → 限制”准备口述。这里记录资料入口与演示线索，不记录教师验收或成绩。
+按“任务 → 原理 → 代码 → 结果 → 限制”准备口述。实验状态见[实验索引](../navigation/labs.md)，讲解材料与实现可在下面对照阅读。
 
 ## 先找到本次实验
 
@@ -15,7 +15,7 @@
 | 建模实验二：变体 15/15/10 | [双语答辩](../Modeling/lab2/УИР2_defense.md)、[复核说明](../Modeling/lab2/УИР2_复核说明.md) | [lab2_variant15.py](../Modeling/lab2/lab2_variant15.py)、[WinMark 项目说明](../Modeling/lab2/Calculation_data/WinMark/README.md) | 公共 / 独立缓冲区；超指数相位；稳态方程和所采用的调度规则 |
 | 计算机体系结构：Wrench Lab3 | [实验要求](../ComputerArchitecture/Lab3/readme.md)、[问答](../ComputerArchitecture/Lab3/ans.md)、[速查](../ComputerArchitecture/quick-review.md) | [Acc32](../ComputerArchitecture/Lab3/task1/acc32.md)、[F32a](../ComputerArchitecture/Lab3/task2/f32a.md)、[M68k](../ComputerArchitecture/Lab3/task3/m68k.md)、[RISC-IV](../ComputerArchitecture/Lab3/task4/risc-iv.md) | ISA 与微架构；不同操作数组织；按对应模拟器说明解释指令 |
 | 软件工程 OPI Lab4：JMX | [报告](../OPI/Lab4/readme.md)、[问答](../OPI/Lab4/ans.md) | [PointsCounter](../OPI/Lab4/src/main/java/org/coordinate/mbean/PointsCounter.java)、[JMXRegistration](../OPI/Lab4/src/main/java/org/coordinate/mbean/JMXRegistration.java) | MBean 属性 / 操作 / 通知；监控与性能分析 |
-| 数据库 Lab1–4 | [课程实验目录](../Database/index.md)、[Lab3 问答](../Database/labs/lab3/questions.md)、[Lab4 问答](../Database/labs/lab4/questions.md) | [Lab1 SQL](../Database/labs/lab1/lab1.sql)、[Lab2 SQL](../Database/labs/lab2/lab2.sql)、[函数](../Database/labs/lab3/function.sql)、[Lab4 SQL](../Database/labs/lab4/lab4.sql) | 主键 / 外键；规范化；EXPLAIN 估计与 EXPLAIN ANALYZE 实测 |
+| 数据库 Lab1–4 | [课程实验目录](../Database/readme.md)、[Lab3 问答](../Database/labs/lab3/questions.md)、[Lab4 问答](../Database/labs/lab4/questions.md) | [Lab1 SQL](../Database/labs/lab1/lab1.sql)、[Lab2 SQL](../Database/labs/lab2/lab2.sql)、[函数](../Database/labs/lab3/function.sql)、[Lab4 SQL](../Database/labs/lab4/lab4.sql) | 主键 / 外键；规范化；EXPLAIN 估计与 EXPLAIN ANALYZE 实测 |
 | Web：理论与实验解释 | [HTTP/前端](../WebProgramming/Ans/answer1.md)、[Servlet/JSP](../WebProgramming/Ans/answer2.md)、[JSF/JPA](../WebProgramming/Ans/answer3.md)、[Spring](../WebProgramming/Ans/answer4.md) | [Servlet 代码解读](../WebProgramming/Ans/code3.md)、[分层代码解读](../WebProgramming/Ans/code4.md) | 会话生命周期；MVC 各层；框架版本与实际实验对应 |
 | 信息系统 Lab1：City Registry | [中俄九题答案](../InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md) | [ApiController](../InformationSystem/Lab1/Lab1/src/main/java/edu/lab/city/web/ApiController.java) → [CityService](../InformationSystem/Lab1/Lab1/src/main/java/edu/lab/city/service/CityService.java) → [ObjectRepository](../InformationSystem/Lab1/Lab1/src/main/java/edu/lab/city/repository/ObjectRepository.java) | Spring / Spring Boot；JPA / EclipseLink；事务、验证与依赖注入 |
 | 图形学 Lab1 / Lab2 | [Lab1 中俄问答](../ComputerGraphicsAlgo/Lab1/defense_zh_ru.md)、[Lab2 模型与报告说明](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md) | [平面照度代码](../ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/lab1_illumination.py)、[球面亮度代码](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/lab2_sphere.py) | 物理量单位；两个余弦因子；绝对值与归一化；离散极值 |

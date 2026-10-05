@@ -42,9 +42,9 @@
         1
       ],
       "directory": "Informatics",
-      "dashboard": "Informatics/index.md",
+      "dashboard": "Informatics/readme.md",
       "kind": "专业课程",
-      "note": "讲义和 Lab 1–6 的代码/报告分开保存；实验要求不代表验收记录。",
+      "note": "讲义和 Lab 1–6 的代码、报告按原目录分类。",
       "assessments": {
         "1": "考试 · Экзамен"
       },
@@ -112,6 +112,10 @@
             "path": "Informatics/Information.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed"
       }
     },
     {
@@ -123,7 +127,7 @@
         2
       ],
       "directory": "History",
-      "dashboard": "History/index.md",
+      "dashboard": "History/readme.md",
       "kind": "专业课程",
       "note": "考试文件是问题清单；研究报告、演讲稿与答案应分别阅读。",
       "assessments": {
@@ -164,6 +168,11 @@
             "path": "History/exam/ans.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -175,7 +184,7 @@
         2
       ],
       "directory": "Math/LinearAlgebra",
-      "dashboard": "Math/LinearAlgebra/index.md",
+      "dashboard": "Math/LinearAlgebra/readme.md",
       "kind": "数学基础",
       "note": "第 1 学期笔记与第 2 学期复习资料分别保存；ans.md 是空文件，不作为复习入口。",
       "assessments": {
@@ -213,6 +222,11 @@
             "path": "Math/LinearAlgebra/Sem2"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -224,9 +238,9 @@
         2
       ],
       "directory": "Math",
-      "dashboard": "Math/analysis/index.md",
+      "dashboard": "Math/readme.md",
       "kind": "数学基础",
-      "note": "原笔记仍在 Math 根目录；这里仅增加课程入口，不搬迁正文。",
+      "note": "数学分析笔记保留在 Math 根目录；原数学分类与本课程导航在这份 README 中统一查阅。",
       "assessments": {
         "1": "考试 · Экзамен",
         "2": "考试 · Экзамен"
@@ -262,6 +276,11 @@
             "path": "Math/MathAnaly"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -273,7 +292,7 @@
         2
       ],
       "directory": "DiscreteMath",
-      "dashboard": "DiscreteMath/index.md",
+      "dashboard": "DiscreteMath/readme.md",
       "kind": "数学基础",
       "note": "教务第 1 学期名称为“基础”，第 2 学期为“离散数学”；共用现有资料入口。",
       "assessments": {
@@ -305,6 +324,11 @@
             "path": "DiscreteMath/SecSem/KP/FuzzyLogic.html"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -316,7 +340,7 @@
         2
       ],
       "directory": "OPD",
-      "dashboard": "OPD/index.md",
+      "dashboard": "OPD/readme.md",
       "kind": "专业课程",
       "note": "保留 БЭВМ、I/O、中断及 Lab 1–6 原路径；Part 2/4 只有标题，不作为独立理论入口。",
       "assessments": {
@@ -380,6 +404,11 @@
             "path": "OPD/rub/rub2.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -391,7 +420,7 @@
         2
       ],
       "directory": "Programming",
-      "dashboard": "Programming/index.md",
+      "dashboard": "Programming/readme.md",
       "kind": "专业课程",
       "note": "按原实验编号检索；Lab 3–4 共用说明，Lab 8 要求与现有客户端实现应分别核对。",
       "assessments": {
@@ -462,6 +491,11 @@
             "path": "Programming/Lab"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed"
       }
     },
     {
@@ -476,7 +510,7 @@
         5
       ],
       "directory": "RussianLanguage",
-      "dashboard": "RussianLanguage/index.md",
+      "dashboard": "RussianLanguage/readme.md",
       "kind": "语言课程",
       "note": "资料含预科及第二学年内容；不能由文件年份精确推断每份作业所属学期。",
       "assessments": {
@@ -499,23 +533,28 @@
         "labs": [
           {
             "label": "Homework 1",
-            "path": "RussianLanguage/Homework1.md"
+            "path": "RussianLanguage/Homework1.md",
+            "status": "passed"
           },
           {
             "label": "Homework 2",
-            "path": "RussianLanguage/Homework2.md"
+            "path": "RussianLanguage/Homework2.md",
+            "status": "passed"
           },
           {
             "label": "Homework 3",
-            "path": "RussianLanguage/Homework3.md"
+            "path": "RussianLanguage/Homework3.md",
+            "status": "passed"
           },
           {
             "label": "第二学年练习",
-            "path": "RussianLanguage/2year"
+            "path": "RussianLanguage/2year",
+            "status": "passed"
           },
           {
             "label": "演示：环太平洋",
-            "path": "RussianLanguage/ppt/Тихоокеанский рубеж.md"
+            "path": "RussianLanguage/ppt/Тихоокеанский рубеж.md",
+            "status": "passed"
           }
         ],
         "exam": [
@@ -530,6 +569,14 @@
             "path": "RussianLanguage/2year/MotivationLetter.md"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "1": "passed",
+        "2": "passed",
+        "3": "passed",
+        "4": "passed",
+        "5": "unmarked"
       }
     },
     {
@@ -540,7 +587,7 @@
         2
       ],
       "directory": "Database",
-      "dashboard": "Database/index.md",
+      "dashboard": "Database/readme.md",
       "kind": "专业课程",
       "note": "Lab 1–4 有说明、SQL 与答辩问题；考试文件保留原题和任务。",
       "assessments": {
@@ -646,6 +693,10 @@
             "path": "Database/labs/lab4/lab4.sql"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "2": "passed"
       }
     },
     {
@@ -656,7 +707,7 @@
         3
       ],
       "directory": "WebProgramming",
-      "dashboard": "WebProgramming/index.md",
+      "dashboard": "WebProgramming/readme.md",
       "kind": "专业课程",
       "note": "答辩与考试资料覆盖 HTTP、Servlet、JSP、JSF 和框架；历史启动笔记不纳入网站搜索。",
       "assessments": {
@@ -701,11 +752,11 @@
             "path": "WebProgramming/Lab2/README.md"
           },
           {
-            "label": "Lab 3：补回 JSF / JPA / JMX 源码",
+            "label": "Lab 3：JSF / JPA / JMX 源码",
             "path": "WebProgramming/Lab3/local-source/README.md"
           },
           {
-            "label": "Lab 4：补回 Spring Boot / React 源码",
+            "label": "Lab 4：Spring Boot / React 源码",
             "path": "WebProgramming/Lab4/local-source/README.md"
           }
         ],
@@ -751,6 +802,10 @@
             "path": "WebProgramming/Lab3/opi-variant/README.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed"
       }
     },
     {
@@ -761,7 +816,7 @@
         3
       ],
       "directory": "Math/ExtraMath",
-      "dashboard": "Math/ExtraMath/index.md",
+      "dashboard": "Math/ExtraMath/readme.md",
       "kind": "数学基础",
       "note": "现有双语定义整理与 PDF；不另建空实验或考试答案。",
       "assessments": {
@@ -785,6 +840,10 @@
             "path": "Math/ExtraMath/ans.pdf"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed"
       }
     },
     {
@@ -795,7 +854,7 @@
         3
       ],
       "directory": "ProbabilityTheory",
-      "dashboard": "ProbabilityTheory/index.md",
+      "dashboard": "ProbabilityTheory/readme.md",
       "kind": "数学基础",
       "note": "以 PDF 讲义、控制作业与实际 Python 实践为主。",
       "assessments": {
@@ -835,6 +894,10 @@
             "path": "ProbabilityTheory/Таблицы.pdf"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed"
       }
     },
     {
@@ -845,7 +908,7 @@
         3
       ],
       "directory": "ComplexVariableTheory(ТФКП)",
-      "dashboard": "ComplexVariableTheory(ТФКП)/index.md",
+      "dashboard": "ComplexVariableTheory(ТФКП)/readme.md",
       "kind": "数学基础",
       "note": "现有实验包含分形计算和共形映射报告。",
       "assessments": {
@@ -866,6 +929,10 @@
             "path": "ComplexVariableTheory(ТФКП)/Lab2/lab2.pdf"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed"
       }
     },
     {
@@ -877,7 +944,7 @@
         4
       ],
       "directory": "Physics",
-      "dashboard": "Physics/index.md",
+      "dashboard": "Physics/readme.md",
       "kind": "自然科学",
       "note": "第 3 学期对应力学（1.xx），第 4 学期对应电磁学与振荡（3.xx）；实验原编号保留。",
       "assessments": {
@@ -955,6 +1022,11 @@
             "path": "Physics/Labworks/lab3.11/lab3.11.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed",
+        "4": "passed"
       }
     },
     {
@@ -965,9 +1037,9 @@
         3
       ],
       "directory": "ProgrammingLanguage",
-      "dashboard": "ProgrammingLanguage/index.md",
+      "dashboard": "ProgrammingLanguage/readme.md",
       "kind": "专业课程",
-      "note": "C、C#、Python 与跨语言调用保留 work 编号；源码存在不等于每项实验均已通过。",
+      "note": "C、C#、Python 与跨语言调用保留原 work 编号。",
       "assessments": {
         "3": "考试 · Экзамен"
       },
@@ -1028,6 +1100,10 @@
             "path": "ProgrammingLanguage/local-variants"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "3": "passed"
       }
     },
     {
@@ -1038,7 +1114,7 @@
         4
       ],
       "directory": "AADS",
-      "dashboard": "AADS/index.md",
+      "dashboard": "AADS/readme.md",
       "kind": "专业课程",
       "note": "ABCD / EFGH 保存 part 1–8 C++ 题目；目录中的二进制不代表新的实验。",
       "assessments": {
@@ -1074,6 +1150,10 @@
             "path": "AADS/local-lab1/README.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1084,9 +1164,9 @@
         4
       ],
       "directory": "ComputerArchitecture",
-      "dashboard": "ComputerArchitecture/index.md",
+      "dashboard": "ComputerArchitecture/readme.md",
       "kind": "专业课程",
-      "note": "Lab 1–3 有演示、论文或 ISA 程序；Lab 4 现存要求，不推断为已实现。完整考试答案缺少部分原图。",
+      "note": "Lab 1–4 按原编号整理，演示、论文、ISA 程序与实验要求分别归档。",
       "assessments": {
         "4": "考试 · Экзамен"
       },
@@ -1158,6 +1238,10 @@
             "path": "ComputerArchitecture/quick-review.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1168,7 +1252,7 @@
         4
       ],
       "directory": "ComputationalMath",
-      "dashboard": "ComputationalMath/index.md",
+      "dashboard": "ComputationalMath/readme.md",
       "kind": "数学与计算",
       "note": "现有 Lab 1–6 源码；Lab 2 原 Markdown 为空，使用要求 PDF 和代码。",
       "assessments": {
@@ -1235,6 +1319,10 @@
             "path": "ComputationalMath/Lab1/local-variant/README.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1245,9 +1333,9 @@
         4
       ],
       "directory": "MathematicalStatistics",
-      "dashboard": "MathematicalStatistics/index.md",
+      "dashboard": "MathematicalStatistics/readme.md",
       "kind": "数学与数据",
-      "note": "РГР 1–3 保存数据分析源码与报告；现有根 README 只有标题。",
+      "note": "РГР 1–3 保存数据分析源码与报告。",
       "assessments": {
         "4": "考试 · Экзамен"
       },
@@ -1277,6 +1365,10 @@
             "path": "MathematicalStatistics/РГР3"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1287,7 +1379,7 @@
         4
       ],
       "directory": "OptiMethod",
-      "dashboard": "OptiMethod/index.md",
+      "dashboard": "OptiMethod/readme.md",
       "kind": "数学与计算",
       "note": "现有作业覆盖二次/三次近似及后续程序与问答；只链接有内容的文件。",
       "assessments": {
@@ -1326,6 +1418,10 @@
             "path": "OptiMethod/lab7/ques.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1336,7 +1432,7 @@
         4
       ],
       "directory": "OPI",
-      "dashboard": "OPI/index.md",
+      "dashboard": "OPI/readme.md",
       "kind": "专业课程",
       "note": "Lab 1–4 对应需求、版本控制、构建与监控；现有考试资料含 UML / RUP / JMX。",
       "assessments": {
@@ -1410,6 +1506,10 @@
             "path": "WebProgramming/Lab3/opi-variant/README.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1420,9 +1520,9 @@
         4
       ],
       "directory": "PublicPresentation",
-      "dashboard": "PublicPresentation/index.md",
+      "dashboard": "PublicPresentation/readme.md",
       "kind": "表达与展示",
-      "note": "已有演讲稿、作业要求与文章；不推断具体考核成绩。",
+      "note": "演讲稿、作业要求与文章集中查阅。",
       "assessments": {
         "4": "考查 · Зачёт"
       },
@@ -1445,6 +1545,10 @@
             "path": "PublicPresentation/Essay.md"
           }
         ]
+      },
+      "status": "passed",
+      "semesterStatus": {
+        "4": "passed"
       }
     },
     {
@@ -1455,9 +1559,9 @@
         5
       ],
       "directory": "ComputerGraphicsAlgo",
-      "dashboard": "ComputerGraphicsAlgo/index.md",
+      "dashboard": "ComputerGraphicsAlgo/readme.md",
       "kind": "专业课程",
-      "note": "Lab 1 为光照，Lab 2 为球面；提交包保留原结构，README 中重复文件不计成新实验。",
+      "note": "Lab 1 为光照，Lab 2 为球面；提交包保留原结构。",
       "assessments": {
         "5": "考查 · Зачёт"
       },
@@ -1498,6 +1602,10 @@
             "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/lab2_sphere.py"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1508,9 +1616,9 @@
         5
       ],
       "directory": "SoftwareSystemArch",
-      "dashboard": "SoftwareSystemArch/index.md",
+      "dashboard": "SoftwareSystemArch/readme.md",
       "kind": "专业课程",
-      "note": "目前只有第一讲 PDF；课程首页不建立没有内容的实验与考试页。",
+      "note": "第一讲 PDF：软件生命周期。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -1525,6 +1633,10 @@
             "path": "SoftwareSystemArch/Lecture/lecture1.pdf"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1535,9 +1647,9 @@
         5
       ],
       "directory": "KnowledgeGraphs",
-      "dashboard": "KnowledgeGraphs/index.md",
+      "dashboard": "KnowledgeGraphs/readme.md",
       "kind": "专业课程",
-      "note": "现有内容为电影知识图谱选题/演示方案，不能标为已完成图谱系统。",
+      "note": "电影知识图谱选题与演示方案。",
       "assessments": {
         "5": "考查 · Зачёт"
       },
@@ -1559,6 +1671,10 @@
             "path": "KnowledgeGraphs/Step-1/Граф_знаний_о_фильмах.pptx"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1569,9 +1685,9 @@
         5
       ],
       "directory": "InformationSystem",
-      "dashboard": "InformationSystem/index.md",
+      "dashboard": "InformationSystem/readme.md",
       "kind": "专业课程",
-      "note": "现有 Lab 1 与课程项目阶段 1；Lab 2–4 未发现真实实验内容，不沿用原 README 的重复链接。",
+      "note": "已收录 Lab 1 源码与课程项目阶段 1；其余实验按本人清单维护。",
       "assessments": {
         "5": "考试 · Экзамен + 课程项目 · Курсовая работа"
       },
@@ -1614,6 +1730,10 @@
             "path": "InformationSystem/Lab1/local-variant/README.md"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1624,7 +1744,7 @@
         5
       ],
       "directory": "Modeling",
-      "dashboard": "Modeling/index.md",
+      "dashboard": "Modeling/readme.md",
       "kind": "专业课程",
       "note": "УИР 1 统计拟合与 УИР 2 马尔可夫排队模型均有真实笔记；WinMark 项目与 Python 计算交叉核对。",
       "assessments": {
@@ -1672,6 +1792,10 @@
             "path": "Modeling/lab2/Calculation_data/WinMark/README.md"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1682,9 +1806,9 @@
         5
       ],
       "directory": "OperatingSystem",
-      "dashboard": "OperatingSystem/index.md",
+      "dashboard": "OperatingSystem/readme.md",
       "kind": "专业课程",
-      "note": "当前只有 intro-ex 实验；已有性能测量与报告，学习笔记明确记录时间误差、perf 缺失和采样限制，未据此宣称验收。",
+      "note": "intro-ex 实验资料包含性能测量、报告与答辩；测量误差与采样范围见原学习笔记。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -1742,6 +1866,10 @@
             "path": "OperatingSystem/Lecture"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1752,9 +1880,9 @@
         5
       ],
       "directory": "UIDesign",
-      "dashboard": "UIDesign/index.md",
+      "dashboard": "UIDesign/readme.md",
       "kind": "专业课程",
-      "note": "目前资料是知识助手的方案、演讲稿与用户场景；不把方案视作已开发产品。",
+      "note": "知识助手方案、演讲稿与用户场景。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -1784,6 +1912,10 @@
             "path": "UIDesign/HW/03_演讲稿_完整版_RU_ZH.md"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     },
     {
@@ -1794,7 +1926,7 @@
         5
       ],
       "directory": "AISystem",
-      "dashboard": "AISystem/index.md",
+      "dashboard": "AISystem/readme.md",
       "kind": "专业课程",
       "note": "Labs/lab2 保存的是任务书实验 6“逻辑回归”；保留目录名，在入口明确任务编号。",
       "assessments": {
@@ -1847,7 +1979,12 @@
             "path": "AISystem/cheatsheet.md"
           }
         ]
+      },
+      "status": "unmarked",
+      "semesterStatus": {
+        "5": "unmarked"
       }
     }
-  ]
+  ],
+  "statusSource": "本人确认：第1–4学期课程与实验全部已通过；第5学期按各课程记录维护。"
 }

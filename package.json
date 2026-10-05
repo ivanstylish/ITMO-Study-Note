@@ -3,18 +3,24 @@
   "private": true,
   "version": "1.0.0",
   "description": "Read-only website projection of the existing university notes",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "kb:generate": "node tools/generate-index.mjs && node tools/update-course-links.mjs",
-    "kb:check": "node tools/generate-index.mjs --check && node tools/update-course-links.mjs --check && node tools/check-links.mjs",
-    "docs:prepare": "npm run kb:generate && node tools/build-site.mjs",
+    "kb:generate": "node tools/generate-index.mjs",
+    "kb:check": "node tools/generate-index.mjs --check && node tools/check-links.mjs",
+    "docs:prepare": "npm run kb:generate && npm run mindmap:export && node tools/build-site.mjs",
     "docs:dev": "npm run docs:prepare && vitepress dev site --host 127.0.0.1",
     "docs:build": "npm run docs:prepare && vitepress build site",
-    "docs:preview": "vitepress preview site --host 127.0.0.1"
+    "docs:preview": "vitepress preview site --host 127.0.0.1",
+    "mindmap:export": "node tools/export-mindmap.mjs"
   },
   "devDependencies": {
+    "esbuild": "0.25.12",
     "markdown-it": "14.3.2",
     "markdown-it-mathjax3": "4.3.2",
+    "markmap-lib": "0.18.12",
+    "markmap-view": "0.18.12",
     "mermaid": "12.1.0",
     "vitepress": "1.6.4"
   },

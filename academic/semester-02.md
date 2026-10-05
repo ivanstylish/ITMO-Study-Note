@@ -6,19 +6,17 @@
 
 2024–2025 学年 · 春季 · 大一。本页 8 门课程已有仓库资料。
 
-课程归属和考核类型依据本人提供的第 1–5 学期教务截图；截图中仓库未收录的学科不建页面。跨学期课程共用资料，入口数量不代表该学期完成量。
+按学期查看课程、实验与考试资料。第 1–4 学期的课程与实验均已通过；第 5 学期按当前记录维护。
 
-| 课程 | Русское название | 考核类型 | 实验 / 作业 | 考试资料 |
-|---|---|---|---|---|
-| [俄罗斯科技史](../History/index.md) | История российской науки и техники | 考试 · Экзамен | [3 个入口](../History/index.md#labs) | [1 个入口](../History/index.md#exam) |
-| [线性代数](../Math/LinearAlgebra/index.md) | Линейная алгебра | 考试 · Экзамен | — | [2 个入口](../Math/LinearAlgebra/index.md#exam) |
-| [数学分析](../Math/analysis/index.md) | Математический анализ | 考试 · Экзамен | — | [2 个入口](../Math/analysis/index.md#exam) |
-| [离散数学基础 / 离散数学](../DiscreteMath/index.md) | Основы дискретной математики / Дискретная математика | 考试 · Экзамен | [3 个入口](../DiscreteMath/index.md#labs) | — |
-| [专业活动基础](../OPD/index.md) | Основы профессиональной деятельности | 分级考查 · Дифференцированный зачёт | [6 个入口](../OPD/index.md#labs) | [2 个入口](../OPD/index.md#exam) |
-| [程序设计](../Programming/index.md) | Программирование | 考试 · Экзамен | [8 个入口](../Programming/index.md#labs) | [1 个入口](../Programming/index.md#exam) |
-| [俄语（外语）](../RussianLanguage/index.md) | Русский язык как иностранный | 考查 · Зачёт | [5 个入口](../RussianLanguage/index.md#labs) | [1 个入口](../RussianLanguage/index.md#exam) |
-| [数据库](../Database/index.md) | Базы данных | 考试 · Экзамен | [4 个入口](../Database/index.md#labs) | [2 个入口](../Database/index.md#exam) |
+| 课程 | Русское название | 考核类型 | 状态 | 实验 / 作业 | 考试资料 |
+|---|---|---|---|---|---|
+| [俄罗斯科技史](../History/readme.md) | История российской науки и техники | 考试 · Экзамен | ✓ 已通过 | [3 个入口](../History/readme.md#labs) | [1 个入口](../History/readme.md#exam) |
+| [线性代数](../Math/LinearAlgebra/readme.md) | Линейная алгебра | 考试 · Экзамен | ✓ 已通过 | — | [2 个入口](../Math/LinearAlgebra/readme.md#exam) |
+| [数学分析](../Math/readme.md) | Математический анализ | 考试 · Экзамен | ✓ 已通过 | — | [2 个入口](../Math/readme.md#exam) |
+| [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | Основы дискретной математики / Дискретная математика | 考试 · Экзамен | ✓ 已通过 | [3 个入口](../DiscreteMath/readme.md#labs) | — |
+| [专业活动基础](../OPD/readme.md) | Основы профессиональной деятельности | 分级考查 · Дифференцированный зачёт | ✓ 已通过 | [6 个入口](../OPD/readme.md#labs) | [2 个入口](../OPD/readme.md#exam) |
+| [程序设计](../Programming/readme.md) | Программирование | 考试 · Экзамен | ✓ 已通过 | [8 个入口](../Programming/readme.md#labs) | [1 个入口](../Programming/readme.md#exam) |
+| [俄语（外语）](../RussianLanguage/readme.md) | Русский язык как иностранный | 考查 · Зачёт | ✓ 已通过 | [5 个入口](../RussianLanguage/readme.md#labs) | [1 个入口](../RussianLanguage/readme.md#exam) |
+| [数据库](../Database/readme.md) | Базы данных | 考试 · Экзамен | ✓ 已通过 | [4 个入口](../Database/readme.md#labs) | [2 个入口](../Database/readme.md#exam) |
 
 [本学期考前复习入口](../study/revision.md) · [实验答辩入口](../study/defense.md)
-
-未保存成绩、考试日期或教务截图；不据此推断课程验收结果。

@@ -2,238 +2,290 @@
 
 # 实验与作业索引 · Практические работы
 
-[首页](../README.md) · [答辩指南](../study/defense.md)
+[首页](../README.md) · [答辩指南](../study/defense.md) · [课程总览](courses.md)
 
-编号按原目录保留；“有说明”“有代码”“有报告”均不等于教师已验收。数学统计 РГР、语言练习、演示作业也在此收录。
+第 1–4 学期的课程与实验均已通过；当前学期使用 ✓ 已通过 / ○ 待通过 / — 未标记。实验编号、报告与源码版本沿用原目录。
 
 ## 信息学
 
-[课程入口](../Informatics/index.md)
+[课程入口](../Informatics/readme.md) · ✓ 已通过
 
-- [Lab 1：代码 / 报告 / 要求](../Informatics/Labwork/lab1)
-- [Lab 2：代码 / 报告 / 要求](../Informatics/Labwork/lab2)
-- [Lab 3：代码 / 报告 / 要求](../Informatics/Labwork/lab3)
-- [Lab 4：代码 / 报告 / 要求](../Informatics/Labwork/lab4)
-- [Lab 5：代码 / 报告 / 要求](../Informatics/Labwork/lab5)
-- [Lab 6：代码 / 报告 / 要求](../Informatics/Labwork/lab6)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：代码 / 报告 / 要求](../Informatics/Labwork/lab1) | ✓ 已通过 |
+| [Lab 2：代码 / 报告 / 要求](../Informatics/Labwork/lab2) | ✓ 已通过 |
+| [Lab 3：代码 / 报告 / 要求](../Informatics/Labwork/lab3) | ✓ 已通过 |
+| [Lab 4：代码 / 报告 / 要求](../Informatics/Labwork/lab4) | ✓ 已通过 |
+| [Lab 5：代码 / 报告 / 要求](../Informatics/Labwork/lab5) | ✓ 已通过 |
+| [Lab 6：代码 / 报告 / 要求](../Informatics/Labwork/lab6) | ✓ 已通过 |
 
 ## 俄罗斯科技史
 
-[课程入口](../History/index.md)
+[课程入口](../History/readme.md) · ✓ 已通过
 
-- [坎托罗维奇报告与演示](../History/report)
-- [研究报告](../History/%D0%9D%D0%98%D0%A0/report.md)
-- [报告整理](../History/ReReport.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [坎托罗维奇报告与演示](../History/report) | ✓ 已通过 |
+| [研究报告](../History/%D0%9D%D0%98%D0%A0/report.md) | ✓ 已通过 |
+| [报告整理](../History/ReReport.md) | ✓ 已通过 |
 
 ## 离散数学基础 / 离散数学
 
-[课程入口](../DiscreteMath/index.md)
+[课程入口](../DiscreteMath/readme.md) · ✓ 已通过
 
-- [第 1 学期课程作业](../DiscreteMath/FirstSem)
-- [第 2 学期作业与课程项目](../DiscreteMath/SecSem)
-- [模糊逻辑演示](../DiscreteMath/SecSem/KP/FuzzyLogic.html)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [第 1 学期课程作业](../DiscreteMath/FirstSem) | ✓ 已通过 |
+| [第 2 学期作业与课程项目](../DiscreteMath/SecSem) | ✓ 已通过 |
+| [模糊逻辑演示](../DiscreteMath/SecSem/KP/FuzzyLogic.html) | ✓ 已通过 |
 
 ## 专业活动基础
 
-[课程入口](../OPD/index.md)
+[课程入口](../OPD/readme.md) · ✓ 已通过
 
-- [Lab 1：Linux / Helios](../OPD/lab/lab1/quesOfLab1.md)
-- [Lab 2：CPU](../OPD/lab/lab2/lab2.md)
-- [Lab 3：程序与问答](../OPD/lab/lab3/lab3.md)
-- [Lab 4](../OPD/lab/lab4/lab4.md)
-- [Lab 5](../OPD/lab/lab5/lab5.md)
-- [Lab 6](../OPD/lab/lab6/lab6.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：Linux / Helios](../OPD/lab/lab1/quesOfLab1.md) | ✓ 已通过 |
+| [Lab 2：CPU](../OPD/lab/lab2/lab2.md) | ✓ 已通过 |
+| [Lab 3：程序与问答](../OPD/lab/lab3/lab3.md) | ✓ 已通过 |
+| [Lab 4](../OPD/lab/lab4/lab4.md) | ✓ 已通过 |
+| [Lab 5](../OPD/lab/lab5/lab5.md) | ✓ 已通过 |
+| [Lab 6](../OPD/lab/lab6/lab6.md) | ✓ 已通过 |
 
 ## 程序设计
 
-[课程入口](../Programming/index.md)
+[课程入口](../Programming/readme.md) · ✓ 已通过
 
-- [Lab 1](../Programming/lab1.md)
-- [Lab 2：Pokémon](../Programming/lab2.md)
-- [Lab 3–4：OOP](../Programming/lab3-4.md)
-- [Lab 5：集合管理](../Programming/lab5.md)
-- [Lab 6：网络](../Programming/lab6.md)
-- [Lab 7：并发与 JDBC](../Programming/lab7.md)
-- [Lab 8：GUI](../Programming/lab8.md)
-- [Lab 9：现有代码](../Programming/Lab/lab9)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1](../Programming/lab1.md) | ✓ 已通过 |
+| [Lab 2：Pokémon](../Programming/lab2.md) | ✓ 已通过 |
+| [Lab 3–4：OOP](../Programming/lab3-4.md) | ✓ 已通过 |
+| [Lab 5：集合管理](../Programming/lab5.md) | ✓ 已通过 |
+| [Lab 6：网络](../Programming/lab6.md) | ✓ 已通过 |
+| [Lab 7：并发与 JDBC](../Programming/lab7.md) | ✓ 已通过 |
+| [Lab 8：GUI](../Programming/lab8.md) | ✓ 已通过 |
+| [Lab 9：现有代码](../Programming/Lab/lab9) | ✓ 已通过 |
 
 ## 俄语（外语）
 
-[课程入口](../RussianLanguage/index.md)
+[课程入口](../RussianLanguage/readme.md) · 第 1、2、3、4 学期：✓ 已通过 · 第 5 学期：— 未标记
 
-- [Homework 1](../RussianLanguage/Homework1.md)
-- [Homework 2](../RussianLanguage/Homework2.md)
-- [Homework 3](../RussianLanguage/Homework3.md)
-- [第二学年练习](../RussianLanguage/2year)
-- [演示：环太平洋](../RussianLanguage/ppt/%D0%A2%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D1%83%D0%B1%D0%B5%D0%B6.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Homework 1](../RussianLanguage/Homework1.md) | ✓ 已通过 |
+| [Homework 2](../RussianLanguage/Homework2.md) | ✓ 已通过 |
+| [Homework 3](../RussianLanguage/Homework3.md) | ✓ 已通过 |
+| [第二学年练习](../RussianLanguage/2year) | ✓ 已通过 |
+| [演示：环太平洋](../RussianLanguage/ppt/%D0%A2%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D1%83%D0%B1%D0%B5%D0%B6.md) | ✓ 已通过 |
 
 ## 数据库
 
-[课程入口](../Database/index.md)
+[课程入口](../Database/readme.md) · ✓ 已通过
 
-- [Lab 1：说明与 SQL](../Database/labs/lab1)
-- [Lab 2：说明与 SQL](../Database/labs/lab2)
-- [Lab 3：说明与 SQL](../Database/labs/lab3)
-- [Lab 4：说明与 SQL](../Database/labs/lab4)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：说明与 SQL](../Database/labs/lab1) | ✓ 已通过 |
+| [Lab 2：说明与 SQL](../Database/labs/lab2) | ✓ 已通过 |
+| [Lab 3：说明与 SQL](../Database/labs/lab3) | ✓ 已通过 |
+| [Lab 4：说明与 SQL](../Database/labs/lab4) | ✓ 已通过 |
 
 ## Web 编程
 
-[课程入口](../WebProgramming/index.md)
+[课程入口](../WebProgramming/readme.md) · ✓ 已通过
 
-- [Lab 1：原源码](../WebProgramming/Lab1)
-- [Lab 3：原要求](../WebProgramming/Lab3/readme.md)
-- [Lab 2：补回 Servlet / JSP 源码](../WebProgramming/Lab2/README.md)
-- [Lab 3：补回 JSF / JPA / JMX 源码](../WebProgramming/Lab3/local-source/README.md)
-- [Lab 4：补回 Spring Boot / React 源码](../WebProgramming/Lab4/local-source/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：原源码](../WebProgramming/Lab1) | ✓ 已通过 |
+| [Lab 3：原要求](../WebProgramming/Lab3/readme.md) | ✓ 已通过 |
+| [Lab 2：补回 Servlet / JSP 源码](../WebProgramming/Lab2/README.md) | ✓ 已通过 |
+| [Lab 3：JSF / JPA / JMX 源码](../WebProgramming/Lab3/local-source/README.md) | ✓ 已通过 |
+| [Lab 4：Spring Boot / React 源码](../WebProgramming/Lab4/local-source/README.md) | ✓ 已通过 |
 
 ## 概率论
 
-[课程入口](../ProbabilityTheory/index.md)
+[课程入口](../ProbabilityTheory/readme.md) · ✓ 已通过
 
-- [实践报告](../ProbabilityTheory/np/Practical_work6.pdf)
-- [实践 Python](../ProbabilityTheory/np/work.py)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [实践报告](../ProbabilityTheory/np/Practical_work6.pdf) | ✓ 已通过 |
+| [实践 Python](../ProbabilityTheory/np/work.py) | ✓ 已通过 |
 
 ## 复变函数论
 
-[课程入口](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/index.md)
+[课程入口](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) · ✓ 已通过
 
-- [Lab 1：分形代码与报告](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/Lab1)
-- [Lab 2：报告](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/Lab2/lab2.pdf)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：分形代码与报告](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/Lab1) | ✓ 已通过 |
+| [Lab 2：报告](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/Lab2/lab2.pdf) | ✓ 已通过 |
 
 ## 物理
 
-[课程入口](../Physics/index.md)
+[课程入口](../Physics/readme.md) · ✓ 已通过
 
-- [第 3 学期：Lab 1.01](../Physics/Labworks/lab1.01)
-- [第 3 学期：Lab 1.02](../Physics/Labworks/lab1.02)
-- [第 3 学期：Lab 1.04](../Physics/Labworks/lab1.04)
-- [第 3 学期：Lab 1.05](../Physics/Labworks/lab1.05)
-- [第 3 学期：Lab 1.07](../Physics/Labworks/lab1.07)
-- [第 4 学期：Lab 3.01](../Physics/Labworks/lab3.01)
-- [第 4 学期：Lab 3.02](../Physics/Labworks/lab3.02)
-- [第 4 学期：Lab 3.05](../Physics/Labworks/lab3.05)
-- [第 4 学期：Lab 3.08](../Physics/Labworks/lab3.08)
-- [第 4 学期：Lab 3.11](../Physics/Labworks/lab3.11)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [第 3 学期：Lab 1.01](../Physics/Labworks/lab1.01) | ✓ 已通过 |
+| [第 3 学期：Lab 1.02](../Physics/Labworks/lab1.02) | ✓ 已通过 |
+| [第 3 学期：Lab 1.04](../Physics/Labworks/lab1.04) | ✓ 已通过 |
+| [第 3 学期：Lab 1.05](../Physics/Labworks/lab1.05) | ✓ 已通过 |
+| [第 3 学期：Lab 1.07](../Physics/Labworks/lab1.07) | ✓ 已通过 |
+| [第 4 学期：Lab 3.01](../Physics/Labworks/lab3.01) | ✓ 已通过 |
+| [第 4 学期：Lab 3.02](../Physics/Labworks/lab3.02) | ✓ 已通过 |
+| [第 4 学期：Lab 3.05](../Physics/Labworks/lab3.05) | ✓ 已通过 |
+| [第 4 学期：Lab 3.08](../Physics/Labworks/lab3.08) | ✓ 已通过 |
+| [第 4 学期：Lab 3.11](../Physics/Labworks/lab3.11) | ✓ 已通过 |
 
 ## 编程语言
 
-[课程入口](../ProgrammingLanguage/index.md)
+[课程入口](../ProgrammingLanguage/readme.md) · ✓ 已通过
 
-- [Work 1：原项目](../ProgrammingLanguage/work1)
-- [Work 2：原项目](../ProgrammingLanguage/work2)
-- [Work 3：原项目](../ProgrammingLanguage/work3)
-- [Work 4：原项目](../ProgrammingLanguage/work4)
-- [Work 5：原项目](../ProgrammingLanguage/work5)
-- [Work 6：原项目](../ProgrammingLanguage/work6)
-- [Work 7：原项目](../ProgrammingLanguage/work7)
-- [Work 8：反射、Attribute 与动态 IL](../ProgrammingLanguage/work8/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Work 1：原项目](../ProgrammingLanguage/work1) | ✓ 已通过 |
+| [Work 2：原项目](../ProgrammingLanguage/work2) | ✓ 已通过 |
+| [Work 3：原项目](../ProgrammingLanguage/work3) | ✓ 已通过 |
+| [Work 4：原项目](../ProgrammingLanguage/work4) | ✓ 已通过 |
+| [Work 5：原项目](../ProgrammingLanguage/work5) | ✓ 已通过 |
+| [Work 6：原项目](../ProgrammingLanguage/work6) | ✓ 已通过 |
+| [Work 7：原项目](../ProgrammingLanguage/work7) | ✓ 已通过 |
+| [Work 8：反射、Attribute 与动态 IL](../ProgrammingLanguage/work8/README.md) | ✓ 已通过 |
 
 ## 算法与数据结构
 
-[课程入口](../AADS/index.md)
+[课程入口](../AADS/readme.md) · ✓ 已通过
 
-- [Part 1–4：ABCD](../AADS/ABCD)
-- [Part 5–8：EFGH](../AADS/EFGH)
-- [测试源码](../AADS/Test/1.cpp)
-- [Part 9–16：补回独立源码](../AADS/local-lab1/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Part 1–4：ABCD](../AADS/ABCD) | ✓ 已通过 |
+| [Part 5–8：EFGH](../AADS/EFGH) | ✓ 已通过 |
+| [测试源码](../AADS/Test/1.cpp) | ✓ 已通过 |
+| [Part 9–16：补回独立源码](../AADS/local-lab1/README.md) | ✓ 已通过 |
 
 ## 计算机体系结构
 
-[课程入口](../ComputerArchitecture/index.md)
+[课程入口](../ComputerArchitecture/readme.md) · ✓ 已通过
 
-- [Lab 1：ARM MTE](../ComputerArchitecture/Lab1/readme.md)
-- [Lab 2：论文与评审](../ComputerArchitecture/Lab2/readme.md)
-- [Lab 3：四种 ISA / schema](../ComputerArchitecture/Lab3/readme.md)
-- [Lab 4：实验要求](../ComputerArchitecture/Lab4/lab4.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：ARM MTE](../ComputerArchitecture/Lab1/readme.md) | ✓ 已通过 |
+| [Lab 2：论文与评审](../ComputerArchitecture/Lab2/readme.md) | ✓ 已通过 |
+| [Lab 3：四种 ISA / schema](../ComputerArchitecture/Lab3/readme.md) | ✓ 已通过 |
+| [Lab 4：实验要求](../ComputerArchitecture/Lab4/lab4.md) | ✓ 已通过 |
 
 ## 计算数学
 
-[课程入口](../ComputationalMath/index.md)
+[课程入口](../ComputationalMath/readme.md) · ✓ 已通过
 
-- [Lab 1：现有代码 / 资源](../ComputationalMath/Lab1)
-- [Lab 2：现有代码 / 资源](../ComputationalMath/Lab2)
-- [Lab 3：现有代码 / 资源](../ComputationalMath/Lab3)
-- [Lab 4：现有代码 / 资源](../ComputationalMath/Lab4)
-- [Lab 5：现有代码 / 资源](../ComputationalMath/Lab5)
-- [Lab 6：现有代码 / 资源](../ComputationalMath/Lab6)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：现有代码 / 资源](../ComputationalMath/Lab1) | ✓ 已通过 |
+| [Lab 2：现有代码 / 资源](../ComputationalMath/Lab2) | ✓ 已通过 |
+| [Lab 3：现有代码 / 资源](../ComputationalMath/Lab3) | ✓ 已通过 |
+| [Lab 4：现有代码 / 资源](../ComputationalMath/Lab4) | ✓ 已通过 |
+| [Lab 5：现有代码 / 资源](../ComputationalMath/Lab5) | ✓ 已通过 |
+| [Lab 6：现有代码 / 资源](../ComputationalMath/Lab6) | ✓ 已通过 |
 
 ## 数理统计
 
-[课程入口](../MathematicalStatistics/index.md)
+[课程入口](../MathematicalStatistics/readme.md) · ✓ 已通过
 
-- [РГР 1：统计量与置信区间](../MathematicalStatistics/%D0%A0%D0%93%D0%A01)
-- [РГР 2：Python 与报告](../MathematicalStatistics/%D0%A0%D0%93%D0%A02)
-- [РГР 3：Python](../MathematicalStatistics/%D0%A0%D0%93%D0%A03)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [РГР 1：统计量与置信区间](../MathematicalStatistics/%D0%A0%D0%93%D0%A01) | ✓ 已通过 |
+| [РГР 2：Python 与报告](../MathematicalStatistics/%D0%A0%D0%93%D0%A02) | ✓ 已通过 |
+| [РГР 3：Python](../MathematicalStatistics/%D0%A0%D0%93%D0%A03) | ✓ 已通过 |
 
 ## 最优化方法
 
-[课程入口](../OptiMethod/index.md)
+[课程入口](../OptiMethod/readme.md) · ✓ 已通过
 
-- [实践 3：二次/三次近似](../OptiMethod/HW/lab3/des.md)
-- [Lab 4：程序](../OptiMethod/lab4/main.py)
-- [Lab 5：源码](../OptiMethod/lab5)
-- [Lab 7：源码与报告](../OptiMethod/lab7)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [实践 3：二次/三次近似](../OptiMethod/HW/lab3/des.md) | ✓ 已通过 |
+| [Lab 4：程序](../OptiMethod/lab4/main.py) | ✓ 已通过 |
+| [Lab 5：源码](../OptiMethod/lab5) | ✓ 已通过 |
+| [Lab 7：源码与报告](../OptiMethod/lab7) | ✓ 已通过 |
 
 ## 软件工程基础
 
-[课程入口](../OPI/index.md)
+[课程入口](../OPI/readme.md) · ✓ 已通过
 
-- [Lab 1：需求与报告](../OPI/Lab1/Description.md)
-- [Lab 2：Git / SVN](../OPI/Lab2/command.md)
-- [Lab 3：构建](../OPI/Lab3/ans.md)
-- [Lab 4：JMX 监控](../OPI/Lab4/readme.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：需求与报告](../OPI/Lab1/Description.md) | ✓ 已通过 |
+| [Lab 2：Git / SVN](../OPI/Lab2/command.md) | ✓ 已通过 |
+| [Lab 3：构建](../OPI/Lab3/ans.md) | ✓ 已通过 |
+| [Lab 4：JMX 监控](../OPI/Lab4/readme.md) | ✓ 已通过 |
 
 ## 公众演讲与展示
 
-[课程入口](../PublicPresentation/index.md)
+[课程入口](../PublicPresentation/readme.md) · ✓ 已通过
 
-- [New Jazz 演讲稿](../PublicPresentation/NewJazz.md)
-- [Homework 2 要求](../PublicPresentation/HW2.md)
-- [Essay](../PublicPresentation/Essay.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [New Jazz 演讲稿](../PublicPresentation/NewJazz.md) | ✓ 已通过 |
+| [Homework 2 要求](../PublicPresentation/HW2.md) | ✓ 已通过 |
+| [Essay](../PublicPresentation/Essay.md) | ✓ 已通过 |
 
 ## 计算机图形学算法
 
-[课程入口](../ComputerGraphicsAlgo/index.md)
+[课程入口](../ComputerGraphicsAlgo/readme.md) · — 未标记
 
-- [Lab 1：实际提交包](../ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md)
-- [Lab 2：实际提交包](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：实际提交包](../ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md) | — 未标记 |
+| [Lab 2：实际提交包](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md) | — 未标记 |
 
 ## 知识图谱
 
-[课程入口](../KnowledgeGraphs/index.md)
+[课程入口](../KnowledgeGraphs/readme.md) · — 未标记
 
-- [Step 1：选题与演讲提纲](../KnowledgeGraphs/Step-1/des.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Step 1：选题与演讲提纲](../KnowledgeGraphs/Step-1/des.md) | — 未标记 |
 
 ## 信息系统
 
-[课程入口](../InformationSystem/index.md)
+[课程入口](../InformationSystem/readme.md) · — 未标记
 
-- [Lab 1：项目说明](../InformationSystem/Lab1/README.md)
-- [课程项目：要求与阶段报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：项目说明](../InformationSystem/Lab1/README.md) | ○ 待通过 |
+| [课程项目：要求与阶段报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md) | — 未标记 |
 
 ## 建模
 
-[课程入口](../Modeling/index.md)
+[课程入口](../Modeling/readme.md) · — 未标记
 
-- [УИР 1：变体 115 学习笔记](../Modeling/lab1/%E5%AE%9E%E9%AA%8C%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_%E4%B8%AD%E4%BF%84%E5%8F%8C%E8%AF%AD_%E5%8F%98%E4%BD%93115.md)
-- [УИР 2：变体 15 实际计算](../Modeling/lab2/lab2_variant15.py)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [УИР 1：变体 115 学习笔记](../Modeling/lab1/%E5%AE%9E%E9%AA%8C%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_%E4%B8%AD%E4%BF%84%E5%8F%8C%E8%AF%AD_%E5%8F%98%E4%BD%93115.md) | — 未标记 |
+| [УИР 2：变体 15 实际计算](../Modeling/lab2/lab2_variant15.py) | — 未标记 |
 
 ## 操作系统
 
-[课程入口](../OperatingSystem/index.md)
+[课程入口](../OperatingSystem/readme.md) · — 未标记
 
-- [Lab 1 intro-ex：原始要求](../OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1 intro-ex：原始要求](../OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md) | — 未标记 |
 
 ## 用户界面设计
 
-[课程入口](../UIDesign/index.md)
+[课程入口](../UIDesign/readme.md) · — 未标记
 
-- [Homework 1：项目说明](../UIDesign/HW/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md)
-- [Homework 2：用户场景](../UIDesign/HW/04_%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_2_%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Homework 1：项目说明](../UIDesign/HW/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md) | — 未标记 |
+| [Homework 2：用户场景](../UIDesign/HW/04_%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_2_%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8.md) | — 未标记 |
 
 ## 人工智能系统
 
-[课程入口](../AISystem/index.md)
+[课程入口](../AISystem/readme.md) · — 未标记
 
-- [Lab 1：线性回归实现与笔记](../AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md)
-- [目录 lab2 / 任务书 Lab 6：逻辑回归](../AISystem/Labs/lab2/README.md)
+| 实验 / 作业 | 状态 |
+|---|---|
+| [Lab 1：线性回归实现与笔记](../AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md) | — 未标记 |
+| [目录 lab2 / 任务书 Lab 6：逻辑回归](../AISystem/Labs/lab2/README.md) | — 未标记 |

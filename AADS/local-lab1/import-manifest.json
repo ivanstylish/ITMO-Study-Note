@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sourceGroup": "algo-lab1",
-  "status": "source snapshot; not built, run, or accepted",
+  "status": "source snapshot",
   "files": [
     {
       "path": "part10.cpp",

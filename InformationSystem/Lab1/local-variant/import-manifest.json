@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sourceGroup": "information-lab1",
-  "status": "source snapshot; not built, run, or accepted",
+  "status": "source snapshot",
   "files": [
     {
       "path": ".editorconfig",

@@ -1,6 +1,6 @@
 # 计算数学：15 分钟速查 / Численные методы
 
-[课程入口](index.md) · [原 Lab1 双语题单](Questions/lab1.md) · [答辩入口](../study/defense.md)
+[课程入口](readme.md) · [原 Lab1 双语题单](Questions/lab1.md) · [答辩入口](../study/defense.md)
 
 核心说明以仓库 Lab1 变体 15 的 Java 实现为准。后面提供其他现有算法的源码入口，不将其当作已完成的双语答案。
 
@@ -71,7 +71,7 @@ $$
 | Lab5 插值 | [Interpolator](Lab5/lab5/Interpolator.py)、[FiniteDiffTable](Lab5/lab5/FiniteDiffTable.py) | 节点、差分与插值表达式。 |
 | Lab6 常微分方程 | [Euler](Lab6/lab6/methods/Euler.py)、[RungeKutta4](Lab6/lab6/methods/RungeKutta4.py)、[Adams](Lab6/lab6/methods/Adams.py) | 初值、步长、方法阶数与误差。 |
 
-这些入口仅表明代码存在，本页没有替它们补写实验结果或验收记录。
+实验状态：✓ 已通过。实现与公式可对照本页复习。
 
-[返回课程入口](index.md) · [继续原双语题单](Questions/lab1.md)
+[返回课程入口](readme.md) · [继续原双语题单](Questions/lab1.md)
 

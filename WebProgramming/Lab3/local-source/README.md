@@ -2,7 +2,7 @@
 
 保留 JSF / PrimeFaces 页面、PointBean / ResultBean、EclipseLink 实体、区域判断测试和 JMX MBean。现有 Lab3 学习笔记继续作为课程入口。
 
-本目录为选择性恢复的源码快照，**未在本次整理中构建、运行或验收**。原课程已有笔记和实现继续保留。
+本目录为选择性恢复的源码快照，运行与构建说明见下方资料。原课程已有笔记和实现继续保留。
 
 代码使用 `jakarta.*` 与 `@Serial`；依赖声明 Servlet 5、Faces 3、Persistence 3 和 EclipseLink 3.0.3。Wrapper 文件指定 Gradle 8.2，但 build.gradle 中 wrapper 任务配置写 7.6，两个来源尚未协调；可先采用 JDK 17 检查此历史工程。应用服务器版本的运行兼容性没有验证。
 

@@ -1,8 +1,11 @@
 import path from 'node:path';
+import { Transformer } from 'markmap-lib/no-plugins';
 
 const encodePath = value => value.split('/').map(encodeURIComponent).join('/');
 
-export function safeMarkdown(md, manifest) {
+export function safeMarkdown(md, manifest, { base = '/' } = {}) {
+  const transformer = new Transformer();
+  transformer.md.set({ html: false });
   // General attribute syntax mistakes mathematical sets for HTML attributes.
   // Only explicit heading anchors from our navigation projection are supported.
   md.core.ruler.before('anchor', 'repository-heading-anchors', state => {
@@ -75,10 +78,23 @@ export function safeMarkdown(md, manifest) {
   const textRenderer = md.renderer.rules.text;
   md.renderer.rules.text = (tokens, index, options, env, self) => {
     const rendered = textRenderer ? textRenderer(tokens, index, options, env, self) : md.utils.escapeHtml(tokens[index].content);
-    return rendered.replaceAll('{{', '&#123;&#123;').replaceAll('}}', '&#125;&#125;');
+    return rendered.replaceAll('{{', '&#123;&#123;').replaceAll('}}', '&#125;&#125;')
+      .replace(/✓ 已通过|○ 待通过|— 未标记/g, label => `<span class="study-status ${label.startsWith('✓') ? 'passed' : label.startsWith('○') ? 'pending' : 'unmarked'}">${label}</span>`);
   };
   const fence = md.renderer.rules.fence;
   md.renderer.rules.fence = (tokens, index, options, env, self) => {
+    if (tokens[index].info.trim() === 'course-cards' && env.relativePath === 'navigation/courses.md') return '<CourseExplorer />';
+    if (tokens[index].info.trim() === 'markmap') {
+      const content = tokens[index].content;
+      const linked = content.replace(/(\[[^\]\n]*\]\()((?:[^()\s]|\([^()\s]*\))*)\)/g, (_, label, href) => {
+        let target = resolve(href, env) || '#';
+        if (target.startsWith('/')) target = base.replace(/\/$/, '') + target.replace(/\.md(?=#|$)/, '.html');
+        return `${label}${target})`;
+      });
+      const data = Buffer.from(JSON.stringify(transformer.transform(linked).root), 'utf8').toString('base64');
+      const source = Buffer.from(content, 'utf8').toString('base64');
+      return `<MarkmapDiagram data="${data}" source="${source}" />`;
+    }
     if (tokens[index].info.trim() === 'mermaid') {
       const source = Buffer.from(tokens[index].content, 'utf8').toString('base64');
       return `<MermaidDiagram source="${source}" />`;

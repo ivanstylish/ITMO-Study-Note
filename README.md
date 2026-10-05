@@ -1,37 +1,54 @@
 # ITMO University Knowledge Base
 
-大学学习笔记 · Конспекты, подготовка к экзаменам и защите лабораторных
+大学学习笔记 · Конспекты, повторение и защита лабораторных
 
+**当前：大三 · 第 5 学期**　｜　第 1–4 学期课程与实验 **✓ 已通过**
 
-**直接在 VS Code 或 GitHub 打开本 README 即可使用。** [阅读方式与快捷操作](navigation/reading.md)。
+## 学习入口
 
-[按学期浏览](navigation/index.md) · [全部课程](navigation/courses.md) · [知识索引](knowledge/index.md) · [实验与作业](navigation/labs.md) · [实验答辩](study/defense.md) · [考前复习](study/revision.md)
+| 想做什么 | 从这里开始 |
+|---|---|
+| 查课程、讲义与实验 | [课程总览](navigation/courses.md) · [学期导航](navigation/index.md) |
+| 考前回顾知识 | [复习路线](study/revision.md) · [复习脑图](knowledge/mindmap.md) |
+| 准备实验讲解 | [实验与状态](navigation/labs.md) · [答辩材料](study/defense.md) |
+| 串联不同课程 | [知识关系图](knowledge/index.md) · [资料反向关联](knowledge/backlinks.md) |
+
+## 本学期课程
+
+| 课程 | 状态 | 资料入口 |
+|---|---|---|
+| [俄语（外语）](RussianLanguage/readme.md) | — 未标记 | [课程资料](RussianLanguage/readme.md) |
+| [计算机图形学算法](ComputerGraphicsAlgo/readme.md) | — 未标记 | [课程资料](ComputerGraphicsAlgo/readme.md) |
+| [软件系统架构](SoftwareSystemArch/readme.md) | — 未标记 | [课程资料](SoftwareSystemArch/readme.md) |
+| [知识图谱](KnowledgeGraphs/readme.md) | — 未标记 | [课程资料](KnowledgeGraphs/readme.md) |
+| [信息系统](InformationSystem/readme.md) | — 未标记 | [课程资料](InformationSystem/readme.md) |
+| [建模](Modeling/readme.md) | — 未标记 | [课程资料](Modeling/readme.md) |
+| [操作系统](OperatingSystem/readme.md) | — 未标记 | [课程资料](OperatingSystem/readme.md) · 速查 |
+| [用户界面设计](UIDesign/readme.md) | — 未标记 | [课程资料](UIDesign/readme.md) |
+| [人工智能系统](AISystem/readme.md) | — 未标记 | [课程资料](AISystem/readme.md) · 速查 |
 
 ## 学期安排
 
-| 学年 | 学期 | 已有资料课程 |
+| 学年 | 学期 | 课程状态 |
 |---|---|---|
-| 大一 · 2024–2025 | [第 1 学期](academic/semester-01.md) / [第 2 学期](academic/semester-02.md) | 8 / 8 |
-| 大二 · 2025–2026 | [第 3 学期](academic/semester-03.md) / [第 4 学期](academic/semester-04.md) | 7 / 9 |
-| 大三 · 2026–2027 | [第 5 学期（当前）](academic/semester-05.md) | 9 |
+| 大一 · 2024–2025 | [第 1 学期](academic/semester-01.md) · [第 2 学期](academic/semester-02.md) | ✓ 已通过 |
+| 大二 · 2025–2026 | [第 3 学期](academic/semester-03.md) · [第 4 学期](academic/semester-04.md) | ✓ 已通过 |
+| 大三 · 2026–2027 | [第 5 学期](academic/semester-05.md) | — 未标记 |
 
-共 30 个课程入口。课程归属来自第 1–5 学期教务截图，仅收录仓库已有资料的学科。跨学期课程共用入口；资料数量与课程成绩、实验验收状态分别维护。
+30 门课程使用各自唯一的 README，集中查看讲义、实验、报告、答辩与考试资料。俄语跨学期共用入口，第 1–4 学期与第 5 学期的状态分别维护。
 
-## 现在要做什么
+## 三条复习路线
 
-| 目标 | 直接入口 |
-|---|---|
-| 准备操作系统实验答辩 | [intro-ex 学习与答辩](OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md) |
-| 考前 10–20 分钟复习 | [操作系统](OperatingSystem/quick-review.md) · [计算机体系结构](ComputerArchitecture/quick-review.md) · [全局复习路线](study/revision.md) |
-| 准备 Web / 信息系统答辩 | [Web 编程](WebProgramming/index.md#defense) · [信息系统](InformationSystem/index.md#defense) |
-| 回想公式与数值方法 | [计算数学速查](ComputationalMath/cheatsheet.md) |
-| 查相同概念在不同课中的用法 | [知识索引与课程关联](knowledge/index.md) |
-| 查补回的本地实验 | [本地实验收录说明](navigation/local-labs.md) |
+- **数值计算与机器学习**：线性代数 → 计算数学 → 统计与建模 → 人工智能。
+- **计算机系统与测量**：OPD → 体系结构 → 操作系统 → 性能与统计测量。
+- **请求、数据与软件设计**：数据库 → Web → 软件工程 → 信息系统。
 
-## 维护与阅读
+在[知识地图](knowledge/index.md)中找到各条路线的原笔记、实例和自测问题。
 
-[VS Code / GitHub 阅读方式](navigation/reading.md) · [维护规则 / 标签](navigation/maintenance.md) · [可选网站](navigation/website.md)
+## 阅读与维护
 
-现有笔记直接编辑保存即可；新增资料入口后可运行 `node tools/generate-index.mjs` 和 `node tools/update-course-links.mjs` 更新导航。学期、课程、复习、答辩和知识索引均使用仓库内的 Markdown 链接。
+在 VS Code 打开本文件后按 **Ctrl+Shift+V** 即可预览，GitHub 使用同一套相对链接。
 
-补充资料：[Java 基础](Java/Note.md) · [Java 专题](Java/subtopi.md) · [Go 源码](Go) · [预科数学语言](MathsLanguage/keyknowledge.md) · [俄语](RussianLanguage/index.md) · [Helios](helios.md) · [DeepWiki 概览](https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview)
+[阅读指南](navigation/reading.md) · [维护规则](navigation/maintenance.md) · [设计方向](navigation/design.md) · [可选网站](navigation/website.md)
+
+补充资料：[Java 基础](Java/Note.md) · [Java 专题](Java/subtopi.md) · [Go 源码](Go) · [预科数学语言](MathsLanguage/keyknowledge.md) · [Helios](helios.md) · [DeepWiki 概览](https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview)

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sourceGroup": "prolang-class01",
-  "status": "source snapshot; not built, run, or accepted",
+  "status": "source snapshot",
   "files": [
     {
       "path": "ConsoleApplication1/ConsoleApplication1/lab1.c",

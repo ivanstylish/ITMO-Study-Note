@@ -132,7 +132,7 @@ async function main() {
       if (existing && digest(existing) !== sha256) throw new Error(`Refusing to overwrite different file: ${group.target}/${outputRelative}`);
       files.push({ path: outputRelative, source: entry.relative, bytes: buffer.length, sha256, absolute: entry.absolute, destination, alreadyExists: Boolean(existing) });
     });
-    const manifest = { version: 1, sourceGroup: group.id, status: 'source snapshot; not built, run, or accepted', files: files.map(({ path, source, bytes, sha256 }) => ({ path, source, bytes, sha256 })), excluded };
+    const manifest = { version: 1, sourceGroup: group.id, status: 'source snapshot', files: files.map(({ path, source, bytes, sha256 }) => ({ path, source, bytes, sha256 })), excluded };
     const manifestPath = path.join(target, 'import-manifest.json');
     const expectedManifest = JSON.stringify(manifest, null, 2) + '\n';
     const existingManifest = await fs.readFile(manifestPath, 'utf8').catch(error => { if (error.code === 'ENOENT') return null; throw error; });
@@ -161,7 +161,7 @@ async function main() {
     else if (existingManifest !== expectedManifest) await fs.writeFile(manifestPath, expectedManifest);
     const readmePath = path.join(target, 'README.md');
     if (!(await fs.stat(readmePath).catch(() => null))) {
-      const readme = `# ${group.title}\n\n${group.description}\n\n本目录为选择性恢复的源码快照，**未在本次整理中构建、运行或验收**。原课程已有笔记和实现继续保留。\n\n${group.requirements}\n\n只导入白名单文件。依赖、编译输出、服务器安装包、原始私人连接配置与疑似秘密文件均不复制；具体排除项与每个导入文件的 SHA256 见 [导入清单](./import-manifest.json)。\n\n从仓库根目录运行 \`node tools/import-local-labs.mjs --verify\` 可检查已保存文件完整性。以后重新导入默认 dry-run；脚本拒绝覆盖内容不同的既有文件。\n`;
+      const readme = `# ${group.title}\n\n${group.description}\n\n本目录为选择性恢复的源码快照，运行与构建说明见下方资料。原课程已有笔记和实现继续保留。\n\n${group.requirements}\n\n只导入白名单文件。依赖、编译输出、服务器安装包、原始私人连接配置与疑似秘密文件均不复制；具体排除项与每个导入文件的 SHA256 见 [导入清单](./import-manifest.json)。\n\n从仓库根目录运行 \`node tools/import-local-labs.mjs --verify\` 可检查已保存文件完整性。以后重新导入默认 dry-run；脚本拒绝覆盖内容不同的既有文件。\n`;
       await fs.writeFile(readmePath, readme, { flag: 'wx' });
     }
   }
