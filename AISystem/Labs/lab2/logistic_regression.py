@@ -13,19 +13,16 @@ RATES, STEPS = [0.001, 0.01, 0.1, 1.0], [5, 20, 100, 500, 2000]
 
 
 def sigmoid(z):
-    """Устойчивая сигмоида: экспонента всегда имеет неположительный аргумент.稳定的 Sigmoid 函数：其指数部分的自变量始终为非正值。"""
     z = np.asarray(z, dtype=float)
     e = np.exp(-np.abs(z))
     return np.where(z >= 0, 1 / (1 + e), e / (1 + e))
 
 
 def log_loss(y, z):
-    """Средняя отрицательная логарифмическая правдоподобность по логитам. Logits 的平均负对数似然"""
     return float(np.mean(np.logaddexp(0, z) - y * z))
 
 
 def split(indices, y, fraction, rng):
-    """Стратифицированное разбиение: доли классов сохраняются с округлением. 分层划分：保留类别比例（经舍入处理）。"""
     train, test = [], []
     for label in (0, 1):
         group = rng.permutation(indices[y[indices] == label])
@@ -36,7 +33,6 @@ def split(indices, y, fraction, rng):
 
 
 def prepare(frame, parameters=None):
-    """Медианы и масштаб оцениваются только при первом вызове на обучении. 中位数和尺度仅在训练期间的首次调用时进行估计。"""
     X = frame[FEATURES].astype(float).copy()
     X[MISSING] = X[MISSING].replace(0, np.nan)
     if parameters is None:
@@ -44,7 +40,6 @@ def prepare(frame, parameters=None):
         filled = X.fillna(medians)
         parameters = medians, filled.mean(), filled.std(ddof=0).replace(0, 1)
     medians, means, scales = parameters
-    # Не переоцениваем параметры на проверке и тесте. 验证和测试不能重新计算参数。
     X = ((X.fillna(medians) - means) / scales).to_numpy()
     if not np.isfinite(X).all():
         raise ValueError('После обработки остались некорректные значения')
@@ -52,7 +47,6 @@ def prepare(frame, parameters=None):
 
 
 def fit(X, y, rate=0.1, iterations=500, method='gd'):
-    """Пакетный градиентный спуск или метод Ньютона с уменьшением шага. 批量梯度下降或带步长缩减的牛顿法"""
     if method not in ('gd', 'newton') or not np.isfinite(rate) or rate <= 0 or iterations < 1:
         raise ValueError('Некорректные гиперпараметры')
     weights = np.zeros(X.shape[1])
@@ -63,7 +57,6 @@ def fit(X, y, rate=0.1, iterations=500, method='gd'):
         direction = gradient
         if method == 'newton':
             hessian = (X.T * (p * (1 - p))) @ X / len(y)
-            # Решаем систему, не вычисляя обратную матрицу. 解方程而非求逆。
             direction = np.linalg.solve(hessian + 1e-8 * np.eye(X.shape[1]), gradient)
         step = rate
         candidate = weights - step * direction
@@ -82,7 +75,6 @@ def fit(X, y, rate=0.1, iterations=500, method='gd'):
 
 
 def metrics(y, predicted):
-    """Положительный класс — диабет; нулевой знаменатель даёт метрику 0. 正类为糖尿病；分母为零会导致指标值为 0。"""
     tp = int(np.sum((y == 1) & (predicted == 1)))
     tn = int(np.sum((y == 0) & (predicted == 0)))
     fp = int(np.sum((y == 0) & (predicted == 1)))
@@ -130,7 +122,6 @@ def main():
                     curves[(method, rate)] = history
     results = pd.DataFrame(rows)
     results.to_csv(out / 'hyperparameter_results.csv', index=False)
-    # Выбор только по проверочной выборке. 不能根据测试集成绩选择参数。
     best = results.sort_values(['val_f1', 'val_loss', 'iterations', 'method', 'rate'],
                                ascending=[False, True, True, True, True], kind='stable').iloc[0]
     Xdev, parameters = prepare(data.iloc[development])
