@@ -1,10 +1,3 @@
-"""Lab 2: perspective rendering of a sphere lit by Lambertian point sources.
-
-The assignment's empirical Blinn-Phong BRDF is used without an extra
-normalization factor: f = kd + ks * max(n.h, 0)**shininess.
-kd and ks have units sr^-1, so the output radiance has units W/(m^2 sr).
-Distances entered in millimetres are converted to metres for lighting.
-"""
 from __future__ import annotations
 
 import argparse

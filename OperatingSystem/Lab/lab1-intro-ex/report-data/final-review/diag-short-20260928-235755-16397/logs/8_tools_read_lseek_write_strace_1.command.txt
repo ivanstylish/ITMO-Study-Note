@@ -1,0 +1,1 @@
+timeout -k 3 180 taskset -c 2 strace -c -S calls -o /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/logs/8_tools_read_lseek_write_strace_1.strace.txt ./out/graph_traverse --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin 

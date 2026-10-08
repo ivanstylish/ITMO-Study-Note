@@ -1,0 +1,16 @@
+# started on Wed Oct  7 16:23:39 2026
+
+
+ Performance counter stats for './out/graph_traverse_mmap --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/graph-work.bin':
+
+                 0      context-switches:u                                          
+                 0      cpu-migrations:u                                            
+              2775      page-faults:u                                               
+   <not supported>      cache-misses:u                                              
+
+       0.000502069 seconds time elapsed
+
+       0.000000000 seconds user
+       0.004771000 seconds sys
+
+

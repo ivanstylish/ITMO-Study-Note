@@ -1,0 +1,14 @@
+
+ Performance counter stats for 'true':
+
+                 0      context-switches:u                                          
+                 0      cpu-migrations:u                                            
+                50      page-faults:u                                               
+   <not supported>      cache-misses:u                                              
+
+       0.000608005 seconds time elapsed
+
+       0.000000000 seconds user
+       0.000126000 seconds sys
+
+

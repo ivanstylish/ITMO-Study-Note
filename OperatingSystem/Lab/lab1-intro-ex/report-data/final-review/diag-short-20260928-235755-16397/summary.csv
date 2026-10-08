@@ -1,0 +1,17 @@
+phase,api,mode,tool,n,mean_wall_s,mean_ms_per_pass
+tools,mmap,read,time_v,1,0.004180957,4.180957000
+tools,read_lseek,write,time_v,1,0.247398523,247.398523000
+quiet,mmap,read,resource,3,0.036017360,1.800867983
+stress,mmap,read,resource,3,0.068207267,3.410363350
+tools,mmap,write,bare,1,0.006586323,6.586323000
+tools,mmap,read,bare,1,0.004643873,4.643873000
+tools,read_lseek,write,bare,1,0.250187838,250.187838000
+tools,read_lseek,read,bare,1,0.103746546,103.746546000
+tools,mmap,write,strace,1,0.007519017,7.519017000
+tools,read_lseek,read,strace,1,4.353811681,4353.811681000
+stress,read_lseek,read,resource,3,4.281070151,214.053507567
+tools,mmap,read,strace,1,0.006866544,6.866544000
+tools,read_lseek,write,strace,1,8.868145590,8868.145590000
+quiet,read_lseek,read,resource,3,1.956308544,97.815427200
+tools,mmap,write,time_v,1,0.007055019,7.055019000
+tools,read_lseek,read,time_v,1,0.099967563,99.967563000

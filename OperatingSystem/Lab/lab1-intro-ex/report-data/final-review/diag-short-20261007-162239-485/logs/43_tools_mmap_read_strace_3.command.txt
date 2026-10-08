@@ -1,0 +1,1 @@
+timeout -k 3 180 taskset -c 2 strace -c -S calls -o /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/logs/43_tools_mmap_read_strace_3.strace.txt ./out/graph_traverse_mmap 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/graph-work.bin 

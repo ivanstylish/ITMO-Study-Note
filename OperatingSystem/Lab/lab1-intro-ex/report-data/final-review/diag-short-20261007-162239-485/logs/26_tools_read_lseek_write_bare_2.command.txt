@@ -1,0 +1,1 @@
+timeout -k 3 180 taskset -c 2 ./out/graph_traverse --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/graph-work.bin 

@@ -1,0 +1,16 @@
+# started on Wed Oct  7 16:22:57 2026
+
+
+ Performance counter stats for './out/graph_traverse --write 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/graph-work.bin':
+
+                 0      context-switches:u                                          
+                 0      cpu-migrations:u                                            
+                56      page-faults:u                                               
+   <not supported>      cache-misses:u                                              
+
+       0.228649673 seconds time elapsed
+
+       0.067081000 seconds user
+       0.161784000 seconds sys
+
+

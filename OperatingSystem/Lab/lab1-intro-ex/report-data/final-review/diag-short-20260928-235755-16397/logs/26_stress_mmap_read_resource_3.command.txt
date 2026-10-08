@@ -1,0 +1,1 @@
+timeout -k 3 180 taskset -c 2 /usr/bin/time -f %U\,%S\,%w\,%c\,%R\,%F -o /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/resource.tmp ./out/graph_traverse_mmap 20 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20260928-235755-16397/graph-work.bin 

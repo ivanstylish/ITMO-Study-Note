@@ -1,0 +1,2 @@
+{"case":"sleep","host_elapsed_s":4.2801394,"guest_result":"{\"case\": \"sleep\", \"monotonic_s\": 2.001924856, \"realtime_s\": 2.003095874, \"exit\": 0}"}
+{"case":"trace","host_elapsed_s":9.1497964,"guest_result":"{\"case\": \"trace\", \"monotonic_s\": 8.987273642, \"realtime_s\": 8.986288125, \"exit\": 0}"}
