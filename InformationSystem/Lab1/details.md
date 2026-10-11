@@ -18,3 +18,18 @@ schema名：lab1_info
 ```sql
 select * from lab1_info.human; 
 ```
+
+ssh -p 2222 -N -o ExitOnForwardFailure=yes -L 127.0.0.1:18090:127.0.0.1:18090 s407959@helios.cs.ifmo.ru
+
+yDqY-9700
+ssh s407959@helios.cs.ifmo.ru -p 2222 
+cat ~/.pgpass
+psql -h pg -d studs
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOW6hG03vgl8rxB7AmVbIantaQgvmj7+crzmuiHrMBoj eddsa-key-20261001
+
+echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOW6hG03vgl8rxB7AmVbIantaQgvmj7+crzmuiHrMBoj eddsa-key-20261001' >> ~/.ssh/authorized_keys
+
+ssh -i F:\helios_ed25519 -p 2222 s407959@helios.cs.ifmo.ru
+
+java -jar city-lab1.jar   --spring.flyway.baseline-on-migrate=true   --spring.flyway.baseline-version=0

@@ -17,6 +17,7 @@ PGAdmin4
 cat ~/.pgpass ; 获数据库密码  
 PGPASSWORD=R3JIQIhNsdM2QGJv  
 连接学校数据库：  
+psql -h helios.se.ifmo.ru -p 5432 -U s407959 -d studs -W
 psql -h pg -d studs  
 psql -h pg -d ucheb  
 

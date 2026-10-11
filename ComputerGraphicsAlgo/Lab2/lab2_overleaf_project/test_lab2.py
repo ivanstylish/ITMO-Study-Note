@@ -23,6 +23,19 @@ class Lab2Tests(unittest.TestCase):
         self.assertAlmostEqual(diffuse, expected*p.kd, places=10)
         self.assertAlmostEqual(specular, expected*p.ks, places=10)
 
+    def test_adjustable_directional_emission_axis(self):
+        point = np.array([0.0, 0.0, 950.0])
+        default_axis = radiance_at(point, replace(self.p,
+            lights=(Light(0, 0, 1700, 100, axis=(0, 0, -1)),)))[0]
+        reversed_axis = radiance_at(point, replace(self.p,
+            lights=(Light(0, 0, 1700, 100, axis=(0, 0, 1)),)))[0]
+        self.assertGreater(float(default_axis), 0)
+        self.assertEqual(float(reversed_axis), 0)
+
+    def test_resolution_follows_physical_aspect_ratio(self):
+        p = Parameters(width_mm=1200, height_mm=800, width_px=600)
+        self.assertEqual(p.height_px, 400)
+
     def test_nearest_ray_intersection(self):
         hit, point = trace(self.p, np.array(0.0), np.array(0.0))
         self.assertTrue(hit)
@@ -67,6 +80,33 @@ class Lab2Tests(unittest.TestCase):
                 validate(replace(self.p, **change))
         validate(replace(self.p, direction=(0.05, 0, -1)))
 
+    def test_observer_can_view_sphere_from_below(self):
+        below = replace(self.p, width_mm=2000, height_mm=2000,
+                        observer_z_mm=0, direction=(0, 0, 1),
+                        screen_z_mm=1200)
+        validate(below)
+        result = calculate(below)
+        self.assertTrue(np.any(result['mask']))
+        with self.assertRaises(ValueError):
+            validate(replace(self.p, observer_z_mm=600))
+
+    def test_screen_must_be_behind_sphere(self):
+        with self.assertRaises(ValueError):
+            validate(replace(self.p, screen_z_mm=300))
+
+    def test_screen_z_coordinate_and_old_config_migration(self):
+        from lab2_sphere import screen_offset_mm, load_parameters
+        self.assertEqual(screen_offset_mm(self.p), 2500)
+        below = replace(self.p, observer_z_mm=0, direction=(0, 0, 1),
+                        screen_z_mm=1200)
+        self.assertEqual(screen_offset_mm(below), 1200)
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as directory:
+            config = Path(directory)/'legacy.json'
+            config.write_text('{"observer_z_mm":2500,"direction":[0,0,-1],'
+                              '"screen_distance_mm":2500}', encoding='utf-8')
+            migrated = load_parameters(config)
+            self.assertEqual(migrated.screen_z_mm, 0)
+
     def test_pixel_surface_and_png_export(self):
         result = calculate(self.p)
         np.testing.assert_allclose(np.linalg.norm(result['points'][result['mask']]
@@ -74,7 +114,8 @@ class Lab2Tests(unittest.TestCase):
         self.assertEqual(result['image'].max(), 255)
         self.assertFalse(np.any(result['image'][~result['mask']]))
         self.assertGreater(result['y'][0], result['y'][-1])
-        with tempfile.TemporaryDirectory() as directory:
+        # Keep temporary export files in the project, where the test has write access.
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as directory:
             save_results(result, directory)
             png = Image.open(Path(directory)/'sphere_normalized.png')
             self.assertEqual(png.mode, 'L')

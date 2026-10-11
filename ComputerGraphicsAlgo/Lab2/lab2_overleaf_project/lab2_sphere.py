@@ -19,6 +19,8 @@ class Light:
     y_mm: float = 450.0
     z_mm: float = 1700.0
     intensity_w_sr: float = 100.0
+    # Unit emission axis in world coordinates; default follows the assignment (-Z).
+    axis: tuple[float, float, float] = (0.0, 0.0, -1.0)
 
     def position(self):
         return np.array([self.x_mm, self.y_mm, self.z_mm], dtype=float)
@@ -32,7 +34,7 @@ class Parameters:
     height_px: int = 600
     observer_z_mm: float = 2500.0
     direction: tuple[float, float, float] = (0.0, 0.0, -1.0)
-    screen_distance_mm: float = 2500.0
+    screen_z_mm: float = 0.0
     center_x_mm: float = 0.0
     center_y_mm: float = 0.0
     center_z_mm: float = 600.0
@@ -42,6 +44,14 @@ class Parameters:
     shininess: float = 80.0
     lights: tuple[Light, ...] = field(default_factory=lambda: (
         Light(), Light(550.0, -250.0, 1600.0, 70.0)))
+
+    def __post_init__(self):
+        # Derive the vertical resolution from physical screen dimensions.
+        if self.width_mm > 0 and self.height_mm > 0 and self.width_px > 0:
+            height_px = max(1, int(round(self.width_px * self.height_mm / self.width_mm)))
+        else:
+            height_px = 1
+        object.__setattr__(self, "height_px", height_px)
 
     def observer(self):
         return np.array([0.0, 0.0, self.observer_z_mm])
@@ -67,36 +77,56 @@ def camera_basis(p):
     return right, up, forward
 
 
+def screen_offset_mm(p, forward=None):
+    """Distance along the view axis to the screen center specified by z_screen."""
+    if forward is None:
+        forward = unit(p.direction)
+    if abs(forward[2]) < 1e-12:
+        raise ValueError("Для координаты экрана z направление наблюдения должно иметь компоненту Z")
+    # Пользователь задаёт z экрана; это внутреннее значение нужно перспективной проекции.
+    return (p.screen_z_mm - p.observer_z_mm) / forward[2]
+
+
 def validate(p):
     numeric = [p.width_mm, p.height_mm, p.observer_z_mm,
-               p.screen_distance_mm, p.center_x_mm, p.center_y_mm,
+               p.screen_z_mm, p.center_x_mm, p.center_y_mm,
                p.center_z_mm, p.radius_mm, p.kd, p.ks, p.shininess,
                *p.direction]
     if not all(math.isfinite(x) for x in numeric):
         raise ValueError("Все параметры должны быть конечными числами")
     if not 100 <= p.width_mm <= 10000 or not 100 <= p.height_mm <= 10000:
         raise ValueError("W и H должны быть в диапазоне 100..10000 мм")
-    for value in (p.width_px, p.height_px):
-        if not isinstance(value, (int, np.integer)) or not 200 <= value <= 800:
-            raise ValueError("Разрешение должно быть целым числом 200..800")
-    if not math.isclose(p.width_mm / p.width_px, p.height_mm / p.height_px,
-                        rel_tol=1e-9, abs_tol=1e-9):
-        raise ValueError("Требуются квадратные пиксели: W/Wres = H/Hres")
+    if not isinstance(p.width_px, (int, np.integer)) or not 200 <= p.width_px <= 800:
+        raise ValueError("Wres должно быть целым числом 200..800")
+    expected_height_px = max(1, int(round(p.width_px * p.height_mm / p.width_mm)))
+    if p.height_px != expected_height_px or not 200 <= p.height_px <= 800:
+        raise ValueError("Автоматическое Hres должно попадать в диапазон 200..800")
     if abs(p.center_x_mm) > 10000 or abs(p.center_y_mm) > 10000:
         raise ValueError("xC и yC должны быть в диапазоне -10000..10000 мм")
     if not 100 <= p.center_z_mm <= 10000:
         raise ValueError("zC должен быть в диапазоне 100..10000 мм")
-    if p.radius_mm <= 0 or p.screen_distance_mm <= 0 or p.observer_z_mm <= 0:
-        raise ValueError("Радиус, zO и расстояние до экрана должны быть > 0")
+    if p.radius_mm <= 0:
+        raise ValueError("Радиус должен быть > 0")
     if np.linalg.norm(p.direction) < 1e-12:
         raise ValueError("Направление наблюдения не может быть нулевым")
+    right, up, forward = camera_basis(p)
+    screen_offset = screen_offset_mm(p, forward)
+    if screen_offset <= 0:
+        raise ValueError("Экран должен находиться впереди наблюдателя; проверьте z экрана и направление")
+    # zO may be above or below the sphere.  The camera only has to stay outside it.
+    if np.linalg.norm(p.observer() - p.center()) <= p.radius_mm:
+        raise ValueError("Наблюдатель должен находиться вне сферы")
     if p.kd < 0 or p.ks < 0 or p.shininess <= 0:
         raise ValueError("kd, ks >= 0; показатель блеска > 0")
     if not p.lights:
         raise ValueError("Требуется хотя бы один источник")
     for light in p.lights:
-        if not all(math.isfinite(x) for x in asdict(light).values()):
+        light_values = (light.x_mm, light.y_mm, light.z_mm,
+                        light.intensity_w_sr, *light.axis)
+        if not all(math.isfinite(x) for x in light_values):
             raise ValueError("Параметры источника должны быть конечными")
+        if np.linalg.norm(light.axis) < 1e-12:
+            raise ValueError("Направление излучения источника не может быть нулевым")
         if abs(light.x_mm) > 10000 or abs(light.y_mm) > 10000:
             raise ValueError("xL и yL должны быть в диапазоне -10000..10000 мм")
         if not 100 <= light.z_mm <= 10000:
@@ -107,24 +137,28 @@ def validate(p):
             raise ValueError("Источник должен находиться вне сферы")
     # 球体完整可见的几何判据：球心到视锥四个侧面的有符号距离均不小于半径。
     # 不能只检查投影中心，否则球体边缘可能被裁剪。
-    right, up, forward = camera_basis(p)
     rel = p.center() - p.observer()
     depth = np.dot(rel, forward)
     if depth <= p.radius_mm:
         raise ValueError("Сфера должна целиком находиться перед наблюдателем")
+    # Плоскость экрана с заданной координатой z должна находиться за дальней точкой сферы.
+    if screen_offset <= depth + p.radius_mm:
+        raise ValueError("Экран должен находиться за всей сферой по направлению наблюдения")
     for axis, half_size in ((right, p.width_mm / 2), (up, p.height_mm / 2)):
-        slope = half_size / p.screen_distance_mm
+        slope = half_size / screen_offset
         for sign in (-1, 1):
             plane_normal = unit(slope * forward + sign * axis)
             if np.dot(rel, plane_normal) < p.radius_mm - 1e-8:
-                raise ValueError("Сфера не целиком помещается в поле зрения")
+                raise ValueError(
+                    "Сфера не целиком помещается в поле зрения. Увеличьте W/H; "
+                    "для стандартного вида снизу используйте экран 2000×2000 мм")
 
 
 def trace(p, screen_x, screen_y):
     """Return hit mask and closest positive ray-sphere intersections (mm)."""
     right, up, forward = camera_basis(p)
     # 透视投影：从观察者 O 发出穿过每个像素中心的单位射线 d。
-    directions = unit(p.screen_distance_mm * forward
+    directions = unit(screen_offset_mm(p, forward) * forward
                       + np.asarray(screen_x)[..., None] * right
                       + np.asarray(screen_y)[..., None] * up)
     oc = p.observer() - p.center()
@@ -155,9 +189,10 @@ def radiance_at(points_mm, p):
         # 输入距离为毫米；照明的平方反比项必须使用米，得到 W/m² 的辐照度。
         distance2_m = np.sum((to_light / 1000.0)**2, axis=-1)
         l = unit(to_light)
-        # 朗伯点光源：I(θ)=I0*max(cosθ,0)。光轴为 -Z，发射方向为 -l，
-        # 所以 cosθ=(-Z)·(-l)=l_z；截断负值避免背向光源产生负亮度。
-        cos_emission = np.maximum(l[..., 2], 0.0)
+        # 朗伯点光源：I(θ)=I0*max(a·s,0)，a 是可调单位发射轴，s=-l 是光源到表面的方向。
+        # 默认 a=(0,0,-1) 时退化为 max(l_z,0)；截断负值表示光源背向一侧不发光。
+        emission_axis = unit(light.axis)
+        cos_emission = np.maximum(np.sum((-l) * emission_axis, axis=-1), 0.0)
         # 接收面的余弦定律：cosα=max(n·l,0)，背光面不接收该光源的直接照明。
         cos_incidence = np.maximum(np.sum(n*l, axis=-1), 0.0)
         irradiance = (light.intensity_w_sr * cos_emission * cos_incidence
@@ -247,7 +282,7 @@ def draw_section(fig, result):
     p = result["parameters"]
     right, up, forward = camera_basis(p)
     relative = p.center()-p.observer()
-    center_screen_y = p.screen_distance_mm*np.dot(relative, up)/np.dot(relative, forward)
+    center_screen_y = screen_offset_mm(p, forward)*np.dot(relative, up)/np.dot(relative, forward)
     x = np.linspace(-p.width_mm/2, p.width_mm/2, 2001)
     mask, points = trace(p, x, np.full_like(x, center_screen_y))
     values = [np.full_like(x, np.nan) for _ in range(3)]
@@ -306,6 +341,14 @@ def summary(result):
 def load_parameters(path):
     data = json.loads(Path(path).read_text(encoding="utf-8-sig"))
     data = data.get("parameters", data)
+    # Совместимость со старыми JSON: перевод прежнего расстояния в координату z экрана.
+    if "screen_distance_mm" in data:
+        old_offset = data.pop("screen_distance_mm")
+        if "screen_z_mm" not in data:
+            direction = unit(data.get("direction", (0.0, 0.0, -1.0)))
+            if abs(direction[2]) < 1e-12:
+                raise ValueError("Невозможно преобразовать старый параметр расстояния в z экрана")
+            data["screen_z_mm"] = data.get("observer_z_mm", 2500.0) + old_offset * direction[2]
     if "lights" in data:
         data["lights"] = tuple(Light(**light) for light in data["lights"])
     if "direction" in data:
@@ -323,8 +366,8 @@ def run_gui(initial):
     controls = ttk.Frame(root, padding=10)
     controls.pack(side="left", fill="y")
     fields = (("width_mm", "W, мм"), ("height_mm", "H, мм"),
-              ("width_px", "Wres"), ("height_px", "Hres"),
-              ("observer_z_mm", "zO, мм"), ("screen_distance_mm", "Экран: расстояние, мм"),
+              ("width_px", "Wres"),
+              ("observer_z_mm", "zO, мм"), ("screen_z_mm", "z экрана, мм"),
               ("center_x_mm", "xC, мм"), ("center_y_mm", "yC, мм"),
               ("center_z_mm", "zC, мм"), ("radius_mm", "Радиус, мм"),
               ("kd", "kd, 1/ср"), ("ks", "ks, 1/ср"), ("shininess", "Показатель блеска"))
@@ -333,17 +376,36 @@ def run_gui(initial):
         ttk.Label(controls, text=label).grid(row=row, column=0, sticky="w")
         variables[key] = tk.StringVar(value=str(getattr(initial, key)))
         ttk.Entry(controls, textvariable=variables[key], width=19).grid(row=row, column=1, pady=2)
+    resolution_row = len(fields)
+    resolution_label = ttk.Label(controls, text="")
+    resolution_label.grid(row=resolution_row, column=0, columnspan=2, sticky="w")
+
+    def refresh_resolution(*_):
+        try:
+            w_mm = float(variables["width_mm"].get())
+            h_mm = float(variables["height_mm"].get())
+            w_px = int(variables["width_px"].get())
+            h_px = max(1, int(round(w_px * h_mm / w_mm)))
+            resolution_label.configure(text=f"Авторазрешение: {w_px} × {h_px} px")
+        except (ValueError, ZeroDivisionError):
+            resolution_label.configure(text="Авторазрешение: проверьте W, H и Wres")
+
+    for key in ("width_mm", "height_mm", "width_px"):
+        variables[key].trace_add("write", refresh_resolution)
+    refresh_resolution()
     direction_var = tk.StringVar(value=",".join(map(str, initial.direction)))
-    row = len(fields)
+    row = resolution_row + 1
     ttk.Label(controls, text="Направление dx,dy,dz").grid(row=row, column=0, sticky="w")
     ttk.Entry(controls, textvariable=direction_var, width=19).grid(row=row, column=1)
-    ttk.Label(controls, text="Источники: x y z I0, по одному в строке").grid(
+    ttk.Label(controls, text="Источники: x y z I0 ax ay az, по одному в строке").grid(
         row=row+1, column=0, columnspan=2, sticky="w", pady=(8, 2))
     lights_text = tk.Text(controls, width=39, height=5)
     lights_text.grid(row=row+2, column=0, columnspan=2)
-    lights_text.insert("1.0", "\n".join(" ".join(map(str, asdict(l).values())) for l in initial.lights))
+    lights_text.insert("1.0", "\n".join(
+        f"{l.x_mm} {l.y_mm} {l.z_mm} {l.intensity_w_sr} "
+        f"{' '.join(map(str, l.axis))}" for l in initial.lights))
     output = tk.Text(controls, width=44, height=11, wrap="word")
-    output.grid(row=row+5, column=0, columnspan=2, pady=8)
+    output.grid(row=row+6, column=0, columnspan=2, pady=8)
     fig = Figure(figsize=(8, 6))
     canvas = FigureCanvasTkAgg(fig, master=root)
     canvas.get_tk_widget().pack(side="right", fill="both", expand=True)
@@ -359,9 +421,9 @@ def run_gui(initial):
         for line in lights_text.get("1.0", "end").splitlines():
             if line.strip():
                 parts = [float(v) for v in line.replace(",", " ").split()]
-                if len(parts) != 4:
-                    raise ValueError("Каждый источник: четыре числа x y z I0")
-                lights.append(Light(*parts))
+                if len(parts) != 7:
+                    raise ValueError("Источник: семь чисел x y z I0 ax ay az")
+                lights.append(Light(*parts[:4], axis=tuple(parts[4:])))
         return Parameters(**values, direction=direction, lights=tuple(lights))
 
     def update():
@@ -387,8 +449,24 @@ def run_gui(initial):
             save_results(current, directory)
             messagebox.showinfo("Сохранено", "Изображения и численные результаты сохранены")
 
+    def apply_below_view_preset():
+        # Рабочая геометрия: наблюдатель снизу, сфера между ним и экраном.
+        preset = {
+            "width_mm": 2000, "height_mm": 2000,
+            "observer_z_mm": 0, "screen_z_mm": 1200,
+            "center_x_mm": 0, "center_y_mm": 0,
+            "center_z_mm": 600, "radius_mm": 350,
+        }
+        for key, value in preset.items():
+            variables[key].set(str(value))
+        direction_var.set("0,0,1")
+        update()
+
     ttk.Button(controls, text="Рассчитать", command=update).grid(row=row+3, column=0, columnspan=2, sticky="ew", pady=6)
     ttk.Button(controls, text="Сохранить результаты", command=save).grid(row=row+4, column=0, columnspan=2, sticky="ew")
+    ttk.Button(controls, text="Пример: вид снизу (+Z)",
+               command=apply_below_view_preset).grid(
+                   row=row+5, column=0, columnspan=2, sticky="ew", pady=(6, 0))
     update()
     root.mainloop()
 

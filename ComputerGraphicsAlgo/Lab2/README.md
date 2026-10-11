@@ -7,5 +7,6 @@
 - Overleaf 源文件：`lab2_overleaf_project/lab2.tex`
 - Python 程序：`lab2_overleaf_project/lab2_sphere.py`
 - 运行、模型约定与结果说明：`lab2_overleaf_project/README.md`
+- 答辩学习笔记：`lab2_overleaf_project/lab2_defense_guide.md`
 
 提交前填写报告封面中的组号和教师；姓名沿用实验一。
