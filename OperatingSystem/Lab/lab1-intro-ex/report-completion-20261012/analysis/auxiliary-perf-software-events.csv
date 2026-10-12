@@ -1,0 +1,13 @@
+api,mode,rep,iterations,outer_wall_mono_s,hardware_cache_misses_supported,event_scope,context_switches_u,cpu_migrations_u,page_faults_u
+read_lseek,read,1,1,0.121480106,False,user-only (:u),0,0,55
+read_lseek,read,2,1,0.117831844,False,user-only (:u),0,0,56
+read_lseek,read,3,1,0.139199266,False,user-only (:u),0,0,57
+read_lseek,write,1,1,0.253366562,False,user-only (:u),0,0,56
+read_lseek,write,2,1,0.267099182,False,user-only (:u),0,0,57
+read_lseek,write,3,1,0.268635515,False,user-only (:u),0,0,57
+mmap,read,1,1,0.01119956,False,user-only (:u),0,0,215
+mmap,read,2,1,0.029445693,False,user-only (:u),0,0,217
+mmap,read,3,1,0.03935773,False,user-only (:u),0,0,217
+mmap,write,1,1,0.02682153,False,user-only (:u),0,0,2777
+mmap,write,2,1,0.012010089,False,user-only (:u),0,0,2776
+mmap,write,3,1,0.012741683,False,user-only (:u),0,0,2775

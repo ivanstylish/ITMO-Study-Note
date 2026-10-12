@@ -1,0 +1,9 @@
+{
+  "phase": "formal",
+  "N": 30,
+  "exit_code": 0,
+  "monotonic_s": 231.644214882,
+  "monotonic_raw_s": 214.968862742,
+  "realtime_s": 215.446972252,
+  "scope": "Whole phase including compilation, graph generation, warmups, preparation and snapshots."
+}

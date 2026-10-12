@@ -1,0 +1,102 @@
+{
+  "C_last.log": {
+    "mtime_epoch": 1791821379.2751331,
+    "mtime_moscow": "2026-10-12T19:09:39.275133+03:00",
+    "bytes": 1611
+  },
+  "B_last.log": {
+    "mtime_epoch": 1791816295.8647978,
+    "mtime_moscow": "2026-10-12T17:44:55.864798+03:00",
+    "bytes": 79
+  },
+  "mono_time.py": {
+    "mtime_epoch": 1791815686.2444978,
+    "mtime_moscow": "2026-10-12T17:34:46.244498+03:00",
+    "bytes": 423
+  },
+  "C_top_during_stress.txt": {
+    "mtime_epoch": 1791816300.0713775,
+    "mtime_moscow": "2026-10-12T17:45:00.071378+03:00",
+    "bytes": 1111
+  },
+  "tool_overhead.csv": {
+    "mtime_epoch": 1791816295.8690944,
+    "mtime_moscow": "2026-10-12T17:44:55.869094+03:00",
+    "bytes": 1034
+  },
+  "load.csv": {
+    "mtime_epoch": 1791821379.2836177,
+    "mtime_moscow": "2026-10-12T19:09:39.283618+03:00",
+    "bytes": 840
+  },
+  "run_diagnostics.sh": {
+    "mtime_epoch": 1791815686.2444978,
+    "mtime_moscow": "2026-10-12T17:34:46.244498+03:00",
+    "bytes": 5603
+  },
+  "meta_diag.txt": {
+    "mtime_epoch": 1791815686.4755447,
+    "mtime_moscow": "2026-10-12T17:34:46.475545+03:00",
+    "bytes": 7034
+  },
+  "A/prog_mmap_write.log": {
+    "mtime_epoch": 1791815830.6397016,
+    "mtime_moscow": "2026-10-12T17:37:10.639702+03:00",
+    "bytes": 1631
+  },
+  "A/strace_mmap_write.txt": {
+    "mtime_epoch": 1791815830.6655543,
+    "mtime_moscow": "2026-10-12T17:37:10.665554+03:00",
+    "bytes": 1462
+  },
+  "A/prog_mmap_read.log": {
+    "mtime_epoch": 1791815830.531982,
+    "mtime_moscow": "2026-10-12T17:37:10.531982+03:00",
+    "bytes": 1611
+  },
+  "A/time_v_read_lseek_read.txt": {
+    "mtime_epoch": 1791815688.4223278,
+    "mtime_moscow": "2026-10-12T17:34:48.422328+03:00",
+    "bytes": 764
+  },
+  "A/prog_read_lseek_write.log": {
+    "mtime_epoch": 1791815738.2018235,
+    "mtime_moscow": "2026-10-12T17:35:38.201823+03:00",
+    "bytes": 1631
+  },
+  "A/strace_read_lseek_write.txt": {
+    "mtime_epoch": 1791815830.488894,
+    "mtime_moscow": "2026-10-12T17:37:10.488894+03:00",
+    "bytes": 1519
+  },
+  "A/prog_read_lseek_read.log": {
+    "mtime_epoch": 1791815688.4223278,
+    "mtime_moscow": "2026-10-12T17:34:48.422328+03:00",
+    "bytes": 1611
+  },
+  "A/strace_read_lseek_read.txt": {
+    "mtime_epoch": 1791815733.4302628,
+    "mtime_moscow": "2026-10-12T17:35:33.430263+03:00",
+    "bytes": 1519
+  },
+  "A/time_v_read_lseek_write.txt": {
+    "mtime_epoch": 1791815738.2018235,
+    "mtime_moscow": "2026-10-12T17:35:38.201823+03:00",
+    "bytes": 775
+  },
+  "A/strace_mmap_read.txt": {
+    "mtime_epoch": 1791815830.5578346,
+    "mtime_moscow": "2026-10-12T17:37:10.557835+03:00",
+    "bytes": 1462
+  },
+  "A/time_v_mmap_write.txt": {
+    "mtime_epoch": 1791815830.6397016,
+    "mtime_moscow": "2026-10-12T17:37:10.639702+03:00",
+    "bytes": 783
+  },
+  "A/time_v_mmap_read.txt": {
+    "mtime_epoch": 1791815830.531982,
+    "mtime_moscow": "2026-10-12T17:37:10.531982+03:00",
+    "bytes": 770
+  }
+}

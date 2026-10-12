@@ -1,0 +1,13 @@
+api,mode,rep,iterations,read_calls,write_calls,lseek_calls,mmap_calls,munmap_calls,total_calls
+read_lseek,read,1,1,436907,2,436906,8,1,873850
+read_lseek,read,2,1,436907,2,436906,8,1,873850
+read_lseek,read,3,1,436907,2,436906,8,1,873850
+read_lseek,write,1,1,436907,436907,873811,8,1,1747660
+read_lseek,write,2,1,436907,436907,873811,8,1,1747660
+read_lseek,write,3,1,436907,436907,873811,8,1,1747660
+mmap,read,1,1,1,2,0,9,2,40
+mmap,read,2,1,1,2,0,9,2,40
+mmap,read,3,1,1,2,0,9,2,40
+mmap,write,1,1,1,2,0,9,2,40
+mmap,write,2,1,1,2,0,9,2,40
+mmap,write,3,1,1,2,0,9,2,40

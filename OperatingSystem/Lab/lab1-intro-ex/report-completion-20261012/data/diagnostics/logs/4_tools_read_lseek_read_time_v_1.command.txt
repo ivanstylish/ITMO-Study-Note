@@ -1,0 +1,1 @@
+timeout -k 3 180 taskset -c 2 /usr/bin/time -v -o /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/logs/4_tools_read_lseek_read_time_v_1.time.txt ./out/graph_traverse 1 /home/ivanstylish/course-code/lab/intro-exp/results/diag-short-20261007-162239-485/graph-work.bin 

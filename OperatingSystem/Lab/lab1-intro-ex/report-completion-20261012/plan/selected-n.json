@@ -1,0 +1,65 @@
+{
+  "status": "pilot_completed_formal_N_selected_before_formal_series",
+  "pilot_csv": "/home/ivanstylish/intro-exp-report-final-20261012/code/lab/intro-exp/results/pilot-20261012-210953-16045/results.csv",
+  "pilot_sha256": "f7c574b440b9c9aac0a706dc5256fed2c955f5409fe32d39dfd0c7aa694dc524",
+  "frozen_plan": "/home/ivanstylish/intro-exp-report-final-20261012/plan/frozen-before-pilot-ru.md",
+  "frozen_plan_sha256": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6",
+  "quantile_source": "/mnt/d/Study-Note/OperatingSystem/Lab/lab1-intro-ex/report-completion-20261012/analysis/build_selected_assets.py",
+  "quantile_source_sha256": "41a52105763489d5de059aeb0894e8361ae9193dc2aedb3bb1f14f851cf65fbb",
+  "confidence": 0.95,
+  "relative_halfwidth_target": 0.05,
+  "minimum_formal_N": 30,
+  "core": 2,
+  "iterations": 20,
+  "warmup": 2,
+  "pilot_included_in_formal_series": false,
+  "sample_unit": "process_run_with_20_traversals",
+  "outlier_deletions": 0,
+  "groups": [
+    {
+      "api": "read_lseek",
+      "mode": "read",
+      "pilot_N": 10,
+      "mean_ms_per_traversal": 99.77392419499999,
+      "sample_sd_ms_per_traversal": 1.3698936431478106,
+      "target_halfwidth_ms_per_traversal": 4.98869620975,
+      "first_normal_approximation_N": 2,
+      "student_t_requirement_N": 3,
+      "pilot_predicted_formal_halfwidth_ms_per_traversal": 0.5115266930573019
+    },
+    {
+      "api": "read_lseek",
+      "mode": "write",
+      "pilot_N": 10,
+      "mean_ms_per_traversal": 247.56658471,
+      "sample_sd_ms_per_traversal": 4.749458892934883,
+      "target_halfwidth_ms_per_traversal": 12.3783292355,
+      "first_normal_approximation_N": 2,
+      "student_t_requirement_N": 3,
+      "pilot_predicted_formal_halfwidth_ms_per_traversal": 1.7734770969022124
+    },
+    {
+      "api": "mmap",
+      "mode": "read",
+      "pilot_N": 10,
+      "mean_ms_per_traversal": 1.6608148999999999,
+      "sample_sd_ms_per_traversal": 0.20350480126670634,
+      "target_halfwidth_ms_per_traversal": 0.083040745,
+      "first_normal_approximation_N": 24,
+      "student_t_requirement_N": 26,
+      "pilot_predicted_formal_halfwidth_ms_per_traversal": 0.0759899416527255
+    },
+    {
+      "api": "mmap",
+      "mode": "write",
+      "pilot_N": 10,
+      "mean_ms_per_traversal": 3.543730115,
+      "sample_sd_ms_per_traversal": 0.30042308460904216,
+      "target_halfwidth_ms_per_traversal": 0.17718650575,
+      "first_normal_approximation_N": 12,
+      "student_t_requirement_N": 14,
+      "pilot_predicted_formal_halfwidth_ms_per_traversal": 0.11217982341681396
+    }
+  ],
+  "selected_formal_N": 30
+}

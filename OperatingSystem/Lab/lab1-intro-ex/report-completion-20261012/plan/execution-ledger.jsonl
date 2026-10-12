@@ -1,0 +1,6 @@
+{"event": "plan_saved_before_pilot", "monotonic_ns": 109306069602314, "monotonic_raw_ns": 104091557039147, "realtime_ns": 1791828551854414278, "plan_sha256": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6"}
+{"event": "pilot_started", "monotonic_ns": 109352695047709, "monotonic_raw_ns": 104134923377215, "realtime_ns": 1791828593894649832, "N": 10, "plan_sha256": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6"}
+{"event": "pilot_completed", "monotonic_ns": 109440517262573, "monotonic_raw_ns": 104216531261391, "realtime_ns": 1791828677171252420, "exit_code": 0, "monotonic_s": 87.821385301}
+{"event": "formal_N_locked_before_formal", "N": 30, "selection_sha256": "7327335359d432b28201598ae595cc5af98582a3168d41705178f51eb6fd7da8", "frozen_plan_sha256": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6", "monotonic_ns": 109529167392156, "monotonic_raw_ns": 104298904664116, "realtime_ns": 1791828759006360898}
+{"event": "formal_started", "monotonic_ns": 109562401169832, "monotonic_raw_ns": 104329799897642, "realtime_ns": 1791828789922908108, "N": 30, "plan_sha256": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6"}
+{"event": "formal_completed", "monotonic_ns": 109794045983722, "monotonic_raw_ns": 104544769307660, "realtime_ns": 1791829005370476633, "exit_code": 0, "monotonic_s": 231.644214882}

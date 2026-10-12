@@ -1,0 +1,9 @@
+CORE=2 REPS=3 ITER=20 LIMIT=180 STAGE=tools TOOLS_REPS=3 PERF_BIN=/usr/lib/linux-tools-5.15.0-194/perf
+Tools: four configurations, one traversal; tool order rotates across repeated rounds.
+Noise: read mode, both APIs, ITER traversals, paired quiet/CPU-only load, alternating order.
+Preparation outside timer: restore -> sync -> cat; same-CPU load starts AFTER preparation.
+Warmup: one quiet run of ITER traversals per API, excluded from measurements.csv.
+wall_s: monotonic time around timeout + taskset + tool + program; realtime_s: audit only.
+c3b1380783a3d7235f317d41ad8c962f0f2988b678be51d9dd31d3015c38575b  graph-seq.orig.bin
+560fccbba76f6b0b3d4c795ff97d5a1d3142d4384a47b3c7e58ad3698ac3a145  out/graph_traverse
+ad4d2e6195afebd4bd37632667b093c3352d7819306ba46cd059575835846c69  out/graph_traverse_mmap

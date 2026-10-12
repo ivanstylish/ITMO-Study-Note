@@ -1,0 +1,5 @@
+api,mode,rep,iterations,wall_outer_mono_s,user_s,system_s,maximum_rss_kbytes,major_faults,minor_faults,voluntary_context_switches,involuntary_context_switches
+read_lseek,read,1,1,0.098978792,0.03,0.06,1440,0,69,1,1
+read_lseek,write,1,1,0.233321862,0.04,0.18,1440,0,70,1,2
+mmap,read,1,1,0.003448928,0.0,0.0,11680,0,231,1,0
+mmap,write,1,1,0.005887029,0.0,0.0,11680,0,2790,1,0

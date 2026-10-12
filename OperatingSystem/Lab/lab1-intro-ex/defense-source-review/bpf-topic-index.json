@@ -1,0 +1,278 @@
+{
+  "Chapter 3. Performance": [
+    {
+      "pdf_page": 4,
+      "snippet": "\nPreface\nPart I: Technologies\nChapter 1. Intro\nChapter 2. Technology Background\nChapter 3. Performance Analysis\nChapter 4. bcc\nChapter 5. bpftrace\nPart II: Using BPF Tools\nChapter 6. CPUs\nChapter 7. Memory\nChapter 8. File Systems\nChapter 9. Disk I/O\nChapter 10. Networking\nChapter 11. Secur"
+    },
+    {
+      "pdf_page": 8,
+      "snippet": "Summary\nChapter 3. Performance Analysis\nOverview\nPerformance Methodologies\nLinux 60-Second Analysis\nBCC Tool Checklist\nSummary\nChapter 4. BCC\nBCC Components\nBCC Features\nBCC Installation\nBCC Tools\nfunccount\nstackcount\n"
+    },
+    {
+      "pdf_page": 160,
+      "snippet": "Chapter 3. Performance\nAnalysis\nThe tools in this book can be used for performance\nanalysis, troubleshooting, security analysis, and more.\nTo help you understand how to apply them, this chapter\nis a crash cours"
+    }
+  ],
+  "Chapter 6. CPU": [
+    {
+      "pdf_page": 4,
+      "snippet": "erformance Analysis\nChapter 4. bcc\nChapter 5. bpftrace\nPart II: Using BPF Tools\nChapter 6. CPUs\nChapter 7. Memory\nChapter 8. File Systems\nChapter 9. Disk I/O\nChapter 10. Networking\nChapter 11. Security\nChapter 12. Languages\nChapter 13. Applications\nChapter 14. Kernel\nChapter 15. Containers"
+    },
+    {
+      "pdf_page": 10,
+      "snippet": "ure Work\nbpftrace Internals\nbpftrace Debugging\nSummary\nPart II: Using BPF Tools\nChapter 6. CPUs\nBackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nOptional Exercises\nSummary\nChapter 7. Memory\nBackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nOptional Exercises"
+    },
+    {
+      "pdf_page": 351,
+      "snippet": "Chapter 6. CPUs\nThe CPUs execute all software, and are a commonstarting point for performance analysis. If you find aworkload to be limited by the CPUs (“CPU bound”), youcan investigate further using CPU and pr"
+    }
+  ],
+  "Chapter 7. Memory": [
+    {
+      "pdf_page": 4,
+      "snippet": "sis\nChapter 4. bcc\nChapter 5. bpftrace\nPart II: Using BPF Tools\nChapter 6. CPUs\nChapter 7. Memory\nChapter 8. File Systems\nChapter 9. Disk I/O\nChapter 10. Networking\nChapter 11. Security\nChapter 12. Languages\nChapter 13. Applications\nChapter 14. Kernel\nChapter 15. Containers\nChapter 16. Hyp"
+    },
+    {
+      "pdf_page": 10,
+      "snippet": "ackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nOptional Exercises\nSummary\nChapter 7. Memory\nBackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nOptional Exercises"
+    },
+    {
+      "pdf_page": 433,
+      "snippet": "Chapter 7. Memory\nLinux is a virtual-memory based system where each\nprocess has its own virtual address space, and mappings\nto physical memory are made on demand. Its design\nallows for over-subscription of phys"
+    }
+  ],
+  "Chapter 8. File": [
+    {
+      "pdf_page": 4,
+      "snippet": "\nChapter 5. bpftrace\nPart II: Using BPF Tools\nChapter 6. CPUs\nChapter 7. Memory\nChapter 8. File Systems\nChapter 9. Disk I/O\nChapter 10. Networking\nChapter 11. Security\nChapter 12. Languages\nChapter 13. Applications\nChapter 14. Kernel\nChapter 15. Containers\nChapter 16. Hypervisors\nPart III:"
+    },
+    {
+      "pdf_page": 11,
+      "snippet": "Summary\nChapter 8. File Systems\nBackground\nStrategy\nTraditional Tools\nBPF Tools\nBPF One-liners\nBPF One-Liners Examples\nOptional Exercises\nSummary\nChapter 9. Disk I/O\nBackground\nTraditional Tools\nBPF Tools\nBPF One-liner"
+    },
+    {
+      "pdf_page": 498,
+      "snippet": "Chapter 8. File Systems\nAnalysis of file systems has historically focused on disk\nI/O and its performance, but file systems are often a\nmore relevant target for beginning your analysis. It is\nthe file system th"
+    }
+  ],
+  "Chapter 9. Disk": [
+    {
+      "pdf_page": 4,
+      "snippet": "t II: Using BPF Tools\nChapter 6. CPUs\nChapter 7. Memory\nChapter 8. File Systems\nChapter 9. Disk I/O\nChapter 10. Networking\nChapter 11. Security\nChapter 12. Languages\nChapter 13. Applications\nChapter 14. Kernel\nChapter 15. Containers\nChapter 16. Hypervisors\nPart III: Additional Topics"
+    },
+    {
+      "pdf_page": 11,
+      "snippet": "ols\nBPF Tools\nBPF One-liners\nBPF One-Liners Examples\nOptional Exercises\nSummary\nChapter 9. Disk I/O\nBackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nBPF One-Liners Examples\nOptional Exercises\nSummary"
+    },
+    {
+      "pdf_page": 606,
+      "snippet": "Chapter 9. Disk I/O\nDisk I/O is a common source of performance issues,\nbecause I/O latency to a heavily-loaded disk can reach\ntens of milliseconds or more – orders of magnitude\nslower than the nanosecond or mic"
+    }
+  ],
+  "Chapter 16. Hyper": [
+    {
+      "pdf_page": 4,
+      "snippet": "2. Languages\nChapter 13. Applications\nChapter 14. Kernel\nChapter 15. Containers\nChapter 16. Hypervisors\nPart III: Additional Topics"
+    },
+    {
+      "pdf_page": 14,
+      "snippet": "ackground\nTraditional Tools\nBPF Tools\nBPF One-liners\nOptional Exercises\nSummary\nChapter 16. Hypervisors\nBackground\nTraditional Tools\nGuest BPF Tools\nHost BPF Tools\nSummary\nPart III: Additional Topics\nChapter 17. Other BPF Performance Tools\nVector and Performance Co-Pilot (PCP)\nGrafana and "
+    },
+    {
+      "pdf_page": 1161,
+      "snippet": "Chapter 16. Hypervisors\nThis chapter discusses the use of BPF tools with virtual\nmachine hypervisors for hardware virtualization, of\nwhich Xen and KVM are popular examples. BPF tools\nwith OS-level virtualizatio"
+    }
+  ],
+  "The USE Method": [
+    {
+      "pdf_page": 160,
+      "snippet": "ctivities of performance\nanalysis\n• Perform workload characterization\n• Perform the USE method\n• Perform drill down analysis\n• Understand checklist methodologies\n• Find quick performance wins using traditional tools\nand the 60 second Linux checklist\n• Find quick performance wins using the "
+    },
+    {
+      "pdf_page": 194,
+      "snippet": "erformance\nanalysis methodologies: workload characterization,\nlatency analysis, the USE method, and checklists. A\nLinux performance analysis in 60 seconds checklist was\nthen included and explained, which can be your starting\npoint for any performance issue. It may solve issues\noutright, or"
+    }
+  ],
+  "USE Method": [
+    {
+      "pdf_page": 160,
+      "snippet": "ities of performance\nanalysis\n• Perform workload characterization\n• Perform the USE method\n• Perform drill down analysis\n• Understand checklist methodologies\n• Find quick performance wins using traditional tools\nand the 60 second Linux checklist\n• Find quick performance wins using the BCC/"
+    },
+    {
+      "pdf_page": 169,
+      "snippet": "outcome than concluding that faster disks were\nnecessary.\nUSE Method\nThis is a methodology I developed for resource analysis\n[Gregg 13a]. The suggested steps are:\nFor every resource, check:\n1. Utilization\n2. Saturation\n3. Errors\nYour first task is find or draw a diagr"
+    },
+    {
+      "pdf_page": 170,
+      "snippet": "Figure 3-1 Hardware targets for USE Method\nanalysis\nConsider your current monitoring tools and their ability\nto show utilization, saturation, and errors for every item\nin figure 3-1: how many blind spots do you currently\nhave?"
+    },
+    {
+      "pdf_page": 194,
+      "snippet": "rmance\nanalysis methodologies: workload characterization,\nlatency analysis, the USE method, and checklists. A\nLinux performance analysis in 60 seconds checklist was\nthen included and explained, which can be your starting\npoint for any performance issue. It may solve issues\noutright, or at "
+    }
+  ],
+  "CPU Cache": [
+    {
+      "pdf_page": 156,
+      "snippet": "CPU instructions, the hit ratios of CPU caches; memory,\ninterconnect, and device bus utilization; stall cycles; and\nso on. Using these to analyze performance can lead to\nvarious small performance optimizations.\nPMCs are also a strange resource. W"
+    },
+    {
+      "pdf_page": 351,
+      "snippet": "rning Objectives:\n• Understand CPU modes, the behavior of the CPUscheduler, and CPU caches.\n• Understand areas for CPU scheduler, usage, andhardware analysis with BPF.\n• Learn a strategy for successful analysis of CPUperformance.\n• Solve issues of short-lived processes consuming CPUresourc"
+    },
+    {
+      "pdf_page": 354,
+      "snippet": "nstead run again on the same CPU wherethe hardware caches should still be warm.\nCPU Caches\nWhile figure 6-1 shows a software view of CPUs (thescheduler), figure 6-2 provides a hardware view: theCPU caches.\nFigure 6-2 hardware caches.\nDepending on the processor model and type, there aretypi"
+    },
+    {
+      "pdf_page": 459,
+      "snippet": "is I/O from the CPU units on the processor to\nthe banks of main memory, via the CPU caches. PMCs\nwere introduced in chapter 2, and can be used in two\nmodes: counting and sampling. Counting provides\nstatistical summaries, and costs virtually zero overhead\nto use. Sampling records some of th"
+    }
+  ],
+  "Page Cache": [
+    {
+      "pdf_page": 180,
+      "snippet": "ws how much real\nmemory is available in the system, including in the\nbuffer and page caches . Having some memory in the\ncache improves file system performance.\n8. sar -n DEV 1\n$ sar -n DEV 1 \nLinux 4.13.0-19-generic (...)     08/04/2018    \n_x86_64_      (16 CPU) \n \n03:38:28 AM     IFACE  "
+    },
+    {
+      "pdf_page": 499,
+      "snippet": "• Analyze page cache and read ahead performance.\n• Observe directory and inode cache behavior.\n• Use bpftrace one-liners to explore file system usage\nin custom ways.\nThis chapter begins with the necessary background for\n"
+    },
+    {
+      "pdf_page": 502,
+      "snippet": "Figure 8-2 Linux FS caches\nThese caches are:\n• Page cache: This contains virtual memory pages\nincluding the contents of files and I/O buffers (what\nwas once a separate “buffer cache”), and improves\nthe performance of file and directory I/O.\n• Inode cache: I"
+    },
+    {
+      "pdf_page": 503,
+      "snippet": " entry names to VFS inodes,\nimproving the performance of path name lookups.\nThe page cache grows to be the largest of all these,\nbecause it not only caches the contents of files, but also\nincludes “dirty” pages that have been modified but not\nyet written to disk. Various situations can tri"
+    },
+    {
+      "pdf_page": 504,
+      "snippet": "latency?\n• What is the ratio of Dcache and Icache hits vs\nmisses?\n• What is the page cache hit ratio for reads?\n• How effective is prefetch/read-ahead? Should this be\ntuned?\nAs shown in the previous figures, you can trace the I/O\ninvolved to find the answers to many of these questions.\nEve"
+    },
+    {
+      "pdf_page": 507,
+      "snippet": "ms, that can be isolated and\ninvestigated more with other tools.\n8. Examine the page cache hit ratio over time (e.g.,\nusing cachestat(8)): does any other workload\nperturb the hit ratio, or does any tuning improve it?\n9. Use vfsstat(8) to compare logical I/O rates to\nphysical I/O rates from"
+    },
+    {
+      "pdf_page": 559,
+      "snippet": " one way to write these tools.\ncachestat\ncachestat(8)  is a BCC tool that shows page cache hit\nand miss statistics. This can be used to check the hit\n25"
+    },
+    {
+      "pdf_page": 560,
+      "snippet": "ratio and efficiency of the page cache, and run while\ninvestigating system and application tuning for feedback\non cache performance. For example, from a 36-CPU\nproduction Hadoop instance:\n# cachestat \n    HITS   MISSES  DIRTIES HITRATIO  "
+    }
+  ],
+  "Page Faults": [
+    {
+      "pdf_page": 94,
+      "snippet": "st be read via bpf_probe_read(), which\nperforms safety checks. It also disables page faults while\nreading this arbitrary memory, to ensure that the reads"
+    },
+    {
+      "pdf_page": 112,
+      "snippet": ". Later in this\nbook I will show them applied to BPF tracing of off-CPU\nevents, page faults, and more. This section explains the\nvisualization.\nStack Trace\nA stack trace, also called a stack back trace or a call\ntrace, is a series of functions that show the flow of code.\n Inspiration for t"
+    },
+    {
+      "pdf_page": 277,
+      "snippet": "by process:\nbpftrace -e 'software:major-faults:1 { \n@[comm] = count(); }'\nCount page faults by process:\nbpftrace -e 'software:faults:1 { @[comm] = \ncount(); }'\nProfile user-level stacks at 49 Hertz, for PID 189:\nbpftrace -e 'profile:hz:49 /pid == 189/ { \n@[ustack] = count(); }'\nBPFTRACE DO"
+    },
+    {
+      "pdf_page": 303,
+      "snippet": "probe software:page-faults:100 will only fire for one in\nevery hundred page faults.\nThe available software events (depending on the kernel\nversion):\nThe available hardware events (depends on the kernel\nversion and processor type):"
+    },
+    {
+      "pdf_page": 352,
+      "snippet": "uests.These requests can be explicit, such as system calls, orimplicit, such as page faults triggered by memory loadsand stores. The kernel tracks the amount of time thatthe CPUs are not idle, as well as CPU time spent in userand system mode. Various performance tools show thisuser/system "
+    },
+    {
+      "pdf_page": 433,
+      "snippet": "se BPF tools to identify code paths causing heap\nand RSS growth.\n• Characterize page faults by filename and stack trace."
+    },
+    {
+      "pdf_page": 443,
+      "snippet": "s the process physical memory (RSS) keep\ngrowing?\n• What code paths are causing page faults? For which\nfiles?\n• What processes are blocked waiting on swap-ins?\n• What memory mappings are being created system-\nwide?\n• What is the system state at the time of an OOM kill?\n• What application c"
+    },
+    {
+      "pdf_page": 447,
+      "snippet": "emory usage can be answered, or approximated, by\ntracing the infrequent events: page faults, page outs,\nbrk() calls, and mmap() calls. The overhead of tracing\nthese can be negligible.\nOne reason to trace the malloc() calls is to show the\ncode paths that led to malloc(). These code paths ca"
+    }
+  ],
+  "Context Switches": [
+    {
+      "pdf_page": 224,
+      "snippet": "ts that are called infrequently. Very frequent\nevents, such as network packets, context switches, and\nmemory allocations, can occur millions of times per\nsecond, and trace(8) would produce so much output\nthat it would cost significant overhead to instrument. A\nsolution with trace(8) is to "
+    },
+    {
+      "pdf_page": 407,
+      "snippet": "uisition and the stack traces responsible.\noffcputime(8) works by instrumenting context switchesand recording the time from when a thread leaves theCPU to when it returns, along with the stack trace. Thetimes and stack traces are frequency-counted in kernelcontext for efficiency. Context s"
+    },
+    {
+      "pdf_page": 942,
+      "snippet": " covered in Chapter 6\nCPU. It collects stacks on CPU blocking events\n(scheduler context switches), and sums the time spent\nblocked by stack trace. For offcputime(8) to work with\nJava, see the Java Prerequisites section of profile(8).\nFor example, using offcputime(8) on the Java freecol\ngam"
+    },
+    {
+      "pdf_page": 1027,
+      "snippet": "ead of offcputime(8) can be\nsignificant, exceeding 5%, depending on the rate of\ncontext switches. This is at least manageable: it could be\nrun for short periods in production as needed. Prior to\nBPF, performing off-CPU analysis involved dumping all\nstacks to user-space for post processing,"
+    },
+    {
+      "pdf_page": 1096,
+      "snippet": "cluding:\n• TASK_RUNNING (0): threads can block in this state\ndue to involuntary context switches, as the CPUs are\nrunning at saturation. In that case, the stack trace\nthat was interrupted is not very interesting, as it does\nnot show why the thread moved off-CPU.\n• TASK_INTERRUPTIBLE (1): w"
+    },
+    {
+      "pdf_page": 1223,
+      "snippet": "Figure 17-13 Grafana PCP showing standard PCP\nmetrics (context switches, runnable count), as well\nas run queue latency (runqlat) BCC metrics.\nFuture work\nMore work is still needed between Grafana and PCP to\nimprove integration with the full suite of packaged bcc-\nt"
+    }
+  ],
+  "strace": [
+    {
+      "pdf_page": 33,
+      "snippet": " tools use. You may have\nalready used some special-purpose tracing tools. Linux\nstrace(1), for example, records and prints system call\nevents. There are many tools that do not trace events,\nbut instead measure events using fixed statistical\ncounters and then print summaries; Linux top(1) i"
+    },
+    {
+      "pdf_page": 96,
+      "snippet": " as the first argument to the bpf(2)\nsyscall. You can see these in action using strace(1). For\nexample, inspecting the bpf(2) syscalls made when\nrunning the BCC execsnoop(8) tool:\n# strace -ebpf execsnoop \nbpf(BPF_MAP_CREATE, \n{map_type=BPF_MAP_TYPE_PERF_EVENT_ARRAY, \nkey_size=4, value_siz"
+    },
+    {
+      "pdf_page": 97,
+      "snippet": "tions were highlighted in bold in this output. Note\nthat I normally avoid using strace(1) as its current\nptrace() implementation can greatly slow the target\nprocess, by over one hundred fold [BIBLIOG110]. The\nreason I used it here was that it already has translation\nmappings for the bpf(2)"
+    },
+    {
+      "pdf_page": 98,
+      "snippet": "Table 2-5 BPF tracing program types\nThe earlier strace(1) output included two\nBPF_PROG_LOAD calls of type\nBPF_PROG_TYPE_KPROBE, as that version of\nexecsnoop(8) is using a kprobe and a kretprobe for\ninstrumenting the beginning and end of execve().\nThere are m"
+    },
+    {
+      "pdf_page": 99,
+      "snippet": "es\nThese define different types of maps, and include the\nfollowing:\nThe earlier strace(1) output included a\nBPF_MAP_CREATE of type\nBPF_MAP_TYPE_PERF_EVENT_ARRAY, which was\nused by execsnoop(8) for passing events to user space\nfor printing.\nThere are many more map types in bpf.h for special"
+    },
+    {
+      "pdf_page": 100,
+      "snippet": " specific example, this bpftrace one-liner uses a per-\nCPU hash for counting:\n# strace -febpf bpftrace -e 'k:vfs_read { @ \n= count(); }' \nbpf(BPF_MAP_CREATE, \n{map_type=BPF_MAP_TYPE_PERCPU_HASH, \nkey_size=8, value_size=8, max_entries=128, \nmap_flags=0, inner_map_fd=0}, 72) = 3 \n[...]\nAnd t"
+    },
+    {
+      "pdf_page": 373,
+      "snippet": "ed_process_exec: filename=/bin/sh \n In case anyone is wondering why I don't use strace(1) for this: thecurrent implementation of strace(1) uses breakpoints that can greatlyslow the target (over 100x), making it dangerous for production use.More than one replacement is in development, inclu"
+    },
+    {
+      "pdf_page": 410,
+      "snippet": "r arguments: eg,BCC trace(8) or bpftrace one-liners. In some situations,running strace(1) can be the quickest path forunderstanding how a given syscall is used: bearing inmind that the current ptrace-based implementation ofstrace(1) can slow the target application onehundredfold, which can"
+    }
+  ],
+  "Typical Event Frequency": [
+    {
+      "pdf_page": 15,
+      "snippet": "ectl-trace\nOther Tools\nSummary\nChapter 18. Tips, Tricks, and Common Problems\n1. Typical Event Frequency and Overhead\n2. Sample at 49 or 99 Hertz\n3. Yellow Pigs and Grey Rats\n4. Write Target Software\n5. Learn Syscalls\n6. Keep it Simple\n7. Missing Events\n8. Missing Stacks Traces\n9. Missing S"
+    },
+    {
+      "pdf_page": 418,
+      "snippet": "antly, in excess of ten percent – use caution. SeeChapter 19 for the section on Typical Event Frequency.\nCommand line usage:\nfunccount [options] [-i interval] [-d duration] pattern\nOptions include:\n• -r: use regular expressions for the pattern match.\n• -p PID: measure this process only.\nPa"
+    },
+    {
+      "pdf_page": 1235,
+      "snippet": "common problems that you might\nencounter and how to fix them.\nTips & Tricks:\n1. Typical Event Frequency\n2. Sampling at 49 or 99 Hertz\n3. Yellow Pigs\n4. Write Target Software\n5. Learn Syscalls\n6. Keep it Simple\nCommon Problems:\n7. Missing Events\n8. Missing Stack Traces\n9. Missing Symbols (F"
+    },
+    {
+      "pdf_page": 1236,
+      "snippet": "1. TYPICAL EVENT FREQUENCY\nAND OVERHEAD\nThere are three main factors that determine the CPU\noverhead of a tracing program that an application will\nexperience per CPU:\n1. The frequency of the event that is traced.\n"
+    }
+  ]
+}

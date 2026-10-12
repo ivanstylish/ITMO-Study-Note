@@ -1,0 +1,9 @@
+CORE=2 BASELINE_ITER=1 BASELINE_SCOPE=full BASELINE_TIMEOUT=180
+Variant=Read/Write,Cache,10M,Seq
+Formal series: warm page cache, graph-seq.orig.bin, 10 MiB, seed 427
+Baseline scope full covers sequential/random, read/write, cache/no-cache for both APIs.
+Baseline runs use one iteration; they are exploratory and excluded from the formal series.
+b67598ca9d8e6c8539eae8409d4c84e0c3ef109f53095961198f997ab9550c7a  src/graph_traverse.c
+3046889bd92a8806ff32e8d20e5cd4906883c86ac09d6b3dd7b8618fedd7b32a  src/graph_traverse_mmap.c
+dc0cad443c20386a425dbcfd62e9372eb18027a697c9d22fabf522ae4b53abd1  src/graph_io.h
+adb94420b3c02e8800e3d9f65b4c0a7070a8d0fda342b4c8876ba26a77941f02  ../util/graphgen.py

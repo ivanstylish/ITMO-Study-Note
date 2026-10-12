@@ -1,0 +1,9 @@
+{
+  "phase": "pilot",
+  "N": 10,
+  "exit_code": 0,
+  "monotonic_s": 87.821385301,
+  "monotonic_raw_s": 81.607101085,
+  "realtime_s": 83.275779714,
+  "scope": "Whole phase including compilation, graph generation, warmups, preparation and snapshots."
+}

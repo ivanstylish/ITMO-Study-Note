@@ -1,0 +1,9 @@
+{
+  "plan/frozen-before-pilot-ru.md": "5d92a114b7e4f33d70ce33c7131423c5acc7f9145bb8891b8818195b51f5e2a6",
+  "code/lab/intro-exp/run_series.sh": "c6f56948f184d6a726b16131f2b8550b0fcd78687d1584610b42f3defc457704",
+  "code/lab/intro-exp/mono_time.py": "9b72a679b88eeede6c4531174f897484e35ec0a3eb6085d49b482958769a554f",
+  "code/lab/intro-exp/src/graph_traverse.c": "b67598ca9d8e6c8539eae8409d4c84e0c3ef109f53095961198f997ab9550c7a",
+  "code/lab/intro-exp/src/graph_traverse_mmap.c": "3046889bd92a8806ff32e8d20e5cd4906883c86ac09d6b3dd7b8618fedd7b32a",
+  "code/lab/intro-exp/src/graph_io.h": "dc0cad443c20386a425dbcfd62e9372eb18027a697c9d22fabf522ae4b53abd1",
+  "code/lab/util/graphgen.py": "adb94420b3c02e8800e3d9f65b4c0a7070a8d0fda342b4c8876ba26a77941f02"
+}
