@@ -2,20 +2,16 @@
 
 # 第 3 学期 · 2025 秋季
 
-[学期总览](../navigation/index.md) · [上一学期](semester-02.md) · [下一学期](semester-04.md)
+[四年课程首页](../README.md) · [全部学期](../navigation/index.md) · [上一学期](semester-02.md) · [下一学期](semester-04.md)
 
-2025–2026 学年 · 秋季 · 大二。本页 7 门课程已有仓库资料。
+2025–2026 学年 · 秋季 · 7 门课程已收录资料。
 
-按学期查看课程、实验与考试资料。第 1–4 学期的课程与实验均已通过；第 5 学期按当前记录维护。
-
-| 课程 | Русское название | 考核类型 | 状态 | 实验 / 作业 | 考试资料 |
+| 课程 | 考核 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | Русский язык как иностранный | 考查 · Зачёт | ✓ 已通过 | [5 个入口](../RussianLanguage/readme.md#labs) | [1 个入口](../RussianLanguage/readme.md#exam) |
-| [Web 编程](../WebProgramming/readme.md) | Веб-программирование | 考试 · Экзамен | ✓ 已通过 | [5 个入口](../WebProgramming/readme.md#labs) | [3 个入口](../WebProgramming/readme.md#exam) |
-| [数学分析补充章节](../Math/ExtraMath/readme.md) | Дополнительные главы математического анализа | 考试 · Экзамен | ✓ 已通过 | — | — |
-| [概率论](../ProbabilityTheory/readme.md) | Теория вероятностей | 考查 · Зачёт | ✓ 已通过 | [2 个入口](../ProbabilityTheory/readme.md#labs) | [1 个入口](../ProbabilityTheory/readme.md#exam) |
-| [复变函数论](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) | Теория функций комплексного переменного | 考试 · Экзамен | ✓ 已通过 | [2 个入口](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md#labs) | — |
-| [物理](../Physics/readme.md) | Физика | 考试 · Экзамен | ✓ 已通过 | [10 个入口](../Physics/readme.md#labs) | — |
-| [编程语言](../ProgrammingLanguage/readme.md) | Языки программирования | 考试 · Экзамен | ✓ 已通过 | [8 个入口](../ProgrammingLanguage/readme.md#labs) | — |
-
-[本学期考前复习入口](../study/revision.md) · [实验答辩入口](../study/defense.md)
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [Web 编程](../WebProgramming/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../WebProgramming/readme.md#labs) | — | [内容](../WebProgramming/readme.md#exam) · [答案](../WebProgramming/readme.md#answers) |
+| [数学分析补充章节](../Math/ExtraMath/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | — | [答案](../Math/ExtraMath/readme.md#answers) |
+| [概率论](../ProbabilityTheory/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [2 项](../ProbabilityTheory/readme.md#assignments) | [答案](../ProbabilityTheory/readme.md#answers) |
+| [复变函数论](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) | 考试 · Экзамен | ✓ 已通过 | [2 项](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md#labs) | — | — |
+| [物理](../Physics/readme.md) | 考试 · Экзамен | ✓ 已通过 | [10 项](../Physics/readme.md#labs) | — | — |
+| [编程语言](../ProgrammingLanguage/readme.md) | 考试 · Экзамен | ✓ 已通过 | [8 项](../ProgrammingLanguage/readme.md#labs) | — | — |

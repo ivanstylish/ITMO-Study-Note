@@ -1,0 +1,17 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ echo ENVIRONMENT_OK
+ENVIRONMENT_OK
+$ dump2extra
+[OK] self, register boundaries and error codes
+[OK] grandparent can inspect grandchild
+[OK] denied relationships and reaped PID
+[OK] lazy allocation and cross-page copyout
+ALL DUMP2 EXTRA TESTS PASSED
+$ QEMU: Terminated
+

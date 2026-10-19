@@ -2,22 +2,18 @@
 
 # 第 5 学期 · 2026 秋季
 
-[学期总览](../navigation/index.md) · [上一学期](semester-04.md)
+[四年课程首页](../README.md) · [全部学期](../navigation/index.md) · [上一学期](semester-04.md)
 
-2026–2027 学年 · 秋季（当前） · 大三。本页 9 门课程已有仓库资料。
+2026–2027 学年 · 秋季（当前） · 9 门课程已收录资料。
 
-按学期查看课程、实验与考试资料。第 1–4 学期的课程与实验均已通过；第 5 学期按当前记录维护。
-
-| 课程 | Русское название | 考核类型 | 状态 | 实验 / 作业 | 考试资料 |
+| 课程 | 考核 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | Русский язык как иностранный | 考查 · Зачёт | — 未标记 | [5 个入口](../RussianLanguage/readme.md#labs) | [1 个入口](../RussianLanguage/readme.md#exam) |
-| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | Алгоритмы компьютерной графики | 考查 · Зачёт | — 未标记 | [2 个入口](../ComputerGraphicsAlgo/readme.md#labs) | — |
-| [软件系统架构](../SoftwareSystemArch/readme.md) | Архитектура программных систем | 考试 · Экзамен | — 未标记 | — | — |
-| [知识图谱](../KnowledgeGraphs/readme.md) | Графы знаний | 考查 · Зачёт | — 未标记 | [1 个入口](../KnowledgeGraphs/readme.md#labs) | — |
-| [信息系统](../InformationSystem/readme.md) | Информационные системы | 考试 · Экзамен + 课程项目 · Курсовая работа | — 未标记 | [2 个入口](../InformationSystem/readme.md#labs) | — |
-| [建模](../Modeling/readme.md) | Моделирование | 考试 · Экзамен | — 未标记 | [2 个入口](../Modeling/readme.md#labs) | — |
-| [操作系统](../OperatingSystem/readme.md) | Операционные системы | 考试 · Экзамен | — 未标记 | [1 个入口](../OperatingSystem/readme.md#labs) | — |
-| [用户界面设计](../UIDesign/readme.md) | Проектирование пользовательских интерфейсов | 考试 · Экзамен | — 未标记 | [2 个入口](../UIDesign/readme.md#labs) | — |
-| [人工智能系统](../AISystem/readme.md) | Системы искусственного интеллекта | 考试 · Экзамен | — 未标记 | [2 个入口](../AISystem/readme.md#labs) | — |
-
-[本学期考前复习入口](../study/revision.md) · [实验答辩入口](../study/defense.md)
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | — 未标记 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | 考查 · Зачёт | — 未标记 | [3 项](../ComputerGraphicsAlgo/readme.md#labs) | — | — |
+| [软件系统架构](../SoftwareSystemArch/readme.md) | 考试 · Экзамен | — 未标记 | — | — | — |
+| [知识图谱](../KnowledgeGraphs/readme.md) | 考查 · Зачёт | — 未标记 | — | [1 项](../KnowledgeGraphs/readme.md#assignments) | — |
+| [信息系统](../InformationSystem/readme.md) | 考试 · Экзамен + 课程项目 · Курсовая работа | — 未标记 | [3 项](../InformationSystem/readme.md#labs) | [1 项](../InformationSystem/readme.md#assignments) | — |
+| [建模](../Modeling/readme.md) | 考试 · Экзамен | — 未标记 | [2 项](../Modeling/readme.md#labs) | — | — |
+| [操作系统](../OperatingSystem/readme.md) | 考试 · Экзамен | — 未标记 | [1 项](../OperatingSystem/readme.md#labs) | — | — |
+| [用户界面设计](../UIDesign/readme.md) | 考试 · Экзамен | — 未标记 | — | [2 项](../UIDesign/readme.md#assignments) | — |
+| [人工智能系统](../AISystem/readme.md) | 考试 · Экзамен | — 未标记 | [3 项](../AISystem/readme.md#labs) | — | — |

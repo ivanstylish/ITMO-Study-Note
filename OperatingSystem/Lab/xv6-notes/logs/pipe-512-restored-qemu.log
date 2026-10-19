@@ -1,0 +1,41 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ echo ENVIRONMENT_OK
+ENVIRONMENT_OK
+$ pingpong
+5: got ping
+4: got pong
+$ pingpong
+7: got ping
+6: got pong
+$ pingpong
+9: got ping
+8: got pong
+$ pingpong
+11: got ping
+10: got pong
+$ pingpong
+13: got ping
+12: got pong
+$ pingpong
+15: got ping
+14: got pong
+$ pingpong
+17: got ping
+16: got pong
+$ pingpong
+19: got ping
+18: got pong
+$ pingpong
+21: got ping
+20: got pong
+$ pingpong
+23: got ping
+22: got pong
+$ QEMU: Terminated
+

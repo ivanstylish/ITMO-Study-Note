@@ -1,0 +1,57 @@
+﻿model,variant,feature,standardized_weight,original_weight,is_zero,is_near_zero
+Модель 1,Без регуляризации,Intercept,55.19534019922334,35.41869271483772,False,False
+Модель 1,Без регуляризации,Hours Studied,7.3133990014723285,2.8231411096147165,False,False
+Модель 1,Без регуляризации,Sleep Hours,1.188048600444568,0.6990548127930502,False,False
+Модель 1,Без регуляризации,Sample Question Papers Practiced,0.6811119618316666,0.23625804794141755,False,False
+Модель 1,L1,Intercept,55.19534019922334,38.98874322375546,False,False
+Модель 1,L1,Hours Studied,6.8228987055993615,2.633796654419755,False,False
+Модель 1,L1,Sleep Hours,0.7024798177778093,0.4133432734349447,False,False
+Модель 1,L1,Sample Question Papers Practiced,0.20729248107308446,0.07190376865435816,False,False
+Модель 1,L2,Intercept,55.19534019922334,36.34471285191729,False,False
+Модель 1,L2,Hours Studied,6.965543917913452,2.6888610045109447,False,False
+Модель 1,L2,Sleep Hours,1.1316805860319508,0.6658875402185249,False,False
+Модель 1,L2,Sample Question Papers Practiced,0.6575672316583527,0.2280910617456454,False,False
+Модель 1,ElasticNet,Intercept,55.19534019922334,39.79152980718882,False,False
+Модель 1,ElasticNet,Hours Studied,6.2919687671203475,2.428845422394323,False,False
+Модель 1,ElasticNet,Sleep Hours,0.7263949685915536,0.4274150894101192,False,False
+Модель 1,ElasticNet,Sample Question Papers Practiced,0.28910300129965016,0.10028147289819757,False,False
+Модель 2,Без регуляризации,Intercept,55.19534019922334,-15.685852366104257,False,False
+Модель 2,Без регуляризации,Previous Scores,17.532035834425585,1.0176628897581719,False,False
+Модель 2,Без регуляризации,Extracurricular Activities,0.2548706017871036,0.5099296243459289,False,False
+Модель 2,L1,Intercept,55.19534019922334,-15.660756726712918,False,False
+Модель 2,L1,Previous Scores,17.52701869602812,1.0173716654184488,False,False
+Модель 2,L1,Extracurricular Activities,0.2498534633896305,0.4998916384802541,False,False
+Модель 2,L2,Intercept,55.19534019922334,-15.332899655111262,False,False
+Модель 2,L2,Previous Scores,17.444806457838432,1.0125995816353823,False,False
+Модель 2,L2,Extracurricular Activities,0.25330609830602424,0.5067994607774328,False,False
+Модель 2,ElasticNet,Intercept,55.19534019922334,-15.398209646518637,False,False
+Модель 2,ElasticNet,Previous Scores,17.46118340631888,1.0135501964341103,False,False
+Модель 2,ElasticNet,Extracurricular Activities,0.25261809957447273,0.5054229546905378,False,False
+Модель 3,Без регуляризации,Intercept,55.19534019922334,-34.00714939524224,False,False
+Модель 3,Без регуляризации,Hours Studied,7.355818344501358,2.8395159568128516,False,False
+Модель 3,Без регуляризации,Previous Scores,17.524552623253097,1.0172285199919688,False,False
+Модель 3,Без регуляризации,Sleep Hours,0.8133088962795175,0.4785557577517029,False,False
+Модель 3,Без регуляризации,Sample Question Papers Practiced,0.5654565027041889,0.19614051288338638,False,False
+Модель 3,Без регуляризации,Extracurricular Activities,0.29843918854329987,0.5970990072488196,False,False
+Модель 3,Без регуляризации,Study Interaction,0.044846683111710396,0.022086325641191267,False,True
+Модель 3,L1,Intercept,55.19534019922334,-33.99577037029232,False,False
+Модель 3,L1,Hours Studied,7.352536693555441,2.838249163671802,False,False
+Модель 3,L1,Previous Scores,17.522722246985033,1.0171222741446586,False,False
+Модель 3,L1,Sleep Hours,0.8128350798930787,0.47827696139169174,False,False
+Модель 3,L1,Sample Question Papers Practiced,0.5649890738550224,0.19597837532943915,False,False
+Модель 3,L1,Extracurricular Activities,0.2979180580009917,0.5960563609027479,False,False
+Модель 3,L1,Study Interaction,0.04801054754277127,0.023644481902935992,False,True
+Модель 3,L2,Intercept,55.19534019922334,-33.72589316336531,False,False
+Модель 3,L2,Hours Studied,7.228122444364583,2.790222386869135,False,False
+Модель 3,L2,Previous Scores,17.45614734626146,1.0132578737695075,False,False
+Модель 3,L2,Sleep Hours,0.8136600050105952,0.47876235220262153,False,False
+Модель 3,L2,Sample Question Papers Practiced,0.565191390910448,0.19604855326678086,False,False
+Модель 3,L2,Extracurricular Activities,0.2977256070864643,0.5956713167985559,False,False
+Модель 3,L2,Study Interaction,0.18568657312583295,0.09144788057208919,False,False
+Модель 3,ElasticNet,Intercept,55.19534019922334,-33.94098633027477,False,False
+Модель 3,ElasticNet,Hours Studied,7.327242785181661,2.8284851302123295,False,False
+Модель 3,ElasticNet,Previous Scores,17.50920897142362,1.016337883832672,False,False
+Модель 3,ElasticNet,Sleep Hours,0.8130020716943307,0.4783752203537565,False,False
+Модель 3,ElasticNet,Sample Question Papers Practiced,0.5650293753897772,0.1959923547666885,False,False
+Модель 3,ElasticNet,Extracurricular Activities,0.2978778245712566,0.5959758642995026,False,False
+Модель 3,ElasticNet,Study Interaction,0.07600118042478209,0.03742945304997048,False,True

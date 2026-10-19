@@ -1,60 +1,60 @@
-## [主页](../README.md)/Programming 编程
+# 程序设计 · Программирование
 
 <!-- kb:course-overview:start -->
 
-程序设计 · Программирование
+[主页](../README.md) · [第 1 学期](../academic/semester-01.md) · [第 2 学期](../academic/semester-02.md) · [课程总览](../navigation/courses.md)
 
 **课程状态：✓ 已通过**
 
-[课程总览](../navigation/courses.md) · [第 1 学期](../academic/semester-01.md) · [第 2 学期](../academic/semester-02.md) · [知识索引](../knowledge/index.md)
-
-[理论 · Теория](#theory) · [实验 / 作业 · Практика](#labs) · [答辩 · Защита](#defense) · [考试 · Экзамен](#exam) · [资料 / 速查 · Материалы](#resources)
+[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense) · [补充资料与速查](#resources)
 
 按原实验编号检索；Lab 3–4 共用说明，Lab 8 要求与现有客户端实现应分别核对。
 
 <!-- kb:course-overview:end -->
 
-<!-- kb:anchor:labs -->
-<a id="labs"></a>
-### ALL ABOUT THE LABS OF FRESHMAN AT ITMO UNIVERSITY
-
-| 实验 | 状态 |
-|---|---|
-| [lab1](./lab1.md) | ✓ 已通过 |
-| [lab2](./lab2.md) | ✓ 已通过 |
-| [lab3-4](./lab3-4.md) | ✓ 已通过 |
-| [lab5](./lab5.md) | ✓ 已通过 |
-| [lab6](./lab6.md) | ✓ 已通过 |
-| [lab7](./lab7.md) | ✓ 已通过 |
-| [lab8](./lab8.md) | ✓ 已通过 |
-
 <!-- kb:course-resources:start -->
 
-## 理论 · Теория <a id="theory"></a>
+## 全部实验 <a id="labs"></a>
+
+| 实验 | 状态 | 资料与说明 |
+|---|---|---|
+| [Lab 1](lab1.md) | ✓ 已通过 | [实验源码](Lab/lab1) |
+| [Lab 2：Pokémon](lab2.md) | ✓ 已通过 | [实验源码](Lab/lab2) |
+| [Lab 3–4：OOP](lab3-4.md) | ✓ 已通过 | [实验源码](Lab/lab3-4) |
+| [Lab 5：集合管理](lab5.md) | ✓ 已通过 | [实验源码](Lab/lab5) |
+| [Lab 6：网络](lab6.md) | ✓ 已通过 | [实验源码](Lab/lab6) |
+| [Lab 7：并发与 JDBC](lab7.md) | ✓ 已通过 | [实验源码](Lab/lab7) |
+| [Lab 8：GUI](lab8.md) | ✓ 已通过 | [实验源码](Lab/lab8) |
+| [Lab 9：现有代码](Lab/lab9) | ✓ 已通过 | — |
+
+## 讲座与教材 <a id="theory"></a>
 
 - [Java 基础、OOP 与集合](../Java/Note.md)
 
-## 补充：实验 / 作业 · Практика
+## 学期作业 <a id="assignments"></a>
 
-| 实验 / 作业资料 | 状态 |
-|---|---|
-| [Lab 9：现有代码](Lab/lab9) | ✓ 已通过 |
+学期作业尚未收录。
 
-## 答辩 · Защита <a id="defense"></a>
-
-- [并发 / 数据库控制问题](lab7.md)
-
-## 考试 · Экзамен <a id="exam"></a>
+## 考试内容 <a id="exam"></a>
 
 - [第 2 学期阶段测验](rub/SecSem.md)
 
-## 资料 / 速查 · Материалы <a id="resources"></a>
+## 考试答案与解答 <a id="answers"></a>
+
+考试答案尚未收录。
+
+## 实验答辩 <a id="defense"></a>
+
+- [并发 / 数据库控制问题](lab7.md)
+
+## 补充资料与速查 <a id="resources"></a>
 
 - [全部原实验代码](Lab)
 
 ## 复习与关联
 
-- [实验答辩入口](../study/defense.md) · [考前复习入口](../study/revision.md)
-- 关联课程：[编程语言](../ProgrammingLanguage/readme.md) · [数据库](../Database/readme.md) · [Web 编程](../WebProgramming/readme.md)
+[考前复习](../study/revision.md) · [实验答辩](../study/defense.md) · [知识地图](../knowledge/index.md)
+
+关联课程：[编程语言](../ProgrammingLanguage/readme.md) · [数据库](../Database/readme.md) · [Web 编程](../WebProgramming/readme.md)
 
 <!-- kb:course-resources:end -->

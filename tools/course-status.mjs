@@ -18,6 +18,6 @@ export function courseStatusSummary(course) {
 }
 
 export function labStatus(course, entry, manual) {
-  const number = entry.label.replace(/[–—]/g, '-').match(/(?:lab(?:work)?|лаб(?:ораторная)?)\s*([0-9]+(?:[.-][0-9]+)?)/i)?.[1];
-  return manual?.statuses.get(number) || manual?.resourceStates.get(entry.path) || statusLabel(entry.status || course.status);
+  const number = entry.label.replace(/[–—]/g, '-').match(/(?:lab(?:work)?|work|УИР|лаб(?:ораторная)?)\s*([0-9]+(?:[.-][0-9]+)?)/i)?.[1];
+  return manual?.resourceStates.get(entry.path) || (!entry.path && number && manual?.statuses.get(number)) || statusLabel(entry.status || course.status);
 }

@@ -1,18 +1,67 @@
-## [主页](../README.md)/Informatics 信息学
+# 信息学 · Информатика
 
 <!-- kb:course-overview:start -->
 
-信息学 · Информатика
+[主页](../README.md) · [第 1 学期](../academic/semester-01.md) · [课程总览](../navigation/courses.md)
 
 **课程状态：✓ 已通过**
 
-[课程总览](../navigation/courses.md) · [第 1 学期](../academic/semester-01.md) · [知识索引](../knowledge/index.md)
-
-[理论 · Теория](#theory) · [实验 / 作业 · Практика](#labs) · [答辩 · Защита](#defense) · [资料 / 速查 · Материалы](#resources)
+[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense) · [补充资料与速查](#resources)
 
 讲义和 Lab 1–6 的代码、报告按原目录分类。
 
 <!-- kb:course-overview:end -->
+
+<!-- kb:course-resources:start -->
+
+## 全部实验 <a id="labs"></a>
+
+| 实验 | 状态 | 资料与说明 |
+|---|---|---|
+| [Lab 1：代码 / 报告 / 要求](Labwork/lab1) | ✓ 已通过 | — |
+| [Lab 2：代码 / 报告 / 要求](Labwork/lab2) | ✓ 已通过 | — |
+| [Lab 3：代码 / 报告 / 要求](Labwork/lab3) | ✓ 已通过 | — |
+| [Lab 4：代码 / 报告 / 要求](Labwork/lab4) | ✓ 已通过 | — |
+| [Lab 5：代码 / 报告 / 要求](Labwork/lab5) | ✓ 已通过 | — |
+| [Lab 6：代码 / 报告 / 要求](Labwork/lab6) | ✓ 已通过 | — |
+
+## 讲座与教材 <a id="theory"></a>
+
+- [信息学基础与编码](Lecture/Lecture1.md)
+- [编码与数据表示](Lecture/Lecture2.md)
+- [Python / 正则表达式](Lecture/Lecture3.md)
+- [数据格式](Lecture/Lecture4.md)
+- [Python 速记](Lecture/Python.md)
+
+## 学期作业 <a id="assignments"></a>
+
+| 作业 | 状态 | 资料与说明 |
+|---|---|---|
+| [注释与摘要整理](annotation.md) | ✓ 已通过 | — |
+
+## 考试内容 <a id="exam"></a>
+
+考试范围与题目尚未收录。
+
+## 考试答案与解答 <a id="answers"></a>
+
+考试答案尚未收录。
+
+## 实验答辩 <a id="defense"></a>
+
+- [实验选项与问答](option.md)
+
+## 补充资料与速查 <a id="resources"></a>
+
+- [资料说明](Information.md)
+
+## 复习与关联
+
+[考前复习](../study/revision.md) · [实验答辩](../study/defense.md) · [知识地图](../knowledge/index.md)
+
+关联课程：[程序设计](../Programming/readme.md)
+
+<!-- kb:course-resources:end -->
 
 ### Информатика – дисциплина, изучающая свойства и структуру информации, закономерности ее создания, преобразования, накопления, передачи и использования.  
 信息学是一门研究信息的属性和结构，以及信息的创建、转换、积累、传输和使用的规律性的学科。
@@ -33,49 +82,3 @@
 ● 使用文字处理系统  
 ● Программное обеспéчение профессионального программиста  
 ● 面向专业程序员的软件
- 
-
-
-- [Information](Information.md)
-- [Python](Lecture/Python.md)
-- [Lecture1](/Informatics/Lecture/Lecture1.md)
-- [Lecture2](/Informatics/Lecture/Lecture2.md)  
-- [Lecture3](/Informatics/Lecture/Lecture3.md)  
-- [Lecture4](/Informatics/Lecture/Lecture4.md)
-- [Аннотация](annotation.md)
-
-<!-- kb:course-resources:start -->
-
-## 理论 · Теория <a id="theory"></a>
-
-- [信息学基础与编码](Lecture/Lecture1.md)
-- [编码与数据表示](Lecture/Lecture2.md)
-- [Python / 正则表达式](Lecture/Lecture3.md)
-- [数据格式](Lecture/Lecture4.md)
-- [Python 速记](Lecture/Python.md)
-
-## 实验 / 作业 · Практика <a id="labs"></a>
-
-| 实验 / 作业资料 | 状态 |
-|---|---|
-| [Lab 1：代码 / 报告 / 要求](Labwork/lab1) | ✓ 已通过 |
-| [Lab 2：代码 / 报告 / 要求](Labwork/lab2) | ✓ 已通过 |
-| [Lab 3：代码 / 报告 / 要求](Labwork/lab3) | ✓ 已通过 |
-| [Lab 4：代码 / 报告 / 要求](Labwork/lab4) | ✓ 已通过 |
-| [Lab 5：代码 / 报告 / 要求](Labwork/lab5) | ✓ 已通过 |
-| [Lab 6：代码 / 报告 / 要求](Labwork/lab6) | ✓ 已通过 |
-
-## 答辩 · Защита <a id="defense"></a>
-
-- [实验选项与问答](option.md)
-
-## 资料 / 速查 · Материалы <a id="resources"></a>
-
-- [资料说明](Information.md)
-
-## 复习与关联
-
-- [实验答辩入口](../study/defense.md) · [考前复习入口](../study/revision.md)
-- 关联课程：[程序设计](../Programming/readme.md)
-
-<!-- kb:course-resources:end -->

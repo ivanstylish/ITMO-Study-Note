@@ -2,21 +2,17 @@
 
 # 第 2 学期 · 2025 春季
 
-[学期总览](../navigation/index.md) · [上一学期](semester-01.md) · [下一学期](semester-03.md)
+[四年课程首页](../README.md) · [全部学期](../navigation/index.md) · [上一学期](semester-01.md) · [下一学期](semester-03.md)
 
-2024–2025 学年 · 春季 · 大一。本页 8 门课程已有仓库资料。
+2024–2025 学年 · 春季 · 8 门课程已收录资料。
 
-按学期查看课程、实验与考试资料。第 1–4 学期的课程与实验均已通过；第 5 学期按当前记录维护。
-
-| 课程 | Русское название | 考核类型 | 状态 | 实验 / 作业 | 考试资料 |
+| 课程 | 考核 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄罗斯科技史](../History/readme.md) | История российской науки и техники | 考试 · Экзамен | ✓ 已通过 | [3 个入口](../History/readme.md#labs) | [1 个入口](../History/readme.md#exam) |
-| [线性代数](../Math/LinearAlgebra/readme.md) | Линейная алгебра | 考试 · Экзамен | ✓ 已通过 | — | [2 个入口](../Math/LinearAlgebra/readme.md#exam) |
-| [数学分析](../Math/readme.md) | Математический анализ | 考试 · Экзамен | ✓ 已通过 | — | [2 个入口](../Math/readme.md#exam) |
-| [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | Основы дискретной математики / Дискретная математика | 考试 · Экзамен | ✓ 已通过 | [3 个入口](../DiscreteMath/readme.md#labs) | — |
-| [专业活动基础](../OPD/readme.md) | Основы профессиональной деятельности | 分级考查 · Дифференцированный зачёт | ✓ 已通过 | [6 个入口](../OPD/readme.md#labs) | [2 个入口](../OPD/readme.md#exam) |
-| [程序设计](../Programming/readme.md) | Программирование | 考试 · Экзамен | ✓ 已通过 | [8 个入口](../Programming/readme.md#labs) | [1 个入口](../Programming/readme.md#exam) |
-| [俄语（外语）](../RussianLanguage/readme.md) | Русский язык как иностранный | 考查 · Зачёт | ✓ 已通过 | [5 个入口](../RussianLanguage/readme.md#labs) | [1 个入口](../RussianLanguage/readme.md#exam) |
-| [数据库](../Database/readme.md) | Базы данных | 考试 · Экзамен | ✓ 已通过 | [4 个入口](../Database/readme.md#labs) | [2 个入口](../Database/readme.md#exam) |
-
-[本学期考前复习入口](../study/revision.md) · [实验答辩入口](../study/defense.md)
+| [俄罗斯科技史](../History/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | [4 项](../History/readme.md#assignments) | [内容](../History/readme.md#exam) |
+| [线性代数](../Math/LinearAlgebra/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | — | [内容](../Math/LinearAlgebra/readme.md#exam) · [答案](../Math/LinearAlgebra/readme.md#answers) |
+| [数学分析](../Math/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | — | [内容](../Math/readme.md#exam) |
+| [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | [3 项](../DiscreteMath/readme.md#assignments) | — |
+| [专业活动基础](../OPD/readme.md) | 分级考查 · Дифференцированный зачёт | ✓ 已通过 | [6 项](../OPD/readme.md#labs) | — | [内容](../OPD/readme.md#exam) |
+| [程序设计](../Programming/readme.md) | 考试 · Экзамен | ✓ 已通过 | [8 项](../Programming/readme.md#labs) | — | [内容](../Programming/readme.md#exam) |
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [数据库](../Database/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../Database/readme.md#labs) | — | [内容](../Database/readme.md#exam) |

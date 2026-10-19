@@ -2,51 +2,50 @@
 
 # 课程总览 · Курсы
 
-[首页](../README.md) · [按学期浏览](index.md) · [知识地图](../knowledge/index.md) · [复习脑图](../knowledge/mindmap.md)
+[四年课程首页](../README.md) · [按学期浏览](index.md) · [知识地图](../knowledge/index.md)
 
-21 门归档课程 · 9 门当前课程。每门课程使用唯一 README，将讲义、实验、答辩与考试资料放在同一入口。
+30 门课程各有一份 README，按实验、讲座教材、学期作业、考试内容与答案查阅。
 
 ## 当前学期
 
-| 课程 | 状态 | 理论 | 实验 / 作业 | 答辩 | 考试 |
+| 课程 | 学期 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | — 未标记 | [1 个入口](../RussianLanguage/readme.md#theory) | [5 个入口](../RussianLanguage/readme.md#labs) | — | [1 个入口](../RussianLanguage/readme.md#exam) |
-| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | — 未标记 | [1 个入口](../ComputerGraphicsAlgo/readme.md#theory) | [2 个入口](../ComputerGraphicsAlgo/readme.md#labs) | [1 个入口](../ComputerGraphicsAlgo/readme.md#defense) | — |
-| [软件系统架构](../SoftwareSystemArch/readme.md) | — 未标记 | [1 个入口](../SoftwareSystemArch/readme.md#theory) | — | — | — |
-| [知识图谱](../KnowledgeGraphs/readme.md) | — 未标记 | — | [1 个入口](../KnowledgeGraphs/readme.md#labs) | — | — |
-| [信息系统](../InformationSystem/readme.md) | — 未标记 | [1 个入口](../InformationSystem/readme.md#theory) | [2 个入口](../InformationSystem/readme.md#labs) | [1 个入口](../InformationSystem/readme.md#defense) | — |
-| [建模](../Modeling/readme.md) | — 未标记 | [1 个入口](../Modeling/readme.md#theory) | [2 个入口](../Modeling/readme.md#labs) | [2 个入口](../Modeling/readme.md#defense) | — |
-| [操作系统](../OperatingSystem/readme.md) | — 未标记 | [3 个入口](../OperatingSystem/readme.md#theory) | [1 个入口](../OperatingSystem/readme.md#labs) | [2 个入口](../OperatingSystem/readme.md#defense) | — |
-| [用户界面设计](../UIDesign/readme.md) | — 未标记 | — | [2 个入口](../UIDesign/readme.md#labs) | [2 个入口](../UIDesign/readme.md#defense) | — |
-| [人工智能系统](../AISystem/readme.md) | — 未标记 | [1 个入口](../AISystem/readme.md#theory) | [2 个入口](../AISystem/readme.md#labs) | [2 个入口](../AISystem/readme.md#defense) | — |
+| [俄语（外语）](../RussianLanguage/readme.md) | 1、2、3、4、5 | 第 1、2、3、4 学期：✓ 已通过 · 第 5 学期：— 未标记 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | 5 | — 未标记 | [3 项](../ComputerGraphicsAlgo/readme.md#labs) | — | — |
+| [软件系统架构](../SoftwareSystemArch/readme.md) | 5 | — 未标记 | — | — | — |
+| [知识图谱](../KnowledgeGraphs/readme.md) | 5 | — 未标记 | — | [1 项](../KnowledgeGraphs/readme.md#assignments) | — |
+| [信息系统](../InformationSystem/readme.md) | 5 | — 未标记 | [3 项](../InformationSystem/readme.md#labs) | [1 项](../InformationSystem/readme.md#assignments) | — |
+| [建模](../Modeling/readme.md) | 5 | — 未标记 | [2 项](../Modeling/readme.md#labs) | — | — |
+| [操作系统](../OperatingSystem/readme.md) | 5 | — 未标记 | [1 项](../OperatingSystem/readme.md#labs) | — | — |
+| [用户界面设计](../UIDesign/readme.md) | 5 | — 未标记 | — | [2 项](../UIDesign/readme.md#assignments) | — |
+| [人工智能系统](../AISystem/readme.md) | 5 | — 未标记 | [3 项](../AISystem/readme.md#labs) | — | — |
 
-## 大一、大二 · 已通过
+## 归档课程
 
-| 课程 | 学期 | 状态 | 理论 | 实验 / 作业 | 答辩 | 考试 |
-|---|---|---|---|---|---|---|
-| [信息学](../Informatics/readme.md) | 1 | ✓ 已通过 | [5 个入口](../Informatics/readme.md#theory) | [6 个入口](../Informatics/readme.md#labs) | [1 个入口](../Informatics/readme.md#defense) | — |
-| [俄罗斯科技史](../History/readme.md) | 1、2 | ✓ 已通过 | [1 个入口](../History/readme.md#theory) | [3 个入口](../History/readme.md#labs) | [1 个入口](../History/readme.md#defense) | [1 个入口](../History/readme.md#exam) |
-| [线性代数](../Math/LinearAlgebra/readme.md) | 1、2 | ✓ 已通过 | [2 个入口](../Math/LinearAlgebra/readme.md#theory) | — | — | [2 个入口](../Math/LinearAlgebra/readme.md#exam) |
-| [数学分析](../Math/readme.md) | 1、2 | ✓ 已通过 | [2 个入口](../Math/readme.md#theory) | — | — | [2 个入口](../Math/readme.md#exam) |
-| [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | 1、2 | ✓ 已通过 | [1 个入口](../DiscreteMath/readme.md#theory) | [3 个入口](../DiscreteMath/readme.md#labs) | — | — |
-| [专业活动基础](../OPD/readme.md) | 1、2 | ✓ 已通过 | [2 个入口](../OPD/readme.md#theory) | [6 个入口](../OPD/readme.md#labs) | [1 个入口](../OPD/readme.md#defense) | [2 个入口](../OPD/readme.md#exam) |
-| [程序设计](../Programming/readme.md) | 1、2 | ✓ 已通过 | [1 个入口](../Programming/readme.md#theory) | [8 个入口](../Programming/readme.md#labs) | [1 个入口](../Programming/readme.md#defense) | [1 个入口](../Programming/readme.md#exam) |
-| [俄语（外语）](../RussianLanguage/readme.md) | 1、2、3、4 | ✓ 已通过 | [1 个入口](../RussianLanguage/readme.md#theory) | [5 个入口](../RussianLanguage/readme.md#labs) | — | [1 个入口](../RussianLanguage/readme.md#exam) |
-| [数据库](../Database/readme.md) | 2 | ✓ 已通过 | [5 个入口](../Database/readme.md#theory) | [4 个入口](../Database/readme.md#labs) | [4 个入口](../Database/readme.md#defense) | [2 个入口](../Database/readme.md#exam) |
-| [Web 编程](../WebProgramming/readme.md) | 3 | ✓ 已通过 | [4 个入口](../WebProgramming/readme.md#theory) | [5 个入口](../WebProgramming/readme.md#labs) | [4 个入口](../WebProgramming/readme.md#defense) | [3 个入口](../WebProgramming/readme.md#exam) |
-| [数学分析补充章节](../Math/ExtraMath/readme.md) | 3 | ✓ 已通过 | [1 个入口](../Math/ExtraMath/readme.md#theory) | — | — | — |
-| [概率论](../ProbabilityTheory/readme.md) | 3 | ✓ 已通过 | [1 个入口](../ProbabilityTheory/readme.md#theory) | [2 个入口](../ProbabilityTheory/readme.md#labs) | — | [1 个入口](../ProbabilityTheory/readme.md#exam) |
-| [复变函数论](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) | 3 | ✓ 已通过 | — | [2 个入口](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md#labs) | — | — |
-| [物理](../Physics/readme.md) | 3、4 | ✓ 已通过 | [1 个入口](../Physics/readme.md#theory) | [10 个入口](../Physics/readme.md#labs) | [4 个入口](../Physics/readme.md#defense) | — |
-| [编程语言](../ProgrammingLanguage/readme.md) | 3 | ✓ 已通过 | [1 个入口](../ProgrammingLanguage/readme.md#theory) | [8 个入口](../ProgrammingLanguage/readme.md#labs) | [1 个入口](../ProgrammingLanguage/readme.md#defense) | — |
-| [算法与数据结构](../AADS/readme.md) | 4 | ✓ 已通过 | [1 个入口](../AADS/readme.md#theory) | [4 个入口](../AADS/readme.md#labs) | — | — |
-| [计算机体系结构](../ComputerArchitecture/readme.md) | 4 | ✓ 已通过 | [1 个入口](../ComputerArchitecture/readme.md#theory) | [4 个入口](../ComputerArchitecture/readme.md#labs) | [5 个入口](../ComputerArchitecture/readme.md#defense) | [2 个入口](../ComputerArchitecture/readme.md#exam) |
-| [计算数学](../ComputationalMath/readme.md) | 4 | ✓ 已通过 | [1 个入口](../ComputationalMath/readme.md#theory) | [6 个入口](../ComputationalMath/readme.md#labs) | [1 个入口](../ComputationalMath/readme.md#defense) | [1 个入口](../ComputationalMath/readme.md#exam) |
-| [数理统计](../MathematicalStatistics/readme.md) | 4 | ✓ 已通过 | [1 个入口](../MathematicalStatistics/readme.md#theory) | [3 个入口](../MathematicalStatistics/readme.md#labs) | — | — |
-| [最优化方法](../OptiMethod/readme.md) | 4 | ✓ 已通过 | — | [4 个入口](../OptiMethod/readme.md#labs) | [2 个入口](../OptiMethod/readme.md#defense) | — |
-| [软件工程基础](../OPI/readme.md) | 4 | ✓ 已通过 | [1 个入口](../OPI/readme.md#theory) | [4 个入口](../OPI/readme.md#labs) | [4 个入口](../OPI/readme.md#defense) | [3 个入口](../OPI/readme.md#exam) |
-| [公众演讲与展示](../PublicPresentation/readme.md) | 4 | ✓ 已通过 | — | [3 个入口](../PublicPresentation/readme.md#labs) | — | — |
+| 课程 | 学期 | 状态 | 全部实验 | 学期作业 | 考试 |
+|---|---|---|---|---|---|
+| [信息学](../Informatics/readme.md) | 1 | ✓ 已通过 | [6 项](../Informatics/readme.md#labs) | [1 项](../Informatics/readme.md#assignments) | — |
+| [俄罗斯科技史](../History/readme.md) | 1、2 | ✓ 已通过 | — | [4 项](../History/readme.md#assignments) | [内容](../History/readme.md#exam) |
+| [线性代数](../Math/LinearAlgebra/readme.md) | 1、2 | ✓ 已通过 | — | — | [内容](../Math/LinearAlgebra/readme.md#exam) · [答案](../Math/LinearAlgebra/readme.md#answers) |
+| [数学分析](../Math/readme.md) | 1、2 | ✓ 已通过 | — | — | [内容](../Math/readme.md#exam) |
+| [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | 1、2 | ✓ 已通过 | — | [3 项](../DiscreteMath/readme.md#assignments) | — |
+| [专业活动基础](../OPD/readme.md) | 1、2 | ✓ 已通过 | [6 项](../OPD/readme.md#labs) | — | [内容](../OPD/readme.md#exam) |
+| [程序设计](../Programming/readme.md) | 1、2 | ✓ 已通过 | [8 项](../Programming/readme.md#labs) | — | [内容](../Programming/readme.md#exam) |
+| [数据库](../Database/readme.md) | 2 | ✓ 已通过 | [4 项](../Database/readme.md#labs) | — | [内容](../Database/readme.md#exam) |
+| [Web 编程](../WebProgramming/readme.md) | 3 | ✓ 已通过 | [4 项](../WebProgramming/readme.md#labs) | — | [内容](../WebProgramming/readme.md#exam) · [答案](../WebProgramming/readme.md#answers) |
+| [数学分析补充章节](../Math/ExtraMath/readme.md) | 3 | ✓ 已通过 | — | — | [答案](../Math/ExtraMath/readme.md#answers) |
+| [概率论](../ProbabilityTheory/readme.md) | 3 | ✓ 已通过 | — | [2 项](../ProbabilityTheory/readme.md#assignments) | [答案](../ProbabilityTheory/readme.md#answers) |
+| [复变函数论](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) | 3 | ✓ 已通过 | [2 项](../ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md#labs) | — | — |
+| [物理](../Physics/readme.md) | 3、4 | ✓ 已通过 | [10 项](../Physics/readme.md#labs) | — | — |
+| [编程语言](../ProgrammingLanguage/readme.md) | 3 | ✓ 已通过 | [8 项](../ProgrammingLanguage/readme.md#labs) | — | — |
+| [算法与数据结构](../AADS/readme.md) | 4 | ✓ 已通过 | [4 项](../AADS/readme.md#labs) | — | — |
+| [计算机体系结构](../ComputerArchitecture/readme.md) | 4 | ✓ 已通过 | [4 项](../ComputerArchitecture/readme.md#labs) | — | [内容](../ComputerArchitecture/readme.md#exam) · [答案](../ComputerArchitecture/readme.md#answers) |
+| [计算数学](../ComputationalMath/readme.md) | 4 | ✓ 已通过 | [6 项](../ComputationalMath/readme.md#labs) | [1 项](../ComputationalMath/readme.md#assignments) | — |
+| [数理统计](../MathematicalStatistics/readme.md) | 4 | ✓ 已通过 | — | [3 项](../MathematicalStatistics/readme.md#assignments) | — |
+| [最优化方法](../OptiMethod/readme.md) | 4 | ✓ 已通过 | [4 项](../OptiMethod/readme.md#labs) | — | — |
+| [软件工程基础](../OPI/readme.md) | 4 | ✓ 已通过 | [4 项](../OPI/readme.md#labs) | — | [内容](../OPI/readme.md#exam) · [答案](../OPI/readme.md#answers) |
+| [公众演讲与展示](../PublicPresentation/readme.md) | 4 | ✓ 已通过 | — | [3 项](../PublicPresentation/readme.md#assignments) | — |
 
 ## 补充学习
 
-[Java 基础与练习](../Java/Note.md) · [Java 专题](../Java/subtopi.md) · [Go 源码](../Go) · [预科数学语言](../MathsLanguage/keyknowledge.md) · [Helios 使用](../helios.md)
+[Java 基础](../Java/Note.md) · [Java 专题](../Java/subtopi.md) · [Go 源码](../Go) · [预科数学语言](../MathsLanguage/keyknowledge.md) · [Helios](../helios.md)

@@ -70,7 +70,7 @@
 - [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) · — 未标记
   - [Lab 1：中俄答辩](../ComputerGraphicsAlgo/Lab1/defense_zh_ru.md)
 - [知识图谱](../KnowledgeGraphs/readme.md) · — 未标记
-  - [Step 1：选题与演讲提纲](../KnowledgeGraphs/Step-1/des.md)
+  - [语义 Web 技术研讨课](../KnowledgeGraphs/%D0%9A%D0%BE%D0%BF%D0%B8%D1%8F_%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80_%E2%80%9C%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%B2%D0%B5%D0%B1_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%E2%80%9D_1.pdf)
 
 ## 语言与表达
 

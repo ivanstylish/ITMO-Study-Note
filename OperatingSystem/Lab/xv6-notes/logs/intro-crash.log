@@ -1,0 +1,43 @@
+Namespace(testrex='crash', q=False)
+Test recovery of log
+make: 'kernel/kernel' is up to date.
+mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+balloc: first 1276 blocks have been allocated
+balloc: write bitmap block at sector 46
+kill 59
+recovering tail 0 dst 1564
+recovering tail 1 dst 46
+recovering tail 2 dst 1565
+recovering tail 3 dst 1330
+recovering tail 4 dst 1566
+recovering tail 5 dst 34
+recovering tail 6 dst 1536
+recovering tail 7 dst 1567
+recovering tail 8 dst 1568
+recovering tail 9 dst 1331
+recovering tail 10 dst 1569
+recovering tail 11 dst 1570
+recovering tail 12 dst 35
+f5             2 36 20000
+OK
+Test recovery of an orphaned file
+make: 'kernel/kernel' is up to date.
+mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+balloc: first 1276 blocks have been allocated
+balloc: write bitmap block at sector 46
+wait for kill and reclaim 31
+kill 143
+ireclaim: orphaned inode 31
+OK
+Test recovery of an orphaned file
+make: 'kernel/kernel' is up to date.
+mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+balloc: first 1276 blocks have been allocated
+balloc: write bitmap block at sector 46
+wait for kill and reclaim
+kill 226
+ireclaim: orphaned inode 31
+OK

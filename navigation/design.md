@@ -9,6 +9,7 @@
 | [Quartz](https://quartz.jzhao.xyz/) / [Starlight](https://starlight.astro.build/) 的知识库能力 | Quartz 的笔记关联、图谱和搜索；Starlight 的文档导航、搜索与多语言阅读 | 学期导航、跨课程概念关联、中俄资料搜索与[反向关联](../knowledge/backlinks.md)，从笔记回到引用它的页面 |
 | [Fumadocs](https://www.fumadocs.dev/) 的现代 UI | 清晰的层级、留白、目录与搜索入口 | 课程卡片、清晰的留白、状态标签、响应式导航与深浅色阅读界面 |
 | [ZJU](https://github.com/QSCTech/zju-icicles) / [HITSZ](https://hoa.moe/) 的课程资料结构 | ZJU 的课程目录与目录 README；HITSZ 的年份、专业导航 | 按学期找到课程，再在同一份课程 `readme.md` 中查看讲座、笔记、实验、通过状态和复习资料；保留原代码与报告目录 |
+| [maxbarsukov/itmo](https://github.com/maxbarsukov/itmo) 的课程导航 | 课程与学期的对应关系、集中链接到各科资料 | 首页分为大一到大四，每个学年列出两个学期；课程 README 分开整理全部实验、讲座教材、学期作业、考试内容及答案 |
 | [Markmap](https://markmap.js.org/) 的脑图 | 把 Markdown 标题层级转成可展开的脑图 | 已加入[复习脑图](../knowledge/mindmap.md)：网站支持展开、收起与缩放，另有可双击打开的离线 HTML；VS Code / GitHub 使用同一份 Markdown 大纲 |
 | [Mermaid](https://mermaid.js.org/) 的知识可视化 | 用文本描述概念关系、流程和结构 | [知识关联](../knowledge/index.md)中已有 Mermaid 图，与表格里的真实笔记、实现和答辩资料相连 |
 

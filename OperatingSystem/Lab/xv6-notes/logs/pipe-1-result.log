@@ -1,0 +1,22 @@
+PASS: xv6 boot and echo
+PASS: PIPESIZE=1, run 1/20, child=5, parent=4
+PASS: PIPESIZE=1, run 2/20, child=7, parent=6
+PASS: PIPESIZE=1, run 3/20, child=9, parent=8
+PASS: PIPESIZE=1, run 4/20, child=11, parent=10
+PASS: PIPESIZE=1, run 5/20, child=13, parent=12
+PASS: PIPESIZE=1, run 6/20, child=15, parent=14
+PASS: PIPESIZE=1, run 7/20, child=17, parent=16
+PASS: PIPESIZE=1, run 8/20, child=19, parent=18
+PASS: PIPESIZE=1, run 9/20, child=21, parent=20
+PASS: PIPESIZE=1, run 10/20, child=23, parent=22
+PASS: PIPESIZE=1, run 11/20, child=25, parent=24
+PASS: PIPESIZE=1, run 12/20, child=27, parent=26
+PASS: PIPESIZE=1, run 13/20, child=29, parent=28
+PASS: PIPESIZE=1, run 14/20, child=31, parent=30
+PASS: PIPESIZE=1, run 15/20, child=33, parent=32
+PASS: PIPESIZE=1, run 16/20, child=35, parent=34
+PASS: PIPESIZE=1, run 17/20, child=37, parent=36
+PASS: PIPESIZE=1, run 18/20, child=39, parent=38
+PASS: PIPESIZE=1, run 19/20, child=41, parent=40
+PASS: PIPESIZE=1, run 20/20, child=43, parent=42
+Transcript: /lab-notes/logs/pipe-1-qemu.log

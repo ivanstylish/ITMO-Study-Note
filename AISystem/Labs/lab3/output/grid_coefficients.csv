@@ -1,0 +1,365 @@
+﻿model,variant,lambda,l1_ratio,feature,weight
+Модель 1,Без регуляризации,0.0,0.0,Intercept,55.19534019922334
+Модель 1,Без регуляризации,0.0,0.0,Hours Studied,7.3133990014723285
+Модель 1,Без регуляризации,0.0,0.0,Sleep Hours,1.188048600444568
+Модель 1,Без регуляризации,0.0,0.0,Sample Question Papers Practiced,0.6811119618316666
+Модель 1,L1,0.001,1.0,Intercept,55.19534019922334
+Модель 1,L1,0.001,1.0,Hours Studied,7.312908501176457
+Модель 1,L1,0.001,1.0,Sleep Hours,1.1875630316619
+Модель 1,L1,0.001,1.0,Sample Question Papers Practiced,0.6806381423509079
+Модель 1,L1,0.01,1.0,Intercept,55.19534019922334
+Модель 1,L1,0.01,1.0,Hours Studied,7.308493998513602
+Модель 1,L1,0.01,1.0,Sleep Hours,1.183192912617901
+Модель 1,L1,0.01,1.0,Sample Question Papers Practiced,0.676373767024081
+Модель 1,L1,0.1,1.0,Intercept,55.19534019922334
+Модель 1,L1,0.1,1.0,Hours Studied,7.264348971885032
+Модель 1,L1,0.1,1.0,Sleep Hours,1.139491722177893
+Модель 1,L1,0.1,1.0,Sample Question Papers Practiced,0.6337300137558083
+Модель 1,L1,1.0,1.0,Intercept,55.19534019922334
+Модель 1,L1,1.0,1.0,Hours Studied,6.8228987055993615
+Модель 1,L1,1.0,1.0,Sleep Hours,0.7024798177778093
+Модель 1,L1,1.0,1.0,Sample Question Papers Practiced,0.20729248107308446
+Модель 1,L1,10.0,1.0,Intercept,55.19534019922334
+Модель 1,L1,10.0,1.0,Hours Studied,2.326295643373932
+Модель 1,L1,10.0,1.0,Sleep Hours,0.0
+Модель 1,L1,10.0,1.0,Sample Question Papers Practiced,0.0
+Модель 1,L2,0.001,0.0,Intercept,55.19534019922334
+Модель 1,L2,0.001,0.0,Hours Studied,7.309748457302759
+Модель 1,L2,0.001,0.0,Sleep Hours,1.1874569911963404
+Модель 1,L2,0.001,0.0,Sample Question Papers Practiced,0.6808694801991426
+Модель 1,L2,0.01,0.0,Intercept,55.19534019922334
+Модель 1,L2,0.01,0.0,Hours Studied,7.277056918068892
+Модель 1,L2,0.01,0.0,Sleep Hours,1.182159042555774
+Модель 1,L2,0.01,0.0,Sample Question Papers Practiced,0.6786936394593736
+Модель 1,L2,0.1,0.0,Intercept,55.19534019922334
+Модель 1,L2,0.1,0.0,Hours Studied,6.965543917913452
+Модель 1,L2,0.1,0.0,Sleep Hours,1.1316805860319508
+Модель 1,L2,0.1,0.0,Sample Question Papers Practiced,0.6575672316583527
+Модель 1,L2,1.0,0.0,Intercept,55.19534019922334
+Модель 1,L2,1.0,0.0,Hours Studied,4.877838291878742
+Модель 1,L2,1.0,0.0,Sleep Hours,0.7934386746502717
+Модель 1,L2,1.0,0.0,Sample Question Papers Practiced,0.4976406066259666
+Модель 1,L2,10.0,0.0,Intercept,55.19534019922334
+Модель 1,L2,10.0,0.0,Hours Studied,1.2205930901019206
+Модель 1,L2,10.0,0.0,Sleep Hours,0.19932236289655622
+Модель 1,L2,10.0,0.0,Sample Question Papers Practiced,0.14077323067314518
+Модель 1,ElasticNet,0.001,0.2,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.001,0.2,Hours Studied,7.310380212834872
+Модель 1,ElasticNet,0.001,0.2,Sleep Hours,1.1874781896391573
+Модель 1,ElasticNet,0.001,0.2,Sample Question Papers Practiced,0.6808232369155345
+Модель 1,ElasticNet,0.001,0.5,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.001,0.5,Hours Studied,7.311328083488502
+Модель 1,ElasticNet,0.001,0.5,Sleep Hours,1.1875099963479565
+Модель 1,ElasticNet,0.001,0.5,Sample Question Papers Practiced,0.6807538492290199
+Модель 1,ElasticNet,0.001,0.8,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.001,0.8,Hours Studied,7.312276239082917
+Модель 1,ElasticNet,0.001,0.8,Sleep Hours,1.1875418139151914
+Модель 1,ElasticNet,0.001,0.8,Sample Question Papers Practiced,0.6806844342156316
+Модель 1,ElasticNet,0.01,0.2,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.01,0.2,Hours Studied,7.2833192311000365
+Модель 1,ElasticNet,0.01,0.2,Sleep Hours,1.182364876774199
+Модель 1,ElasticNet,0.01,0.2,Sample Question Papers Practiced,0.6782320844695557
+Модель 1,ElasticNet,0.01,0.5,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.01,0.5,Hours Studied,7.292736175919751
+Модель 1,ElasticNet,0.01,0.5,Sleep Hours,1.1826745066465496
+Модель 1,ElasticNet,0.01,0.5,Sample Question Papers Practiced,0.6775374907130691
+Модель 1,ElasticNet,0.01,0.8,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.01,0.8,Hours Studied,7.302181403933726
+Модель 1,ElasticNet,0.01,0.8,Sleep Hours,1.1829851955904007
+Модель 1,ElasticNet,0.01,0.8,Sample Question Papers Practiced,0.6768401699932797
+Модель 1,ElasticNet,0.1,0.2,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.1,0.2,Hours Studied,7.023001465832728
+Модель 1,ElasticNet,0.1,0.2,Sleep Hours,1.1331720994338026
+Модель 1,ElasticNet,0.1,0.2,Sample Question Papers Practiced,0.6530332536216358
+Модель 1,ElasticNet,0.1,0.5,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.1,0.5,Hours Studied,7.1112944731653425
+Модель 1,ElasticNet,0.1,0.5,Sleep Hours,1.1354737632986036
+Модель 1,ElasticNet,0.1,0.5,Sample Question Papers Practiced,0.6460199252368102
+Модель 1,ElasticNet,0.1,0.8,Intercept,55.19534019922334
+Модель 1,ElasticNet,0.1,0.8,Hours Studied,7.202215893006554
+Модель 1,ElasticNet,0.1,0.8,Sleep Hours,1.1378563062144034
+Модель 1,ElasticNet,0.1,0.8,Sample Question Papers Practiced,0.6387394057538798
+Модель 1,ElasticNet,1.0,0.2,Intercept,55.19534019922334
+Модель 1,ElasticNet,1.0,0.2,Hours Studied,5.155427838637987
+Модель 1,ElasticNet,1.0,0.2,Sleep Hours,0.7799043232726159
+Модель 1,ElasticNet,1.0,0.2,Sample Question Papers Practiced,0.4577776549281775
+Модель 1,ElasticNet,1.0,0.5,Intercept,55.19534019922334
+Модель 1,ElasticNet,1.0,0.5,Hours Studied,5.655314956305658
+Модель 1,ElasticNet,1.0,0.5,Sleep Hours,0.7559873941127683
+Модель 1,ElasticNet,1.0,0.5,Sample Question Papers Practiced,0.38467169361793724
+Модель 1,ElasticNet,1.0,0.8,Intercept,55.19534019922334
+Модель 1,ElasticNet,1.0,0.8,Hours Studied,6.2919687671203475
+Модель 1,ElasticNet,1.0,0.8,Sleep Hours,0.7263949685915536
+Модель 1,ElasticNet,1.0,0.8,Sample Question Papers Practiced,0.28910300129965016
+Модель 1,ElasticNet,10.0,0.2,Intercept,55.19534019922334
+Модель 1,ElasticNet,10.0,0.2,Hours Studied,1.2652715531603205
+Модель 1,ElasticNet,10.0,0.2,Sleep Hours,0.040103337838984315
+Модель 1,ElasticNet,10.0,0.2,Sample Question Papers Practiced,0.0
+Модель 1,ElasticNet,10.0,0.5,Intercept,55.19534019922334
+Модель 1,ElasticNet,10.0,0.5,Hours Studied,1.3789416123925524
+Модель 1,ElasticNet,10.0,0.5,Sleep Hours,0.0
+Модель 1,ElasticNet,10.0,0.5,Sample Question Papers Practiced,0.0
+Модель 1,ElasticNet,10.0,0.8,Intercept,55.19534019922334
+Модель 1,ElasticNet,10.0,0.8,Hours Studied,1.6631478216869664
+Модель 1,ElasticNet,10.0,0.8,Sleep Hours,0.0
+Модель 1,ElasticNet,10.0,0.8,Sample Question Papers Practiced,0.0
+Модель 2,Без регуляризации,0.0,0.0,Intercept,55.19534019922334
+Модель 2,Без регуляризации,0.0,0.0,Previous Scores,17.532035834425585
+Модель 2,Без регуляризации,0.0,0.0,Extracurricular Activities,0.2548706017871036
+Модель 2,L1,0.001,1.0,Intercept,55.19534019922334
+Модель 2,L1,0.001,1.0,Previous Scores,17.531534120585818
+Модель 2,L1,0.001,1.0,Extracurricular Activities,0.25436888794735624
+Модель 2,L1,0.01,1.0,Intercept,55.19534019922334
+Модель 2,L1,0.01,1.0,Previous Scores,17.52701869602812
+Модель 2,L1,0.01,1.0,Extracurricular Activities,0.2498534633896305
+Модель 2,L1,0.1,1.0,Intercept,55.19534019922334
+Модель 2,L1,0.1,1.0,Previous Scores,17.48186445045086
+Модель 2,L1,0.1,1.0,Extracurricular Activities,0.20469921781237313
+Модель 2,L1,1.0,1.0,Intercept,55.19534019922334
+Модель 2,L1,1.0,1.0,Previous Scores,17.031165203932343
+Модель 2,L1,1.0,1.0,Extracurricular Activities,0.0
+Модель 2,L1,10.0,1.0,Intercept,55.19534019922334
+Модель 2,L1,10.0,1.0,Previous Scores,12.531165203932357
+Модель 2,L1,10.0,1.0,Extracurricular Activities,0.0
+Модель 2,L2,0.001,0.0,Intercept,55.19534019922334
+Модель 2,L2,0.001,0.0,Previous Scores,17.523273660304287
+Модель 2,L2,0.001,0.0,Extracurricular Activities,0.25471331380064405
+Модель 2,L2,0.01,0.0,Intercept,55.19534019922334
+Модель 2,L2,0.01,0.0,Previous Scores,17.444806457838432
+Модель 2,L2,0.01,0.0,Extracurricular Activities,0.25330609830602424
+Модель 2,L2,0.1,0.0,Intercept,55.19534019922334
+Модель 2,L2,0.1,0.0,Previous Scores,16.697128664137086
+Модель 2,L2,0.1,0.0,Extracurricular Activities,0.24001769848050533
+Модель 2,L2,1.0,0.0,Intercept,55.19534019922334
+Модель 2,L2,1.0,0.0,Previous Scores,11.687800107044437
+Модель 2,L2,1.0,0.0,Extracurricular Activities,0.15660457607795752
+Модель 2,L2,10.0,0.0,Intercept,55.19534019922334
+Модель 2,L2,10.0,0.0,Previous Scores,2.9218803158415247
+Модель 2,L2,10.0,0.0,Extracurricular Activities,0.03416045657655028
+Модель 2,ElasticNet,0.001,0.2,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.001,0.2,Previous Scores,17.524925091874355
+Модель 2,ElasticNet,0.001,0.2,Extracurricular Activities,0.25464445391773793
+Модель 2,ElasticNet,0.001,0.5,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.001,0.5,Previous Scores,17.52740285828055
+Модель 2,ElasticNet,0.001,0.5,Extracurricular Activities,0.2545411403915088
+Модель 2,ElasticNet,0.001,0.8,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.001,0.8,Previous Scores,17.529881367845192
+Модель 2,ElasticNet,0.001,0.8,Extracurricular Activities,0.2544377984126745
+Модель 2,ElasticNet,0.01,0.2,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.01,0.2,Previous Scores,17.46118340631888
+Модель 2,ElasticNet,0.01,0.2,Extracurricular Activities,0.25261809957447273
+Модель 2,ElasticNet,0.01,0.5,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.01,0.5,Previous Scores,17.485810081387225
+Модель 2,ElasticNet,0.01,0.5,Extracurricular Activities,0.25158373663024086
+Модель 2,ElasticNet,0.01,0.8,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.01,0.8,Previous Scores,17.510510552955097
+Модель 2,ElasticNet,0.01,0.8,Extracurricular Activities,0.2505465255320056
+Модель 2,ElasticNet,0.1,0.2,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.1,0.2,Previous Scores,16.848040219517845
+Модель 2,ElasticNet,0.1,0.2,Extracurricular Activities,0.23320585850698355
+Модель 2,ElasticNet,0.1,0.5,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.1,0.5,Previous Scores,17.079927937823815
+Модель 2,ElasticNet,0.1,0.5,Extracurricular Activities,0.2227572824246405
+Модель 2,ElasticNet,0.1,0.8,Intercept,55.19534019922334
+Модель 2,ElasticNet,0.1,0.8,Previous Scores,17.318702439253663
+Модель 2,ElasticNet,0.1,0.8,Extracurricular Activities,0.21202164472497
+Модель 2,ElasticNet,1.0,0.2,Intercept,55.19534019922334
+Модель 2,ElasticNet,1.0,0.2,Previous Scores,12.451071954031315
+Модель 2,ElasticNet,1.0,0.2,Extracurricular Activities,0.09822441309869617
+Модель 2,ElasticNet,1.0,0.5,Intercept,55.19534019922334
+Модель 2,ElasticNet,1.0,0.5,Previous Scores,13.824932163145883
+Модель 2,ElasticNet,1.0,0.5,Extracurricular Activities,0.0
+Модель 2,ElasticNet,1.0,0.8,Intercept,55.19534019922334
+Модель 2,ElasticNet,1.0,0.8,Previous Scores,15.573786549029423
+Модель 2,ElasticNet,1.0,0.8,Extracurricular Activities,0.0
+Модель 2,ElasticNet,10.0,0.2,Intercept,55.19534019922334
+Модель 2,ElasticNet,10.0,0.2,Previous Scores,3.3062330407864726
+Модель 2,ElasticNet,10.0,0.2,Extracurricular Activities,0.0
+Модель 2,ElasticNet,10.0,0.5,Intercept,55.19534019922334
+Модель 2,ElasticNet,10.0,0.5,Previous Scores,4.294618629694961
+Модель 2,ElasticNet,10.0,0.5,Extracurricular Activities,0.0
+Модель 2,ElasticNet,10.0,0.8,Intercept,55.19534019922334
+Модель 2,ElasticNet,10.0,0.8,Previous Scores,6.765582601966179
+Модель 2,ElasticNet,10.0,0.8,Extracurricular Activities,0.0
+Модель 3,Без регуляризации,0.0,0.0,Intercept,55.19534019922334
+Модель 3,Без регуляризации,0.0,0.0,Hours Studied,7.355818344501358
+Модель 3,Без регуляризации,0.0,0.0,Previous Scores,17.524552623253097
+Модель 3,Без регуляризации,0.0,0.0,Sleep Hours,0.8133088962795175
+Модель 3,Без регуляризации,0.0,0.0,Sample Question Papers Practiced,0.5654565027041889
+Модель 3,Без регуляризации,0.0,0.0,Extracurricular Activities,0.29843918854329987
+Модель 3,Без регуляризации,0.0,0.0,Study Interaction,0.044846683111710396
+Модель 3,L1,0.001,1.0,Intercept,55.19534019922334
+Модель 3,L1,0.001,1.0,Hours Studied,7.352536693555441
+Модель 3,L1,0.001,1.0,Previous Scores,17.522722246985033
+Модель 3,L1,0.001,1.0,Sleep Hours,0.8128350798930787
+Модель 3,L1,0.001,1.0,Sample Question Papers Practiced,0.5649890738550224
+Модель 3,L1,0.001,1.0,Extracurricular Activities,0.2979180580009917
+Модель 3,L1,0.001,1.0,Study Interaction,0.04801054754277127
+Модель 3,L1,0.01,1.0,Intercept,55.19534019922334
+Модель 3,L1,0.01,1.0,Hours Studied,7.323001835043467
+Модель 3,L1,0.01,1.0,Previous Scores,17.506248860573276
+Модель 3,L1,0.01,1.0,Sleep Hours,0.8085707324151185
+Модель 3,L1,0.01,1.0,Sample Question Papers Practiced,0.5607822142125238
+Модель 3,L1,0.01,1.0,Extracurricular Activities,0.29322788312022313
+Модель 3,L1,0.01,1.0,Study Interaction,0.07648532742083876
+Модель 3,L1,0.1,1.0,Intercept,55.19534019922334
+Модель 3,L1,0.1,1.0,Hours Studied,7.027653249921151
+Модель 3,L1,0.1,1.0,Previous Scores,17.34151499645417
+Модель 3,L1,0.1,1.0,Sleep Hours,0.7659272576355295
+Модель 3,L1,0.1,1.0,Sample Question Papers Practiced,0.5187136177875326
+Модель 3,L1,0.1,1.0,Extracurricular Activities,0.24632613431252665
+Модель 3,L1,0.1,1.0,Study Interaction,0.36123312620442644
+Модель 3,L1,1.0,1.0,Intercept,55.19534019922334
+Модель 3,L1,1.0,1.0,Hours Studied,4.090080814239823
+Модель 3,L1,1.0,1.0,Previous Scores,15.70200981931637
+Модель 3,L1,1.0,1.0,Sleep Hours,0.34454587624148375
+Модель 3,L1,1.0,1.0,Sample Question Papers Practiced,0.09531926945931936
+Модель 3,L1,1.0,1.0,Extracurricular Activities,0.0
+Модель 3,L1,1.0,1.0,Study Interaction,3.191805595458976
+Модель 3,L1,10.0,1.0,Intercept,55.19534019922334
+Модель 3,L1,10.0,1.0,Hours Studied,0.0
+Модель 3,L1,10.0,1.0,Previous Scores,10.687462967322038
+Модель 3,L1,10.0,1.0,Sleep Hours,0.0
+Модель 3,L1,10.0,1.0,Sample Question Papers Practiced,0.0
+Модель 3,L1,10.0,1.0,Extracurricular Activities,0.0
+Модель 3,L1,10.0,1.0,Study Interaction,4.393988112449436
+Модель 3,L2,0.001,0.0,Intercept,55.19534019922334
+Модель 3,L2,0.001,0.0,Hours Studied,7.228122444364583
+Модель 3,L2,0.001,0.0,Previous Scores,17.45614734626146
+Модель 3,L2,0.001,0.0,Sleep Hours,0.8136600050105952
+Модель 3,L2,0.001,0.0,Sample Question Papers Practiced,0.565191390910448
+Модель 3,L2,0.001,0.0,Extracurricular Activities,0.2977256070864643
+Модель 3,L2,0.001,0.0,Study Interaction,0.18568657312583295
+Модель 3,L2,0.01,0.0,Intercept,55.19534019922334
+Модель 3,L2,0.01,0.0,Hours Studied,6.276244617744469
+Модель 3,L2,0.01,0.0,Previous Scores,16.935772459912446
+Модель 3,L2,0.01,0.0,Sleep Hours,0.8158755896425429
+Модель 3,L2,0.01,0.0,Sample Question Papers Practiced,0.5629011253298597
+Модель 3,L2,0.01,0.0,Extracurricular Activities,0.2921613853534819
+Модель 3,L2,0.01,0.0,Study Interaction,1.2345544315342083
+Модель 3,L2,0.1,0.0,Intercept,55.19534019922334
+Модель 3,L2,0.1,0.0,Hours Studied,3.1518756965455323
+Модель 3,L2,0.1,0.0,Previous Scores,14.837700459488294
+Модель 3,L2,0.1,0.0,Sleep Hours,0.8077947638529637
+Модель 3,L2,0.1,0.0,Sample Question Papers Practiced,0.5435998421753598
+Модель 3,L2,0.1,0.0,Extracurricular Activities,0.2648169069535687
+Модель 3,L2,0.1,0.0,Study Interaction,4.635597099796226
+Модель 3,L2,1.0,0.0,Intercept,55.19534019922334
+Модель 3,L2,1.0,0.0,Hours Studied,1.7699218066542186
+Модель 3,L2,1.0,0.0,Previous Scores,10.182850560407834
+Модель 3,L2,1.0,0.0,Sleep Hours,0.6316760068477842
+Модель 3,L2,1.0,0.0,Sample Question Papers Practiced,0.4155751908864214
+Модель 3,L2,1.0,0.0,Extracurricular Activities,0.1698348194388292
+Модель 3,L2,1.0,0.0,Study Interaction,5.359026168597263
+Модель 3,L2,10.0,0.0,Intercept,55.19534019922334
+Модель 3,L2,10.0,0.0,Hours Studied,0.9325293848739319
+Модель 3,L2,10.0,0.0,Previous Scores,2.783184872100813
+Модель 3,L2,10.0,0.0,Sleep Hours,0.18797582185547757
+Модель 3,L2,10.0,0.0,Sample Question Papers Practiced,0.1310179874309905
+Модель 3,L2,10.0,0.0,Extracurricular Activities,0.0356904967224631
+Модель 3,L2,10.0,0.0,Study Interaction,1.9812286953731482
+Модель 3,ElasticNet,0.001,0.2,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.001,0.2,Hours Studied,7.252599220325696
+Модель 3,ElasticNet,0.001,0.2,Previous Scores,17.469266429252215
+Модель 3,ElasticNet,0.001,0.2,Sleep Hours,0.8134970027692104
+Модель 3,ElasticNet,0.001,0.2,Sample Question Papers Practiced,0.5651507678315202
+Модель 3,ElasticNet,0.001,0.2,Extracurricular Activities,0.29776237547668616
+Модель 3,ElasticNet,0.001,0.2,Study Interaction,0.15860127432263407
+Модель 3,ElasticNet,0.001,0.5,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.001,0.5,Hours Studied,7.289691208009743
+Модель 3,ElasticNet,0.001,0.5,Previous Scores,17.489126845102078
+Модель 3,ElasticNet,0.001,0.5,Sleep Hours,0.813250659181221
+Модель 3,ElasticNet,0.001,0.5,Sample Question Papers Practiced,0.5650899811868976
+Модель 3,ElasticNet,0.001,0.5,Extracurricular Activities,0.2978191255838535
+Модель 3,ElasticNet,0.001,0.5,Study Interaction,0.11755582627917686
+Модель 3,ElasticNet,0.001,0.8,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.001,0.8,Hours Studied,7.327242785181661
+Модель 3,ElasticNet,0.001,0.8,Previous Scores,17.50920897142362
+Модель 3,ElasticNet,0.001,0.8,Sleep Hours,0.8130020716943307
+Модель 3,ElasticNet,0.001,0.8,Sample Question Papers Practiced,0.5650293753897772
+Модель 3,ElasticNet,0.001,0.8,Extracurricular Activities,0.2978778245712566
+Модель 3,ElasticNet,0.001,0.8,Study Interaction,0.07600118042478209
+Модель 3,ElasticNet,0.01,0.2,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.01,0.2,Hours Studied,6.455719913099624
+Модель 3,ElasticNet,0.01,0.2,Previous Scores,17.03544122648334
+Модель 3,ElasticNet,0.01,0.2,Sleep Hours,0.8145612480242891
+Модель 3,ElasticNet,0.01,0.2,Sample Question Papers Practiced,0.5624661426452688
+Модель 3,ElasticNet,0.01,0.2,Extracurricular Activities,0.29224870769840167
+Модель 3,ElasticNet,0.01,0.2,Study Interaction,1.0360443397295958
+Модель 3,ElasticNet,0.01,0.5,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.01,0.5,Hours Studied,6.750332400427017
+Модель 3,ElasticNet,0.01,0.5,Previous Scores,17.19721376192024
+Модель 3,ElasticNet,0.01,0.5,Sleep Hours,0.8124648342094463
+Модель 3,ElasticNet,0.01,0.5,Sample Question Papers Practiced,0.5618230144364934
+Модель 3,ElasticNet,0.01,0.5,Extracurricular Activities,0.29248656615335455
+Модель 3,ElasticNet,0.01,0.5,Study Interaction,0.7101348109843346
+Модель 3,ElasticNet,0.01,0.8,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.01,0.8,Hours Studied,7.080236635834275
+Модель 3,ElasticNet,0.01,0.8,Previous Scores,17.37602497680266
+Модель 3,ElasticNet,0.01,0.8,Sleep Hours,0.8101953667090782
+Модель 3,ElasticNet,0.01,0.8,Sample Question Papers Practiced,0.5611932302796102
+Модель 3,ElasticNet,0.01,0.8,Extracurricular Activities,0.29287338264905494
+Модель 3,ElasticNet,0.01,0.8,Study Interaction,0.3451214606693334
+Модель 3,ElasticNet,0.1,0.2,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.1,0.2,Hours Studied,3.4320646620445436
+Модель 3,ElasticNet,0.1,0.2,Previous Scores,15.095427905986854
+Модель 3,ElasticNet,0.1,0.2,Sleep Hours,0.8020771781906388
+Модель 3,ElasticNet,0.1,0.2,Sample Question Papers Practiced,0.5386088887997651
+Модель 3,ElasticNet,0.1,0.2,Extracurricular Activities,0.25925062068362714
+Модель 3,ElasticNet,0.1,0.2,Study Interaction,4.3299204522344
+Модель 3,ElasticNet,0.1,0.5,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.1,0.5,Hours Studied,4.080681570663701
+Модель 3,ElasticNet,0.1,0.5,Previous Scores,15.596359413870806
+Модель 3,ElasticNet,0.1,0.5,Sleep Hours,0.792153344655869
+Модель 3,ElasticNet,0.1,0.5,Sample Question Papers Practiced,0.5310350126095462
+Модель 3,ElasticNet,0.1,0.5,Extracurricular Activities,0.2516436941264342
+Модель 3,ElasticNet,0.1,0.5,Study Interaction,3.6176455713560087
+Модель 3,ElasticNet,0.1,0.8,Intercept,55.19534019922334
+Модель 3,ElasticNet,0.1,0.8,Hours Studied,5.324068145626905
+Модель 3,ElasticNet,0.1,0.8,Previous Scores,16.389033474345627
+Модель 3,ElasticNet,0.1,0.8,Sleep Hours,0.7790532459687968
+Модель 3,ElasticNet,0.1,0.8,Sample Question Papers Practiced,0.5234903129512408
+Модель 3,ElasticNet,0.1,0.8,Extracurricular Activities,0.2462975647044814
+Модель 3,ElasticNet,0.1,0.8,Study Interaction,2.2454844358261616
+Модель 3,ElasticNet,1.0,0.2,Intercept,55.19534019922334
+Модель 3,ElasticNet,1.0,0.2,Hours Studied,1.7308515944854193
+Модель 3,ElasticNet,1.0,0.2,Previous Scores,10.79322244032886
+Модель 3,ElasticNet,1.0,0.2,Sleep Hours,0.5954226591432726
+Модель 3,ElasticNet,1.0,0.2,Sample Question Papers Practiced,0.3701821505122351
+Модель 3,ElasticNet,1.0,0.2,Extracurricular Activities,0.11184877603997467
+Модель 3,ElasticNet,1.0,0.2,Study Interaction,5.512756192135374
+Модель 3,ElasticNet,1.0,0.5,Intercept,55.19534019922334
+Модель 3,ElasticNet,1.0,0.5,Hours Studied,1.6748256590235036
+Модель 3,ElasticNet,1.0,0.5,Previous Scores,11.89860381499094
+Модель 3,ElasticNet,1.0,0.5,Sleep Hours,0.5269380124497053
+Модель 3,ElasticNet,1.0,0.5,Sample Question Papers Practiced,0.28823666748964905
+Модель 3,ElasticNet,1.0,0.5,Extracurricular Activities,0.007849463993896591
+Модель 3,ElasticNet,1.0,0.5,Study Interaction,5.724214083822027
+Модель 3,ElasticNet,1.0,0.8,Intercept,55.19534019922334
+Модель 3,ElasticNet,1.0,0.8,Hours Studied,1.7793136289209506
+Модель 3,ElasticNet,1.0,0.8,Previous Scores,13.389802854171911
+Модель 3,ElasticNet,1.0,0.8,Sleep Hours,0.43572516918574034
+Модель 3,ElasticNet,1.0,0.8,Sample Question Papers Practiced,0.18251549359024746
+Модель 3,ElasticNet,1.0,0.8,Extracurricular Activities,0.0
+Модель 3,ElasticNet,1.0,0.8,Study Interaction,5.718627951582627
+Модель 3,ElasticNet,10.0,0.2,Intercept,55.19534019922334
+Модель 3,ElasticNet,10.0,0.2,Hours Studied,0.8889165211862402
+Модель 3,ElasticNet,10.0,0.2,Previous Scores,3.1259008398669295
+Модель 3,ElasticNet,10.0,0.2,Sleep Hours,0.024594665720325995
+Модель 3,ElasticNet,10.0,0.2,Sample Question Papers Practiced,0.0
+Модель 3,ElasticNet,10.0,0.2,Extracurricular Activities,0.0
+Модель 3,ElasticNet,10.0,0.2,Study Interaction,2.157093733033268
+Модель 3,ElasticNet,10.0,0.5,Intercept,55.19534019922334
+Модель 3,ElasticNet,10.0,0.5,Hours Studied,0.733970146418517
+Модель 3,ElasticNet,10.0,0.5,Previous Scores,3.985188827301319
+Модель 3,ElasticNet,10.0,0.5,Sleep Hours,0.0
+Модель 3,ElasticNet,10.0,0.5,Sample Question Papers Practiced,0.0
+Модель 3,ElasticNet,10.0,0.5,Extracurricular Activities,0.0
+Модель 3,ElasticNet,10.0,0.5,Study Interaction,2.588909819850611
+Модель 3,ElasticNet,10.0,0.8,Intercept,55.19534019922334
+Модель 3,ElasticNet,10.0,0.8,Hours Studied,0.07357426397613026
+Модель 3,ElasticNet,10.0,0.8,Previous Scores,6.00040347786028
+Модель 3,ElasticNet,10.0,0.8,Sleep Hours,0.0
+Модель 3,ElasticNet,10.0,0.8,Sample Question Papers Practiced,0.0
+Модель 3,ElasticNet,10.0,0.8,Extracurricular Activities,0.0
+Модель 3,ElasticNet,10.0,0.8,Study Interaction,3.6480004136946103

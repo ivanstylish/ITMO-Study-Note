@@ -18,7 +18,7 @@ const courses = computed(() => {
 });
 const status = course => stage.value === 'current' ? courseStatus(course, current) : courseStatusSummary(course);
 const route = course => withBase('/' + course.dashboard.slice(0, -3).split('/').map(encodeURIComponent).join('/') + '.html');
-const counts = { theory: '讲义', labs: '实验', defense: '答辩', exam: '考试' };
+const counts = { labs: '实验', theory: '讲义', assignments: '作业', exam: '考试', answers: '答案', defense: '答辩' };
 </script>
 
 <template>

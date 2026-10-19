@@ -1,53 +1,105 @@
-# ITMO University Knowledge Base
+# ITMO 学习知识库
 
-大学学习笔记 · Конспекты, повторение и защита лабораторных
+按学年与学期查课程，进入各科 README 查看全部实验、讲座教材、学期作业、考试内容与答案。
 
-**当前：大三 · 第 5 学期**　｜　第 1–4 学期课程与实验 **✓ 已通过**
+[大一](#year-1) · [大二](#year-2) · [大三](#year-3) · [大四](#year-4)
 
-## 学习入口
+✓ 已通过 / ○ 待通过 / — 未标记。第 1–4 学期课程与实验已通过；跨学期课程分别记录状态。
 
-| 想做什么 | 从这里开始 |
-|---|---|
-| 查课程、讲义与实验 | [课程总览](navigation/courses.md) · [学期导航](navigation/index.md) |
-| 考前回顾知识 | [复习路线](study/revision.md) · [复习脑图](knowledge/mindmap.md) |
-| 准备实验讲解 | [实验与状态](navigation/labs.md) · [答辩材料](study/defense.md) |
-| 串联不同课程 | [知识关系图](knowledge/index.md) · [资料反向关联](knowledge/backlinks.md) |
+<!-- kb:home:start -->
 
-## 本学期课程
+## 大一 · 2024–2025 <a id="year-1"></a>
 
-| 课程 | 状态 | 资料入口 |
+### [第 1 学期 · 2024 秋季](academic/semester-01.md)
+
+| 课程 | Русское название | 状态 |
 |---|---|---|
-| [俄语（外语）](RussianLanguage/readme.md) | — 未标记 | [课程资料](RussianLanguage/readme.md) |
-| [计算机图形学算法](ComputerGraphicsAlgo/readme.md) | — 未标记 | [课程资料](ComputerGraphicsAlgo/readme.md) |
-| [软件系统架构](SoftwareSystemArch/readme.md) | — 未标记 | [课程资料](SoftwareSystemArch/readme.md) |
-| [知识图谱](KnowledgeGraphs/readme.md) | — 未标记 | [课程资料](KnowledgeGraphs/readme.md) |
-| [信息系统](InformationSystem/readme.md) | — 未标记 | [课程资料](InformationSystem/readme.md) |
-| [建模](Modeling/readme.md) | — 未标记 | [课程资料](Modeling/readme.md) |
-| [操作系统](OperatingSystem/readme.md) | — 未标记 | [课程资料](OperatingSystem/readme.md) · 速查 |
-| [用户界面设计](UIDesign/readme.md) | — 未标记 | [课程资料](UIDesign/readme.md) |
-| [人工智能系统](AISystem/readme.md) | — 未标记 | [课程资料](AISystem/readme.md) · 速查 |
+| [信息学](Informatics/readme.md) | Информатика | ✓ 已通过 |
+| [俄罗斯科技史](History/readme.md) | История российской науки и техники | ✓ 已通过 |
+| [线性代数](Math/LinearAlgebra/readme.md) | Линейная алгебра | ✓ 已通过 |
+| [数学分析](Math/readme.md) | Математический анализ | ✓ 已通过 |
+| [离散数学基础 / 离散数学](DiscreteMath/readme.md) | Основы дискретной математики / Дискретная математика | ✓ 已通过 |
+| [专业活动基础](OPD/readme.md) | Основы профессиональной деятельности | ✓ 已通过 |
+| [程序设计](Programming/readme.md) | Программирование | ✓ 已通过 |
+| [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
 
-## 学期安排
+### [第 2 学期 · 2025 春季](academic/semester-02.md)
 
-| 学年 | 学期 | 课程状态 |
+| 课程 | Русское название | 状态 |
 |---|---|---|
-| 大一 · 2024–2025 | [第 1 学期](academic/semester-01.md) · [第 2 学期](academic/semester-02.md) | ✓ 已通过 |
-| 大二 · 2025–2026 | [第 3 学期](academic/semester-03.md) · [第 4 学期](academic/semester-04.md) | ✓ 已通过 |
-| 大三 · 2026–2027 | [第 5 学期](academic/semester-05.md) | — 未标记 |
+| [俄罗斯科技史](History/readme.md) | История российской науки и техники | ✓ 已通过 |
+| [线性代数](Math/LinearAlgebra/readme.md) | Линейная алгебра | ✓ 已通过 |
+| [数学分析](Math/readme.md) | Математический анализ | ✓ 已通过 |
+| [离散数学基础 / 离散数学](DiscreteMath/readme.md) | Основы дискретной математики / Дискретная математика | ✓ 已通过 |
+| [专业活动基础](OPD/readme.md) | Основы профессиональной деятельности | ✓ 已通过 |
+| [程序设计](Programming/readme.md) | Программирование | ✓ 已通过 |
+| [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
+| [数据库](Database/readme.md) | Базы данных | ✓ 已通过 |
 
-30 门课程使用各自唯一的 README，集中查看讲义、实验、报告、答辩与考试资料。俄语跨学期共用入口，第 1–4 学期与第 5 学期的状态分别维护。
+## 大二 · 2025–2026 <a id="year-2"></a>
 
-## 三条复习路线
+### [第 3 学期 · 2025 秋季](academic/semester-03.md)
 
-- **数值计算与机器学习**：线性代数 → 计算数学 → 统计与建模 → 人工智能。
-- **计算机系统与测量**：OPD → 体系结构 → 操作系统 → 性能与统计测量。
-- **请求、数据与软件设计**：数据库 → Web → 软件工程 → 信息系统。
+| 课程 | Русское название | 状态 |
+|---|---|---|
+| [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
+| [Web 编程](WebProgramming/readme.md) | Веб-программирование | ✓ 已通过 |
+| [数学分析补充章节](Math/ExtraMath/readme.md) | Дополнительные главы математического анализа | ✓ 已通过 |
+| [概率论](ProbabilityTheory/readme.md) | Теория вероятностей | ✓ 已通过 |
+| [复变函数论](ComplexVariableTheory(%D0%A2%D0%A4%D0%9A%D0%9F)/readme.md) | Теория функций комплексного переменного | ✓ 已通过 |
+| [物理](Physics/readme.md) | Физика | ✓ 已通过 |
+| [编程语言](ProgrammingLanguage/readme.md) | Языки программирования | ✓ 已通过 |
 
-在[知识地图](knowledge/index.md)中找到各条路线的原笔记、实例和自测问题。
+### [第 4 学期 · 2026 春季](academic/semester-04.md)
 
-## 阅读与维护
+| 课程 | Русское название | 状态 |
+|---|---|---|
+| [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
+| [物理](Physics/readme.md) | Физика | ✓ 已通过 |
+| [算法与数据结构](AADS/readme.md) | Алгоритмы и структуры данных | ✓ 已通过 |
+| [计算机体系结构](ComputerArchitecture/readme.md) | Архитектура компьютера | ✓ 已通过 |
+| [计算数学](ComputationalMath/readme.md) | Вычислительная математика | ✓ 已通过 |
+| [数理统计](MathematicalStatistics/readme.md) | Математическая статистика | ✓ 已通过 |
+| [最优化方法](OptiMethod/readme.md) | Методы оптимизации | ✓ 已通过 |
+| [软件工程基础](OPI/readme.md) | Основы программной инженерии | ✓ 已通过 |
+| [公众演讲与展示](PublicPresentation/readme.md) | Техники публичных выступлений и презентаций | ✓ 已通过 |
 
+## 大三 · 2026–2027 <a id="year-3"></a>
 
-[阅读指南](navigation/reading.md) · [维护规则](navigation/maintenance.md) · [设计方向](navigation/design.md) · [可选网站](navigation/website.md)
+### [第 5 学期 · 2026 秋季](academic/semester-05.md)
 
-补充资料：[Java 基础](Java/Note.md) · [Java 专题](Java/subtopi.md) · [Go 源码](Go) · [预科数学语言](MathsLanguage/keyknowledge.md) · [Helios](helios.md) · [DeepWiki 概览](https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview)
+| 课程 | Русское название | 状态 |
+|---|---|---|
+| [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | — 未标记 |
+| [计算机图形学算法](ComputerGraphicsAlgo/readme.md) | Алгоритмы компьютерной графики | — 未标记 |
+| [软件系统架构](SoftwareSystemArch/readme.md) | Архитектура программных систем | — 未标记 |
+| [知识图谱](KnowledgeGraphs/readme.md) | Графы знаний | — 未标记 |
+| [信息系统](InformationSystem/readme.md) | Информационные системы | — 未标记 |
+| [建模](Modeling/readme.md) | Моделирование | — 未标记 |
+| [操作系统](OperatingSystem/readme.md) | Операционные системы | — 未标记 |
+| [用户界面设计](UIDesign/readme.md) | Проектирование пользовательских интерфейсов | — 未标记 |
+| [人工智能系统](AISystem/readme.md) | Системы искусственного интеллекта | — 未标记 |
+
+### 第 6 学期
+
+本学期课程资料尚未收录。
+
+## 大四 · 2027–2028 <a id="year-4"></a>
+
+### 第 7 学期
+
+本学期课程资料尚未收录。
+
+### 第 8 学期
+
+本学期课程资料尚未收录。
+
+<!-- kb:home:end -->
+
+---
+
+**复习工具**：[全部实验与作业](navigation/labs.md) · [考前复习](study/revision.md) · [实验答辩](study/defense.md) · [复习脑图](knowledge/mindmap.md) · [知识关系图](knowledge/index.md) · [反向关联](knowledge/backlinks.md)
+
+**补充学习**：[Java 基础](Java/Note.md) · [Java 专题](Java/subtopi.md) · [Go 源码](Go) · [预科数学语言](MathsLanguage/keyknowledge.md) · [Helios](helios.md) · [DeepWiki 概览](https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview)
+
+**使用与维护**：[阅读指南](navigation/reading.md) · [维护说明](navigation/maintenance.md) · [设计方向](navigation/design.md) · [网站阅读](navigation/website.md)

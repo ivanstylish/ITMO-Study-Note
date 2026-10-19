@@ -77,27 +77,33 @@
         "labs": [
           {
             "label": "Lab 1：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab1"
+            "path": "Informatics/Labwork/lab1",
+            "status": "passed"
           },
           {
             "label": "Lab 2：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab2"
+            "path": "Informatics/Labwork/lab2",
+            "status": "passed"
           },
           {
             "label": "Lab 3：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab3"
+            "path": "Informatics/Labwork/lab3",
+            "status": "passed"
           },
           {
             "label": "Lab 4：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab4"
+            "path": "Informatics/Labwork/lab4",
+            "status": "passed"
           },
           {
             "label": "Lab 5：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab5"
+            "path": "Informatics/Labwork/lab5",
+            "status": "passed"
           },
           {
             "label": "Lab 6：代码 / 报告 / 要求",
-            "path": "Informatics/Labwork/lab6"
+            "path": "Informatics/Labwork/lab6",
+            "status": "passed"
           }
         ],
         "defense": [
@@ -111,7 +117,15 @@
             "label": "资料说明",
             "path": "Informatics/Information.md"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "注释与摘要整理",
+            "path": "Informatics/annotation.md"
+          }
+        ],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -142,20 +156,7 @@
             "path": "History/HistoryandCulture.md"
           }
         ],
-        "labs": [
-          {
-            "label": "坎托罗维奇报告与演示",
-            "path": "History/report"
-          },
-          {
-            "label": "研究报告",
-            "path": "History/НИР/report.md"
-          },
-          {
-            "label": "报告整理",
-            "path": "History/ReReport.md"
-          }
-        ],
+        "labs": [],
         "defense": [
           {
             "label": "演示讲稿",
@@ -167,7 +168,26 @@
             "label": "考试问题清单（非完整答案）",
             "path": "History/exam/ans.md"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "坎托罗维奇报告与演示",
+            "path": "History/report"
+          },
+          {
+            "label": "研究报告",
+            "path": "History/НИР/report.md"
+          },
+          {
+            "label": "报告整理",
+            "path": "History/ReReport.md"
+          },
+          {
+            "label": "人物报告",
+            "path": "History/report/readme.md"
+          }
+        ],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -204,13 +224,13 @@
           {
             "label": "原线性代数索引",
             "path": "Math/LinearAlgebra/LinearAlgebra.md"
+          },
+          {
+            "label": "第 2 学期讲义与 PDF",
+            "path": "Math/LinearAlgebra/Sem2"
           }
         ],
         "exam": [
-          {
-            "label": "第 2 学期终测整理（中俄）",
-            "path": "Math/LinearAlgebra/Sem2/final_test.md"
-          },
           {
             "label": "考试问题 PDF",
             "path": "Math/LinearAlgebra/Список вопросов к экзамену.pdf"
@@ -221,7 +241,15 @@
             "label": "第 2 学期讲义与复习 PDF",
             "path": "Math/LinearAlgebra/Sem2"
           }
-        ]
+        ],
+        "answers": [
+          {
+            "label": "第 2 学期终测整理（中俄）",
+            "path": "Math/LinearAlgebra/Sem2/final_test.md"
+          }
+        ],
+        "labs": [],
+        "assignments": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -258,6 +286,10 @@
           {
             "label": "函数、极限与高等数学",
             "path": "Math/AdvancedMathematic.md"
+          },
+          {
+            "label": "数学分析教材（大一上）",
+            "path": "Math/MathAnaly/Бойцев А.А. Математический анализ (базовый уровень) 大一上.pdf"
           }
         ],
         "exam": [
@@ -274,8 +306,19 @@
           {
             "label": "数学分析讲义与考试资料",
             "path": "Math/MathAnaly"
+          },
+          {
+            "label": "离散数学",
+            "path": "Math/DisMathematic.md"
+          },
+          {
+            "label": "线性代数",
+            "path": "Math/LinearAlgebra/LinearAlgebra.md"
           }
-        ]
+        ],
+        "labs": [],
+        "assignments": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -310,7 +353,8 @@
             "path": "Math/DisMathematic.md"
           }
         ],
-        "labs": [
+        "labs": [],
+        "assignments": [
           {
             "label": "第 1 学期课程作业",
             "path": "DiscreteMath/FirstSem"
@@ -323,7 +367,9 @@
             "label": "模糊逻辑演示",
             "path": "DiscreteMath/SecSem/KP/FuzzyLogic.html"
           }
-        ]
+        ],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -360,32 +406,88 @@
           {
             "label": "I/O 与中断",
             "path": "OPD/Part3.md"
+          },
+          {
+            "label": "Part 2：课程笔记",
+            "path": "OPD/Part2.md"
+          },
+          {
+            "label": "Part 4：课程笔记",
+            "path": "OPD/Part4.md"
           }
         ],
         "labs": [
           {
             "label": "Lab 1：Linux / Helios",
-            "path": "OPD/lab/lab1/quesOfLab1.md"
+            "path": "OPD/lab/lab1/quesOfLab1.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab1"
+              }
+            ]
           },
           {
             "label": "Lab 2：CPU",
-            "path": "OPD/lab/lab2/lab2.md"
+            "path": "OPD/lab/lab2/lab2.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab2"
+              }
+            ]
           },
           {
             "label": "Lab 3：程序与问答",
-            "path": "OPD/lab/lab3/lab3.md"
+            "path": "OPD/lab/lab3/lab3.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab3"
+              },
+              {
+                "label": "lab3",
+                "path": "OPD/lab/lab3/readme.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 4",
-            "path": "OPD/lab/lab4/lab4.md"
+            "path": "OPD/lab/lab4/lab4.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab4"
+              },
+              {
+                "label": "lab4",
+                "path": "OPD/lab/lab4/readme.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 5",
-            "path": "OPD/lab/lab5/lab5.md"
+            "path": "OPD/lab/lab5/lab5.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab5"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 6",
-            "path": "OPD/lab/lab6/lab6.md"
+            "path": "OPD/lab/lab6/lab6.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPD/lab/lab6"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -403,7 +505,9 @@
             "label": "阶段测验",
             "path": "OPD/rub/rub2.md"
           }
-        ]
+        ],
+        "assignments": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -442,35 +546,85 @@
         "labs": [
           {
             "label": "Lab 1",
-            "path": "Programming/lab1.md"
+            "path": "Programming/lab1.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab1"
+              }
+            ]
           },
           {
             "label": "Lab 2：Pokémon",
-            "path": "Programming/lab2.md"
+            "path": "Programming/lab2.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab2"
+              }
+            ]
           },
           {
             "label": "Lab 3–4：OOP",
-            "path": "Programming/lab3-4.md"
+            "path": "Programming/lab3-4.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab3-4"
+              }
+            ]
           },
           {
             "label": "Lab 5：集合管理",
-            "path": "Programming/lab5.md"
+            "path": "Programming/lab5.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab5"
+              }
+            ]
           },
           {
             "label": "Lab 6：网络",
-            "path": "Programming/lab6.md"
+            "path": "Programming/lab6.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab6"
+              }
+            ]
           },
           {
             "label": "Lab 7：并发与 JDBC",
-            "path": "Programming/lab7.md"
+            "path": "Programming/lab7.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab7"
+              }
+            ]
           },
           {
             "label": "Lab 8：GUI",
-            "path": "Programming/lab8.md"
+            "path": "Programming/lab8.md",
+            "status": "passed",
+            "links": [
+              {
+                "label": "实验源码",
+                "path": "Programming/Lab/lab8"
+              }
+            ]
           },
           {
             "label": "Lab 9：现有代码",
-            "path": "Programming/Lab/lab9"
+            "path": "Programming/Lab/lab9",
+            "status": "passed"
           }
         ],
         "defense": [
@@ -490,7 +644,9 @@
             "label": "全部原实验代码",
             "path": "Programming/Lab"
           }
-        ]
+        ],
+        "assignments": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -528,9 +684,26 @@
           {
             "label": "词汇表",
             "path": "RussianLanguage/words.md"
+          },
+          {
+            "label": "俄语语法",
+            "path": "RussianLanguage/grammar.md"
           }
         ],
-        "labs": [
+        "labs": [],
+        "exam": [
+          {
+            "label": "口语测试准备",
+            "path": "RussianLanguage/2year/OralTest.md"
+          }
+        ],
+        "resources": [
+          {
+            "label": "动机信",
+            "path": "RussianLanguage/2year/MotivationLetter.md"
+          }
+        ],
+        "assignments": [
           {
             "label": "Homework 1",
             "path": "RussianLanguage/Homework1.md",
@@ -557,18 +730,7 @@
             "status": "passed"
           }
         ],
-        "exam": [
-          {
-            "label": "口语测试准备",
-            "path": "RussianLanguage/2year/OralTest.md"
-          }
-        ],
-        "resources": [
-          {
-            "label": "动机信",
-            "path": "RussianLanguage/2year/MotivationLetter.md"
-          }
-        ]
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -619,24 +781,60 @@
           {
             "label": "Lecture 7",
             "path": "Database/Lecture7.md"
+          },
+          {
+            "label": "Lecture 4 PDF",
+            "path": "Database/lecture4.pdf"
+          },
+          {
+            "label": "Lecture 5 PDF",
+            "path": "Database/lecture5.pdf"
           }
         ],
         "labs": [
           {
             "label": "Lab 1：说明与 SQL",
-            "path": "Database/labs/lab1"
+            "path": "Database/labs/lab1",
+            "links": [
+              {
+                "label": "lab1",
+                "path": "Database/labs/lab1/readme.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 2：说明与 SQL",
-            "path": "Database/labs/lab2"
+            "path": "Database/labs/lab2",
+            "links": [
+              {
+                "label": "lab2",
+                "path": "Database/labs/lab2/readme.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 3：说明与 SQL",
-            "path": "Database/labs/lab3"
+            "path": "Database/labs/lab3",
+            "links": [
+              {
+                "label": "lab3",
+                "path": "Database/labs/lab3/readme.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 4：说明与 SQL",
-            "path": "Database/labs/lab4"
+            "path": "Database/labs/lab4",
+            "links": [
+              {
+                "label": "lab4",
+                "path": "Database/labs/lab4/readme.md"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -669,14 +867,6 @@
         ],
         "resources": [
           {
-            "label": "Lecture 4 PDF",
-            "path": "Database/lecture4.pdf"
-          },
-          {
-            "label": "Lecture 5 PDF",
-            "path": "Database/lecture5.pdf"
-          },
-          {
             "label": "Lab 1 SQL",
             "path": "Database/labs/lab1/lab1.sql"
           },
@@ -692,7 +882,9 @@
             "label": "Lab 4 SQL",
             "path": "Database/labs/lab4/lab4.sql"
           }
-        ]
+        ],
+        "assignments": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -723,41 +915,91 @@
         "theory": [
           {
             "label": "课程讲义（中俄）",
-            "path": "WebProgramming/Lecture/lecture.md"
+            "path": "WebProgramming/Lecture/lecture.md",
+            "group": "学校讲义与教材"
+          },
+          {
+            "label": "原讲义 PDF",
+            "path": "WebProgramming/Lecture/Программирование интернет-приложений.pdf",
+            "group": "学校讲义与教材"
           },
           {
             "label": "HTML",
-            "path": "WebProgramming/HTML.md"
+            "path": "WebProgramming/HTML.md",
+            "group": "技术与语言"
           },
           {
             "label": "CSS",
-            "path": "WebProgramming/CSS.md"
+            "path": "WebProgramming/CSS.md",
+            "group": "技术与语言"
           },
           {
             "label": "AJAX",
-            "path": "WebProgramming/AJAX.md"
+            "path": "WebProgramming/AJAX.md",
+            "group": "技术与语言"
+          },
+          {
+            "label": "JavaScript",
+            "path": "WebProgramming/JS.md",
+            "group": "技术与语言"
           }
         ],
         "labs": [
           {
-            "label": "Lab 1：原源码",
-            "path": "WebProgramming/Lab1"
+            "label": "Lab 1",
+            "path": "WebProgramming/Lab1",
+            "links": [
+              {
+                "label": "实验记录",
+                "path": "WebProgramming/Lab1/script.md"
+              }
+            ],
+            "status": "passed"
           },
           {
-            "label": "Lab 3：原要求",
-            "path": "WebProgramming/Lab3/readme.md"
+            "label": "Lab 2：Servlet / JSP",
+            "path": "WebProgramming/Lab2",
+            "links": [
+              {
+                "label": "源码说明",
+                "path": "WebProgramming/Lab2/README.md"
+              }
+            ],
+            "status": "passed"
           },
           {
-            "label": "Lab 2：补回 Servlet / JSP 源码",
-            "path": "WebProgramming/Lab2/README.md"
+            "label": "Lab 3：JSF / JPA / JMX",
+            "path": "WebProgramming/Lab3",
+            "links": [
+              {
+                "label": "实验要求",
+                "path": "WebProgramming/Lab3/readme.md"
+              },
+              {
+                "label": "源码版本",
+                "path": "WebProgramming/Lab3/local-source/README.md"
+              },
+              {
+                "label": "OPI 联动版本",
+                "path": "WebProgramming/Lab3/opi-variant/README.md"
+              }
+            ],
+            "status": "passed"
           },
           {
-            "label": "Lab 3：JSF / JPA / JMX 源码",
-            "path": "WebProgramming/Lab3/local-source/README.md"
-          },
-          {
-            "label": "Lab 4：Spring Boot / React 源码",
-            "path": "WebProgramming/Lab4/local-source/README.md"
+            "label": "Lab 4：Spring Boot / React",
+            "path": "WebProgramming/Lab4",
+            "links": [
+              {
+                "label": "实验笔记",
+                "path": "WebProgramming/Lab4/lab4.md"
+              },
+              {
+                "label": "源码版本",
+                "path": "WebProgramming/Lab4/local-source/README.md"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -794,14 +1036,17 @@
         ],
         "resources": [
           {
-            "label": "原讲义 PDF",
-            "path": "WebProgramming/Lecture/Программирование интернет-приложений.pdf"
-          },
-          {
             "label": "Lab 3 / OPI Lab 4：源码变体",
             "path": "WebProgramming/Lab3/opi-variant/README.md"
           }
-        ]
+        ],
+        "answers": [
+          {
+            "label": "JSF / React / JPA 编程题参考实现",
+            "path": "WebProgramming/Exam/code_rub2.md"
+          }
+        ],
+        "assignments": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -839,7 +1084,16 @@
             "label": "复习 PDF",
             "path": "Math/ExtraMath/ans.pdf"
           }
-        ]
+        ],
+        "answers": [
+          {
+            "label": "复习问答：定义、定理与推导",
+            "path": "Math/ExtraMath/ans.md"
+          }
+        ],
+        "labs": [],
+        "assignments": [],
+        "exam": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -872,7 +1126,15 @@
             "path": "ProbabilityTheory/Lecture"
           }
         ],
-        "labs": [
+        "labs": [],
+        "exam": [],
+        "resources": [
+          {
+            "label": "概率分布表",
+            "path": "ProbabilityTheory/Таблицы.pdf"
+          }
+        ],
+        "assignments": [
           {
             "label": "实践报告",
             "path": "ProbabilityTheory/np/Practical_work6.pdf"
@@ -882,16 +1144,10 @@
             "path": "ProbabilityTheory/np/work.py"
           }
         ],
-        "exam": [
+        "answers": [
           {
             "label": "控制作业题解 PDF",
             "path": "ProbabilityTheory/Kp"
-          }
-        ],
-        "resources": [
-          {
-            "label": "概率分布表",
-            "path": "ProbabilityTheory/Таблицы.pdf"
           }
         ]
       },
@@ -922,13 +1178,25 @@
         "labs": [
           {
             "label": "Lab 1：分形代码与报告",
-            "path": "ComplexVariableTheory(ТФКП)/Lab1"
+            "path": "ComplexVariableTheory(ТФКП)/Lab1",
+            "status": "passed"
           },
           {
             "label": "Lab 2：报告",
-            "path": "ComplexVariableTheory(ТФКП)/Lab2/lab2.pdf"
+            "path": "ComplexVariableTheory(ТФКП)/Lab2/lab2.pdf",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComplexVariableTheory(ТФКП)/Lab2"
+              }
+            ],
+            "status": "passed"
           }
-        ]
+        ],
+        "theory": [],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -965,43 +1233,95 @@
         "labs": [
           {
             "label": "第 3 学期：Lab 1.01",
-            "path": "Physics/Labworks/lab1.01"
+            "path": "Physics/Labworks/lab1.01",
+            "links": [
+              {
+                "label": "lab1.01",
+                "path": "Physics/Labworks/lab1.01/P3210P3208_Чжун_Су.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 3 学期：Lab 1.02",
-            "path": "Physics/Labworks/lab1.02"
+            "path": "Physics/Labworks/lab1.02",
+            "links": [
+              {
+                "label": "lab1.02",
+                "path": "Physics/Labworks/lab1.02/P3210P3208 Чжун Ц. Су Л.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 3 学期：Lab 1.04",
-            "path": "Physics/Labworks/lab1.04"
+            "path": "Physics/Labworks/lab1.04",
+            "links": [
+              {
+                "label": "lab1.04",
+                "path": "Physics/Labworks/lab1.04/1.04.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 3 学期：Lab 1.05",
-            "path": "Physics/Labworks/lab1.05"
+            "path": "Physics/Labworks/lab1.05",
+            "links": [
+              {
+                "label": "lab1.05",
+                "path": "Physics/Labworks/lab1.05/1.05 .pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 3 学期：Lab 1.07",
-            "path": "Physics/Labworks/lab1.07"
+            "path": "Physics/Labworks/lab1.07",
+            "links": [
+              {
+                "label": "lab1.07",
+                "path": "Physics/Labworks/lab1.07/1.07.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 4 学期：Lab 3.01",
-            "path": "Physics/Labworks/lab3.01"
+            "path": "Physics/Labworks/lab3.01",
+            "links": [
+              {
+                "label": "lab3.01",
+                "path": "Physics/Labworks/lab3.01/lab3.01.md"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 4 学期：Lab 3.02",
-            "path": "Physics/Labworks/lab3.02"
+            "path": "Physics/Labworks/lab3.02",
+            "links": [
+              {
+                "label": "lab3.02",
+                "path": "Physics/Labworks/lab3.02/3.02.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "第 4 学期：Lab 3.05",
-            "path": "Physics/Labworks/lab3.05"
+            "path": "Physics/Labworks/lab3.05",
+            "status": "passed"
           },
           {
             "label": "第 4 学期：Lab 3.08",
-            "path": "Physics/Labworks/lab3.08"
+            "path": "Physics/Labworks/lab3.08",
+            "status": "passed"
           },
           {
             "label": "第 4 学期：Lab 3.11",
-            "path": "Physics/Labworks/lab3.11"
+            "path": "Physics/Labworks/lab3.11",
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1021,7 +1341,10 @@
             "label": "振荡",
             "path": "Physics/Labworks/lab3.11/lab3.11.md"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1057,35 +1380,49 @@
         "labs": [
           {
             "label": "Work 1：原项目",
-            "path": "ProgrammingLanguage/work1"
+            "path": "ProgrammingLanguage/work1",
+            "status": "passed"
           },
           {
             "label": "Work 2：原项目",
-            "path": "ProgrammingLanguage/work2"
+            "path": "ProgrammingLanguage/work2",
+            "status": "passed"
           },
           {
             "label": "Work 3：原项目",
-            "path": "ProgrammingLanguage/work3"
+            "path": "ProgrammingLanguage/work3",
+            "status": "passed"
           },
           {
             "label": "Work 4：原项目",
-            "path": "ProgrammingLanguage/work4"
+            "path": "ProgrammingLanguage/work4",
+            "status": "passed"
           },
           {
             "label": "Work 5：原项目",
-            "path": "ProgrammingLanguage/work5"
+            "path": "ProgrammingLanguage/work5",
+            "status": "passed"
           },
           {
             "label": "Work 6：原项目",
-            "path": "ProgrammingLanguage/work6"
+            "path": "ProgrammingLanguage/work6",
+            "status": "passed"
           },
           {
             "label": "Work 7：原项目",
-            "path": "ProgrammingLanguage/work7"
+            "path": "ProgrammingLanguage/work7",
+            "status": "passed"
           },
           {
             "label": "Work 8：反射、Attribute 与动态 IL",
-            "path": "ProgrammingLanguage/work8/README.md"
+            "path": "ProgrammingLanguage/work8/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ProgrammingLanguage/work8"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1099,7 +1436,10 @@
             "label": "早期 C / C# / Native 源码变体",
             "path": "ProgrammingLanguage/local-variants"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1135,21 +1475,28 @@
         "labs": [
           {
             "label": "Part 1–4：ABCD",
-            "path": "AADS/ABCD"
+            "path": "AADS/ABCD",
+            "status": "passed"
           },
           {
             "label": "Part 5–8：EFGH",
-            "path": "AADS/EFGH"
+            "path": "AADS/EFGH",
+            "status": "passed"
           },
           {
             "label": "测试源码",
-            "path": "AADS/Test/1.cpp"
+            "path": "AADS/Test/1.cpp",
+            "status": "passed"
           },
           {
             "label": "Part 9–16：补回独立源码",
-            "path": "AADS/local-lab1/README.md"
+            "path": "AADS/local-lab1/README.md",
+            "status": "passed"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1185,19 +1532,64 @@
         "labs": [
           {
             "label": "Lab 1：ARM MTE",
-            "path": "ComputerArchitecture/Lab1/readme.md"
+            "path": "ComputerArchitecture/Lab1/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerArchitecture/Lab1"
+              },
+              {
+                "label": "Description报告描述",
+                "path": "ComputerArchitecture/Lab1/description.md"
+              }
+            ]
           },
           {
             "label": "Lab 2：论文与评审",
-            "path": "ComputerArchitecture/Lab2/readme.md"
+            "path": "ComputerArchitecture/Lab2/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerArchitecture/Lab2"
+              },
+              {
+                "label": "essay1",
+                "path": "ComputerArchitecture/Lab2/essay1.md"
+              },
+              {
+                "label": "essay2",
+                "path": "ComputerArchitecture/Lab2/essay2.md"
+              }
+            ]
           },
           {
             "label": "Lab 3：四种 ISA / schema",
-            "path": "ComputerArchitecture/Lab3/readme.md"
+            "path": "ComputerArchitecture/Lab3/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerArchitecture/Lab3"
+              },
+              {
+                "label": "variant",
+                "path": "ComputerArchitecture/Lab3/variant.md"
+              },
+              {
+                "label": "task1",
+                "path": "ComputerArchitecture/Lab3/task1/task.s"
+              }
+            ]
           },
           {
             "label": "Lab 4：实验要求",
-            "path": "ComputerArchitecture/Lab4/lab4.md"
+            "path": "ComputerArchitecture/Lab4/lab4.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerArchitecture/Lab4"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1224,6 +1616,22 @@
         ],
         "exam": [
           {
+            "label": "考试范围与备考知识点",
+            "path": "ComputerArchitecture/Exam/readme.md"
+          },
+          {
+            "label": "考试题目 PDF",
+            "path": "ComputerArchitecture/Exam/csa_exam (2025).pdf"
+          }
+        ],
+        "resources": [
+          {
+            "label": "考前快速复习",
+            "path": "ComputerArchitecture/quick-review.md"
+          }
+        ],
+        "answers": [
+          {
             "label": "15 域完整考试答案（部分图缺失）",
             "path": "ComputerArchitecture/Exam/CSA_2026_Экзаменационные_ответы.md"
           },
@@ -1232,12 +1640,7 @@
             "path": "ComputerArchitecture/Exam/CSA_2026_Экзаменационные_ответы_устно.md"
           }
         ],
-        "resources": [
-          {
-            "label": "考前快速复习",
-            "path": "ComputerArchitecture/quick-review.md"
-          }
-        ]
+        "assignments": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1274,27 +1677,45 @@
         "labs": [
           {
             "label": "Lab 1：现有代码 / 资源",
-            "path": "ComputationalMath/Lab1"
+            "path": "ComputationalMath/Lab1",
+            "links": [
+              {
+                "label": "lab1",
+                "path": "ComputationalMath/Lab1/Задание_Л.Р.№1.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 2：现有代码 / 资源",
-            "path": "ComputationalMath/Lab2"
+            "path": "ComputationalMath/Lab2",
+            "links": [
+              {
+                "label": "lab2",
+                "path": "ComputationalMath/Lab2/Задание Л.Р.№2.pdf"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 3：现有代码 / 资源",
-            "path": "ComputationalMath/Lab3"
+            "path": "ComputationalMath/Lab3",
+            "status": "passed"
           },
           {
             "label": "Lab 4：现有代码 / 资源",
-            "path": "ComputationalMath/Lab4"
+            "path": "ComputationalMath/Lab4",
+            "status": "passed"
           },
           {
             "label": "Lab 5：现有代码 / 资源",
-            "path": "ComputationalMath/Lab5"
+            "path": "ComputationalMath/Lab5",
+            "status": "passed"
           },
           {
             "label": "Lab 6：现有代码 / 资源",
-            "path": "ComputationalMath/Lab6"
+            "path": "ComputationalMath/Lab6",
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1303,12 +1724,7 @@
             "path": "ComputationalMath/Questions/lab1.md"
           }
         ],
-        "exam": [
-          {
-            "label": "控制作业说明",
-            "path": "ComputationalMath/KP2/des.md"
-          }
-        ],
+        "exam": [],
         "resources": [
           {
             "label": "公式与答辩速查",
@@ -1318,7 +1734,14 @@
             "label": "Lab 1：变体 15 独立源码",
             "path": "ComputationalMath/Lab1/local-variant/README.md"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "控制作业说明",
+            "path": "ComputationalMath/KP2/des.md"
+          }
+        ],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1351,7 +1774,8 @@
             "path": "MathematicalStatistics/Lecture/Лекция 1.pdf"
           }
         ],
-        "labs": [
+        "labs": [],
+        "assignments": [
           {
             "label": "РГР 1：统计量与置信区间",
             "path": "MathematicalStatistics/РГР1"
@@ -1364,7 +1788,9 @@
             "label": "РГР 3：Python",
             "path": "MathematicalStatistics/РГР3"
           }
-        ]
+        ],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1393,19 +1819,29 @@
         "labs": [
           {
             "label": "实践 3：二次/三次近似",
-            "path": "OptiMethod/HW/lab3/des.md"
+            "path": "OptiMethod/HW/lab3/des.md",
+            "status": "passed"
           },
           {
             "label": "Lab 4：程序",
-            "path": "OptiMethod/lab4/main.py"
+            "path": "OptiMethod/lab4/main.py",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OptiMethod/lab4"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 5：源码",
-            "path": "OptiMethod/lab5"
+            "path": "OptiMethod/lab5",
+            "status": "passed"
           },
           {
             "label": "Lab 7：源码与报告",
-            "path": "OptiMethod/lab7"
+            "path": "OptiMethod/lab7",
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1417,7 +1853,16 @@
             "label": "Lab 7：机器学习问题",
             "path": "OptiMethod/lab7/ques.md"
           }
-        ]
+        ],
+        "theory": [
+          {
+            "label": "第 7 讲讲稿",
+            "path": "OptiMethod/ЛК7. Заслайдовый текст.docx"
+          }
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1453,19 +1898,51 @@
         "labs": [
           {
             "label": "Lab 1：需求与报告",
-            "path": "OPI/Lab1/Description.md"
+            "path": "OPI/Lab1/Description.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPI/Lab1"
+              },
+              {
+                "label": "lab1",
+                "path": "OPI/Lab1/report.docx"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 2：Git / SVN",
-            "path": "OPI/Lab2/command.md"
+            "path": "OPI/Lab2/command.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPI/Lab2"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 3：构建",
-            "path": "OPI/Lab3/ans.md"
+            "path": "OPI/Lab3/ans.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPI/Lab3"
+              }
+            ],
+            "status": "passed"
           },
           {
             "label": "Lab 4：JMX 监控",
-            "path": "OPI/Lab4/readme.md"
+            "path": "OPI/Lab4/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "OPI/Lab4"
+              }
+            ],
+            "status": "passed"
           }
         ],
         "defense": [
@@ -1488,16 +1965,12 @@
         ],
         "exam": [
           {
-            "label": "2025–2026 考试整理（中俄）",
-            "path": "OPI/Exam/ОПИ_2025-2026.md"
-          },
-          {
             "label": "阶段测验理论",
             "path": "OPI/Rub/theory.md"
           },
           {
-            "label": "旧考试整理",
-            "path": "OPI/Exam/exam.md"
+            "label": "考试问题清单",
+            "path": "OPI/Exam/questions.pdf"
           }
         ],
         "resources": [
@@ -1505,7 +1978,22 @@
             "label": "Web Lab3 联动源码变体",
             "path": "WebProgramming/Lab3/opi-variant/README.md"
           }
-        ]
+        ],
+        "answers": [
+          {
+            "label": "2025–2026 考试整理（中俄）",
+            "path": "OPI/Exam/ОПИ_2025-2026.md"
+          },
+          {
+            "label": "旧考试整理",
+            "path": "OPI/Exam/exam.md"
+          },
+          {
+            "label": "第 1–80 题答案 PDF",
+            "path": "OPI/Exam/OPI_Exam_Questions_1_80_Answers.pdf"
+          }
+        ],
+        "assignments": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1531,7 +2019,8 @@
         "ui"
       ],
       "resources": {
-        "labs": [
+        "labs": [],
+        "assignments": [
           {
             "label": "New Jazz 演讲稿",
             "path": "PublicPresentation/NewJazz.md"
@@ -1544,7 +2033,10 @@
             "label": "Essay",
             "path": "PublicPresentation/Essay.md"
           }
-        ]
+        ],
+        "theory": [],
+        "exam": [],
+        "answers": []
       },
       "status": "passed",
       "semesterStatus": {
@@ -1561,7 +2053,7 @@
       "directory": "ComputerGraphicsAlgo",
       "dashboard": "ComputerGraphicsAlgo/readme.md",
       "kind": "专业课程",
-      "note": "Lab 1 为光照，Lab 2 为球面；提交包保留原结构。",
+      "note": "按实验编号查看任务书、实现、报告与答辩；已收录 Lab 1–3。",
       "assessments": {
         "5": "考查 · Зачёт"
       },
@@ -1579,11 +2071,29 @@
         "labs": [
           {
             "label": "Lab 1：实际提交包",
-            "path": "ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md"
+            "path": "ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerGraphicsAlgo/Lab1"
+              }
+            ],
+            "status": "unmarked"
           },
           {
             "label": "Lab 2：实际提交包",
-            "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md"
+            "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "ComputerGraphicsAlgo/Lab2"
+              }
+            ],
+            "status": "unmarked"
+          },
+          {
+            "label": "Lab 3：任务书与色彩数据",
+            "path": "ComputerGraphicsAlgo/Lab3"
           }
         ],
         "defense": [
@@ -1601,7 +2111,10 @@
             "label": "Lab 2 实现",
             "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/lab2_sphere.py"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1632,7 +2145,11 @@
             "label": "Lecture 1：软件生命周期",
             "path": "SoftwareSystemArch/Lecture/lecture1.pdf"
           }
-        ]
+        ],
+        "labs": [],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1659,18 +2176,27 @@
         "discrete"
       ],
       "resources": {
-        "labs": [
-          {
-            "label": "Step 1：选题与演讲提纲",
-            "path": "KnowledgeGraphs/Step-1/des.md"
-          }
-        ],
+        "labs": [],
         "resources": [
           {
             "label": "电影知识图谱演示",
             "path": "KnowledgeGraphs/Step-1/Граф_знаний_о_фильмах.pptx"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "Step 1：选题与演讲提纲",
+            "path": "KnowledgeGraphs/Step-1/des.md"
+          }
+        ],
+        "theory": [
+          {
+            "label": "语义 Web 技术研讨课",
+            "path": "KnowledgeGraphs/Копия_Семинар_“Семантические_веб_технологии”_1.pdf"
+          }
+        ],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1687,7 +2213,7 @@
       "directory": "InformationSystem",
       "dashboard": "InformationSystem/readme.md",
       "kind": "专业课程",
-      "note": "已收录 Lab 1 源码与课程项目阶段 1；其余实验按本人清单维护。",
+      "note": "实验清单包含 Lab 1–3；课程项目单列在学期作业中。",
       "assessments": {
         "5": "考试 · Экзамен + 课程项目 · Курсовая работа"
       },
@@ -1707,11 +2233,28 @@
         "labs": [
           {
             "label": "Lab 1：项目说明",
-            "path": "InformationSystem/Lab1/README.md"
+            "path": "InformationSystem/Lab1/README.md",
+            "status": "pending",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "InformationSystem/Lab1"
+              },
+              {
+                "label": "lab1",
+                "path": "InformationSystem/Lab1/details.md"
+              }
+            ]
           },
           {
-            "label": "课程项目：要求与阶段报告",
-            "path": "InformationSystem/КурсоваяРабота/readme.md"
+            "label": "Lab 2",
+            "status": "pending",
+            "note": "原课程清单已列出，资料尚未收录。"
+          },
+          {
+            "label": "Lab 3",
+            "status": "pending",
+            "note": "原课程清单已列出，资料尚未收录。"
           }
         ],
         "defense": [
@@ -1729,7 +2272,15 @@
             "label": "Lab 1：独立本地源码版本",
             "path": "InformationSystem/Lab1/local-variant/README.md"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "课程项目：要求与阶段报告",
+            "path": "InformationSystem/КурсоваяРабота/readme.md"
+          }
+        ],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1765,11 +2316,25 @@
         "labs": [
           {
             "label": "УИР 1：变体 115 学习笔记",
-            "path": "Modeling/lab1/实验一学习笔记_中俄双语_变体115.md"
+            "path": "Modeling/lab1/实验一学习笔记_中俄双语_变体115.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "Modeling/lab1"
+              }
+            ],
+            "status": "unmarked"
           },
           {
             "label": "УИР 2：变体 15 实际计算",
-            "path": "Modeling/lab2/lab2_variant15.py"
+            "path": "Modeling/lab2/lab2_variant15.py",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "Modeling/lab2"
+              }
+            ],
+            "status": "unmarked"
           }
         ],
         "defense": [
@@ -1791,7 +2356,10 @@
             "label": "WinMark 项目说明",
             "path": "Modeling/lab2/Calculation_data/WinMark/README.md"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1830,12 +2398,17 @@
           {
             "label": "实验方法：统计",
             "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/doc/experiments/statistics.md"
+          },
+          {
+            "label": "性能分析教材",
+            "path": "OperatingSystem/Lecture"
           }
         ],
         "labs": [
           {
             "label": "Lab 1 intro-ex：原始要求",
-            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md"
+            "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md",
+            "status": "unmarked"
           }
         ],
         "defense": [
@@ -1859,13 +2432,12 @@
           },
           {
             "label": "最终报告 PDF",
-            "path": "OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-report.pdf"
-          },
-          {
-            "label": "性能分析教材",
-            "path": "OperatingSystem/Lecture"
+            "path": "OperatingSystem/Lab/lab1-intro-ex/OS report1.pdf"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1892,16 +2464,7 @@
         "presentation"
       ],
       "resources": {
-        "labs": [
-          {
-            "label": "Homework 1：项目说明",
-            "path": "UIDesign/HW/01_PPT总结与项目说明.md"
-          },
-          {
-            "label": "Homework 2：用户场景",
-            "path": "UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md"
-          }
-        ],
+        "labs": [],
         "defense": [
           {
             "label": "5 分钟演讲稿（中俄）",
@@ -1911,7 +2474,20 @@
             "label": "完整演讲稿（中俄）",
             "path": "UIDesign/HW/03_演讲稿_完整版_RU_ZH.md"
           }
-        ]
+        ],
+        "assignments": [
+          {
+            "label": "Homework 1：项目说明",
+            "path": "UIDesign/HW/01_PPT总结与项目说明.md"
+          },
+          {
+            "label": "Homework 2：用户场景",
+            "path": "UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md"
+          }
+        ],
+        "theory": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -1948,11 +2524,36 @@
         "labs": [
           {
             "label": "Lab 1：线性回归实现与笔记",
-            "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md"
+            "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab1"
+              }
+            ],
+            "status": "unmarked"
           },
           {
             "label": "目录 lab2 / 任务书 Lab 6：逻辑回归",
-            "path": "AISystem/Labs/lab2/README.md"
+            "path": "AISystem/Labs/lab2/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab2"
+              }
+            ],
+            "status": "unmarked"
+          },
+          {
+            "label": "Lab 3：模型正则化实验与报告",
+            "path": "AISystem/Labs/lab3/README.md",
+            "note": "实现与报告已收录；通过状态未记录。",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab3"
+              }
+            ]
           }
         ],
         "defense": [
@@ -1963,6 +2564,10 @@
           {
             "label": "逻辑回归：中俄答辩",
             "path": "AISystem/Labs/lab2/Защита_RU_ZH.md"
+          },
+          {
+            "label": "模型正则化：中俄学习与答辩",
+            "path": "AISystem/Labs/lab3/学习答辩_RU_ZH.md"
           }
         ],
         "resources": [
@@ -1977,8 +2582,15 @@
           {
             "label": "回归公式与答辩速查",
             "path": "AISystem/cheatsheet.md"
+          },
+          {
+            "label": "模型正则化源码",
+            "path": "AISystem/Labs/lab3/regularization.py"
           }
-        ]
+        ],
+        "assignments": [],
+        "exam": [],
+        "answers": []
       },
       "status": "unmarked",
       "semesterStatus": {

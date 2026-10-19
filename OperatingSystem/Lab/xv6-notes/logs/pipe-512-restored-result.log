@@ -1,0 +1,12 @@
+PASS: xv6 boot and echo
+PASS: PIPESIZE=512, run 1/10, child=5, parent=4
+PASS: PIPESIZE=512, run 2/10, child=7, parent=6
+PASS: PIPESIZE=512, run 3/10, child=9, parent=8
+PASS: PIPESIZE=512, run 4/10, child=11, parent=10
+PASS: PIPESIZE=512, run 5/10, child=13, parent=12
+PASS: PIPESIZE=512, run 6/10, child=15, parent=14
+PASS: PIPESIZE=512, run 7/10, child=17, parent=16
+PASS: PIPESIZE=512, run 8/10, child=19, parent=18
+PASS: PIPESIZE=512, run 9/10, child=21, parent=20
+PASS: PIPESIZE=512, run 10/10, child=23, parent=22
+Transcript: /lab-notes/logs/pipe-512-restored-qemu.log

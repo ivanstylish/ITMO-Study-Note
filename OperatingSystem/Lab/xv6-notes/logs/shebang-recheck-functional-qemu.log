@@ -1,0 +1,55 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ echo ENVIRONMENT_OK
+ENVIRONMENT_OK
+$ shebangtests
+shebang tests started
+[PASS] ordinary ELF preserves argv
+[PASS] ordinary ELF with empty argv
+[PASS] short script, multiple args, replaced argv0
+[PASS] script with empty argv
+[PASS] relative interpreter path
+[PASS] CRLF, whitespace, one optional argument
+[PASS] optional argument with empty argv
+[PASS] optional argument keeps literal quotes
+[PASS] CRLF without optional argument
+[PASS] EOF terminates a short shebang line
+[PASS] EOF after optional argument
+[PASS] empty file
+[PASS] text without shebang
+[PASS] one-byte file
+[PASS] empty interpreter at EOF
+[PASS] whitespace-only interpreter
+[PASS] NUL in shebang line
+[PASS] missing interpreter
+[PASS] directory as interpreter
+[PASS] directory as executable
+[PASS] invalid ELF interpreter
+[PASS] missing executable
+[PASS] ELF with 31 arguments
+[PASS] 30 args expand to 31 without option
+[PASS] 31 args overflow after script insertion
+[PASS] 29 args expand to 31 with option
+[PASS] 30 args overflow with optional argument
+[PASS] 255-byte line followed by LF
+[PASS] 255-byte line terminated by EOF
+[PASS] 256-byte line without LF
+[PASS] LF beyond the first-line window
+[PASS] 127-byte interpreter path
+[PASS] 128-byte interpreter path
+[PASS] four nested scripts preserve every argument
+[PASS] five nested scripts exceed depth limit
+[PASS] self-referencing interpreter
+[PASS] two-script interpreter cycle
+[PASS] 48 failed execs release resources
+[PASS] valid script after repeated failures
+[PASS] argument strings exceed the user stack
+[PASS] ELF still executes after stack failure
+ALL SHEBANG TESTS PASSED (41 cases)
+$ QEMU: Terminated
+

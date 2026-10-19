@@ -1,0 +1,46 @@
+-10-17T07:42:34.9204988Z ALL TESTS PASSED
+2026-10-17T07:42:34.9330086Z ##[group]Run ./test-xv6.py crash
+2026-10-17T07:42:34.9330618Z [36;1m./test-xv6.py crash[0m
+2026-10-17T07:42:34.9409829Z shell: /usr/bin/bash -e {0}
+2026-10-17T07:42:34.9410125Z ##[endgroup]
+2026-10-17T07:42:34.9928211Z Namespace(testrex='crash', q=False)
+2026-10-17T07:42:34.9931612Z Test recovery of log
+2026-10-17T07:42:35.0302037Z make: 'kernel/kernel' is up to date.
+2026-10-17T07:42:35.0697546Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-17T07:42:35.0832777Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-17T07:42:35.0834014Z balloc: first 1302 blocks have been allocated
+2026-10-17T07:42:35.0834846Z balloc: write bitmap block at sector 46
+2026-10-17T07:42:38.1124356Z kill 4393
+2026-10-17T07:42:41.1130095Z log attempt  1
+2026-10-17T07:42:41.1510031Z make: 'kernel/kernel' is up to date.
+2026-10-17T07:42:41.1909043Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-17T07:42:41.2048951Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-17T07:42:41.2049972Z balloc: first 1302 blocks have been allocated
+2026-10-17T07:42:41.2050820Z balloc: write bitmap block at sector 46
+2026-10-17T07:42:44.2225115Z kill 4502
+2026-10-17T07:42:47.2238256Z recovering tail 0 dst 1671
+2026-10-17T07:42:47.2241198Z recovering tail 1 dst 46
+2026-10-17T07:42:47.2245485Z recovering tail 2 dst 1672
+2026-10-17T07:42:47.2249253Z recovering tail 3 dst 1349
+2026-10-17T07:42:47.2250332Z recovering tail 4 dst 1673
+2026-10-17T07:42:47.2250981Z recovering tail 5 dst 34
+2026-10-17T07:42:47.2251620Z recovering tail 6 dst 1674
+2026-10-17T07:42:47.2252284Z recovering tail 7 dst 1675
+2026-10-17T07:42:47.2252919Z recovering tail 8 dst 1654
+2026-10-17T07:42:47.2253532Z recovering tail 9 dst 1676
+2026-10-17T07:42:47.2254483Z recovering tail 10 dst 1368
+2026-10-17T07:42:47.2255096Z recovering tail 11 dst 1677
+2026-10-17T07:42:47.2255730Z recovering tail 12 dst 1678
+2026-10-17T07:42:47.2256316Z recovering tail 13 dst 35
+2026-10-17T07:42:47.2256893Z recovering tail 14 dst 1679
+2026-10-17T07:42:48.2255671Z f5             2 36 50000
+2026-10-17T07:42:48.2256212Z OK
+2026-10-17T07:42:48.2256624Z Test recovery of an orphaned file
+2026-10-17T07:42:48.2637048Z make: 'kernel/kernel' is up to date.
+2026-10-17T07:42:48.3040017Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-17T07:42:48.3177521Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-17T07:42:48.3181019Z balloc: first 1302 blocks have been allocated
+2026-10-17T07:42:48.3181766Z balloc: write bitmap block at sector 46
+2026-10-17T07:43:19.3265318Z FAIL: match failed ('wait',)
+2026-10-17T07:43:19.3378776Z ##[error]Process completed with exit code 1.
+2026-10-17T07:43:19.3514507Z

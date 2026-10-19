@@ -1,0 +1,9 @@
+PASS: xv6 boot and echo
+dump2extra
+[OK] self, register boundaries and error codes
+[OK] grandparent can inspect grandchild
+[OK] denied relationships and reaped PID
+[OK] lazy allocation and cross-page copyout
+ALL DUMP2 EXTRA TESTS PASSED
+$ PASS: dump2extra
+Transcript: /lab-notes/logs/intro-recheck-extra-qemu.log

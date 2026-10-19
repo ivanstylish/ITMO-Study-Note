@@ -83,6 +83,7 @@ export function safeMarkdown(md, manifest, { base = '/' } = {}) {
   };
   const fence = md.renderer.rules.fence;
   md.renderer.rules.fence = (tokens, index, options, env, self) => {
+    if (tokens[index].info.trim() === 'academic-years' && env.relativePath === 'index.md') return '<AcademicYears />';
     if (tokens[index].info.trim() === 'course-cards' && env.relativePath === 'navigation/courses.md') return '<CourseExplorer />';
     if (tokens[index].info.trim() === 'markmap') {
       const content = tokens[index].content;
