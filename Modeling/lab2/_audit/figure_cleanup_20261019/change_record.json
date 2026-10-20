@@ -1,0 +1,17 @@
+{
+  "source": "D:\\Study-Note\\Modeling\\lab2\\3310_Чжун_Цзяцзюнь_УИР2.docx",
+  "output": "D:\\Study-Note\\Modeling\\lab2\\3310_Чжун_Цзяцзюнь_УИР2_Для_WinMark.docx",
+  "removed_image_sha256": "d31cf15ca0a2e30a2490662e83e50c9da823aa1228a93366b6683454ad18dbd3",
+  "removed_subplots": [
+    "loss probability",
+    "throughput",
+    "sojourn time"
+  ],
+  "retained_figures": [
+    "system 1 structure",
+    "system 1 transitions",
+    "system 2 structure",
+    "system 2 transitions",
+    "Lq comparison from actual WinMark exports"
+  ]
+}

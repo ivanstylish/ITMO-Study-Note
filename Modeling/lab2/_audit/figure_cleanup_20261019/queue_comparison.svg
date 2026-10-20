@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940">
+<rect width="1600" height="940" fill="white"/>
+<g font-family="Times New Roman" fill="#111">
+<text x="800" y="65" text-anchor="middle" font-size="38">Средняя суммарная длина очередей</text>
+<line x1="150" x2="1500" y1="735" y2="735" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="746" text-anchor="end" font-size="31">0</text>
+<line x1="150" x2="1500" y1="633.3333333333334" y2="633.3333333333334" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="644.3333333333334" text-anchor="end" font-size="31">0,5</text>
+<line x1="150" x2="1500" y1="531.6666666666667" y2="531.6666666666667" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="542.6666666666667" text-anchor="end" font-size="31">1</text>
+<line x1="150" x2="1500" y1="430" y2="430" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="441" text-anchor="end" font-size="31">1,5</text>
+<line x1="150" x2="1500" y1="328.33333333333337" y2="328.33333333333337" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="339.33333333333337" text-anchor="end" font-size="31">2</text>
+<line x1="150" x2="1500" y1="226.66666666666663" y2="226.66666666666663" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="237.66666666666663" text-anchor="end" font-size="31">2,5</text>
+<line x1="150" x2="1500" y1="125" y2="125" stroke="#dedede" stroke-width="1.5"/>
+<text x="126" y="136" text-anchor="end" font-size="31">3</text>
+<line x1="150" x2="150" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="150" y="784" text-anchor="middle" font-size="30">0,1</text>
+<line x1="300" x2="300" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="300" y="784" text-anchor="middle" font-size="30">0,2</text>
+<line x1="450" x2="450" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="450" y="784" text-anchor="middle" font-size="30">0,3</text>
+<line x1="600" x2="600" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="600" y="784" text-anchor="middle" font-size="30">0,4</text>
+<line x1="750" x2="750" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="750" y="784" text-anchor="middle" font-size="30">0,5</text>
+<line x1="900" x2="900" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="900" y="784" text-anchor="middle" font-size="30">0,6</text>
+<line x1="1050" x2="1050" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="1050" y="784" text-anchor="middle" font-size="30">0,7</text>
+<line x1="1200" x2="1200" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="1200" y="784" text-anchor="middle" font-size="30">0,8</text>
+<line x1="1350" x2="1350" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="1350" y="784" text-anchor="middle" font-size="30">0,9</text>
+<line x1="1500" x2="1500" y1="735" y2="745" stroke="#444" stroke-width="1.5"/>
+<text x="1500" y="784" text-anchor="middle" font-size="30">1,0</text>
+<path d="M150,125 V735 H1500" fill="none" stroke="#444" stroke-width="2"/>
+<line x1="750" x2="750" y1="125" y2="735" stroke="#8d8d8d" stroke-width="2" stroke-dasharray="10 9"/>
+<text x="764" y="160" font-size="30">λ = 0,5</text>
+<path d="M150,726.7751666666667 L300,654.2782933333333 L450,527.8301733333333 L600,418.12635 L750,343.41416000000004 L900,294.50436 L1050,261.6312566666667 L1200,238.6108733333333 L1350,221.83221333333336 L1500,209.1682066666666" fill="none" stroke="#245e8d" stroke-width="4.5"/>
+<circle cx="150" cy="726.7751666666667" r="6.5" fill="#245e8d"/>
+<circle cx="300" cy="654.2782933333333" r="6.5" fill="#245e8d"/>
+<circle cx="450" cy="527.8301733333333" r="6.5" fill="#245e8d"/>
+<circle cx="600" cy="418.12635" r="6.5" fill="#245e8d"/>
+<circle cx="750" cy="343.41416000000004" r="6.5" fill="#245e8d"/>
+<circle cx="900" cy="294.50436" r="6.5" fill="#245e8d"/>
+<circle cx="1050" cy="261.6312566666667" r="6.5" fill="#245e8d"/>
+<circle cx="1200" cy="238.6108733333333" r="6.5" fill="#245e8d"/>
+<circle cx="1350" cy="221.83221333333336" r="6.5" fill="#245e8d"/>
+<circle cx="1500" cy="209.1682066666666" r="6.5" fill="#245e8d"/>
+<line x1="445" x2="535" y1="893" y2="893" stroke="#245e8d" stroke-width="5"/>
+<circle cx="490" cy="893" r="6.5" fill="#245e8d"/>
+<text x="557" y="904" font-size="32">Система 1</text>
+<path d="M150,634.0389 L300,500.9659766666667 L450,419.62308666666667 L600,368.4587266666667 L750,333.02240333333333 L900,306.71533999999997 L1050,286.2720033333333 L1200,269.8778466666667 L1350,256.42409333333336 L1500,245.1844366666666" fill="none" stroke="#ad4b28" stroke-width="4.5"/>
+<circle cx="150" cy="634.0389" r="6.5" fill="#ad4b28"/>
+<circle cx="300" cy="500.9659766666667" r="6.5" fill="#ad4b28"/>
+<circle cx="450" cy="419.62308666666667" r="6.5" fill="#ad4b28"/>
+<circle cx="600" cy="368.4587266666667" r="6.5" fill="#ad4b28"/>
+<circle cx="750" cy="333.02240333333333" r="6.5" fill="#ad4b28"/>
+<circle cx="900" cy="306.71533999999997" r="6.5" fill="#ad4b28"/>
+<circle cx="1050" cy="286.2720033333333" r="6.5" fill="#ad4b28"/>
+<circle cx="1200" cy="269.8778466666667" r="6.5" fill="#ad4b28"/>
+<circle cx="1350" cy="256.42409333333336" r="6.5" fill="#ad4b28"/>
+<circle cx="1500" cy="245.1844366666666" r="6.5" fill="#ad4b28"/>
+<line x1="880" x2="970" y1="893" y2="893" stroke="#ad4b28" stroke-width="5"/>
+<circle cx="925" cy="893" r="6.5" fill="#ad4b28"/>
+<text x="992" y="904" font-size="32">Система 2</text>
+<text x="825" y="839" text-anchor="middle" font-size="34">Интенсивность входного потока λ, с⁻¹</text>
+<text x="48" y="430" text-anchor="middle" transform="rotate(-90 48 430)" font-size="34">Lq, заявок</text>
+</g></svg>

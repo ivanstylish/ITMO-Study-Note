@@ -1,0 +1,358 @@
+{
+  "checked_at_utc": "2026-10-19 20:05:10 UTC",
+  "repository": "ivanstylish/os-course-xv6-riscv",
+  "visibility": "private",
+  "main_sha": "57dc72da888497f03084262bcbb40eed04e83eb4",
+  "pull_requests_merged": false,
+  "teacher_invitation_sent": false,
+  "projects": [
+    {
+      "name": "intro",
+      "sha": "f9fde02e243e9e0192609c65449e13410d6ea9ea",
+      "pr": 1,
+      "pull_request": "https://github.com/ivanstylish/os-course-xv6-riscv/pull/1",
+      "workflows": [
+        {
+          "id": 39315287210,
+          "name": "UserTests",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 8,
+          "jobs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39315287210/jobs",
+          "logs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39315287210/logs",
+          "workflow_id": 387445790,
+          "url": "https://github.com/ivanstylish/os-course-xv6-riscv/actions/runs/39315287210",
+          "jobs": [
+            {
+              "id": 118275047486,
+              "name": "build",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Initialize containers",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Checkout",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Show the MR info",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Build",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Format",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Test Lab 1",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Test Lab 2",
+                  "conclusion": "skipped"
+                },
+                {
+                  "name": "Test Lab 3",
+                  "conclusion": "skipped"
+                },
+                {
+                  "name": "Test Basic Quick",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Test Basic",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Checkout",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Stop containers",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 39315287212,
+          "name": ".github/workflows/test.yml",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 17,
+          "jobs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39315287212/jobs",
+          "logs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39315287212/logs",
+          "workflow_id": 387445791,
+          "url": "https://github.com/ivanstylish/os-course-xv6-riscv/actions/runs/39315287212",
+          "jobs": [
+            {
+              "id": 118275048303,
+              "name": "macos",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run brew install riscv64-elf-gcc",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make kernel/kernel fs.img",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            },
+            {
+              "id": 118275048512,
+              "name": "linux",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run sudo apt-get update && sudo apt-get install -y gcc-riscv64-linux-gnu qemu-system-riscv clang-format bc",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make fmt && git diff --exit-code",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make kernel/kernel fs.img",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run ./test-xv6.py usertests",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run ./test-xv6.py crash",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shebang",
+      "sha": "2de5e7855d6317b50f88015b80bc4a8ad2908a56",
+      "pr": 2,
+      "pull_request": "https://github.com/ivanstylish/os-course-xv6-riscv/pull/2",
+      "workflows": [
+        {
+          "id": 39312967955,
+          "name": ".github/workflows/test.yml",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 15,
+          "jobs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39312967955/jobs",
+          "logs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39312967955/logs",
+          "workflow_id": 387445791,
+          "url": "https://github.com/ivanstylish/os-course-xv6-riscv/actions/runs/39312967955",
+          "jobs": [
+            {
+              "id": 118267062025,
+              "name": "macos",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run brew install riscv64-elf-gcc",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make kernel/kernel fs.img",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            },
+            {
+              "id": 118267062471,
+              "name": "linux",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run sudo apt-get update && sudo apt-get install -y gcc-riscv64-linux-gnu qemu-system-riscv clang-format bc",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make fmt && git diff --exit-code",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run make kernel/kernel fs.img",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run ./test-xv6.py usertests",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Run ./test-xv6.py crash",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Run actions/checkout@v7",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 39312967552,
+          "name": "UserTests",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 7,
+          "jobs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39312967552/jobs",
+          "logs_url": "https://api.github.com/repos/ivanstylish/os-course-xv6-riscv/actions/runs/39312967552/logs",
+          "workflow_id": 387445790,
+          "url": "https://github.com/ivanstylish/os-course-xv6-riscv/actions/runs/39312967552",
+          "jobs": [
+            {
+              "id": 118267059914,
+              "name": "build",
+              "status": "completed",
+              "conclusion": "success",
+              "steps": [
+                {
+                  "name": "Set up job",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Initialize containers",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Checkout",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Show the MR info",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Build",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Format",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Test Lab 1",
+                  "conclusion": "skipped"
+                },
+                {
+                  "name": "Test Lab 2",
+                  "conclusion": "skipped"
+                },
+                {
+                  "name": "Test Lab 3",
+                  "conclusion": "skipped"
+                },
+                {
+                  "name": "Test Basic Quick",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Test Basic",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Post Checkout",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Stop containers",
+                  "conclusion": "success"
+                },
+                {
+                  "name": "Complete job",
+                  "conclusion": "success"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

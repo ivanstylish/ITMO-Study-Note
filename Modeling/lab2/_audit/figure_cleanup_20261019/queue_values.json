@@ -1,0 +1,52 @@
+[
+  {
+    "lambda": 0.1,
+    "system1": 0.04045,
+    "system2": 0.49653
+  },
+  {
+    "lambda": 0.2,
+    "system1": 0.396992,
+    "system2": 1.150987
+  },
+  {
+    "lambda": 0.3,
+    "system1": 1.018868,
+    "system2": 1.551034
+  },
+  {
+    "lambda": 0.4,
+    "system1": 1.558395,
+    "system2": 1.802662
+  },
+  {
+    "lambda": 0.5,
+    "system1": 1.925832,
+    "system2": 1.976939
+  },
+  {
+    "lambda": 0.6,
+    "system1": 2.166372,
+    "system2": 2.106318
+  },
+  {
+    "lambda": 0.7,
+    "system1": 2.328043,
+    "system2": 2.206859
+  },
+  {
+    "lambda": 0.8,
+    "system1": 2.441258,
+    "system2": 2.287486
+  },
+  {
+    "lambda": 0.9,
+    "system1": 2.523776,
+    "system2": 2.353652
+  },
+  {
+    "lambda": 1.0,
+    "system1": 2.586058,
+    "system2": 2.408929
+  }
+]

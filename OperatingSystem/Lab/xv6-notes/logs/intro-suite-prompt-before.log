@@ -1,0 +1,57 @@
+..FFF
+======================================================================
+FAIL: test_legal_prompt_placements (__main__.PromptHandlingTests.test_legal_prompt_placements) (echo='$ probe', prologue='ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/xv6/ci/test/test_prompt_handling.py", line 41, in test_legal_prompt_placements
+    suite.start(stream)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/xv6/ci/test/suite/simple.py", line 21, in start
+    Xv6(stream).run(self.name)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/xv6/ci/test/xv6.py", line 11, in run
+    assert_eq(self.stream.readline(), program)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/xv6/ci/test/test.py", line 11, in assert_eq
+    assert lhs == rhs
+           ^^^^^^^^^^
+AssertionError
+
+======================================================================
+FAIL: test_legal_prompt_placements (__main__.PromptHandlingTests.test_legal_prompt_placements) (echo='$ $ probe', prologue='$ $ ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/xv6/ci/test/test_prompt_handling.py", line 41, in test_legal_prompt_placements
+    suite.start(stream)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/xv6/ci/test/suite/simple.py", line 21, in start
+    Xv6(stream).run(self.name)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/xv6/ci/test/xv6.py", line 11, in run
+    assert_eq(self.stream.readline(), program)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/xv6/ci/test/test.py", line 11, in assert_eq
+    assert lhs == rhs
+           ^^^^^^^^^^
+AssertionError
+
+======================================================================
+FAIL: test_program_name_is_literal (__main__.PromptHandlingTests.test_program_name_is_literal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/xv6/ci/test/test_prompt_handling.py", line 47, in test_program_name_is_literal
+    Xv6(stream).run("a+[b].")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/xv6/ci/test/xv6.py", line 11, in run
+    assert_eq(self.stream.readline(), program)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/xv6/ci/test/test.py", line 11, in assert_eq
+    assert lhs == rhs
+           ^^^^^^^^^^
+AssertionError
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.042s
+
+FAILED (failures=3)
+Assertion failed: '$ a+[b].' != 'a+[b].'

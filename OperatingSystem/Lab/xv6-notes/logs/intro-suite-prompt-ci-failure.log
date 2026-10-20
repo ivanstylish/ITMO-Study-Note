@@ -1,0 +1,33 @@
+mkfs/mkfs.c
+2026-10-19T19:41:25.6379750Z ##[group]Run sh ./ci/test/run.sh dumptests dump2tests
+2026-10-19T19:41:25.6380199Z [36;1msh ./ci/test/run.sh dumptests dump2tests[0m
+2026-10-19T19:41:25.6380623Z shell: sh -e {0}
+2026-10-19T19:41:25.6380852Z ##[endgroup]
+2026-10-19T19:41:26.8011759Z Starting Xv6 userspace tests...
+2026-10-19T19:41:26.8012658Z Got suites = ['dumptests', 'dump2tests']
+2026-10-19T19:41:26.8013501Z Qemu was started.
+2026-10-19T19:41:26.8014001Z Kernel was booted.
+2026-10-19T19:41:26.8014518Z [ 0%] Starting suite 'dumptests'...
+2026-10-19T19:41:26.8228432Z [ 0%] Running test '0'...             1.000s >  0.021s => OK!
+2026-10-19T19:41:26.9009378Z [25%] Running test '1'...             1.000s >  0.077s => OK!
+2026-10-19T19:41:26.9824030Z [50%] Running test '2'...             1.000s >  0.080s => OK!
+2026-10-19T19:41:27.0717637Z [75%] Running test '3'...             1.000s >  0.081s => OK!
+2026-10-19T19:41:27.0725551Z [OK ] Suite 'dumptests' is done!
+2026-10-19T19:41:27.0726456Z [ 0%] Starting suite 'dump2tests'...
+2026-10-19T19:41:27.0727139Z Assertion failed: '$ dump2tests' != 'dump2tests'
+2026-10-19T19:41:27.0755265Z Traceback (most recent call last):
+2026-10-19T19:41:27.0756212Z   File "/__w/os-course-xv6-riscv/os-course-xv6-riscv/ci/test/main.py", line 73, in <module>
+2026-10-19T19:41:27.0757051Z     suite.start(qemu)
+2026-10-19T19:41:27.0757505Z     ~~~~~~~~~~~^^^^^^
+2026-10-19T19:41:27.0758234Z   File "/__w/os-course-xv6-riscv/os-course-xv6-riscv/ci/test/suite/simple.py", line 21, in start
+2026-10-19T19:41:27.0759071Z     Xv6(stream).run(self.name)
+2026-10-19T19:41:27.0759569Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^
+2026-10-19T19:41:27.0760273Z   File "/__w/os-course-xv6-riscv/os-course-xv6-riscv/ci/test/xv6.py", line 11, in run
+2026-10-19T19:41:27.0761130Z     assert_eq(self.stream.readline(), program)
+2026-10-19T19:41:27.0761754Z     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-19T19:41:27.0762527Z   File "/__w/os-course-xv6-riscv/os-course-xv6-riscv/ci/test/test.py", line 11, in assert_eq
+2026-10-19T19:41:27.0763593Z     assert lhs == rhs
+2026-10-19T19:41:27.0764056Z            ^^^^^^^^^^
+2026-10-19T19:41:27.0764514Z AssertionError
+2026-10-19T19:41:27.0914498Z ##[error]Process completed with exit code 1.
+2026-10-19T19:41:27.1078996Z

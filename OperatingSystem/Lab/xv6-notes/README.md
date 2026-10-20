@@ -13,7 +13,7 @@
 - Dump、Dump2 和 Shebang 已实现，功能检查全部通过。
 - Intro 与 Shebang 各自的完整 usertests 和三类崩溃恢复检查通过。
 - 已将两个实验分支推送到私有仓库，并分别创建 Intro PR #1 和 Shebang PR #2，均尚未合并。
-- Shebang 两套远程 CI 已通过，Intro 专用 CI 已通过，通用 CI 连续两次在孤儿文件输出标记处超时，正在独立分支采集诊断。详见 [CI 复核记录](CI-复核记录.md)。
+- 已通过原始输出定位并修复两套主机测试驱动的提示符竞态，未改变官方功能用例和预期值。Intro `f9fde02` 与 Shebang `2de5e78` 的最终远程检查全部通过，详见 [CI 复核记录](CI-复核记录.md) 与 [最终状态快照](logs/remote-ci-final.json)。
 
 详细讲解、调用图和中俄双语答辩资料分别见 [Intro 学习与答辩](Intro-学习与答辩.md) 和 [Shebang 学习与答辩](Shebang-学习与答辩.md)。两份源码目录内另有可供审阅的俄语 `REPORT.md`。
 
@@ -30,7 +30,7 @@
 | Intro | `lab-1`，[PR #1](https://github.com/ivanstylish/os-course-xv6-riscv/pull/1) | [ЛР(1) P3310 Чжун Цзяцзюнь.pdf](<D:/Study-Note/OperatingSystem/Lab/xv6-intro/output/pdf/ЛР(1) P3310 Чжун Цзяцзюнь.pdf>) | [Typst 源码](D:/Study-Note/OperatingSystem/Lab/xv6-intro/report.typ)，[俄语 REPORT.md](D:/Study-Note/OperatingSystem/Lab/xv6-intro/REPORT.md) |
 | Shebang | `lab-shebang`，[PR #2](https://github.com/ivanstylish/os-course-xv6-riscv/pull/2) | [ЛР(shebang) P3310 Чжун Цзяцзюнь.pdf](<D:/Study-Note/OperatingSystem/Lab/xv6-shebang/output/pdf/ЛР(shebang) P3310 Чжун Цзяцзюнь.pdf>) | [Typst 源码](D:/Study-Note/OperatingSystem/Lab/xv6-shebang/report.typ)，[俄语 REPORT.md](D:/Study-Note/OperatingSystem/Lab/xv6-shebang/REPORT.md) |
 
-两份 PDF 均为 A4、4 页，已逐页检查。封面采用现有 intro-exp 报告的学校、院系和专业信息，正文包含实现说明、实际测试结果与 PR 链接。
+两份 PDF 均为 A4、4 页，已逐页检查。封面采用现有 intro-exp 报告的学校、院系和专业信息，正文包含实现说明、实际测试结果、PR 链接和 10 月 19 日测试驱动修复。Intro 报告还说明独立套件的提示符处理及新增的四组主机回归。
 
 修改报告时先编辑对应的 `REPORT.md`，然后在课程目录重新生成两份 `report.typ` 和 PDF。以下入口使用本机现有 Typst，不会安装软件。
 
@@ -38,13 +38,15 @@
 node .\Lab\xv6-notes\scripts\build-reports.mjs
 ```
 
+只重建某一份报告时，在命令末尾追加 `intro` 或 `shebang`。
+
 也可以使用 Typst 独立编译各自的 `report.typ`。直接修改 `report.typ` 后再次运行上述生成入口会被 `REPORT.md` 内容覆盖。
 
 ## 源码与环境
 
 | 项目 | 当前记录 |
 | --- | --- |
-| 日期 | 环境检查 2026-10-16，后续实现与验收 2026-10-17，莫斯科时间 |
+| 日期 | 环境检查 2026-10-16，实现与本地验收 2026-10-17，远程最终验收 2026-10-19，莫斯科时间 |
 | 学校仓库 | https://github.com/secs-dev/xv6-riscv |
 | 基线提交 | `57dc72da888497f03084262bcbb40eed04e83eb4` |
 | Intro 源码 / 分支 | `D:\Study-Note\OperatingSystem\Lab\xv6-intro` / `lab-1` |

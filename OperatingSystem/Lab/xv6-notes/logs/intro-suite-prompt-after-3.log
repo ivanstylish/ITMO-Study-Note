@@ -1,0 +1,17 @@
+Starting Xv6 userspace tests...
+Got suites = ['dumptests', 'dump2tests']
+Qemu was started.
+Kernel was booted.
+[ 0%] Starting suite 'dumptests'...
+[ 0%] Running test '0'...             1.000s >  0.021s => OK!
+[25%] Running test '1'...             1.000s >  0.080s => OK!
+[50%] Running test '2'...             1.000s >  0.086s => OK!
+[75%] Running test '3'...             1.000s >  0.083s => OK!
+[OK ] Suite 'dumptests' is done!
+[ 0%] Starting suite 'dump2tests'...
+[ 0%] Running test '1'...             1.000s >  0.043s => OK!
+[25%] Running test '2'...             1.000s >  0.100s => OK!
+[50%] Running test '3'...             1.000s >  0.009s => OK!
+[75%] Running test '4'...             1.000s >  0.057s => OK!
+[OK ] Suite 'dump2tests' is done!
+You are cool!

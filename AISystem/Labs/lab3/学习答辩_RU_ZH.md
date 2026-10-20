@@ -2,9 +2,11 @@
 
 Подготовка к защите лабораторной работы 3 Регуляризация моделей
 
-本材料对应当前 175 行主程序、92 行绘图文件和 12 页俄文报告。先读中文解释，再练习每节的俄语表述。代码行号按本版核对，后续修改时以函数名定位。
+现场讲述请先使用 [答辩讲述流程_RU_ZH.md](D:/Study-Note/AISystem/Labs/lab3/答辩讲述流程_RU_ZH.md)，其中按照报告翻页顺序提供俄语主讲、中文理解、展示位置、过渡句和约五分钟的连贯讲稿。
 
-- [正式报告](D:/Study-Note/AISystem/Labs/lab3/Лабораторная_работа_3_Регуляризация.docx)
+本材料作为原理和代码学习详解，对应当前实现和 12 页俄文报告。先读中文解释，再练习每节的俄语表述。代码修改后行号可能变化，以函数名和代码片段定位。
+
+- [正式报告](D:/Study-Note/AISystem/Labs/lab3/Лабораторная_работа_3.docx)
 - [主程序](D:/Study-Note/AISystem/Labs/lab3/regularization.py)
 - [绘图程序](D:/Study-Note/AISystem/Labs/lab3/graphics.py)
 - [运行说明](D:/Study-Note/AISystem/Labs/lab3/README.md)
@@ -45,13 +47,13 @@
 
 | 报告页码和章节 | 对应代码位置 | 这一部分要讲清什么 |
 |---|---|---|
-| 第 3 页 ИНДИВИДУАЛЬНОЕ ЗАДАНИЕ И ДАННЫЕ | 主程序 9–20 行，`load_data` 39–52 行，`preprocess` 23–36 行 | 实验目标、数据、三组特征和预处理 |
-| 第 4 页 МЕТОД И ОБУЧЕНИЕ | `evaluate` 60–64 行，`fit` 67–88 行 | 预测、MSE、R²、罚项和更新公式 |
-| 第 5 页 ПРОТОКОЛ И ВЫБОР ПАРАМЕТРОВ | 16–19 行，`main` 108–133 行 | 公平比较、参数网格和验证集选参 |
-| 第 6 页 ВЛИЯНИЕ ПАРАМЕТРОВ РЕГУЛЯРИЗАЦИИ | `main` 113–127 行，绘图文件中的参数比较循环 | 不同 λ 和 ρ 如何影响验证误差 |
-| 第 7–9 页 КРИВЫЕ ОБУЧЕНИЯ МОДЕЛИ 1 2 3 | `fit` 74–78 行，`main` 128 行和 142–148 行，`graphics.py` 的 `draw_curve` | 三组模型的四类训练曲线 |
-| 第 10 页 ОЦЕНКА НА ТЕСТЕ И ПЕРЕОБУЧЕНИЕ | `evaluate`，`main` 130–133 行 | 测试 MSE 和 R²、泛化差距 |
-| 第 11 页 КОЭФФИЦИЕНТЫ И РАЗРЕЖЕННОСТЬ | `weight_statistics` 91–95 行，`main` 134–138 行 | 权重大小、严格零和接近零 |
+| 第 3 页 ИНДИВИДУАЛЬНОЕ ЗАДАНИЕ И ДАННЫЕ | `MODELS`、`load_data`、`preprocess` | 实验目标、数据、三组特征和预处理 |
+| 第 4 页 МЕТОД И ОБУЧЕНИЕ | `evaluate`、`fit` | 预测、MSE、R²、罚项和更新公式 |
+| 第 5 页 ПРОТОКОЛ И ВЫБОР ПАРАМЕТРОВ | `GRID`，`main` 中的标准化、候选训练和 `best = min(...)` | 公平比较、参数网格和验证集选参 |
+| 第 6 页 ВЛИЯНИЕ ПАРАМЕТРОВ РЕГУЛЯРИЗАЦИИ | `for strength, ratio in parameters`，绘图文件中的参数比较循环 | 不同 λ 和 ρ 如何影响验证误差 |
+| 第 7–9 页 КРИВЫЕ ОБУЧЕНИЯ МОДЕЛИ 1 2 3 | `history.append`、`np.stack(histories, axis=1)`、`graphics.py` 的 `draw_curve` | 三组模型的四类训练曲线 |
+| 第 10 页 ОЦЕНКА НА ТЕСТЕ И ПЕРЕОБУЧЕНИЕ | `evaluate`，`main` 中的最终评价和 `generalization_gap` | 测试 MSE 和 R²、泛化差距 |
+| 第 11 页 КОЭФФИЦИЕНТЫ И РАЗРЕЖЕННОСТЬ | `weight_statistics`，`main` 中的 `original` 和 `coefficients` | 权重大小、严格零和接近零 |
 | 第 12 页 ЗАКЛЮЧЕНИЕ И ВОСПРОИЗВЕДЕНИЕ | `main` 的结果输出部分，`test_regularization.py` | 结论依据、复现方法和数值检查 |
 
 下面每节都可以用来讲解报告的对应部分。
@@ -87,7 +89,7 @@
 
 ### 3.3 代码如何划分数据
 
-[定位 load_data](D:/Study-Note/AISystem/Labs/lab3/regularization.py:39)
+[定位 load_data](D:/Study-Note/AISystem/Labs/lab3/regularization.py:38)
 
 ```python
 data = raw.drop_duplicates().dropna(subset=[TARGET]).copy()
@@ -107,7 +109,7 @@ frames = [data.iloc[index] for index in (order[:a], order[a:b], order[b:])]
 
 ## 4 报告第 3 页 预处理为什么只看训练集
 
-[定位 preprocess](D:/Study-Note/AISystem/Labs/lab3/regularization.py:23)
+[定位 preprocess](D:/Study-Note/AISystem/Labs/lab3/regularization.py:22)
 
 ```python
 medians, mode = frames[0][NUMERIC].median(), frames[0][CATEGORY].mode().iloc[0]
@@ -124,7 +126,7 @@ frame[INTERACTION] = frame[NUMERIC[0]] * frame[NUMERIC[1]] / 100
 
 标准化参数在 `main` 中也只从训练集计算。
 
-[定位训练集标准化](D:/Study-Note/AISystem/Labs/lab3/regularization.py:108)
+[定位训练集标准化](D:/Study-Note/AISystem/Labs/lab3/regularization.py:106)
 
 ```python
 mean = frames[0][features].mean().to_numpy()
@@ -155,7 +157,7 @@ z_j=\frac{x_j-\mu_j}{s_j}
 
 ### 5.1 设计矩阵为什么加一列 1
 
-[定位 design_matrix](D:/Study-Note/AISystem/Labs/lab3/regularization.py:55)
+[定位 design_matrix](D:/Study-Note/AISystem/Labs/lab3/regularization.py:54)
 
 ```python
 z = (frame[features].to_numpy(dtype=float) - mean) / scale
@@ -172,7 +174,7 @@ return np.column_stack([np.ones(len(z)), z])
 
 ### 5.2 MSE 和 R² 如何计算
 
-[定位 evaluate](D:/Study-Note/AISystem/Labs/lab3/regularization.py:60)
+[定位 evaluate](D:/Study-Note/AISystem/Labs/lab3/regularization.py:59)
 
 \[
 \operatorname{MSE}=\frac{1}{n}\sum_i(y_i-\widehat y_i)^2
@@ -225,9 +227,9 @@ J=\operatorname{MSE}
 
 Все варианты реализованы одной функцией. При λ равном нулю штраф отсутствует. При ρ равном единице получаем L1, при ρ равном нулю получаем L2. Промежуточное значение ρ задаёт ElasticNet. Свободный член не регуляризуется.
 
-## 7 报告第 4 页 22 行训练函数逐步讲解
+## 7 报告第 4 页 核心训练函数逐步讲解
 
-[定位 fit](D:/Study-Note/AISystem/Labs/lab3/regularization.py:67)
+[定位 fit](D:/Study-Note/AISystem/Labs/lab3/regularization.py:66)
 
 先抓住核心更新的四行。
 
@@ -317,7 +319,7 @@ history.append([train["MSE"], val["MSE"], train["R2"], val["R2"]])
 
 ## 8 报告第 5 页 公平比较和验证选参
 
-[定位 GRID](D:/Study-Note/AISystem/Labs/lab3/regularization.py:18)
+[定位 GRID](D:/Study-Note/AISystem/Labs/lab3/regularization.py:17)
 
 ```python
 GRID = {VARIANTS[0]: [(0, 0)], "L1": [(a, 1) for a in LAMBDAS],
@@ -341,7 +343,7 @@ GRID = {VARIANTS[0]: [(0, 0)], "L1": [(a, 1) for a in LAMBDAS],
 
 选参代码是
 
-[定位验证集选参](D:/Study-Note/AISystem/Labs/lab3/regularization.py:127)
+[定位验证集选参](D:/Study-Note/AISystem/Labs/lab3/regularization.py:125)
 
 ```python
 best = min(candidates, key=lambda row: (row["validation_MSE"], row["lambda"], row["l1_ratio"]))
@@ -422,7 +424,7 @@ best = min(candidates, key=lambda row: (row["validation_MSE"], row["lambda"], ro
 
 ## 11 报告第 10 页 测试结果和过拟合
 
-[定位最终评价](D:/Study-Note/AISystem/Labs/lab3/regularization.py:130)
+[定位最终评价](D:/Study-Note/AISystem/Labs/lab3/regularization.py:128)
 
 ```python
 for part, matrix, target in zip(["train", "validation", "test"], x, y):
@@ -456,7 +458,7 @@ row["generalization_gap"] = row["validation_MSE"] - row["train_MSE"]
 
 ## 12 报告第 11 页 系数和稀疏性
 
-[定位 weight_statistics](D:/Study-Note/AISystem/Labs/lab3/regularization.py:91)
+[定位 weight_statistics](D:/Study-Note/AISystem/Labs/lab3/regularization.py:89)
 
 ```python
 slopes = w[1:]
@@ -483,7 +485,7 @@ L2 的交互特征系数反而增加，但整体 L2 范数从约 19.033925 降�
 
 ### 原始单位系数如何恢复
 
-[定位 original](D:/Study-Note/AISystem/Labs/lab3/regularization.py:134)
+[定位 original](D:/Study-Note/AISystem/Labs/lab3/regularization.py:132)
 
 \[
 \beta_j=\frac{w_j}{s_j}
@@ -520,15 +522,15 @@ original = np.r_[w[0] - np.sum(w[1:] * mean / scale), w[1:] / scale]
 
 | 主程序位置 | 可以怎样解释 |
 |---|---|
-| 98–106 行 | 设置数据和输出位置，准备三份数据和结果容器 |
-| 107–112 行 | 对当前特征组合计算训练集标准化参数，建立三份 X |
-| 113–125 行 | 遍历当前方案的 λ 和 ρ，训练并记录候选结果 |
-| 127 行 | 只按验证 MSE 选择当前方案的最佳参数 |
-| 128 行 | 用相同条件训练选定参数，记录完整历史 |
-| 129–141 行 | 评价三份数据，保存系数、预测、权重和历史 |
-| 142–151 行 | 组织四个方案的曲线和模型保存信息 |
-| 152–166 行 | 输出 CSV、JSON 和权重文件 |
-| 167–170 行 | 调用绘图文件并打印最终测试表 |
+| `load_data` 调用和结果容器初始化 | 设置数据和输出位置，准备三份数据和结果容器 |
+| `mean`、`scale`、`design_matrix` | 对当前特征组合计算训练集标准化参数，建立三份 X |
+| `for strength, ratio in parameters` | 遍历当前方案的 λ 和 ρ，训练并记录候选结果 |
+| `best = min(...)` | 只按验证 MSE 选择当前方案的最佳参数 |
+| `w, history = fit(...)` | 用相同条件训练选定参数，记录完整历史 |
+| 最终 `evaluate` 调用和 `coefficients.extend` | 评价三份数据，保存系数、预测、权重和历史 |
+| `np.stack(histories, axis=1)` 和 `archive.update` | 组织四个方案的曲线和模型保存信息 |
+| `tables`、`summary`、`np.savez` | 输出 CSV、JSON 和权重文件 |
+| `make_figures` 和最后的 `print` | 调用绘图文件并打印最终测试表 |
 
 现场建议先指向 `fit` 的四行更新，再指向选参的 `min`，最后展示 `metrics.csv` 和图。结果保存的字典推导式无需逐个符号讲解，说明输出列的含义即可。
 

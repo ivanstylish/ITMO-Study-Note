@@ -1,0 +1,170 @@
+=== 01-forphan: ./test-xv6.py forphan ===
+2026-10-19T19:27:51.1108224Z --- processes: 01-forphan-before-cleanup ---
+2026-10-19T19:27:51.1110880Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:27:51.1111390Z 
+2026-10-19T19:27:51.3720272Z --- processes: 01-forphan-after-cleanup ---
+2026-10-19T19:27:51.3721560Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:27:51.3722572Z 
+2026-10-19T19:27:51.3723094Z --- stdout: 01-forphan ---
+2026-10-19T19:27:51.3723982Z Namespace(testrex='forphan', q=False)
+2026-10-19T19:27:51.3724818Z Test recovery of an orphaned file
+2026-10-19T19:27:51.3725864Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:27:51.3728585Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:27:51.3731501Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:27:51.3732684Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:27:51.3733421Z balloc: write bitmap block at sector 46
+2026-10-19T19:27:51.3734143Z FAIL: match failed ('wait',)
+2026-10-19T19:27:51.3734648Z 
+2026-10-19T19:27:51.3735316Z --- raw test-xv6.out: 01-forphan ---
+2026-10-19T19:27:51.3737314Z qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+2026-10-19T19:27:51.3739522Z 
+2026-10-19T19:27:51.3739859Z xv6 kernel is booting
+2026-10-19T19:27:51.3740294Z 
+2026-10-19T19:27:51.3740603Z hart 1 starting
+2026-10-19T19:27:51.3741104Z hart 2 starting
+2026-10-19T19:27:51.3741620Z forphan
+2026-10-19T19:27:51.3742130Z init: starting sh
+2026-10-19T19:27:51.3742669Z $ wait for kill and reclaim 31
+2026-10-19T19:27:51.3743125Z 
+2026-10-19T19:27:51.3743993Z {"case": "01-forphan", "command": ["./test-xv6.py", "forphan"], "returncode": 1, "timed_out": false, "failed": true, "elapsed_seconds": 31.521}
+2026-10-19T19:27:51.3745549Z === 02-crash: ./test-xv6.py crash ===
+2026-10-19T19:28:41.9465325Z --- processes: 02-crash-before-cleanup ---
+2026-10-19T19:28:41.9465987Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:28:41.9466385Z 
+2026-10-19T19:28:42.2077282Z --- processes: 02-crash-after-cleanup ---
+2026-10-19T19:28:42.2082743Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:28:42.2083503Z 
+2026-10-19T19:28:42.2083887Z --- stdout: 02-crash ---
+2026-10-19T19:28:42.2084712Z Namespace(testrex='crash', q=False)
+2026-10-19T19:28:42.2085763Z Test recovery of log
+2026-10-19T19:28:42.2086564Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:28:42.2090350Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:28:42.2094515Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:28:42.2096090Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:28:42.2096829Z balloc: write bitmap block at sector 46
+2026-10-19T19:28:42.2097499Z kill 4242
+2026-10-19T19:28:42.2098038Z log attempt  1
+2026-10-19T19:28:42.2098642Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:28:42.2101365Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:28:42.2104319Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:28:42.2105571Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:28:42.2106336Z balloc: write bitmap block at sector 46
+2026-10-19T19:28:42.2106983Z kill 4351
+2026-10-19T19:28:42.2107510Z log attempt  2
+2026-10-19T19:28:42.2108086Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:28:42.2110653Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:28:42.2113650Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:28:42.2114631Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:28:42.2115592Z balloc: write bitmap block at sector 46
+2026-10-19T19:28:42.2116313Z kill 4463
+2026-10-19T19:28:42.2116882Z recovering tail 0 dst 1692
+2026-10-19T19:28:42.2117508Z recovering tail 1 dst 46
+2026-10-19T19:28:42.2118127Z recovering tail 2 dst 1689
+2026-10-19T19:28:42.2118745Z recovering tail 3 dst 1693
+2026-10-19T19:28:42.2119391Z recovering tail 4 dst 1425
+2026-10-19T19:28:42.2120000Z recovering tail 5 dst 1694
+2026-10-19T19:28:42.2120612Z recovering tail 6 dst 1351
+2026-10-19T19:28:42.2121518Z recovering tail 7 dst 1695
+2026-10-19T19:28:42.2122033Z recovering tail 8 dst 1696
+2026-10-19T19:28:42.2122610Z recovering tail 9 dst 35
+2026-10-19T19:28:42.2123248Z recovering tail 10 dst 1697
+2026-10-19T19:28:42.2123843Z recovering tail 11 dst 1698
+2026-10-19T19:28:42.2124432Z recovering tail 12 dst 1699
+2026-10-19T19:28:42.2125279Z recovering tail 13 dst 1700
+2026-10-19T19:28:42.2125897Z f5             2 36 40000
+2026-10-19T19:28:42.2126495Z OK
+2026-10-19T19:28:42.2127033Z Test recovery of an orphaned file
+2026-10-19T19:28:42.2127824Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:28:42.2130376Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:28:42.2133307Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:28:42.2134287Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:28:42.2135269Z balloc: write bitmap block at sector 46
+2026-10-19T19:28:42.2136004Z FAIL: match failed ('wait',)
+2026-10-19T19:28:42.2136460Z 
+2026-10-19T19:28:42.2136813Z --- raw test-xv6.out: 02-crash ---
+2026-10-19T19:28:42.2138654Z qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+2026-10-19T19:28:42.2140397Z 
+2026-10-19T19:28:42.2140722Z xv6 kernel is booting
+2026-10-19T19:28:42.2141382Z 
+2026-10-19T19:28:42.2141749Z hart 2 starting
+2026-10-19T19:28:42.2142299Z harfot rphan
+2026-10-19T19:28:42.2142831Z 1 starting
+2026-10-19T19:28:42.2143344Z init: starting sh
+2026-10-19T19:28:42.2143920Z $ wait for kill and reclaim 31
+2026-10-19T19:28:42.2144416Z 
+2026-10-19T19:28:42.2145531Z {"case": "02-crash", "command": ["./test-xv6.py", "crash"], "returncode": 1, "timed_out": false, "failed": true, "elapsed_seconds": 50.835}
+2026-10-19T19:28:42.2146797Z === 03-crash: ./test-xv6.py crash ===
+2026-10-19T19:29:20.5098803Z --- processes: 03-crash-before-cleanup ---
+2026-10-19T19:29:20.5099593Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:29:20.5100107Z 
+2026-10-19T19:29:20.7707060Z --- processes: 03-crash-after-cleanup ---
+2026-10-19T19:29:20.7708123Z     PID    PPID    PGID STAT ELAPSED COMMAND         COMMAND
+2026-10-19T19:29:20.7709052Z 
+2026-10-19T19:29:20.7709707Z --- stdout: 03-crash ---
+2026-10-19T19:29:20.7710599Z Namespace(testrex='crash', q=False)
+2026-10-19T19:29:20.7711393Z Test recovery of log
+2026-10-19T19:29:20.7711990Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:29:20.7714303Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:29:20.7717121Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:29:20.7718076Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:29:20.7718767Z balloc: write bitmap block at sector 46
+2026-10-19T19:29:20.7719327Z kill 4662
+2026-10-19T19:29:20.7719823Z recovering tail 0 dst 1697
+2026-10-19T19:29:20.7720397Z recovering tail 1 dst 46
+2026-10-19T19:29:20.7720937Z recovering tail 2 dst 1695
+2026-10-19T19:29:20.7721502Z recovering tail 3 dst 1698
+2026-10-19T19:29:20.7722050Z recovering tail 4 dst 1382
+2026-10-19T19:29:20.7722638Z recovering tail 5 dst 1699
+2026-10-19T19:29:20.7723213Z recovering tail 6 dst 1358
+2026-10-19T19:29:20.7723747Z recovering tail 7 dst 1700
+2026-10-19T19:29:20.7724691Z recovering tail 8 dst 35
+2026-10-19T19:29:20.7725456Z recovering tail 9 dst 1701
+2026-10-19T19:29:20.7726076Z recovering tail 10 dst 1702
+2026-10-19T19:29:20.7726663Z recovering tail 11 dst 34
+2026-10-19T19:29:20.7727230Z f5             2 36 38000
+2026-10-19T19:29:20.7727715Z OK
+2026-10-19T19:29:20.7728203Z Test recovery of an orphaned file
+2026-10-19T19:29:20.7728793Z make: 'kernel/kernel' is up to date.
+2026-10-19T19:29:20.7731072Z mkfs/mkfs fs.img README user/_cat user/_pingpong user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie user/_logstress user/_forphan user/_dorphan user/_sync user/_dumptests user/_dump2tests user/_dump2extra user/_alloctest user/_cowtest user/_lazytests 
+2026-10-19T19:29:20.7733632Z nmeta 47 (boot, super, log blocks 31, inode blocks 13, bitmap blocks 1) blocks 1953 total 2000
+2026-10-19T19:29:20.7734523Z balloc: first 1302 blocks have been allocated
+2026-10-19T19:29:20.7735760Z balloc: write bitmap block at sector 46
+2026-10-19T19:29:20.7736427Z FAIL: match failed ('wait',)
+2026-10-19T19:29:20.7736864Z 
+2026-10-19T19:29:20.7737197Z --- raw test-xv6.out: 03-crash ---
+2026-10-19T19:29:20.7738909Z qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+2026-10-19T19:29:20.7740713Z 
+2026-10-19T19:29:20.7741082Z xv6 kernel is booting
+2026-10-19T19:29:20.7741553Z 
+2026-10-19T19:29:20.7741894Z hart 1 starting
+2026-10-19T19:29:20.7742484Z hart 2 starting
+2026-10-19T19:29:20.7743116Z init: fosrphan
+2026-10-19T19:29:20.7744072Z tarting sh
+2026-10-19T19:29:20.7744719Z $ wait for kill and reclaim 31
+2026-10-19T19:29:20.7745589Z 
+2026-10-19T19:29:20.7746592Z {"case": "03-crash", "command": ["./test-xv6.py", "crash"], "returncode": 1, "timed_out": false, "failed": true, "elapsed_seconds": 38.563}
+2026-10-19T19:29:20.7833408Z ##[error]Process completed with exit code 1.
+2026-10-19T19:29:20.7956148Z ##[group]Run actions/upload-artifact@v4
+2026-10-19T19:29:20.7956524Z with:
+2026-10-19T19:29:20.7956822Z   name: intro-crash-diagnostics-39311029246-1
+2026-10-19T19:29:20.7957209Z   path: diagnostics/
+2026-10-19T19:29:20.7957492Z   if-no-files-found: warn
+2026-10-19T19:29:20.7957781Z   compression-level: 6
+2026-10-19T19:29:20.7958061Z   overwrite: false
+2026-10-19T19:29:20.7958350Z   include-hidden-files: false
+2026-10-19T19:29:20.7958652Z ##[endgroup]
+2026-10-19T19:29:21.0046403Z (node:4788) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T19:29:21.0049847Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T19:29:21.0698702Z With the provided path, there will be 21 files uploaded
+2026-10-19T19:29:21.0699637Z Artifact name is valid!
+2026-10-19T19:29:21.0700038Z Root directory input is valid!
+2026-10-19T19:29:21.2816983Z Beginning upload of artifact content to blob storage
+2026-10-19T19:29:21.3482387Z (node:4788) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-19T19:29:21.3925284Z Uploaded bytes 8731
+2026-10-19T19:29:21.4136188Z Finished uploading artifact content to blob storage!
+2026-10-19T19:29:21.4137976Z SHA256 digest of uploaded artifact zip is 047d28efbd81260981a9462727e9d59a4d1362f16b280d46a098a6c490defb13
+2026-10-19T19:29:21.4139344Z Finalizing artifact upload
+2026-10-19T19:29:21.7044109Z Artifact intro-crash-diagnostics-39311029246-1.zip successfully finalized. Artifact ID 12215621690
+2026-10-19T19:29:21.7047487Z Artifact intro-crash-diagnostics-39311029246-1 has been successfully uploaded! Final size is 8731 bytes. Artifact ID is 12215621690
+2026-10-19T19:29:21.7056270Z Artifact download URL: https://github.com/ivanstylish/os-course-xv6-riscv/actions/runs/39311029246/artifacts/12215621690
+2026-10-19T19:29:21.7333556Z

@@ -10,6 +10,10 @@ const tasks = [
   { project: 'intro', slug: '1', title: 'Введение в xv6: Pingpong, Dump и Dump2', number: ' № 1' },
   { project: 'shebang', slug: 'shebang', title: 'Поддержка Shebang в xv6', number: '' },
 ];
+const selectedProject = process.argv[2];
+if (selectedProject && !tasks.some(task => task.project === selectedProject)) {
+  throw new Error('Usage: node build-reports.mjs [intro|shebang]');
+}
 
 function escape(text) {
   return text.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\\#[\]*_$<>`@]/g, '\\$&');
@@ -71,7 +75,13 @@ function markdownToTypst(markdown, task) {
     } else if (/^#{2,3} /.test(line)) {
       const level = line.match(/^#+/)[0].length - 1;
       if (task.project === 'intro' && line === '## Ход работы') {
-        output.push('#pagebreak(weak: true)');
+        let linkLine = i + 1;
+        while (linkLine < lines.length && !lines[linkLine].trim()) linkLine++;
+        if (lines[linkLine]?.startsWith('Ссылка на выполненную работу:')) {
+          output.push(`#block(sticky: true)[\n= ${inline(line.replace(/^#+ /, ''))}\n\n${inline(lines[linkLine])}\n]`);
+          i = linkLine;
+          continue;
+        }
       }
       output.push(`${'='.repeat(level)} ${inline(line.replace(/^#+ /, ''))}`);
     } else {
@@ -117,16 +127,17 @@ function cover(task) {
 #align(center)[2026 г.]
 #pagebreak()
 #set text(size: 11pt, lang: "ru")
-#set par(justify: true, leading: 0.55em)
+#set par(justify: true, leading: 0.45em)
 #set heading(numbering: "1.")
 #set page(numbering: "1", number-align: center)
-#set table(inset: 4pt, stroke: 0.4pt)
+#set table(inset: 3.5pt, stroke: 0.4pt)
 #show table: set text(size: 9.5pt)
 #show raw: set text(size: 8pt)
 `;
 }
 
 for (const task of tasks) {
+  if (selectedProject && task.project !== selectedProject) continue;
   const repo = path.join(labs, `xv6-${task.project}`);
   const markdown = fs.readFileSync(path.join(repo, 'REPORT.md'), 'utf8');
   if (/[；;]/.test(markdown)) throw new Error(`Unexpected report punctuation: ${task.project}`);

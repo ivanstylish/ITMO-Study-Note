@@ -64,11 +64,10 @@ def evaluate(y, prediction):
 
 
 def fit(x, y, strength=0, ratio=0, validation=None, rate=RATE, steps=STEPS):
-    """Одна модель. J = MSE + λ[ρ||w||₁ + (1−ρ)||w||₂²/2]."""
     if strength < 0 or not 0 <= ratio <= 1 or rate <= 0 or steps < 1:
         raise ValueError("Нужны λ ≥ 0, 0 ≤ ρ ≤ 1 и положительные шаг и число итераций.")
     w, history = np.zeros(x.shape[1]), []
-    # Это тот же градиент 2/n * X.T @ (X @ w - y), но без повторных больших произведений.
+    # 这就是同一个梯度，即 $2/n \cdot X^T(Xw - y)$，但其中不包含重复的大规模矩阵乘法运算。
     gram, cross = x.T @ x / len(y), x.T @ y / len(y)
     for step in range(steps + 1):
         if validation is not None:

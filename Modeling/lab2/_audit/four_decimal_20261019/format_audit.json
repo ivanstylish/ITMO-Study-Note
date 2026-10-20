@@ -1,0 +1,1167 @@
+{
+  "target": "D:\\Study-Note\\Modeling\\lab2\\3310_Чжун_Цзяцзюнь_УИР2_精简版.docx",
+  "formatted_numeric_cells": 156,
+  "changes": [
+    {
+      "table": 7,
+      "row": 1,
+      "column": 2,
+      "before": "0,004379",
+      "after": "0,0044"
+    },
+    {
+      "table": 7,
+      "row": 2,
+      "column": 2,
+      "before": "0,005876",
+      "after": "0,0059"
+    },
+    {
+      "table": 7,
+      "row": 3,
+      "column": 2,
+      "before": "0,006769",
+      "after": "0,0068"
+    },
+    {
+      "table": 7,
+      "row": 4,
+      "column": 2,
+      "before": "0,014569",
+      "after": "0,0146"
+    },
+    {
+      "table": 7,
+      "row": 5,
+      "column": 2,
+      "before": "0,009248",
+      "after": "0,0092"
+    },
+    {
+      "table": 7,
+      "row": 6,
+      "column": 2,
+      "before": "0,018498",
+      "after": "0,0185"
+    },
+    {
+      "table": 7,
+      "row": 7,
+      "column": 2,
+      "before": "0,021667",
+      "after": "0,0217"
+    },
+    {
+      "table": 7,
+      "row": 8,
+      "column": 2,
+      "before": "0,091224",
+      "after": "0,0912"
+    },
+    {
+      "table": 7,
+      "row": 9,
+      "column": 2,
+      "before": "0,152039",
+      "after": "0,1520"
+    },
+    {
+      "table": 7,
+      "row": 10,
+      "column": 2,
+      "before": "0,253399",
+      "after": "0,2534"
+    },
+    {
+      "table": 7,
+      "row": 11,
+      "column": 2,
+      "before": "0,422331",
+      "after": "0,4223"
+    },
+    {
+      "table": 7,
+      "row": 1,
+      "column": 4,
+      "before": "0,003727",
+      "after": "0,0037"
+    },
+    {
+      "table": 7,
+      "row": 2,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 3,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 4,
+      "column": 4,
+      "before": "0,003727",
+      "after": "0,0037"
+    },
+    {
+      "table": 7,
+      "row": 5,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 6,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 7,
+      "column": 4,
+      "before": "0,003727",
+      "after": "0,0037"
+    },
+    {
+      "table": 7,
+      "row": 8,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 9,
+      "column": 4,
+      "before": "0,000932",
+      "after": "0,0009"
+    },
+    {
+      "table": 7,
+      "row": 10,
+      "column": 4,
+      "before": "0,013044",
+      "after": "0,0130"
+    },
+    {
+      "table": 7,
+      "row": 11,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 12,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 13,
+      "column": 4,
+      "before": "0,013044",
+      "after": "0,0130"
+    },
+    {
+      "table": 7,
+      "row": 14,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 15,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 16,
+      "column": 4,
+      "before": "0,013044",
+      "after": "0,0130"
+    },
+    {
+      "table": 7,
+      "row": 17,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 18,
+      "column": 4,
+      "before": "0,003261",
+      "after": "0,0033"
+    },
+    {
+      "table": 7,
+      "row": 19,
+      "column": 4,
+      "before": "0,045656",
+      "after": "0,0457"
+    },
+    {
+      "table": 7,
+      "row": 20,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 21,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 22,
+      "column": 4,
+      "before": "0,045656",
+      "after": "0,0457"
+    },
+    {
+      "table": 7,
+      "row": 23,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 24,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 25,
+      "column": 4,
+      "before": "0,045656",
+      "after": "0,0457"
+    },
+    {
+      "table": 7,
+      "row": 26,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 27,
+      "column": 4,
+      "before": "0,011414",
+      "after": "0,0114"
+    },
+    {
+      "table": 7,
+      "row": 28,
+      "column": 4,
+      "before": "0,159795",
+      "after": "0,1598"
+    },
+    {
+      "table": 7,
+      "row": 29,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 7,
+      "row": 30,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 7,
+      "row": 31,
+      "column": 4,
+      "before": "0,159795",
+      "after": "0,1598"
+    },
+    {
+      "table": 7,
+      "row": 32,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 7,
+      "row": 33,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 7,
+      "row": 34,
+      "column": 4,
+      "before": "0,159795",
+      "after": "0,1598"
+    },
+    {
+      "table": 7,
+      "row": 35,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 7,
+      "row": 36,
+      "column": 4,
+      "before": "0,039949",
+      "after": "0,0399"
+    },
+    {
+      "table": 9,
+      "row": 1,
+      "column": 3,
+      "before": "3,500000*",
+      "after": "3,5000*"
+    },
+    {
+      "table": 9,
+      "row": 2,
+      "column": 3,
+      "before": "1,000000*",
+      "after": "1,0000*"
+    },
+    {
+      "table": 9,
+      "row": 3,
+      "column": 3,
+      "before": "0,500000*",
+      "after": "0,5000*"
+    },
+    {
+      "table": 9,
+      "row": 4,
+      "column": 3,
+      "before": "5,000000",
+      "after": "5,0000"
+    },
+    {
+      "table": 9,
+      "row": 5,
+      "column": 3,
+      "before": "0,968407",
+      "after": "0,9684"
+    },
+    {
+      "table": 9,
+      "row": 6,
+      "column": 3,
+      "before": "0,961998",
+      "after": "0,9620"
+    },
+    {
+      "table": 9,
+      "row": 7,
+      "column": 3,
+      "before": "0,957937",
+      "after": "0,9579"
+    },
+    {
+      "table": 9,
+      "row": 8,
+      "column": 3,
+      "before": "2,888342",
+      "after": "2,8883"
+    },
+    {
+      "table": 9,
+      "row": 9,
+      "column": 3,
+      "before": "0,641944",
+      "after": "0,6419"
+    },
+    {
+      "table": 9,
+      "row": 10,
+      "column": 3,
+      "before": "0,641944",
+      "after": "0,6419"
+    },
+    {
+      "table": 9,
+      "row": 11,
+      "column": 3,
+      "before": "0,641944",
+      "after": "0,6419"
+    },
+    {
+      "table": 9,
+      "row": 12,
+      "column": 3,
+      "before": "1,925832",
+      "after": "1,9258"
+    },
+    {
+      "table": 9,
+      "row": 13,
+      "column": 3,
+      "before": "1,610351",
+      "after": "1,6104"
+    },
+    {
+      "table": 9,
+      "row": 14,
+      "column": 3,
+      "before": "1,603942",
+      "after": "1,6039"
+    },
+    {
+      "table": 9,
+      "row": 15,
+      "column": 3,
+      "before": "1,599881",
+      "after": "1,5999"
+    },
+    {
+      "table": 9,
+      "row": 16,
+      "column": 3,
+      "before": "4,814174",
+      "after": "4,8142"
+    },
+    {
+      "table": 10,
+      "row": 1,
+      "column": 3,
+      "before": "6,628866",
+      "after": "6,6289"
+    },
+    {
+      "table": 10,
+      "row": 2,
+      "column": 3,
+      "before": "6,673028",
+      "after": "6,6730"
+    },
+    {
+      "table": 10,
+      "row": 3,
+      "column": 3,
+      "before": "6,701316",
+      "after": "6,7013"
+    },
+    {
+      "table": 10,
+      "row": 4,
+      "column": 3,
+      "before": "6,667602",
+      "after": "6,6676"
+    },
+    {
+      "table": 10,
+      "row": 5,
+      "column": 3,
+      "before": "16,628866",
+      "after": "16,6289"
+    },
+    {
+      "table": 10,
+      "row": 6,
+      "column": 3,
+      "before": "16,673027",
+      "after": "16,6730"
+    },
+    {
+      "table": 10,
+      "row": 7,
+      "column": 3,
+      "before": "16,701317",
+      "after": "16,7013"
+    },
+    {
+      "table": 10,
+      "row": 8,
+      "column": 3,
+      "before": "16,667603",
+      "after": "16,6676"
+    },
+    {
+      "table": 10,
+      "row": 12,
+      "column": 3,
+      "before": "0,422331",
+      "after": "0,4223"
+    },
+    {
+      "table": 10,
+      "row": 13,
+      "column": 3,
+      "before": "0,096841",
+      "after": "0,0968"
+    },
+    {
+      "table": 10,
+      "row": 14,
+      "column": 3,
+      "before": "0,096200",
+      "after": "0,0962"
+    },
+    {
+      "table": 10,
+      "row": 15,
+      "column": 3,
+      "before": "0,095794",
+      "after": "0,0958"
+    },
+    {
+      "table": 10,
+      "row": 16,
+      "column": 3,
+      "before": "0,288834",
+      "after": "0,2888"
+    },
+    {
+      "table": 9,
+      "row": 1,
+      "column": 4,
+      "before": "3,500000",
+      "after": "3,5000"
+    },
+    {
+      "table": 9,
+      "row": 2,
+      "column": 4,
+      "before": "1,000000",
+      "after": "1,0000"
+    },
+    {
+      "table": 9,
+      "row": 3,
+      "column": 4,
+      "before": "0,500000",
+      "after": "0,5000"
+    },
+    {
+      "table": 9,
+      "row": 4,
+      "column": 4,
+      "before": "5,000000",
+      "after": "5,0000"
+    },
+    {
+      "table": 9,
+      "row": 5,
+      "column": 4,
+      "before": "0,983228",
+      "after": "0,9832"
+    },
+    {
+      "table": 9,
+      "row": 6,
+      "column": 4,
+      "before": "0,666667",
+      "after": "0,6667"
+    },
+    {
+      "table": 9,
+      "row": 7,
+      "column": 4,
+      "before": "0,333333",
+      "after": "0,3333"
+    },
+    {
+      "table": 9,
+      "row": 8,
+      "column": 4,
+      "before": "1,983228",
+      "after": "1,9832"
+    },
+    {
+      "table": 9,
+      "row": 9,
+      "column": 4,
+      "before": "1,643606",
+      "after": "1,6436"
+    },
+    {
+      "table": 9,
+      "row": 10,
+      "column": 4,
+      "before": "0,333333",
+      "after": "0,3333"
+    },
+    {
+      "table": 9,
+      "row": 11,
+      "column": 4,
+      "before": "0,000000",
+      "after": "0,0000"
+    },
+    {
+      "table": 9,
+      "row": 12,
+      "column": 4,
+      "before": "1,976939",
+      "after": "1,9769"
+    },
+    {
+      "table": 9,
+      "row": 13,
+      "column": 4,
+      "before": "2,626834",
+      "after": "2,6268"
+    },
+    {
+      "table": 9,
+      "row": 14,
+      "column": 4,
+      "before": "1,000000",
+      "after": "1,0000"
+    },
+    {
+      "table": 9,
+      "row": 15,
+      "column": 4,
+      "before": "0,333333",
+      "after": "0,3333"
+    },
+    {
+      "table": 9,
+      "row": 16,
+      "column": 4,
+      "before": "3,960167",
+      "after": "3,9602"
+    },
+    {
+      "table": 10,
+      "row": 1,
+      "column": 4,
+      "before": "16,716406",
+      "after": "16,7164"
+    },
+    {
+      "table": 10,
+      "row": 2,
+      "column": 4,
+      "before": "4,999998",
+      "after": "5,0000"
+    },
+    {
+      "table": 10,
+      "row": 3,
+      "column": 4,
+      "before": "0,000000",
+      "after": "0,0000"
+    },
+    {
+      "table": 10,
+      "row": 4,
+      "column": 4,
+      "before": "9,968282",
+      "after": "9,9683"
+    },
+    {
+      "table": 10,
+      "row": 5,
+      "column": 4,
+      "before": "26,716406",
+      "after": "26,7164"
+    },
+    {
+      "table": 10,
+      "row": 6,
+      "column": 4,
+      "before": "14,999998",
+      "after": "15,0000"
+    },
+    {
+      "table": 10,
+      "row": 7,
+      "column": 4,
+      "before": "10,000000",
+      "after": "10,0000"
+    },
+    {
+      "table": 10,
+      "row": 8,
+      "column": 4,
+      "before": "19,968281",
+      "after": "19,9683"
+    },
+    {
+      "table": 10,
+      "row": 9,
+      "column": 4,
+      "before": "0,719077",
+      "after": "0,7191"
+    },
+    {
+      "table": 10,
+      "row": 10,
+      "column": 4,
+      "before": "0,333333",
+      "after": "0,3333"
+    },
+    {
+      "table": 10,
+      "row": 11,
+      "column": 4,
+      "before": "0,333333",
+      "after": "0,3333"
+    },
+    {
+      "table": 10,
+      "row": 12,
+      "column": 4,
+      "before": "0,603354",
+      "after": "0,6034"
+    },
+    {
+      "table": 10,
+      "row": 13,
+      "column": 4,
+      "before": "0,098323",
+      "after": "0,0983"
+    },
+    {
+      "table": 10,
+      "row": 14,
+      "column": 4,
+      "before": "0,066667",
+      "after": "0,0667"
+    },
+    {
+      "table": 10,
+      "row": 15,
+      "column": 4,
+      "before": "0,033333",
+      "after": "0,0333"
+    },
+    {
+      "table": 10,
+      "row": 16,
+      "column": 4,
+      "before": "0,198323",
+      "after": "0,1983"
+    },
+    {
+      "table": 11,
+      "row": 1,
+      "column": 1,
+      "before": "1,000000",
+      "after": "1,0000"
+    },
+    {
+      "table": 11,
+      "row": 1,
+      "column": 2,
+      "before": "1,000000",
+      "after": "1,0000"
+    },
+    {
+      "table": 11,
+      "row": 3,
+      "column": 1,
+      "before": "0,288834",
+      "after": "0,2888"
+    },
+    {
+      "table": 11,
+      "row": 3,
+      "column": 2,
+      "before": "0,1983",
+      "after": "0,1983"
+    },
+    {
+      "table": 11,
+      "row": 4,
+      "column": 1,
+      "before": "1,925832",
+      "after": "1,9258"
+    },
+    {
+      "table": 11,
+      "row": 4,
+      "column": 2,
+      "before": "1,9769",
+      "after": "1,9769"
+    },
+    {
+      "table": 11,
+      "row": 5,
+      "column": 1,
+      "before": "4,814174",
+      "after": "4,8142"
+    },
+    {
+      "table": 11,
+      "row": 5,
+      "column": 2,
+      "before": "3,9602",
+      "after": "3,9602"
+    },
+    {
+      "table": 12,
+      "row": 1,
+      "column": 1,
+      "before": "0,040450",
+      "after": "0,0404"
+    },
+    {
+      "table": 12,
+      "row": 1,
+      "column": 3,
+      "before": "0,099775",
+      "after": "0,0998"
+    },
+    {
+      "table": 12,
+      "row": 1,
+      "column": 2,
+      "before": "0,496530",
+      "after": "0,4965"
+    },
+    {
+      "table": 12,
+      "row": 1,
+      "column": 4,
+      "before": "0,088967",
+      "after": "0,0890"
+    },
+    {
+      "table": 12,
+      "row": 2,
+      "column": 1,
+      "before": "0,396992",
+      "after": "0,3970"
+    },
+    {
+      "table": 12,
+      "row": 2,
+      "column": 3,
+      "before": "0,190376",
+      "after": "0,1904"
+    },
+    {
+      "table": 12,
+      "row": 2,
+      "column": 2,
+      "before": "1,150987",
+      "after": "1,1510"
+    },
+    {
+      "table": 12,
+      "row": 2,
+      "column": 4,
+      "before": "0,138488",
+      "after": "0,1385"
+    },
+    {
+      "table": 12,
+      "row": 3,
+      "column": 1,
+      "before": "1,018868",
+      "after": "1,0189"
+    },
+    {
+      "table": 12,
+      "row": 3,
+      "column": 3,
+      "before": "0,249057",
+      "after": "0,2491"
+    },
+    {
+      "table": 12,
+      "row": 3,
+      "column": 2,
+      "before": "1,551034",
+      "after": "1,5510"
+    },
+    {
+      "table": 12,
+      "row": 3,
+      "column": 4,
+      "before": "0,166094",
+      "after": "0,1661"
+    },
+    {
+      "table": 12,
+      "row": 4,
+      "column": 1,
+      "before": "1,558395",
+      "after": "1,5584"
+    },
+    {
+      "table": 12,
+      "row": 4,
+      "column": 3,
+      "before": "0,276868",
+      "after": "0,2769"
+    },
+    {
+      "table": 12,
+      "row": 4,
+      "column": 2,
+      "before": "1,802662",
+      "after": "1,8027"
+    },
+    {
+      "table": 12,
+      "row": 4,
+      "column": 4,
+      "before": "0,184611",
+      "after": "0,1846"
+    },
+    {
+      "table": 12,
+      "row": 5,
+      "column": 1,
+      "before": "1,925832",
+      "after": "1,9258"
+    },
+    {
+      "table": 12,
+      "row": 5,
+      "column": 3,
+      "before": "0,288834",
+      "after": "0,2888"
+    },
+    {
+      "table": 12,
+      "row": 5,
+      "column": 2,
+      "before": "1,976939",
+      "after": "1,9769"
+    },
+    {
+      "table": 12,
+      "row": 5,
+      "column": 4,
+      "before": "0,198323",
+      "after": "0,1983"
+    },
+    {
+      "table": 12,
+      "row": 6,
+      "column": 1,
+      "before": "2,166372",
+      "after": "2,1664"
+    },
+    {
+      "table": 12,
+      "row": 6,
+      "column": 3,
+      "before": "0,294159",
+      "after": "0,2942"
+    },
+    {
+      "table": 12,
+      "row": 6,
+      "column": 2,
+      "before": "2,106318",
+      "after": "2,1063"
+    },
+    {
+      "table": 12,
+      "row": 6,
+      "column": 4,
+      "before": "0,208996",
+      "after": "0,2090"
+    },
+    {
+      "table": 12,
+      "row": 7,
+      "column": 1,
+      "before": "2,328043",
+      "after": "2,3280"
+    },
+    {
+      "table": 12,
+      "row": 7,
+      "column": 3,
+      "before": "0,296708",
+      "after": "0,2967"
+    },
+    {
+      "table": 12,
+      "row": 7,
+      "column": 2,
+      "before": "2,206859",
+      "after": "2,2069"
+    },
+    {
+      "table": 12,
+      "row": 7,
+      "column": 4,
+      "before": "0,217563",
+      "after": "0,2176"
+    },
+    {
+      "table": 12,
+      "row": 8,
+      "column": 1,
+      "before": "2,441258",
+      "after": "2,4413"
+    },
+    {
+      "table": 12,
+      "row": 8,
+      "column": 3,
+      "before": "0,298022",
+      "after": "0,2980"
+    },
+    {
+      "table": 12,
+      "row": 8,
+      "column": 2,
+      "before": "2,287486",
+      "after": "2,2875"
+    },
+    {
+      "table": 12,
+      "row": 8,
+      "column": 4,
+      "before": "0,224596",
+      "after": "0,2246"
+    },
+    {
+      "table": 12,
+      "row": 9,
+      "column": 1,
+      "before": "2,523776",
+      "after": "2,5238"
+    },
+    {
+      "table": 12,
+      "row": 9,
+      "column": 3,
+      "before": "0,298748",
+      "after": "0,2987"
+    },
+    {
+      "table": 12,
+      "row": 9,
+      "column": 2,
+      "before": "2,353652",
+      "after": "2,3537"
+    },
+    {
+      "table": 12,
+      "row": 9,
+      "column": 4,
+      "before": "0,230475",
+      "after": "0,2305"
+    },
+    {
+      "table": 12,
+      "row": 10,
+      "column": 1,
+      "before": "2,586058",
+      "after": "2,5861"
+    },
+    {
+      "table": 12,
+      "row": 10,
+      "column": 3,
+      "before": "0,299171",
+      "after": "0,2992"
+    },
+    {
+      "table": 12,
+      "row": 10,
+      "column": 2,
+      "before": "2,408929",
+      "after": "2,4089"
+    },
+    {
+      "table": 12,
+      "row": 10,
+      "column": 4,
+      "before": "0,235464",
+      "after": "0,2355"
+    }
+  ],
+  "protected_file_hashes": {
+    "D:\\Study-Note\\Modeling\\lab2\\3310_Чжун_Цзяцзюнь_УИР2.docx": "cb9a06ce553cba2a3f13f3c906d093f453bbec7106e310c461e34f3e457e2337",
+    "D:\\Study-Note\\Modeling\\lab2\\lab2_variant15.py": "02fccee16825f5864c83b7ca54f46c34b3c2423c11af75aeaf94b5cf3471c282",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\results.json": "ceeab689ff1928096fcc4415c034cdcaf7cd2b38234b3ace8e275d6f51d62aed",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\system1_Q.csv": "4ad3fb4e992d15092538a14dfc85f2d0e7a8ebc295080f2329291a7cb366f6e2",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\system2_Q.csv": "50e9762d257408966a448c5c67a82058482014fa8fb6c276b471cd76f7416fee",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\verification_independent.json": "2783cea1c47277cfec022baca99e6d3afe766818fdb731426a41e0c26e943f0f",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system1_expected_probabilities.tsv": "3f8ce03c0c18cc7943b5879511ead8caf3433ca559012ad8b2573fd743279502",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system1_Q_full_precision.csv": "4e3818672ca0d0c860b9da26d5e7db454c431ceb40d1d10acb0922d2ba87dfab",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system1_transitions.tsv": "6adccc33743938b5ad60079f4ec88936fb352af9771dc8558c82e54aeaad166f",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system2_expected_probabilities.tsv": "6def664c1400ab9081b7d504f5724f91fa81f1059a8729f70ffffba3a661ed0a",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system2_Q_full_precision.csv": "4b5ca7c6c492197de8bb7e6d1c643023a860881470f1d251a147279b3b68dfd3",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\MARK_input\\system2_transitions.tsv": "de8f90c8df951fd4c6781ae49a288aa0a1ec0d1e9d1c08a82e874406c2691d64",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\README.md": "4695e1ca533b5716dd55c5cb7910e951c9d8d516c7e878c0a3838dae02b90853",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system1.html": "a92ecb97a0e46526bc6ef96e4fb8d26e19efbd4041e7a1e6a92d464ed6adc26c",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system1.mrk": "a9143c04be9e564bc1d691964128a90b827d27ebf644fb9c2072335162768a20",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system1_formulas.tsv": "c5636e751f4e5db9ce98543db08e4bf15af7b0413c7af2f6b8937cf1c8c507d1",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system2.html": "ac266a04fa1b58bf5aa40d502276acdffd38cfedbed0b76b2360b1ce11568c57",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system2.mrk": "b2cbed392d721fde7fc55c7f42769de34d59d6fad00306bb1954377e095c3c1e",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\system2_formulas.tsv": "e9cc4fcdf4c3129258d834084fed4b38c4c57d8b05b0b50fdefbff5a58b05b8f",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\verification.json": "2741bc536680b3fa0485d77c3fd55f2912e063f8a31457905e300f27ca450dc9",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda01.html": "56448ffdb7e8b7460dd55bd86018bf445ca68a3df555be5b8a1d90b30cbacd0f",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda01.mrk": "d06be5d4eccb3b84644358075d5e89a6ad5e6a1dcee460d531d15f96d91ddf5f",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda02.html": "1a342c392b4d89f5810b99073d6d7a2061c72ebecdc2b1f5dfe8297486b15a98",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda02.mrk": "c21f63e2089fc490ae32a7f86b9dd31e6df8095ff6e164f16f1c1bfc721726ba",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda03.html": "1756a2ae0bfd4546ff1e94f696917f0c3e9142b9adb39103324745084082c1f2",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda03.mrk": "c2c5c9505c1686f3cb327570d4e89b4d45a112a3513344e76d4ff3e73a3536da",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda04.html": "038c1288230e37a06ff19be40627445a233f3505823b9064f8bdb7ec77c7fe9b",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda04.mrk": "6b077c964c24e4706fe6f226646562170e451d3f08486e99e149ea02040f3dec",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda05.html": "a92ecb97a0e46526bc6ef96e4fb8d26e19efbd4041e7a1e6a92d464ed6adc26c",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda05.mrk": "a9143c04be9e564bc1d691964128a90b827d27ebf644fb9c2072335162768a20",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda06.html": "d01f064facb7c0e0b6abbd3c5ce7db9e707584e8c322ba2fcc955d794baac0e0",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda06.mrk": "6ff4199582965e620ad83f9828651b09134f2c89183f51ad56d583252a0cee86",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda07.html": "adffb966bbbed6e0baea50d0ec6fb8414d6f601be167acfa83a9723b5b7f8327",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda07.mrk": "5816d642bc6c06e9459d25362975226861254fb2dec28a9eaee8b7d5b8615427",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda08.html": "6cc4d79a40b7b42c46aad66b4896ae733c3e2c9444d6ce2a59d8bc1d8a6f775d",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda08.mrk": "19f9d6e4cfbf20a99888a65a1abe7341d1833892d8546432d1cc5216a9f3f097",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda09.html": "ce9c3a19fbcb2ded26496e96c1f08fcd251757666cb9741e224ceb0dabad6858",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda09.mrk": "910173f883e5a065b78a21a1e58f32813e422236d2250e5a96c5b2b77f3f616c",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda10.html": "6fac0b4861a46b2ca43ae3ad9d5c97490d5002882c400ac11b38a439c6f138a7",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system1_lambda10.mrk": "1ad610fd533789415dd58b43d8566595cf8e2995dd4747cfa611d926f77c8398",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda01.html": "4697ecd1419e2010a7e0a091ceb40db9e75fe55606ce03ca59c37fc27c22a169",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda01.mrk": "2b7d2515f988300d71f21574beeafe4935123a3ba4c456bdf333a2a2aa509794",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda02.html": "6f1d134f3d13a90004aab0332790b7fb57d9dc0d6b67747049fe02f2497a32bc",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda02.mrk": "05b41c65e6b028c07889d3ba64d4eede2643e630612bf027651a5a30d33ba6e2",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda03.html": "f35383df43c84e1c02ca5479d273bd07ea5f25c0ff3c86ad7e4f10065abb0aad",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda03.mrk": "125e40227e55c458dff507b2932607938975a0728a08a66d9289546b5cfc5bf6",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda04.html": "ed1ae8aee0f30214eef91e917f2d9328aceb6394f40045ea581a8deac61e482e",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda04.mrk": "c2b8fa5468a8d1f2ed5fc82c03813c5fb4cabf08713978c3f5fd224a74c57250",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda05.html": "ac266a04fa1b58bf5aa40d502276acdffd38cfedbed0b76b2360b1ce11568c57",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda05.mrk": "b2cbed392d721fde7fc55c7f42769de34d59d6fad00306bb1954377e095c3c1e",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda06.html": "f1134a20d90282101809f118fc319cee24e50afce7e608acbfe242e3ec2401b7",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda06.mrk": "1d8a40c9ffddba0ea364875c394241e800d4cef0c874258f056920b26b9986ed",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda07.html": "dd06ad78f4729e7b1b2e5aca44c8b4fa0add07bd57ff252fd9b3f5b2a59ee21b",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda07.mrk": "c31355620c0cacf36696939a62ac43e60e817d2097b1f909707d642f6c4917d6",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda08.html": "3be615e6d0fa2784e5371d97cd83a76409d700d3fb2de4c36961da773ea01ebb",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda08.mrk": "6d8fe0025e6e542b558f6b33e382f06c48fa7f9248e94036201850da321273d7",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda09.html": "c6d152a021266d4d79d9577b3091bac7bc4cb1806c03377ba33a41efe4907e72",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda09.mrk": "581f81784fe194997ef2dc6b7ce990b1f452a27d8d8b11174a245d57a855b08d",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda10.html": "5db8ac24580f2fe5bc5d44858f72d9ed16955aff15902ba29280deb6ecf1b2d2",
+    "D:\\Study-Note\\Modeling\\lab2\\Calculation_data\\WinMark\\Variation\\system2_lambda10.mrk": "24c4d6a3edef576b6dc043a6428891a9b65d95ab6fb4da58d7c7055afbc30e7e",
+    "D:\\Study-Note\\Modeling\\lab2\\WinMark\\GdiPlus.dll": "9522241cf6e0d087f8b915e7ab8595983ba03ff128c6cd78ae497172bd61b46b",
+    "D:\\Study-Note\\Modeling\\lab2\\WinMark\\WinMark.chm": "954079a106dd1fb5197d09bfd9c387e9f6fb10afc30c5812be888fb58ae78016",
+    "D:\\Study-Note\\Modeling\\lab2\\WinMark\\WinMark.exe": "55acc73f6b316e3471e38b62c2905e720a9e772effc3eeba80e7c6213f28e049"
+  },
+  "precision": "Four fractional digits, rounded once from stored MARK results; scientific residuals preserved",
+  "final_page_count": 14,
+  "visual_review": "All 14 pages reviewed; no layout defects",
+  "final_checks_passed": true
+}
