@@ -98,8 +98,4 @@
 
 ---
 
-**复习工具**：[全部实验与作业](navigation/labs.md) · [考前复习](study/revision.md) · [实验答辩](study/defense.md) · [复习脑图](knowledge/mindmap.md) · [知识关系图](knowledge/index.md) · [反向关联](knowledge/backlinks.md)
-
-**补充学习**：[Java 基础](Java/Note.md) · [Java 专题](Java/subtopi.md) · [Go 源码](Go) · [预科数学语言](MathsLanguage/keyknowledge.md) · [Helios](helios.md) · [DeepWiki 概览](https://deepwiki.com/ivanstylish/ITMO-Study-Note/1-overview)
-
 **使用与维护**：[阅读指南](navigation/reading.md) · [维护说明](navigation/maintenance.md) · [设计方向](navigation/design.md) · [网站阅读](navigation/website.md)

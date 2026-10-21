@@ -1,0 +1,8 @@
+{
+  "tests_run": 13,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "elapsed_seconds": 8.667,
+  "scope": "Real hidden Tk event loop and FigureCanvasTkAgg, actual 200 px spectral calculations"
+}
