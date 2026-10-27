@@ -80,14 +80,14 @@ python test_gui.py
 | `spectral.py` | 41 波长积分权重、三份 CSV、光谱归一化、场景与编辑表读写 |
 | `color_conversion.py` | Spectrum → XYZ → CIE RGB，D65 材质转换，共同曝光与 sRGB 显示 |
 | `rendering.py` | 光谱与 RGB 两条路径、控制点、统计和结果保存 |
-| `gui.py` | 左侧分组表单，右侧RGB、灰度、光谱曲线和绝对亮度，白彩双图与四图对比 |
+| `gui.py` | 左侧分组表单，右侧RGB、灰度、光谱曲线和绝对亮度，按当前光源设置显示两路结果 |
 | `main.py` | 图形界面与命令行入口 |
 
 界面左侧按几何、观察者、光源和反射光谱分组。光源可以新增、选择、编辑和删除，可使用内置光谱或自定义表格。完整 JSON 编辑移至高级设置，需要明确应用后同步到普通表单。JSON 加载和保存保留。
 
-右侧是主要结果区。白光和彩光模式并排显示 `image_1`、`image_2`，对比模式同时显示两种照明条件下的四张图。可切换RGB、灰度、光谱曲线以及三采样点绝对亮度。计算图由 Matplotlib 的 `FigureCanvasTkAgg` 嵌入。
+右侧是主要结果区。按各盏灯当前的光谱计算，并排显示 `image_1`、`image_2`。白光可将各灯光谱设为 D65，彩光可分别选择红、蓝或自定义光谱。可切换RGB、灰度、光谱曲线以及三采样点绝对亮度。计算图由 Matplotlib 的 `FigureCanvasTkAgg` 嵌入。
 
-修改参数后点击“Рассчитать”才执行计算。键盘输入只标记参数发生变化，切换结果视图只绘制缓存。计算在工作线程进行，Tk控件更新在主线程进行。对比模式导出时保留 `white`、`colored` 两套结果。
+修改参数后点击“Рассчитать”才执行计算。键盘输入只标记参数发生变化，切换结果视图只绘制缓存。计算在工作线程进行，Tk控件更新在主线程进行。结果直接导出到选定目录。
 
 ## 计算约定
 
@@ -123,4 +123,4 @@ python test_gui.py
 
 `light_spectra.csv` 包含 D65、红光、蓝光及老师的6500 K黑体。黑体不是D65。D65来自 [CIE 官方数据](https://cie.co.at/datatable/cie-standard-illuminant-d65)，DOI `10.25039/CIE.DS.hjfjmt59`。原始1 nm文件SHA-256为 `e76f210bffff3d552ef7113025da5f325d5dfec200dd4b878b1a2f3a507032cb`，选取380～780 nm的41行后合并到新表，无插值。CIE及本次D65抽样数据遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。红蓝光为报告所列高斯谱，`reflectance.csv` 为报告采用的绿色材质。
 
-数值验证脚本包含24项独立检查，覆盖解析公式、线性叠加、200/800完整光谱、边界参数及PNG/NPZ/CSV/JSON重读，结果见 `validation_results.json`。界面验证包含13项真实Tk事件循环检查，使用实际200像素光谱计算，覆盖白光、彩光、四图、缓存、三点亮度、JSON/CSV编辑、光源增删及两种导出形式，结果见 `gui_validation.json`。默认600像素场景另经过真实窗口的四图及缩放显示检查。
+数值验证脚本包含24项独立检查，覆盖解析公式、线性叠加、200/800完整光谱、边界参数及PNG/NPZ/CSV/JSON重读，结果见 `validation_results.json`。界面验证包含13项真实Tk事件循环检查，使用实际200像素光谱计算，覆盖白光、彩光、自定义谱保持、缓存、三点亮度、JSON/CSV编辑、光源增删及图像和绝对数组导出，结果见 `gui_validation.json`。

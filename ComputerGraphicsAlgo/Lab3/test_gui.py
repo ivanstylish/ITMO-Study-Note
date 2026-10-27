@@ -65,7 +65,6 @@ class GuiTests(unittest.TestCase):
 
     def setUp(self):
         self.app.set_scene(replace(default_parameters('white'), width_px=200))
-        self.app.set_mode('white')
         self.dialog_errors.clear()
         self.root.update()
 
@@ -75,8 +74,9 @@ class GuiTests(unittest.TestCase):
             self.root.update()
             time.sleep(.005)
 
-    def compute(self, mode):
-        self.app.set_mode(mode)
+    def compute(self, case=None):
+        if case is not None:
+            self.app.set_scene(replace(default_parameters(case), width_px=200))
         began = len(self.calls)
         self.app.compute()
         deadline = time.monotonic() + 30
@@ -87,24 +87,27 @@ class GuiTests(unittest.TestCase):
         self.assertFalse(self.app.busy, 'Calculation failed to finish')
         self.assertFalse(self.dialog_errors, self.dialog_errors)
         self.assertFalse(self.callback_errors, self.callback_errors)
-        self.assertEqual(len(self.calls) - began, 2 if mode == 'compare' else 1)
+        self.assertEqual(len(self.calls) - began, 1)
         self.assertTrue(all(thread_id != self.main_thread for _, thread_id in self.calls[began:]))
 
     def test_01_grouped_forms_and_matplotlib_canvas(self):
         """Scene fields and result canvases exist as normal Tk controls."""
         labels = [w.cget('text') for w in descendants(self.app) if isinstance(w, ttk.LabelFrame)]
-        self.assertGreaterEqual(len(labels), 4)
+        self.assertEqual(len(labels), 4)
+        self.assertNotIn('Условия освещения', labels)
+        self.assertFalse(hasattr(self.app, 'mode_combo'))
+        self.assertFalse(hasattr(self.app, 'set_mode'))
         self.assertGreaterEqual(len(self.app.variables), 13)
         self.assertIsInstance(self.app.result_tabs, ttk.Notebook)
         for canvas in (self.app.rgb_canvas, self.app.gray_canvas, self.app.spectra_canvas):
             self.assertIsInstance(canvas, FigureCanvasTkAgg)
 
-    def test_02_typing_and_mode_selection_do_not_render(self):
-        """Keystrokes and mode selection do not execute spectral integration."""
+    def test_02_typing_and_spectrum_selection_do_not_render(self):
+        """Keystrokes and spectrum selection do not execute spectral integration."""
         began = len(self.calls)
         self.app.variables['width_mm'].set('1400')
         self.app.variables['height_mm'].set('1400')
-        self.app.set_mode('colored')
+        self.app.light_spectrum.set('Красный')
         self.events()
         self.assertEqual(len(self.calls), began)
 
@@ -146,16 +149,20 @@ class GuiTests(unittest.TestCase):
         self.assertGreater(np.max(np.abs(result['rgb1'] - result['rgb2'])), .1)
         self.assertEqual(sum(len(ax.images) for ax in self.app.rgb_figure.axes), 2)
 
-    def test_05_comparison_displays_four_images_for_identical_geometry(self):
-        """Comparison computes both illuminants and draws both image paths."""
-        self.compute('compare')
-        self.assertIn('white', self.app.results)
-        self.assertIn('colored', self.app.results)
-        white, colored = (self.app.results[key] for key in ('white', 'colored'))
-        for name in ('width_mm', 'height_mm', 'radius_mm', 'direction', 'reflectance'):
-            self.assertEqual(getattr(white['parameters'], name), getattr(colored['parameters'], name))
-        self.assertEqual(sum(len(ax.images) for ax in self.app.rgb_figure.axes), 4)
-        self.assertEqual(sum(len(ax.images) for ax in self.app.gray_figure.axes), 4)
+    def test_05_custom_spectra_are_calculated_without_preset_replacement(self):
+        """Compute uses exactly the user's material, lights and geometry."""
+        source = default_parameters('colored')
+        scene = replace(source, width_px=200, radius_mm=300,
+                        reflectance=tuple(np.linspace(.1, .8, 41)),
+                        lights=(replace(source.lights[0], x_mm=-500,
+                                        spectrum=tuple(np.linspace(.2, 1.1, 41))),))
+        self.app.set_scene(scene)
+        self.compute()
+        self.assertEqual(len(self.app.results), 1)
+        result = next(iter(self.app.results.values()))
+        self.assertEqual(asdict(result['parameters']), asdict(scene))
+        self.assertEqual(sum(len(ax.images) for ax in self.app.rgb_figure.axes), 2)
+        self.assertEqual(sum(len(ax.images) for ax in self.app.gray_figure.axes), 2)
 
     def test_06_result_views_refresh_cached_data_without_calculation(self):
         """RGB, gray, curves and sample values are views of one cached result."""
@@ -235,22 +242,23 @@ class GuiTests(unittest.TestCase):
         self.app.apply_spectra(text.getvalue())
         np.testing.assert_array_equal(self.app.read_scene().reflectance, [.25]*41)
 
-    def test_11_export_both_conditions_preserves_absolute_arrays(self):
-        """Comparison exports white and colored independently, with real files."""
-        self.compute('compare')
-        began = len(self.calls)
-        with tempfile.TemporaryDirectory(prefix='gui-export-', dir=BASE) as directory:
-            self.app.export_results(directory)
-            for case in ('white', 'colored'):
-                folder = Path(directory)/case
-                self.assertEqual(len(list(folder.iterdir())), 7)
-                with np.load(folder/'radiance_data.npz', allow_pickle=False) as saved:
-                    self.assertEqual(saved['spectral_radiance'].shape, (200, 200, 41))
-                    np.testing.assert_array_equal(saved['rgb1'], self.app.results[case]['rgb1'])
-                    np.testing.assert_array_equal(saved['rgb2'], self.app.results[case]['rgb2'])
-                data = json.loads((folder/'results.json').read_text(encoding='utf-8'))
-                self.assertEqual(len(data['control_points']), 3)
-        self.assertEqual(len(self.calls), began, 'Export must not recompute a valid cached result')
+    def test_11_export_preserves_absolute_arrays(self):
+        """Both spectra settings export the calculated full physical arrays."""
+        for case in ('white', 'colored'):
+            with self.subTest(case=case):
+                self.compute(case)
+                began = len(self.calls)
+                with tempfile.TemporaryDirectory(prefix='gui-export-', dir=BASE) as directory:
+                    self.app.export_results(directory)
+                    folder = Path(directory)
+                    self.assertEqual(len(list(folder.iterdir())), 7)
+                    with np.load(folder/'radiance_data.npz', allow_pickle=False) as saved:
+                        self.assertEqual(saved['spectral_radiance'].shape, (200, 200, 41))
+                        np.testing.assert_array_equal(saved['rgb1'], self.app.results[case]['rgb1'])
+                        np.testing.assert_array_equal(saved['rgb2'], self.app.results[case]['rgb2'])
+                    data = json.loads((folder/'results.json').read_text(encoding='utf-8'))
+                    self.assertEqual(len(data['control_points']), 3)
+                self.assertEqual(len(self.calls), began, 'Export must not recompute')
 
     def test_12_light_add_delete_and_negative_z_edits_are_committed(self):
         """The selected light can be edited, added and removed without rendering."""

@@ -1,0 +1,10 @@
+test_gui_event_loop (__main__.Lab4Tests.test_gui_event_loop) ... ok
+test_invalid_inputs (__main__.Lab4Tests.test_invalid_inputs) ... ok
+test_physics_and_absolute_image (__main__.Lab4Tests.test_physics_and_absolute_image) ... ok
+test_saved_files (__main__.Lab4Tests.test_saved_files) ... ok
+test_textbook_basis_color_and_scale (__main__.Lab4Tests.test_textbook_basis_color_and_scale) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.227s
+
+OK

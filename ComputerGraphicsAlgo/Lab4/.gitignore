@@ -1,0 +1,8 @@
+.venv/
+.mplconfig/
+.tmp/
+__pycache__/
+*.aux
+*.log
+*.toc
+*.out

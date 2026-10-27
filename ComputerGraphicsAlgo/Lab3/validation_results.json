@@ -1,12 +1,12 @@
 {
-  "timestamp_utc": "2026-10-21T19:06:44.171707+00:00",
+  "timestamp_utc": "2026-10-23T10:17:50.803073+00:00",
   "command": "python test_lab3.py",
   "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
   "source_sha256": {
     "__init__.py": "3e97ee425a3554ac1fa416b26f7f9ca2e4d653aad0486ad1680bbe36c051c20a",
     "color_conversion.py": "3ac6bb2d6c566fd677c8397799b3836732119e8a7023df1436c77b6e2197b41b",
     "geometry.py": "ad48857ec607412b4319461f91dd60df2d23972e5b3f2de3bacd3da9068dbb3e",
-    "gui.py": "caf1ee928f39562a72669fadb9464d1e75d5e0f7397fd7f901cd14b8959411e8",
+    "gui.py": "8cb475b20d5c2a08ef4cdeb0b45db14961ce388224279a6a2b9d2ab49b46a0d2",
     "main.py": "ccb356b5448f425ee3715af5308781e364e00248d919955095cfa8c4cf1720f9",
     "rendering.py": "708cec64e2bb6410e8f518250b7ca852ba560ff320bbd16efa000e24a171374a",
     "spectral.py": "dd44310fe9dd3e1e2cde09ae0bab84fe5c9cc2b9df2dabb9eae944aa6f10c817"
@@ -16,151 +16,151 @@
   "failure_count": 0,
   "error_count": 0,
   "skipped_count": 0,
-  "elapsed_seconds": 1.598311,
+  "elapsed_seconds": 1.929848,
   "tests": [
     {
       "test": "__main__.Lab3Tests.test_01_tables_and_official_d65_provenance",
       "description": "41 exact wavelength rows and known samples of the CIE D65 source.",
       "status": "passed",
-      "elapsed_seconds": 0.000722
+      "elapsed_seconds": 0.005175
     },
     {
       "test": "__main__.Lab3Tests.test_02_quadrature_has_absolute_nanometre_scale",
       "description": "A constant spectrum integrates to 400 nm, not 41 samples or one.",
       "status": "passed",
-      "elapsed_seconds": 0.000242
+      "elapsed_seconds": 0.000336
     },
     {
       "test": "__main__.Lab3Tests.test_03_signed_cie_rgb_matrix_round_trip",
       "description": "CIE RGB is signed and the chosen matrix convention is reversible.",
       "status": "passed",
-      "elapsed_seconds": 0.000152
+      "elapsed_seconds": 0.000384
     },
     {
       "test": "__main__.Lab3Tests.test_04_white_d65_paths_agree_before_and_after_display",
       "description": "The D65 calibration makes the two white-light paths identical.",
       "status": "passed",
-      "elapsed_seconds": 0.00306
+      "elapsed_seconds": 0.003947
     },
     {
       "test": "__main__.Lab3Tests.test_05_colored_paths_expose_the_rgb_approximation",
       "description": "Colored spectra give a measurable difference on this colored sphere.",
       "status": "passed",
-      "elapsed_seconds": 3e-05
+      "elapsed_seconds": 3.6e-05
     },
     {
       "test": "__main__.Lab3Tests.test_06_constant_reflectance_paths_agree_for_colored_sources",
       "description": "A neutral material is an exact, independently justified RGB case.",
       "status": "passed",
-      "elapsed_seconds": 0.000329
+      "elapsed_seconds": 0.000539
     },
     {
       "test": "__main__.Lab3Tests.test_07_independent_scalar_reference_at_three_points",
       "description": "Vectorized radiance matches a scalar derivation of the reference figure.",
       "status": "passed",
-      "elapsed_seconds": 0.012701
+      "elapsed_seconds": 0.015604
     },
     {
       "test": "__main__.Lab3Tests.test_08_multiple_sources_add_linearly",
       "description": "Adding sources adds their absolute spectral and tristimulus results.",
       "status": "passed",
-      "elapsed_seconds": 0.001861
+      "elapsed_seconds": 0.001449
     },
     {
       "test": "__main__.Lab3Tests.test_09_intensity_doubles_but_spd_amplitude_is_relative",
       "description": "I0 controls total intensity while relative SPD amplitude cancels.",
       "status": "passed",
-      "elapsed_seconds": 0.001507
+      "elapsed_seconds": 0.001606
     },
     {
       "test": "__main__.Lab3Tests.test_10_analytic_units_and_inverse_square",
       "description": "A normal-incidence point at 1 m gives I0*kd/pi W/(m2 sr).",
       "status": "passed",
-      "elapsed_seconds": 0.000504
+      "elapsed_seconds": 0.000573
     },
     {
       "test": "__main__.Lab3Tests.test_11_reference_figure_really_has_the_second_cosine",
       "description": "At 60 degree incidence the diagram yields half the standard Lambert value.",
       "status": "passed",
-      "elapsed_seconds": 0.000733
+      "elapsed_seconds": 0.000522
     },
     {
       "test": "__main__.Lab3Tests.test_12_source_orientation_back_lighting_and_view_independence",
       "description": "A source cannot shine backwards and hidden lit surface radiance remains physical.",
       "status": "passed",
-      "elapsed_seconds": 0.001386
+      "elapsed_seconds": 0.000804
     },
     {
       "test": "__main__.Lab3Tests.test_13_black_scene_is_valid_and_has_finite_zero_images",
       "description": "Zero reflectance needs no division by zero or fabricated maximum.",
       "status": "passed",
-      "elapsed_seconds": 0.082363
+      "elapsed_seconds": 0.097214
     },
     {
       "test": "__main__.Lab3Tests.test_14_exact_square_pixels_and_valid_rectangular_screen",
       "description": "Integer rounding must not silently create nonsquare physical pixels.",
       "status": "passed",
-      "elapsed_seconds": 0.000413
+      "elapsed_seconds": 0.000504
     },
     {
       "test": "__main__.Lab3Tests.test_15_below_view_negative_light_z_and_sphere_center_z_zero",
       "description": "The new source and sphere coordinate ranges work on the opposite side.",
       "status": "passed",
-      "elapsed_seconds": 0.000861
+      "elapsed_seconds": 0.001037
     },
     {
       "test": "__main__.Lab3Tests.test_16_full_cubes_at_both_resolution_limits",
       "description": "Actually calculate 200 and 800 square images with all 41 spectral channels.",
       "status": "passed",
-      "elapsed_seconds": 0.821507
+      "elapsed_seconds": 1.040623
     },
     {
       "test": "__main__.Lab3Tests.test_17_control_points_are_distinct_visible_surface_points",
       "description": "Control values are exact coordinate evaluations rather than nearby pixels.",
       "status": "passed",
-      "elapsed_seconds": 0.004365
+      "elapsed_seconds": 0.004319
     },
     {
       "test": "__main__.Lab3Tests.test_18_camera_geometry_center_ray_miss_and_oblique_view",
       "description": "Ray intersections and an off-axis camera follow the actual scene geometry.",
       "status": "passed",
-      "elapsed_seconds": 0.001056
+      "elapsed_seconds": 0.00109
     },
     {
       "test": "__main__.Lab3Tests.test_19_invalid_numeric_spectral_and_geometry_inputs",
       "description": "NaN, bad spectra, zero axes, clipping, and invalid placements fail validation.",
       "status": "passed",
-      "elapsed_seconds": 0.001199
+      "elapsed_seconds": 0.001106
     },
     {
       "test": "__main__.Lab3Tests.test_20_spectral_table_roundtrip_and_bad_wavelength_rows",
       "description": "The editable table preserves spectra and enforces the 10 nm grid.",
       "status": "passed",
-      "elapsed_seconds": 0.000729
+      "elapsed_seconds": 0.000883
     },
     {
       "test": "__main__.Lab3Tests.test_21_saved_arrays_images_json_and_grays_roundtrip",
       "description": "Reopen actual exported files and reconstruct gray from the saved RGB bytes.",
       "status": "passed",
-      "elapsed_seconds": 0.476479
+      "elapsed_seconds": 0.550917
     },
     {
       "test": "__main__.Lab3Tests.test_22_memory_cube_mask_surface_and_physical_statistics",
       "description": "Absolute physical arrays remain distinct from black background and display bytes.",
       "status": "passed",
-      "elapsed_seconds": 0.005466
+      "elapsed_seconds": 0.006514
     },
     {
       "test": "__main__.Lab3Tests.test_23_extended_coordinate_boundaries_and_signed_material_conversion",
       "description": "New coordinate limits and signed CIE material channels are supported.",
       "status": "passed",
-      "elapsed_seconds": 0.000402
+      "elapsed_seconds": 0.000652
     },
     {
       "test": "__main__.Lab3Tests.test_24_horizontal_direction_uses_explicit_screen_distance",
       "description": "A direction with zero Z component works when its screen distance is explicit.",
       "status": "passed",
-      "elapsed_seconds": 0.000609
+      "elapsed_seconds": 0.001099
     }
   ],
   "failures": [],

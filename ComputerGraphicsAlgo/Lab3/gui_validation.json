@@ -3,6 +3,6 @@
   "successful": true,
   "failures": [],
   "errors": [],
-  "elapsed_seconds": 8.667,
+  "elapsed_seconds": 10.181,
   "scope": "Real hidden Tk event loop and FigureCanvasTkAgg, actual 200 px spectral calculations"
 }

@@ -20,8 +20,6 @@ from .spectral import (apply_spectra_csv, default_parameters, load_parameters,
 
 class SphereApp(ttk.Frame):
     """表单与已计算结果分开保存，仅按钮调用数值算法。"""
-    MODES = {"white": "Белый свет D65", "colored": "Цветные источники",
-             "compare": "Сравнение D65 и цветного света"}
     SPECTRA = {"D65": "d65", "Красный": "red", "Синий": "blue",
                "Чёрное тело 6500 К": "black_body_6500", "Табличный": None}
     MATERIALS = ("Из таблицы по умолчанию", "Постоянное отражение", "Своя таблица")
@@ -35,8 +33,6 @@ class SphereApp(ttk.Frame):
         master.minsize(1000, 680)
         self.tables = load_tables()
         self.variables, self.light_variables = {}, {}
-        self.mode = tk.StringVar(value="white")
-        self.mode_label = tk.StringVar(value=self.MODES["white"])
         self.material_kind = tk.StringVar(value=self.MATERIALS[0])
         self.material_constant = tk.StringVar(value="0.5")
         self.light_spectrum = tk.StringVar(value="D65")
@@ -62,16 +58,9 @@ class SphereApp(ttk.Frame):
         panes.add(left, weight=0)
         panes.add(right, weight=1)
         left.columnconfigure(0, weight=1)
-        left.rowconfigure(1, weight=1)
-        condition = ttk.LabelFrame(left, text="Условия освещения", padding=6)
-        condition.grid(row=0, column=0, sticky="ew", pady=(0, 5))
-        self.mode_combo = ttk.Combobox(condition, textvariable=self.mode_label,
-                                      values=list(self.MODES.values()), state="readonly")
-        self.mode_combo.pack(fill="x")
-        self.mode_combo.bind("<<ComboboxSelected>>", lambda event: self.guard(
-            lambda: self.set_mode(next(k for k, v in self.MODES.items() if v == self.mode_label.get()))))
+        left.rowconfigure(0, weight=1)
         self.input_tabs = ttk.Notebook(left)
-        self.input_tabs.grid(row=1, column=0, sticky="nsew")
+        self.input_tabs.grid(row=0, column=0, sticky="nsew")
         scene_tab, advanced = ttk.Frame(self.input_tabs), ttk.Frame(self.input_tabs)
         self.input_tabs.add(scene_tab, text="Параметры сцены")
         self.input_tabs.add(advanced, text="Дополнительно JSON")
@@ -142,7 +131,7 @@ class SphereApp(ttk.Frame):
         ttk.Button(row, text="Из формы", command=lambda: self.guard(self.sync_json)).pack(side="left")
         ttk.Button(row, text="Применить JSON", command=lambda: self.guard(self.apply_json)).pack(side="left")
         actions = ttk.Frame(left, padding=(0, 6, 0, 0))
-        actions.grid(row=2, column=0, sticky="ew")
+        actions.grid(row=1, column=0, sticky="ew")
         self.action_buttons = []
         for i, (label, action) in enumerate((("Загрузить JSON", self.load_json), ("Сохранить JSON", self.save_json),
                                             ("Рассчитать", self.compute), ("Сохранить результаты", self.save))):
@@ -153,7 +142,7 @@ class SphereApp(ttk.Frame):
             actions.columnconfigure(column, weight=1)
         self.compute_button = self.action_buttons[2]
         self.progress = ttk.Progressbar(left, mode="indeterminate")
-        self.progress.grid(row=3, column=0, sticky="ew", pady=4)
+        self.progress.grid(row=2, column=0, sticky="ew", pady=4)
         right.columnconfigure(0, weight=1)
         right.rowconfigure(1, weight=1)
         ttk.Label(right, text="Результаты расчёта", font=("TkDefaultFont", 12, "bold")).grid(
@@ -332,9 +321,6 @@ class SphereApp(ttk.Frame):
         self.selected_light = 0
         self._refresh_lights()
         self._show_light(0)
-        mode = "white" if all(self._spectrum_name(light.spectrum) == "D65" for light in scene.lights) else "colored"
-        self.mode.set(mode)
-        self.mode_label.set(self.MODES[mode])
         self.json_text.delete("1.0", "end")
         self.json_text.insert("1.0", json.dumps(asdict(scene), ensure_ascii=False, indent=2))
         self.updating = False
@@ -355,20 +341,6 @@ class SphereApp(ttk.Frame):
                         reflectance=reflectance, model=self.MODELS[self.model_label.get()])
         validate(scene)
         return scene
-
-    def set_mode(self, mode):
-        if mode not in self.MODES:
-            raise ValueError("Неизвестный режим освещения")
-        self.commit_light()
-        self.mode.set(mode)
-        self.mode_label.set(self.MODES[mode])
-        if mode != "compare":
-            sources = default_parameters(mode).lights
-            self.lights = [replace(light, spectrum=sources[i % len(sources)].spectrum)
-                           for i, light in enumerate(self.lights)]
-            self._refresh_lights()
-            self._show_light(self.selected_light)
-        self.mark_dirty()
 
     def below(self):
         p = self.read_scene()
@@ -456,15 +428,8 @@ class SphereApp(ttk.Frame):
             self.status.set("Ошибка параметров. Предыдущие результаты сохранены.")
             messagebox.showerror("Ошибка параметров", str(error))
             return
-        mode, scenes = self.mode.get(), {}
-        for case in ("white", "colored") if mode == "compare" else (mode,):
-            if mode == "compare":
-                sources = default_parameters(case).lights
-                lights = tuple(replace(light, spectrum=sources[i % len(sources)].spectrum)
-                               for i, light in enumerate(scene.lights))
-                scenes[case] = replace(scene, lights=lights)
-            else:
-                scenes[case] = scene
+        case = "white" if all(self._spectrum_name(light.spectrum) == "D65"
+                              for light in scene.lights) else "colored"
         self.scene = scene
         self.sync_json()
         self.dirty = False
@@ -472,7 +437,7 @@ class SphereApp(ttk.Frame):
         self.status.set("Выполняется спектральный и RGB расчёт…")
         def worker():
             try:
-                values = {case: calculate(p) for case, p in scenes.items()}
+                values = {case: calculate(scene)}
                 self._completed.put((values, None))
             except Exception as error:
                 self._completed.put((None, error))
@@ -580,7 +545,7 @@ class SphereApp(ttk.Frame):
             raise ValueError("Сначала выполните расчёт.")
         directory = Path(directory)
         for case, result in self.results.items():
-            save_results(result, directory / case if len(self.results) == 2 else directory)
+            save_results(result, directory)
 
     def save(self):
         if not self.results:
