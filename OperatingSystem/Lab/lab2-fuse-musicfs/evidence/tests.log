@@ -1,0 +1,35 @@
+test_aliases_share_inode (test_catalog.CatalogTests) ... ok
+test_bad_bpm (test_catalog.CatalogTests) ... ok
+test_bad_json_and_top_level (test_catalog.CatalogTests) ... ok
+test_bpm_rounding_and_unknown (test_catalog.CatalogTests) ... ok
+test_duplicates_are_rejected (test_catalog.CatalogTests) ... ok
+test_invalid_records (test_catalog.CatalogTests) ... ok
+test_links_cannot_escape_or_duplicate_sources (test_catalog.CatalogTests) ... ok
+test_missing_categories_are_unknown (test_catalog.CatalogTests) ... ok
+test_missing_source_is_skipped (test_catalog.CatalogTests) ... ok
+test_same_basename_is_not_overwritten (test_catalog.CatalogTests) ... ok
+test_valid_synthetic_wav_and_no_overwrite (test_catalog.CatalogTests) ... ok
+test_attributes_and_dot_lookup (test_fs.CallbackTests) ... ok
+test_close_cleans_unreleased_handles (test_fs.CallbackTests) ... ok
+test_missing_source_and_existing_handle (test_fs.CallbackTests) ... ok
+test_mountpoint_validation (test_fs.CallbackTests) ... ok
+test_read_offsets_eof_and_release (test_fs.CallbackTests) ... ok
+test_read_only_flags (test_fs.CallbackTests) ... ok
+test_readdir_resumes_after_full_buffer (test_fs.CallbackTests) ... ok
+test_symlink_replacement_cannot_escape (test_fs.CallbackTests) ... ok
+test_aliases_hashes_stat_and_external_commands (test_mount.MountedTests) ... ok
+test_all_mutations_fail_without_source_changes (test_mount.MountedTests) ... ok
+test_exception_cleanup_and_restart (test_mount.MountedTests) ... ok
+test_large_directory_pagination (test_mount.MountedTests) ... ok
+test_metadata_snapshot_and_remount (test_mount.MountedTests) ... ok
+test_missing_before_mount_and_empty_catalog (test_mount.MountedTests) ... ok
+test_random_reads_eof_and_concurrency (test_mount.MountedTests) ... ok
+test_sigint_unmount_and_restart (test_mount.MountedTests) ... ok
+test_sigterm_unmount (test_mount.MountedTests) ... ok
+test_source_deleted_after_open (test_mount.MountedTests) ... ok
+test_unicode_and_unknown_category (test_mount.MountedTests) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 4.827s
+
+OK

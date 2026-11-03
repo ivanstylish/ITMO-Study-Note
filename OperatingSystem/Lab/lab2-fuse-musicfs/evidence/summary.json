@@ -1,0 +1,69 @@
+{
+  "environment": {
+    "recorded_at": "2026-11-01T16:00:08.320376+03:00",
+    "distribution": "Ubuntu 22.04.5 LTS",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.10.12",
+    "libfuse3": "3.10.5",
+    "pyfuse3": "3.5.0",
+    "trio": "0.35.0"
+  },
+  "tests": 30,
+  "real_mount_tests": 11,
+  "audio": "three synthetic 1-second PCM WAV files; no real MP3/FLAC or playback check",
+  "mount": "fuse   ro,nosuid,nodev,relatime,user_id=1000,group_id=1000,default_permissions",
+  "tree": [
+    "by_bpm",
+    "by_bpm/120",
+    "by_bpm/120/s001__drum_loop.wav",
+    "by_bpm/130",
+    "by_bpm/130/s002__bass_line.wav",
+    "by_bpm/90",
+    "by_bpm/90/s003__夜行 трек.wav",
+    "by_key",
+    "by_key/A_minor",
+    "by_key/A_minor/s001__drum_loop.wav",
+    "by_key/C_major",
+    "by_key/C_major/s003__夜行 трек.wav",
+    "by_key/unknown",
+    "by_key/unknown/s002__bass_line.wav",
+    "by_type",
+    "by_type/bass",
+    "by_type/bass/s002__bass_line.wav",
+    "by_type/drum",
+    "by_type/drum/s001__drum_loop.wav",
+    "by_type/song",
+    "by_type/song/s003__夜行 трек.wav"
+  ],
+  "aliases": [
+    {
+      "path": "by_bpm/120/s001__drum_loop.wav",
+      "inode": 2,
+      "links": 3,
+      "size": 44144,
+      "sha256": "d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e"
+    },
+    {
+      "path": "by_key/A_minor/s001__drum_loop.wav",
+      "inode": 2,
+      "links": 3,
+      "size": 44144,
+      "sha256": "d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e"
+    },
+    {
+      "path": "by_type/drum/s001__drum_loop.wav",
+      "inode": 2,
+      "links": 3,
+      "size": 44144,
+      "sha256": "d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e"
+    }
+  ],
+  "write_error": {
+    "errno": 30,
+    "message": "Read-only file system"
+  },
+  "source_sha256_before": "d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e",
+  "source_sha256_after": "d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e",
+  "exit_code": 0,
+  "unmounted": true
+}

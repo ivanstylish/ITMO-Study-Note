@@ -1,0 +1,14 @@
+{
+  "pages": 6,
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "text_extraction": "passed",
+  "missing_glyph_check": "passed",
+  "environment_description": "one paragraph on page 4"
+}

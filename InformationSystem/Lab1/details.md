@@ -32,4 +32,4 @@ echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOW6hG03vgl8rxB7AmVbIantaQgvmj7+crzmui
 
 ssh -i F:\helios_ed25519 -p 2222 s407959@helios.cs.ifmo.ru
 
-java -jar city-lab1.jar   --spring.flyway.baseline-on-migrate=true   --spring.flyway.baseline-version=0
+java -jar city-lab1.jar --server.port=18090 --spring.flyway.baseline-on-migrate=true   --spring.flyway.baseline-version=0

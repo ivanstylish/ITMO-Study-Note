@@ -1,0 +1,7 @@
+recorded_at: 2026-11-01T16:00:08.320376+03:00
+distribution: Ubuntu 22.04.5 LTS
+kernel: 6.6.87.2-microsoft-standard-WSL2
+python: 3.10.12
+libfuse3: 3.10.5
+pyfuse3: 3.5.0
+trio: 0.35.0

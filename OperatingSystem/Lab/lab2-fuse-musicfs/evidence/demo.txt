@@ -1,0 +1,41 @@
+MusicFS real mount evidence
+Recorded: 2026-11-01T16:00:08.320376+03:00
+Mount: fuse   ro,nosuid,nodev,relatime,user_id=1000,group_id=1000,default_permissions
+
+Directory entries:
+by_bpm
+by_bpm/120
+by_bpm/120/s001__drum_loop.wav
+by_bpm/130
+by_bpm/130/s002__bass_line.wav
+by_bpm/90
+by_bpm/90/s003__夜行 трек.wav
+by_key
+by_key/A_minor
+by_key/A_minor/s001__drum_loop.wav
+by_key/C_major
+by_key/C_major/s003__夜行 трек.wav
+by_key/unknown
+by_key/unknown/s002__bass_line.wav
+by_type
+by_type/bass
+by_type/bass/s002__bass_line.wav
+by_type/drum
+by_type/drum/s001__drum_loop.wav
+by_type/song
+by_type/song/s003__夜行 трек.wav
+
+Aliases:
+by_bpm/120/s001__drum_loop.wav inode=2 nlink=3 bytes=44144
+SHA256=d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e
+by_key/A_minor/s001__drum_loop.wav inode=2 nlink=3 bytes=44144
+SHA256=d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e
+by_type/drum/s001__drum_loop.wav inode=2 nlink=3 bytes=44144
+SHA256=d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e
+
+Write rejected: {'errno': 30, 'message': 'Read-only file system'}
+Source SHA256 before=d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e
+Source SHA256 after=d0cb6df7ee404992aa37fb5cc150c586d592e4bf55e4ec05056ec150f41f1a8e
+Exit code=0; unmounted=True
+Tests=30; real mount tests=11
+three synthetic 1-second PCM WAV files; no real MP3/FLAC or playback check

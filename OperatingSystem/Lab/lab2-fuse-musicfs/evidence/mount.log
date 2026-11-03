@@ -1,0 +1,17 @@
+DEBUG Initializing pyfuse3
+DEBUG Calling fuse_session_new
+DEBUG Calling fuse_session_mount
+INFO mounted 3 files at /tmp/musicfs-evidence-a7brfbhg/mnt
+DEBUG pyfuse-02: No tasks waiting, starting another worker (now 2 total).
+DEBUG open inode=2 fh=11
+DEBUG read fh=11 offset=0 size=45056 returned=44144
+DEBUG open inode=2 fh=11
+DEBUG open inode=2 fh=11
+INFO received signal 15; stopping
+DEBUG FUSE fd about to be closed.
+DEBUG pyfuse-02: terminated
+DEBUG FUSE session exit flag set while waiting for FUSE fd to become readable.
+DEBUG pyfuse-03: terminated
+DEBUG Calling fuse_session_unmount
+DEBUG Calling fuse_session_destroy
+INFO unmounted; all source handles closed

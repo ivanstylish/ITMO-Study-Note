@@ -1,0 +1,10 @@
+attrs==26.1.0
+exceptiongroup==1.3.1
+idna==3.20
+-e git+https://github.com/ivanstylish/ITMO-Study-Note.git@beaa7b59d91424ad9e02b43644c987361be54e11#egg=musicfs_lab&subdirectory=OperatingSystem/Lab/lab2-fuse-musicfs
+outcome==1.3.0.post0
+pyfuse3==3.5.0
+sniffio==1.3.1
+sortedcontainers==2.4.0
+trio==0.35.0
+typing_extensions==4.16.0

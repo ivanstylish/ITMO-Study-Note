@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "musicfs-lab"
+version = "1.0.0"
+description = "A small read-only music catalog filesystem for an OS lab"
+requires-python = ">=3.10"
+dependencies = ["pyfuse3==3.5.0", "trio>=0.25"]
+
+[tool.setuptools]
+packages = ["musicfs"]

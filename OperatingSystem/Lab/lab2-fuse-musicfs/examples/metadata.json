@@ -1,0 +1,5 @@
+[
+  {"id": "s001", "path": "drums/drum_loop.wav", "bpm": 124.5, "key": "A_minor", "type": "drum"},
+  {"id": "s002", "path": "bass/bass_line.wav", "bpm": 125, "key": null, "type": "bass"},
+  {"id": "s003", "path": "songs/夜行 трек.wav", "bpm": 90, "key": "C_major", "type": "song"}
+]
