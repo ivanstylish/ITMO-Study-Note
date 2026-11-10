@@ -135,6 +135,7 @@ class Catalog:
         return node
 
     def _directory(self, parent, name):
+        """同一父目录内复用已有分类，让多条音频进入同一个分组。"""
         name = name.encode("utf-8")
         children = self.nodes[parent].children
         if name not in children:

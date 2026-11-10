@@ -1,0 +1,91 @@
+<mountpoint>:
+by_bpm
+by_key
+by_type
+
+<mountpoint>/by_bpm:
+120
+130
+140
+150
+160
+90
+unknown
+
+<mountpoint>/by_bpm/120:
+real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav
+
+<mountpoint>/by_bpm/130:
+real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav
+
+<mountpoint>/by_bpm/140:
+real09__YeatxKanKanLoop 6 144 Bpm.wav
+
+<mountpoint>/by_bpm/150:
+real10__YeatxKanKanLoop 4 150 Bpm.wav
+real11__YeatxKanKanLoop 7 153 Bpm.wav
+
+<mountpoint>/by_bpm/160:
+real12__YeatxKanKanLoop 5 160 Bpm.wav
+
+<mountpoint>/by_bpm/90:
+real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav
+
+<mountpoint>/by_bpm/unknown:
+real04__kick (4U).wav
+real05__Snare And A Clap.wav
+real06__bass (4U).wav
+real07__I Know.mp3
+real08__I Know.wav
+
+<mountpoint>/by_key:
+D#_major
+D#_minor
+E_minor
+unknown
+
+<mountpoint>/by_key/D#_major:
+real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav
+
+<mountpoint>/by_key/D#_minor:
+real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav
+
+<mountpoint>/by_key/E_minor:
+real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav
+
+<mountpoint>/by_key/unknown:
+real04__kick (4U).wav
+real05__Snare And A Clap.wav
+real06__bass (4U).wav
+real07__I Know.mp3
+real08__I Know.wav
+real09__YeatxKanKanLoop 6 144 Bpm.wav
+real10__YeatxKanKanLoop 4 150 Bpm.wav
+real11__YeatxKanKanLoop 7 153 Bpm.wav
+real12__YeatxKanKanLoop 5 160 Bpm.wav
+
+<mountpoint>/by_type:
+bass
+drum
+melody
+song
+
+<mountpoint>/by_type/bass:
+real06__bass (4U).wav
+
+<mountpoint>/by_type/drum:
+real04__kick (4U).wav
+real05__Snare And A Clap.wav
+
+<mountpoint>/by_type/melody:
+real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav
+real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav
+real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav
+real09__YeatxKanKanLoop 6 144 Bpm.wav
+real10__YeatxKanKanLoop 4 150 Bpm.wav
+real11__YeatxKanKanLoop 7 153 Bpm.wav
+real12__YeatxKanKanLoop 5 160 Bpm.wav
+
+<mountpoint>/by_type/song:
+real07__I Know.mp3
+real08__I Know.wav

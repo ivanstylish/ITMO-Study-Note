@@ -32,6 +32,7 @@ class MusicFS(pyfuse3.Operations):
             raise pyfuse3.FUSEError(exc.errno) from exc
 
     async def getattr(self, inode, ctx=None):
+        """向内核提供属性；目录属性由索引合成，音频属性取自源文件。"""
         node = self.node(inode)
         entry = pyfuse3.EntryAttributes()
         entry.st_ino = inode
@@ -67,6 +68,7 @@ class MusicFS(pyfuse3.Operations):
         return entry
 
     async def lookup(self, parent_inode, name, ctx=None):
+        """把一个目录项解析为文件对象，再返回该对象的属性。"""
         parent = self.node(parent_inode)
         if parent.path is not None:
             raise pyfuse3.FUSEError(errno.ENOTDIR)
@@ -83,6 +85,7 @@ class MusicFS(pyfuse3.Operations):
         return await self.getattr(inode, ctx)
 
     async def opendir(self, inode, ctx=None):
+        """虚拟目录没有底层目录 fd，直接用 inode 作为目录句柄。"""
         if self.node(inode).path is not None:
             raise pyfuse3.FUSEError(errno.ENOTDIR)
         return inode
@@ -129,13 +132,18 @@ class MusicFS(pyfuse3.Operations):
             raise pyfuse3.FUSEError(errno.EBADF)
         if off < 0 or size < 0:
             raise pyfuse3.FUSEError(errno.EINVAL)
+        data = bytearray()
         try:
-            # pread 不改变共享文件位置；阻塞读取交给工作线程，不阻塞 Trio 请求循环。
-            data = await trio.to_thread.run_sync(os.pread, fh, size, off)
+            # 底层可在 EOF 前短读；FUSE 要求补齐请求，只有真正 EOF 才返回短结果。
+            while len(data) < size:
+                chunk = await trio.to_thread.run_sync(os.pread, fh, size - len(data), off + len(data))
+                if not chunk:
+                    break
+                data.extend(chunk)
         except OSError as exc:
             raise pyfuse3.FUSEError(exc.errno) from exc
         logging.debug("read fh=%s offset=%s size=%s returned=%s", fh, off, size, len(data))
-        return data
+        return bytes(data)
 
     async def release(self, fh):
         # 最后一个引用关闭时才释放 fd；退出清理还会兜底关闭未释放的 fd。

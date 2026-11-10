@@ -46,6 +46,17 @@ class CallbackTests(unittest.TestCase):
             self.assertEqual(error.exception.errno, errno.EBADF)
         trio.run(scenario)
 
+    def test_short_reads_are_filled_until_eof(self):
+        async def scenario():
+            info = await self.fs.open(self.inode, os.O_RDONLY)
+            # 模拟底层一次最多返回 7 字节，验证对上层仍返回完整请求或真实 EOF。
+            with patch("musicfs.fs.os.pread",
+                       side_effect=lambda fd, size, off: self.data[off:off + min(size, 7)]):
+                self.assertEqual(await self.fs.read(info.fh, 13, 128), self.data[13:141])
+                self.assertEqual(await self.fs.read(info.fh, len(self.data) - 4, 128), self.data[-4:])
+            await self.fs.release(info.fh)
+        trio.run(scenario)
+
     def test_read_only_flags(self):
         async def scenario():
             for flags in [os.O_WRONLY, os.O_RDWR, os.O_RDONLY | os.O_TRUNC, os.O_RDONLY | os.O_APPEND]:

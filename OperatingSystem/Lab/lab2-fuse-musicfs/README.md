@@ -2,7 +2,7 @@
 
 MusicFS 把 JSON 中的音乐元数据组织成只读目录。三个分类入口读取同一份原始音频，不复制文件、不修改标签、不分析音频。
 
-已在 WSL2 Ubuntu 中通过 **30 项测试，其中 11 项是真实挂载集成测试**，记录见 [evidence/tests.log](evidence/tests.log)。另已对本机选取的 **8 个真实音频（7 WAV＋1 MP3，约 67 MiB）**完成只读挂载与字节一致性验证；音频解码、播放器播放和 FLAC 尚未验证。
+已在 WSL2 Ubuntu 中通过 **31 项测试，其中 11 项是真实挂载集成测试**，记录见 [evidence/tests.log](evidence/tests.log)。另已对本机选取的 **12 个真实音频（11 WAV＋1 MP3，101.72 MiB）**完成只读挂载与字节一致性验证；音频解码、播放器播放和 FLAC 尚未验证。
 
 本项目不调用在线音乐平台或其他网络服务。JSON 保存分类元数据，音频文件保存实际内容；FUSE/pyfuse3 和 `os.pread` 是本地编程接口，不是网络服务 API。
 
@@ -33,7 +33,7 @@ mkdir -p ~/musicfs-mnt
 python -m musicfs --metadata demo/metadata.json --source-root demo/audio ~/musicfs-mnt --debug
 ```
 
-本次交付已生成 `demo/`，可直接使用；再次执行生成命令时换一个空输出目录。挂载点必须为空，不得与音频根目录互相包含，也不能是已有挂载。
+合成 demo/ 是可重建内容，整理后不随正式项目保留；首次运行执行上面的生成命令即可。挂载点必须为空，不得与音频根目录互相包含，也不能是已有挂载。
 
 第二个 Ubuntu 终端中查看：
 
@@ -60,7 +60,7 @@ fusermount3 -u ~/musicfs-mnt
 
 ## 2. JSON 与分类规则
 
-参考 [examples/metadata.json](examples/metadata.json)：
+最小格式如下（合成测试数据由 tools/make_demo.py 自包含生成）：
 
 ```json
 [
@@ -95,7 +95,9 @@ JSON 的格式、字段、重复记录和越界路径错误会阻止挂载。缺
 
 ## 3. 代码之间怎样联系
 
-建议按此顺序读，详细讲解及俄语回答见 [学习与答辩](LEARNING_zh_ru.md)。
+系统学习入口：[FUSE / libfuse 学习笔记](FUSE_libfuse_学习笔记.md)。最新对照结论与剩余问题见 [2026-11-09 核对记录](REQUIREMENTS_REVIEW_20261109.md)。
+
+建议按此顺序读，详细讲解及俄语回答见 [中俄学习与答辩笔记](FUSE_libfuse_学习笔记.md)。
 
 1. [catalog.py](musicfs/catalog.py)：校验 JSON，建立 `inode → Node` 表和目录的 `name → inode` 表。它不导入 FUSE，便于单独理解和测试。
 2. [fs.py](musicfs/fs.py)：回调查询上述表，把 `open/read/release` 转成操作系统的只读打开、`pread`、关闭操作。
@@ -108,10 +110,10 @@ JSON 的格式、字段、重复记录和越界路径错误会阻止挂载。缺
 在已激活虚拟环境、项目根目录下运行：
 
 ```bash
-# 19 项目录/回调测试；11 项真实挂载测试明确跳过。
+# 20 项目录/回调测试；11 项真实挂载测试明确跳过。
 python -m unittest discover -s tests -v
 
-# 全部 30 项，包含真实挂载。仅操作 /tmp 中的临时合成音频。
+# 全部 31 项，包含真实挂载。仅操作 /tmp 中的临时合成音频。
 MUSICFS_INTEGRATION=1 python -m unittest discover -s tests -v
 ```
 
@@ -122,7 +124,7 @@ MUSICFS_INTEGRATION=1 python -m unittest discover -s tests -v
 - [结构化演示结果](evidence/summary.json)
 - [环境版本](evidence/environment.txt)及 [Python 包版本](evidence/python-packages.txt)
 - [挂载读取日志](evidence/mount.log)
-- [俄语报告源文件](report_musicfs.typ) / [PDF](report_musicfs.pdf)
+- [俄语报告源文件](report_musicfs.typ) / [正式 PDF](report_musicfs_final.pdf)
 
 ## 5. 排错和边界
 
@@ -142,9 +144,9 @@ MUSICFS_INTEGRATION=1 python -m unittest discover -s tests -v
 
 ## 6. 本机真实音频演示
 
-从 `E:\preset` 选择 6 个采样，从 `E:\project\AUTUMN` 选择 `I Know.wav` 与 `I Know.mp3`，总计 8 个、67.06 MiB。没有复制音频或改写标签；本地清单位于 [local-data/metadata.json](local-data/metadata.json)，验证结果见 [local-data/validation.json](local-data/validation.json)。`local-data/` 已忽略 Git 提交，源音频也不随代码提交。
+从 `E:\preset` 选择 10 个采样/伴奏循环，从 `E:\project\AUTUMN` 选择 `I Know.wav` 与 `I Know.mp3`，总计 12 个、101.72 MiB。没有复制音频或改写标签；本地清单位于 [local-data/metadata.json](local-data/metadata.json)，验证结果见 [local-data/validation.json](local-data/validation.json)。`local-data/` 已忽略 Git 提交，源音频也不随代码提交。
 
-三个旋律的 BPM/调性来自文件名，未进行音频测量；鼓、bass 和歌曲的 BPM/调性保持未知。`type` 是依据文件名和目录语境人工填写的用途标签。JSON 的 `metadata_source` 只用于说明来源，文件系统不依赖它。
+原有三个旋律的 BPM/调性来自文件名；新增 real09–real12 为四个伴奏循环，BPM 分别为 144、150、153、160，来自文件名，没有可信调性标签，key 保留 null。上述标签未进行音频测量；鼓、bass 和歌曲的 BPM/调性保持未知。`type` 是依据文件名和目录语境人工填写的用途标签。JSON 的 `metadata_source` 只用于说明来源，文件系统不依赖它。
 
 Ubuntu 中运行：
 
@@ -155,17 +157,17 @@ mkdir -p ~/musicfs-mnt
 python -m musicfs --metadata local-data/metadata.json --source-root /mnt/e ~/musicfs-mnt --debug
 ```
 
-`/mnt/e` 作为两个来源的公共根目录，只加载 JSON 中的 8 条记录，不扫描或展示整个 E 盘。修改清单后重新挂载即可。
+`/mnt/e` 作为两个来源的公共根目录，只加载 JSON 中的 12 条记录，不扫描或展示整个 E 盘。修改清单后重新挂载即可。
 
 可重复执行独立的真实音频检查：
 
 ```bash
-python tools/check_local_audio.py
+python -m tools.check_local_audio
 ```
 
-该脚本限制为指定两处目录、最多 8 个文件及 100 MiB；逐一比较三个虚拟入口的 inode、完整 SHA-256、首部/中间/尾部/EOF 读取，验证写入被拒绝和卸载完成。验证前后源文件内容哈希、大小和修改时间一致。它只测试文件字节访问，不启动播放器或解码器。
+该脚本限制为指定两处目录、最多 12 个文件及 128 MiB；逐一比较三个虚拟入口的 inode、完整 SHA-256、首部/中间/尾部/EOF 读取，验证写入被拒绝和卸载完成。验证前后源文件内容哈希、大小和修改时间一致。它只测试文件字节访问，不启动播放器或解码器。
 
-现有 PDF 保留 11 月 1 日合成样例测试批次的记录；本轮真实音频补充以本节和 `local-data/validation.json` 为准。
+PDF 已同步真实音频读取验证；对应汇总见 evidence/local-audio-summary.json，详细清单与结果保存在 local-data/。
 
 ## 7. 官方资料
 
@@ -175,3 +177,17 @@ python tools/check_local_audio.py
 - [pyfuse3 回调接口](https://pyfuse3.readthedocs.io/en/stable/operations.html)
 - [官方只读示例](https://pyfuse3.readthedocs.io/en/stable/example.html)
 - [课程报告规范](https://github.com/secs-dev/os-course/blob/main/doc/report.md)
+
+## 正式目录
+
+- musicfs/：三部分核心实现，关键处有中文解释。
+- tests/、tools/：自动验证、真实音频检查与可复现样例生成。
+- local-data/：本机真实音频元数据、检查结果和日志；原音频保留在 E 盘。
+- evidence/：报告引用的正式验证证据和已知问题记录。
+- 根目录：启动脚本、项目配置、报告源文件/PDF、中俄笔记和核对记录。
+
+临时 PDF 图片、已生成的 demo、IDE 配置、安装元数据和 Python 缓存已清理。程序运行后可能再次产生缓存，属于可清理内容。
+
+当前正式报告为 report_musicfs_final.pdf；旧版 PDF 已清理。
+
+最新正式验证：36 个入口的属性与完整哈希、144 次范围读取、12 次 cp 副本哈希全部通过。实测发现并修复了 EOF 前短读未补齐的问题，错误读取日志在 evidence/formal-short-read.log，最终结果在 evidence/local-audio-summary.json；完整回归为 31 项通过。

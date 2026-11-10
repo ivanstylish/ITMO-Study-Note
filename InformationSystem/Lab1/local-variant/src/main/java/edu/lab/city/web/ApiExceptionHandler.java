@@ -13,9 +13,12 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.*;
 
 // @RestControllerAdvice：集中处理控制器异常，并将结果作为 JSON 响应返回。
+// @RestControllerAdvice: централизованно обрабатывает исключения контроллеров и возвращает результаты в виде JSON-ответа.
 @RestControllerAdvice
 public class ApiExceptionHandler {
     // @ExceptionHandler：指定此方法处理的异常类型，用于统一转换 HTTP 状态与错误消息。
+    // @ExceptionHandler: Указывает тип исключения, которое обрабатывает данный метод;
+    // используется для стандартизации сопоставления исключений с HTTP-кодами состояния и сообщениями об ошибках.
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ResponseEntity<?> validation(MethodArgumentNotValidException e) {
         Map<String, String> fields = new LinkedHashMap<>();
@@ -90,6 +93,7 @@ public class ApiExceptionHandler {
     }
 
     // 统一组装错误响应，避免每个分支重复嵌套 ResponseEntity、body 和 Map.of。
+    // Унифицировать формирование ответов об ошибках, чтобы избежать избыточной вложенности `ResponseEntity`, `body` и `Map.of` в каждой ветке.
     private ResponseEntity<?> error(int status, String message) {
         return ResponseEntity.status(status).body(Map.of("message", message));
     }

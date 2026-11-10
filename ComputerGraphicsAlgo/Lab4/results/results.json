@@ -182,6 +182,79 @@
       0.32699165948093534
     ]
   ],
+  "input_matches_original": true,
+  "original_rgb": [
+    [
+      0.25261081129944557,
+      0.3104552518397449,
+      0.32699165948093534
+    ],
+    [
+      0.25261081129944557,
+      0.3104552518397449,
+      0.32699165948093534
+    ]
+  ],
+  "image_roles": {
+    "image_A": "reconstructed spectra",
+    "image_1": "original spectra, same white scene",
+    "image_2": "direct CURRENT input CIE RGB, same white scene"
+  },
+  "control_comparison": [
+    {
+      "name": "P1",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "z_mm": 950.0,
+      "radiance_A": 17.550245900741096,
+      "radiance_1": 27.877195005561244,
+      "luminance_A": 5719.544838736487,
+      "luminance_1": 5719.5448387364895,
+      "luminance_2": 5719.544838736489
+    },
+    {
+      "name": "P2",
+      "x_mm": -209.99999999999994,
+      "y_mm": 0.0,
+      "z_mm": 880.0,
+      "radiance_A": 14.14452463066496,
+      "radiance_1": 22.467472741983674,
+      "luminance_A": 4609.635859534295,
+      "luminance_1": 4609.6358595342945,
+      "luminance_2": 4609.6358595342945
+    },
+    {
+      "name": "P3",
+      "x_mm": 209.99999999999994,
+      "y_mm": 0.0,
+      "z_mm": 880.0,
+      "radiance_A": 17.121866301661957,
+      "radiance_1": 27.196747467249025,
+      "luminance_A": 5579.93788742707,
+      "luminance_1": 5579.937887427069,
+      "luminance_2": 5579.93788742707
+    }
+  ],
+  "geometry_check": [
+    {
+      "source": "L1",
+      "distance_m": 1.0897247358851685,
+      "theta_deg": 46.508480654908,
+      "sigma_deg": 46.508480654908,
+      "emitted_intensity_w_sr": 68.82472016116853,
+      "irradiance_w_m2": 39.889196675900266,
+      "lambert_factor_w_m2_sr": 12.697125653868655
+    },
+    {
+      "source": "L2",
+      "distance_m": 0.8874119674649424,
+      "theta_deg": 42.906386214890446,
+      "sigma_deg": 42.906386214890446,
+      "emitted_intensity_w_sr": 51.27269145353001,
+      "irradiance_w_m2": 47.68959435626102,
+      "lambert_factor_w_m2_sr": 15.180069351692591
+    }
+  ],
   "method": "lecture 4 pp.37-42: C a = M RGB, basis = CIE x_bar,y_bar,z_bar",
   "material": "white Lambertian, kd(lambda)=1, RGB kd=(1,1,1)",
   "units": {
@@ -192,14 +265,17 @@
   },
   "comparison": {
     "image_1": {
-      "rgb_absolute_rmse": 4.8212557252092246e-15,
+      "rgb_absolute_rmse": 4.8201151482955674e-15,
       "monitor_mae": 0.0,
-      "monitor_max": 0
+      "monitor_max": 0,
+      "luminance_rmse_cd_m2": 1.830549548775016e-12,
+      "radiance_rmse_w_m2_sr": 8.020177540925518
     },
     "image_2": {
-      "rgb_absolute_rmse": 2.581762015274112e-15,
+      "rgb_absolute_rmse": 2.5810806808040824e-15,
       "monitor_mae": 0.0,
-      "monitor_max": 0
+      "monitor_max": 0,
+      "luminance_rmse_cd_m2": 1.2274441086695817e-12
     }
   },
   "spectrum_metrics": [
@@ -225,15 +301,15 @@
       "visible": true,
       "radiance_w_m2_sr": 17.550245900741096,
       "luminance_cd_m2": 5719.544838736487,
-      "xyz_X": 7.956674361162714,
+      "xyz_X": 7.956674361162713,
       "xyz_Y": 8.374150569160303,
-      "xyz_Z": 9.111000369937067,
-      "rgb1_R": 7.042080847107677,
+      "xyz_Z": 9.111000369937063,
+      "rgb1_R": 7.042080847107675,
       "rgb1_G": 8.654621596037192,
-      "rgb1_B": 9.115610256542116,
-      "rgb2_R": 7.042080847107679,
-      "rgb2_G": 8.654621596037193,
-      "rgb2_B": 9.115610256542116
+      "rgb1_B": 9.115610256542112,
+      "rgb2_R": 7.042080847107677,
+      "rgb2_G": 8.654621596037192,
+      "rgb2_B": 9.115610256542114
     },
     {
       "name": "P2",
@@ -259,17 +335,17 @@
       "y_mm": 0.0,
       "z_mm": 880.0,
       "visible": true,
-      "radiance_w_m2_sr": 17.121866301661953,
-      "luminance_cd_m2": 5579.937887427069,
-      "xyz_X": 7.762461870231504,
-      "xyz_Y": 8.16974800501767,
+      "radiance_w_m2_sr": 17.121866301661957,
+      "luminance_cd_m2": 5579.93788742707,
+      "xyz_X": 7.762461870231506,
+      "xyz_Y": 8.169748005017672,
       "xyz_Z": 8.888612221773355,
-      "rgb1_R": 6.870192442407912,
+      "rgb1_R": 6.870192442407916,
       "rgb1_G": 8.443373084166742,
       "rgb1_B": 8.893109586799685,
-      "rgb2_R": 6.870192442407917,
-      "rgb2_G": 8.443373084166737,
-      "rgb2_B": 8.893109586799683
+      "rgb2_R": 6.870192442407918,
+      "rgb2_G": 8.443373084166739,
+      "rgb2_B": 8.893109586799685
     }
   ],
   "statistics": {
@@ -280,26 +356,26 @@
     },
     "luminance_1_cd_m2": {
       "minimum": 0.0,
-      "maximum": 6308.775027087213,
+      "maximum": 6308.775027087211,
       "mean": 4190.7145156148545
     },
     "luminance_2_cd_m2": {
       "minimum": 0.0,
-      "maximum": 6308.775027087209,
+      "maximum": 6308.7750270872075,
       "mean": 4190.714515614854
     },
     "visible_pixel_count": 172448,
     "sphere_sampled_radiance_w_m2_sr": {
       "minimum": 0.0,
-      "maximum": 19.35733128457535
+      "maximum": 19.357331284575352
     },
     "sphere_sampled_luminance_cd_m2": {
       "minimum": 0.0,
-      "maximum": 6308.465697094883
+      "maximum": 6308.465697094884
     },
     "sphere_sampling": "181 polar angles x 360 azimuths, poles included"
   },
-  "shared_gain": 0.10822357603925567,
+  "shared_gain": 0.10822357603925571,
   "comparison_policy": "same white sphere, input I0 scale, textbook Lambert model and shared exposure",
   "theory_sources": {
     "reconstruction": "mis_lect04_11.pdf pp.37-42, 3281.pdf printed p.66 Fig.4.6",
@@ -313,5 +389,16 @@
     62.95556600023776,
     44.068896200166435
   ],
-  "original_lab3_material": "green, retained separately in reference_lab3, not a controlled comparison"
+  "original_lab3_reference": {
+    "location": "lab4_spectrum/assets/lab3_image_*.png",
+    "material": "original green reflectance",
+    "incidence_power": 2,
+    "monitor_policy": "CIE RGB -> XYZ -> linear sRGB, shared gain, gamut clipping, sRGB transfer, round 255",
+    "image_sha256": {
+      "image_1.png": "46cc2dc825ac4b02a6156a0260e8e2315250e660dc942cbd7a94f970985b62b0",
+      "image_2.png": "46cc2dc825ac4b02a6156a0260e8e2315250e660dc942cbd7a94f970985b62b0"
+    },
+    "interpretation": "Different material, illumination and monitor encoding. Not reconstruction error."
+  },
+  "diagram_convention": "Source I=I0*cos(theta), I_lambda=I*s. Textbook receiver E=I*cos(sigma)/r_m^2, L=kd*E/pi. The task diagram repeats cos(sigma) in f, not applied twice."
 }

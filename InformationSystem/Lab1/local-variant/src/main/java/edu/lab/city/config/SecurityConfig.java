@@ -30,6 +30,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain security(HttpSecurity http) throws Exception {
         // 登录页和注册入口允许匿名访问；业务接口仍要求登录，并保留 CSRF 保护。
+        // Страницы входа и регистрации допускают анонимный доступ; однако рабочие эндпоинты по-прежнему требуют аутентификации и сохраняют защиту от CSRF.
         http.authorizeHttpRequests(auth -> auth
             .requestMatchers(
                 "/login", "/auth.html", "/auth/**", "/auth.css", "/auth.js",

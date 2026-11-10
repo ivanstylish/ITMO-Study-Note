@@ -6,3 +6,4 @@ build/
 demo/
 tmp/
 local-data/
+.idea/

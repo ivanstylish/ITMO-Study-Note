@@ -1,0 +1,109 @@
+DEBUG Initializing pyfuse3
+DEBUG Calling fuse_session_new
+DEBUG Calling fuse_session_mount
+INFO mounted 8 files at /tmp/musicfs-local-lhogrolh/mnt
+DEBUG pyfuse-02: No tasks waiting, starting another worker (now 2 total).
+DEBUG open inode=2 fh=11
+DEBUG read fh=11 offset=0 size=131072 returned=65512
+DEBUG read fh=11 offset=61440 size=131072 returned=65512
+DEBUG read fh=11 offset=122880 size=131072 returned=65512
+DEBUG read fh=11 offset=184320 size=131072 returned=65512
+DEBUG read fh=11 offset=245760 size=131072 returned=65512
+DEBUG read fh=11 offset=307200 size=131072 returned=65512
+DEBUG read fh=11 offset=368640 size=131072 returned=65512
+DEBUG read fh=11 offset=430080 size=131072 returned=65512
+DEBUG read fh=11 offset=491520 size=131072 returned=65512
+DEBUG read fh=11 offset=552960 size=131072 returned=65512
+DEBUG read fh=11 offset=614400 size=131072 returned=65512
+DEBUG read fh=11 offset=675840 size=131072 returned=65512
+DEBUG read fh=11 offset=737280 size=131072 returned=65512
+DEBUG read fh=11 offset=798720 size=131072 returned=65512
+DEBUG read fh=11 offset=860160 size=131072 returned=65512
+DEBUG read fh=11 offset=921600 size=131072 returned=65512
+DEBUG read fh=11 offset=983040 size=131072 returned=65512
+DEBUG read fh=11 offset=1044480 size=16384 returned=16384
+DEBUG pyfuse-03: No tasks waiting, starting another worker (now 3 total).
+DEBUG read fh=11 offset=1060864 size=32768 returned=32768
+DEBUG read fh=11 offset=1093632 size=65536 returned=65512
+DEBUG read fh=11 offset=1159168 size=131072 returned=65512
+DEBUG pyfuse-04: too many idle tasks (3 total, 2 waiting), terminating.
+DEBUG pyfuse-04: terminated
+DEBUG read fh=11 offset=1155072 size=131072 returned=65512
+DEBUG read fh=11 offset=1216512 size=90112 returned=65512
+DEBUG read fh=11 offset=1277952 size=28672 returned=24814
+DEBUG open inode=2 fh=11
+DEBUG read fh=11 offset=0 size=16384 returned=16384
+DEBUG read fh=11 offset=651264 size=8192 returned=8192
+DEBUG open inode=2 fh=11
+DEBUG pyfuse-02: No tasks waiting, starting another worker (now 3 total).
+DEBUG read fh=11 offset=16384 size=131072 returned=65512
+DEBUG read fh=11 offset=147456 size=131072 returned=65512
+DEBUG pyfuse-02: too many idle tasks (3 total, 2 waiting), terminating.
+DEBUG pyfuse-02: terminated
+DEBUG read fh=11 offset=77824 size=131072 returned=65512
+DEBUG read fh=11 offset=139264 size=131072 returned=65512
+DEBUG read fh=11 offset=200704 size=131072 returned=65512
+DEBUG read fh=11 offset=262144 size=131072 returned=65512
+DEBUG read fh=11 offset=323584 size=131072 returned=65512
+DEBUG read fh=11 offset=385024 size=131072 returned=65512
+DEBUG read fh=11 offset=446464 size=131072 returned=65512
+DEBUG read fh=11 offset=507904 size=131072 returned=65512
+DEBUG read fh=11 offset=569344 size=131072 returned=65512
+DEBUG read fh=11 offset=630784 size=131072 returned=65512
+DEBUG read fh=11 offset=692224 size=131072 returned=65512
+DEBUG read fh=11 offset=753664 size=131072 returned=65512
+DEBUG read fh=11 offset=815104 size=131072 returned=65512
+DEBUG read fh=11 offset=876544 size=131072 returned=65512
+DEBUG read fh=11 offset=937984 size=131072 returned=65512
+DEBUG read fh=11 offset=999424 size=131072 returned=65512
+DEBUG read fh=11 offset=1044480 size=16384 returned=16384
+DEBUG pyfuse-05: No tasks waiting, starting another worker (now 3 total).
+DEBUG read fh=11 offset=1060864 size=32768 returned=32768
+DEBUG read fh=11 offset=1093632 size=65536 returned=65512
+DEBUG read fh=11 offset=1159168 size=131072 returned=65512
+DEBUG pyfuse-06: too many idle tasks (3 total, 2 waiting), terminating.
+DEBUG pyfuse-06: terminated
+DEBUG read fh=11 offset=1155072 size=131072 returned=65512
+DEBUG read fh=11 offset=1216512 size=90112 returned=65512
+DEBUG read fh=11 offset=1277952 size=28672 returned=24814
+DEBUG open inode=2 fh=11
+DEBUG read fh=11 offset=0 size=16384 returned=16384
+DEBUG read fh=11 offset=651264 size=8192 returned=8192
+DEBUG open inode=2 fh=11
+DEBUG pyfuse-05: No tasks waiting, starting another worker (now 3 total).
+DEBUG read fh=11 offset=147456 size=131072 returned=65512
+DEBUG read fh=11 offset=16384 size=131072 returned=65512
+DEBUG pyfuse-03: too many idle tasks (3 total, 2 waiting), terminating.
+DEBUG pyfuse-03: terminated
+DEBUG read fh=11 offset=208896 size=131072 returned=65512
+DEBUG read fh=11 offset=270336 size=131072 returned=65512
+DEBUG read fh=11 offset=331776 size=131072 returned=65512
+DEBUG read fh=11 offset=393216 size=131072 returned=65512
+DEBUG read fh=11 offset=454656 size=131072 returned=65512
+DEBUG read fh=11 offset=516096 size=131072 returned=65512
+DEBUG read fh=11 offset=577536 size=131072 returned=65512
+DEBUG read fh=11 offset=638976 size=131072 returned=65512
+DEBUG read fh=11 offset=700416 size=131072 returned=65512
+DEBUG read fh=11 offset=761856 size=131072 returned=65512
+DEBUG read fh=11 offset=823296 size=131072 returned=65512
+DEBUG read fh=11 offset=884736 size=131072 returned=65512
+DEBUG read fh=11 offset=946176 size=131072 returned=65512
+DEBUG read fh=11 offset=1007616 size=131072 returned=65512
+DEBUG read fh=11 offset=1044480 size=16384 returned=16384
+DEBUG pyfuse-07: No tasks waiting, starting another worker (now 3 total).
+DEBUG read fh=11 offset=1060864 size=32768 returned=32768
+DEBUG read fh=11 offset=1093632 size=65536 returned=65512
+DEBUG read fh=11 offset=1159168 size=131072 returned=65512
+DEBUG pyfuse-08: too many idle tasks (3 total, 2 waiting), terminating.
+DEBUG pyfuse-08: terminated
+DEBUG read fh=11 offset=1155072 size=131072 returned=65512
+DEBUG read fh=11 offset=1216512 size=90112 returned=65512
+DEBUG read fh=11 offset=1277952 size=28672 returned=24814
+INFO received signal 15; stopping
+DEBUG FUSE fd about to be closed.
+DEBUG pyfuse-07: terminated
+DEBUG FUSE session exit flag set while waiting for FUSE fd to become readable.
+DEBUG pyfuse-05: terminated
+DEBUG Calling fuse_session_unmount
+DEBUG Calling fuse_session_destroy
+INFO unmounted; all source handles closed

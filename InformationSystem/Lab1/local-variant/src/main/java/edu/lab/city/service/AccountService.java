@@ -29,10 +29,15 @@ public class AccountService implements UserDetailsService {
     }
 
     // @Override：声明此方法实现或重写父类型方法，让编译器检查方法签名。
+    // @Override: Объявляет, что данный метод реализует или переопределяет метод родительского типа, что позволяет компилятору проверить сигнатуру метода.
     @Override
     // @Transactional：在事务中执行方法；readOnly=true 标记只读意图，提交与回滚由事务管理器处理。
+    // @Transactional: выполняет метод в рамках транзакции; параметр `readOnly=true` указывает на то,
+    // что операция предназначена только для чтения, при этом фиксация (commit) и откат (rollback) транзакции выполняются менеджером транзакций.
     @Transactional(readOnly = true)
     // Spring Security 登录时从数据库读取账号；不再使用内存中的演示用户。
+    // Теперь Spring Security при входе в систему получает учетные записи пользователей из базы данных, 
+    // а не использует демонстрационных пользователей, хранящихся в оперативной памяти.
     public UserDetails loadUserByUsername(String username) {
         var account = users.findByUsername(normalize(username))
             .orElseThrow(() -> new UsernameNotFoundException("Неверный логин или пароль."));

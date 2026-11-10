@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 // @Repository：声明数据访问层 Spring Bean；此注解不代表使用了 Spring Data Repository。
+// @Repository: объявляет Spring-бин, относящийся к уровню доступа к данным; данная аннотация не подразумевает использование Spring Data Repository.
 @Repository
 public class SpecialRepository {
     // 五个特殊操作只调用 PostgreSQL 函数，计算规则仍保留在数据库层。

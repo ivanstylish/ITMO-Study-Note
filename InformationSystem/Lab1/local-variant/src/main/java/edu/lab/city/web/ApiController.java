@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import java.util.*;
 
-// @RestController：声明返回响应体的 MVC 控制器；本项目由 Jackson 将结果转换为 JSON。
+// @RestController：声明返回响应体的 MVC 控制器
+// @RestController: объявляет MVC-контроллер, который возвращает тело ответа
 @RestController
 // @RequestMapping：设置此控制器所有接口共用的 URL 前缀。
+// @RequestMapping: задаёт общий префикс URL для всех эндпоинтов в этом контроллере.
 @RequestMapping("/api")
 public class ApiController {
     private final CityService cities;
@@ -26,6 +28,7 @@ public class ApiController {
     }
 
     // @GetMapping：将 HTTP GET 请求映射到此方法，通常用于查询数据或打开页面。
+    // @GetMapping: сопоставляет HTTP-запросы типа GET с этим методом; обычно используется для получения данных или открытия страниц.
     @GetMapping("/session")
     public Map<String, String> session(Principal principal, CsrfToken token) {
         return Map.of(
@@ -43,6 +46,7 @@ public class ApiController {
     @GetMapping("/cities")
     public Page<City> list(
         // @RequestParam：从 URL 查询参数读取值；defaultValue 指定未提供参数时的默认值。
+        // @RequestParam: считывает значения из параметров запроса в URL; `defaultValue` задает значение по умолчанию, которое используется, если параметр не передан.
         @RequestParam(defaultValue = "0") int page,
         @RequestParam(defaultValue = "10") int size,
         @RequestParam(defaultValue = "") String column,
@@ -54,6 +58,7 @@ public class ApiController {
 
     @GetMapping("/cities/{id}")
     // @PathVariable：读取 URL 路径占位符的值，例如 cities/{id} 中的 id。
+    // @PathVariable: считывает значение заполнителя в пути URL — например, «id» в «cities/{id}».
     public City city(@PathVariable long id) {
         return cities.get(City.class, id);
     }
@@ -62,11 +67,13 @@ public class ApiController {
     @PostMapping("/cities")
     // @Valid：触发关联对象或请求 DTO 内部的校验约束，而不是只检查外层引用。
     // @RequestBody：把 HTTP 请求体中的 JSON 解析成参数对象。
+    // @RequestBody: преобразует JSON из тела HTTP-запроса в объект-параметр.
     public City addCity(@Valid @RequestBody CityInput input) {
         return cities.saveCity(null, input);
     }
 
     // @PutMapping：将 HTTP PUT 请求映射到此方法，用于提交对象修改。
+    // @PutMapping: Сопоставляет HTTP-запросы PUT с этим методом; используется для отправки изменений объекта.
     @PutMapping("/cities/{id}")
     public City editCity(@PathVariable long id, @Valid @RequestBody CityInput input) {
         return cities.saveCity(id, input);

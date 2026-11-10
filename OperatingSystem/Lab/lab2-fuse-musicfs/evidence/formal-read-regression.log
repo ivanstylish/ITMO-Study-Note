@@ -1,0 +1,14 @@
+test_attributes_and_dot_lookup (test_fs.CallbackTests) ... ok
+test_close_cleans_unreleased_handles (test_fs.CallbackTests) ... ok
+test_missing_source_and_existing_handle (test_fs.CallbackTests) ... ok
+test_mountpoint_validation (test_fs.CallbackTests) ... ok
+test_read_offsets_eof_and_release (test_fs.CallbackTests) ... ok
+test_read_only_flags (test_fs.CallbackTests) ... ok
+test_readdir_resumes_after_full_buffer (test_fs.CallbackTests) ... ok
+test_short_reads_are_filled_until_eof (test_fs.CallbackTests) ... ok
+test_symlink_replacement_cannot_escape (test_fs.CallbackTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.018s
+
+OK

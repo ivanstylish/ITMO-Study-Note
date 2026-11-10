@@ -12,7 +12,12 @@ def make_demo(output):
     output = Path(output)
     if output.exists() and any(output.iterdir()):
         raise ValueError("output must be empty; refusing to overwrite files")
-    records = json.loads((Path(__file__).resolve().parents[1] / "examples/metadata.json").read_text(encoding="utf-8"))
+    # 测试样例自包含，清理 examples 目录后仍可重建，不依赖真实音频库。
+    records = [
+        dict(id="s001", path="drums/drum_loop.wav", bpm=124.5, key="A_minor", type="drum"),
+        dict(id="s002", path="bass/bass_line.wav", bpm=125, key=None, type="bass"),
+        dict(id="s003", path="songs/夜行 трек.wav", bpm=90, key="C_major", type="song"),
+    ]
     for index, record in enumerate(records):
         path = output / "audio" / record["path"]
         path.parent.mkdir(parents=True, exist_ok=True)

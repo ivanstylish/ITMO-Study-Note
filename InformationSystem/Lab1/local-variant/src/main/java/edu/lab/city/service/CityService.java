@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.*;
 
 // @Service：声明业务层 Spring Bean，由容器创建并注入其依赖。
+// @Service: Объявляет Spring-бин бизнес-уровня, который создается контейнером с внедрением в него зависимостей.
 @Service
 // @Transactional：在事务中执行方法；readOnly=true 标记只读意图，提交与回滚由事务管理器处理。
 @Transactional
@@ -53,6 +54,7 @@ public class CityService {
 
     private void version(Long actual, Long expected) {
         // 检查用户打开表单时的版本；过期表单不能覆盖其他用户的新修改。
+        // Проверяйте версию формы при её открытии пользователем; устаревшая форма не должна перезаписывать новые изменения, внесённые другими пользователями.
         if (expected == null || !expected.equals(actual)) {
             String message = "Object was changed by another user. Close this dialog and reload before editing.";
             throw new ResponseStatusException(HttpStatus.CONFLICT, message);

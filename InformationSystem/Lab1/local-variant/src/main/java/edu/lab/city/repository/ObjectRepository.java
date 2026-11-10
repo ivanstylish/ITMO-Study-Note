@@ -10,9 +10,11 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 // @Repository：声明数据访问层 Spring Bean；此注解不代表使用了 Spring Data Repository。
+// @Repository: объявляет Spring-бин, относящийся к уровню доступа к данным; данная аннотация не подразумевает использование Spring Data Repository.
 @Repository
 public class ObjectRepository {
     // @PersistenceContext：注入关联当前事务持久化上下文的 EntityManager 代理。
+    // @PersistenceContext: внедряет прокси-объект EntityManager, связанный с текущим транзакционным контекстом персистентности.
     @PersistenceContext
     private EntityManager em;
 
@@ -21,7 +23,11 @@ public class ObjectRepository {
     }
 
     public <T> T insert(T object) {
+        // persist()：将 Java 实体纳入 JPA 的持久化上下文（Persistence Context），使其成为受管理的实体，并安排插入数据库。
+        // persist(): добавляет Java-сущность в контекст персистентности JPA, переводя её в состояние «управляемой» (managed) и планируя её вставку в базу данных.
         em.persist(object);
+        // flush()：将持久化上下文中待执行的数据库变更同步到数据库，执行相应的 SQL。
+        // flush(): Синхронизирует ожидающие изменения в базе данных, находящиеся в контексте персистентности, с самой базой данных путем выполнения соответствующих SQL-команд.
         em.flush();
         return object;
     }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 // @Controller：声明 MVC 控制器，可以返回页面名或转发路径。
+// @Controller: Объявляет MVC-контроллер, который может возвращать имя страницы или путь для перенаправления (forwarding path).
 @Controller
 public class AuthController {
     private final AccountService accounts;
@@ -21,6 +22,7 @@ public class AuthController {
     }
 
     // @GetMapping：将 HTTP GET 请求映射到此方法，通常用于查询数据或打开页面。
+    // @GetMapping: сопоставляет HTTP-запросы типа GET с этим методом; обычно используется для получения данных или открытия страниц.
     @GetMapping("/login")
     public String login() {
         return "forward:/auth.html";
@@ -28,6 +30,7 @@ public class AuthController {
 
     @GetMapping("/auth/csrf")
     // @ResponseBody：将返回值直接写入 HTTP 响应体，而不是作为页面名称。
+    // @ResponseBody: записывает возвращаемое значение непосредственно в тело HTTP-ответа, вместо того чтобы интерпретировать его как имя страницы.
     @ResponseBody
     public Map<String, String> csrf(CsrfToken token) {
         return Map.of("token", token.getToken(), "header", token.getHeaderName());

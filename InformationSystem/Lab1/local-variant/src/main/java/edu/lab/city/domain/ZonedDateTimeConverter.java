@@ -8,6 +8,7 @@ import java.time.*;
 
 /** 保存同一时间点；从数据库读取时统一还原为 UTC 时区。 */
 // @Converter：注册 JPA 类型转换器；autoApply=true 自动应用于匹配的 Java 字段类型。
+// @Converter: регистрирует JPA-конвертер типов; установка параметра `autoApply=true` гарантирует, что он будет автоматически применяться к соответствующим типам полей Java.
 @Converter(autoApply = true)
 public class ZonedDateTimeConverter implements AttributeConverter<ZonedDateTime, Timestamp> {
     public Timestamp convertToDatabaseColumn(ZonedDateTime value) {

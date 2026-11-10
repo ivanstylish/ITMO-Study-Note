@@ -80,10 +80,53 @@ class Lab4Tests(unittest.TestCase):
             root = Path(directory)
             metadata = json.loads((root/'results.json').read_text(encoding='utf-8'))
             self.assertEqual(len(metadata['control_points']), 3)
+            self.assertTrue(metadata['input_matches_original'])
+            self.assertEqual(len(metadata['geometry_check']), 2)
+            for name in ('comparison.png', 'scene_geometry.png', 'lab3_comparison.png',
+                         'points_comparison.csv', 'geometry_check.csv'):
+                self.assertTrue((root/name).is_file(), name)
             with np.load(root/'absolute_data.npz') as arrays:
                 np.testing.assert_array_equal(arrays['spectral_A'], self.data['result']['spectral'])
             np.testing.assert_array_equal(np.array(Image.open(root/'image_A.png')), self.data['images'][0])
             self.assertEqual(len((root/'spectra_comparison.csv').read_text(encoding='utf-8-sig').splitlines()), 42)
+
+    def test_edited_rgb_direct_baseline(self):
+        p = replace(white_scene(), width_px=200)
+        from lab4_spectrum.core.color_conversion import scene_rgb
+        data = run(p, 2*scene_rgb(p)[1])
+        self.assertFalse(data['input_matches_original'])
+        self.assertLess(data['comparison']['image_2']['rgb_absolute_rmse'], 1e-10)
+        np.testing.assert_array_equal(data['images'][0], data['images'][2])
+        self.assertGreater(data['comparison']['image_1']['monitor_mae'], 1)
+        ratio = self.data['result']['radiance'][self.data['result']['mask']] / np.maximum(
+            self.data['reference']['radiance'][self.data['result']['mask']], 1e-30)
+        lit = self.data['reference']['radiance'][self.data['result']['mask']] > 0
+        np.testing.assert_allclose(ratio[lit], self.data['spectrum_metrics'][0]['integral'], atol=1e-12)
+
+    def test_display_and_physics_are_separate(self):
+        from lab4_spectrum.core.color_conversion import CIE_RGB_TO_XYZ, XYZ_TO_LINEAR_SRGB, cie_rgb_to_linear_srgb
+        rgb = np.array([[1., 0, 0], [0, 1, 0], [0, 0, 1]])
+        original = rgb.copy()
+        display = cie_rgb_to_linear_srgb(rgb)
+        np.testing.assert_array_equal(rgb, original)
+        np.testing.assert_allclose(display, (XYZ_TO_LINEAR_SRGB @ CIE_RGB_TO_XYZ).T)
+        self.assertFalse(np.allclose(display, rgb))
+        self.assertTrue(np.any(display < 0))
+
+    def test_assignment_geometry_angles(self):
+        from lab4_spectrum.core.geometry import Light, light_geometry
+        point = np.array([0., 0, 1000])
+        light = Light(0, 0, 2000, 100, axis=(0, 0, -1))
+        front = light_geometry(point, light, np.zeros(3))
+        self.assertAlmostEqual(front['emitted_intensity_w_sr'], 100)
+        self.assertAlmostEqual(front['irradiance_w_m2'], 100)
+        self.assertAlmostEqual(front['lambert_factor_w_m2_sr'], 100/np.pi)
+        away = light_geometry(point, replace(light, axis=(0, 0, 1)), np.zeros(3))
+        self.assertEqual(away['irradiance_w_m2'], 0)
+        far = light_geometry(point, replace(light, z_mm=3000), np.zeros(3))
+        self.assertAlmostEqual(far['irradiance_w_m2'], 25)
+        back = light_geometry(-point, light, np.zeros(3))
+        self.assertEqual(back['irradiance_w_m2'], 0)
 
     def test_gui_event_loop(self):
         import tkinter as tk
@@ -108,7 +151,7 @@ class Lab4Tests(unittest.TestCase):
                 self.assertFalse(app.busy)
                 self.assertIsNotNone(app.data)
                 errors.assert_not_called()
-            self.assertEqual(len(app.table.get_children()), 41)
+            self.assertEqual(len(app.table.get_children()), 41 * len(app.lights))
             for tab in app.tabs.tabs():
                 app.tabs.select(tab)
                 root.update()
