@@ -59,9 +59,9 @@
 - [信息系统](../InformationSystem/readme.md) · — 未标记
   - [Lab 1：中俄答辩](../InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md)
 - [软件系统架构](../SoftwareSystemArch/readme.md) · — 未标记
-  - [Lecture 1：软件生命周期](../SoftwareSystemArch/Lecture/lecture1.pdf)
+  - [Lab 2：GoF / GRASP 学习指南](../SoftwareSystemArch/Lab/Lab2/%E5%AE%9E%E9%AA%8C%E4%BA%8C%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97_GoF%E4%B8%8EGRASP.md)
 - [用户界面设计](../UIDesign/readme.md) · — 未标记
-  - [5 分钟演讲稿（中俄）](../UIDesign/HW/02_%E6%BC%94%E8%AE%B2%E7%A8%BF_5%E5%88%86%E9%92%9F_RU_ZH.md)
+  - [5 分钟演讲稿（中俄）](../UIDesign/HW/stage1/02_%E6%BC%94%E8%AE%B2%E7%A8%BF_5%E5%88%86%E9%92%9F_RU_ZH.md)
 
 ## 人工智能与可视化
 
@@ -70,7 +70,7 @@
 - [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) · — 未标记
   - [Lab 1：中俄答辩](../ComputerGraphicsAlgo/Lab1/defense_zh_ru.md)
 - [知识图谱](../KnowledgeGraphs/readme.md) · — 未标记
-  - [语义 Web 技术研讨课](../KnowledgeGraphs/%D0%9A%D0%BE%D0%BF%D0%B8%D1%8F_%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80_%E2%80%9C%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%B2%D0%B5%D0%B1_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%E2%80%9D_1.pdf)
+  - [Step 2：本体与图谱中俄答辩](../KnowledgeGraphs/Step-2/DEFENSE_GUIDE_ZH_RU.md)
 
 ## 语言与表达
 

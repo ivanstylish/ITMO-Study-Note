@@ -8,7 +8,7 @@
 
 [全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [补充资料与速查](#resources)
 
-资料含预科及第二学年内容；不能由文件年份精确推断每份作业所属学期。
+资料包含预科、第二学年练习及大三阅读作业；未明确标注的资料不推断具体学期。
 
 <!-- kb:course-overview:end -->
 
@@ -22,6 +22,7 @@
 
 - [词汇表](words.md)
 - [俄语语法](grammar.md)
+- [大三：代际理论阅读材料](3year/teoriya-pokoleniya-ponyatie-i-harakteristika%20(1).pdf)
 
 ## 学期作业 <a id="assignments"></a>
 
@@ -32,6 +33,7 @@
 | [Homework 3](Homework3.md) | ✓ 已通过 | — |
 | [第二学年练习](2year) | ✓ 已通过 | — |
 | [演示：环太平洋](ppt/%D0%A2%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D1%83%D0%B1%D0%B5%D0%B6.md) | ✓ 已通过 | — |
+| [大三：文本阅读作业](3year/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC.pdf) | — 未标记 | — |
 
 ## 考试内容 <a id="exam"></a>
 

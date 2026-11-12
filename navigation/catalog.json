@@ -668,7 +668,7 @@
       "directory": "RussianLanguage",
       "dashboard": "RussianLanguage/readme.md",
       "kind": "语言课程",
-      "note": "资料含预科及第二学年内容；不能由文件年份精确推断每份作业所属学期。",
+      "note": "资料包含预科、第二学年练习及大三阅读作业；未明确标注的资料不推断具体学期。",
       "assessments": {
         "1": "考查 · Зачёт",
         "2": "考查 · Зачёт",
@@ -688,6 +688,10 @@
           {
             "label": "俄语语法",
             "path": "RussianLanguage/grammar.md"
+          },
+          {
+            "label": "大三：代际理论阅读材料",
+            "path": "RussianLanguage/3year/teoriya-pokoleniya-ponyatie-i-harakteristika (1).pdf"
           }
         ],
         "labs": [],
@@ -728,6 +732,10 @@
             "label": "演示：环太平洋",
             "path": "RussianLanguage/ppt/Тихоокеанский рубеж.md",
             "status": "passed"
+          },
+          {
+            "label": "大三：文本阅读作业",
+            "path": "RussianLanguage/3year/Домашнее_задание_работа_с_текстом.pdf"
           }
         ],
         "answers": []
@@ -2053,7 +2061,7 @@
       "directory": "ComputerGraphicsAlgo",
       "dashboard": "ComputerGraphicsAlgo/readme.md",
       "kind": "专业课程",
-      "note": "按实验编号查看任务书、实现、报告与答辩；已收录 Lab 1–3。",
+      "note": "已收录 Lab 1–5；各实验按已有任务书、实现、报告和答辩资料列出。",
       "assessments": {
         "5": "考查 · Зачёт"
       },
@@ -2092,14 +2100,46 @@
             "status": "unmarked"
           },
           {
-            "label": "Lab 3：任务书与色彩数据",
-            "path": "ComputerGraphicsAlgo/Lab3"
+            "label": "Lab 3：光谱与色彩球体",
+            "path": "ComputerGraphicsAlgo/Lab3",
+            "links": [
+              {
+                "label": "实验说明",
+                "path": "ComputerGraphicsAlgo/Lab3/README.md"
+              },
+              {
+                "label": "报告",
+                "path": "ComputerGraphicsAlgo/Lab3/lab3_report.pdf"
+              }
+            ]
+          },
+          {
+            "label": "Lab 4：RGB 光谱重建",
+            "path": "ComputerGraphicsAlgo/Lab4/README.md",
+            "links": [
+              {
+                "label": "报告源文件",
+                "path": "ComputerGraphicsAlgo/Lab4/overleaf/README.md"
+              }
+            ]
+          },
+          {
+            "label": "Lab 5：实验任务书",
+            "path": "ComputerGraphicsAlgo/Lab5"
           }
         ],
         "defense": [
           {
             "label": "Lab 1：中俄答辩",
             "path": "ComputerGraphicsAlgo/Lab1/defense_zh_ru.md"
+          },
+          {
+            "label": "Lab 2：学习与答辩",
+            "path": "ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/lab2_defense_guide.md"
+          },
+          {
+            "label": "Lab 3：中俄学习与答辩",
+            "path": "ComputerGraphicsAlgo/Lab3/lab3_study_defense_zh_ru.md"
           }
         ],
         "resources": [
@@ -2131,7 +2171,7 @@
       "directory": "SoftwareSystemArch",
       "dashboard": "SoftwareSystemArch/readme.md",
       "kind": "专业课程",
-      "note": "第一讲 PDF：软件生命周期。",
+      "note": "已收录 UML 系统建模、GoF / GRASP 实验，以及课程讲义和教材。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -2144,12 +2184,77 @@
           {
             "label": "Lecture 1：软件生命周期",
             "path": "SoftwareSystemArch/Lecture/lecture1.pdf"
+          },
+          {
+            "label": "Arkhitektura_Programmnykh_Sistem_-_Session_01",
+            "path": "SoftwareSystemArch/Lecture/Arkhitektura_Programmnykh_Sistem_-_Session_01.pdf",
+            "group": "课程讲义与教材"
+          },
+          {
+            "label": "gof-frameworks",
+            "path": "SoftwareSystemArch/Lecture/gof-frameworks.pdf",
+            "group": "课程讲义与教材"
+          },
+          {
+            "label": "SEICh13",
+            "path": "SoftwareSystemArch/Lecture/SEICh13.pptx",
+            "group": "课程讲义与教材"
+          },
+          {
+            "label": "TDD_and_BDD",
+            "path": "SoftwareSystemArch/Lecture/TDD_and_BDD.pdf",
+            "group": "课程讲义与教材"
+          },
+          {
+            "label": "Архитектура Программных Систем - Session 03",
+            "path": "SoftwareSystemArch/Lecture/Архитектура Программных Систем - Session 03.pptx",
+            "group": "课程讲义与教材"
+          },
+          {
+            "label": "Архитектура Программных Систем - Session 04-05",
+            "path": "SoftwareSystemArch/Lecture/Архитектура Программных Систем - Session 04-05.pptx",
+            "group": "课程讲义与教材"
           }
         ],
-        "labs": [],
+        "labs": [
+          {
+            "label": "Lab 1：UML 系统建模",
+            "path": "SoftwareSystemArch/Lab/Lab1/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "SoftwareSystemArch/Lab/Lab1"
+              },
+              {
+                "label": "报告",
+                "path": "SoftwareSystemArch/Lab/Lab1/report_AWGE.docx"
+              }
+            ]
+          },
+          {
+            "label": "Lab 2：GoF 与 GRASP 设计模式",
+            "path": "SoftwareSystemArch/Lab/Lab2/readme.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "SoftwareSystemArch/Lab/Lab2"
+              },
+              {
+                "label": "报告",
+                "path": "SoftwareSystemArch/Lab/Lab2/report_Lab2_GoF_GRASP.docx"
+              }
+            ]
+          }
+        ],
         "assignments": [],
         "exam": [],
-        "answers": []
+        "answers": [],
+        "defense": [
+          {
+            "label": "Lab 2：GoF / GRASP 学习指南",
+            "path": "SoftwareSystemArch/Lab/Lab2/实验二学习指南_GoF与GRASP.md"
+          }
+        ]
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -2166,7 +2271,7 @@
       "directory": "KnowledgeGraphs",
       "dashboard": "KnowledgeGraphs/readme.md",
       "kind": "专业课程",
-      "note": "电影知识图谱选题与演示方案。",
+      "note": "Step 1–3 包含选题、本体建模与数据采集；演示方案、提交文件和答辩资料分别查阅。",
       "assessments": {
         "5": "考查 · Зачёт"
       },
@@ -2181,12 +2286,34 @@
           {
             "label": "电影知识图谱演示",
             "path": "KnowledgeGraphs/Step-1/Граф_знаний_о_фильмах.pptx"
+          },
+          {
+            "label": "LoL 知识图谱提案演示",
+            "path": "KnowledgeGraphs/Step-1/League_of_Legends_KG.pptx"
+          },
+          {
+            "label": "Step 3：采集演示",
+            "path": "KnowledgeGraphs/Step-3/League_of_Legends_KG.pptx"
           }
         ],
         "assignments": [
           {
             "label": "Step 1：选题与演讲提纲",
             "path": "KnowledgeGraphs/Step-1/des.md"
+          },
+          {
+            "label": "Step 2：本体建模与 Protégé",
+            "path": "KnowledgeGraphs/Step-2/FULL_VERSION_TUTORIAL_ZH.md",
+            "links": [
+              {
+                "label": "本体提交文件",
+                "path": "KnowledgeGraphs/Step-2/LoL_Ontology_Submission"
+              }
+            ]
+          },
+          {
+            "label": "Step 3：LoL 数据采集",
+            "path": "KnowledgeGraphs/Step-3/readme.md"
           }
         ],
         "theory": [
@@ -2196,7 +2323,17 @@
           }
         ],
         "exam": [],
-        "answers": []
+        "answers": [],
+        "defense": [
+          {
+            "label": "Step 2：本体与图谱中俄答辩",
+            "path": "KnowledgeGraphs/Step-2/DEFENSE_GUIDE_ZH_RU.md"
+          },
+          {
+            "label": "Step 3：演示讲稿",
+            "path": "KnowledgeGraphs/Step-3/presentation.md"
+          }
+        ]
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -2213,7 +2350,7 @@
       "directory": "InformationSystem",
       "dashboard": "InformationSystem/readme.md",
       "kind": "专业课程",
-      "note": "实验清单包含 Lab 1–3；课程项目单列在学期作业中。",
+      "note": "实验清单包含 Lab 1–3；课程项目阶段一至三、SQL 实现和期中复习单独归类。",
       "assessments": {
         "5": "考试 · Экзамен + 课程项目 · Курсовая работа"
       },
@@ -2261,6 +2398,10 @@
           {
             "label": "Lab 1：中俄答辩",
             "path": "InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md"
+          },
+          {
+            "label": "课程项目阶段一：中俄学习与答辩",
+            "path": "InformationSystem/КурсоваяРабота/阶段一_信息系统速懂与答辩准备.md"
           }
         ],
         "resources": [
@@ -2276,11 +2417,43 @@
         "assignments": [
           {
             "label": "课程项目：要求与阶段报告",
-            "path": "InformationSystem/КурсоваяРабота/readme.md"
+            "path": "InformationSystem/КурсоваяРабота/readme.md",
+            "links": [
+              {
+                "label": "阶段一报告",
+                "path": "InformationSystem/КурсоваяРабота/Этап_1.docx"
+              },
+              {
+                "label": "阶段二 ER 模型报告",
+                "path": "InformationSystem/КурсоваяРабота/Этап_2_v4_8_Флит_Стрит_Мануфактура_краткий_отчёт.docx"
+              },
+              {
+                "label": "阶段三报告",
+                "path": "InformationSystem/КурсоваяРабота/Этап_3_Флит_Стрит_Мануфактура.pdf"
+              },
+              {
+                "label": "SQL 实现",
+                "path": "InformationSystem/КурсоваяРабота/SQL"
+              },
+              {
+                "label": "ER 关系说明",
+                "path": "InformationSystem/КурсоваяРабота/Методичка_по_связям_ER_Флит_Стрит.md"
+              }
+            ]
           }
         ],
-        "exam": [],
-        "answers": []
+        "exam": [
+          {
+            "label": "期中考试题目与复习范围",
+            "path": "InformationSystem/Rub/InformationSystem_Exam_Review.md"
+          }
+        ],
+        "answers": [
+          {
+            "label": "期中考试参考答案（中俄）",
+            "path": "InformationSystem/Rub/InformationSystem_Exam_Review.md"
+          }
+        ]
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -2297,7 +2470,7 @@
       "directory": "Modeling",
       "dashboard": "Modeling/readme.md",
       "kind": "专业课程",
-      "note": "УИР 1 统计拟合与 УИР 2 马尔可夫排队模型均有真实笔记；WinMark 项目与 Python 计算交叉核对。",
+      "note": "УИР 1–2 已有计算与学习笔记，УИР 3 已收录任务书和理论材料；另有 TR1 阶段测试复习。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -2311,6 +2484,31 @@
           {
             "label": "课程演示资料",
             "path": "Modeling/Lecture"
+          },
+          {
+            "label": "2_М24_ТеорВер_кратко",
+            "path": "Modeling/Lecture/2_М24_ТеорВер_кратко.pdf",
+            "group": "课程讲义"
+          },
+          {
+            "label": "CSM1_Intro",
+            "path": "Modeling/Lecture/CSM1_Intro.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "Лекция 3 Имитационное моделирование",
+            "path": "Modeling/Lecture/Лекция 3 Имитационное моделирование.pdf",
+            "group": "课程讲义"
+          },
+          {
+            "label": "Презентация_1",
+            "path": "Modeling/Lecture/Презентация_1.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "ЧИСЛЕННОЕ МОДЕЛИРОВАНИЕ",
+            "path": "Modeling/Lecture/ЧИСЛЕННОЕ МОДЕЛИРОВАНИЕ.pptx",
+            "group": "课程讲义"
           }
         ],
         "labs": [
@@ -2335,6 +2533,16 @@
               }
             ],
             "status": "unmarked"
+          },
+          {
+            "label": "УИР 3：排队系统与网络",
+            "path": "Modeling/lab3/УИР3_СМО и СеМО.pdf",
+            "links": [
+              {
+                "label": "理论材料",
+                "path": "Modeling/lab3/Теоретический материал к УИР3.pdf"
+              }
+            ]
           }
         ],
         "defense": [
@@ -2345,6 +2553,10 @@
           {
             "label": "УИР 2：中俄答辩",
             "path": "Modeling/lab2/УИР2_defense.md"
+          },
+          {
+            "label": "УИР 2：新版答辩准备",
+            "path": "Modeling/lab2/defense.md"
           }
         ],
         "resources": [
@@ -2355,11 +2567,25 @@
           {
             "label": "WinMark 项目说明",
             "path": "Modeling/lab2/Calculation_data/WinMark/README.md"
+          },
+          {
+            "label": "课程评分安排",
+            "path": "Modeling/Таблица оценивания.pdf"
           }
         ],
         "assignments": [],
-        "exam": [],
-        "answers": []
+        "exam": [
+          {
+            "label": "TR1 阶段测试：范围、模拟题与复习",
+            "path": "Modeling/Test/test1.md"
+          }
+        ],
+        "answers": [
+          {
+            "label": "TR1 模拟题解与公式",
+            "path": "Modeling/Test/test1.md"
+          }
+        ]
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -2376,7 +2602,7 @@
       "directory": "OperatingSystem",
       "dashboard": "OperatingSystem/readme.md",
       "kind": "专业课程",
-      "note": "intro-ex 实验资料包含性能测量、报告与答辩；测量误差与采样范围见原学习笔记。",
+      "note": "包含性能测量、FUSE / MusicFS 与 xv6 Intro、Shebang 的完整实验入口；测试记录与课程通过状态分别查看。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -2402,6 +2628,10 @@
           {
             "label": "性能分析教材",
             "path": "OperatingSystem/Lecture"
+          },
+          {
+            "label": "FUSE / libfuse 学习笔记",
+            "path": "OperatingSystem/Lab/lab2-fuse-musicfs/FUSE_libfuse_学习笔记.md"
           }
         ],
         "labs": [
@@ -2409,6 +2639,36 @@
             "label": "Lab 1 intro-ex：原始要求",
             "path": "OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md",
             "status": "unmarked"
+          },
+          {
+            "label": "Lab 2：FUSE / MusicFS",
+            "path": "OperatingSystem/Lab/lab2-fuse-musicfs/README.md",
+            "links": [
+              {
+                "label": "实验报告",
+                "path": "OperatingSystem/Lab/lab2-fuse-musicfs/OS report2.pdf"
+              }
+            ]
+          },
+          {
+            "label": "xv6 Intro",
+            "path": "OperatingSystem/Lab/xv6-notes/Intro-报告.md",
+            "links": [
+              {
+                "label": "学习与答辩",
+                "path": "OperatingSystem/Lab/xv6-notes/Intro-学习与答辩.md"
+              }
+            ]
+          },
+          {
+            "label": "xv6 Shebang",
+            "path": "OperatingSystem/Lab/xv6-notes/Shebang-报告.md",
+            "links": [
+              {
+                "label": "学习与答辩",
+                "path": "OperatingSystem/Lab/xv6-notes/Shebang-学习与答辩.md"
+              }
+            ]
           }
         ],
         "defense": [
@@ -2419,6 +2679,14 @@
           {
             "label": "Lab 1：控制问题",
             "path": "OperatingSystem/Lab/lab1-intro-ex/test.md"
+          },
+          {
+            "label": "xv6 Intro：学习与答辩",
+            "path": "OperatingSystem/Lab/xv6-notes/Intro-学习与答辩.md"
+          },
+          {
+            "label": "xv6 Shebang：学习与答辩",
+            "path": "OperatingSystem/Lab/xv6-notes/Shebang-学习与答辩.md"
           }
         ],
         "resources": [
@@ -2433,6 +2701,14 @@
           {
             "label": "最终报告 PDF",
             "path": "OperatingSystem/Lab/lab1-intro-ex/OS report1.pdf"
+          },
+          {
+            "label": "xv6 实验与进度记录",
+            "path": "OperatingSystem/Lab/xv6-notes/README.md"
+          },
+          {
+            "label": "xv6 CI 诊断记录",
+            "path": "OperatingSystem/Lab/xv6-notes/CI-复核记录.md"
           }
         ],
         "assignments": [],
@@ -2454,7 +2730,7 @@
       "directory": "UIDesign",
       "dashboard": "UIDesign/readme.md",
       "kind": "专业课程",
-      "note": "知识助手方案、演讲稿与用户场景。",
+      "note": "知识助手方案按作业 1–3 整理项目说明、用户场景、信息架构与中俄演讲稿。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -2468,26 +2744,40 @@
         "defense": [
           {
             "label": "5 分钟演讲稿（中俄）",
-            "path": "UIDesign/HW/02_演讲稿_5分钟_RU_ZH.md"
+            "path": "UIDesign/HW/stage1/02_演讲稿_5分钟_RU_ZH.md"
           },
           {
             "label": "完整演讲稿（中俄）",
-            "path": "UIDesign/HW/03_演讲稿_完整版_RU_ZH.md"
+            "path": "UIDesign/HW/stage1/03_演讲稿_完整版_RU_ZH.md"
+          },
+          {
+            "label": "Homework 3：信息架构中俄讲解",
+            "path": "UIDesign/HW/stage3/AI_Knowledge_Agent_Task3_Speech_RU_ZH.md"
           }
         ],
         "assignments": [
           {
             "label": "Homework 1：项目说明",
-            "path": "UIDesign/HW/01_PPT总结与项目说明.md"
+            "path": "UIDesign/HW/stage1/01_PPT总结与项目说明.md"
           },
           {
             "label": "Homework 2：用户场景",
-            "path": "UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md"
+            "path": "UIDesign/HW/stage2/AI_Knowledge_Agent_User_Scenarios_RU(1).pdf"
+          },
+          {
+            "label": "Homework 3：信息架构",
+            "path": "UIDesign/HW/stage3/AI_Knowledge_Agent_Information_Architecture_RU.pdf"
           }
         ],
         "theory": [],
         "exam": [],
-        "answers": []
+        "answers": [],
+        "resources": [
+          {
+            "label": "设计方案与阶段资料",
+            "path": "UIDesign/HW/AI-knowledge"
+          }
+        ]
       },
       "status": "unmarked",
       "semesterStatus": {
@@ -2504,7 +2794,7 @@
       "directory": "AISystem",
       "dashboard": "AISystem/readme.md",
       "kind": "专业课程",
-      "note": "Labs/lab2 保存的是任务书实验 6“逻辑回归”；保留目录名，在入口明确任务编号。",
+      "note": "已收录 Lab 1–6，包含任务书、实现、报告与答辩。lab2 的旧说明使用任务编号 6；与目录 lab6 的 MNIST 实验分别保留。",
       "assessments": {
         "5": "考试 · Экзамен"
       },
@@ -2519,6 +2809,36 @@
           {
             "label": "线性回归：完整中俄笔记",
             "path": "AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md"
+          },
+          {
+            "label": "AIS01_Motivation",
+            "path": "AISystem/Lecture/AIS01_Motivation.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "AIS02-03_Prolog",
+            "path": "AISystem/Lecture/AIS02-03_Prolog.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "AIS02_History",
+            "path": "AISystem/Lecture/AIS02_History.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "AIS06_Search",
+            "path": "AISystem/Lecture/AIS06_Search.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "AIS08-09_Semantic",
+            "path": "AISystem/Lecture/AIS08-09_Semantic.pptx",
+            "group": "课程讲义"
+          },
+          {
+            "label": "AIS0_Introduction",
+            "path": "AISystem/Lecture/AIS0_Introduction.pptx",
+            "group": "课程讲义"
           }
         ],
         "labs": [
@@ -2534,7 +2854,7 @@
             "status": "unmarked"
           },
           {
-            "label": "目录 lab2 / 任务书 Lab 6：逻辑回归",
+            "label": "Lab 2：逻辑回归（旧说明编号 6）",
             "path": "AISystem/Labs/lab2/README.md",
             "links": [
               {
@@ -2554,6 +2874,48 @@
                 "path": "AISystem/Labs/lab3"
               }
             ]
+          },
+          {
+            "label": "Lab 4：k 近邻方法",
+            "path": "AISystem/Labs/lab4/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab4"
+              },
+              {
+                "label": "报告",
+                "path": "AISystem/Labs/lab4/Лабораторная_работа_4.docx"
+              }
+            ]
+          },
+          {
+            "label": "Lab 5：决策树",
+            "path": "AISystem/Labs/lab5/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab5"
+              },
+              {
+                "label": "报告",
+                "path": "AISystem/Labs/lab5/Лабораторная_работа_5.docx"
+              }
+            ]
+          },
+          {
+            "label": "Lab 6：MNIST 手写数字识别",
+            "path": "AISystem/Labs/lab6/README.md",
+            "links": [
+              {
+                "label": "全部实验文件",
+                "path": "AISystem/Labs/lab6"
+              },
+              {
+                "label": "报告",
+                "path": "AISystem/Labs/lab6/Лабораторная_работа_6.docx"
+              }
+            ]
           }
         ],
         "defense": [
@@ -2568,6 +2930,30 @@
           {
             "label": "模型正则化：中俄学习与答辩",
             "path": "AISystem/Labs/lab3/学习答辩_RU_ZH.md"
+          },
+          {
+            "label": "Lab 4：中俄学习与答辩",
+            "path": "AISystem/Labs/lab4/学习准备答辩_RU_ZH.md"
+          },
+          {
+            "label": "Lab 5：中俄学习与答辩",
+            "path": "AISystem/Labs/lab5/学习准备答辩_RU_ZH.md"
+          },
+          {
+            "label": "Lab 6：中俄学习与答辩",
+            "path": "AISystem/Labs/lab6/学习准备答辩_RU_ZH.md"
+          },
+          {
+            "label": "Lab 2：详细答辩",
+            "path": "AISystem/Labs/lab2/Защита_RU_ZH_подробно.md"
+          },
+          {
+            "label": "Lab 2：答辩速记",
+            "path": "AISystem/Labs/lab2/Защита_шпаргалка_RU_ZH.md"
+          },
+          {
+            "label": "Lab 3：讲述流程",
+            "path": "AISystem/Labs/lab3/答辩讲述流程_RU_ZH.md"
           }
         ],
         "resources": [

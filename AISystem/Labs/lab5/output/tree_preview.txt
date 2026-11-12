@@ -1,0 +1,34 @@
+course_id; n=116; p1=0.5345; IG=0.421771
+  [1] -> high_school_type; n=53; p1=0.3774; IG=0.051683
+    [1] -> reading_scientific; n=9; p1=0.1111; IG=0.102187
+      [1] -> LEAF; n=3; p1=0.0000; IG=0.000000
+      [2] -> class_attendance; n=5; p1=0.2000; IG=0.072906
+        ... subtree omitted
+      [3] -> LEAF; n=1; p1=0.0000; IG=0.000000
+    [2] -> parental_status; n=37; p1=0.4324; IG=0.049608
+      [1] -> class_attendance; n=33; p1=0.3939; IG=0.036962
+        ... subtree omitted
+      [2] -> reading_scientific; n=3; p1=0.6667; IG=0.251629
+        ... subtree omitted
+      [3] -> LEAF; n=1; p1=1.0000; IG=0.000000
+    [3] -> parental_status; n=7; p1=0.4286; IG=0.128085
+      [1] -> class_attendance; n=6; p1=0.5000; IG=0.190875
+        ... subtree omitted
+      [2] -> LEAF; n=1; p1=0.0000; IG=0.000000
+  [2] -> LEAF; n=1; p1=0.0000; IG=0.000000
+  [3] -> LEAF; n=7; p1=1.0000; IG=0.000000
+  [4] -> LEAF; n=4; p1=1.0000; IG=0.000000
+  [5] -> LEAF; n=5; p1=1.0000; IG=0.000000
+  [6] -> LEAF; n=6; p1=1.0000; IG=0.000000
+  [7] -> LEAF; n=12; p1=1.0000; IG=0.000000
+  [8] -> LEAF; n=12; p1=0.0000; IG=0.000000
+  [9] -> reading_scientific; n=16; p1=0.5000; IG=0.180037
+    [1] -> LEAF; n=2; p1=1.0000; IG=0.000000
+    [2] -> parental_status; n=9; p1=0.3333; IG=0.197160
+      [1] -> high_school_type; n=8; p1=0.2500; IG=0.122556
+        ... subtree omitted
+      [2] -> LEAF; n=1; p1=1.0000; IG=0.000000
+    [3] -> high_school_type; n=5; p1=0.6000; IG=0.419973
+      [1] -> LEAF; n=2; p1=1.0000; IG=0.000000
+      [2] -> parental_status; n=3; p1=0.3333; IG=0.251629
+        ... subtree omitted

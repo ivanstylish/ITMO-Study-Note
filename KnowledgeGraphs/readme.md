@@ -6,9 +6,9 @@
 
 **课程状态：— 未标记**
 
-[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [补充资料与速查](#resources)
+[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense) · [补充资料与速查](#resources)
 
-电影知识图谱选题与演示方案。
+Step 1–3 包含选题、本体建模与数据采集；演示方案、提交文件和答辩资料分别查阅。
 
 <!-- kb:course-overview:end -->
 
@@ -27,6 +27,8 @@
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
 | [Step 1：选题与演讲提纲](Step-1/des.md) | — 未标记 | — |
+| [Step 2：本体建模与 Protégé](Step-2/FULL_VERSION_TUTORIAL_ZH.md) | — 未标记 | [本体提交文件](Step-2/LoL_Ontology_Submission) |
+| [Step 3：LoL 数据采集](Step-3/readme.md) | — 未标记 | — |
 
 ## 考试内容 <a id="exam"></a>
 
@@ -36,9 +38,16 @@
 
 考试答案尚未收录。
 
+## 实验答辩 <a id="defense"></a>
+
+- [Step 2：本体与图谱中俄答辩](Step-2/DEFENSE_GUIDE_ZH_RU.md)
+- [Step 3：演示讲稿](Step-3/presentation.md)
+
 ## 补充资料与速查 <a id="resources"></a>
 
 - [电影知识图谱演示](Step-1/%D0%93%D1%80%D0%B0%D1%84_%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9_%D0%BE_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0%D1%85.pptx)
+- [LoL 知识图谱提案演示](Step-1/League_of_Legends_KG.pptx)
+- [Step 3：采集演示](Step-3/League_of_Legends_KG.pptx)
 
 ## 复习与关联
 

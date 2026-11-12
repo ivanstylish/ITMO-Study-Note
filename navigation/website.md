@@ -38,7 +38,9 @@ npm run docs:preview
 
 ## GitHub Pages
 
-[官方部署说明](https://vuejs.github.io/vitepress/v1/guide/deploy#github-pages)说明了 Pages 配置。仓库提供 `.github/workflows/knowledge-base.yml`：PR 自动构建，手动运行默认只构建；只有在 Actions 手动勾选 `deploy` 并将仓库 Pages 的 Source 设为 GitHub Actions 后才会发布。
+[官方部署说明](https://vuejs.github.io/vitepress/v1/guide/deploy#github-pages)说明了 Pages 配置。仓库使用 `.github/workflows/knowledge-base.yml`：推送到 `main` 后自动检查、构建并发布；PR 只检查构建。手动运行默认只构建，勾选 `deploy` 时才发布 `main`。
+
+Pages 的 Source 使用 **GitHub Actions**。只上传 `.build/site/` 中的 VitePress 构建结果，不使用 Jekyll 扫描课程源码和依赖文档。
 
 项目站点使用仓库名作为基础路径，本地开发默认 `/`。自定义路径可通过环境变量 `DOCS_BASE` 指定，例如 PowerShell：
 

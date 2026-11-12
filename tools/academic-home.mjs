@@ -13,10 +13,12 @@ export function academicYears(catalog) {
 }
 export function homeContent(catalog,link) {
   const from='README.md';
+  const current=Math.max(...catalog.semesters.map(s=>s.number));
   return academicYears(catalog).map(year=>`## ${year.title} · ${year.period} <a id="year-${year.number}"></a>\n\n${year.semesters.map(s=>{
-    const title=s.record?link(from,`第 ${s.number} 学期 · ${s.record.title}`,`academic/semester-${String(s.number).padStart(2,'0')}.md`):`第 ${s.number} 学期`;
-    if(!s.courses.length) return `### ${title}\n\n本学期课程资料尚未收录。`;
-    return `### ${title}\n\n| 课程 | Русское название | 状态 |\n|---|---|---|\n${s.courses.map(c=>`| ${link(from,c.title,c.dashboard)} | ${c.ru} | ${courseStatus(c,s.number)} |`).join('\n')}`;
+    const title=`第 ${s.number} 学期${s.record?' · '+s.record.title:''}`;
+    const summary=`<details${s.number===current?' open':''}>\n<summary>${title} · ${s.courses.length?s.courses.length+' 门课程':'尚未收录'}</summary>`;
+    if(!s.courses.length) return `${summary}\n\n本学期课程资料尚未收录。\n\n</details>`;
+    return `${summary}\n\n${link(from,'本学期总览',`academic/semester-${String(s.number).padStart(2,'0')}.md`)}\n\n| 课程 | Русское название | 状态 |\n|---|---|---|\n${s.courses.map(c=>`| ${link(from,c.title,c.dashboard)} | ${c.ru} | ${courseStatus(c,s.number)} |`).join('\n')}\n\n</details>`;
   }).join('\n\n')}`).join('\n\n');
 }
 export function composeHome(source,catalog,link) {

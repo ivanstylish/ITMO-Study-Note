@@ -14,5 +14,5 @@
 | [离散数学基础 / 离散数学](../DiscreteMath/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | [3 项](../DiscreteMath/readme.md#assignments) | — |
 | [专业活动基础](../OPD/readme.md) | 分级考查 · Дифференцированный зачёт | ✓ 已通过 | [6 项](../OPD/readme.md#labs) | — | [内容](../OPD/readme.md#exam) |
 | [程序设计](../Programming/readme.md) | 考试 · Экзамен | ✓ 已通过 | [8 项](../Programming/readme.md#labs) | — | [内容](../Programming/readme.md#exam) |
-| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [6 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
 | [数据库](../Database/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../Database/readme.md#labs) | — | [内容](../Database/readme.md#exam) |

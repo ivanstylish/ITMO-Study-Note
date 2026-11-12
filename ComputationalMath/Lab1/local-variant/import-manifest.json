@@ -12,8 +12,8 @@
     {
       "path": "build.gradle",
       "source": "build.gradle",
-      "bytes": 297,
-      "sha256": "d569e5841ceae0cd98044900420764b3317219c628aa2c93af3734b84645df93"
+      "bytes": 279,
+      "sha256": "c68439dc8f72e420aba319881ac0a1202b61a050da54d91ca606d5fcb57ee289"
     },
     {
       "path": "gradle/wrapper/gradle-wrapper.jar",
@@ -24,8 +24,8 @@
     {
       "path": "gradle/wrapper/gradle-wrapper.properties",
       "source": "gradle/wrapper/gradle-wrapper.properties",
-      "bytes": 236,
-      "sha256": "ad10253c90e3c01a4ca91da6b989c40d173c923f101e4012270808a72efbf961"
+      "bytes": 230,
+      "sha256": "25496c99cf7a03d811593e228ab7346c6e17311299579f27b28325030ff35b4d"
     },
     {
       "path": "gradlew",
@@ -36,26 +36,26 @@
     {
       "path": "gradlew.bat",
       "source": "gradlew.bat",
-      "bytes": 2763,
-      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+      "bytes": 2674,
+      "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129"
     },
     {
       "path": "settings.gradle",
       "source": "settings.gradle",
-      "bytes": 29,
-      "sha256": "d4d1d6d1891c95abb434481acdb8a3e378e353583c31ab5deefbdc0aa9d76ae7"
+      "bytes": 27,
+      "sha256": "260ff8f8272501d86cebe03787f6c478d2470f0fc8ff80686e69da7e71239c6a"
     },
     {
       "path": "src/main/java/org/example/Data.java",
       "source": "src/main/java/org/example/Data.java",
-      "bytes": 5105,
-      "sha256": "01ff6c82981c30650ad0d8f43a12c986478e98db32848cda7bb7449373407396"
+      "bytes": 4976,
+      "sha256": "9c2f996f1383dcb60b32e9dcbc8bb3b7701e6f821dc31771c81deea6ff21d9f0"
     },
     {
       "path": "src/main/java/org/example/FormulaUtils.java",
       "source": "src/main/java/org/example/FormulaUtils.java",
-      "bytes": 3204,
-      "sha256": "f7205ea740be8aa3709d1be4c974868765a6e74ebd28510ef202a6066ab70d7c"
+      "bytes": 3099,
+      "sha256": "153c2b1cd6c10cc87c260c63c11ba28c8f1d9ae52adbdf263e6b28c90a603f97"
     },
     {
       "path": "src/main/java/org/example/Main.java",
@@ -66,50 +66,50 @@
     {
       "path": "src/main/java/org/example/MatrixPrinter.java",
       "source": "src/main/java/org/example/MatrixPrinter.java",
-      "bytes": 653,
-      "sha256": "e8cabfbfd7ba96e35cde487596e1348dd57417647b03575211cb63d5c4786603"
+      "bytes": 631,
+      "sha256": "ec1dd3bcacfd378522603ade096ff1af3c57a47b2e3f6cf17235fd2df115b56f"
     },
     {
       "path": "src/main/java/org/example/SimpleIteration.java",
       "source": "src/main/java/org/example/SimpleIteration.java",
-      "bytes": 2705,
-      "sha256": "7df0de042eab5bfd16a610063d7f65eb9f9622455ee8495b89b00f7e5b27433a"
+      "bytes": 2622,
+      "sha256": "aa946ae005c66167175d13cdede527ebd4525d68f2f687a648b282ccb81e5e7b"
     },
     {
       "path": "src/main/resources/test.txt",
       "source": "src/main/resources/test.txt",
-      "bytes": 14,
-      "sha256": "060d7757708efade4744e89b0547e1e135f41ee515c209da2035c5973da11b0c"
+      "bytes": 13,
+      "sha256": "3f91af535f33fecb1c7d3272435fb34ff7d8e3a96e3ff0687defbd77592f88d4"
     },
     {
       "path": "src/main/resources/test2.txt",
       "source": "src/main/resources/test2.txt",
-      "bytes": 14,
-      "sha256": "5d2b728f0acbf43b274b633702cc9cff642962d91c54bef28984e18cb83d249b"
+      "bytes": 13,
+      "sha256": "4fd3057bfac0c8a11798bad0cd72d662ba9bd9b5786c7571faec12b55de521bb"
     },
     {
       "path": "src/main/resources/test3.txt",
       "source": "src/main/resources/test3.txt",
-      "bytes": 241,
-      "sha256": "ae726ede24831301922ee6a3fed2398957cd51ea600cb579a04220cce1501fef"
+      "bytes": 232,
+      "sha256": "b0acce23025dd9f21247867f1fc79415d54cbc0a8f2fdcf8f47b7185ec5bf858"
     },
     {
       "path": "src/main/resources/test4.txt",
       "source": "src/main/resources/test4.txt",
-      "bytes": 823,
-      "sha256": "d992b40941aac8052b264cfeced571a7bcc191dc90c18556f062f55f83064a34"
+      "bytes": 805,
+      "sha256": "fbce7d8300695a15ed989e3443ce817dbf955926c639b73e060015b9cb29a5fc"
     },
     {
       "path": "src/main/resources/test5.txt",
       "source": "src/main/resources/test5.txt",
-      "bytes": 262,
-      "sha256": "b829ee136d0732feddcce87d6292ac989e237891d95fc6da0801947851cf315f"
+      "bytes": 258,
+      "sha256": "e2cbe1e047878db1bf659858c724d6106b1b8589b579c34fd7a0cca1fc1893a8"
     },
     {
       "path": "src/main/resources/test6.txt",
       "source": "src/main/resources/test6.txt",
-      "bytes": 258,
-      "sha256": "fc0c055bd5a339eb6e5907844746ec0a8c4f39a41cd38d3809627a4684ec3121"
+      "bytes": 254,
+      "sha256": "1444b461ad682bc45c5206f831422ea1ad47834c223659fb099e71d524d322c8"
     }
   ],
   "excluded": [

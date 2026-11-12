@@ -114,8 +114,8 @@
     {
       "path": "docs/PHOTO_CREDITS.md",
       "source": "docs/PHOTO_CREDITS.md",
-      "bytes": 2324,
-      "sha256": "15de0b946cdafebfdbd234aa6448cb9f01ff804a38c6f76d7f48e61da41954dd"
+      "bytes": 2310,
+      "sha256": "ae929f05d232398420333b92fe1ff59e724909301b6bd0a0c6c36f53527ea28d"
     },
     {
       "path": "docs/TESTING_ZH.md",
@@ -168,8 +168,8 @@
     {
       "path": "gradlew.bat",
       "source": "gradlew.bat",
-      "bytes": 2868,
-      "sha256": "8e327fcb99d29ce0fe3ee2fec6e6a25de815a2df83a6a44a553dea89ffc92955"
+      "bytes": 2776,
+      "sha256": "18774a0ac0203f6893bf1db3291a0d77f06cd1b4dca2a43b51e7009da3e28cfa"
     },
     {
       "path": "PROJECT_README.md",
@@ -198,8 +198,8 @@
     {
       "path": "src/main/java/edu/lab/city/CityApplication.java",
       "source": "src/main/java/edu/lab/city/CityApplication.java",
-      "bytes": 430,
-      "sha256": "f61491e0dc723aec2c4506c22401beb2b18cfb1543b2a3cf37ce8c061f7733c3"
+      "bytes": 719,
+      "sha256": "785bfbc767f06316c89fd5dd98461f78962ff3885c30dbe7d6178c42cb925c0c"
     },
     {
       "path": "src/main/java/edu/lab/city/config/JsonConfig.java",
@@ -210,26 +210,26 @@
     {
       "path": "src/main/java/edu/lab/city/config/PersistenceConfig.java",
       "source": "src/main/java/edu/lab/city/config/PersistenceConfig.java",
-      "bytes": 2093,
-      "sha256": "fe17457cf604d33b38b82ba3ea14a5fbcdd8e7a1a6d696e253473996f6a6f2dd"
+      "bytes": 2774,
+      "sha256": "fe7caa594a8a4db3c077932ca35b84737103ffb61fe26848db816d2b591bf9c3"
     },
     {
       "path": "src/main/java/edu/lab/city/config/SecurityConfig.java",
       "source": "src/main/java/edu/lab/city/config/SecurityConfig.java",
-      "bytes": 2633,
-      "sha256": "f1f2c21f1b2ba199b08af701c464668305dd21f0588f9e87276800679d57947e"
+      "bytes": 2909,
+      "sha256": "de58792f4deb33d82fe5b036d06bc87f32c6b4464e2da344ab5886584d96ca64"
     },
     {
       "path": "src/main/java/edu/lab/city/domain/AppUser.java",
       "source": "src/main/java/edu/lab/city/domain/AppUser.java",
-      "bytes": 1988,
-      "sha256": "e6f5fa3cd2deab60f54a0c68ffbc98ba550b39a35272fe9c8110a206c1986756"
+      "bytes": 3718,
+      "sha256": "2d641131c2ade983ab9fab372904d65ef9bae885f30fff503a80a918fe5e8787"
     },
     {
       "path": "src/main/java/edu/lab/city/domain/City.java",
       "source": "src/main/java/edu/lab/city/domain/City.java",
-      "bytes": 5551,
-      "sha256": "88e1730d88a90516baac5fba131ac24cbcaea499a39a1b11d6b3fae3ba25677f"
+      "bytes": 6177,
+      "sha256": "4a4773f961c1bad6fce3e2f96287316e6bb61991bcb83d97a7f0daa9c2b2c57b"
     },
     {
       "path": "src/main/java/edu/lab/city/domain/Climate.java",
@@ -264,8 +264,8 @@
     {
       "path": "src/main/java/edu/lab/city/domain/ZonedDateTimeConverter.java",
       "source": "src/main/java/edu/lab/city/domain/ZonedDateTimeConverter.java",
-      "bytes": 780,
-      "sha256": "7e63bdcac06e78bfeb99942719fea8cf00b49dc844b952a00ef8206375a0b803"
+      "bytes": 1069,
+      "sha256": "d480f7e529b1bf9330743d4ab568173a52c4dbfc938df35139141006014c6f0c"
     },
     {
       "path": "src/main/java/edu/lab/city/dto/Requests.java",
@@ -276,14 +276,14 @@
     {
       "path": "src/main/java/edu/lab/city/repository/ObjectRepository.java",
       "source": "src/main/java/edu/lab/city/repository/ObjectRepository.java",
-      "bytes": 3090,
-      "sha256": "a91caf0d11ea4e13d2b969ba5933c94b4460ce11df97d613255f5be0a87280eb"
+      "bytes": 4381,
+      "sha256": "6a08e8f4801a4805f6e7e8d5c4c17b98f22574049de084628a1a6cfbba9ebaa9"
     },
     {
       "path": "src/main/java/edu/lab/city/repository/SpecialRepository.java",
       "source": "src/main/java/edu/lab/city/repository/SpecialRepository.java",
-      "bytes": 1656,
-      "sha256": "83d09d5622080f210ac0a2e900c02b4155db0695c3a957d5b66e4ac6cd6c5bd7"
+      "bytes": 1892,
+      "sha256": "9a35df528d0ee7d1406c3521b866a0dab033aa0bace74cf06369047720bee84e"
     },
     {
       "path": "src/main/java/edu/lab/city/repository/UserRepository.java",
@@ -294,14 +294,14 @@
     {
       "path": "src/main/java/edu/lab/city/service/AccountService.java",
       "source": "src/main/java/edu/lab/city/service/AccountService.java",
-      "bytes": 2716,
-      "sha256": "57ed5e979a441e0d57b83b8cbf8f91abf5cbe88c475ce781edb8f4899b400763"
+      "bytes": 3720,
+      "sha256": "566671e5c784f8cd517fc0325274f1f8b7069a41b3eaab02f5f9742b237bd9c7"
     },
     {
       "path": "src/main/java/edu/lab/city/service/CityService.java",
       "source": "src/main/java/edu/lab/city/service/CityService.java",
-      "bytes": 5207,
-      "sha256": "b48535282989b6beae55ff3901089f0564045134b30c8e51c9d41b09011f1547"
+      "bytes": 5686,
+      "sha256": "2bdd39a5b86c1412dd8fb3184fa24806e7dc0969ea7dac6ae6d5cae996f5c670"
     },
     {
       "path": "src/main/java/edu/lab/city/service/SpecialService.java",
@@ -312,20 +312,20 @@
     {
       "path": "src/main/java/edu/lab/city/web/ApiController.java",
       "source": "src/main/java/edu/lab/city/web/ApiController.java",
-      "bytes": 4865,
-      "sha256": "17ddf21edc2a245bc9301b8b7424cedd62b710248de17856e0487307b0128148"
+      "bytes": 6010,
+      "sha256": "fbef68fdc09158e64c3b761c993bcea5c046e5386a91fe46715ce755815e59e7"
     },
     {
       "path": "src/main/java/edu/lab/city/web/ApiExceptionHandler.java",
       "source": "src/main/java/edu/lab/city/web/ApiExceptionHandler.java",
-      "bytes": 4368,
-      "sha256": "2f590dc67379f23ff07c657889284f44dae910b2eac55193bfbe913d3d6fc842"
+      "bytes": 5146,
+      "sha256": "849656c715590376e2f0f8bb01e60fd96c15296979dcc6ab5cfc05f8581c5883"
     },
     {
       "path": "src/main/java/edu/lab/city/web/AuthController.java",
       "source": "src/main/java/edu/lab/city/web/AuthController.java",
-      "bytes": 2547,
-      "sha256": "bc62df58b77b9719f2e06b87a4a56ec9f845aef50b92b60da8490b9bc1300305"
+      "bytes": 3227,
+      "sha256": "ab35a07a8ab84152d4317b392e442e0a85062ffdcfcd21cbd2755e1744a3383b"
     },
     {
       "path": "src/main/resources/db/migration/V1__schema.sql",

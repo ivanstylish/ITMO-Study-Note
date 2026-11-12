@@ -12,8 +12,8 @@
     {
       "path": "zoo.c",
       "source": "zoo.c",
-      "bytes": 6044,
-      "sha256": "f3d52558c910a5e4534c445e7875232763b389acf35701eefe7d89448c867672"
+      "bytes": 5825,
+      "sha256": "5a9983775f49a647b9d70d23c25a81cc6a859e8d75d0be613974094b0c4e4480"
     }
   ],
   "excluded": [

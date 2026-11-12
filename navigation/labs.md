@@ -97,6 +97,7 @@
 | [Homework 3](../RussianLanguage/Homework3.md) | ✓ 已通过 | — |
 | [第二学年练习](../RussianLanguage/2year) | ✓ 已通过 | — |
 | [演示：环太平洋](../RussianLanguage/ppt/%D0%A2%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D1%83%D0%B1%D0%B5%D0%B6.md) | ✓ 已通过 | — |
+| [大三：文本阅读作业](../RussianLanguage/3year/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC.pdf) | — 未标记 | — |
 
 ## 数据库
 
@@ -289,7 +290,20 @@
 |---|---|---|
 | [Lab 1：实际提交包](../ComputerGraphicsAlgo/Lab1/lab1_overleaf_project/README.md) | — 未标记 | [全部实验文件](../ComputerGraphicsAlgo/Lab1) |
 | [Lab 2：实际提交包](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md) | — 未标记 | [全部实验文件](../ComputerGraphicsAlgo/Lab2) |
-| [Lab 3：任务书与色彩数据](../ComputerGraphicsAlgo/Lab3) | — 未标记 | — |
+| [Lab 3：光谱与色彩球体](../ComputerGraphicsAlgo/Lab3) | — 未标记 | [实验说明](../ComputerGraphicsAlgo/Lab3/README.md) · [报告](../ComputerGraphicsAlgo/Lab3/lab3_report.pdf) |
+| [Lab 4：RGB 光谱重建](../ComputerGraphicsAlgo/Lab4/README.md) | — 未标记 | [报告源文件](../ComputerGraphicsAlgo/Lab4/overleaf/README.md) |
+| [Lab 5：实验任务书](../ComputerGraphicsAlgo/Lab5) | — 未标记 | — |
+
+## 软件系统架构
+
+[课程入口](../SoftwareSystemArch/readme.md) · — 未标记
+
+### 全部实验
+
+| 实验 | 状态 | 资料与说明 |
+|---|---|---|
+| [Lab 1：UML 系统建模](../SoftwareSystemArch/Lab/Lab1/readme.md) | — 未标记 | [全部实验文件](../SoftwareSystemArch/Lab/Lab1) · [报告](../SoftwareSystemArch/Lab/Lab1/report_AWGE.docx) |
+| [Lab 2：GoF 与 GRASP 设计模式](../SoftwareSystemArch/Lab/Lab2/readme.md) | — 未标记 | [全部实验文件](../SoftwareSystemArch/Lab/Lab2) · [报告](../SoftwareSystemArch/Lab/Lab2/report_Lab2_GoF_GRASP.docx) |
 
 ## 知识图谱
 
@@ -300,6 +314,8 @@
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
 | [Step 1：选题与演讲提纲](../KnowledgeGraphs/Step-1/des.md) | — 未标记 | — |
+| [Step 2：本体建模与 Protégé](../KnowledgeGraphs/Step-2/FULL_VERSION_TUTORIAL_ZH.md) | — 未标记 | [本体提交文件](../KnowledgeGraphs/Step-2/LoL_Ontology_Submission) |
+| [Step 3：LoL 数据采集](../KnowledgeGraphs/Step-3/readme.md) | — 未标记 | — |
 
 ## 信息系统
 
@@ -317,7 +333,7 @@
 
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
-| [课程项目：要求与阶段报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md) | — 未标记 | — |
+| [课程项目：要求与阶段报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md) | — 未标记 | [阶段一报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_1.docx) · [阶段二 ER 模型报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_2_v4_8_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82_%D0%9C%D0%B0%D0%BD%D1%83%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx) · [阶段三报告](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_3_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82_%D0%9C%D0%B0%D0%BD%D1%83%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0.pdf) · [SQL 实现](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/SQL) · [ER 关系说明](../InformationSystem/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0_%D0%BF%D0%BE_%D1%81%D0%B2%D1%8F%D0%B7%D1%8F%D0%BC_ER_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82.md) |
 
 ## 建模
 
@@ -329,6 +345,7 @@
 |---|---|---|
 | [УИР 1：变体 115 学习笔记](../Modeling/lab1/%E5%AE%9E%E9%AA%8C%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_%E4%B8%AD%E4%BF%84%E5%8F%8C%E8%AF%AD_%E5%8F%98%E4%BD%93115.md) | — 未标记 | [全部实验文件](../Modeling/lab1) |
 | [УИР 2：变体 15 实际计算](../Modeling/lab2/lab2_variant15.py) | — 未标记 | [全部实验文件](../Modeling/lab2) |
+| [УИР 3：排队系统与网络](../Modeling/lab3/%D0%A3%D0%98%D0%A03_%D0%A1%D0%9C%D0%9E%20%D0%B8%20%D0%A1%D0%B5%D0%9C%D0%9E.pdf) | — 未标记 | [理论材料](../Modeling/lab3/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%20%D0%BA%20%D0%A3%D0%98%D0%A03.pdf) |
 
 ## 操作系统
 
@@ -339,6 +356,9 @@
 | 实验 | 状态 | 资料与说明 |
 |---|---|---|
 | [Lab 1 intro-ex：原始要求](../OperatingSystem/Lab/lab1-intro-ex/course-code/lab/intro-exp/README.md) | — 未标记 | — |
+| [Lab 2：FUSE / MusicFS](../OperatingSystem/Lab/lab2-fuse-musicfs/README.md) | — 未标记 | [实验报告](../OperatingSystem/Lab/lab2-fuse-musicfs/OS%20report2.pdf) |
+| [xv6 Intro](../OperatingSystem/Lab/xv6-notes/Intro-%E6%8A%A5%E5%91%8A.md) | — 未标记 | [学习与答辩](../OperatingSystem/Lab/xv6-notes/Intro-%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%AD%94%E8%BE%A9.md) |
+| [xv6 Shebang](../OperatingSystem/Lab/xv6-notes/Shebang-%E6%8A%A5%E5%91%8A.md) | — 未标记 | [学习与答辩](../OperatingSystem/Lab/xv6-notes/Shebang-%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%AD%94%E8%BE%A9.md) |
 
 ## 用户界面设计
 
@@ -348,8 +368,9 @@
 
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
-| [Homework 1：项目说明](../UIDesign/HW/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md) | — 未标记 | — |
-| [Homework 2：用户场景](../UIDesign/HW/04_%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_2_%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8.md) | — 未标记 | — |
+| [Homework 1：项目说明](../UIDesign/HW/stage1/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md) | — 未标记 | — |
+| [Homework 2：用户场景](../UIDesign/HW/stage2/AI_Knowledge_Agent_User_Scenarios_RU(1).pdf) | — 未标记 | — |
+| [Homework 3：信息架构](../UIDesign/HW/stage3/AI_Knowledge_Agent_Information_Architecture_RU.pdf) | — 未标记 | — |
 
 ## 人工智能系统
 
@@ -360,5 +381,8 @@
 | 实验 | 状态 | 资料与说明 |
 |---|---|---|
 | [Lab 1：线性回归实现与笔记](../AISystem/Labs/lab1/Lab1_AI_Linear_Regression.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab1) |
-| [目录 lab2 / 任务书 Lab 6：逻辑回归](../AISystem/Labs/lab2/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab2) |
+| [Lab 2：逻辑回归（旧说明编号 6）](../AISystem/Labs/lab2/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab2) |
 | [Lab 3：模型正则化实验与报告](../AISystem/Labs/lab3/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab3) · 实现与报告已收录；通过状态未记录。 |
+| [Lab 4：k 近邻方法](../AISystem/Labs/lab4/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab4) · [报告](../AISystem/Labs/lab4/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_4.docx) |
+| [Lab 5：决策树](../AISystem/Labs/lab5/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab5) · [报告](../AISystem/Labs/lab5/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_5.docx) |
+| [Lab 6：MNIST 手写数字识别](../AISystem/Labs/lab6/README.md) | — 未标记 | [全部实验文件](../AISystem/Labs/lab6) · [报告](../AISystem/Labs/lab6/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_6.docx) |

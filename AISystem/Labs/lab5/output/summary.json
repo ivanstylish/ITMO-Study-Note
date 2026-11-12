@@ -1,0 +1,81 @@
+{
+  "seed": 42,
+  "variant": "odd",
+  "source": "https://archive.ics.uci.edu/dataset/856",
+  "dataset_sha256": "d5905d231bedd7e4cdcf708fab55fc65b79dfe12012e846eccad3e88b5ecb019",
+  "objects": 145,
+  "candidate_features": 31,
+  "selected_features": [
+    "class_attendance",
+    "parental_status",
+    "reading_scientific",
+    "high_school_type",
+    "course_id"
+  ],
+  "missing_values": 0,
+  "raw_duplicate_rows": 0,
+  "class_counts": {
+    "all": {
+      "0": 67,
+      "1": 78
+    },
+    "train": {
+      "0": 54,
+      "1": 62
+    },
+    "test": {
+      "0": 13,
+      "1": 16
+    }
+  },
+  "tree": {
+    "depth": 5,
+    "leaves": 31,
+    "nodes": 48
+  },
+  "metrics": [
+    {
+      "split": "train",
+      "accuracy": 0.8362068965517241,
+      "precision": 0.9387755102040817,
+      "recall": 0.7419354838709677,
+      "TP": 46,
+      "FP": 3,
+      "FN": 16,
+      "TN": 51
+    },
+    {
+      "split": "test",
+      "accuracy": 0.7586206896551724,
+      "precision": 0.8461538461538461,
+      "recall": 0.6875,
+      "TP": 11,
+      "FP": 2,
+      "FN": 5,
+      "TN": 11
+    }
+  ],
+  "test_auc": {
+    "ROC_AUC": 0.7740384615384615,
+    "PR_AUC": 0.8436404693414008
+  },
+  "leaf_probabilities": [
+    0.0,
+    0.25,
+    0.3,
+    0.3333333333333333,
+    0.4,
+    0.47058823529411764,
+    0.5,
+    1.0
+  ],
+  "node_features": [
+    "class_attendance",
+    "course_id",
+    "high_school_type",
+    "parental_status",
+    "reading_scientific"
+  ],
+  "threshold_rule": "score >= threshold",
+  "importance_rule": "unweighted sum of node IG"
+}

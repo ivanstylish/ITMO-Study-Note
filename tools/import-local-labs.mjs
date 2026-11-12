@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { snapshotBytes } from './snapshot-bytes.mjs';
 
 // Explicit course folders only. No drive-wide discovery, no deletions, no overwrites.
 const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -80,7 +81,7 @@ async function verifyManifests() {
       for (const file of manifest.files) {
         const destination = path.resolve(target, file.path);
         if (!contained(target, destination)) throw new Error(`Manifest path escapes snapshot: ${group.id}`);
-        const buffer = await fs.readFile(destination);
+        const buffer = snapshotBytes(await fs.readFile(destination), file.path);
         if (digest(buffer) !== file.sha256 || buffer.length !== file.bytes) throw new Error(`Checksum mismatch: ${group.target}/${file.path}`);
         totalFiles++; totalBytes += buffer.length;
       }
@@ -99,7 +100,7 @@ async function main() {
   const duplicateHashes = new Set();
   await collect(path.join(repository, 'ProgrammingLanguage'), async entry => {
     if (entry.excluded || !sourceExtensions.has(path.extname(entry.relative).toLowerCase()) || /^(?:local-variants|work8)\//.test(entry.relative)) return;
-    duplicateHashes.add(digest(await fs.readFile(entry.absolute)));
+    duplicateHashes.add(digest(snapshotBytes(await fs.readFile(entry.absolute), entry.relative)));
   });
   const plans = [];
   for (const group of groups) {
@@ -120,7 +121,7 @@ async function main() {
       if (group.codeOnly && !sourceExtensions.has(extension)) return;
       const specialName = /^(?:gradlew|gradle-wrapper\.properties|gradle-wrapper\.jar|CMakeLists\.txt|Dockerfile|Makefile|\.gitignore|\.gitattributes|\.editorconfig)$/i.test(basename);
       if (!allowedExtensions.has(extension) && !specialName) { excluded.push({ path: entry.relative, reason: 'outside explicit source/document whitelist' }); return; }
-      const buffer = await fs.readFile(entry.absolute);
+      const buffer = snapshotBytes(await fs.readFile(entry.absolute), entry.relative);
       if (!buffer.length) { excluded.push({ path: entry.relative, reason: 'empty file' }); return; }
       if (!binaryExtensions.has(extension) && suspiciousContent(buffer)) { excluded.push({ path: entry.relative, reason: 'suspected credential literal; content not printed' }); return; }
       const sha256 = digest(buffer);
@@ -129,7 +130,7 @@ async function main() {
       const destination = path.resolve(target, outputRelative);
       if (!contained(target, destination)) throw new Error(`Unsafe target: ${group.id}/${outputRelative}`);
       const existing = await fs.readFile(destination).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
-      if (existing && digest(existing) !== sha256) throw new Error(`Refusing to overwrite different file: ${group.target}/${outputRelative}`);
+      if (existing && digest(snapshotBytes(existing, outputRelative)) !== sha256) throw new Error(`Refusing to overwrite different file: ${group.target}/${outputRelative}`);
       files.push({ path: outputRelative, source: entry.relative, bytes: buffer.length, sha256, absolute: entry.absolute, destination, alreadyExists: Boolean(existing) });
     });
     const manifest = { version: 1, sourceGroup: group.id, status: 'source snapshot', files: files.map(({ path, source, bytes, sha256 }) => ({ path, source, bytes, sha256 })), excluded };
@@ -153,7 +154,7 @@ async function main() {
     await fs.mkdir(target, { recursive: true });
     for (const file of files) if (!file.alreadyExists) {
       await fs.mkdir(path.dirname(file.destination), { recursive: true });
-      const buffer = await fs.readFile(file.absolute);
+      const buffer = snapshotBytes(await fs.readFile(file.absolute), file.source);
       if (digest(buffer) !== file.sha256) throw new Error(`Source changed after inspection: ${group.id}/${file.source}`);
       await fs.writeFile(file.destination, buffer, { flag: 'wx' });
     }

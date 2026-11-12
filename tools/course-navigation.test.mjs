@@ -42,7 +42,10 @@ test('four years include only recorded courses and retain uncollected semesters'
   const source=`自定义说明\n${homeStart}\n${homeEnd}\n自定义尾注\n`;
   const out=composeHome(source,catalog,link);
   assert.equal((out.match(/^## 大[一二三四]/gm)||[]).length,4);
-  assert.equal((out.match(/^### /gm)||[]).length,8);
+  assert.equal((out.match(/^<summary>/gm)||[]).length,8);
+  assert.equal((out.match(/^<details(?: open)?>/gm)||[]).length,8);
+  assert.equal((out.match(/^<details open>/gm)||[]).length,1);
+  assert.match(out,/<details open>\n<summary>第 5 学期/);
   assert.equal(academicYears(catalog).flatMap(y=>y.semesters).slice(5).every(s=>s.courses.length===0),true);
   assert.ok(out.startsWith('自定义说明\n'));
   assert.ok(out.endsWith('自定义尾注\n'));

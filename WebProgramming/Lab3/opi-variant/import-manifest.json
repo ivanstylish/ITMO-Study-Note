@@ -12,8 +12,8 @@
     {
       "path": "build.gradle",
       "source": "build.gradle",
-      "bytes": 1407,
-      "sha256": "cffb003b5882d1f5c8e5af21be9545e1caab28e6a7605cac491655870c9c7fc7"
+      "bytes": 1354,
+      "sha256": "511788f391cf95182d8b07c5a0421b49a68de7f7205e345cee257636ab230ccb"
     },
     {
       "path": "gradle/wrapper/gradle-wrapper.jar",
@@ -24,8 +24,8 @@
     {
       "path": "gradle/wrapper/gradle-wrapper.properties",
       "source": "gradle/wrapper/gradle-wrapper.properties",
-      "bytes": 236,
-      "sha256": "bd6a3d279a472c9560293ef1684ed343fbbafec2de78c0fce8899dce66a82e86"
+      "bytes": 230,
+      "sha256": "ddc870a087b22a1040d139b580fbbe2ad5071edbaf695e14cdc61dd5c46d9f84"
     },
     {
       "path": "gradlew",
@@ -36,98 +36,98 @@
     {
       "path": "gradlew.bat",
       "source": "gradlew.bat",
-      "bytes": 2763,
-      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+      "bytes": 2674,
+      "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129"
     },
     {
       "path": "settings.gradle",
       "source": "settings.gradle",
-      "bytes": 43,
-      "sha256": "45ae2dd8a09b6c0e8ff96ee767fe4ac3209a02dfa6b7d229e8e76445980a3cee"
+      "bytes": 41,
+      "sha256": "6d1445c4a4cbbe9e08038b8a96a5ff3c5ab3ee30a909d19583d9e255273bcfbd"
     },
     {
       "path": "sql/lab3.sql",
       "source": "sql/lab3.sql",
-      "bytes": 343,
-      "sha256": "57e2df3ec785d059bd1e0a80b1a23621d2ca819d85c8b16a9c2fa512b1aa6702"
+      "bytes": 328,
+      "sha256": "f18d24a3cc3473c5b0935235606f1d49d1d65727d1638f85c50b0802ff8f4538"
     },
     {
       "path": "src/main/java/org/coordinate/bean/ClockBean.java",
       "source": "src/main/java/org/coordinate/bean/ClockBean.java",
-      "bytes": 876,
-      "sha256": "bd120b3fd002e9923e14cd40ef98b8bcd4989e387f2725256e43f7b5bb90a40e"
+      "bytes": 844,
+      "sha256": "5379a6db18b89cc1e9d4e2ebcb30cfc1f2c8fb50b3f4a6300dae9d77baf20314"
     },
     {
       "path": "src/main/java/org/coordinate/bean/PointBean.java",
       "source": "src/main/java/org/coordinate/bean/PointBean.java",
-      "bytes": 5262,
-      "sha256": "5b6fb8746af214d65664ef0c5d682dd535bb59ed8eea2fafde6d64d183505edf"
+      "bytes": 5102,
+      "sha256": "f3c6a244ffabd69adad6f9cecf82bc41379463d5663b18f5a938ed6198786ac8"
     },
     {
       "path": "src/main/java/org/coordinate/bean/ResultBean.java",
       "source": "src/main/java/org/coordinate/bean/ResultBean.java",
-      "bytes": 6616,
-      "sha256": "761da1cf78a99293fe0444a868d262c30acc2538545a0b867ca965e8f9962c07"
+      "bytes": 6393,
+      "sha256": "a6bf6ed0dcc1f17031760010369b86402203a3e3edbc24a78c2a5faddb419a60"
     },
     {
       "path": "src/main/java/org/coordinate/entity/Result.java",
       "source": "src/main/java/org/coordinate/entity/Result.java",
-      "bytes": 2096,
-      "sha256": "b15b8bf787e0fb8948f69cacd8cbf03221d6af448c0615290a77e379921ba902"
+      "bytes": 1993,
+      "sha256": "39e398870bed4bebde62eeed7f477eaf3dcdb73fba52cfcbfe3bb37167170ff7"
     },
     {
       "path": "src/main/java/org/coordinate/service/AreaCheck.java",
       "source": "src/main/java/org/coordinate/service/AreaCheck.java",
-      "bytes": 953,
-      "sha256": "5e1934b5c71969be995371bd53c6542273116b44a08a871717968e9d3db99790"
+      "bytes": 914,
+      "sha256": "19b03e9455ae55b659f7a49ec7eab0e17d969eba6b13ebece241258c1f454fce"
     },
     {
       "path": "src/main/webapp/errorPage/404.xhtml",
       "source": "src/main/webapp/errorPage/404.xhtml",
-      "bytes": 579,
-      "sha256": "98805cf98bca4f08d017bbd8a5cda5682f960015ce33c32fdda03f39071f48de"
+      "bytes": 556,
+      "sha256": "0877d60c838763b325c8826c39e10bba9251b7037b3077db01e1272b34b09da2"
     },
     {
       "path": "src/main/webapp/errorPage/500.xhtml",
       "source": "src/main/webapp/errorPage/500.xhtml",
-      "bytes": 587,
-      "sha256": "c75458c801821736d81e0005af0cf8c200d5db1962ca024bbad9b2618d97ca42"
+      "bytes": 566,
+      "sha256": "a7f94151e79c4800602b7bfb5a048de21dae0399b087c0731382f262521c5b82"
     },
     {
       "path": "src/main/webapp/index.xhtml",
       "source": "src/main/webapp/index.xhtml",
-      "bytes": 1538,
-      "sha256": "d9fd68ea08834a11d9bf71eef43d82158947854ae6887beb1edfc021594d0173"
+      "bytes": 1486,
+      "sha256": "9185b28c50c559501cce68fce261f25a8572a1f4c8fc28cf942eb05cea0cad26"
     },
     {
       "path": "src/main/webapp/main.xhtml",
       "source": "src/main/webapp/main.xhtml",
-      "bytes": 9031,
-      "sha256": "cc403787d0aadc0e02cad9300a620b28b88094b6844a51af090e7602d5c9b375"
+      "bytes": 8849,
+      "sha256": "3b4f433b640007bbbca7e89ae1c6f7122b16d83d0bb5ef97b1ed07ed479297e9"
     },
     {
       "path": "src/main/webapp/resources/css/style.css",
       "source": "src/main/webapp/resources/css/style.css",
-      "bytes": 11129,
-      "sha256": "ef8d7c497dcb1720196b4eb3027894b173e89f85fbc355dcfa7ed43d5df64af9"
+      "bytes": 10720,
+      "sha256": "c9153e297e573cd8934d814650a3b69b0fa01d1cbb05e55b35a8a4c284c35364"
     },
     {
       "path": "src/main/webapp/resources/js/main.js",
       "source": "src/main/webapp/resources/js/main.js",
-      "bytes": 8405,
-      "sha256": "db1e5dd249b0efe4ba22480a08fe778c1e04a886fc171151f3155959339b0e27"
+      "bytes": 8164,
+      "sha256": "df4c490f7e6aa2c99855d5658c538f32af646953de8a70d4f391828a8f49381e"
     },
     {
       "path": "src/main/webapp/WEB-INF/beans.xml",
       "source": "src/main/webapp/WEB-INF/beans.xml",
-      "bytes": 342,
-      "sha256": "ae067bacd8a69be9672d4660d7262d489f91f0d7e4bb1a0c42a1a75cff2de4ce"
+      "bytes": 335,
+      "sha256": "5b730f14dac4721103c0e167bbb37a190450709422df480d858c841406c99b47"
     },
     {
       "path": "src/main/webapp/WEB-INF/faces-config.xml",
       "source": "src/main/webapp/WEB-INF/faces-config.xml",
-      "bytes": 1629,
-      "sha256": "7ecb56984bea67328cf4fdc79ba38120bffe4a27581beaa62b418f9dfbd9c15b"
+      "bytes": 1586,
+      "sha256": "61a8238da15e29bbe646954accc137156e559ce26e9b072a80be94d5180b9787"
     },
     {
       "path": "src/main/webapp/WEB-INF/mbean/ClickInterval.java",
@@ -162,8 +162,8 @@
     {
       "path": "src/main/webapp/WEB-INF/web.xml",
       "source": "src/main/webapp/WEB-INF/web.xml",
-      "bytes": 2084,
-      "sha256": "5c0eceb95c812551e78770fbf0878ab2e4c52e7f0bac0f2eae493f454d44a936"
+      "bytes": 2021,
+      "sha256": "cb20286a38ec32b1ea27ae73a9eb11454511fadaf57a465824fb266a65db2c54"
     }
   ],
   "excluded": [

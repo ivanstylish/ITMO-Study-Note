@@ -20,7 +20,7 @@
 | 关系、约束、事务与 ORM / Ограничение, транзакция, ORM | 数据库 → Web → 信息系统 | [数据库实验三问答](../Database/labs/lab3/questions.md) → [JDBC/JPA](../WebProgramming/Ans/answer3.md) → [ObjectRepository](../InformationSystem/Lab1/Lab1/src/main/java/edu/lab/city/repository/ObjectRepository.java) | JPA 是标准、实现还是驱动？数据库如何保证约束？ |
 | 索引、监控与测量 / Индекс, мониторинг, измерение | 数据库 → 软件工程 → 操作系统 | [执行计划](../Database/labs/lab4/questions.md) → [JMX 实验报告](../OPI/Lab4/readme.md) → [OS 测量协议](../OperatingSystem/Lab/lab1-intro-ex/Intro-Exp-最终学习与答辩.md) | 指标由谁采集？测量本身有哪些开销？ |
 | 物理量与可视化 / Физическая величина, визуализация | 物理 → 图形学 → 建模 | [图形学实验一答辩](../ComputerGraphicsAlgo/Lab1/defense_zh_ru.md) → [球面亮度实验](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md) | 绝对亮度、归一化灰度和背景掩码如何区分？ |
-| 关系建模与证据 / Связи, источники данных | 数据库 → 知识图谱 → 用户界面 | [电影知识图谱提案](../KnowledgeGraphs/Step-1/des.md) → [用户场景](../UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md) | 图谱关系解决什么查询问题？结果如何说明来源？ |
+| 关系建模与证据 / Связи, источники данных | 数据库 → 知识图谱 → 用户界面 | [电影知识图谱提案](../KnowledgeGraphs/Step-1/des.md) → [用户场景](../UIDesign/HW/stage2/AI_Knowledge_Agent_User_Scenarios_RU(1).pdf) | 图谱关系解决什么查询问题？结果如何说明来源？ |
 
 最后一行连接的是项目提案与设计材料，不能据此认为知识图谱查询服务已经实现。信息系统课件的 Java EE / javax 示例与实际项目的 Jakarta Persistence / jakarta 导入应按[版本说明](../InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md)分别阅读。
 

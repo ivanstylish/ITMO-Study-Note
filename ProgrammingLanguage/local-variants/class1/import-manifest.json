@@ -6,8 +6,8 @@
     {
       "path": "lab0.c",
       "source": "lab0.c",
-      "bytes": 171,
-      "sha256": "d47cba6195795f2d503694a56adff23ffeb9350ebc8c66b1c0a4f04c400f2512"
+      "bytes": 159,
+      "sha256": "55a7320415a26e916d1bcc80bfb6b2fe8e4db1bfa444e8948e35c052e59d03bf"
     },
     {
       "path": "library.c",
@@ -24,8 +24,8 @@
     {
       "path": "sum.c",
       "source": "sum.c",
-      "bytes": 91,
-      "sha256": "199d09cdc4f3b1485747f76f532ba745c45abf530dd1081e1d638a27c8e67342"
+      "bytes": 84,
+      "sha256": "3fc48526d6a959e58a13fc00f7e738db79a6fbcd275d76ce70677a909913bb5a"
     }
   ],
   "excluded": [

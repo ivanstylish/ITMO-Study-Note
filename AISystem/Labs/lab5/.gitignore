@@ -1,0 +1,4 @@
+.venv/
+.venv-python36-backup/
+__pycache__/
+_qa/

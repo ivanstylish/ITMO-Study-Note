@@ -44,7 +44,7 @@
 
 - **操作系统、AI、建模**：先完成上方四个速查中的相关条目，再用[答辩入口](defense.md)对照实际源码和结果。
 - **信息系统与图形学**：[City Registry 九题](../InformationSystem/Lab1/DEFENSE_QA_ZH_RU.md)、[图形学 Lab1 问答](../ComputerGraphicsAlgo/Lab1/defense_zh_ru.md)、[Lab2 模型说明](../ComputerGraphicsAlgo/Lab2/lab2_overleaf_project/README.md)。区分通用理论、版本约定与自己项目中的真实功能。
-- **知识图谱与 UI**：[电影图谱提案](../KnowledgeGraphs/Step-1/des.md)、[用户场景](../UIDesign/HW/04_Задание_2_Пользовательские_сценарии.md)。练问题定义、数据来源、关系查询和使用场景；提案不等于已实现的服务。
+- **知识图谱与 UI**：[电影图谱提案](../KnowledgeGraphs/Step-1/des.md)、[用户场景](../UIDesign/HW/stage2/AI_Knowledge_Agent_User_Scenarios_RU(1).pdf)。练问题定义、数据来源、关系查询和使用场景；提案不等于已实现的服务。
 - **软件系统架构与俄语**：[架构课件目录](../SoftwareSystemArch/readme.md)、[俄语目录](../RussianLanguage/readme.md)。当前只复习已有课件 / 语言资料，后续新增资料再纳入。
 
 ## 复习后的闭卷检查

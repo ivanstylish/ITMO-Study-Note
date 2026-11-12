@@ -28,14 +28,15 @@
 .academic-semesters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .academic-semester { min-width: 0; padding: 20px 24px 24px; }
 .academic-semester + .academic-semester { border-left: 1px solid var(--study-border); }
-.academic-semester h3 { margin: 0 0 16px; font-size: 14px; }
-.academic-semester h3 a { display: flex; justify-content: space-between; text-decoration: none; }
+.academic-semester summary { cursor: pointer; font-size: 14px; font-weight: 600; scroll-margin-top: 96px; }
+.academic-semester summary > span { float: right; margin-left: 8px; font-size: 11px; color: var(--vp-c-text-2); font-weight: 400; }
+.academic-semester-link { margin: 14px 0 4px !important; font-size: 12px; }
 .vp-doc .academic-course-list { padding: 0; margin: 0; list-style: none; }
 .academic-course-list li + li { border-top: 1px solid var(--study-border); }
 .academic-course-list li { margin: 0; }
 .academic-course-list a { display: block; margin: 0 -10px; padding: 13px 10px; border-radius: 9px; color: var(--vp-c-text-1); text-decoration: none; }
 .academic-course-list a:hover { background: var(--vp-c-brand-soft); }
-.academic-course-list a:focus-visible, .academic-semester h3 a:focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: 2px; }
+.academic-course-list a:focus-visible, .academic-semester summary:focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: 2px; }
 .academic-course-title { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 12px; font-size: 14px; font-weight: 600; }
 .academic-course-title .study-status { padding: 1px 7px; font-size: 10px; }
 .academic-course-ru { display: block; margin-top: 5px; color: var(--vp-c-text-2); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; font-weight: 400; }

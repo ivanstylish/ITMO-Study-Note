@@ -12,8 +12,8 @@
     {
       "path": "build.gradle",
       "source": "build.gradle",
-      "bytes": 1543,
-      "sha256": "8f265754eb675103aadb805b5a0d4228fd90c73818a012c6492acc0bd95ef01a"
+      "bytes": 1488,
+      "sha256": "e74de748e3f46dc2683c84861f9ef5d3e645d8d0ecd15eabdd71a79436646905"
     },
     {
       "path": "build.xml",
@@ -30,8 +30,8 @@
     {
       "path": "gradle/wrapper/gradle-wrapper.properties",
       "source": "gradle/wrapper/gradle-wrapper.properties",
-      "bytes": 236,
-      "sha256": "bd6a3d279a472c9560293ef1684ed343fbbafec2de78c0fce8899dce66a82e86"
+      "bytes": 230,
+      "sha256": "ddc870a087b22a1040d139b580fbbe2ad5071edbaf695e14cdc61dd5c46d9f84"
     },
     {
       "path": "gradlew",
@@ -42,56 +42,56 @@
     {
       "path": "gradlew.bat",
       "source": "gradlew.bat",
-      "bytes": 2763,
-      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+      "bytes": 2674,
+      "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129"
     },
     {
       "path": "history.bat",
       "source": "history.bat",
-      "bytes": 2202,
-      "sha256": "592ff80f9f343d43483c4d6634d012d70d0810742ac5ac0b367dfac2b3fe6022"
+      "bytes": 2130,
+      "sha256": "4962aa2db0f77c47fa4044001866a2274338e13bc68248fb0698e14d36858d53"
     },
     {
       "path": "settings.gradle",
       "source": "settings.gradle",
-      "bytes": 43,
-      "sha256": "45ae2dd8a09b6c0e8ff96ee767fe4ac3209a02dfa6b7d229e8e76445980a3cee"
+      "bytes": 41,
+      "sha256": "6d1445c4a4cbbe9e08038b8a96a5ff3c5ab3ee30a909d19583d9e255273bcfbd"
     },
     {
       "path": "sql/lab3.sql",
       "source": "sql/lab3.sql",
-      "bytes": 343,
-      "sha256": "57e2df3ec785d059bd1e0a80b1a23621d2ca819d85c8b16a9c2fa512b1aa6702"
+      "bytes": 328,
+      "sha256": "f18d24a3cc3473c5b0935235606f1d49d1d65727d1638f85c50b0802ff8f4538"
     },
     {
       "path": "src/main/java/org/coordinate/bean/ClockBean.java",
       "source": "src/main/java/org/coordinate/bean/ClockBean.java",
-      "bytes": 913,
-      "sha256": "e78b91c1d46e902b4c6abbac21df7fb62be01fa645553da78946be986513baed"
+      "bytes": 879,
+      "sha256": "dbc974fbb61dd9d679bc0193d99d5b7d19faf19a7aa863f7795fa8ae250ca942"
     },
     {
       "path": "src/main/java/org/coordinate/bean/PointBean.java",
       "source": "src/main/java/org/coordinate/bean/PointBean.java",
-      "bytes": 5158,
-      "sha256": "2ff0fd5225d4b5958d3e58796a845161a3adc0cd6dccd34b3fd58635f72bad43"
+      "bytes": 4988,
+      "sha256": "75f7c151e210353b0f7ee2cf7b28d9ff5eaca4977f17857d09b8ec5d3610ed8e"
     },
     {
       "path": "src/main/java/org/coordinate/bean/ResultBean.java",
       "source": "src/main/java/org/coordinate/bean/ResultBean.java",
-      "bytes": 4931,
-      "sha256": "984e40d14e40a1afe95e5bc341e61d7f1638cf6f6a8b9768021cb946c5421fa0"
+      "bytes": 4771,
+      "sha256": "ab4c0e5ab908ca95cb99c9d2848754d34f55522c1d2f0af8e915c1aa60a8f6eb"
     },
     {
       "path": "src/main/java/org/coordinate/bean/ResultDTO.java",
       "source": "src/main/java/org/coordinate/bean/ResultDTO.java",
-      "bytes": 919,
-      "sha256": "15331f7d153b2c518b35d08724e51eec1bab92870c8e929a1ef8ca2c861eb09f"
+      "bytes": 890,
+      "sha256": "99f8f9bce146371d0b93a40328762ed41c66595e6d3f5f8d25931ed616165398"
     },
     {
       "path": "src/main/java/org/coordinate/entity/Result.java",
       "source": "src/main/java/org/coordinate/entity/Result.java",
-      "bytes": 2096,
-      "sha256": "b15b8bf787e0fb8948f69cacd8cbf03221d6af448c0615290a77e379921ba902"
+      "bytes": 1993,
+      "sha256": "39e398870bed4bebde62eeed7f477eaf3dcdb73fba52cfcbfe3bb37167170ff7"
     },
     {
       "path": "src/main/java/org/coordinate/mbean/ClickInterval.java",
@@ -126,68 +126,68 @@
     {
       "path": "src/main/java/org/coordinate/service/AreaCheck.java",
       "source": "src/main/java/org/coordinate/service/AreaCheck.java",
-      "bytes": 953,
-      "sha256": "5e1934b5c71969be995371bd53c6542273116b44a08a871717968e9d3db99790"
+      "bytes": 914,
+      "sha256": "19b03e9455ae55b659f7a49ec7eab0e17d969eba6b13ebece241258c1f454fce"
     },
     {
       "path": "src/main/webapp/errorPage/404.xhtml",
       "source": "src/main/webapp/errorPage/404.xhtml",
-      "bytes": 575,
-      "sha256": "215062213636a5cd23cd7bf72eccc569ac4dc0194989a33544560e2d8d2e54ad"
+      "bytes": 554,
+      "sha256": "c28f2b3cbb560d1772f53bf15b42e6d868df607ba4ebaee7906c6bae30251801"
     },
     {
       "path": "src/main/webapp/errorPage/500.xhtml",
       "source": "src/main/webapp/errorPage/500.xhtml",
-      "bytes": 585,
-      "sha256": "0a36cce081e56ca54f2954d0aa1f7463ba378d3893087519efd42ea66014a20b"
+      "bytes": 565,
+      "sha256": "788ebc0d4524fc5708315e0f5165aca7f8b6bdf13993cee8e2fcfb3f6352ec58"
     },
     {
       "path": "src/main/webapp/index.xhtml",
       "source": "src/main/webapp/index.xhtml",
-      "bytes": 1538,
-      "sha256": "d9fd68ea08834a11d9bf71eef43d82158947854ae6887beb1edfc021594d0173"
+      "bytes": 1486,
+      "sha256": "9185b28c50c559501cce68fce261f25a8572a1f4c8fc28cf942eb05cea0cad26"
     },
     {
       "path": "src/main/webapp/main.xhtml",
       "source": "src/main/webapp/main.xhtml",
-      "bytes": 8931,
-      "sha256": "42cf59bb626c2c9ece312230dc4ac9c9cd5bd862315496359ff634bb7e3adbec"
+      "bytes": 8754,
+      "sha256": "9e9d0e2c6289a4d2cf249fa98c06875d56cef6acfe95e1485a8b12a59e2d8ca0"
     },
     {
       "path": "src/main/webapp/resources/css/style.css",
       "source": "src/main/webapp/resources/css/style.css",
-      "bytes": 6769,
-      "sha256": "23243f509d0b342f23f5040d083a3d90a7042d6cb302bfac67c882e6da4210e8"
+      "bytes": 6462,
+      "sha256": "2e99ed1a3c4cc50f060a6c66c149ac135297a89e5a9a420d228bd540e27866f2"
     },
     {
       "path": "src/main/webapp/resources/js/main.js",
       "source": "src/main/webapp/resources/js/main.js",
-      "bytes": 8330,
-      "sha256": "58de54f713e5d7955953e883221c3be4755ce3e92aec033073251991d5ccf1fe"
+      "bytes": 8092,
+      "sha256": "4367ff26e9ec14ee2e06dac1be7dba39d535e08529b7f8226a8fc476f010db61"
     },
     {
       "path": "src/main/webapp/WEB-INF/beans.xml",
       "source": "src/main/webapp/WEB-INF/beans.xml",
-      "bytes": 342,
-      "sha256": "ae067bacd8a69be9672d4660d7262d489f91f0d7e4bb1a0c42a1a75cff2de4ce"
+      "bytes": 335,
+      "sha256": "5b730f14dac4721103c0e167bbb37a190450709422df480d858c841406c99b47"
     },
     {
       "path": "src/main/webapp/WEB-INF/faces-config.xml",
       "source": "src/main/webapp/WEB-INF/faces-config.xml",
-      "bytes": 1629,
-      "sha256": "7ecb56984bea67328cf4fdc79ba38120bffe4a27581beaa62b418f9dfbd9c15b"
+      "bytes": 1586,
+      "sha256": "61a8238da15e29bbe646954accc137156e559ce26e9b072a80be94d5180b9787"
     },
     {
       "path": "src/main/webapp/WEB-INF/web.xml",
       "source": "src/main/webapp/WEB-INF/web.xml",
-      "bytes": 1046,
-      "sha256": "35bcba84fba7030dc10af51e5dde17f343025caf38a926d78517fc6f8d493a41"
+      "bytes": 1013,
+      "sha256": "8c3510371371559b96ada4859e1a2014126a2371759d6d7b8453a4f5d971e837"
     },
     {
       "path": "src/test/java/AreaCheckTest.java",
       "source": "src/test/java/AreaCheckTest.java",
-      "bytes": 6150,
-      "sha256": "814dae0d95612f86f8a583cac01b22c53170286d5cd9546dc586357e35f9abc5"
+      "bytes": 5982,
+      "sha256": "fe4e999ae45b2a63880e129fbf0a625ab4a34602e73cbe6683d81c5c571bfc32"
     }
   ],
   "excluded": [

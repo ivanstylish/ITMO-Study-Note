@@ -81,6 +81,9 @@ export function safeMarkdown(md, manifest, { base = '/' } = {}) {
     return rendered.replaceAll('{{', '&#123;&#123;').replaceAll('}}', '&#125;&#125;')
       .replace(/✓ 已通过|○ 待通过|— 未标记/g, label => `<span class="study-status ${label.startsWith('✓') ? 'passed' : label.startsWith('○') ? 'pending' : 'unmarked'}">${label}</span>`);
   };
+  const inlineCode = md.renderer.rules.code_inline;
+  md.renderer.rules.code_inline = (...args) => inlineCode(...args)
+    .replaceAll('{{', '&#123;&#123;').replaceAll('}}', '&#125;&#125;');
   const fence = md.renderer.rules.fence;
   md.renderer.rules.fence = (tokens, index, options, env, self) => {
     if (tokens[index].info.trim() === 'academic-years' && env.relativePath === 'index.md') return '<AcademicYears />';

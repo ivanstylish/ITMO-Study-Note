@@ -4,6 +4,7 @@ import catalog from '../../../navigation/catalog.json';
 import { academicYears } from '../../../tools/academic-home.mjs';
 import { courseStatus } from '../../../tools/course-status.mjs';
 const years=academicYears(catalog);
+const current=Math.max(...catalog.semesters.map(s=>s.number));
 const route=file=>withBase('/'+file.replace(/\.md$/,'.html').split('/').map(encodeURIComponent).join('/'));
 </script>
 
@@ -15,11 +16,9 @@ const route=file=>withBase('/'+file.replace(/\.md$/,'.html').split('/').map(enco
         <span>{{ year.period }}</span>
       </header>
       <div class="academic-semesters">
-        <section v-for="semester in year.semesters" :key="semester.number" class="academic-semester" :aria-labelledby="'semester-'+semester.number">
-          <h3 :id="'semester-'+semester.number">
-            <a v-if="semester.record" :href="route(`academic/semester-${String(semester.number).padStart(2,'0')}.md`)">第 {{ semester.number }} 学期 <span aria-hidden="true">↗</span></a>
-            <template v-else>第 {{ semester.number }} 学期</template>
-          </h3>
+        <details v-for="semester in year.semesters" :key="semester.number" class="academic-semester" :open="semester.number === current">
+          <summary :id="'semester-'+semester.number">第 {{ semester.number }} 学期 <span>{{ semester.courses.length ? `${semester.courses.length} 门课程` : '尚未收录' }}</span></summary>
+          <p v-if="semester.record" class="academic-semester-link"><a :href="route(`academic/semester-${String(semester.number).padStart(2,'0')}.md`)">本学期总览 <span aria-hidden="true">↗</span></a></p>
           <ul v-if="semester.courses.length" class="academic-course-list">
             <li v-for="course in semester.courses" :key="course.id">
               <a :href="route(course.dashboard)">
@@ -29,7 +28,7 @@ const route=file=>withBase('/'+file.replace(/\.md$/,'.html').split('/').map(enco
             </li>
           </ul>
           <p v-else class="academic-empty">本学期课程资料尚未收录。</p>
-        </section>
+        </details>
       </div>
     </section>
   </div>

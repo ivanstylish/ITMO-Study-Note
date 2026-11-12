@@ -8,7 +8,7 @@
 
 | 课程 | 考核 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [6 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
 | [Web 编程](../WebProgramming/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../WebProgramming/readme.md#labs) | — | [内容](../WebProgramming/readme.md#exam) · [答案](../WebProgramming/readme.md#answers) |
 | [数学分析补充章节](../Math/ExtraMath/readme.md) | 考试 · Экзамен | ✓ 已通过 | — | — | [答案](../Math/ExtraMath/readme.md#answers) |
 | [概率论](../ProbabilityTheory/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [2 项](../ProbabilityTheory/readme.md#assignments) | [答案](../ProbabilityTheory/readme.md#answers) |

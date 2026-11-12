@@ -2,6 +2,8 @@
 
 按学年与学期查课程，进入各科 README 查看全部实验、讲座教材、学期作业、考试内容与答案。
 
+点击学期标题展开或收起课程；当前学期默认展开。
+
 [大一](#year-1) · [大二](#year-2) · [大三](#year-3) · [大四](#year-4)
 
 ✓ 已通过 / ○ 待通过 / — 未标记。第 1–4 学期课程与实验已通过；跨学期课程分别记录状态。
@@ -10,7 +12,10 @@
 
 ## 大一 · 2024–2025 <a id="year-1"></a>
 
-### [第 1 学期 · 2024 秋季](academic/semester-01.md)
+<details>
+<summary>第 1 学期 · 2024 秋季 · 8 门课程</summary>
+
+[本学期总览](academic/semester-01.md)
 
 | 课程 | Русское название | 状态 |
 |---|---|---|
@@ -23,7 +28,12 @@
 | [程序设计](Programming/readme.md) | Программирование | ✓ 已通过 |
 | [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
 
-### [第 2 学期 · 2025 春季](academic/semester-02.md)
+</details>
+
+<details>
+<summary>第 2 学期 · 2025 春季 · 8 门课程</summary>
+
+[本学期总览](academic/semester-02.md)
 
 | 课程 | Русское название | 状态 |
 |---|---|---|
@@ -36,9 +46,14 @@
 | [俄语（外语）](RussianLanguage/readme.md) | Русский язык как иностранный | ✓ 已通过 |
 | [数据库](Database/readme.md) | Базы данных | ✓ 已通过 |
 
+</details>
+
 ## 大二 · 2025–2026 <a id="year-2"></a>
 
-### [第 3 学期 · 2025 秋季](academic/semester-03.md)
+<details>
+<summary>第 3 学期 · 2025 秋季 · 7 门课程</summary>
+
+[本学期总览](academic/semester-03.md)
 
 | 课程 | Русское название | 状态 |
 |---|---|---|
@@ -50,7 +65,12 @@
 | [物理](Physics/readme.md) | Физика | ✓ 已通过 |
 | [编程语言](ProgrammingLanguage/readme.md) | Языки программирования | ✓ 已通过 |
 
-### [第 4 学期 · 2026 春季](academic/semester-04.md)
+</details>
+
+<details>
+<summary>第 4 学期 · 2026 春季 · 9 门课程</summary>
+
+[本学期总览](academic/semester-04.md)
 
 | 课程 | Русское название | 状态 |
 |---|---|---|
@@ -64,9 +84,14 @@
 | [软件工程基础](OPI/readme.md) | Основы программной инженерии | ✓ 已通过 |
 | [公众演讲与展示](PublicPresentation/readme.md) | Техники публичных выступлений и презентаций | ✓ 已通过 |
 
+</details>
+
 ## 大三 · 2026–2027 <a id="year-3"></a>
 
-### [第 5 学期 · 2026 秋季](academic/semester-05.md)
+<details open>
+<summary>第 5 学期 · 2026 秋季 · 9 门课程</summary>
+
+[本学期总览](academic/semester-05.md)
 
 | 课程 | Русское название | 状态 |
 |---|---|---|
@@ -80,19 +105,30 @@
 | [用户界面设计](UIDesign/readme.md) | Проектирование пользовательских интерфейсов | — 未标记 |
 | [人工智能系统](AISystem/readme.md) | Системы искусственного интеллекта | — 未标记 |
 
-### 第 6 学期
+</details>
+
+<details>
+<summary>第 6 学期 · 尚未收录</summary>
 
 本学期课程资料尚未收录。
+
+</details>
 
 ## 大四 · 2027–2028 <a id="year-4"></a>
 
-### 第 7 学期
+<details>
+<summary>第 7 学期 · 尚未收录</summary>
 
 本学期课程资料尚未收录。
 
-### 第 8 学期
+</details>
+
+<details>
+<summary>第 8 学期 · 尚未收录</summary>
 
 本学期课程资料尚未收录。
+
+</details>
 
 <!-- kb:home:end -->
 

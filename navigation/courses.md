@@ -10,15 +10,15 @@
 
 | 课程 | 学期 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | 1、2、3、4、5 | 第 1、2、3、4 学期：✓ 已通过 · 第 5 学期：— 未标记 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
-| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | 5 | — 未标记 | [3 项](../ComputerGraphicsAlgo/readme.md#labs) | — | — |
-| [软件系统架构](../SoftwareSystemArch/readme.md) | 5 | — 未标记 | — | — | — |
-| [知识图谱](../KnowledgeGraphs/readme.md) | 5 | — 未标记 | — | [1 项](../KnowledgeGraphs/readme.md#assignments) | — |
-| [信息系统](../InformationSystem/readme.md) | 5 | — 未标记 | [3 项](../InformationSystem/readme.md#labs) | [1 项](../InformationSystem/readme.md#assignments) | — |
-| [建模](../Modeling/readme.md) | 5 | — 未标记 | [2 项](../Modeling/readme.md#labs) | — | — |
-| [操作系统](../OperatingSystem/readme.md) | 5 | — 未标记 | [1 项](../OperatingSystem/readme.md#labs) | — | — |
-| [用户界面设计](../UIDesign/readme.md) | 5 | — 未标记 | — | [2 项](../UIDesign/readme.md#assignments) | — |
-| [人工智能系统](../AISystem/readme.md) | 5 | — 未标记 | [3 项](../AISystem/readme.md#labs) | — | — |
+| [俄语（外语）](../RussianLanguage/readme.md) | 1、2、3、4、5 | 第 1、2、3、4 学期：✓ 已通过 · 第 5 学期：— 未标记 | — | [6 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [计算机图形学算法](../ComputerGraphicsAlgo/readme.md) | 5 | — 未标记 | [5 项](../ComputerGraphicsAlgo/readme.md#labs) | — | — |
+| [软件系统架构](../SoftwareSystemArch/readme.md) | 5 | — 未标记 | [2 项](../SoftwareSystemArch/readme.md#labs) | — | — |
+| [知识图谱](../KnowledgeGraphs/readme.md) | 5 | — 未标记 | — | [3 项](../KnowledgeGraphs/readme.md#assignments) | — |
+| [信息系统](../InformationSystem/readme.md) | 5 | — 未标记 | [3 项](../InformationSystem/readme.md#labs) | [1 项](../InformationSystem/readme.md#assignments) | [内容](../InformationSystem/readme.md#exam) · [答案](../InformationSystem/readme.md#answers) |
+| [建模](../Modeling/readme.md) | 5 | — 未标记 | [3 项](../Modeling/readme.md#labs) | — | [内容](../Modeling/readme.md#exam) · [答案](../Modeling/readme.md#answers) |
+| [操作系统](../OperatingSystem/readme.md) | 5 | — 未标记 | [4 项](../OperatingSystem/readme.md#labs) | — | — |
+| [用户界面设计](../UIDesign/readme.md) | 5 | — 未标记 | — | [3 项](../UIDesign/readme.md#assignments) | — |
+| [人工智能系统](../AISystem/readme.md) | 5 | — 未标记 | [6 项](../AISystem/readme.md#labs) | — | — |
 
 ## 归档课程
 

@@ -8,7 +8,7 @@
 
 [全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense) · [补充资料与速查](#resources)
 
-实验清单包含 Lab 1–3；课程项目单列在学期作业中。
+实验清单包含 Lab 1–3；课程项目阶段一至三、SQL 实现和期中复习单独归类。
 
 <!-- kb:course-overview:end -->
 
@@ -30,19 +30,20 @@
 
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
-| [课程项目：要求与阶段报告](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md) | — 未标记 | — |
+| [课程项目：要求与阶段报告](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/readme.md) | — 未标记 | [阶段一报告](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_1.docx) · [阶段二 ER 模型报告](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_2_v4_8_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82_%D0%9C%D0%B0%D0%BD%D1%83%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx) · [阶段三报告](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%AD%D1%82%D0%B0%D0%BF_3_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82_%D0%9C%D0%B0%D0%BD%D1%83%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0.pdf) · [SQL 实现](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/SQL) · [ER 关系说明](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0_%D0%BF%D0%BE_%D1%81%D0%B2%D1%8F%D0%B7%D1%8F%D0%BC_ER_%D0%A4%D0%BB%D0%B8%D1%82_%D0%A1%D1%82%D1%80%D0%B8%D1%82.md) |
 
 ## 考试内容 <a id="exam"></a>
 
-考试范围与题目尚未收录。
+- [期中考试题目与复习范围](Rub/InformationSystem_Exam_Review.md)
 
 ## 考试答案与解答 <a id="answers"></a>
 
-考试答案尚未收录。
+- [期中考试参考答案（中俄）](Rub/InformationSystem_Exam_Review.md)
 
 ## 实验答辩 <a id="defense"></a>
 
 - [Lab 1：中俄答辩](Lab1/DEFENSE_QA_ZH_RU.md)
+- [课程项目阶段一：中俄学习与答辩](%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/%E9%98%B6%E6%AE%B5%E4%B8%80_%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%80%9F%E6%87%82%E4%B8%8E%E7%AD%94%E8%BE%A9%E5%87%86%E5%A4%87.md)
 
 ## 补充资料与速查 <a id="resources"></a>
 

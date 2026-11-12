@@ -48,8 +48,8 @@
     {
       "path": "backend/gradlew.bat",
       "source": "backend/gradlew.bat",
-      "bytes": 2896,
-      "sha256": "fedad02c18e266ec094995a5751b7fe1eb6e74f66bf75db64fae2e50eb22c234"
+      "bytes": 2803,
+      "sha256": "9ca26d733ada3a45f27b2151288f54e75c9f95b287d1f82ef942ec5cc2d4f006"
     },
     {
       "path": "backend/settings.gradle",
@@ -66,80 +66,80 @@
     {
       "path": "backend/src/main/java/com/example/backend/config/SecurityConfig.java",
       "source": "backend/src/main/java/com/example/backend/config/SecurityConfig.java",
-      "bytes": 3063,
-      "sha256": "976dce523e995c3091c90e73daa5e923669835d4be83fdd0475121282b5c3531"
+      "bytes": 2999,
+      "sha256": "fe79d6d2be195418121e8872025871e6f1a132c29068d3b5239ef0bd71b3071d"
     },
     {
       "path": "backend/src/main/java/com/example/backend/controller/AuthController.java",
       "source": "backend/src/main/java/com/example/backend/controller/AuthController.java",
-      "bytes": 2225,
-      "sha256": "d8529338eb1757e8591b07abd0888bcd6381608f3fea6da3357005304c46ec8e"
+      "bytes": 2175,
+      "sha256": "725eb648aadb4572bfbd6f49c520b37bb40647e4709b00a2649ac341b557ab1d"
     },
     {
       "path": "backend/src/main/java/com/example/backend/controller/PointController.java",
       "source": "backend/src/main/java/com/example/backend/controller/PointController.java",
-      "bytes": 1306,
-      "sha256": "302c01078295f5172cee83dcbff67c019eb3fb46ee2cdb374bab7e6fa93e1ac8"
+      "bytes": 1267,
+      "sha256": "038607a93b7b8b6c679b8291ebff807732a02aa39906b078ff0b4a09b2971a4d"
     },
     {
       "path": "backend/src/main/java/com/example/backend/dto/LoginDto.java",
       "source": "backend/src/main/java/com/example/backend/dto/LoginDto.java",
-      "bytes": 152,
-      "sha256": "99f24e15646c9c1723faf02b7d68893b0f7e8861e9ac53acfc0a6838fd650a18"
+      "bytes": 144,
+      "sha256": "d361e1b5903c9937275f5f98c408c0b14006290bf2b4900b6e0beb50c993bd78"
     },
     {
       "path": "backend/src/main/java/com/example/backend/dto/PointDto.java",
       "source": "backend/src/main/java/com/example/backend/dto/PointDto.java",
-      "bytes": 685,
-      "sha256": "6129339b32136f926d950fab94c175b7299e2dd300e751884c57f34998646892"
+      "bytes": 656,
+      "sha256": "5016bd1ee33b7cf2bbbf9085a44868d2540f732c615df30ca949357becaffa1c"
     },
     {
       "path": "backend/src/main/java/com/example/backend/entity/Result.java",
       "source": "backend/src/main/java/com/example/backend/entity/Result.java",
-      "bytes": 820,
-      "sha256": "ba296446b09810529da3cbd1c34b5251d31d911820602b1396fdc1c6b043b316"
+      "bytes": 777,
+      "sha256": "e870e2cffd086418169b0c4efe9ac849dbd96653a084d379d710d5630dd02ae5"
     },
     {
       "path": "backend/src/main/java/com/example/backend/entity/User.java",
       "source": "backend/src/main/java/com/example/backend/entity/User.java",
-      "bytes": 829,
-      "sha256": "49beb7aa8d87f00b8f8c97293209be7430ffbcb7a10324ab6a708640b1f2ab5f"
+      "bytes": 792,
+      "sha256": "dc6904dc8c32eb66ea9693d45acac6dc6f446f2d69e0a115597b577c005eb1b0"
     },
     {
       "path": "backend/src/main/java/com/example/backend/repository/ResultRepository.java",
       "source": "backend/src/main/java/com/example/backend/repository/ResultRepository.java",
-      "bytes": 302,
-      "sha256": "a04ba78846b9c8e42a4acfafb683768fd09e9cccfd4b517de06cc915487a970f"
+      "bytes": 293,
+      "sha256": "69a82ea668421e025c29efdc653be547679d4103ddc3bc9a10495a0a2f22148d"
     },
     {
       "path": "backend/src/main/java/com/example/backend/repository/UserRepository.java",
       "source": "backend/src/main/java/com/example/backend/repository/UserRepository.java",
-      "bytes": 300,
-      "sha256": "3ce51ffaf84d21066a8303088cc9152a13cd06478cb73d499f836743d8ead142"
+      "bytes": 292,
+      "sha256": "aa38fd476c03fb6561d6ba801056237981a21d7eae1d092f39d795912289b9e5"
     },
     {
       "path": "backend/src/main/java/com/example/backend/service/PointService.java",
       "source": "backend/src/main/java/com/example/backend/service/PointService.java",
-      "bytes": 1430,
-      "sha256": "762b68485aaaf087956466cdcc059c49d072ce5a38736f3f5a4972f0295610b8"
+      "bytes": 1378,
+      "sha256": "bdf0002b9e797d4b29ace0b989cf5f3de4a824afcf36c628ef2b813aa75fc009"
     },
     {
       "path": "backend/src/main/java/com/example/backend/service/ResultService.java",
       "source": "backend/src/main/java/com/example/backend/service/ResultService.java",
-      "bytes": 851,
-      "sha256": "bad20b0bfcbf03768d6e56a8e82e10a5d17d1ab5d4684c03a80b707c85182f8e"
+      "bytes": 824,
+      "sha256": "78e3ab4f17476c6a099da1526ba486d38ccc5938ec7413780f205bca43b15296"
     },
     {
       "path": "backend/src/main/java/com/example/backend/service/UserService.java",
       "source": "backend/src/main/java/com/example/backend/service/UserService.java",
-      "bytes": 1703,
-      "sha256": "e176046c141101b1c3befd51c85b771c8d841221359cac5c4a4062a127f9f18f"
+      "bytes": 1663,
+      "sha256": "031b287a07de28f121fa726c103e2d6c88cf6eabd1d294e3652d7c739d9223aa"
     },
     {
       "path": "backend/src/main/resources/META-INF/jboss-deployment-structure.xml",
       "source": "backend/src/main/resources/META-INF/jboss-deployment-structure.xml",
-      "bytes": 712,
-      "sha256": "b8a475d1d0628e2e8b3c172bfa3aaf32ed33066e602046c684ab3dfb42af9c8b"
+      "bytes": 694,
+      "sha256": "0ab6531b8737353f85a29dcac7662fba9d7fc7a632b8db6a66fc6d77bd3babbf"
     },
     {
       "path": "backend/src/test/java/com/example/backend/BackendApplicationTests.java",
@@ -150,8 +150,8 @@
     {
       "path": "build.gradle",
       "source": "build.gradle",
-      "bytes": 478,
-      "sha256": "983a26b566d5a0a67fa604826bb3b403b4e0419199fbc1ca76833cec668778a5"
+      "bytes": 448,
+      "sha256": "0989e3a3c8bcea9eb57dce5352575ad50bd9a32c7edbf8e57a63dc6b5fe2a8c5"
     },
     {
       "path": "frontend/.gitignore",
@@ -162,8 +162,8 @@
     {
       "path": "frontend/build.gradle",
       "source": "frontend/build.gradle",
-      "bytes": 130,
-      "sha256": "ed0d2a15369d5a955e03614dd1e77c855e52a60f54b7b255d602fea2ab94dec1"
+      "bytes": 122,
+      "sha256": "0b59e1d9ea6e9f45996b669d1c5f8ae614d36fb3a20a8ff21672b297f1d71687"
     },
     {
       "path": "frontend/package-lock.json",
@@ -198,62 +198,62 @@
     {
       "path": "frontend/src/App.js",
       "source": "frontend/src/App.js",
-      "bytes": 852,
-      "sha256": "b4811fd1b13e74c7475b47cf03db4afe0240dc1b7cf55f5c39456eab8fd5fd94"
+      "bytes": 828,
+      "sha256": "ff04c2ac44fc61566f44d2f23ca507388fb5042321a2f36671671f82cd20477b"
     },
     {
       "path": "frontend/src/components/GraphComponent.js",
       "source": "frontend/src/components/GraphComponent.js",
-      "bytes": 5977,
-      "sha256": "1a3557543b85d4eeb590489b26b09b20a2af13a1fcca71b9b031feb41a01e03c"
+      "bytes": 5787,
+      "sha256": "aecd9630912ca779d413af41b0bf49ad0489755e066416902cec1784cf482624"
     },
     {
       "path": "frontend/src/components/ResultTable.js",
       "source": "frontend/src/components/ResultTable.js",
-      "bytes": 1448,
-      "sha256": "5bec13d5a77ad89341d4555858460ac59000c94c96413759bd88c682780a2442"
+      "bytes": 1411,
+      "sha256": "82119ea20bc4c9d218b766e28502a210445258f1de30a653c7bc8d06ef24ff7b"
     },
     {
       "path": "frontend/src/css/style.css",
       "source": "frontend/src/css/style.css",
-      "bytes": 11331,
-      "sha256": "599833037f641ca39ace45c8a3f54914deb40c716542a160235c67fd5acb3d6e"
+      "bytes": 10704,
+      "sha256": "a797e026d93ea460ffb7c3159838d911b9f111b4d66ca78cb20a0491f54e22e7"
     },
     {
       "path": "frontend/src/index.js",
       "source": "frontend/src/index.js",
-      "bytes": 418,
-      "sha256": "d25711293f8a11cc236e9260923678047fe08ca2aeb5c585d433b495c04d865c"
+      "bytes": 403,
+      "sha256": "8fd7ed9dd001709985263b415f727cfcf3820dfcf9456b16b3aa3bbf9f2b424e"
     },
     {
       "path": "frontend/src/pages/MainPage.js",
       "source": "frontend/src/pages/MainPage.js",
-      "bytes": 8762,
-      "sha256": "46a43db283a056e52504afd821bd64821cfa9ddfae26a6d6d7a5c7b482051f91"
+      "bytes": 8547,
+      "sha256": "f71d770a1e854eb10b480cf910b6d52ee0fb4a717abaf0da74fd3ba2ca72ba72"
     },
     {
       "path": "frontend/src/pages/StartPage.js",
       "source": "frontend/src/pages/StartPage.js",
-      "bytes": 5916,
-      "sha256": "ee5c172317f04164abb2bcba941b14461e2af41a9ace0309f561c48d89248d97"
+      "bytes": 5763,
+      "sha256": "035afc47169d27f7a86d6a28ed7870a6c07a947691d699af55fbdb628264e7db"
     },
     {
       "path": "frontend/src/slices/authSlice.js",
       "source": "frontend/src/slices/authSlice.js",
-      "bytes": 2064,
-      "sha256": "c3f9c904a248d17d8fd5ca8185290c6829d236a0f18a63f5aa7dd4e59c961c70"
+      "bytes": 2003,
+      "sha256": "95c22efbd4c928bb2b83fcb202a20f6111087c5323bdd2abad00fe6cae8e6be1"
     },
     {
       "path": "frontend/src/slices/pointSlice.js",
       "source": "frontend/src/slices/pointSlice.js",
-      "bytes": 2313,
-      "sha256": "14a56e1b5fa5f408f9c60f06827ff5414e81f8729346cf41f4650922912c9d3c"
+      "bytes": 2236,
+      "sha256": "8c2400953f9a7060a472e005d9aa9c3603a734945b7b1486f847b75cb22a233e"
     },
     {
       "path": "frontend/src/slices/store/index.js",
       "source": "frontend/src/slices/store/index.js",
-      "bytes": 263,
-      "sha256": "aa7be55511196b528d2a4d26972dce1057975ecf1f3a647162c0e6d541925c36"
+      "bytes": 254,
+      "sha256": "bbc2e50014e06d4f76a095bb4dfa259bb892d3946f828abfba1d7ab24d4de8a3"
     },
     {
       "path": "gradle/wrapper/gradle-wrapper.jar",
@@ -264,8 +264,8 @@
     {
       "path": "gradle/wrapper/gradle-wrapper.properties",
       "source": "gradle/wrapper/gradle-wrapper.properties",
-      "bytes": 236,
-      "sha256": "c41e0310cdea6dfd5a5e77a7f87ae2514bdda7051cf0108587a2e41fadad3a0b"
+      "bytes": 230,
+      "sha256": "b737ab11de73fa6e22b7885ae26a2cd104b5d0ceca89c6405fd70ebede4b8cfb"
     },
     {
       "path": "gradlew",
@@ -276,14 +276,14 @@
     {
       "path": "gradlew.bat",
       "source": "gradlew.bat",
-      "bytes": 2763,
-      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+      "bytes": 2674,
+      "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129"
     },
     {
       "path": "settings.gradle",
       "source": "settings.gradle",
-      "bytes": 66,
-      "sha256": "a75fbbf52c96549cec5bffcdbe84f13d46123b4067eec4e0157273065a379a22"
+      "bytes": 63,
+      "sha256": "e3562507603a66b637a0005ff284d831d0da2045c382c4dc6a1c6f1332ece2d7"
     },
     {
       "path": "src/main/java/org/example/Main.java",

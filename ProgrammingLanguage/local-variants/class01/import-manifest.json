@@ -6,20 +6,20 @@
     {
       "path": "ConsoleApplication1/ConsoleApplication1/lab1.c",
       "source": "ConsoleApplication1/ConsoleApplication1/lab1.c",
-      "bytes": 1942,
-      "sha256": "51a5bcb28c124d8a31fc7e0df85ffa0053c329593cd75dac9e631469e63ebd42"
+      "bytes": 1872,
+      "sha256": "5150822e07186021d3b0625860ea2bc5fb7715602c5baa6ab9474abc7fd822a8"
     },
     {
       "path": "lab01.c",
       "source": "lab01.c",
-      "bytes": 1939,
-      "sha256": "52cb2f63ae4cb744a0763b16ab8004209cd0b986b70be3d8215e4b3c9626b221"
+      "bytes": 1867,
+      "sha256": "d8fcaee8adf57cacf0f486e965b6cd245c2ea3b5963fb8c677593772e58f5396"
     },
     {
       "path": "lab1.c",
       "source": "lab1.c",
-      "bytes": 1884,
-      "sha256": "aa56441d9e29b85b01728f11a1d67c242b21c58e0886865b94a9dcd34aac9968"
+      "bytes": 1816,
+      "sha256": "ff102050cc9b1dc9d6af7e6e7f7d5f2e7aab25a996c4bc391b61577f366e2ad5"
     },
     {
       "path": "main.cpp",
@@ -30,8 +30,8 @@
     {
       "path": "zoo.c",
       "source": "zoo.c",
-      "bytes": 6044,
-      "sha256": "f3d52558c910a5e4534c445e7875232763b389acf35701eefe7d89448c867672"
+      "bytes": 5825,
+      "sha256": "5a9983775f49a647b9d70d23c25a81cc6a859e8d75d0be613974094b0c4e4480"
     }
   ],
   "excluded": [

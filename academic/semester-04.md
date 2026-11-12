@@ -8,7 +8,7 @@
 
 | 课程 | 考核 | 状态 | 全部实验 | 学期作业 | 考试 |
 |---|---|---|---|---|---|
-| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [5 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
+| [俄语（外语）](../RussianLanguage/readme.md) | 考查 · Зачёт | ✓ 已通过 | — | [6 项](../RussianLanguage/readme.md#assignments) | [内容](../RussianLanguage/readme.md#exam) |
 | [物理](../Physics/readme.md) | 考试 · Экзамен | ✓ 已通过 | [10 项](../Physics/readme.md#labs) | — | — |
 | [算法与数据结构](../AADS/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../AADS/readme.md#labs) | — | — |
 | [计算机体系结构](../ComputerArchitecture/readme.md) | 考试 · Экзамен | ✓ 已通过 | [4 项](../ComputerArchitecture/readme.md#labs) | — | [内容](../ComputerArchitecture/readme.md#exam) · [答案](../ComputerArchitecture/readme.md#answers) |

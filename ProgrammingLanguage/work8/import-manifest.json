@@ -6,68 +6,68 @@
     {
       "path": "class8.csproj",
       "source": "class8.csproj",
-      "bytes": 252,
-      "sha256": "8d5bb1bf8634e3fab11f1f50d464ec6ce923222265ffb946f26faa9528008b2c"
+      "bytes": 242,
+      "sha256": "055c0536d9fb13014884a8ad61b859e25853446460f9d25be8c300921b968bda"
     },
     {
       "path": "class8.sln",
       "source": "class8.sln",
-      "bytes": 1124,
-      "sha256": "2053f92f01a345c4250d02a71bfb552bcd5174bd85ec61e3c6d83e9b7a44848c"
+      "bytes": 1099,
+      "sha256": "d7f818935171bbbe527776edd883d5fd735d1ed29ac9395de4e529505675cfd7"
     },
     {
       "path": "Core/BattleContext.cs",
       "source": "Core/BattleContext.cs",
-      "bytes": 413,
-      "sha256": "a7e74f7ab22375275eaf3f8aa20eab41fdc11e6f0d0b160ebfd9ea2238f2b35f"
+      "bytes": 399,
+      "sha256": "29cc8ae1ba4a0dd0d1385852628d9f160a446146b347761d21bcfebad7feb2ed"
     },
     {
       "path": "Core/CombatSkillAttribute.cs",
       "source": "Core/CombatSkillAttribute.cs",
-      "bytes": 579,
-      "sha256": "9f686ce1874244245fc907a0ccab8bc556324c6bb86ee50b0963fef981c84bc0"
+      "bytes": 557,
+      "sha256": "2f9fa0c17901f8a9188cb7f7bcc2049469379dde6fa63fc71e81da8905df67ca"
     },
     {
       "path": "Core/GameAttribute.cs",
       "source": "Core/GameAttribute.cs",
-      "bytes": 303,
-      "sha256": "77dbd761e328a2a15a60a58e781b681b12bad04f0f89c7b935ed1d12c27a9f2f"
+      "bytes": 289,
+      "sha256": "157961987f5331cb9c65ca0d16043e0d9914026c78959441b035acf367f22079"
     },
     {
       "path": "Core/SkillEngine.cs",
       "source": "Core/SkillEngine.cs",
-      "bytes": 3730,
-      "sha256": "e188395ce197507d10873834d5cf9ddd8e9705bbf113acb15d9529bf71760b76"
+      "bytes": 3650,
+      "sha256": "f3ed7cfc7bba158f675a24d0f91ff4708b5ce00be33bcebaa3c8fa4c1ea1a4cb"
     },
     {
       "path": "Core/TriggerType.cs",
       "source": "Core/TriggerType.cs",
-      "bytes": 230,
-      "sha256": "86030af40829bb86e6e815de49cdb76059ce6e2ce3422c103877bdbab75cec67"
+      "bytes": 216,
+      "sha256": "314edd567a1b013c5a6b8903bb63ab1408a100c99a68f9508334e2f88b4e1464"
     },
     {
       "path": "Core/UnitStats.cs",
       "source": "Core/UnitStats.cs",
-      "bytes": 213,
-      "sha256": "1441ec9db4f14bcf265a17628524a708888d1000b9a0c62beafc53be074e62c0"
+      "bytes": 202,
+      "sha256": "12685749438976ac0660ff7d147f31e2e503f8e3f5b64e5d378d2a208977db49"
     },
     {
       "path": "Mechanics/VampireMechanics.cs",
       "source": "Mechanics/VampireMechanics.cs",
-      "bytes": 1095,
-      "sha256": "858b081c1215efc821d0a93a83b6fef2190392eb7365e908e3082104ee02ed8d"
+      "bytes": 1065,
+      "sha256": "1c5f4c853876381d83bdd2d377b6724640512cf78fc85a67d54b5bdae12630e4"
     },
     {
       "path": "Performance/EmitDemo.cs",
       "source": "Performance/EmitDemo.cs",
-      "bytes": 900,
-      "sha256": "ae8993e8c4031c253217cc18d3ce1893b8e88d38e74db457f8c0f33eede01d87"
+      "bytes": 870,
+      "sha256": "687127dc5e071e2ed10dbf3626f22bc4b4c4b662417b85d15ba773ab1c4209f0"
     },
     {
       "path": "Program.cs",
       "source": "Program.cs",
-      "bytes": 653,
-      "sha256": "8003f24abce0eb730df5f60e62f834c9af8504fe61319ec308c14723cdf04ae5"
+      "bytes": 626,
+      "sha256": "b716812a71ae473723f986a1ddfd560577b890cb346c9d11e7dcb3bb61f493c1"
     }
   ],
   "excluded": [

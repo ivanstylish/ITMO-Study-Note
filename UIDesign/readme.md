@@ -6,9 +6,9 @@
 
 **课程状态：— 未标记**
 
-[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense)
+[全部实验](#labs) · [讲座与教材](#theory) · [学期作业](#assignments) · [考试内容](#exam) · [考试答案与解答](#answers) · [实验答辩](#defense) · [补充资料与速查](#resources)
 
-知识助手方案、演讲稿与用户场景。
+知识助手方案按作业 1–3 整理项目说明、用户场景、信息架构与中俄演讲稿。
 
 <!-- kb:course-overview:end -->
 
@@ -16,7 +16,7 @@
 
 ## 全部实验 <a id="labs"></a>
 
-[阶段 1 - 8 实现](https://docs.google.com/document/d/1xcCCMq2TCAlN2zcZNUykhZHO_yHulbutj5Xiton7BOU/edit?tab=t.0#heading=h.h1ioz0k6v5ug)
+尚未收录实验清单。
 
 ## 讲座与教材 <a id="theory"></a>
 
@@ -26,8 +26,9 @@
 
 | 作业 | 状态 | 资料与说明 |
 |---|---|---|
-| [Homework 1：项目说明](HW/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md) | — 未标记 | — |
-| [Homework 2：用户场景](HW/04_%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_2_%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8.md) | — 未标记 | — |
+| [Homework 1：项目说明](HW/stage1/01_PPT%E6%80%BB%E7%BB%93%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md) | — 未标记 | — |
+| [Homework 2：用户场景](HW/stage2/AI_Knowledge_Agent_User_Scenarios_RU(1).pdf) | — 未标记 | — |
+| [Homework 3：信息架构](HW/stage3/AI_Knowledge_Agent_Information_Architecture_RU.pdf) | — 未标记 | — |
 
 ## 考试内容 <a id="exam"></a>
 
@@ -39,8 +40,13 @@
 
 ## 实验答辩 <a id="defense"></a>
 
-- [5 分钟演讲稿（中俄）](HW/02_%E6%BC%94%E8%AE%B2%E7%A8%BF_5%E5%88%86%E9%92%9F_RU_ZH.md)
-- [完整演讲稿（中俄）](HW/03_%E6%BC%94%E8%AE%B2%E7%A8%BF_%E5%AE%8C%E6%95%B4%E7%89%88_RU_ZH.md)
+- [5 分钟演讲稿（中俄）](HW/stage1/02_%E6%BC%94%E8%AE%B2%E7%A8%BF_5%E5%88%86%E9%92%9F_RU_ZH.md)
+- [完整演讲稿（中俄）](HW/stage1/03_%E6%BC%94%E8%AE%B2%E7%A8%BF_%E5%AE%8C%E6%95%B4%E7%89%88_RU_ZH.md)
+- [Homework 3：信息架构中俄讲解](HW/stage3/AI_Knowledge_Agent_Task3_Speech_RU_ZH.md)
+
+## 补充资料与速查 <a id="resources"></a>
+
+- [设计方案与阶段资料](HW/AI-knowledge)
 
 ## 复习与关联
 
