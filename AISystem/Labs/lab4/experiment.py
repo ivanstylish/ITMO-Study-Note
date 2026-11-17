@@ -1,4 +1,3 @@
-"""实验四：数据准备、验证集选参、一次最终测试，以及结果保存。"""
 from pathlib import Path
 import json
 import numpy as np

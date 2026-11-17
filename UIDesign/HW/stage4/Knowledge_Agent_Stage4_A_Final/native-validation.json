@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scope": "API simulation; real Figma rendering is not verified",
+  "screens": 91,
+  "clickConnections": 1051,
+  "timers": 12,
+  "imageLayers": 0,
+  "unresolved": 0,
+  "types": {
+    "FRAME": 7269,
+    "COMPONENT": 155,
+    "VECTOR": 644,
+    "TEXT": 3817,
+    "COMPONENT_SET": 17,
+    "INSTANCE": 1262,
+    "RECTANGLE": 1051
+  },
+  "textStyles": 55,
+  "fontFamilies": [
+    "Segoe UI",
+    "Georgia",
+    "Courier New"
+  ],
+  "modelSelectorVariants": 4,
+  "libraryComponentsDoNotOverlap": true,
+  "approvedA": {
+    "type": "appearanceApplied",
+    "styleNodes": 11740,
+    "timers": 12,
+    "mismatches": [],
+    "fontWarnings": [],
+    "frameCount": 91
+  },
+  "appearancePreservesStructure": true,
+  "stalledAnalysisTimerRepaired": true,
+  "buttonLayout": {
+    "type": "buttonsCentered",
+    "buttons": 179,
+    "clickTargets": 161,
+    "skipped": []
+  },
+  "outputText": {
+    "type": "outputRepaired",
+    "frameCount": 91,
+    "expandedText": 1767,
+    "emptyOutputs": 18,
+    "skipped": []
+  },
+  "outputContentAndInteractionsPreserved": true
+}

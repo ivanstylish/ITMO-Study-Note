@@ -1,0 +1,573 @@
+{
+  "mainScreens": 81,
+  "zoomScreens": 10,
+  "allScenes": 91,
+  "sourceActions": 1085,
+  "preservedTextAssertions": 3130,
+  "interactions": [
+    [
+      "file-route-0",
+      true
+    ],
+    [
+      "file-route-1",
+      true
+    ],
+    [
+      "file-route-2",
+      true
+    ],
+    [
+      "file-route-3",
+      true
+    ],
+    [
+      "file-route-4",
+      true
+    ],
+    [
+      "file-route-5",
+      true
+    ],
+    [
+      "attention-conflict-plan",
+      true
+    ],
+    [
+      "choose-file",
+      true
+    ],
+    [
+      "open-file",
+      true
+    ],
+    [
+      "analyze",
+      true
+    ],
+    [
+      "empty-plan",
+      true
+    ],
+    [
+      "single-note",
+      true
+    ],
+    [
+      "conflict-back",
+      true
+    ],
+    [
+      "clipboard-route",
+      true
+    ],
+    [
+      "restore-cancel",
+      true
+    ],
+    [
+      "model-selector",
+      true
+    ],
+    [
+      "history-search",
+      true
+    ]
+  ],
+  "audits": [
+    {
+      "id": 1,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 2,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 3,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 4,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 5,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 6,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 7,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 8,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 9,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 10,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 11,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 12,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 13,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 14,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 15,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 16,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 17,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 18,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 19,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 20,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 21,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 22,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 23,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 24,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 25,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 26,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 27,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 28,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 29,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 30,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 31,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 32,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 33,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 34,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 35,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 36,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 37,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 38,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 39,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 40,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 41,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 42,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 43,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 44,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 45,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 46,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 47,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 48,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 49,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 50,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 51,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 52,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 53,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 54,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 55,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 56,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 57,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 58,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 59,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 60,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 61,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 62,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 63,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 64,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 65,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 66,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 67,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 68,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 69,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 70,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 71,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 72,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 73,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 74,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 75,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 76,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 77,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 78,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 79,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 80,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    },
+    {
+      "id": 81,
+      "overflows": [],
+      "clippedText": [],
+      "font": "\"Segoe UI\", Arial, sans-serif"
+    }
+  ],
+  "fonts": [
+    "Segoe UI",
+    "Georgia",
+    "Courier New"
+  ],
+  "nativeFigmaVerified": false,
+  "nativeNavigableActions": 1051,
+  "skippedSelfNavigation": 34
+}

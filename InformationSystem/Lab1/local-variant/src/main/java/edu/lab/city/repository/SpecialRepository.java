@@ -22,6 +22,8 @@ public class SpecialRepository {
     }
 
     // @SuppressWarnings：仅抑制指定编译警告；这里的 unchecked 来自原生查询结果的泛型转换。
+    // @SuppressWarnings: подавляет только указанные предупреждения компиляции; 
+    // в данном случае «unchecked» относится к преобразованию обобщенных типов (generic types) при получении результатов нативного запроса.
     @SuppressWarnings("unchecked")
     public List<Object[]> groups() {
         return em.createNativeQuery("select * from group_by_area()").getResultList();

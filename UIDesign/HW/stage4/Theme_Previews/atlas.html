@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:20px;background:#fff}section[hidden]{display:none!important}</style><script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script></head><body><div id="ka-theme-preview">
+  <div class="viz-carousel" aria-label="Knowledge Agent 三种页面效果" data-previous-label="上一个方案" data-next-label="下一个方案">
+    <section data-variant="花园档案" aria-label="花园档案页面效果" hidden><div class="ka-window" data-theme="garden" lang="ru"></div></section>
+    <section data-variant="纸本研究" aria-label="纸本研究页面效果" hidden><div class="ka-window" data-theme="paper" lang="ru"></div></section>
+    <section data-variant="星图工作台" aria-label="星图工作台页面效果"><div class="ka-window" data-theme="atlas" lang="ru"></div></section>
+  </div>
+</div>
+<style>
+#ka-theme-preview{container-type:inline-size}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+#ka-theme-preview .ka-window{--bg:#f7f8f6;--paper:#fff;--ink:#232621;--accent:#d1fca6;--green:#34745c;--line:#e3e7df;--muted:#667060;--soft:#eef3e8;--radius:14px;color-scheme:light;display:grid;grid-template-columns:196px minmax(0,1fr);min-height:790px;background:var(--bg);color:var(--ink);font:13px/1.55 Manrope,Arial,sans-serif;border:1px solid var(--line);border-radius:16px;overflow:clip}
+#ka-theme-preview .ka-window[data-theme=paper]{--bg:#f6f3eb;--paper:#fffdf8;--ink:#283b32;--accent:#dce7bf;--green:#4b6b51;--line:#e3dfd2;--muted:#6c7161;--soft:#f0ecdf}
+#ka-theme-preview .ka-window[data-theme=atlas]{--bg:#f4f5fa;--paper:#fff;--ink:#303343;--accent:#e1dcf7;--green:#34745c;--line:#e2e3ec;--muted:#6b6e80;--soft:#efedf8}
+#ka-theme-preview .ka-window *{box-sizing:border-box}
+#ka-theme-preview .ka-window button,#ka-theme-preview .ka-window input,#ka-theme-preview .ka-window select{font:inherit;color:inherit}
+#ka-theme-preview .ka-window button{cursor:var(--cursor-interaction,pointer)}
+#ka-theme-preview .ka-side{background:var(--paper);border-right:1px solid var(--line);padding:30px 16px 24px;display:flex;flex-direction:column;gap:32px;min-width:0}
+#ka-theme-preview .ka-brand{font-family:Georgia,serif;font-size:23px;line-height:.95;letter-spacing:-1px;position:relative;padding:0 6px}
+#ka-theme-preview .ka-brand span{display:block}
+#ka-theme-preview .ka-brand em{position:absolute;right:4px;bottom:1px;background:var(--accent);border-radius:4px;padding:4px;font:9px Manrope,sans-serif;letter-spacing:0}
+#ka-theme-preview .ka-nav{display:flex;flex-direction:column;gap:7px}
+#ka-theme-preview .ka-nav button{display:flex;align-items:center;gap:10px;text-align:left;border:0;border-radius:11px;padding:12px 10px;background:transparent;color:var(--muted);min-height:44px;font-size:12px}
+#ka-theme-preview .ka-nav button[aria-current=page]{background:var(--accent);color:var(--ink);font-weight:600}
+#ka-theme-preview .ka-nav svg,#ka-theme-preview .ka-action svg{width:17px;height:17px;flex-shrink:0}
+#ka-theme-preview .ka-recent{padding:0 6px;color:var(--muted);font-size:11px;display:grid;gap:15px}
+#ka-theme-preview .ka-label{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+#ka-theme-preview .ka-recent button{border:0;background:transparent;text-align:left;padding:0;font-size:11px}
+#ka-theme-preview .ka-vault{margin-top:auto;border-top:1px solid var(--line);padding:20px 6px 0;color:var(--muted);font-size:10px;display:grid;gap:8px}
+#ka-theme-preview .ka-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px}
+#ka-theme-preview .ka-main{padding:29px 30px 30px;min-width:0}
+#ka-theme-preview .ka-crumb{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:10px;margin-bottom:25px}
+#ka-theme-preview .ka-heading{display:flex;justify-content:space-between;align-items:start;gap:16px;margin-bottom:25px}
+#ka-theme-preview .ka-heading h1{font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-1px;margin:0;color:var(--ink)}
+#ka-theme-preview .ka-subtitle{font-size:12px;color:var(--muted);margin:10px 0 0}
+#ka-theme-preview .ka-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 25px}
+#ka-theme-preview .ka-step{border-bottom:2px solid var(--line);display:flex;gap:9px;padding-bottom:15px;align-items:center;color:var(--muted);font-size:10px;min-width:0}
+#ka-theme-preview .ka-step b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft);font-size:10px;flex-shrink:0;font-weight:500}
+#ka-theme-preview .ka-step:first-child{border-color:var(--green);color:var(--ink)}
+#ka-theme-preview .ka-step:first-child b{background:var(--accent)}
+#ka-theme-preview .ka-step small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+#ka-theme-preview .ka-panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;min-width:0}
+#ka-theme-preview .ka-table{width:100%;border-collapse:collapse;table-layout:fixed}
+#ka-theme-preview .ka-table col:first-child{width:auto}
+#ka-theme-preview .ka-table col:nth-child(2){width:76px}
+#ka-theme-preview .ka-table col:nth-child(3){width:102px}
+#ka-theme-preview .ka-table th{font-size:10px;color:var(--muted);font-weight:500;padding:0 0 14px;border-bottom:1px solid var(--line);text-align:left}
+#ka-theme-preview .ka-table th:first-child{font-size:15px;font-weight:600;color:var(--ink)}
+#ka-theme-preview .ka-table td{height:65px;border-bottom:1px solid var(--line);padding:12px 0;font-size:12px;vertical-align:middle}
+#ka-theme-preview .ka-table tbody tr:last-child td{border-bottom:0}
+#ka-theme-preview .ka-table td:nth-child(2),#ka-theme-preview .ka-table th:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-size:10px}
+#ka-theme-preview .ka-table td:last-child,#ka-theme-preview .ka-table th:last-child{text-align:right;padding-left:18px}
+#ka-theme-preview .ka-file{display:flex;align-items:center;gap:10px;min-width:0;padding-right:12px}
+#ka-theme-preview .ka-file svg{width:17px;height:19px;flex-shrink:0;color:var(--green)}
+#ka-theme-preview .ka-file span{overflow-wrap:anywhere}
+#ka-theme-preview .ka-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:11px;background:var(--paper);padding:9px 14px;min-height:37px;font-size:11px;white-space:nowrap;text-decoration:none}
+#ka-theme-preview .ka-action:hover{background:var(--soft)}
+#ka-theme-preview .ka-action.ka-primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+#ka-theme-preview .ka-footer{border-top:1px solid var(--line);margin-top:24px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+#ka-theme-preview .ka-caption{font-size:10px;color:var(--muted);margin-top:16px}
+#ka-theme-preview .ka-upload{min-height:270px;border:1px dashed var(--line);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:24px;background:var(--bg)}
+#ka-theme-preview .ka-upload-icon{background:var(--accent);border-radius:12px;padding:17px;color:var(--ink)}
+#ka-theme-preview .ka-upload-icon svg{width:26px;height:26px;display:block}
+#ka-theme-preview .ka-upload strong{font-size:18px;font-weight:500}
+#ka-theme-preview .ka-upload p{margin:0;color:var(--muted);font-size:11px}
+#ka-theme-preview .ka-upload-alts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+#ka-theme-preview .ka-detail-file{display:flex;gap:12px;align-items:center;background:var(--soft);padding:15px;border-radius:10px;margin-bottom:24px;overflow-wrap:anywhere}
+#ka-theme-preview .ka-detail-file svg{flex-shrink:0;width:20px;height:20px}
+#ka-theme-preview .ka-tag{display:inline-block;background:var(--accent);padding:5px 9px;border-radius:6px;font-size:10px}
+#ka-theme-preview .ka-message{display:grid;grid-template-columns:27px minmax(0,1fr);gap:12px;margin:20px 0}
+#ka-theme-preview .ka-message b{background:var(--soft);border-radius:8px;height:27px;display:grid;place-items:center;font-size:10px;font-weight:500}
+#ka-theme-preview .ka-message p{margin:0;font-size:13px;line-height:1.9}
+#ka-theme-preview .ka-section-title{font-size:16px;font-weight:600;margin:0 0 18px}
+#ka-theme-preview .ka-model{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px;margin-bottom:20px;flex-wrap:wrap}
+#ka-theme-preview .ka-select,#ka-theme-preview .ka-input,#ka-theme-preview .ka-textarea{border:1px solid var(--line);border-radius:9px;background:var(--paper);padding:10px 12px;max-width:100%}
+#ka-theme-preview .ka-answer{font-size:20px;line-height:1.65;letter-spacing:-.35px;margin:0}
+#ka-theme-preview .ka-note{margin-top:22px;padding:18px;background:var(--soft);border-radius:11px;font-size:12px;line-height:1.8}
+#ka-theme-preview .ka-textarea{width:100%;min-height:220px;color:var(--ink);resize:vertical;font:13px/1.8 Manrope,Arial,sans-serif}
+#ka-theme-preview .ka-formrow{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:12px}
+#ka-theme-preview .ka-formrow:last-child{border-bottom:0}
+#ka-theme-preview .ka-formrow small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+#ka-theme-preview .ka-history{display:grid;gap:0}
+#ka-theme-preview .ka-history button{display:flex;justify-content:space-between;gap:12px;padding:22px 0;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left}
+#ka-theme-preview .ka-history small{color:var(--muted);font-size:10px}
+#ka-theme-preview .ka-graph{position:relative;aspect-ratio:1.45;min-height:280px;background:radial-gradient(var(--line) .8px,transparent .8px) 0 0/18px 18px;border-radius:12px}
+#ka-theme-preview .ka-graph svg{position:absolute;inset:0;width:100%;height:100%;color:var(--green);opacity:.35;pointer-events:none}
+#ka-theme-preview .ka-node{position:absolute;transform:translate(-50%,-50%);border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 12px;font-size:11px;max-width:34%}
+#ka-theme-preview .ka-node[aria-pressed=true]{background:var(--accent);border-color:var(--green)}
+#ka-theme-preview .ka-graph-detail{margin-top:18px;padding:13px 0;border-top:1px solid var(--line);font-size:12px;min-height:62px}
+@container(max-width:850px){#ka-theme-preview .ka-window{grid-template-columns:160px minmax(0,1fr)}#ka-theme-preview .ka-side{padding:25px 12px}#ka-theme-preview .ka-main{padding:25px 22px}#ka-theme-preview .ka-brand{font-size:19px}#ka-theme-preview .ka-brand em{font-size:8px}#ka-theme-preview .ka-nav button{font-size:11px}#ka-theme-preview .ka-table td{font-size:11px}#ka-theme-preview .ka-panel{padding:18px}#ka-theme-preview .ka-table col:nth-child(3){width:88px}#ka-theme-preview .ka-action{padding:9px 11px}}
+@container(max-width:620px){#ka-theme-preview .ka-window{display:block;min-height:1010px}#ka-theme-preview .ka-side{padding:20px;gap:20px;border-right:0;border-bottom:1px solid var(--line)}#ka-theme-preview .ka-brand{font-size:22px;max-width:190px}#ka-theme-preview .ka-recent,#ka-theme-preview .ka-vault{display:none}#ka-theme-preview .ka-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}#ka-theme-preview .ka-nav button{justify-content:center;flex-direction:column;gap:6px;text-align:center;padding:10px 3px;font-size:10px}#ka-theme-preview .ka-main{padding:24px 16px}#ka-theme-preview .ka-heading h1{font-size:24px}#ka-theme-preview .ka-heading>.ka-tag{display:none}#ka-theme-preview .ka-crumb{font-size:9px}#ka-theme-preview .ka-panel{padding:15px}#ka-theme-preview .ka-table col:nth-child(2){width:40px}#ka-theme-preview .ka-table col:nth-child(3){width:76px}#ka-theme-preview .ka-table td:last-child{padding-left:8px}#ka-theme-preview .ka-table td{height:76px;font-size:11px}#ka-theme-preview .ka-file{gap:7px;padding-right:8px}#ka-theme-preview .ka-file svg{width:14px}#ka-theme-preview .ka-action{font-size:10px;padding:9px 10px}#ka-theme-preview .ka-steps{gap:6px}#ka-theme-preview .ka-step{gap:5px;font-size:9px}#ka-theme-preview .ka-step small{font-size:8px}#ka-theme-preview .ka-step b{width:20px;height:20px}#ka-theme-preview .ka-model{align-items:flex-start;flex-direction:column}#ka-theme-preview .ka-formrow{align-items:flex-start;flex-direction:column;gap:10px}#ka-theme-preview .ka-graph{min-height:320px}}
+@media(prefers-reduced-motion:no-preference){#ka-theme-preview .ka-action{transition:background .15s ease}}
+</style>
+<script>
+(() => {
+  const root=document.getElementById('ka-theme-preview');
+  const files=[['rag_dialogue.json','36 КБ'],['transformer_attention.md','18 КБ'],['rag_export_12-11.json','36 КБ'],['short_chat.txt','1 КБ'],['rag_transcript.txt','9 КБ'],['attention_update.md','22 КБ']];
+  const names={garden:'花园档案',paper:'纸本研究',atlas:'星图工作台'};
+  const themeLabels={garden:'Тихий сад',paper:'Бумажный архив',atlas:'Атлас идей'};
+  const icon=name=>'<i data-lucide="'+name+'" aria-hidden="true"></i>';
+  const action=(text,view,primary=false,ico='')=>'<button type="button" class="ka-action'+(primary?' ka-primary':'')+'" data-view="'+view+'">'+(ico?icon(ico):'')+text+'</button>';
+  const steps=()=>'<div class="ka-steps">'+['Импорт','Анализ','План записи','Проверка'].map((t,i)=>'<div class="ka-step"><b>'+(i+1)+'</b><span>'+t+'<small>'+(i===0?'Текущий этап':'Ожидает')+'</small></span></div>').join('')+'</div>';
+  const navs=[['workspace','panels-top-left','Рабочая область'],['history','history','История'],['graph','network','Граф знаний'],['settings','sliders-horizontal','Настройки']];
+  const saved=globalThis.openai?.widgetState?.privateContent;
+  const states={};
+  function save(){if(globalThis.openai?.setWidgetState)globalThis.openai.setWidgetState({modelContent:{preview:'Knowledge Agent 三套配色'},privateContent:states}).catch(()=>{});}
+  function render(shell){
+    const key=shell.dataset.theme,s=states[key];
+    let title='Выберите диалог',subtitle='Выберите файл для импорта.',section=0,body='';
+    if(s.view==='files'){
+      body=steps()+'<section class="ka-panel"><table class="ka-table"><colgroup><col><col><col></colgroup><thead><tr><th scope="col">Имя файла</th><th scope="col">Размер</th><th scope="col"><span class="ka-label" aria-label="Действие"></span></th></tr></thead><tbody>'+files.map((f,i)=>'<tr><td><div class="ka-file">'+icon('file-text')+'<span>'+f[0]+'</span></div></td><td>'+f[1]+'</td><td><button class="ka-action" type="button" data-open="'+i+'">Открыть</button></td></tr>').join('')+'</tbody></table></section><div class="ka-footer">'+action('Отмена','upload')+'<span class="ka-caption">6 файлов · JSON / MD / TXT</span></div>';
+    }else if(s.view==='upload'){
+      title='Новая обработка';subtitle='Превратите диалог в знания для вашего Obsidian.';
+      body=steps()+'<section class="ka-panel"><div class="ka-upload"><div class="ka-upload-icon">'+icon('upload')+'</div><strong>Добавьте диалог</strong><p>ChatGPT JSON · Markdown · TXT</p>'+action('Выбрать файл','files',true,'plus')+'</div><div class="ka-upload-alts">'+action('Вставить текст','paste',false,'text-cursor-input')+action('Из буфера обмена','paste',false,'clipboard')+'</div></section>';
+    }else if(s.view==='paste'){
+      title='Текст диалога';subtitle='Добавьте текст для предварительного просмотра.';
+      body=steps()+'<section class="ka-panel"><textarea class="ka-textarea" aria-label="Текст диалога">Пользователь: При RAG вся база данных передаётся в запрос модели?\n\nИИ: Сначала поиск выбирает релевантные фрагменты. Только они попадают в контекст модели.</textarea></section><div class="ka-footer">'+action('Отмена','upload')+action('Предпросмотр','preview',true,'arrow-right')+'</div>';
+    }else if(s.view==='preview'){
+      title='Диалог загружен';subtitle='Проверьте исходный диалог перед анализом.';
+      body=steps()+'<section class="ka-panel"><div class="ka-detail-file">'+icon('file-text')+'<span>'+files[s.file][0]+'</span><span class="ka-tag">Загружен</span></div><div class="ka-label">Предпросмотр · Диалог</div><div class="ka-message"><b>П</b><p>При RAG вся база данных передаётся в запрос модели?</p></div><div class="ka-message"><b>ИИ</b><p>Сначала поиск выбирает релевантные фрагменты. Только они попадают в контекст модели.</p></div></section><div class="ka-footer">'+action('Заменить файл','files',false,'arrow-left')+action('Анализировать','analysis',true,'arrow-right')+'</div>';
+    }else if(s.view==='analysis'){
+      title='Архитектура RAG';subtitle='Краткий ответ и выделенные знания.';
+      body='<section class="ka-panel"><div class="ka-model"><span>Режим ответа</span><select class="ka-select" aria-label="Режим ответа"><option>Автоматически</option><option>Кратко</option><option>Подробно</option></select></div><h2 class="ka-section-title">Краткий ответ</h2><p class="ka-answer">RAG дополняет запрос фрагментами, которые поиск нашёл во внешней базе знаний.</p><div class="ka-note"><strong>Что сохранить</strong><br>RAG · Векторный поиск · Контекст модели</div></section><div class="ka-footer">'+action('К диалогу','preview',false,'arrow-left')+action('Открыть граф','graph',true,'network')+'</div>';
+    }else if(s.view==='history'){
+      section=1;title='История';subtitle='Ваши диалоги и результаты обработки.';
+      body='<section class="ka-panel"><div class="ka-history">'+['Архитектура RAG','Transformer и внимание','Векторный поиск'].map(t=>'<button type="button" data-view="analysis"><span>'+t+'</span><small>Обработано ↗</small></button>').join('')+'</div></section><div class="ka-footer">'+action('Новая обработка','upload',true,'plus')+'</div>';
+    }else if(s.view==='graph'){
+      section=2;title='Граф знаний';subtitle='Идеи становятся связями.';
+      const nodes=[['RAG',27,32],['Векторный поиск',67,27],['Контекст модели',69,69],['Transformer',25,76],['Attention',47,53]];
+      body='<section class="ka-panel"><div class="ka-graph" aria-label="Граф связей знаний"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M27 32 Q45 10 67 27 M27 32 Q40 70 69 69 M25 76 Q18 55 27 32 M25 76 L47 53 M47 53 L69 69" fill="none" stroke="currentColor" stroke-width=".35"/></svg>'+nodes.map(n=>'<button type="button" class="ka-node" data-node="'+n[0]+'" style="left:'+n[1]+'%;top:'+n[2]+'%" aria-pressed="'+(s.node===n[0])+'">'+n[0]+'</button>').join('')+'</div><div class="ka-graph-detail" aria-live="polite">'+s.node+' · '+(s.node==='RAG'?'Поиск дополняет контекст модели.':'Связь с другими понятиями в вашем хранилище.')+'</div></section>';
+    }else{
+      section=3;title='Настройки';subtitle='Ваше рабочее пространство.';
+      body='<section class="ka-panel"><h2 class="ka-section-title">Obsidian</h2><div class="ka-formrow"><div>Хранилище<small>Место для сохранения заметок</small></div><input class="ka-input" aria-label="Хранилище" value="Personal_Vault / inbox"></div><div class="ka-formrow"><div>Режим ответа<small>Как агент объясняет результат</small></div><select class="ka-select" aria-label="Режим ответа"><option>Автоматически</option><option>Кратко</option><option>Подробно</option></select></div><div class="ka-formrow"><label for="confirm-'+key+'">Подтверждать запись файлов</label><input id="confirm-'+key+'" type="checkbox" checked style="accent-color:var(--green)"></div></section><div class="ka-footer"><span class="ka-caption" aria-live="polite" data-status></span><button class="ka-action ka-primary" type="button" data-save>Сохранить</button></div>';
+    }
+    shell.innerHTML='<aside class="ka-side"><div class="ka-brand"><span>KNOWLEDGE</span><span>AGENT</span><em>KA</em></div><nav class="ka-nav" aria-label="Основная навигация">'+navs.map((n,i)=>'<button type="button" data-view="'+(n[0]==='workspace'?'upload':n[0])+'" '+(i===section?'aria-current="page"':'')+'>'+icon(n[1])+'<span>'+n[2]+'</span></button>').join('')+'</nav><div class="ka-recent"><div class="ka-label">Недавние</div><button type="button" data-view="analysis">· Архитектура RAG</button><button type="button" data-view="graph">· Transformer и внимание</button></div><div class="ka-vault"><span><span class="ka-dot"></span>Obsidian подключён</span><span>Personal_Vault / inbox</span></div></aside><main class="ka-main"><div class="ka-crumb"><span>Personal_Vault &nbsp; / &nbsp; '+navs[section][2]+'</span><span><span class="ka-dot"></span>Obsidian</span></div><div class="ka-heading"><div><h1>'+title+'</h1><p class="ka-subtitle">'+subtitle+'</p></div><span class="ka-tag">'+themeLabels[key]+'</span></div>'+body+'</main>';
+    if(globalThis.lucide)globalThis.lucide.createIcons();
+  }
+  root.querySelectorAll('.ka-window').forEach(shell=>{
+    const key=shell.dataset.theme;
+    states[key]={view:'files',file:0,node:'RAG',...(saved?.[key]||{})};
+    render(shell);
+    shell.addEventListener('click',e=>{
+      const button=e.target.closest('button');if(!button)return;
+      const state=states[key];
+      if(button.dataset.view){state.view=button.dataset.view;render(shell);save();}
+      if(button.dataset.open!==undefined){state.file=Number(button.dataset.open);state.view='preview';render(shell);save();}
+      if(button.dataset.node){state.node=button.dataset.node;render(shell);save();}
+      if(button.hasAttribute('data-save'))shell.querySelector('[data-status]').textContent='Сохранено в этом предпросмотре';
+    });
+    if(globalThis.Tweak){
+      const preset={garden:{accent:'#d1fca6',radius:14},paper:{accent:'#dce7bf',radius:14},atlas:{accent:'#e1dcf7',radius:14}}[key];
+      shell.setAttribute('aria-label',names[key]);
+      const tweak=new Tweak({container:shell,onChange:()=>{shell.style.setProperty('--accent',preset.accent);shell.style.setProperty('--radius',preset.radius+'px')}});
+      tweak.addColorPicker(preset,'accent',{label:'强调色',reference:'--accent'});
+      tweak.addSlider(preset,'radius',{label:'面板圆角',min:0,max:24,unit:'px'});
+    }
+  });
+})();
+</script>
+</body></html>

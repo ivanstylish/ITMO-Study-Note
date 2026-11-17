@@ -1,0 +1,13 @@
+
+/* Approval preview only: colors, no typography, layout, or behavior changes. */
+:root{--bg:#dce2d5;--paper:#edf1e7;--ink:#202b1b;--muted:#34412e;--line:#b5c2aa}
+body{background:var(--bg);color:var(--ink)}
+.sidebar{background:#e2e8da;border-right-color:#b5c2aa}.card{background:var(--paper);border-color:#b5c2aa}
+.nav button,.side-recent>button,.crumb,.crumb span,.top-actions,.subtitle,.muted,.small,.mono,.eyebrow,.meta-label,.meta-value,.source-cell,.message p,.explanation,.change-main p,.extract-line,.drop-format,.connected{color:#34412e}
+.nav button.active{color:#202b1b}.step-title{color:#202b1b}.step-state{color:#34412e}.step.active .step-state,.step.done .step-state{color:#374830}.step-num{color:#34412e;background:#dce3d5}.step{border-bottom-color:#c3cdbb}.step.active .step-num,.step.done .step-num{color:#293d20}.step.active{border-bottom-color:#405b35}
+.btn{background:#edf1e7;border-color:#b5c2aa;color:#202b1b}.btn.primary{background:#232621;border-color:#232621;color:#fff}.btn.danger{background:#f3e7de;border-color:#d2b29f;color:#883f2b}.btn:disabled{opacity:1;background:#e0e6d9;border-color:#b5c2aa;color:#56614e;cursor:default}
+.source-cell.source-heading{color:#202b1b}.source-cell.source-status{color:#385b2c}.setting-row>span:last-child{color:#202b1b}.graph-legend,.neighbor small,.node-meta{color:#34412e}
+
+.check-list li,.check-list li:before,.badge,.pill,.note-box h3,.note-box.good h3,.meta-label,.graph-tags span{color:#34412e}.badge.error{color:#883f2b}.change-file{background:#e6ecdf;border-color:#b5c2aa}.notice{background:#dce6d3;color:#33412d}
+
+body{font-weight:400}.step-title,.step-num,.btn,.nav button.active,h1,h2,h3,.change-main .path{font-weight:700}.nav button,.side-recent>button,.step-state,.change-main p,.explanation,.message p,.source-cell,.check-list li,.notice,.badge,.subtitle,.setting-row{font-weight:600}.step-state,.step.active .step-state,.step.done .step-state,.step-num,.step.active .step-num,.step.done .step-num,.source-cell.source-status{color:#34412e}.btn.danger{color:#78301f;background:#ead9cd;border-color:#b78e75;font-weight:700}.btn:disabled{background:#e6ecdf;color:#34412e;border-color:#b5c2aa;font-weight:600}.note-box,.note-box.good,.concept{color:#202b1b}.connected,.mono,.eyebrow{color:#34412e}

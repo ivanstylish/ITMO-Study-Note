@@ -11,7 +11,8 @@ import java.util.Optional;
 // @Repository：声明数据访问层 Spring Bean；此注解不代表使用了 Spring Data Repository。
 @Repository
 public class UserRepository {
-    // @PersistenceContext：注入关联当前事务持久化上下文的 EntityManager 代理。
+    // @PersistenceContext：是一个短暂的、事务范围的上下文，用于管理实体的生命周期。
+    //Кратковременный контекст, ограниченный рамками транзакции и предназначенный для управления жизненным циклом сущностей.
     @PersistenceContext
     private EntityManager em;
 

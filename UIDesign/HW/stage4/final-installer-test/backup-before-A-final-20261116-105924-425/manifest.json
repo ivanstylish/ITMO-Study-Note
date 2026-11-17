@@ -1,0 +1,16 @@
+{
+    "id":  "test-id-only",
+    "name":  "Knowledge Agent - A Final - Segoe UI",
+    "networkAccess":  {
+                          "allowedDomains":  [
+                                                 "none"
+                                             ]
+                      },
+    "ui":  "ui.html",
+    "documentAccess":  "dynamic-page",
+    "editorType":  [
+                       "figma"
+                   ],
+    "api":  "1.0.0",
+    "main":  "code.js"
+}

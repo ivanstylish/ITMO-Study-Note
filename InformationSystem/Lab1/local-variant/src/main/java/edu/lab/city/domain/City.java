@@ -65,6 +65,8 @@ public class City {
     private Long metersAboveSeaLevel;
 
     // @Enumerated：STRING 表示按枚举名称保存，避免枚举顺序变化影响已有数据。
+    // @Enumerated(STRING) указывает, что значение перечисления (enum) должно сохраняться по своему имени;
+    // благодаря этому изменение порядка элементов в перечислении не повлияет на уже существующие данные.
     @Enumerated(EnumType.STRING)
     private Climate climate;
 

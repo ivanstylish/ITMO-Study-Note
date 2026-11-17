@@ -1,0 +1,41 @@
+[
+  {
+    "id": "A",
+    "name": "deeper-sage",
+    "bg": "#dce2d5",
+    "paper": "#edf1e7",
+    "side": "#e2e8da",
+    "ink": "#202b1b",
+    "muted": "#34412e",
+    "inner": "#e6ecdf",
+    "notice": "#dce6d3",
+    "border": "#b5c2aa",
+    "weight": 400
+  },
+  {
+    "id": "B",
+    "name": "matte-olive",
+    "bg": "#cbd3c2",
+    "paper": "#e1e7d9",
+    "side": "#d3dccb",
+    "ink": "#172411",
+    "muted": "#2d3c25",
+    "inner": "#d6dfce",
+    "notice": "#c8d8bb",
+    "border": "#9eaf91",
+    "weight": 600
+  },
+  {
+    "id": "C",
+    "name": "deeper-neutral",
+    "bg": "#bdc7bb",
+    "paper": "#d7dfd3",
+    "side": "#c5d0c0",
+    "ink": "#152218",
+    "muted": "#293b2b",
+    "inner": "#cbd6c5",
+    "notice": "#bdcfb6",
+    "border": "#91a78c",
+    "weight": 600
+  }
+]

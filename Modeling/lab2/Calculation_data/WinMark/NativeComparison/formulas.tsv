@@ -1,0 +1,5 @@
+name	formula
+rho1	7*lambda
+rho2	2*lambda
+LQ1	p8+2*p9+3*p10
+LQ2	(rho1^2+2*rho1^3)/(1+rho1+rho1^2+rho1^3)+rho2^2/(1+rho2+rho2^2)

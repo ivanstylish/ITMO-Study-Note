@@ -1,0 +1,11 @@
+
+/* Approval preview only: colors, no typography, layout, or behavior changes. */
+:root{--bg:#e9ede5;--paper:#f4f6f0;--ink:#243020;--muted:#46533f;--line:#cdd6c5}
+body{background:var(--bg);color:var(--ink)}
+.sidebar{background:#edf0e8;border-right-color:#c6d0be}.card{background:var(--paper);border-color:#cdd6c5}
+.nav button,.side-recent>button,.crumb,.crumb span,.top-actions,.subtitle,.muted,.small,.mono,.eyebrow,.meta-label,.meta-value,.source-cell,.message p,.explanation,.change-main p,.extract-line,.drop-format,.connected{color:#46533f}
+.nav button.active{color:#243020}.step-title{color:#293625}.step-state{color:#46533f}.step.active .step-state,.step.done .step-state{color:#374830}.step-num{color:#46533f;background:#dce3d5}.step{border-bottom-color:#c3cdbb}.step.active .step-num,.step.done .step-num{color:#293d20}.step.active{border-bottom-color:#405b35}
+.btn{background:#f4f6f0;border-color:#c5cfbd;color:#293625}.btn.primary{background:#232621;border-color:#232621;color:#fff}.btn.danger{background:#f3e7de;border-color:#d2b29f;color:#883f2b}.btn:disabled{opacity:1;background:#e0e6d9;border-color:#c5cfbd;color:#56614e;cursor:default}
+.source-cell.source-heading{color:#243020}.source-cell.source-status{color:#385b2c}.setting-row>span:last-child{color:#293625}.graph-legend,.neighbor small,.node-meta{color:#46533f}
+
+.check-list li,.check-list li:before,.badge,.pill,.note-box h3,.note-box.good h3,.meta-label,.graph-tags span{color:#46533f}.badge.error{color:#883f2b}.change-file{background:#f0f4eb;border-color:#cdd6c5}.notice{background:#e7eddf;color:#33412d}

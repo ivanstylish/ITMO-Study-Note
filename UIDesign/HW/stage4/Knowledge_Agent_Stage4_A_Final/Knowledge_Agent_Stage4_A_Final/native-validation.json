@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "API simulation; real Figma rendering is not verified",
+  "screens": 91,
+  "clickConnections": 1085,
+  "timers": 12,
+  "imageLayers": 0,
+  "unresolved": 0,
+  "types": {
+    "FRAME": 7195,
+    "COMPONENT": 123,
+    "VECTOR": 644,
+    "TEXT": 3785,
+    "COMPONENT_SET": 1,
+    "INSTANCE": 1245
+  },
+  "textStyles": 55,
+  "fontFamilies": [
+    "Segoe UI",
+    "Georgia",
+    "Courier New"
+  ],
+  "modelSelectorVariants": 4,
+  "libraryComponentsDoNotOverlap": true
+}

@@ -12,6 +12,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import java.io.IOException;
 
 // @Configuration：声明 Spring 配置类，其中的 Bean 方法用于注册容器管理的对象。
+// @Configuration: Объявляет конфигурационный класс Spring, в котором используются методы,
+// помеченные как Bean, для регистрации объектов, управляемых контейнером.
 @Configuration
 public class SecurityConfig {
     // @Bean：将方法返回的对象注册为 Spring Bean，供其他组件注入使用。

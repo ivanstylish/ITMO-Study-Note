@@ -1,0 +1,1 @@
+({api:Object.fromEntries(Object.entries(window.__TIKZ_EDITOR_APP_TEST_API__).map(([k,v])=>[k,typeof v==='function'?String(v).slice(0,1800):v])),workspace:JSON.parse(localStorage.getItem('tikz-editor:workspace')),buttons:[...document.querySelectorAll('button')].map(b=>({text:b.innerText,title:b.title,test:b.dataset.testid}))})
