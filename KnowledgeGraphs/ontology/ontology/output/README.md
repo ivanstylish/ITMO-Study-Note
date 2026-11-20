@@ -1,6 +1,6 @@
 # 本体实验输出导航
 
-本目录按用途分类。全量版的逐步操作见 [全量版实验完整教程](../FULL_VERSION_TUTORIAL_ZH.md)。
+本目录按用途分类。全量版的逐步操作见 [全量版实验完整教程](../FULL_VERSION_TUTORIAL)。
 
 | 目录 | 内容 | 文件数 |
 | --- | --- | --- |
@@ -12,7 +12,7 @@
 
 ## 按操作选择文件
 
-- **使用全量版完成本阶段演示**：查看 [完整教程](../FULL_VERSION_TUTORIAL_ZH.md)，打开 [lol_full.owl](ontologies/lol_full.owl)；Reactodia 加载 [全量推理 Turtle](ontologies/lol_full_inferred.ttl)。
+- **使用全量版完成本阶段演示**：查看 [完整教程](../FULL_VERSION_TUTORIAL)，打开 [lol_full.owl](ontologies/lol_full.owl)；Reactodia 加载 [全量推理 Turtle](ontologies/lol_full_inferred.ttl)。
 
 - **在 Protégé 中开始实验**：打开 [lol_demo.owl](ontologies/lol_demo.owl)，然后启动 HermiT。
 - **复制 DL Query 表达式**：查看 [DL 查询与预期结果](../queries/DL_queries.txt)。

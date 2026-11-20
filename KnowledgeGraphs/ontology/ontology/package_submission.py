@@ -1,4 +1,3 @@
-"""Validate deliverables, hash them, and package a portable submission without runtimes."""
 import hashlib
 import json
 import re

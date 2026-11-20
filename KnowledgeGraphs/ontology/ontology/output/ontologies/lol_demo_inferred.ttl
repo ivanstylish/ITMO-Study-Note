@@ -1105,11 +1105,11 @@ lol-ontology:AbilityEffect a owl:Class ;
     rdfs:comment "Один эффект умения с собственной целью и условием."@ru .
 
 [] a owl:AllDifferent ;
-    owl:distinctMembers ( lol-ontology:ControlImmunity lol-ontology:CooldownReduction lol-ontology:Damage lol-ontology:Empower lol-ontology:Heal lol-ontology:MovementSpeedBoost lol-ontology:Reveal lol-ontology:Root lol-ontology:Shield lol-ontology:Slow lol-ontology:Stun ) .
-
-[] a owl:AllDifferent ;
     owl:distinctMembers ( lol-ontology:Ally lol-ontology:Enemy lol-ontology:OwnAbility lol-ontology:Self ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( lol-ontology:Ability lol-ontology:AbilityEffect lol-ontology:Champion lol-ontology:ChampionCategory lol-ontology:Mechanic lol-ontology:SourceDocument lol-ontology:TargetType ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol-ontology:ControlImmunity lol-ontology:CooldownReduction lol-ontology:Damage lol-ontology:Empower lol-ontology:Heal lol-ontology:MovementSpeedBoost lol-ontology:Reveal lol-ontology:Root lol-ontology:Shield lol-ontology:Slow lol-ontology:Stun ) .
 

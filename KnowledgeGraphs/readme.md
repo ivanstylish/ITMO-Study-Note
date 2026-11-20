@@ -41,6 +41,7 @@ Step 1–3 包含选题、本体建模与数据采集；演示方案、提交文
 ## 实验答辩 <a id="defense"></a>
 
 - [Step 2：本体与图谱中俄答辩](Step-2/DEFENSE_GUIDE_ZH_RU.md)
+- [RDFLib：教材对照、验收与中俄答辩](ontology/ontology/RDFLIB_DEFENSE.md)
 - [Step 3：演示讲稿](Step-3/presentation.md)
 
 ## 补充资料与速查 <a id="resources"></a>

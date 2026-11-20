@@ -2,7 +2,9 @@
 
 本目录对应教材 PDF 第 249–250 页的 `Практическое задание 3_1 / 3_2`。项目主题为英雄、技能及效果机制。输出按本体、查询结果、可视化与验证分类，入口见 [输出目录导航](output/README.md)。三英雄快速演示使用 `output/ontologies/lol_demo.owl`；数据版本为 **Data Dragon 16.20.1 / ru_RU**。
 
-本阶段使用 **`lol_full.owl` 全量版** 的逐步操作、预期结果、中俄讲解词和验收方法，见 [全量版实验完整教程](FULL_VERSION_TUTORIAL_ZH.md)。
+本阶段使用 **`lol_full.owl` 全量版** 的逐步操作、预期结果、中俄讲解词和验收方法，见 [全量版实验完整教程](FULL_VERSION_TUTORIAL)。
+
+RDFLib 栏目的教材对照、验收和中俄现场流程见 [RDFLib 答辩指南](RDFLIB_DEFENSE.md)。
 
 ## 1. 完成情况
 

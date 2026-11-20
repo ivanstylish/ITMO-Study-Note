@@ -1,8 +1,3 @@
-"""Воспроизводимая сборка OWL из локального снимка Data Dragon и разметки.
-
-Запуск: .venv/Scripts/python.exe build_ontology.py
-Исходные данные не изменяются. Разметка отделена от автоматического импорта.
-"""
 from __future__ import annotations
 
 import csv

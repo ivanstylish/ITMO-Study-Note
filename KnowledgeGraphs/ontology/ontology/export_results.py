@@ -1,4 +1,3 @@
-"""Проверка запросов и экспорт объяснимых результатов после материализации HermiT."""
 import csv
 import json
 from pathlib import Path

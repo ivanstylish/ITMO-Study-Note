@@ -1,8 +1,3 @@
-"""Generate readable Reactodia layouts using the format exported by RDF Explorer.
-
-Layouts refer to real IRIs. Every displayed edge is checked against HermiT output.
-The full RDF data stays in lol_demo_inferred.ttl; a diagram is a selected view.
-"""
 import json
 from pathlib import Path
 from rdflib import Graph, Namespace

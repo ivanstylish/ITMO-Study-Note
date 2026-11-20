@@ -947,15 +947,15 @@ lol:AbilityEffect a owl:Class ;
     rdfs:label "AbilityEffect" ;
     rdfs:comment "Один эффект умения с собственной целью и условием."@ru .
 
-[] a owl:AllDifferent ;
-    owl:distinctMembers ( lol:Damage lol:Shield lol:Root lol:Slow lol:Stun lol:Heal lol:MovementSpeedBoost lol:Reveal lol:CooldownReduction lol:Empower lol:ControlImmunity ) .
-
-[] a owl:AllDifferent ;
-    owl:distinctMembers ( lol:Category_Mage lol:Category_Support ) .
-
 [] a owl:AllDisjointClasses ;
     owl:members ( lol:Champion lol:ChampionCategory lol:Ability lol:AbilityEffect lol:Mechanic lol:TargetType lol:SourceDocument ) .
 
 [] a owl:AllDifferent ;
     owl:distinctMembers ( lol:Ally lol:Enemy lol:Self lol:OwnAbility ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol:Damage lol:Shield lol:Root lol:Slow lol:Stun lol:Heal lol:MovementSpeedBoost lol:Reveal lol:CooldownReduction lol:Empower lol:ControlImmunity ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol:Category_Mage lol:Category_Support ) .
 
