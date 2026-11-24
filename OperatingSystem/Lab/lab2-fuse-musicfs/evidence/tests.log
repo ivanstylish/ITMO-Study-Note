@@ -3,6 +3,7 @@ test_bad_bpm (test_catalog.CatalogTests) ... ok
 test_bad_json_and_top_level (test_catalog.CatalogTests) ... ok
 test_bpm_rounding_and_unknown (test_catalog.CatalogTests) ... ok
 test_duplicates_are_rejected (test_catalog.CatalogTests) ... ok
+test_extreme_bpm_rejected_with_record_context (test_catalog.CatalogTests) ... ok
 test_invalid_records (test_catalog.CatalogTests) ... ok
 test_links_cannot_escape_or_duplicate_sources (test_catalog.CatalogTests) ... ok
 test_missing_categories_are_unknown (test_catalog.CatalogTests) ... ok
@@ -11,6 +12,7 @@ test_same_basename_is_not_overwritten (test_catalog.CatalogTests) ... ok
 test_valid_synthetic_wav_and_no_overwrite (test_catalog.CatalogTests) ... ok
 test_attributes_and_dot_lookup (test_fs.CallbackTests) ... ok
 test_close_cleans_unreleased_handles (test_fs.CallbackTests) ... ok
+test_info_attributes_and_handle_lifecycle (test_fs.CallbackTests) ... ok
 test_missing_source_and_existing_handle (test_fs.CallbackTests) ... ok
 test_mountpoint_validation (test_fs.CallbackTests) ... ok
 test_read_offsets_eof_and_release (test_fs.CallbackTests) ... ok
@@ -21,6 +23,7 @@ test_symlink_replacement_cannot_escape (test_fs.CallbackTests) ... ok
 test_aliases_hashes_stat_and_external_commands (test_mount.MountedTests) ... ok
 test_all_mutations_fail_without_source_changes (test_mount.MountedTests) ... ok
 test_exception_cleanup_and_restart (test_mount.MountedTests) ... ok
+test_info_files_on_real_mount (test_mount.MountedTests) ... ok
 test_large_directory_pagination (test_mount.MountedTests) ... ok
 test_metadata_snapshot_and_remount (test_mount.MountedTests) ... ok
 test_missing_before_mount_and_empty_catalog (test_mount.MountedTests) ... ok
@@ -31,6 +34,6 @@ test_source_deleted_after_open (test_mount.MountedTests) ... ok
 test_unicode_and_unknown_category (test_mount.MountedTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 31 tests in 5.529s
+Ran 34 tests in 5.564s
 
 OK

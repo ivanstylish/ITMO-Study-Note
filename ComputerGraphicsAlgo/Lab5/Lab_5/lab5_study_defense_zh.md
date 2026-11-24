@@ -223,7 +223,8 @@ python lab5_pathtracing --size 500 --samples 36 --depth 4 --seed 5 --white 4 --o
 | 同书 §3.4.5，p.47 式 (3.4.5.1)、p.51 式 (3.4.5.7–8)、p.55 式 (3.4.5.9) | Lambert、Fresnel 和 Cook–Torrance 的 D·G·F 结构。代码采用的 Beckmann D、几何项 G 和材料权重见报告 §3 |
 | [《Методы расчета глобальной освещенности》](../../Lecture/3275.pdf) §4.7.4，p.107–108，式 (4.59–60) | Lambert 点光源发射、半球余弦分布。按立体角的密度正比于 cosθ，写成极角边际密度才多 sinθ |
 | 同书 §5.1，p.124–126、§5.2，p.127 | 渲染方程式 (2.13)、基础反向路径与路径权重、初始射线参数的分层采样 |
-| 同书 §5.4，p.132–136，含式 (5.15) 和图 5.7–5.8 | 下一事件估计、显式连接光源和阴影可见性。本实验直接遍历全部点源 |
+| 同书 §5.4，p.132–137，含式 (5.15) 和图 5.7–5.9 | 下一事件估计、显式连接光源和阴影可见性。本实验直接遍历全部点源 |
+| 同书 §5.5，p.141–142 | 多重重要性采样（MIS）的伪代码，按概率密度加权合并光源采样和 BRDF 采样。本实验采用 §5.4 的逐灯连接和余弦续射 |
 | [Игнатенко《Гамма-коррекция》](../../Lecture/mis_lect05_11.pdf)，PDF 第 43–46 页 | 在线性域计算照明，显示前使用反伽马指数 |
 
 可阅读两篇原始论文，了解渲染方程与路径积分，以及微表面法向分布和遮蔽项的来源。[Kajiya, The Rendering Equation](https://www.cs.rpi.edu/~cutler/classes/advancedgraphics/S13/papers/kajiya_rendering_equation_86.pdf) · [Cook 与 Torrance, A Reflectance Model for Computer Graphics](https://www.graphics.cornell.edu/~westin/consortium-home/cook-tog.pdf)

@@ -2,6 +2,7 @@
 by_bpm
 by_key
 by_type
+info
 
 <mountpoint>/by_bpm:
 120
@@ -89,3 +90,17 @@ real12__YeatxKanKanLoop 5 160 Bpm.wav
 <mountpoint>/by_type/song:
 real07__I Know.mp3
 real08__I Know.wav
+
+<mountpoint>/info:
+real01.info
+real02.info
+real03.info
+real04.info
+real05.info
+real06.info
+real07.info
+real08.info
+real09.info
+real10.info
+real11.info
+real12.info

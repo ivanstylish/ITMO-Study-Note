@@ -66,6 +66,8 @@ def main():
             tree = subprocess.check_output(["ls", "-R", str(mount)], text=True)
             (project / "evidence/formal-tree.txt").write_text(
                 tree.replace(str(mount), "<mountpoint>"), encoding="utf-8")
+            info_dir = mount / "info"
+            assert {p.name for p in info_dir.iterdir()} == {f"{r['id']}.info" for r in records}
             for record, source, original in zip(records, sources, before):
                 name = f"{record['id']}__{source.name}"
                 paths = [mount / category / group / name for category, group in (
@@ -93,6 +95,18 @@ def main():
                                         bytes=attributes.st_size, mode="0444", sha256=digest,
                                         range_checks=len(offsets), returned_bytes=returned))
                 assert len({(alias["device"], alias["inode"]) for alias in aliases}) == 1
+                info_path = info_dir / f"{record['id']}.info"
+                info_text = subprocess.check_output(["cat", str(info_path)], timeout=5)
+                info_attrs = info_path.stat()
+                assert info_attrs.st_mode == stat.S_IFREG | 0o444
+                assert info_attrs.st_size == len(info_text) and info_attrs.st_nlink == 1
+                assert info_attrs.st_ino != aliases[0]["inode"]
+                bpm_line, rest = info_text.decode("utf-8").split("\n", 1)
+                assert bpm_line.startswith("BPM: ")
+                bpm = record.get("bpm")
+                assert (bpm_line == "BPM: unknown" if bpm is None else float(bpm_line[5:]) == bpm)
+                assert rest == (f"Key: {label(record.get('key'))}\n"
+                                f"Type: {label(record.get('type'))}\nSize: {original[0]} bytes\n")
                 # 只尝试以写方式打开，不写入、不截断或删除正式源文件。
                 try:
                     fd = os.open(paths[0], os.O_WRONLY)
@@ -114,6 +128,9 @@ def main():
                                     range_offsets=list(offsets), range_checks=3 * len(offsets),
                                     requested_bytes=4096, write_open_errno=write_errno,
                                     copied_sha256=copied_digest,
+                                    info_path=str(info_path.relative_to(mount)),
+                                    info_content=info_text.decode("utf-8"),
+                                    info_inode=info_attrs.st_ino, info_bytes=info_attrs.st_size,
                                     inode=aliases[0]["inode"], aliases_and_ranges="passed"))
             try:
                 (mount / "must-not-create.wav").touch()
@@ -147,6 +164,7 @@ def main():
                   alias_checks=sum(len(result["aliases"]) for result in results),
                   range_checks=sum(result["range_checks"] for result in results),
                   copy_checks=len(results), create_errno=create_errno,
+                  info_checks=len(results),
                   scope="Byte reading and hashes only; no decoding or playback verification.", results=results)
     (project / "local-data/validation.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -158,7 +176,7 @@ def main():
         json.dumps(portable, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"PASS: {len(records)} files, {total / 1024**2:.2f} MiB; "
           f"{report['alias_checks']} aliases, {report['range_checks']} ranges, "
-          f"{report['copy_checks']} copies; source unchanged; unmounted")
+          f"{report['copy_checks']} copies, {report['info_checks']} info files; source unchanged; unmounted")
 
 
 if __name__ == "__main__":

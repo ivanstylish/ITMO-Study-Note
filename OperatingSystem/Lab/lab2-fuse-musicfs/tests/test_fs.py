@@ -1,6 +1,7 @@
 import errno
 import json
 import os
+import stat
 from pathlib import Path
 import tempfile
 import unittest
@@ -44,6 +45,43 @@ class CallbackTests(unittest.TestCase):
             with self.assertRaises(pyfuse3.FUSEError) as error:
                 await self.fs.read(fh, 0, 1)
             self.assertEqual(error.exception.errno, errno.EBADF)
+        trio.run(scenario)
+
+    def test_info_attributes_and_handle_lifecycle(self):
+        async def scenario():
+            directory = await self.fs.lookup(pyfuse3.ROOT_INODE, b"info")
+            self.assertTrue(stat.S_ISDIR(directory.st_mode))
+            entry = await self.fs.lookup(directory.st_ino, b"a.info")
+            expected = f"BPM: 125\nKey: unknown\nType: unknown\nSize: {len(self.data)} bytes\n".encode()
+            self.assertEqual(entry.st_mode, stat.S_IFREG | 0o444)
+            self.assertEqual((entry.st_size, entry.st_nlink), (len(expected), 1))
+            self.assertNotEqual(entry.st_ino, self.inode)
+            for operation, code in [
+                (lambda: self.fs.opendir(entry.st_ino), errno.ENOTDIR),
+                (lambda: self.fs.lookup(entry.st_ino, b"."), errno.ENOTDIR),
+                (lambda: self.fs.open(directory.st_ino, os.O_RDONLY), errno.EISDIR),
+                (lambda: self.fs.open(entry.st_ino, os.O_WRONLY), errno.EROFS),
+            ]:
+                with self.assertRaises(pyfuse3.FUSEError) as error:
+                    await operation()
+                self.assertEqual(error.exception.errno, code)
+            audio = (await self.fs.open(self.inode, os.O_RDONLY)).fh
+            first = (await self.fs.open(entry.st_ino, os.O_RDONLY)).fh
+            second = (await self.fs.open(entry.st_ino, os.O_RDONLY)).fh
+            self.assertEqual(len({first, second, audio}), 3)
+            self.assertEqual(await self.fs.read(first, 4, 7), expected[4:11])
+            self.assertEqual(await self.fs.read(first, len(expected) - 2, 20), expected[-2:])
+            self.assertEqual(await self.fs.read(first, len(expected) + 1, 20), b"")
+            await self.fs.release(first)
+            with self.assertRaises(pyfuse3.FUSEError) as error:
+                await self.fs.read(first, 0, len(expected))
+            self.assertEqual(error.exception.errno, errno.EBADF)
+            self.assertEqual(await self.fs.read(second, 0, len(expected)), expected)
+            self.assertEqual(await self.fs.read(audio, 0, 10), self.data[:10])
+            self.fs.close()
+            self.assertFalse(self.fs.info_handles)
+            with self.assertRaises(OSError):
+                os.fstat(audio)
         trio.run(scenario)
 
     def test_short_reads_are_filled_until_eof(self):

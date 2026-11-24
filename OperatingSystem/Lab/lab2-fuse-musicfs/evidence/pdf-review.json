@@ -1,5 +1,5 @@
 {
-  "file": "report_musicfs_final.pdf",
+  "file": "OS report2.pdf",
   "pages": 6,
   "visually_reviewed_pages": [
     1,
@@ -10,10 +10,7 @@
     6
   ],
   "formal_files": 12,
-  "alias_checks": 36,
-  "range_checks": 144,
-  "copy_checks": 12,
-  "regression_tests": 31,
-  "user_sections_1_and_5": "preserved",
-  "local_links": "passed"
+  "info_files": 12,
+  "regression_tests": 34,
+  "text_extraction": "passed"
 }

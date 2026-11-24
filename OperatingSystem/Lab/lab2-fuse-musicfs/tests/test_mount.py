@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import stat
 import subprocess
 import sys
 import tempfile
@@ -87,6 +88,25 @@ class MountedTests(unittest.TestCase):
         copy = self.base / "copy.wav"
         subprocess.run(["cp", str(aliases[0]), str(copy)], check=True, capture_output=True)
         self.assertEqual(copy.read_bytes(), source.read_bytes())
+
+    def test_info_files_on_real_mount(self):
+        directory = self.mount / "info"
+        self.assertEqual({p.name for p in directory.iterdir()}, {"s001.info", "s002.info", "s003.info"})
+        path = directory / "s001.info"
+        size = (self.root / "drums/drum_loop.wav").stat().st_size
+        expected = f"BPM: 124.5\nKey: A_minor\nType: drum\nSize: {size} bytes\n".encode()
+        self.assertEqual(subprocess.check_output(["cat", str(path)], timeout=5), expected)
+        info = path.stat()
+        self.assertEqual((info.st_mode, info.st_size, info.st_nlink),
+                         (stat.S_IFREG | 0o444, len(expected), 1))
+        self.assertNotEqual(info.st_ino, self.audio().stat().st_ino)
+        with path.open("rb") as stream:
+            self.assertEqual(os.pread(stream.fileno(), 8, 5), expected[5:13])
+            self.assertEqual(os.pread(stream.fileno(), 8, len(expected)), b"")
+        with self.assertRaises(OSError) as error:
+            path.write_bytes(b"modified")
+        self.assertEqual(error.exception.errno, errno.EROFS)
+        self.assertFalse(any(self.root.rglob("*.info")))
 
     def test_random_reads_eof_and_concurrency(self):
         data = (self.root / "drums/drum_loop.wav").read_bytes()

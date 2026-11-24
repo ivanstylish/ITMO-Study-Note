@@ -36,6 +36,14 @@ class CatalogTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 bpm_group(value)
 
+    def test_extreme_bpm_rejected_with_record_context(self):
+        for bpm in ("1e1000001", "1e1000010"):
+            with self.subTest(bpm=bpm):
+                self.metadata.write_text(
+                    f'[{{"id":"a","path":"loop.wav","bpm":{bpm}}}]', encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, r"^record 1: bpm is too large$"):
+                    Catalog(self.metadata, self.root)
+
     def test_aliases_share_inode(self):
         catalog = self.load([self.record()])
         inodes = []
@@ -49,8 +57,12 @@ class CatalogTests(unittest.TestCase):
 
     def test_missing_categories_are_unknown(self):
         catalog = self.load([{"id": "a", "path": "loop.wav"}])
-        for inode in catalog.nodes[1].children.values():
+        for category in (b"by_bpm", b"by_key", b"by_type"):
+            inode = catalog.nodes[1].children[category]
             self.assertEqual(list(catalog.nodes[inode].children), [b"unknown"])
+        info = catalog.nodes[catalog.nodes[1].children[b"info"]]
+        entry = catalog.nodes[info.children[b"a.info"]]
+        self.assertEqual(entry.content, b"BPM: unknown\nKey: unknown\nType: unknown\nSize: 13 bytes\n")
 
     def test_same_basename_is_not_overwritten(self):
         (self.root / "other").mkdir()

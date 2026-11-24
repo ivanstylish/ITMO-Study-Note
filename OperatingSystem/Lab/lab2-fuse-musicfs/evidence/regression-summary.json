@@ -1,7 +1,7 @@
 {
-  "tests": 31,
-  "catalog_tests": 11,
-  "callback_tests": 9,
-  "real_mount_tests": 11,
+  "tests": 34,
+  "catalog_tests": 12,
+  "callback_tests": 10,
+  "real_mount_tests": 12,
   "passed": true
 }

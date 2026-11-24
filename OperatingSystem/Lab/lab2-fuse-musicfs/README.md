@@ -2,7 +2,9 @@
 
 MusicFS 把 JSON 中的音乐元数据组织成只读目录。三个分类入口读取同一份原始音频，不复制文件、不修改标签、不分析音频。
 
-已在 WSL2 Ubuntu 中通过 **31 项测试，其中 11 项是真实挂载集成测试**，记录见 [evidence/tests.log](evidence/tests.log)。另已对本机选取的 **12 个真实音频（11 WAV＋1 MP3，101.72 MiB）**完成只读挂载与字节一致性验证；音频解码、播放器播放和 FLAC 尚未验证。
+已在 WSL2 Ubuntu 中通过 **34 项测试，其中 12 项是真实挂载集成测试**，记录见 [evidence/tests.log](evidence/tests.log)。另已在正式组验证 12 个 `.info` 文件及 12 个音频的字节一致性。音频解码、播放器播放和 FLAC 尚未验证。
+
+挂载后可用 `cat ~/musicfs-mount/info/real01.info` 查看 BPM 原值、调性、用途和源文件字节数。信息文件为 UTF-8 只读文本，内容在挂载时生成，未填字段显示为 `unknown`。修改 JSON 后重新挂载即可刷新。
 
 本项目不调用在线音乐平台或其他网络服务。JSON 保存分类元数据，音频文件保存实际内容；FUSE/pyfuse3 和 `os.pread` 是本地编程接口，不是网络服务 API。
 
@@ -110,10 +112,10 @@ JSON 的格式、字段、重复记录和越界路径错误会阻止挂载。缺
 在已激活虚拟环境、项目根目录下运行：
 
 ```bash
-# 20 项目录/回调测试；11 项真实挂载测试明确跳过。
+# 22 项目录/回调测试，跳过 12 项真实挂载测试。
 python -m unittest discover -s tests -v
 
-# 全部 31 项，包含真实挂载。仅操作 /tmp 中的临时合成音频。
+# 全部 34 项，包含真实挂载。仅操作 /tmp 中的临时合成音频。
 MUSICFS_INTEGRATION=1 python -m unittest discover -s tests -v
 ```
 
@@ -124,7 +126,7 @@ MUSICFS_INTEGRATION=1 python -m unittest discover -s tests -v
 - [结构化演示结果](evidence/summary.json)
 - [环境版本](evidence/environment.txt)及 [Python 包版本](evidence/python-packages.txt)
 - [挂载读取日志](evidence/mount.log)
-- [俄语报告源文件](report_musicfs.typ) / [正式 PDF](report_musicfs_final.pdf)
+- [俄语报告源文件](report_musicfs.typ) / [正式 PDF](<OS report2.pdf>)
 
 ## 5. 排错和边界
 
@@ -163,6 +165,25 @@ python -m musicfs --metadata local-data/metadata.json --source-root /mnt/e ~/mus
 
 ```bash
 python -m tools.check_local_audio
+
+ls ~/musicfs-mnt
+ls ~/musicfs-mnt/by_bpm
+ls ~/musicfs-mnt/by_key
+ls ~/musicfs-mnt/by_type
+ls ~/musicfs-mnt/info
+
+stat ~/musicfs-mnt/by_type/song/"real07__I Know.mp3"
+// 检查当前实际文件信息
+
+sha256sum ~/musicfs-mnt/by_type/song/"real07__I Know.mp3"
+// 查看文件sha码
+
+cat ~/musicfs-mnt/info/real07.info
+// 查看info文件内容
+
+// 关闭使用该目录的程序，终端退出挂载目录，然后卸载。
+cd ~
+fusermount3 -u ~/musicfs-mnt
 ```
 
 该脚本限制为指定两处目录、最多 12 个文件及 128 MiB；逐一比较三个虚拟入口的 inode、完整 SHA-256、首部/中间/尾部/EOF 读取，验证写入被拒绝和卸载完成。验证前后源文件内容哈希、大小和修改时间一致。它只测试文件字节访问，不启动播放器或解码器。
@@ -188,6 +209,6 @@ PDF 已同步真实音频读取验证；对应汇总见 evidence/local-audio-sum
 
 临时 PDF 图片、已生成的 demo、IDE 配置、安装元数据和 Python 缓存已清理。程序运行后可能再次产生缓存，属于可清理内容。
 
-当前正式报告为 report_musicfs_final.pdf；旧版 PDF 已清理。
+当前正式报告为 `OS report2.pdf`。
 
-最新正式验证：36 个入口的属性与完整哈希、144 次范围读取、12 次 cp 副本哈希全部通过。实测发现并修复了 EOF 前短读未补齐的问题，错误读取日志在 evidence/formal-short-read.log，最终结果在 evidence/local-audio-summary.json；完整回归为 31 项通过。
+最新正式验证覆盖 36 个音频入口、144 次音频范围读取、12 次复制哈希校验和 12 个信息文件。结果见 [正式验证汇总](evidence/local-audio-summary.json)。

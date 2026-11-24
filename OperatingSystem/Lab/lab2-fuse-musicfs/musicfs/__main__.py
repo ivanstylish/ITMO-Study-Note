@@ -1,4 +1,4 @@
-"""检查输入 -> 加载目录索引 -> 挂载并处理请求 -> 卸载和关闭资源。"""
+"""检查输入 -> 加载目录索引 -> 挂载并处理请求 -> 卸载和关闭资源"""
 
 import argparse
 import logging
@@ -12,19 +12,19 @@ import trio
 from .catalog import Catalog
 from .fs import MusicFS
 
-
+# 检查挂载点
 def validate_mountpoint(mountpoint, source_root):
     mountpoint = Path(mountpoint).resolve(strict=True)
     if not mountpoint.is_dir() or os.path.ismount(mountpoint):
         raise ValueError("mountpoint must be an unmounted directory")
     if mountpoint.is_relative_to(source_root) or source_root.is_relative_to(mountpoint):
-        # 避免挂载遮住源库，或从源库递归访问回自己的挂载点。
+        # 避免挂载遮住源库，或从源库递归访问回自己的挂载点
         raise ValueError("mountpoint and source root must not contain each other")
     if any(mountpoint.iterdir()):
         raise ValueError("mountpoint must be empty")
     return mountpoint
 
-
+# 运行 FUSE 请求循环
 async def serve():
     async def stop_on_signal():
         with trio.open_signal_receiver(signal.SIGINT, signal.SIGTERM) as signals:
@@ -34,7 +34,7 @@ async def serve():
                 return
 
     async with trio.open_nursery() as nursery:
-        # 一个任务等待退出信号，主任务持续处理内核的文件请求。
+        # 一个任务等待退出信号，主任务持续处理内核的文件请求
         nursery.start_soon(stop_on_signal)
         await pyfuse3.main()
         nursery.cancel_scope.cancel()
@@ -59,7 +59,7 @@ def main():
 
     filesystem = MusicFS(catalog)
     options = set(pyfuse3.default_options) | {"ro", "fsname=MusicFS"}
-    # default_options 保留内核权限检查，ro 在挂载层禁止修改。
+    # default_options 保留内核权限检查，ro 在挂载层禁止修改
     try:
         pyfuse3.init(filesystem, str(mountpoint), options)
     except (OSError, RuntimeError) as exc:
@@ -68,7 +68,7 @@ def main():
     try:
         trio.run(serve)
     finally:
-        # 即使请求循环抛异常，也尝试卸载，并关闭全部源文件句柄。
+        # 即使请求循环抛异常，也尝试卸载，并关闭全部源文件句柄
         try:
             pyfuse3.close(unmount=True)
         finally:

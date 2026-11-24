@@ -5,7 +5,7 @@
   "read_only": "passed",
   "unmounted": true,
   "network_services_used": false,
-  "checked_at": "2026-11-09T01:44:48.592627+03:00",
+  "checked_at": "2026-11-22T17:01:34.033862+03:00",
   "metadata_sha256": "51e984b7ea7c8ab354583e96f521355432aa1f88cfe3925f5c3c3bc20a2969ef",
   "mount_info": "fuse   ro,nosuid,nodev,relatime,user_id=1000,group_id=1000,default_permissions",
   "environment": {
@@ -18,6 +18,7 @@
   "range_checks": 144,
   "copy_checks": 12,
   "create_errno": 30,
+  "info_checks": 12,
   "scope": "Byte reading and hashes only; no decoding or playback verification.",
   "results": [
     {
@@ -38,7 +39,7 @@
         {
           "path": "by_bpm/130/real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav",
           "inode": 2,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 1302766,
           "mode": "0444",
@@ -54,7 +55,7 @@
         {
           "path": "by_key/D#_major/real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav",
           "inode": 2,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 1302766,
           "mode": "0444",
@@ -70,7 +71,7 @@
         {
           "path": "by_type/melody/real01__lil-tecca-x-new-jazz-type-synth-keys-chords_130bpm_D#_major.wav",
           "inode": 2,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 1302766,
           "mode": "0444",
@@ -94,6 +95,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "4f0af36ab0dac6c962bea02b74cfeec4bf09a884a50806cc1e4192b7f1632570",
+      "info_path": "info/real01.info",
+      "info_content": "BPM: 130\nKey: D#_major\nType: melody\nSize: 1302766 bytes\n",
+      "info_inode": 33,
+      "info_bytes": 56,
       "inode": 2,
       "aliases_and_ranges": "passed"
     },
@@ -115,7 +120,7 @@
         {
           "path": "by_bpm/120/real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav",
           "inode": 9,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12288118,
           "mode": "0444",
@@ -131,7 +136,7 @@
         {
           "path": "by_key/E_minor/real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav",
           "inode": 9,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12288118,
           "mode": "0444",
@@ -147,7 +152,7 @@
         {
           "path": "by_type/melody/real02__lil-tecca-type-new-jazz-keys-melody-uplifting-e-piano_120bpm_E_minor.wav",
           "inode": 9,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12288118,
           "mode": "0444",
@@ -171,6 +176,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "fe3f75e12aea671b4c662ebdf8919638342e30b61610227430855b00c855052e",
+      "info_path": "info/real02.info",
+      "info_content": "BPM: 120\nKey: E_minor\nType: melody\nSize: 12288118 bytes\n",
+      "info_inode": 34,
+      "info_bytes": 56,
       "inode": 9,
       "aliases_and_ranges": "passed"
     },
@@ -192,7 +201,7 @@
         {
           "path": "by_bpm/90/real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav",
           "inode": 12,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4808030,
           "mode": "0444",
@@ -208,7 +217,7 @@
         {
           "path": "by_key/D#_minor/real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav",
           "inode": 12,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4808030,
           "mode": "0444",
@@ -224,7 +233,7 @@
         {
           "path": "by_type/melody/real03__lil-tecca-type-loop-synth-lead-mix-euphoria_90bpm_D#_minor.wav",
           "inode": 12,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4808030,
           "mode": "0444",
@@ -248,6 +257,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "594f6eb211c6131d8285eeda6a2a7de6f21c3f633565ad2e51d66579d431a80c",
+      "info_path": "info/real03.info",
+      "info_content": "BPM: 90\nKey: D#_minor\nType: melody\nSize: 4808030 bytes\n",
+      "info_inode": 35,
+      "info_bytes": 55,
       "inode": 12,
       "aliases_and_ranges": "passed"
     },
@@ -269,7 +282,7 @@
         {
           "path": "by_bpm/unknown/real04__kick (4U).wav",
           "inode": 15,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 63876,
           "mode": "0444",
@@ -285,7 +298,7 @@
         {
           "path": "by_key/unknown/real04__kick (4U).wav",
           "inode": 15,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 63876,
           "mode": "0444",
@@ -301,7 +314,7 @@
         {
           "path": "by_type/drum/real04__kick (4U).wav",
           "inode": 15,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 63876,
           "mode": "0444",
@@ -325,6 +338,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "624f02177dbc083b5a938b7c03d251cd00b9e6c0baee6c6ab6f053a3b7e5d1cb",
+      "info_path": "info/real04.info",
+      "info_content": "BPM: unknown\nKey: unknown\nType: drum\nSize: 63876 bytes\n",
+      "info_inode": 36,
+      "info_bytes": 55,
       "inode": 15,
       "aliases_and_ranges": "passed"
     },
@@ -346,7 +363,7 @@
         {
           "path": "by_bpm/unknown/real05__Snare And A Clap.wav",
           "inode": 19,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 35468,
           "mode": "0444",
@@ -362,7 +379,7 @@
         {
           "path": "by_key/unknown/real05__Snare And A Clap.wav",
           "inode": 19,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 35468,
           "mode": "0444",
@@ -378,7 +395,7 @@
         {
           "path": "by_type/drum/real05__Snare And A Clap.wav",
           "inode": 19,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 35468,
           "mode": "0444",
@@ -402,6 +419,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "2625d2d6121eb344417889908cb2c8df8e3909fe72d68bcc6f600c4d2c363557",
+      "info_path": "info/real05.info",
+      "info_content": "BPM: unknown\nKey: unknown\nType: drum\nSize: 35468 bytes\n",
+      "info_inode": 37,
+      "info_bytes": 55,
       "inode": 19,
       "aliases_and_ranges": "passed"
     },
@@ -423,7 +444,7 @@
         {
           "path": "by_bpm/unknown/real06__bass (4U).wav",
           "inode": 20,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 207236,
           "mode": "0444",
@@ -439,7 +460,7 @@
         {
           "path": "by_key/unknown/real06__bass (4U).wav",
           "inode": 20,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 207236,
           "mode": "0444",
@@ -455,7 +476,7 @@
         {
           "path": "by_type/bass/real06__bass (4U).wav",
           "inode": 20,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 207236,
           "mode": "0444",
@@ -479,6 +500,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "58852eb9e5645efbb6192576aa7dffaf5b8c3a788197de2f26c982ea0e698c20",
+      "info_path": "info/real06.info",
+      "info_content": "BPM: unknown\nKey: unknown\nType: bass\nSize: 207236 bytes\n",
+      "info_inode": 38,
+      "info_bytes": 56,
       "inode": 20,
       "aliases_and_ranges": "passed"
     },
@@ -500,7 +525,7 @@
         {
           "path": "by_bpm/unknown/real07__I Know.mp3",
           "inode": 22,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 6779354,
           "mode": "0444",
@@ -516,7 +541,7 @@
         {
           "path": "by_key/unknown/real07__I Know.mp3",
           "inode": 22,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 6779354,
           "mode": "0444",
@@ -532,7 +557,7 @@
         {
           "path": "by_type/song/real07__I Know.mp3",
           "inode": 22,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 6779354,
           "mode": "0444",
@@ -556,6 +581,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "9bc2a066ca2ac57dd0898b0c85367db8683187cf12a51dbb317a9501564e768e",
+      "info_path": "info/real07.info",
+      "info_content": "BPM: unknown\nKey: unknown\nType: song\nSize: 6779354 bytes\n",
+      "info_inode": 39,
+      "info_bytes": 57,
       "inode": 22,
       "aliases_and_ranges": "passed"
     },
@@ -577,7 +606,7 @@
         {
           "path": "by_bpm/unknown/real08__I Know.wav",
           "inode": 24,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 44832074,
           "mode": "0444",
@@ -593,7 +622,7 @@
         {
           "path": "by_key/unknown/real08__I Know.wav",
           "inode": 24,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 44832074,
           "mode": "0444",
@@ -609,7 +638,7 @@
         {
           "path": "by_type/song/real08__I Know.wav",
           "inode": 24,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 44832074,
           "mode": "0444",
@@ -633,6 +662,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "3f35176a8b2915996e0ca3f27cda85a7e844a8ae4acc1882c35273b0e232e0c7",
+      "info_path": "info/real08.info",
+      "info_content": "BPM: unknown\nKey: unknown\nType: song\nSize: 44832074 bytes\n",
+      "info_inode": 40,
+      "info_bytes": 58,
       "inode": 24,
       "aliases_and_ranges": "passed"
     },
@@ -654,7 +687,7 @@
         {
           "path": "by_bpm/140/real09__YeatxKanKanLoop 6 144 Bpm.wav",
           "inode": 25,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4704146,
           "mode": "0444",
@@ -670,7 +703,7 @@
         {
           "path": "by_key/unknown/real09__YeatxKanKanLoop 6 144 Bpm.wav",
           "inode": 25,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4704146,
           "mode": "0444",
@@ -686,7 +719,7 @@
         {
           "path": "by_type/melody/real09__YeatxKanKanLoop 6 144 Bpm.wav",
           "inode": 25,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 4704146,
           "mode": "0444",
@@ -710,6 +743,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "d198db2f245e019cdd0650154e8738df9b56f73451b0e990341f9566beba0786",
+      "info_path": "info/real09.info",
+      "info_content": "BPM: 144\nKey: unknown\nType: melody\nSize: 4704146 bytes\n",
+      "info_inode": 41,
+      "info_bytes": 55,
       "inode": 25,
       "aliases_and_ranges": "passed"
     },
@@ -731,7 +768,7 @@
         {
           "path": "by_bpm/150/real10__YeatxKanKanLoop 4 150 Bpm.wav",
           "inode": 27,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12419080,
           "mode": "0444",
@@ -747,7 +784,7 @@
         {
           "path": "by_key/unknown/real10__YeatxKanKanLoop 4 150 Bpm.wav",
           "inode": 27,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12419080,
           "mode": "0444",
@@ -763,7 +800,7 @@
         {
           "path": "by_type/melody/real10__YeatxKanKanLoop 4 150 Bpm.wav",
           "inode": 27,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 12419080,
           "mode": "0444",
@@ -787,6 +824,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "a9a558137be78ee74fa6a8890e0424ba0c752aa1891df0eb4b02bf4668c0979c",
+      "info_path": "info/real10.info",
+      "info_content": "BPM: 150\nKey: unknown\nType: melody\nSize: 12419080 bytes\n",
+      "info_inode": 42,
+      "info_bytes": 56,
       "inode": 27,
       "aliases_and_ranges": "passed"
     },
@@ -808,7 +849,7 @@
         {
           "path": "by_bpm/150/real11__YeatxKanKanLoop 7 153 Bpm.wav",
           "inode": 29,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9961864,
           "mode": "0444",
@@ -824,7 +865,7 @@
         {
           "path": "by_key/unknown/real11__YeatxKanKanLoop 7 153 Bpm.wav",
           "inode": 29,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9961864,
           "mode": "0444",
@@ -840,7 +881,7 @@
         {
           "path": "by_type/melody/real11__YeatxKanKanLoop 7 153 Bpm.wav",
           "inode": 29,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9961864,
           "mode": "0444",
@@ -864,6 +905,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "48eb57f919c57514d5b3b69c1f3ea539eb6f01728434225f9b237964dd76a25f",
+      "info_path": "info/real11.info",
+      "info_content": "BPM: 153\nKey: unknown\nType: melody\nSize: 9961864 bytes\n",
+      "info_inode": 43,
+      "info_bytes": 55,
       "inode": 29,
       "aliases_and_ranges": "passed"
     },
@@ -885,7 +930,7 @@
         {
           "path": "by_bpm/160/real12__YeatxKanKanLoop 5 160 Bpm.wav",
           "inode": 30,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9261452,
           "mode": "0444",
@@ -901,7 +946,7 @@
         {
           "path": "by_key/unknown/real12__YeatxKanKanLoop 5 160 Bpm.wav",
           "inode": 30,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9261452,
           "mode": "0444",
@@ -917,7 +962,7 @@
         {
           "path": "by_type/melody/real12__YeatxKanKanLoop 5 160 Bpm.wav",
           "inode": 30,
-          "device": 37,
+          "device": 93,
           "links": 3,
           "bytes": 9261452,
           "mode": "0444",
@@ -941,6 +986,10 @@
       "requested_bytes": 4096,
       "write_open_errno": 30,
       "copied_sha256": "90ca668c477334cab5f5427a41722955117053a40eab29981a6010bec355a6c4",
+      "info_path": "info/real12.info",
+      "info_content": "BPM: 160\nKey: unknown\nType: melody\nSize: 9261452 bytes\n",
+      "info_inode": 44,
+      "info_bytes": 55,
       "inode": 30,
       "aliases_and_ranges": "passed"
     }
