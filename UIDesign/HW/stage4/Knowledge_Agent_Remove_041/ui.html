@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<style>
+  body { margin: 18px; font: 14px/1.6 system-ui, sans-serif; background: var(--figma-color-bg); color: var(--figma-color-text); }
+  button { padding: 9px 14px; border: 0; border-radius: 6px; background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); cursor: pointer; font: inherit; }
+  button:disabled { opacity: .55; }
+</style>
+<p>从 Knowledge Agent new 的浅色与深色流程移除最近第二条和历史记录 #041。</p>
+<button id="apply">移除 #041</button>
+<p id="status" role="status"></p>
+<script>
+  const button = document.getElementById('apply');
+  const status = document.getElementById('status');
+  button.onclick = () => {
+    button.disabled = true;
+    status.textContent = '正在检查并更新当前页面…';
+    parent.postMessage({ pluginMessage: { type: 'remove041' } }, '*');
+  };
+  window.onmessage = ({ data: { pluginMessage: message } }) => {
+    if (!message) return;
+    if (message.type === 'error') {
+      status.textContent = message.message;
+      button.disabled = false;
+    } else if (message.type === 'done') {
+      status.textContent = message.result.alreadyRemoved ? '当前页已移除 #041。' : '已移除 ' +
+        message.result.historyRows + ' 处列表记录和 ' + message.result.detailScreens + ' 个历史详情画面。';
+    }
+  };
+</script>
+</html>

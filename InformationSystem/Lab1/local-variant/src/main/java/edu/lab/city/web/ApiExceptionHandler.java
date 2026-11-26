@@ -66,7 +66,7 @@ public class ApiExceptionHandler {
                 String state = sql.getSQLState();
                 // 用户名唯一约束兜底：两个请求同时注册时，也不会创建重复账号。
                 if ("23505".equals(state)) {
-                    return error(409, "Этот логин уже занят.");
+                    return error(409, "This username is already taken.");
                 }
                 if ("23503".equals(state)) {
                     String message = "Cannot delete a referenced object, or the selected"
